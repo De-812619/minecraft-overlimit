@@ -1,0 +1,49 @@
+{
+  "anvil_cost": 1,
+  "description": {
+    "text": "超重力"
+  },
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "affected": "victim",
+        "enchanted": "attacker",
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:play_sound",
+              "sound": "minecraft:block.respawn_anchor.deplete",
+              "volume": 0.7,
+              "pitch": 0.6
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "overlimit:enchant/hyper_gravity/on_hit"
+            }
+          ]
+        },
+        "requirements": {
+          "condition": "minecraft:damage_source_properties",
+          "predicate": {
+            "is_direct": true
+          }
+        }
+      }
+    ]
+  },
+  "max_cost": {
+    "base": 100,
+    "per_level_above_first": 0
+  },
+  "max_level": 1,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 0
+  },
+  "slots": [
+    "mainhand"
+  ],
+  "supported_items": "#overlimit:enchantable_melee_all",
+  "weight": 1
+}

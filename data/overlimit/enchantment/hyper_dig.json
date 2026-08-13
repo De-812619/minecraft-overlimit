@@ -1,0 +1,31 @@
+{
+  "effects": {
+    "minecraft:hit_block": [
+      {
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "overlimit:enchant/hyper_dig/on_hit_block"
+        }
+      }
+    ]
+  },
+  "anvil_cost": 1,
+  "description": {
+    "text": "ハイパーディグ"
+  },
+  "exclusive_set": "#overlimit:exclusive_set/hyper_dig",
+  "max_cost": {
+    "base": 100,
+    "per_level_above_first": 0
+  },
+  "max_level": 1,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 0
+  },
+  "slots": [
+    "mainhand"
+  ],
+  "supported_items": "#overlimit:enchantable_hyper_dig",
+  "weight": 1
+}

@@ -22,6 +22,7 @@ scoreboard objectives add overlimit.sky_safe dummy
 scoreboard objectives add overlimit.sky_land dummy
 scoreboard objectives add overlimit.const dummy
 scoreboard players set #10 overlimit.const 10
+scoreboard players set #2 overlimit.const 2
 scoreboard players set #60 overlimit.const 60
 scoreboard players set #100 overlimit.const 100
 execute unless score #necro_id_seq overlimit.const matches 1.. run scoreboard players set #necro_id_seq overlimit.const 0

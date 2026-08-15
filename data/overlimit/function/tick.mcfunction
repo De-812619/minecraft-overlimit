@@ -5,9 +5,9 @@ execute as @e[type=minecraft:marker,tag=overlimit.danger_xp,tag=!overlimit.elite
 team join overlimit @a[team=!overlimit]
 
 execute as @a[scores={overlimit.cd.absolute=1..}] run scoreboard players remove @s overlimit.cd.absolute 1
-# Impact CD 表示（本人のみ）: 足元 + メインハンド（斧）付近
-execute as @a[scores={overlimit.cd.impact=1..}] at @s run particle minecraft:sculk_soul ~ ~0.25 ~ 0.18 0.1 0.18 0.0 1 normal @s
-execute as @a[scores={overlimit.cd.impact=1..}] at @s anchored eyes positioned ^-0.35 ^-0.3 ^0.5 run particle minecraft:sculk_soul ~ ~ ~ 0.06 0.08 0.06 0.0 1 normal @s
+# Impact CD 表示（本人のみ・10秒）: 残煙。足元 + メインハンド（斧）付近（2tickに1回）
+execute as @a[scores={overlimit.cd.impact=1..}] at @s run function overlimit:enchant/impact/cd_fx
+execute as @a[scores={overlimit.cd.impact=1}] at @s run playsound minecraft:item.crossbow.loading_end player @s ~ ~ ~ 0.8 1
 execute as @a[scores={overlimit.cd.impact=1..}] run scoreboard players remove @s overlimit.cd.impact 1
 execute as @a[scores={overlimit.cd.hyper=1..}] run scoreboard players remove @s overlimit.cd.hyper 1
 execute as @a[scores={overlimit.cd.sky=1..}] run scoreboard players remove @s overlimit.cd.sky 1

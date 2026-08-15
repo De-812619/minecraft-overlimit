@@ -37,6 +37,7 @@ scoreboard objectives add overlimit.hd_py dummy
 scoreboard objectives add overlimit.hd_pz dummy
 scoreboard objectives add overlimit.hd_pok dummy
 scoreboard objectives add overlimit.hd_pore dummy
+scoreboard objectives add overlimit.hd_prev_life dummy
 
 team add overlimit
 team modify overlimit friendlyFire false

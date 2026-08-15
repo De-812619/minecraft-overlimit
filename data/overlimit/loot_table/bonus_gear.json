@@ -3703,6 +3703,11 @@
               }
             }
           ]
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_book",
+          "weight": 200
         }
       ]
     }

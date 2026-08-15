@@ -330,6 +330,55 @@ KIND_SPECS: list[tuple[str, str | None, int]] = [
     ("crossbow", None, 5),
 ]
 
+# 本は独立種別。ウェイト 2（素材合計 100 を掛ける。弓・クロスボウは 5）。
+BOOK_KIND_WEIGHT = 2
+
+# CONTENT.md のカスタム（新規）エンチャント。本はここから等確率でちょうど1つ。
+# バニラ強化（sharpness 6〜10 等）は本に付けない。保留（フェニックス／ドッペル／アストラル）も入れない。
+BOOK_BONUS_ENCHANTS: list[tuple[str, int]] = [
+    ("overlimit:apocalypse", 1),
+    ("overlimit:soul_taker", 1),
+    ("overlimit:void_break", 1),
+    ("overlimit:hyper_gravity", 1),
+    ("overlimit:summon_wolf", 1),
+    ("overlimit:gluttony", 1),
+    ("overlimit:necromancy", 1),
+    ("overlimit:impact", 1),
+    ("overlimit:chain_bind", 1),
+    ("overlimit:absolute_field", 1),
+    ("overlimit:clairvoyance", 1),
+    ("overlimit:sky_walk", 1),
+    ("overlimit:hyper_dig", 1),
+    ("overlimit:smelting", 1),
+    ("overlimit:wind_blessing", 1),
+]
+
+
+def build_bonus_book() -> dict:
+    """消滅の呪い必須 + カスタムエンチャントから等確率で1つ。通常一式は付けない。"""
+    entries: list[dict] = []
+    for ench_id, level in BOOK_BONUS_ENCHANTS:
+        entries.append(
+            {
+                "type": "minecraft:item",
+                "name": "minecraft:enchanted_book",
+                "weight": 1,
+                "functions": [
+                    set_enchantments({"minecraft:vanishing_curse": 1}, add=False),
+                    set_enchantments({ench_id: level}, add=False),
+                ],
+            }
+        )
+    return {
+        "type": "minecraft:chest",
+        "pools": [
+            {
+                "rolls": 1.0,
+                "entries": entries,
+            }
+        ],
+    }
+
 
 def item_id(material: str, suffix: str | None, kind: str) -> str:
     if suffix is None:
@@ -363,6 +412,13 @@ def build_bonus_gear() -> dict:
                     "functions": enchant_functions(kind),
                 }
             )
+    entries.append(
+        {
+            "type": "minecraft:loot_table",
+            "value": "overlimit:bonus_book",
+            "weight": BOOK_KIND_WEIGHT * material_weight_sum,
+        }
+    )
     return {
         "type": "minecraft:chest",
         "pools": [
@@ -486,8 +542,8 @@ def main() -> None:
 
     clear_enchantment_overrides()
 
-    bonus = build_bonus_gear()
-    write_json(ROOT / "data/overlimit/loot_table/bonus_gear.json", bonus)
+    write_json(ROOT / "data/overlimit/loot_table/bonus_gear.json", build_bonus_gear())
+    write_json(ROOT / "data/overlimit/loot_table/bonus_book.json", build_bonus_book())
 
     clear_generated_dnt_outputs()
 

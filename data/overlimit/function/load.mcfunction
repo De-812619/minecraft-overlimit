@@ -23,9 +23,17 @@ scoreboard objectives add overlimit.sky_land dummy
 scoreboard objectives add overlimit.const dummy
 scoreboard players set #10 overlimit.const 10
 scoreboard players set #2 overlimit.const 2
+scoreboard players set #3 overlimit.const 3
+scoreboard players set #20 overlimit.const 20
 scoreboard players set #60 overlimit.const 60
 scoreboard players set #100 overlimit.const 100
+scoreboard players set #23460 overlimit.const 23460
+scoreboard players set #11460 overlimit.const 11460
+scoreboard players set #24000 overlimit.const 24000
 execute unless score #necro_id_seq overlimit.const matches 1.. run scoreboard players set #necro_id_seq overlimit.const 0
+execute unless score #bm_active overlimit.const matches 0.. run scoreboard players set #bm_active overlimit.const 0
+execute unless score #bm_kills overlimit.const matches 0.. run scoreboard players set #bm_kills overlimit.const 0
+execute unless score #bm_checked overlimit.const matches 0.. run scoreboard players set #bm_checked overlimit.const 0
 
 # Hyper dig look buffer (parent_quest_pack AoE と同型)
 scoreboard objectives add overlimit.hd_x dummy
@@ -47,6 +55,15 @@ team modify overlimit collisionRule pushOwnTeam
 
 advancement revoke @a only overlimit:enchant/on_kill
 advancement revoke @a only overlimit:enchant/hyper_dig_mine
+advancement revoke @a only overlimit:blood_moon/on_kill
+
+bossbar add overlimit:blood_moon {"text":"ブラッドムーン","color":"dark_red","bold":true}
+bossbar set overlimit:blood_moon color red
+execute store result bossbar overlimit:blood_moon max run scoreboard players get #11460 overlimit.const
+bossbar set overlimit:blood_moon style progress
+execute if score #bm_active overlimit.const matches 1 run function overlimit:blood_moon/restore
+execute unless score #bm_active overlimit.const matches 1 run bossbar set overlimit:blood_moon players
+execute unless score #bm_active overlimit.const matches 1 run function overlimit:blood_moon/fog_off
 
 # Fabric: schedule ループ（#minecraft:tick 非依存）
 schedule function overlimit:tick_loop 1t replace

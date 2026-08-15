@@ -2,7 +2,7 @@
 
 構造物チェストの戦利品を強化するデータパックです（Minecraft Java **26.2** / pack format **107.1**）。
 
-既存の中身は残し、**追加プール**でオーバーリミット装備を入れます（個数比率 0:1:2 = 30:60:10）。
+既存の中身は残し、**追加プール**でオーバーリミット装備を入れます（個数比率 0:1:2 = 15:70:15）。
 
 ## 対象チェスト
 
@@ -14,6 +14,16 @@
 | :--- | :--- |
 | `chests/ancient_city` | 古代都市（例外的に OW 対象） |
 | `chests/ancient_city_ice_box` | 古代都市（氷室） |
+| `chests/desert_pyramid` | ピラミッド |
+| `chests/jungle_temple` | ジャングル寺院 |
+| `entities/elder_guardian` | 海底神殿（チェストが無いためエルダーのドロップ） |
+| `chests/shipwreck_*` | 難破船（地図・補給・宝物） |
+| `chests/underwater_ruin_*` | 海底遺跡 |
+| `chests/abandoned_mineshaft` | 廃坑 |
+| `chests/buried_treasure` | 埋もれた宝 |
+| `chests/trial_chambers/entrance` ほか | 試練の間（チェスト3種） |
+| `chests/trial_chambers/reward` | 試練の間（宝物庫） |
+| `chests/trial_chambers/reward_ominous` | 試練の間（不吉な宝物庫） |
 | `chests/nether_bridge` | ネザー要塞 |
 | `chests/bastion_*` | バストリオン（4種） |
 | `chests/end_city_treasure` | エンドシティ |

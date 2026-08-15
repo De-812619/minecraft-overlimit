@@ -16,7 +16,17 @@
 ```mcfunction
 /loot give @s loot minecraft:chests/nether_bridge
 /loot give @s loot minecraft:chests/ancient_city
+/loot give @s loot minecraft:chests/desert_pyramid
+/loot give @s loot minecraft:chests/jungle_temple
+/loot give @s loot minecraft:chests/shipwreck_treasure
+/loot give @s loot minecraft:chests/underwater_ruin_big
+/loot give @s loot minecraft:chests/abandoned_mineshaft
+/loot give @s loot minecraft:chests/buried_treasure
+/loot give @s loot minecraft:chests/trial_chambers/supply
+/loot give @s loot minecraft:chests/trial_chambers/reward
+/loot give @s loot minecraft:chests/trial_chambers/reward_ominous
 /loot give @s loot minecraft:chests/end_city_treasure
+/loot give @s loot minecraft:entities/elder_guardian
 ```
 
 DnT 例:

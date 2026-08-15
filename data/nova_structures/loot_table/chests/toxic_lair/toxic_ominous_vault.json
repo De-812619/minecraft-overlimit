@@ -193,12 +193,12 @@
       "entries": [
         {
           "type": "minecraft:empty",
-          "weight": 25
+          "weight": 15
         },
         {
           "type": "minecraft:loot_table",
           "value": "overlimit:bonus_gear",
-          "weight": 60
+          "weight": 70
         },
         {
           "type": "minecraft:group",

@@ -26,12 +26,32 @@ CACHE_DIR = ROOT / ".cache"
 TARGET_CHESTS = [
     "ancient_city",
     "ancient_city_ice_box",
+    "desert_pyramid",
+    "jungle_temple",
+    "shipwreck_map",
+    "shipwreck_supply",
+    "shipwreck_treasure",
+    "underwater_ruin_big",
+    "underwater_ruin_small",
+    "abandoned_mineshaft",
+    "buried_treasure",
+    # 試練の間: チェスト3種＋宝物庫親テーブルのみ（樽・壺・入れ子 reward_* は対象外）
+    "trial_chambers/entrance",
+    "trial_chambers/supply",
+    "trial_chambers/intersection",
+    "trial_chambers/reward",
+    "trial_chambers/reward_ominous",
     "nether_bridge",
     "bastion_bridge",
     "bastion_hoglin_stable",
     "bastion_other",
     "bastion_treasure",
     "end_city_treasure",
+]
+
+# 海底神殿はバニラにチェストが無いため、エルダーガーディアンのドロップへ注入。
+TARGET_ENTITY_LOOT = [
+    "elder_guardian",
 ]
 
 MATERIAL_WEIGHTS = (
@@ -41,7 +61,7 @@ MATERIAL_WEIGHTS = (
 )
 
 # 追加個数の比率: 0個 / 1個 / 2個（CONTENT.md）
-INJECT_COUNT_WEIGHTS = (25, 60, 15)
+INJECT_COUNT_WEIGHTS = (15, 70, 15)
 
 INJECT_POOL = {
     "rolls": 1.0,
@@ -479,11 +499,18 @@ def main() -> None:
             injected = inject_chest(raw)
             write_json(ROOT / "data/minecraft/loot_table/chests" / f"{chest}.json", injected)
             print(f"injected [vanilla] minecraft:chests/{chest}")
+        for entity in TARGET_ENTITY_LOOT:
+            inner = f"data/minecraft/loot_table/entities/{entity}.json"
+            raw = json.loads(zf.read(inner).decode("utf-8"))
+            injected = inject_chest(raw)
+            write_json(ROOT / "data/minecraft/loot_table/entities" / f"{entity}.json", injected)
+            print(f"injected [vanilla] minecraft:entities/{entity}")
 
     dnt_count = inject_from_archive(dnt_path, "DnT")
 
     print(
         f"wrote bonus_gear + {len(TARGET_CHESTS)} vanilla chests + "
+        f"{len(TARGET_ENTITY_LOOT)} entity loot + "
         f"{dnt_count} DnT chests (no enchantment max_level overrides)"
     )
 

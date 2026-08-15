@@ -10,19 +10,36 @@
 ### バニラ
 
 - **除外**: オーバーワールド構造物のチェスト全般
-- **例外で対象**: 古代都市（`ancient_city` / `ancient_city_ice_box`）
+- **例外で対象**: 古代都市・ピラミッド・ジャングル寺院・海底神殿・難破船・海底遺跡・廃坑・埋もれた宝・試練の間（チェストと宝物庫）
 - **対象**: ネザー要塞・バストリオン各種・エンドシティ
 
 実装上は次のバニラルートにボーナスプールを注入する。
 
 - `minecraft:chests/ancient_city`
 - `minecraft:chests/ancient_city_ice_box`
+- `minecraft:chests/desert_pyramid`
+- `minecraft:chests/jungle_temple`
+- `minecraft:entities/elder_guardian`（海底神殿。バニラにチェストが無いため）
+- `minecraft:chests/shipwreck_map`
+- `minecraft:chests/shipwreck_supply`
+- `minecraft:chests/shipwreck_treasure`
+- `minecraft:chests/underwater_ruin_big`
+- `minecraft:chests/underwater_ruin_small`
+- `minecraft:chests/abandoned_mineshaft`
+- `minecraft:chests/buried_treasure`
+- `minecraft:chests/trial_chambers/entrance`
+- `minecraft:chests/trial_chambers/supply`
+- `minecraft:chests/trial_chambers/intersection`
+- `minecraft:chests/trial_chambers/reward`（通常の宝物庫）
+- `minecraft:chests/trial_chambers/reward_ominous`（不吉な宝物庫）
 - `minecraft:chests/nether_bridge`
 - `minecraft:chests/bastion_bridge`
 - `minecraft:chests/bastion_hoglin_stable`
 - `minecraft:chests/bastion_other`
 - `minecraft:chests/bastion_treasure`
 - `minecraft:chests/end_city_treasure`
+
+ジャングル寺院のディスペンサー（`jungle_temple_dispenser`）、考古学ルート、試練の間の樽・壺・ディスペンサー・スポナー報酬、宝物庫の入れ子テーブル（`reward_common` 等）は対象外。
 
 ### Dungeons and Taverns（DnT）
 
@@ -39,8 +56,8 @@
 
 | 個数  | weight |
 | --- | ------ |
-| 0   | 25     |
-| 1   | 60     |
+| 0   | 15     |
+| 1   | 70     |
 | 2   | 15     |
 
 
@@ -204,7 +221,7 @@
 - 名前空間: `overlimit`
 - ボーナス本体: `overlimit:bonus_gear`
 - 強化Mob: `overlimit:mob/*`（`#minecraft:tick` / `#minecraft:load`）。WARNING / DANGER / CRISIS は出現時の排他ロールで付与
-- 対象チェスト再生成: `scripts/gen_loot.py`
+- 対象チェスト／エルダー再生成: `scripts/gen_loot.py`
 - DnT 取得: 既定で Modrinth の v5.3.0 zip（`DNT_PACK` / `DNT_URL` で上書き可）
 - 上限超えエンチャントはルートの `set_enchantments`（`add: false`）でのみ付与する（エンチャント定義の `max_level` は上書きしない → **エンチャント台・司書はバニラのまま**）。例外: `minecraft:efficiency` は `max_level` を変えず、ハイパーディグとの `exclusive_set` だけ足す
 - カスタムエンチャントの金床コスト（`anvil_cost`）は **1**（仮。複数エンチャントの合算でサバイバル上限 40＝「高すぎる！」は残る）

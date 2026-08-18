@@ -1,7 +1,7 @@
 # /reload 中にイベントが続いていた場合の霧・ボスバー復旧
 function overlimit:blood_moon/fog_on
+function overlimit:blood_moon/spawn_monsters_off
 function overlimit:blood_moon/read_time
-scoreboard players reset #bm_kills_shown overlimit.const
 function overlimit:blood_moon/bossbar_name
 function overlimit:blood_moon/bossbar_value
 bossbar set overlimit:blood_moon color red

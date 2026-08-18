@@ -1,0 +1,1 @@
+gamerule minecraft:spawn_monsters true

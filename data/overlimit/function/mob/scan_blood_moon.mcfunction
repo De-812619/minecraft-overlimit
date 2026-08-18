@@ -7,3 +7,4 @@ execute if score #roll overlimit.const matches 0..4 run function overlimit:mob/m
 execute if score #roll overlimit.const matches 5..19 run function overlimit:mob/make_danger
 execute if score #roll overlimit.const matches 20..99 run function overlimit:mob/make_warning
 function overlimit:blood_moon/mark_elite
+tag @s add overlimit.scanned

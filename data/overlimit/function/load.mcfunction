@@ -30,10 +30,20 @@ scoreboard players set #100 overlimit.const 100
 scoreboard players set #23460 overlimit.const 23460
 scoreboard players set #11460 overlimit.const 11460
 scoreboard players set #24000 overlimit.const 24000
+scoreboard players set #bm_chance_base overlimit.const 30
+scoreboard players set #bm_chance_step overlimit.const 20
+scoreboard players set #bm_chance_cap overlimit.const 100
 execute unless score #necro_id_seq overlimit.const matches 1.. run scoreboard players set #necro_id_seq overlimit.const 0
 execute unless score #bm_active overlimit.const matches 0.. run scoreboard players set #bm_active overlimit.const 0
 execute unless score #bm_kills overlimit.const matches 0.. run scoreboard players set #bm_kills overlimit.const 0
 execute unless score #bm_checked overlimit.const matches 0.. run scoreboard players set #bm_checked overlimit.const 0
+execute unless score #bm_chance overlimit.const matches 0.. run scoreboard players operation #bm_chance overlimit.const = #bm_chance_base overlimit.const
+scoreboard players set #bm_spawn_int overlimit.const 80
+scoreboard players set #bm_spawn_cap overlimit.const 24
+scoreboard players set #bm_spawn_near overlimit.const 16
+scoreboard players set #bm_spawn_min_y overlimit.const 60
+scoreboard players set #bm_spawn_burst overlimit.const 10
+execute unless score #bm_spawn_t overlimit.const matches 0.. run scoreboard players set #bm_spawn_t overlimit.const 0
 
 # Hyper dig look buffer (parent_quest_pack AoE と同型)
 scoreboard objectives add overlimit.hd_x dummy

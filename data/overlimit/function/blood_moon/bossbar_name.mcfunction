@@ -1,4 +1,3 @@
-# テキストは撃破数。ゲージ更新は tick_active 側。
-execute if score #bm_kills overlimit.const = #bm_kills_shown overlimit.const run return fail
-scoreboard players operation #bm_kills_shown overlimit.const = #bm_kills overlimit.const
-bossbar set overlimit:blood_moon name [{"text":"ブラッドムーン  ","color":"dark_red","bold":true},{"score":{"name":"#bm_kills","objective":"overlimit.const"},"color":"red"},{"text":"/","color":"red"},{"score":{"name":"#100","objective":"overlimit.const"},"color":"red"},{"text":"体","color":"red"}]
+# 撃破点はマクロで数字を埋め込む。score コンポーネントだと 0/100 のまま張り付くことがある。
+execute store result storage overlimit:blood_moon kills int 1 run scoreboard players get #bm_kills overlimit.const
+function overlimit:blood_moon/bossbar_name_set with storage overlimit:blood_moon

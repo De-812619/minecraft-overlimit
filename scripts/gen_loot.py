@@ -398,19 +398,20 @@ def build_blood_moon_book() -> dict:
                 "weight": 1,
                 "functions": [
                     {
-                        "function": "minecraft:set_enchantments",
-                        "enchantments": {
-                            "minecraft:vanishing_curse": 1,
-                            a: 1,
-                            b: 1,
+                        "function": "minecraft:set_components",
+                        "components": {
+                            "minecraft:stored_enchantments": {
+                                "minecraft:vanishing_curse": 1,
+                                a: 1,
+                                b: 1,
+                            }
                         },
-                        "add": False,
                     }
                 ],
             }
         )
     return {
-        "type": "minecraft:gift",
+        "type": "minecraft:chest",
         "pools": [
             {
                 "rolls": 1,

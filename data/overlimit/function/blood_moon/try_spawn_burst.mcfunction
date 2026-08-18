@@ -1,4 +1,4 @@
-# @s = player, at player. 12/16 の10方向を高さマップへ直接召喚する。
+# @s = player, at player. 12/16 の10方向を高さマップへ召喚する（プレイヤー高さ±4のみ）。
 execute if biome ~ ~ ~ minecraft:deep_dark run return fail
 execute store result score #bm_py overlimit.const run data get entity @s Pos[1]
 

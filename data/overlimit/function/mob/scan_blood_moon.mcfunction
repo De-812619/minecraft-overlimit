@@ -1,5 +1,5 @@
 execute if predicate overlimit:in_trial_chambers run return run function overlimit:mob/scan_normal
-execute if function overlimit:blood_moon/near_spawner run return run function overlimit:mob/scan_normal
+execute unless entity @s[tag=overlimit.bm_wave] if function overlimit:blood_moon/near_spawner run return run function overlimit:mob/scan_normal
 
 # ブラッドムーン: CRISIS 5% / DANGER 15% / WARNING 80%
 execute store result score #roll overlimit.const run random value 0..99

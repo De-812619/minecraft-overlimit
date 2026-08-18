@@ -1,4 +1,4 @@
-# @s = overworld player. 1体。失敗したら別方向を最大8回。Y60では打切りしない（スーパフラット対策）。
+# @s = overworld player. 1体。失敗したら別方向を最大8回。
 scoreboard players set #bm_spawned overlimit.const 0
 execute if predicate overlimit:in_trial_chambers run return fail
 execute if biome ~ ~ ~ minecraft:deep_dark run return fail

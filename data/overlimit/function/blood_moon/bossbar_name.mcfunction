@@ -1,3 +1,2 @@
-# 撃破点はマクロで数字を埋め込む。score コンポーネントだと 0/100 のまま張り付くことがある。
-execute store result storage overlimit:blood_moon kills int 1 run scoreboard players get #bm_kills overlimit.const
-function overlimit:blood_moon/bossbar_name_set with storage overlimit:blood_moon
+# 26.2 では score コンポーネントを毎tick書き直せば追従する。
+bossbar set overlimit:blood_moon name [{"text":"ブラッドムーン  ","color":"dark_red","bold":true},{"score":{"name":"#bm_kills","objective":"overlimit.const"},"color":"red"},{"text":"/100体","color":"red"}]

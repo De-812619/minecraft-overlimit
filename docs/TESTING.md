@@ -226,6 +226,20 @@ XP の確認（見た目では分かりにくい。`/kill` では経験値が落
 
 時刻が夜になり、赤い霧・ボスバー「ブラッドムーン  0/100体」（ゲージは残り時間）・ベッド不可を確認する。
 
+99体から始めて、あと1体で報酬だけ見たいとき:
+
+```mcfunction
+/function overlimit:blood_moon/force_start_99
+```
+
+任意の撃破点から始めたいとき:
+
+```mcfunction
+/function overlimit:blood_moon/force_start
+/scoreboard players set #bm_kills overlimit.const 95
+/function overlimit:blood_moon/bossbar_name
+```
+
 コマンド開始でも **朝（約8〜9分後）か 100体撃破** で自動終了する。朝だけ確認するなら:
 
 ```mcfunction
@@ -238,7 +252,7 @@ XP の確認（見た目では分かりにくい。`/kill` では経験値が落
 
 地上ではほぼ必ず WARNING / DANGER / CRISIS になり、感知が広い。スポナーの隣・試練の間では 100% にならない（通常の 16% はあり）。
 
-開始直後に自分から **12〜16ブロックの地表** へ WARNING 等の強化敵が約10体出る。バニラの敵自然スポーンは止まる。以降は **約4秒ごとに最大2体**（同じ 12〜16ブロック）。**明るい拠点内（可視光 8 以上）には追加しない**。顔の前（6未満）や深い谷底にも追加しない。撃破するとボスバーの `N/100体` が増える。**CRISISを倒すと+3**。Peaceful では追加しない。終了（または `/function overlimit:blood_moon/force_end`）で `spawn_monsters` が戻る。
+開始直後に自分から **12〜16ブロックの地表（自分の高さ±4）** へ WARNING 等の強化敵が約10体出る。バニラの敵自然スポーンは止まる。以降は **約4秒ごとに最大2体**。その直前に、自分から **25ブロック以上**（または大きく高さが違う）イベント敵は消える（撃破点は増えない）。**松明などの光源ブロックから水平16ブロック以内には追加しない**。顔の前（6未満）や谷底・地下にも追加しない。撃破するとボスバーの `N/100体` が増える。**CRISISを倒すと+3**。Peaceful では追加しない。終了（または `/function overlimit:blood_moon/force_end`）で `spawn_monsters` が戻る。
 
 報酬本だけ見るとき:
 

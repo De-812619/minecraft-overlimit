@@ -1,7 +1,7 @@
 execute as @e[type=#overlimit:can_be_danger,tag=!overlimit.scanned] at @s run function overlimit:mob/scan
-execute in minecraft:overworld run function overlimit:blood_moon/tick
 execute as @e[type=minecraft:marker,tag=overlimit.elite_xp] at @s run function overlimit:mob/xp_marker_tick
 execute as @e[type=minecraft:marker,tag=overlimit.danger_xp,tag=!overlimit.elite_xp] at @s run function overlimit:mob/xp_marker_tick
+execute in minecraft:overworld run function overlimit:blood_moon/tick
 
 team join overlimit @a[team=!overlimit]
 

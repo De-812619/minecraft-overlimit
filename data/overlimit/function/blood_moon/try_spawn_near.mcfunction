@@ -1,4 +1,4 @@
-# @s = player, at player. 8方向×12/16 の地表へ1回試す。
+# @s = player, at player. 12/16 の地表（プレイヤー高さ±4）へ1回試す。
 execute store result score #bm_alive overlimit.const if entity @e[tag=overlimit.blood_moon]
 execute if score #bm_alive overlimit.const >= #bm_spawn_cap overlimit.const run return fail
 

@@ -1,3 +1,4 @@
+execute unless score #bm_active overlimit.const matches 1 run return fail
 title @a[predicate=overlimit:in_overworld] times 10 60 20
 title @a[predicate=overlimit:in_overworld] title {"text":"ブラッドムーン","color":"dark_red"}
 title @a[predicate=overlimit:in_overworld] subtitle {"text":"夜が明けた","color":"gray"}

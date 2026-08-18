@@ -1,0 +1,15 @@
+{
+  "criteria": {
+    "eat": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": "#overlimit:edible"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "overlimit:enchant/midas_table/on_eat"
+  }
+}

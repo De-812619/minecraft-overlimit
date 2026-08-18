@@ -2224,6 +2224,19 @@
                   "chance": 0.3
                 }
               ]
+            },
+            {
+              "function": "minecraft:set_enchantments",
+              "enchantments": {
+                "overlimit:midas_table": 1
+              },
+              "add": false,
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.3
+                }
+              ]
             }
           ]
         },
@@ -2347,6 +2360,19 @@
                   "chance": 0.3
                 }
               ]
+            },
+            {
+              "function": "minecraft:set_enchantments",
+              "enchantments": {
+                "overlimit:midas_table": 1
+              },
+              "add": false,
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.3
+                }
+              ]
             }
           ]
         },
@@ -2462,6 +2488,19 @@
               "function": "minecraft:set_enchantments",
               "enchantments": {
                 "overlimit:clairvoyance": 1
+              },
+              "add": false,
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.3
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_enchantments",
+              "enchantments": {
+                "overlimit:midas_table": 1
               },
               "add": false,
               "conditions": [

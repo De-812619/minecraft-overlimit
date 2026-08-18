@@ -65,6 +65,7 @@ team modify overlimit collisionRule pushOwnTeam
 
 advancement revoke @a only overlimit:enchant/on_kill
 advancement revoke @a only overlimit:enchant/hyper_dig_mine
+advancement revoke @a only overlimit:enchant/midas_table_eat
 advancement revoke @a only overlimit:blood_moon/on_kill
 
 bossbar add overlimit:blood_moon {"text":"ブラッドムーン","color":"dark_red","bold":true}

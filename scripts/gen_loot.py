@@ -9,6 +9,7 @@ import re
 import shutil
 import urllib.request
 import zipfile
+from itertools import combinations
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -177,6 +178,7 @@ BONUS_ENCHANTS: dict[str, list[tuple[str, int | dict, float]]] = {
         ("minecraft:respiration", uniform(4, 10), 0.30),
         ("minecraft:aqua_affinity", 3, 0.20),
         ("overlimit:clairvoyance", 1, 0.30),
+        ("overlimit:midas_table", 1, 0.30),
     ],
     "chestplate": [
         *COMMON_BONUS,
@@ -347,6 +349,7 @@ BOOK_BONUS_ENCHANTS: list[tuple[str, int]] = [
     ("overlimit:chain_bind", 1),
     ("overlimit:absolute_field", 1),
     ("overlimit:clairvoyance", 1),
+    ("overlimit:midas_table", 1),
     ("overlimit:sky_walk", 1),
     ("overlimit:hyper_dig", 1),
     ("overlimit:smelting", 1),
@@ -374,6 +377,43 @@ def build_bonus_book() -> dict:
         "pools": [
             {
                 "rolls": 1.0,
+                "entries": entries,
+            }
+        ],
+    }
+
+
+def build_blood_moon_book() -> dict:
+    """消滅の呪い + カスタム2つ。同じIDや排他ペアは付けない。"""
+    exclusive = {frozenset({a, b}) for _, a, b, _ in EXCLUSIVE_PAIRS}
+    ids = [ench_id for ench_id, _ in BOOK_BONUS_ENCHANTS]
+    entries: list[dict] = []
+    for a, b in combinations(ids, 2):
+        if frozenset({a, b}) in exclusive:
+            continue
+        entries.append(
+            {
+                "type": "minecraft:item",
+                "name": "minecraft:enchanted_book",
+                "weight": 1,
+                "functions": [
+                    {
+                        "function": "minecraft:set_enchantments",
+                        "enchantments": {
+                            "minecraft:vanishing_curse": 1,
+                            a: 1,
+                            b: 1,
+                        },
+                        "add": False,
+                    }
+                ],
+            }
+        )
+    return {
+        "type": "minecraft:gift",
+        "pools": [
+            {
+                "rolls": 1,
                 "entries": entries,
             }
         ],
@@ -544,6 +584,7 @@ def main() -> None:
 
     write_json(ROOT / "data/overlimit/loot_table/bonus_gear.json", build_bonus_gear())
     write_json(ROOT / "data/overlimit/loot_table/bonus_book.json", build_bonus_book())
+    write_json(ROOT / "data/overlimit/loot_table/blood_moon_book.json", build_blood_moon_book())
 
     clear_generated_dnt_outputs()
 
@@ -565,7 +606,7 @@ def main() -> None:
     dnt_count = inject_from_archive(dnt_path, "DnT")
 
     print(
-        f"wrote bonus_gear + {len(TARGET_CHESTS)} vanilla chests + "
+        f"wrote bonus_gear + bonus_book + blood_moon_book + {len(TARGET_CHESTS)} vanilla chests + "
         f"{len(TARGET_ENTITY_LOOT)} entity loot + "
         f"{dnt_count} DnT chests (no enchantment max_level overrides)"
     )

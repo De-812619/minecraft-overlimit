@@ -127,6 +127,13 @@ XP の確認（見た目では分かりにくい。`/kill` では経験値が落
 
 デプロイ → `/reload` 後:
 
+効果説明の図鑑（署名済みの本。目次の水色名をクリックで各ページへ）。  
+文章の正は `docs/enchant_guide.json`。直したら `python3 scripts/gen_enchant_guide.py` のあとデプロイ → `/reload`。
+
+```mcfunction
+/function overlimit:enchant/give/guide
+```
+
 ```mcfunction
 /function overlimit:enchant/give/phase1
 ```

@@ -1,0 +1,737 @@
+{
+  "type": "minecraft:gift",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:written_book",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:enchantment_glint_override": true,
+                "minecraft:lore": [
+                  {
+                    "text": "カスタムエンチャントの効果一覧",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:written_book_content": {
+                  "title": "カスタムエンチャント図鑑",
+                  "author": "overlimit",
+                  "generation": 0,
+                  "resolved": true,
+                  "pages": [
+                    {
+                      "raw": [
+                        {
+                          "text": "オーバーリミット\n\n",
+                          "color": "gold",
+                          "bold": true
+                        },
+                        {
+                          "text": "カスタム\nエンチャント図鑑\n\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "装備や本に付いた\n効果の説明です。\n\n水色の名前を押すと\nそのページへ移動します。\n本と羽ペンで複製できます。\n\n"
+                        },
+                        {
+                          "text": "次のページへ »",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 2
+                          },
+                          "hover_event": {
+                            "action": "show_text",
+                            "value": "共通の注意へ"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "共通の注意\n\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "・レベルはすべて 1\n・台・司書には出ません\n・チェスト装備か本で入手\n・装備には消滅の呪い必須\n・ブラッドムーン報酬は\n　カスタム2つ＋消滅の呪い\n\n"
+                        },
+                        {
+                          "text": "武器の目次 »\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 3
+                          },
+                          "hover_event": {
+                            "action": "show_text",
+                            "value": "武器の目次へ"
+                          }
+                        },
+                        {
+                          "text": "防具・ツールの目次 »",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 4
+                          },
+                          "hover_event": {
+                            "action": "show_text",
+                            "value": "防具・ツールの目次へ"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "■ 武器\n\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "アポカリプス\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 5
+                          }
+                        },
+                        {
+                          "text": "ソウルテイカー\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 6
+                          }
+                        },
+                        {
+                          "text": "ヴォイドブレイク\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 7
+                          }
+                        },
+                        {
+                          "text": "超重力\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 8
+                          }
+                        },
+                        {
+                          "text": "サモン（狼）\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 9
+                          }
+                        },
+                        {
+                          "text": "暴食\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 10
+                          }
+                        },
+                        {
+                          "text": "ネクロマンシー\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 11
+                          }
+                        },
+                        {
+                          "text": "インパクト\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 12
+                          }
+                        },
+                        {
+                          "text": "チェインバインド\n\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 13
+                          }
+                        },
+                        {
+                          "text": "防具・ツール »",
+                          "color": "dark_gray",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 4
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "■ 防具\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "絶対領域\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 14
+                          }
+                        },
+                        {
+                          "text": "千里眼\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 15
+                          }
+                        },
+                        {
+                          "text": "スカイウォーク\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 16
+                          }
+                        },
+                        {
+                          "text": "ミダスの食卓\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 17
+                          }
+                        },
+                        {
+                          "text": "■ ツール\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "ハイパーディグ\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 18
+                          }
+                        },
+                        {
+                          "text": "精錬\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 19
+                          }
+                        },
+                        {
+                          "text": "■ エリトラ\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "風の加護\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 20
+                          }
+                        },
+                        {
+                          "text": "■ その他\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "保留中",
+                          "color": "dark_gray",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 21
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "アポカリプス\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "武器  剣・斧・槍\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "直接攻撃すると、\n周囲3ブロックの敵が\n炎上（3秒）し、\n強くノックバックする。\n\nプレイヤーには当たらない。\n毎回発動。\n\n"
+                        },
+                        {
+                          "text": "« 武器の目次",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 3
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "ソウルテイカー\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "武器  剣・斧・槍\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "トドメを刺すと、\n自身の体力をハート3個\n（6）回復する。\n最大体力で打ち切り。\n\n環境死や間接キルでは\n発動しない。\n\n"
+                        },
+                        {
+                          "text": "排他: 暴食\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "« 武器の目次",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 3
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "ヴォイドブレイク\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "武器  剣・斧・槍\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "防具によるダメージ軽減を\n無視して攻撃する。\n\nダメージ軽減エンチャントや\n耐性効果は無視しない。\n\n"
+                        },
+                        {
+                          "text": "« 武器の目次",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 3
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "超重力\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "武器  剣・斧・槍\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "攻撃位置に3秒の\n重力領域を作る。\n半径3の敵を引き寄せて\n拘束する。\n\n同時に1つだけ。\nダメージなし。\nプレイヤーは対象外。\n\n"
+                        },
+                        {
+                          "text": "« 武器の目次",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 3
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "サモン（狼）\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "武器  弓・クロスボウ\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "矢が当たると、その位置に\n従属する強化狼を出す。\nHP40・攻撃8・防御4。\n寿命10秒。同時3体まで。\n（召喚系合計は10）\n\n"
+                        },
+                        {
+                          "text": "« 武器の目次",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 3
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "暴食\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "武器  剣・斧・槍\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "Mobを倒すと満腹度を\n4回復する\n（隠し満腹も付く）。\n満腹20で打ち切り。\n\n動物や中立Mobでも発動。\n\n"
+                        },
+                        {
+                          "text": "排他: ソウルテイカー\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "« 武器の目次",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 3
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "ネクロマンシー\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "武器  剣\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "名前なしの敵を倒すと、\n同種の味方（緑「魂」・\n半分サイズ）が出る。\n10秒で消える。\n\n強化Mob・ボスは対象外。\n召喚系合計10体まで。\n\n"
+                        },
+                        {
+                          "text": "« 武器の目次",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 3
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "インパクト\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "武器  斧\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "斧でMobを殴ると、\nその位置がクリーパー相当の爆発になる。\n地形は壊れない。\n自分は無傷。\n\n至近ダメ約22、半径6。\n再使用まで10秒。\n\n"
+                        },
+                        {
+                          "text": "« 武器の目次",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 3
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "チェインバインド\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "武器  弓・クロスボウ\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "トドメを刺したとき、\n周囲8ブロックの敵を\n3秒間完全に止める。\n\nボスは対象外。\n\n"
+                        },
+                        {
+                          "text": "« 武器の目次",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 3
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "絶対領域\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "防具  チェストプレート\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "近接で殴られたとき、\n周囲3ブロックの敵を\n強くノックバックする。\n\n再使用まで5秒。\n着地できない場所へは\n飛ばさない。\n\n"
+                        },
+                        {
+                          "text": "« 防具の目次",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 4
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "千里眼\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "防具  ヘルメット\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "スニーク中、半径50の\n敵対Mobが発光する。\n\nプレイヤーと中立Mobは\n対象外。\n\n"
+                        },
+                        {
+                          "text": "« 防具の目次",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 4
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "スカイウォーク\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "防具  ブーツ\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "空中でもう一度ジャンプ\n（またはスニーク）すると\n上へ跳ねる。\n着地まで落下ダメ無効。\n\n再使用0.5秒。\n水中・エリトラ中は不可。\n\n"
+                        },
+                        {
+                          "text": "« 防具の目次",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 4
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "ミダスの食卓\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "防具  ヘルメット\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "頭装備中、食べ物を食べると金リンゴと同じ効果\n（衝撃吸収I・2分と\n再生II・5秒）が乗る。\n満腹は食べたもののまま。\n\nポーション・牛乳・\nケーキは対象外。\n\n"
+                        },
+                        {
+                          "text": "« 防具の目次",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 4
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "ハイパーディグ\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "ツール  ツルハシ\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "掘り終わると、中心の\n3×3×3も壊れてドロップ。\n岩盤やチェストなどは除外。\nサバイバルのみ。\n\n"
+                        },
+                        {
+                          "text": "排他: 精錬・シルクタッチ・効率強化\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "« ツールの目次",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 4
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "精錬\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "ツール  ツルハシ\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "鉱石が精錬済みでドロップ。\n幸運は乗ったうえで精錬。\n古代残骸はネザライトの\nスクラップになる。\n\n"
+                        },
+                        {
+                          "text": "排他: ハイパーディグ・シルクタッチ\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "« ツールの目次",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 4
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "風の加護\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "エリトラ\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "滑空中は、ほぼ全ての\nダメージを無効にする。\n地面にいるときは無効。\n\n即死と虚空は通る。\n本から金床で付ける。\n\n"
+                        },
+                        {
+                          "text": "« エリトラの目次",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 4
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "保留中\n\n",
+                          "color": "dark_gray",
+                          "bold": true
+                        },
+                        {
+                          "text": "次の3つは未実装です。入手もできません。\n\n・フェニックスの加護\n・ドッペルゲンガー\n・アストラルフロー\n\n"
+                        },
+                        {
+                          "text": "« 目次",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 4
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -57,17 +57,20 @@ over_limit_pack/
     overlimit/function/…                     … 強化Mob など
     minecraft/loot_table/chests/…            … バニラ＋DnT の minecraft 上書き
     nova_structures/loot_table/chests/…      … DnT チェスト（注入済み）
-  scripts/gen_loot.py                        … 再生成用
+  scripts/gen_loot.py                        … チェスト注入の再生成
+  scripts/gen_enchant_guide.py               … エンチャント図鑑の再生成
   docs/CONTENT.md                            … 仕様
+  docs/enchant_guide.json                    … 図鑑本文（正）
   docs/TESTING.md                            … テスト方法
 ```
 
 ## 再生成
 
-クライアント jar と DnT から対象チェストを取り込み直し、ボーナスプールを注入します。
+クライアント jar と DnT から対象チェストを取り込み直し、ボーナスプールを注入します。図鑑本文は `docs/enchant_guide.json` を直してから図鑑側を回します。
 
 ```bash
 python3 scripts/gen_loot.py
+python3 scripts/gen_enchant_guide.py
 ```
 
 | 環境変数 | 意味 |

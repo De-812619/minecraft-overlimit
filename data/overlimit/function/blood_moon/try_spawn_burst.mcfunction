@@ -24,4 +24,3 @@ execute if score #bm_wave overlimit.const < #bm_spawn_burst overlimit.const posi
 execute if score #bm_wave overlimit.const < #bm_spawn_burst overlimit.const positioned ~-10 ~ ~-10 run function overlimit:blood_moon/burst_fallback
 execute if score #bm_wave overlimit.const < #bm_spawn_burst overlimit.const positioned ~16 ~ ~ run function overlimit:blood_moon/burst_fallback
 execute if score #bm_wave overlimit.const < #bm_spawn_burst overlimit.const positioned ~ ~ ~16 run function overlimit:blood_moon/burst_fallback
-tellraw @s [{"text":"[overlimit] 開始スポーン ","color":"gray"},{"score":{"name":"#bm_wave","objective":"overlimit.const"}},{"text":"体"}]

@@ -155,6 +155,16 @@ execute as @a at @s if dimension overlimit:blood_world run tag @s add overlimit.
 
 ---
 
+## 金床は左スロットの上限超えを切らない
+
+**起きたこと:** 耐久10の装備にエンチャント本を金床で付けると、耐久10のまま残った。`max_level` を上げていないので台・司書はバニラだが、金床は**新たに付ける側**だけ `max_level` で切り、既に付いている上限超えは残す。
+
+**正しい書き方:** 金床後のアイテムは `repair_cost` が **1以上**。`data get` で値を読み、1.. のときだけ `overlimit:cap_vanilla_levels` を掛ける。`if items *[minecraft:repair_cost]` は 0（デフォルト）にも当たり、`/give` やチェスト出しを即上限へ戻してしまう。テスト付与は `/give` ではなく `set_enchantments` のルート（`/function overlimit:enchant/anvil_cap/give_test`）。
+
+**出所:** [Anvil mechanics](https://minecraft.wiki/w/Anvil_mechanics)、[MC-273041](https://bugs.mojang.com/browse/MC-273041)（本を付けるときは上限で切る）。左スロット保持は本パックの金床確認（2026-08-20）。
+
+---
+
 ## ログの場所
 
 | 用途 | パス |

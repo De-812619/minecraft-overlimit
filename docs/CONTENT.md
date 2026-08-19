@@ -212,6 +212,7 @@
 - 対象チェスト／エルダー再生成: `scripts/gen_loot.py`
 - DnT 取得: 既定で Modrinth の v5.3.0 zip（`DNT_PACK` / `DNT_URL` で上書き可）
 - 上限超えエンチャントはルートの `set_enchantments`（`add: false`）でのみ付与する（エンチャント定義の `max_level` は上書きしない → **エンチャント台・司書はバニラのまま**）。例外: `minecraft:efficiency` は `max_level` を変えず、ハイパーディグとの `exclusive_set` だけ足す
+- 金床で合成・修理・改名すると、上限超えの**バニラ**エンチャントは定義の `max_level` に戻る（耐久10→3など）。カスタムエンチャントと消滅の呪いは残る。チェストから出したまま（未金床）は上限超えのまま
 - カスタムエンチャントの金床コスト（`anvil_cost`）は **1**（仮。複数エンチャントの合算でサバイバル上限 40＝「高すぎる！」は残る）
 - 動作確認: `docs/TESTING.md`
 - 検証ワールド反映: `docs/DEPLOY.md`

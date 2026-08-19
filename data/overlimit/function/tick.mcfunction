@@ -42,5 +42,9 @@ execute as @a at @s run function overlimit:enchant/sky_walk/tick_player
 # Hyper dig: pending が空気になったら 3×3（耐久力不発の保険）
 execute as @a run function overlimit:enchant/hyper_dig/tick_player
 
+# 金床結果がカーソル→インベントリへ移る1tick遅れ用
+execute as @a[scores={overlimit.anvil_cap=1..}] run function overlimit:enchant/anvil_cap/apply
+execute as @a[scores={overlimit.anvil_cap=1..}] run scoreboard players remove @s overlimit.anvil_cap 1
+
 # Fabric: schedule が死んでいたら毎tick張り直す
 schedule function overlimit:tick_loop 1t replace

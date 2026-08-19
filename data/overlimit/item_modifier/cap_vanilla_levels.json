@@ -1,0 +1,376 @@
+[
+  {
+    "function": "minecraft:filtered",
+    "item_filter": {
+      "predicates": {
+        "minecraft:enchantments": [
+          {
+            "enchantments": "minecraft:unbreaking",
+            "levels": {
+              "min": 4
+            }
+          }
+        ]
+      }
+    },
+    "on_pass": {
+      "function": "minecraft:set_enchantments",
+      "enchantments": {
+        "minecraft:unbreaking": 3
+      },
+      "add": false
+    }
+  },
+  {
+    "function": "minecraft:filtered",
+    "item_filter": {
+      "predicates": {
+        "minecraft:enchantments": [
+          {
+            "enchantments": "minecraft:sharpness",
+            "levels": {
+              "min": 6
+            }
+          }
+        ]
+      }
+    },
+    "on_pass": {
+      "function": "minecraft:set_enchantments",
+      "enchantments": {
+        "minecraft:sharpness": 5
+      },
+      "add": false
+    }
+  },
+  {
+    "function": "minecraft:filtered",
+    "item_filter": {
+      "predicates": {
+        "minecraft:enchantments": [
+          {
+            "enchantments": "minecraft:power",
+            "levels": {
+              "min": 6
+            }
+          }
+        ]
+      }
+    },
+    "on_pass": {
+      "function": "minecraft:set_enchantments",
+      "enchantments": {
+        "minecraft:power": 5
+      },
+      "add": false
+    }
+  },
+  {
+    "function": "minecraft:filtered",
+    "item_filter": {
+      "predicates": {
+        "minecraft:enchantments": [
+          {
+            "enchantments": "minecraft:aqua_affinity",
+            "levels": {
+              "min": 2
+            }
+          }
+        ]
+      }
+    },
+    "on_pass": {
+      "function": "minecraft:set_enchantments",
+      "enchantments": {
+        "minecraft:aqua_affinity": 1
+      },
+      "add": false
+    }
+  },
+  {
+    "function": "minecraft:filtered",
+    "item_filter": {
+      "predicates": {
+        "minecraft:enchantments": [
+          {
+            "enchantments": "minecraft:efficiency",
+            "levels": {
+              "min": 6
+            }
+          }
+        ]
+      }
+    },
+    "on_pass": {
+      "function": "minecraft:set_enchantments",
+      "enchantments": {
+        "minecraft:efficiency": 5
+      },
+      "add": false
+    }
+  },
+  {
+    "function": "minecraft:filtered",
+    "item_filter": {
+      "predicates": {
+        "minecraft:enchantments": [
+          {
+            "enchantments": "minecraft:fortune",
+            "levels": {
+              "min": 4
+            }
+          }
+        ]
+      }
+    },
+    "on_pass": {
+      "function": "minecraft:set_enchantments",
+      "enchantments": {
+        "minecraft:fortune": 3
+      },
+      "add": false
+    }
+  },
+  {
+    "function": "minecraft:filtered",
+    "item_filter": {
+      "predicates": {
+        "minecraft:enchantments": [
+          {
+            "enchantments": "minecraft:luck_of_the_sea",
+            "levels": {
+              "min": 4
+            }
+          }
+        ]
+      }
+    },
+    "on_pass": {
+      "function": "minecraft:set_enchantments",
+      "enchantments": {
+        "minecraft:luck_of_the_sea": 3
+      },
+      "add": false
+    }
+  },
+  {
+    "function": "minecraft:filtered",
+    "item_filter": {
+      "predicates": {
+        "minecraft:enchantments": [
+          {
+            "enchantments": "minecraft:lure",
+            "levels": {
+              "min": 4
+            }
+          }
+        ]
+      }
+    },
+    "on_pass": {
+      "function": "minecraft:set_enchantments",
+      "enchantments": {
+        "minecraft:lure": 3
+      },
+      "add": false
+    }
+  },
+  {
+    "function": "minecraft:filtered",
+    "item_filter": {
+      "predicates": {
+        "minecraft:enchantments": [
+          {
+            "enchantments": "minecraft:lunge",
+            "levels": {
+              "min": 4
+            }
+          }
+        ]
+      }
+    },
+    "on_pass": {
+      "function": "minecraft:set_enchantments",
+      "enchantments": {
+        "minecraft:lunge": 3
+      },
+      "add": false
+    }
+  },
+  {
+    "function": "minecraft:filtered",
+    "item_filter": {
+      "predicates": {
+        "minecraft:enchantments": [
+          {
+            "enchantments": "minecraft:protection",
+            "levels": {
+              "min": 5
+            }
+          }
+        ]
+      }
+    },
+    "on_pass": {
+      "function": "minecraft:set_enchantments",
+      "enchantments": {
+        "minecraft:protection": 4
+      },
+      "add": false
+    }
+  },
+  {
+    "function": "minecraft:filtered",
+    "item_filter": {
+      "predicates": {
+        "minecraft:enchantments": [
+          {
+            "enchantments": "minecraft:feather_falling",
+            "levels": {
+              "min": 5
+            }
+          }
+        ]
+      }
+    },
+    "on_pass": {
+      "function": "minecraft:set_enchantments",
+      "enchantments": {
+        "minecraft:feather_falling": 4
+      },
+      "add": false
+    }
+  },
+  {
+    "function": "minecraft:filtered",
+    "item_filter": {
+      "predicates": {
+        "minecraft:enchantments": [
+          {
+            "enchantments": "minecraft:multishot",
+            "levels": {
+              "min": 2
+            }
+          }
+        ]
+      }
+    },
+    "on_pass": {
+      "function": "minecraft:set_enchantments",
+      "enchantments": {
+        "minecraft:multishot": 1
+      },
+      "add": false
+    }
+  },
+  {
+    "function": "minecraft:filtered",
+    "item_filter": {
+      "predicates": {
+        "minecraft:enchantments": [
+          {
+            "enchantments": "minecraft:quick_charge",
+            "levels": {
+              "min": 4
+            }
+          }
+        ]
+      }
+    },
+    "on_pass": {
+      "function": "minecraft:set_enchantments",
+      "enchantments": {
+        "minecraft:quick_charge": 3
+      },
+      "add": false
+    }
+  },
+  {
+    "function": "minecraft:filtered",
+    "item_filter": {
+      "predicates": {
+        "minecraft:enchantments": [
+          {
+            "enchantments": "minecraft:punch",
+            "levels": {
+              "min": 3
+            }
+          }
+        ]
+      }
+    },
+    "on_pass": {
+      "function": "minecraft:set_enchantments",
+      "enchantments": {
+        "minecraft:punch": 2
+      },
+      "add": false
+    }
+  },
+  {
+    "function": "minecraft:filtered",
+    "item_filter": {
+      "predicates": {
+        "minecraft:enchantments": [
+          {
+            "enchantments": "minecraft:respiration",
+            "levels": {
+              "min": 4
+            }
+          }
+        ]
+      }
+    },
+    "on_pass": {
+      "function": "minecraft:set_enchantments",
+      "enchantments": {
+        "minecraft:respiration": 3
+      },
+      "add": false
+    }
+  },
+  {
+    "function": "minecraft:filtered",
+    "item_filter": {
+      "predicates": {
+        "minecraft:enchantments": [
+          {
+            "enchantments": "minecraft:sweeping_edge",
+            "levels": {
+              "min": 4
+            }
+          }
+        ]
+      }
+    },
+    "on_pass": {
+      "function": "minecraft:set_enchantments",
+      "enchantments": {
+        "minecraft:sweeping_edge": 3
+      },
+      "add": false
+    }
+  },
+  {
+    "function": "minecraft:filtered",
+    "item_filter": {
+      "predicates": {
+        "minecraft:enchantments": [
+          {
+            "enchantments": "minecraft:thorns",
+            "levels": {
+              "min": 4
+            }
+          }
+        ]
+      }
+    },
+    "on_pass": {
+      "function": "minecraft:set_enchantments",
+      "enchantments": {
+        "minecraft:thorns": 3
+      },
+      "add": false
+    }
+  }
+]

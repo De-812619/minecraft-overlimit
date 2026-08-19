@@ -51,6 +51,7 @@ execute unless score #bw_ended_day overlimit.const matches -1.. run scoreboard p
 execute unless score #bw_clock overlimit.const matches 0.. run scoreboard players set #bw_clock overlimit.const 0
 execute in overlimit:blood_world run time of overlimit:blood_world pause
 scoreboard players set #bw_clock overlimit.const 0
+scoreboard objectives add overlimit.anvil_cap dummy
 scoreboard objectives add overlimit.portal_cd dummy
 scoreboard objectives add overlimit.portal_wait dummy
 scoreboard objectives add overlimit.portal_charge dummy
@@ -84,6 +85,7 @@ team modify overlimit collisionRule pushOwnTeam
 advancement revoke @a only overlimit:enchant/on_kill
 advancement revoke @a only overlimit:enchant/hyper_dig_mine
 advancement revoke @a only overlimit:enchant/midas_table_eat
+advancement revoke @a only overlimit:enchant/anvil_cap
 advancement revoke @a only overlimit:blood_moon/on_kill
 advancement revoke @a only overlimit:portal/light
 

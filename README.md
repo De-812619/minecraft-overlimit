@@ -60,6 +60,8 @@ over_limit_pack/
   scripts/gen_loot.py                        … チェスト注入の再生成
   scripts/gen_enchant_guide.py               … エンチャント図鑑の再生成
   docs/CONTENT.md                            … 仕様
+  docs/BLOOD_MOON.md                         … ブラッドムーン
+  docs/BLOOD_WORLD.md                        … ブラッドワールド
   docs/enchant_guide.json                    … 図鑑本文（正）
   docs/TESTING.md                            … テスト方法
 ```
@@ -71,6 +73,7 @@ over_limit_pack/
 ```bash
 python3 scripts/gen_loot.py
 python3 scripts/gen_enchant_guide.py
+python3 scripts/gen_blood_world_worldgen.py
 ```
 
 | 環境変数 | 意味 |

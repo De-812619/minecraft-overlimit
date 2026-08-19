@@ -1,0 +1,1 @@
+execute as @e[type=#overlimit:can_be_danger,tag=!overlimit.elite,tag=!overlimit.summon,tag=!overlimit.necro] unless data entity @s CustomName at @s if predicate overlimit:in_blood_world if entity @a[tag=overlimit.in_bw,gamemode=!spectator,distance=..32] run function overlimit:mob/scan_blood_moon

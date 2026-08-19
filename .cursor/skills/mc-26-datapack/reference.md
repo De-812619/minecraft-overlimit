@@ -101,6 +101,34 @@ data modify entity @s CustomName set value {"text":"WARNING","color":"gold","bol
 
 ---
 
+## カスタムディメンションに別シードは無い
+
+**起きたこと:** ブラッドワールドがオーバーワールドと同じ地形・同じ座標になった。
+
+**正しい書き方:** 1.19 で noise generator の `seed` は削除され、全ディメンションがワールドシードを使う。別地点に見せるには `shifted_noise` の `shift_x` / `shift_z` に定数を足す（`overlimit:shift_x` / `overlimit:shift_z`）。既存チャンクは残るので、作り直すなら `dimensions/overlimit/blood_world` を消す。
+
+**出所:** [Custom dimension](https://minecraft.wiki/w/Custom_dimension)（1.19 / 22w11a で seed 削除）、本パックの `scripts/gen_blood_world_worldgen.py`
+
+---
+
+## ブラッドゲートにネザーポータル実ブロックを使わない
+
+**起きたこと:** ゲートを `nether_portal` で埋めると、バニラのネザー転送と混ざる（OW→BW→ネザー→BW になり OW に帰れない）。
+
+**正しい書き方:** 内側は空気。見た目は `block_display` の `nether_portal`。当たり判定は Marker の `dx/dy/dz`。転送は約80tick溜めて `nausea` ＋ `block.portal.trigger`（実ブロックのネザー転送は使わない）。
+
+**出所:** 本パックのポータル検証（2026-08-19）。[Display](https://minecraft.wiki/w/Display) の block_display はネザーポータルを描画できる。
+
+---
+
+## 海面を陸地と誤認しない
+
+`world_surface` は水面も拾う。`ocean_floor` との Y 差が2以上、または水ブロックなら陸地ではない。
+
+**出所:** [Commands/execute](https://minecraft.wiki/w/Commands/execute) `positioned over` の heightmap。
+
+---
+
 ## ログの場所
 
 | 用途 | パス |

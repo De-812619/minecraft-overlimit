@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:in_overworld",
+    "overlimit:blood_world_fog"
+  ]
+}

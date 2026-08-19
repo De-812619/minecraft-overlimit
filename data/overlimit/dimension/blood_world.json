@@ -1,0 +1,11 @@
+{
+  "type": "overlimit:blood_world",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "preset": "minecraft:overworld"
+    },
+    "settings": "overlimit:blood_world"
+  }
+}

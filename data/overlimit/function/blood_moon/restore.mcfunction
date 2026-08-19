@@ -1,6 +1,7 @@
 # /reload 中にイベントが続いていた場合の霧・ボスバー復旧
 function overlimit:blood_moon/fog_on
 function overlimit:blood_moon/spawn_monsters_off
+execute in minecraft:overworld run weather clear 14000
 function overlimit:blood_moon/read_time
 function overlimit:blood_moon/bossbar_name
 function overlimit:blood_moon/bossbar_value

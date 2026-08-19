@@ -126,9 +126,9 @@ Minecraft Java **26.2** / pack format **107.1**・**データパックのみ**�
 
 ### D10. 対象ディメンション
 
-- [x] **決定:** オーバーワールドのみ
+- [x] **決定:** 抽選イベントはオーバーワールドのみ。ブラッドワールドは別インスタンス（[BLOOD_WORLD.md](./BLOOD_WORLD.md)）
 
-霧・強化100%・ボスバー・睡眠禁止・撃破カウント・報酬配布はオーバーワールド。ネザー／エンドにいるプレイヤーにはイベントをかけない（ネザーにネザー霧を重ねない、エンドのシュルカーを全強化しない）。
+霧・強化100%・ボスバー・睡眠禁止・撃破カウント・報酬配布は、抽選イベントではオーバーワールド。ネザー／エンドにいるプレイヤーにはイベントをかけない（ネザーにネザー霧を重ねない、エンドのシュルカーを全強化しない）。
 
 ### D11. 100%強化の除外（負荷）
 
@@ -178,7 +178,7 @@ Minecraft Java **26.2** / pack format **107.1**・**データパックのみ**�
 
 1. 毎日、夕方帯に入った最初の tick で「今日は判定日か」を見る（`day % 3 == 2`）
 2. 判定日なら現在確率を1回だけ振る（初期 30%）。成功で開始、失敗でその日は何もしない（次回+20%、上限100%）
-3. 開始時: ボスバー表示、霧ON、睡眠禁止、強化ロール切替、撃破カウンタ 0、次回確率を 30% に戻す、追加スポーン開始
+3. 開始時: ボスバー表示、霧ON、**天気を晴れ**、睡眠禁止、強化ロール切替、撃破カウンタ 0、次回確率を 30% に戻す、追加スポーン開始
 
 強制開始コマンドは実装時にテスト用へ足す（[TESTING.md](./TESTING.md) に追記予定）。
 
@@ -268,7 +268,7 @@ Minecraft Java **26.2** / pack format **107.1**・**データパックのみ**�
 ## 技術メモ（実装時）
 
 - 名前空間: `overlimit`
-- tick: `overlimit:tick` から `execute in minecraft:overworld run function overlimit:blood_moon/tick`
+- tick: `overlimit:tick` から `execute in minecraft:overworld run function overlimit:blood_moon/tick`（ブラッドワールドは `overlimit:blood_world/tick`）
 - 追加スポーン: 開始は `spawn_burst` が各プレイヤーへ12/16の高さマップ地表へ最大10体を `/summon`（プレイヤー Y ±4 のみ）。補充は4秒ごと最大2体。補充前に `cull_far`（25マス／高さ±8の外のイベント敵を撃破点なしで消す）。光源は `#overlimit:spawn_lights`。強化は `scan_blood_moon` 直呼び。発生中は `minecraft:spawn_monsters false`。Peaceful判定は `difficulty` の store
 - 強化分岐: `overlimit:mob/scan` → イベント中かつオーバーワールドなら `scan_blood_moon`（スポナー付近・試練の間は `scan_normal`）
 - 撃破: `player_killed_entity`（条件なし）と XP Marker の死亡tick。CRISIS は Marker の `xp_crisis` で+3。ボスバー名はマクロで数字を毎tick書き直す。終了時の一括キルは Marker を先に消すので入らない
@@ -296,6 +296,7 @@ Minecraft Java **26.2** / pack format **107.1**・**データパックのみ**�
 
 - 霧はカメラ位置のバイオームと補間される。洞窟と地上で濃さが少し違うことがある
 - 水中は `visual/water_fog_*` が別。地上用だけ変えると水中はバニラのまま（必要なら N を足す）
+- 開始時に `weather clear 14000` する。その間は手の `/weather rain` がすぐ戻る（または効かないように見える）。ブラッドワールドは毎tick clear。検証の仕方は [BLOOD_WORLD.md](./BLOOD_WORLD.md) の改善・確認点
 - `doDaylightCycle false` / `advance_time false` だと発生も朝終了もしない
 - Peaceful だと撃破クリアはほぼ不可能で、朝終了のみ
 - 名前付き強化は自然デスポーンせずバニラのモブキャップを埋める。追加スポーン（D12）は `/summon` なのでキャップを通らない。同時生存は N25 / N26 で抑える

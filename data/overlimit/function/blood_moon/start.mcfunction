@@ -3,6 +3,7 @@ scoreboard players set #bm_kills overlimit.const 0
 scoreboard players operation #bm_chance overlimit.const = #bm_chance_base overlimit.const
 
 function overlimit:blood_moon/fog_on
+execute in minecraft:overworld run weather clear 14000
 function overlimit:blood_moon/read_time
 function overlimit:blood_moon/bossbar_name
 function overlimit:blood_moon/bossbar_value

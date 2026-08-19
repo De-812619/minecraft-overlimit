@@ -1,0 +1,28 @@
+{
+  "criteria": {
+    "light": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": "minecraft:crying_obsidian"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "minecraft:flint_and_steel"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "overlimit:portal/on_flint"
+  }
+}

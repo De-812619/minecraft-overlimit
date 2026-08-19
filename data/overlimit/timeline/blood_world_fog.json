@@ -1,0 +1,90 @@
+{
+  "clock": "overlimit:blood_moon",
+  "period_ticks": 2,
+  "tracks": {
+    "minecraft:visual/fog_color": {
+      "ease": "constant",
+      "modifier": "alpha_blend",
+      "keyframes": [
+        {
+          "ticks": 0,
+          "value": "#ff3a1818"
+        },
+        {
+          "ticks": 1,
+          "value": "#ff3a1818"
+        }
+      ]
+    },
+    "minecraft:visual/sky_color": {
+      "ease": "constant",
+      "modifier": "alpha_blend",
+      "keyframes": [
+        {
+          "ticks": 0,
+          "value": "#ff181010"
+        },
+        {
+          "ticks": 1,
+          "value": "#ff181010"
+        }
+      ]
+    },
+    "minecraft:visual/sky_light_factor": {
+      "ease": "constant",
+      "modifier": "maximum",
+      "keyframes": [
+        {
+          "ticks": 0,
+          "value": 0.5
+        },
+        {
+          "ticks": 1,
+          "value": 0.5
+        }
+      ]
+    },
+    "minecraft:visual/fog_start_distance": {
+      "ease": "constant",
+      "modifier": "add",
+      "keyframes": [
+        {
+          "ticks": 0,
+          "value": 10.0
+        },
+        {
+          "ticks": 1,
+          "value": 10.0
+        }
+      ]
+    },
+    "minecraft:visual/fog_end_distance": {
+      "ease": "constant",
+      "modifier": "minimum",
+      "keyframes": [
+        {
+          "ticks": 0,
+          "value": 96.0
+        },
+        {
+          "ticks": 1,
+          "value": 96.0
+        }
+      ]
+    },
+    "minecraft:visual/sky_fog_end_distance": {
+      "ease": "constant",
+      "modifier": "minimum",
+      "keyframes": [
+        {
+          "ticks": 0,
+          "value": 96.0
+        },
+        {
+          "ticks": 1,
+          "value": 96.0
+        }
+      ]
+    }
+  }
+}

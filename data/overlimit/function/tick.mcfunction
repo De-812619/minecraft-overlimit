@@ -2,7 +2,7 @@ execute as @e[type=#overlimit:can_be_danger,tag=!overlimit.scanned] at @s run fu
 execute as @e[type=minecraft:marker,tag=overlimit.elite_xp] at @s run function overlimit:mob/xp_marker_tick
 execute as @e[type=minecraft:marker,tag=overlimit.danger_xp,tag=!overlimit.elite_xp] at @s run function overlimit:mob/xp_marker_tick
 tag @a remove overlimit.in_bw
-execute in overlimit:blood_world as @a run tag @s add overlimit.in_bw
+execute as @a at @s if dimension overlimit:blood_world run tag @s add overlimit.in_bw
 function overlimit:portal/tick
 execute in minecraft:overworld run function overlimit:blood_moon/tick
 execute in overlimit:blood_world run function overlimit:blood_world/tick

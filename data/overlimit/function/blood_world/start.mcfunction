@@ -2,7 +2,7 @@ scoreboard players set #bw_active overlimit.const 1
 scoreboard players set #bw_kills overlimit.const 0
 
 function overlimit:blood_world/fog_on
-function overlimit:blood_moon/read_time
+function overlimit:blood_world/read_time
 function overlimit:blood_world/bossbar_name
 function overlimit:blood_world/bossbar_value
 

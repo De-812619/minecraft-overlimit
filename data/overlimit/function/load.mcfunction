@@ -48,6 +48,9 @@ execute unless score #bw_active overlimit.const matches 0.. run scoreboard playe
 execute unless score #bw_kills overlimit.const matches 0.. run scoreboard players set #bw_kills overlimit.const 0
 execute unless score #bw_spawn_t overlimit.const matches 0.. run scoreboard players set #bw_spawn_t overlimit.const 0
 execute unless score #bw_ended_day overlimit.const matches -1.. run scoreboard players set #bw_ended_day overlimit.const -1
+execute unless score #bw_clock overlimit.const matches 0.. run scoreboard players set #bw_clock overlimit.const 0
+execute in overlimit:blood_world run time of overlimit:blood_world pause
+scoreboard players set #bw_clock overlimit.const 0
 scoreboard objectives add overlimit.portal_cd dummy
 scoreboard objectives add overlimit.portal_wait dummy
 scoreboard objectives add overlimit.portal_charge dummy

@@ -22,7 +22,8 @@ Minecraft Java **26.2** / pack format **107.1**・**データパックのみ**�
 - 地形・バイオームはオーバーワールドと同系統だが、**同じ座標のコピーにはしない**（ノイズをずらす。バニラはディメンション別シードを1.19で廃止したため）
 - **常時**ブラッドムーンと同じ赤い霧（ディメンション属性。イベントの睡眠禁止とは独立）
 - **常時晴れ**（雨・雷は出さない。霧と重なると暗すぎる）
-- 時計はオーバーワールドと独立。入場では時刻を変えない
+- 時計はオーバーワールドと独立（`overlimit:blood_world`）。入場では時刻を変えない
+- **誰もいない間は時計を止める**（ネザー／エンドでチャンクが動かないのと同じ目的）。スペクテイター含む誰かが入ったら再開する
 - ネザー／エンドポータルはバニラどおり（このポータルでは奪わない）
 
 ### イベント
@@ -34,7 +35,7 @@ Minecraft Java **26.2** / pack format **107.1**・**データパックのみ**�
 - イベント中もポータルで帰れる
 - 最後の1人（スペクテイター以外）が出たら終了。朝終了と同じで報酬なし
 - 同じ夜に空終了／撃破／朝したあと、再入場してもその夜は再開しない
-- 報酬は終了時に **ブラッドワールドにいる** オンライン全員へ（本の中身はオーバーワールドと同じルート）
+- 報酬は終了時に **ブラッドワールドにいる** オンライン全員の近くへチェスト（本の中身はオーバーワールドと同じルート）。死亡位置にも出る（リスポーンがオーバーワールドなら取りに戻る）
 - 死亡: こちらでベッドを使っていなければオーバーワールドのスポーンへ（バニラ）
 - オーバーワールドの抽選イベントと同時に起きてよい（フラグ・撃破・ボスバー・霧時計は別）
 
@@ -62,7 +63,18 @@ Minecraft Java **26.2** / pack format **107.1**・**データパックのみ**�
 
 **原因:** 遠距離間引き `cull_one` が `@a[predicate=overlimit:in_blood_world,...]` でプレイヤーを探していた。マルチサーバーでは **プレイヤーがいるのに predicate だけヒットせず**、全イベント敵が「25マス以内に誰もいない」と判定されていた。
 
-**対応:** `overlimit:tick` で毎tick `execute in overlimit:blood_world as @a run tag @s add overlimit.in_bw`。開始・スポーン・`cull_one`・ボスバー・通知は `@a[tag=overlimit.in_bw,...]` を使う。`predicate=in_blood_world` は Mob 側のディメンション判定など、プレイヤー選択以外に残す。
+**対応:** 毎tick `as @a at @s if dimension overlimit:blood_world` で `overlimit.in_bw` を付け直す。開始・スポーン・`cull_one`・ボスバー・通知は `@a[tag=overlimit.in_bw,...]` を使う。`predicate=in_blood_world` は Mob 側のディメンション判定など、プレイヤー選択以外に残す。
+
+### 無人なのにブラッドワールド側も発生した（2026-08）
+
+**症状:** 全員がオーバーワールドにいる夜、オーバーワールドの抽選と同時にブラッドワールドのブラッドムーンも始まった（ボスバー・開始メッセージ）。
+
+**原因:**
+1. `execute in overlimit:blood_world as @a` が全プレイヤーに `in_bw` を付け、開始判定が「BWに誰かいる」と誤認した
+2. `default_clock` が `minecraft:overworld` で、夜判定もオーバーワールドと同期していた
+3. 霧時計 `overlimit:blood_moon` を BW の fog_on/off が共有しており、OW 側の霧も巻き込まれた
+
+**対応:** タグは `if dimension`。専用時計 `overlimit:blood_world`（無人時 pause）。霧は `overlimit:blood_world_fog`。昼夜タイムラインはバニラ `day`/`moon` を BW 時計へ複製。
 
 ---
 
@@ -79,13 +91,15 @@ Minecraft Java **26.2** / pack format **107.1**・**データパックのみ**�
 ## 技術メモ
 
 - tick: `overlimit:tick` で `overlimit.in_bw` を付け直してから `execute in overlimit:blood_world run function overlimit:blood_world/tick`
-- プレイヤー（BW内）: タグ `overlimit.in_bw`（毎tick。マルチの間引き・スポーン・ボスバー用。`predicate=in_blood_world` の `@a[...]` セレクタは使わない）
-- フラグ: `#bw_active` / `#bw_kills` / `#bw_ended_day` / `#bw_spawn_t`
+- プレイヤー（BW内）: タグ `overlimit.in_bw`（毎tick。`as @a at @s if dimension overlimit:blood_world`。`execute in ... as @a` は全プレイヤーに付くので使わない）
+- フラグ: `#bw_active` / `#bw_kills` / `#bw_ended_day` / `#bw_spawn_t` / `#bw_clock`（1=時刻進行）
+- 時刻: `overlimit:blood_world` 時計。`#bw_tod` / `#bw_daynow`。無人なら `time of overlimit:blood_world pause`
 - ボスバー: `overlimit:blood_world`
-- 霧: `overlimit:blood_world_fog` タイムライン（ブラッドムーンと同じ色・距離。Clock 0/1 どちらでも ON）。睡眠禁止は従来どおりイベント用 Clock
+- 霧: `overlimit:blood_world_fog` タイムライン＋同名 World Clock（ブラッドムーンと同じ色・距離。Clock 0/1 どちらでも ON）。オーバーワールドのイベント霧時計 `overlimit:blood_moon` とは別。睡眠禁止はイベント中の起こし処理
 - 到着の陸地探索: `forceload` はブロック座標で半径 192。探索は最大 160。設置は `motion_blocking_no_leaves`。帰りは `owx/y/z`
 - 地形: `overlimit:blood_world` noise_settings（`shift_x/z` に定数を足してワールドシードの別地点を使う）。再生成は `python3 scripts/gen_blood_world_worldgen.py`
 - 既存ワールドで地形をやり直すときは、ワールドを閉じ、`saves/<ワールド>/dimensions/overlimit/blood_world` を消して入り直す
 - 強化スキャン: `overlimit:mob/scan` が `#bw_active` かつ `overlimit:in_blood_world` なら `scan_blood_moon`
+- 報酬: クリア時 `place_reward`。隣の空気マスへ名前付きチェスト＋本。同じマスの2人は1つのチェストに2冊
 - 強制入場: `/function overlimit:blood_world/force_enter`
 - 強制開始: `/function overlimit:blood_world/force_start`

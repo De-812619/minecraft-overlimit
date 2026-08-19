@@ -1,6 +1,6 @@
 # /reload 中にイベントが続いていた場合の霧・ボスバー復旧
 function overlimit:blood_world/fog_on
-execute in overlimit:blood_world run function overlimit:blood_moon/read_time
+execute in overlimit:blood_world run function overlimit:blood_world/read_time
 function overlimit:blood_world/bossbar_name
 function overlimit:blood_world/bossbar_value
 bossbar set overlimit:blood_world color red

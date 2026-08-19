@@ -121,6 +121,32 @@ data modify entity @s CustomName set value {"text":"WARNING","color":"gold","bol
 
 ---
 
+## `execute in <dim> as @a` はディメンションで絞らない
+
+**起きたこと:** `execute in overlimit:blood_world as @a run tag @s add overlimit.in_bw` が **全プレイヤー** にタグを付けた。オーバーワールドに全員いてもブラッドワールドのブラッドムーンが始まり、ボスバー／開始メッセージも全員に出た。
+
+`in` は実行ディメンションを変えるだけ。`@a` は全ディメンションのプレイヤーを選ぶ。
+
+**正しい書き方:**
+
+```
+execute as @a at @s if dimension overlimit:blood_world run tag @s add overlimit.in_bw
+```
+
+**出所:** [Commands/execute](https://minecraft.wiki/w/Commands/execute) の `in` / `if dimension`。本パックの同時発生調査（2026-08-19）。
+
+---
+
+## クリア報酬はインベントリに入れない
+
+**起きたこと:** 100体クリア直前の死亡で、死亡した側も生存側も本が無かった。死亡画面への `loot give` はリスポーンで消える（消滅の呪い付き）。生存側も `if dimension` / `Health` 判定で取りこぼしうる。
+
+**正しい書き方:** 終了時にそのディメンションにいる `@a` の隣マスへチェストを置き `loot insert`。足元は踏まない。既に報酬チェストがあるマスは本を足す。置けなければ `loot spawn`。
+
+**出所:** 本パックのクリア報酬調査（2026-08-19）。[Commands/loot](https://minecraft.wiki/w/Commands/loot) の `insert` / `spawn`。
+
+---
+
 ## 海面を陸地と誤認しない
 
 `world_surface` は水面も拾う。`ocean_floor` との Y 差が2以上、または水ブロックなら陸地ではない。

@@ -1,7 +1,9 @@
 {
   "replace": false,
   "values": [
-    "#minecraft:in_overworld",
+    "#minecraft:universal",
+    "overlimit:blood_world_day",
+    "overlimit:blood_world_moon",
     "overlimit:blood_world_fog"
   ]
 }

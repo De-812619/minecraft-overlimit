@@ -1,5 +1,5 @@
 {
-  "clock": "overlimit:blood_moon",
+  "clock": "overlimit:blood_world_fog",
   "period_ticks": 2,
   "tracks": {
     "minecraft:visual/fog_color": {

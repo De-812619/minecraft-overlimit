@@ -9,7 +9,7 @@ Minecraft Java **26.2** / pack format **107.1**・**データパックのみ**�
 
 ## 現状サマリ
 
-オーバーワールドと同地形のカスタムディメンション。夜になると抽選なしでブラッドムーンが始まる。泣く黒曜石のポータルで往復する。オーバーワールドの抽選イベントとは独立。
+オーバーワールドと同系統のカスタムディメンション。砂漠・ジャングル・沼・悪地の気候帯はネザーバイオームになり、ネザー要塞とバストリオン（開始高さ Y=50）が生成される。夜になると抽選なしでブラッドムーンが始まる。泣く黒曜石のポータルで往復する。オーバーワールドの抽選イベントとは独立。
 
 ---
 
@@ -20,6 +20,9 @@ Minecraft Java **26.2** / pack format **107.1**・**データパックのみ**�
 - 名称: ブラッドワールド
 - ID: `overlimit:blood_world`
 - 地形・バイオームはオーバーワールドと同系統だが、**同じ座標のコピーにはしない**（ノイズをずらす。バニラはディメンション別シードを1.19で廃止したため）
+- 砂漠・ジャングル・沼・悪地の気候はネザーバイオーム（ネザー地形が混ざる）。バニラのネザーは変えない
+- ネザー要塞（`overlimit:fortress`）とバストリオン（`overlimit:bastion_remnant`、開始高さ **Y=50**）を生成する
+- ピグリンはゾンビ化しない。ブラッドワールド内では常に WARNING / DANGER / CRISIS。イベント中に強化した個体だけ撃破点に入る
 - **常時**ブラッドムーンと同じ赤い霧（ディメンション属性。イベントの睡眠禁止とは独立）
 - **常時晴れ**（雨・雷は出さない。霧と重なると暗すぎる）
 - 時計はオーバーワールドと独立（`overlimit:blood_world`）。入場では時刻を変えない
@@ -97,7 +100,8 @@ Minecraft Java **26.2** / pack format **107.1**・**データパックのみ**�
 - ボスバー: `overlimit:blood_world`
 - 霧: `overlimit:blood_world_fog` タイムライン＋同名 World Clock（ブラッドムーンと同じ色・距離。Clock 0/1 どちらでも ON）。オーバーワールドのイベント霧時計 `overlimit:blood_moon` とは別。睡眠禁止はイベント中の起こし処理
 - 到着の陸地探索: `forceload` はブロック座標で半径 192。探索は最大 160。設置は `motion_blocking_no_leaves`。帰りは `owx/y/z`
-- 地形: `overlimit:blood_world` noise_settings（`shift_x/z` に定数を足してワールドシードの別地点を使う）。再生成は `python3 scripts/gen_blood_world_worldgen.py`
+- 地形: `overlimit:blood_world` noise_settings（`shift_x/z` に定数を足してワールドシードの別地点を使う）。バイオーム源はオーバーワールド気候＋ネザー置換。再生成は `python3 scripts/gen_blood_world_worldgen.py`
+- ネザー構造物: 専用バイオーム（`overlimit:nether_wastes` 等）と `overlimit:nether_complexes`。バニラのネザー要塞／バストリオンタグは触らない（本ネザーに出ない）
 - 既存ワールドで地形をやり直すときは、ワールドを閉じ、`saves/<ワールド>/dimensions/overlimit/blood_world` を消して入り直す
 - 強化スキャン: `overlimit:mob/scan` が `#bw_active` かつ `overlimit:in_blood_world` なら `scan_blood_moon`
 - 報酬: クリア時 `place_reward`。隣の空気マスへ名前付きチェスト＋本。同じマスの2人は1つのチェストに2冊

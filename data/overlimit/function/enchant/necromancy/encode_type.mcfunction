@@ -18,6 +18,7 @@ execute if entity @s[type=minecraft:illusioner] run scoreboard players set #necr
 execute if entity @s[type=minecraft:magma_cube] run scoreboard players set #necro_type overlimit.const 16
 execute if entity @s[type=minecraft:parched] run scoreboard players set #necro_type overlimit.const 17
 execute if entity @s[type=minecraft:phantom] run scoreboard players set #necro_type overlimit.const 18
+execute if entity @s[type=minecraft:piglin] run scoreboard players set #necro_type overlimit.const 36
 execute if entity @s[type=minecraft:piglin_brute] run scoreboard players set #necro_type overlimit.const 19
 execute if entity @s[type=minecraft:pillager] run scoreboard players set #necro_type overlimit.const 20
 execute if entity @s[type=minecraft:ravager] run scoreboard players set #necro_type overlimit.const 21

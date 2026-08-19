@@ -316,9 +316,21 @@ XP の確認（見た目では分かりにくい。`/kill` では経験値が落
 /function overlimit:blood_world/force_end
 ```
 
+ネザー構造物（未生成チャンク、または地形データを消して入り直したあと）:
+
+```mcfunction
+/execute in overlimit:blood_world run locate structure overlimit:bastion_remnant
+```
+
+```mcfunction
+/execute in overlimit:blood_world run locate structure overlimit:fortress
+```
+
 確認すること:
 
-- 地形がオーバーワールドと同系統（洞窟あり）
+- 地形がオーバーワールドと同系統（洞窟あり）。砂漠・ジャングル・沼・悪地あたりはネザーバイオーム
+- バストリオンの開始高さは Y=50。ピグリンはゾンビ化せず、WARNING / DANGER / CRISIS になる
+- 本ネザーの要塞・バストリオンは今までどおり
 - 入場した時点で赤い霧（イベントと同じ見た目）。昼でも消えない。睡眠不可はイベント中のみ。**天気は常に晴れ**
 - 夜になると抽選なしでブラッドムーン（ボスバー・睡眠不可）
 - **全員がオーバーワールドにいる夜**は、ブラッドワールド側は始まらない（ボスバーも出ない）

@@ -34,6 +34,7 @@ execute if score #necro_type overlimit.const matches 32 run summon minecraft:zog
 execute if score #necro_type overlimit.const matches 33 run summon minecraft:zombie ~ ~ ~ {Tags:["overlimit.summon","overlimit.necro","overlimit.necro_new"],PersistenceRequired:1b}
 execute if score #necro_type overlimit.const matches 34 run summon minecraft:zombie_villager ~ ~ ~ {Tags:["overlimit.summon","overlimit.necro","overlimit.necro_new"],PersistenceRequired:1b}
 execute if score #necro_type overlimit.const matches 35 run summon minecraft:zombified_piglin ~ ~ ~ {Tags:["overlimit.summon","overlimit.necro","overlimit.necro_new"],PersistenceRequired:1b}
+execute if score #necro_type overlimit.const matches 36 run summon minecraft:piglin ~ ~ ~ {Tags:["overlimit.summon","overlimit.necro","overlimit.necro_new"],PersistenceRequired:1b}
 
 execute as @e[tag=overlimit.necro_new,limit=1,sort=nearest] run function overlimit:enchant/necromancy/init
 playsound minecraft:entity.zombie_villager.converted hostile @a ~ ~ ~ 0.7 1.2

@@ -111,6 +111,14 @@ data modify entity @s CustomName set value {"text":"WARNING","color":"gold","bol
 
 ---
 
+## 構造物のバイオームタグはディメンションを見ない
+
+要塞・バストリオンは `has_structure/*` のバイオームに出る。タグにバニラのネザーバイオームを足すと本ネザーにも出る。ブラッドワールドだけ変えるなら専用バイオーム＋専用 structure set。バストリオンの高さは `start_height.absolute`（本パックは 50）。
+
+**出所:** [Custom dimension](https://minecraft.wiki/w/Custom_dimension)、バニラ `worldgen/structure/bastion_remnant.json`（26.2 jar）
+
+---
+
 ## ブラッドゲートにネザーポータル実ブロックを使わない
 
 **起きたこと:** ゲートを `nether_portal` で埋めると、バニラのネザー転送と混ざる（OW→BW→ネザー→BW になり OW に帰れない）。

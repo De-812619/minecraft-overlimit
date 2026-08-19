@@ -17,6 +17,7 @@ execute if entity @s[type=minecraft:illusioner] run summon minecraft:illusioner 
 execute if entity @s[type=minecraft:magma_cube] run summon minecraft:magma_cube ~ ~ ~ {Tags:["overlimit.summon","overlimit.necro","overlimit.necro_new"],PersistenceRequired:1b}
 execute if entity @s[type=minecraft:parched] run summon minecraft:parched ~ ~ ~ {Tags:["overlimit.summon","overlimit.necro","overlimit.necro_new"],PersistenceRequired:1b}
 execute if entity @s[type=minecraft:phantom] run summon minecraft:phantom ~ ~ ~ {Tags:["overlimit.summon","overlimit.necro","overlimit.necro_new"],PersistenceRequired:1b}
+execute if entity @s[type=minecraft:piglin] run summon minecraft:piglin ~ ~ ~ {Tags:["overlimit.summon","overlimit.necro","overlimit.necro_new"],PersistenceRequired:1b}
 execute if entity @s[type=minecraft:piglin_brute] run summon minecraft:piglin_brute ~ ~ ~ {Tags:["overlimit.summon","overlimit.necro","overlimit.necro_new"],PersistenceRequired:1b}
 execute if entity @s[type=minecraft:pillager] run summon minecraft:pillager ~ ~ ~ {Tags:["overlimit.summon","overlimit.necro","overlimit.necro_new"],PersistenceRequired:1b}
 execute if entity @s[type=minecraft:ravager] run summon minecraft:ravager ~ ~ ~ {Tags:["overlimit.summon","overlimit.necro","overlimit.necro_new"],PersistenceRequired:1b}

@@ -4,6 +4,7 @@ execute as @e[type=minecraft:marker,tag=overlimit.danger_xp,tag=!overlimit.elite
 tag @a remove overlimit.in_bw
 execute as @a at @s if dimension overlimit:blood_world run tag @s add overlimit.in_bw
 function overlimit:portal/tick
+function overlimit:portal/session_tick
 execute in minecraft:overworld run function overlimit:blood_moon/tick
 execute in overlimit:blood_world run function overlimit:blood_world/tick
 

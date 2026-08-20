@@ -155,6 +155,14 @@ execute as @a at @s if dimension overlimit:blood_world run tag @s add overlimit.
 
 ---
 
+## ベッドをディメンションで止める
+
+`dimension_type` の `minecraft:gameplay/bed_rule` で `can_sleep` と `can_set_spawn` を `never` にすると、睡眠もスポーン設定もできない。`explodes` を付けなければベッドは置けるが使えない。属性変更は `/reload` では足りず、タイトルへ戻って入り直す。すでに取ったスポーンは残る。
+
+**出所:** [Environment attribute](https://minecraft.wiki/w/Environment_attribute) `gameplay/bed_rule`（26.2 では `explodes`。26.3 で `destroy_on_use` に改名）。
+
+---
+
 ## 海面を陸地と誤認しない
 
 `world_surface` は水面も拾う。`ocean_floor` との Y 差が2以上、または水ブロックなら陸地ではない。

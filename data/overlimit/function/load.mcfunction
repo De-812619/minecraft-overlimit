@@ -21,6 +21,7 @@ scoreboard objectives add overlimit.sky_foot_delay dummy
 scoreboard objectives add overlimit.sky_safe dummy
 scoreboard objectives add overlimit.sky_land dummy
 scoreboard objectives add overlimit.const dummy
+function overlimit:portal/capture_spawn
 scoreboard players set #10 overlimit.const 10
 scoreboard players set #2 overlimit.const 2
 scoreboard players set #3 overlimit.const 3
@@ -63,6 +64,21 @@ scoreboard objectives add overlimit.bwx dummy
 scoreboard objectives add overlimit.bwy dummy
 scoreboard objectives add overlimit.bwz dummy
 scoreboard objectives add overlimit.bw_has dummy
+execute unless score #bw_gate overlimit.const matches 0.. run scoreboard players set #bw_gate overlimit.const 0
+execute unless score #bw_pending overlimit.const matches 0.. run scoreboard players set #bw_pending overlimit.const 0
+execute unless score #bw_origin_from_gate overlimit.const matches 0.. run scoreboard players set #bw_origin_from_gate overlimit.const 0
+execute unless score #bw_scrapping overlimit.const matches 0.. run scoreboard players set #bw_scrapping overlimit.const 0
+execute unless score #bw_occupied overlimit.const matches 0.. run scoreboard players set #bw_occupied overlimit.const 0
+execute unless score #bw_spread overlimit.const matches 0.. run scoreboard players set #bw_spread overlimit.const 0
+execute unless data storage overlimit:portal gates run data modify storage overlimit:portal gates set value []
+tag @a remove overlimit.portal_arrive
+tag @a remove overlimit.to_bw
+tag @a remove overlimit.to_ow
+scoreboard players set @a overlimit.portal_cd 0
+scoreboard players set @a overlimit.portal_charge 0
+kill @e[tag=overlimit.bw_search]
+execute unless entity @a[predicate=overlimit:in_blood_world] run scoreboard players set #bw_pending overlimit.const 0
+
 
 # Hyper dig look buffer (parent_quest_pack AoE と同型)
 scoreboard objectives add overlimit.hd_x dummy

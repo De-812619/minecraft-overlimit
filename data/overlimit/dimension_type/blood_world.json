@@ -22,10 +22,11 @@
       }
     },
     "minecraft:gameplay/bed_rule": {
-      "can_set_spawn": "always",
-      "can_sleep": "when_dark",
+      "can_set_spawn": "never",
+      "can_sleep": "never",
       "error_message": {
-        "translate": "block.minecraft.bed.no_sleep"
+        "text": "ブラッドワールドでは眠れない",
+        "color": "red"
       }
     },
     "minecraft:gameplay/nether_portal_spawns_piglin": true,

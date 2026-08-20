@@ -197,6 +197,7 @@ BONUS_ENCHANTS: dict[str, list[tuple[str, int | dict, float]]] = {
         ("minecraft:thorns", uniform(4, 10), 0.30),
         ("minecraft:feather_falling", uniform(5, 10), 0.30),
         ("overlimit:sky_walk", 1, 0.30),
+        ("overlimit:cat_foot", 1, 0.30),
     ],
     "fishing_rod": [
         *COMMON_BONUS,
@@ -351,6 +352,7 @@ BOOK_BONUS_ENCHANTS: list[tuple[str, int]] = [
     ("overlimit:clairvoyance", 1),
     ("overlimit:midas_table", 1),
     ("overlimit:sky_walk", 1),
+    ("overlimit:cat_foot", 1),
     ("overlimit:hyper_dig", 1),
     ("overlimit:smelting", 1),
     ("overlimit:wind_blessing", 1),

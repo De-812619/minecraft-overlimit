@@ -1,0 +1,44 @@
+{
+  "anvil_cost": 1,
+  "description": {
+    "text": "猫足"
+  },
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "amount": 0.2,
+        "attribute": "minecraft:movement_speed",
+        "id": "overlimit:enchantment.cat_foot.speed",
+        "operation": "add_multiplied_total"
+      },
+      {
+        "amount": 0.2,
+        "attribute": "minecraft:jump_strength",
+        "id": "overlimit:enchantment.cat_foot.jump",
+        "operation": "add_value"
+      }
+    ],
+    "minecraft:tick": [
+      {
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "overlimit:enchant/cat_foot/tick"
+        }
+      }
+    ]
+  },
+  "max_cost": {
+    "base": 100,
+    "per_level_above_first": 0
+  },
+  "max_level": 1,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 0
+  },
+  "slots": [
+    "feet"
+  ],
+  "supported_items": "#minecraft:enchantable/foot_armor",
+  "weight": 1
+}

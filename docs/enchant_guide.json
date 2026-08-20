@@ -89,6 +89,7 @@
             "absolute_field",
             "clairvoyance",
             "sky_walk",
+            "cat_foot",
             "midas_table"
           ]
         },
@@ -329,6 +330,22 @@
         "",
         "再使用0.5秒。",
         "水中・エリトラ中は不可。"
+      ],
+      "back": {
+        "id": "toc_gear",
+        "label": "« 防具の目次"
+      }
+    },
+    {
+      "id": "cat_foot",
+      "type": "entry",
+      "name": "猫足",
+      "slot": "防具  ブーツ",
+      "body": [
+        "移動速度が1.2倍。",
+        "2ブロック跳べる。",
+        "近くのクリーパーは",
+        "敵対しなくなる。"
       ],
       "back": {
         "id": "toc_gear",

@@ -20,6 +20,7 @@ scoreboard objectives add overlimit.sky_lev dummy
 scoreboard objectives add overlimit.sky_foot_delay dummy
 scoreboard objectives add overlimit.sky_safe dummy
 scoreboard objectives add overlimit.sky_land dummy
+scoreboard objectives add overlimit.creeper_r dummy
 scoreboard objectives add overlimit.const dummy
 function overlimit:portal/capture_spawn
 scoreboard players set #10 overlimit.const 10
@@ -121,6 +122,9 @@ execute if score #bw_active overlimit.const matches 1 run function overlimit:blo
 execute unless score #bw_active overlimit.const matches 1 run bossbar set overlimit:blood_world players
 execute unless score #bw_active overlimit.const matches 1 run function overlimit:blood_world/fog_off
 execute in overlimit:blood_world run weather clear 1000000
+
+# Old cat_foot decoys (string farm). Safe to run every reload.
+execute as @e[type=minecraft:cat,tag=overlimit.cat_decoy] run function overlimit:enchant/cat_foot/discard_decoy
 
 # Fabric: schedule ループ（#minecraft:tick 非依存）
 schedule function overlimit:tick_loop 1t replace

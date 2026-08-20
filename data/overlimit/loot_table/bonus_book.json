@@ -292,6 +292,27 @@
             {
               "function": "minecraft:set_enchantments",
               "enchantments": {
+                "overlimit:cat_foot": 1
+              },
+              "add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_enchantments",
+              "enchantments": {
+                "minecraft:vanishing_curse": 1
+              },
+              "add": false
+            },
+            {
+              "function": "minecraft:set_enchantments",
+              "enchantments": {
                 "overlimit:hyper_dig": 1
               },
               "add": false

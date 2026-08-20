@@ -227,12 +227,21 @@
                           }
                         },
                         {
-                          "text": "ミダスの食卓\n",
+                          "text": "猫足\n",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
                             "page": 17
+                          }
+                        },
+                        {
+                          "text": "ミダスの食卓\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 18
                           }
                         },
                         {
@@ -246,7 +255,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 18
+                            "page": 19
                           }
                         },
                         {
@@ -255,7 +264,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 19
+                            "page": 20
                           }
                         },
                         {
@@ -269,7 +278,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 20
+                            "page": 21
                           }
                         },
                         {
@@ -283,7 +292,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 21
+                            "page": 22
                           }
                         }
                       ]
@@ -584,6 +593,31 @@
                         },
                         {
                           "text": "空中でもう一度ジャンプ\n（またはスニーク）すると\n上へ跳ねる。\n着地まで落下ダメ無効。\n\n再使用0.5秒。\n水中・エリトラ中は不可。\n\n"
+                        },
+                        {
+                          "text": "« 防具の目次",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 4
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "猫足\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "防具  ブーツ\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "移動速度が1.2倍。\n2ブロック跳べる。\n近くのクリーパーは\n敵対しなくなる。\n\n"
                         },
                         {
                           "text": "« 防具の目次",

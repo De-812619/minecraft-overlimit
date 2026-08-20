@@ -40,6 +40,10 @@ execute as @e[type=minecraft:marker,tag=overlimit.sky_plat] at @s run function o
 # Sky walk: air footing trigger
 execute as @a at @s run function overlimit:enchant/sky_walk/tick_player
 
+# Cat foot: leftover decoy cats (old impl) + restore creeper blast when the wearer is gone
+execute as @e[type=minecraft:cat,tag=overlimit.cat_decoy] run function overlimit:enchant/cat_foot/discard_decoy
+execute as @e[type=minecraft:creeper,tag=overlimit.cat_pacify] at @s run function overlimit:enchant/cat_foot/pacify_tick
+
 # Hyper dig: pending が空気になったら 3×3（耐久力不発の保険）
 execute as @a run function overlimit:enchant/hyper_dig/tick_player
 

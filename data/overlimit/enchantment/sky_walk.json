@@ -3,7 +3,16 @@
   "description": {
     "text": "スカイウォーク"
   },
-  "effects": {},
+  "effects": {
+    "minecraft:tick": [
+      {
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "overlimit:enchant/sky_walk/tick_player"
+        }
+      }
+    ]
+  },
   "max_cost": {
     "base": 100,
     "per_level_above_first": 0

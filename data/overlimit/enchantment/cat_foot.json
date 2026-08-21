@@ -10,12 +10,6 @@
         "attribute": "minecraft:movement_speed",
         "id": "overlimit:enchantment.cat_foot.speed",
         "operation": "add_multiplied_total"
-      },
-      {
-        "amount": 0.2,
-        "attribute": "minecraft:jump_strength",
-        "id": "overlimit:enchantment.cat_foot.jump",
-        "operation": "add_value"
       }
     ],
     "minecraft:tick": [

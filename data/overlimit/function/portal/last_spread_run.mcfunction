@@ -1,4 +1,4 @@
-$execute in overlimit:blood_world run spreadplayers $(x) $(z) 8 2000 false @s
+$execute in overlimit:blood_world run spreadplayers $(x) $(z) 8 384 false @s
 execute store result storage overlimit:portal pend.x int 1 run data get entity @s Pos[0]
 execute store result storage overlimit:portal pend.y int 1 run data get entity @s Pos[1]
 execute store result storage overlimit:portal pend.z int 1 run data get entity @s Pos[2]

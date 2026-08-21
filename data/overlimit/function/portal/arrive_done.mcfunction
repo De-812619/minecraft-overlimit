@@ -7,6 +7,6 @@ execute if predicate overlimit:in_blood_world run function overlimit:portal/mark
 tag @s remove overlimit.portal_arrive
 tag @s remove overlimit.to_bw
 tag @s remove overlimit.to_ow
-execute at @s run forceload remove ~-48 ~-48 ~48 ~48
+execute at @s run forceload remove ~-192 ~-192 ~192 ~192
 execute as @e[type=minecraft:marker,tag=overlimit.bw_fl] at @s run forceload remove ~-192 ~-192 ~192 ~192
 kill @e[type=minecraft:marker,tag=overlimit.bw_fl]

@@ -20,6 +20,9 @@ scoreboard objectives add overlimit.sky_lev dummy
 scoreboard objectives add overlimit.sky_foot_delay dummy
 scoreboard objectives add overlimit.sky_safe dummy
 scoreboard objectives add overlimit.sky_land dummy
+scoreboard objectives add overlimit.cat_jump dummy
+scoreboard objectives add overlimit.cat_mute dummy
+scoreboard objectives add overlimit.cat_boost dummy
 scoreboard objectives add overlimit.creeper_r dummy
 scoreboard objectives add overlimit.const dummy
 function overlimit:portal/capture_spawn
@@ -49,10 +52,12 @@ execute unless score #bm_spawn_t overlimit.const matches 0.. run scoreboard play
 execute unless score #bw_active overlimit.const matches 0.. run scoreboard players set #bw_active overlimit.const 0
 execute unless score #bw_kills overlimit.const matches 0.. run scoreboard players set #bw_kills overlimit.const 0
 execute unless score #bw_spawn_t overlimit.const matches 0.. run scoreboard players set #bw_spawn_t overlimit.const 0
+execute unless score #tick_at overlimit.const matches -1.. run scoreboard players set #tick_at overlimit.const -1
 execute unless score #bw_ended_day overlimit.const matches -1.. run scoreboard players set #bw_ended_day overlimit.const -1
 execute unless score #bw_clock overlimit.const matches 0.. run scoreboard players set #bw_clock overlimit.const 0
-execute in overlimit:blood_world run time of overlimit:blood_world pause
+time of overlimit:blood_world pause
 scoreboard players set #bw_clock overlimit.const 0
+scoreboard players set #portal_charge_need overlimit.const 100
 scoreboard objectives add overlimit.anvil_cap dummy
 scoreboard objectives add overlimit.portal_cd dummy
 scoreboard objectives add overlimit.portal_wait dummy
@@ -77,7 +82,7 @@ tag @a remove overlimit.to_bw
 tag @a remove overlimit.to_ow
 scoreboard players set @a overlimit.portal_cd 0
 scoreboard players set @a overlimit.portal_charge 0
-kill @e[tag=overlimit.bw_search]
+kill @e[type=minecraft:armor_stand,tag=overlimit.bw_search]
 execute unless entity @a[predicate=overlimit:in_blood_world] run scoreboard players set #bw_pending overlimit.const 0
 
 
@@ -121,7 +126,16 @@ bossbar set overlimit:blood_world style progress
 execute if score #bw_active overlimit.const matches 1 run function overlimit:blood_world/restore
 execute unless score #bw_active overlimit.const matches 1 run bossbar set overlimit:blood_world players
 execute unless score #bw_active overlimit.const matches 1 run function overlimit:blood_world/fog_off
-execute in overlimit:blood_world run weather clear 1000000
+execute as @a at @s if dimension overlimit:blood_world run weather clear 1000000
+
+execute as @a run attribute @s minecraft:jump_strength modifier remove overlimit:enchantment.cat_foot.jump
+execute as @a run attribute @s minecraft:jump_strength modifier remove overlimit:sky_walk_no_cat
+execute as @a run attribute @s minecraft:jump_strength modifier remove overlimit:cat_foot_jump
+execute as @a run attribute @s minecraft:jump_strength modifier remove overlimit:cat_foot_air_mute
+execute as @a run effect clear @s minecraft:jump_boost
+scoreboard players set @a overlimit.cat_jump 0
+scoreboard players set @a overlimit.cat_mute 0
+scoreboard players set @a overlimit.cat_boost 0
 
 # Old cat_foot decoys (string farm). Safe to run every reload.
 execute as @e[type=minecraft:cat,tag=overlimit.cat_decoy] run function overlimit:enchant/cat_foot/discard_decoy

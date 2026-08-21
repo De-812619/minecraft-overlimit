@@ -47,8 +47,8 @@ Minecraft Java **26.2** / pack format **107.1**・**データパックのみ**�
 
 - 泣く黒曜石の枠（内側 2×3、ネザーと同じ大きさ）
 - 火打石で点火。見た目はネザーポータルだが **実ブロックではない**（block_display。バニラのネザー転送と混ざらない）
-- 門の中に約4秒立つと転送（ネザーと同じ溜め。視界の歪みは吐き気効果。途中で出るとキャンセル）
-- 到着は海・川を避けて**陸地**に枠を置く（葉の上には置かない）。手前に出る
+- 門の中に約5秒立つと転送（ネザーの約4秒より少し長い。視界の歪みは吐き気効果。途中で出るとキャンセル）
+- 到着は海・浜・川を避けて**陸地**に枠を置く（葉の上には置かない）。手前に出る
 - **セッション:** 誰もいない状態からの入場は、原点±2000 のランダム陸地に門を開く。初回の原点はワールドスポーン。以降の原点は前回の到着門。セッション中の2人目以降は既存の到着門へ合流する
 - **無人（ログアウト含む、スペクテイターは「誰かいる」）**になったらブラッドワールド側の門をすべて消す（プレイヤーが点火したものも含む）。オーバーワールド側の門は残す。次の入場はまたランダム陸地
 - ブラッドワールドの門は、入ってきたオーバーワールドの門へ戻る
@@ -82,27 +82,29 @@ Minecraft Java **26.2** / pack format **107.1**・**データパックのみ**�
 
 **対応:** タグは `if dimension`。専用時計 `overlimit:blood_world`（無人時 pause）。霧は `overlimit:blood_world_fog`。昼夜タイムラインはバニラ `day`/`moon` を BW 時計へ複製。
 
----
+### 門の溜めと海置き（2026-08）
+
+チャージは 100 tick（約5秒）。水際は枠の足元を列ごとの高さマップで判定し、海・浜・川バイオームは置かない。`find_land` は 8 マス刻みから探す。
+
+旧門の `forceload`（±192）はセーブに残る。検証ワールドでは `/function overlimit:portal/clear_forceload` を1回（自分で置いた forceload も消える）。到着時は ±192 を外す。帰りは入ってきたオーバーワールドの門へ戻し、水際でも壊して別地点へ建て直さない。
 
 ## 改善・確認点（一旦完了時点）
 
 概ね動くが、次は未対応。
 
-- **ゲート移動の速度:** 体感がネザーの約4秒より早い。チャージは 80 tick のまま。遅くするなら `portal/charge` の閾値を上げる
-- **ゲート生成地点:** 陸地がすぐそばでも、まだ海の上に建つことがある。`is_wet` の水際判定と `find_land` の格子探索を見直す
-- **天気コマンドが効かない:** ブラッドワールドは毎tick `weather clear 1000000`、オーバーワールドのブラッドムーン開始時は `weather clear 14000`。手で `/weather rain` してもすぐ晴れに戻る（または効かないように見える）。本件の常時晴れの影響。**晴れになったことの検証ができない**ので、止めて確認できるようにするか、雨のときだけ clear するかに分ける
+- **天気:** 入場時（時計再開）に `weather clear`。滞在中の毎tick clear はしない。`/weather rain` は残ることがある。出てもう一度入ると晴れに戻る
 
 ---
 
 ## 技術メモ
 
-- tick: `overlimit:tick` で `overlimit.in_bw` を付け直してから `execute in overlimit:blood_world run function overlimit:blood_world/tick`
+- tick: `overlimit:tick` で `overlimit.in_bw` を付け直してから、**誰かが BW にいるときだけ** `execute in overlimit:blood_world run function overlimit:blood_world/tick`。無人かつイベント中なら `end_empty`、時計が動いていれば `clock_pause`
 - プレイヤー（BW内）: タグ `overlimit.in_bw`（毎tick。`as @a at @s if dimension overlimit:blood_world`。`execute in ... as @a` は全プレイヤーに付くので使わない）
 - フラグ: `#bw_active` / `#bw_kills` / `#bw_ended_day` / `#bw_spawn_t` / `#bw_clock`（1=時刻進行）
 - 時刻: `overlimit:blood_world` 時計。`#bw_tod` / `#bw_daynow`。無人なら `time of overlimit:blood_world pause`
 - ボスバー: `overlimit:blood_world`
 - 霧: `overlimit:blood_world_fog` タイムライン＋同名 World Clock（ブラッドムーンと同じ色・距離。Clock 0/1 どちらでも ON）。オーバーワールドのイベント霧時計 `overlimit:blood_moon` とは別。ベッドは `dimension_type` の `gameplay/bed_rule`（`can_sleep` / `can_set_spawn` とも `never`、爆発なし）
-- 到着: プレイヤーを `spreadplayers`（原点±2000、水・溶岩を避ける）でブラッドワールドの陸地へ送り、着地周囲 160 で `find_land`。失敗時は引き直し。長時間失敗なら待ちを解除。セッション合流は `#bw_gate` / `#bw_sess_*`。BW 門の座標は `storage overlimit:portal gates` に積み、無人時に `forceload` して枠ごと消す。帰りは `owx/y/z`
+- 到着: プレイヤーを `spreadplayers`（原点±384、水・溶岩を避ける）でブラッドワールドの陸地へ送り、着地周囲 160 で `find_land`（8マス刻み）。失敗時は引き直し。長時間失敗なら待ちを解除。セッション合流は `#bw_gate` / `#bw_sess_*`。BW 門の座標は `storage overlimit:portal gates` に積み、無人時に `forceload` して枠ごと消す。帰りは `owx/y/z`。テレポート用 `forceload` の追加は ±48、解除は ±192（旧半径の残り用）。チャージは `#portal_charge_need`（100）
 - 地形: `overlimit:blood_world` noise_settings（`shift_x/z` に定数を足してワールドシードの別地点を使う）。バイオーム源はオーバーワールド気候＋ネザー置換。再生成は `python3 scripts/gen_blood_world_worldgen.py`
 - ネザー構造物: 専用バイオーム（`overlimit:nether_wastes` 等）と `overlimit:nether_complexes`。バニラのネザー要塞／バストリオンタグは触らない（本ネザーに出ない）
 - 既存ワールドで地形をやり直すときは、ワールドを閉じ、`saves/<ワールド>/dimensions/overlimit/blood_world` を消して入り直す

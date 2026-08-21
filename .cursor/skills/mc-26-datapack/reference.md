@@ -181,6 +181,20 @@ execute as @a at @s if dimension overlimit:blood_world run tag @s add overlimit.
 
 ---
 
+## 狼のハウリング音は 26.2 に無い
+
+**起きたこと:** サモン狼の `playsound minecraft:entity.wolf.howl` が毎召喚でログに出る。
+
+```
+Unable to play unknown soundEvent: minecraft:entity.wolf.howl
+```
+
+**正しい書き方:** `minecraft:entity.wolf.growl`（または `entity.wolf.ambient`）。
+
+**出所:** `latest.log`（2026-08-21）。[Sounds.json](https://minecraft.wiki/w/Sounds.json) の狼は growl / ambient / whine 等。`howl` は 26.2 のイベント名に無い。
+
+---
+
 ## ログの場所
 
 | 用途 | パス |

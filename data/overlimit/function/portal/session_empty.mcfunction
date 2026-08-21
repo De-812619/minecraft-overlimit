@@ -7,8 +7,8 @@ scoreboard players set #bw_sess overlimit.const 0
 scoreboard players set #bw_occupied overlimit.const 0
 scoreboard players set #bw_spread overlimit.const 0
 scoreboard players reset * overlimit.bw_has
-execute as @e[tag=overlimit.bw_search] at @s run forceload remove ~-160 ~-160 ~160 ~160
-kill @e[tag=overlimit.bw_search]
+execute as @e[type=minecraft:armor_stand,tag=overlimit.bw_search] at @s run forceload remove ~-160 ~-160 ~160 ~160
+kill @e[type=minecraft:armor_stand,tag=overlimit.bw_search]
 execute if data storage overlimit:portal origin.x run function overlimit:portal/unload_origin with storage overlimit:portal origin
 data remove storage overlimit:portal origin
 execute if data storage overlimit:portal pend.x run function overlimit:portal/unload_pend with storage overlimit:portal pend

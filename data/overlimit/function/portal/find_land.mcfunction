@@ -1,4 +1,12 @@
 execute if function overlimit:portal/try_land run return 1
+execute positioned ~8 ~ ~ if function overlimit:portal/try_land run return 1
+execute positioned ~-8 ~ ~ if function overlimit:portal/try_land run return 1
+execute positioned ~ ~ ~8 if function overlimit:portal/try_land run return 1
+execute positioned ~ ~ ~-8 if function overlimit:portal/try_land run return 1
+execute positioned ~8 ~ ~8 if function overlimit:portal/try_land run return 1
+execute positioned ~8 ~ ~-8 if function overlimit:portal/try_land run return 1
+execute positioned ~-8 ~ ~8 if function overlimit:portal/try_land run return 1
+execute positioned ~-8 ~ ~-8 if function overlimit:portal/try_land run return 1
 execute positioned ~16 ~ ~ if function overlimit:portal/try_land run return 1
 execute positioned ~-16 ~ ~ if function overlimit:portal/try_land run return 1
 execute positioned ~ ~ ~16 if function overlimit:portal/try_land run return 1

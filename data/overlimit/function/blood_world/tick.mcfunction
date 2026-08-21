@@ -1,5 +1,4 @@
 # ブラッドワールド — 毎tick（このディメンションの時計で判定）
-weather clear 1000000
 function overlimit:blood_world/clock_sync
 function overlimit:blood_world/read_time
 

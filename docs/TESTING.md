@@ -133,6 +133,7 @@ XP の確認（見た目では分かりにくい。`/kill` では経験値が落
 | カスタムエンチャント Phase6 | 10 |
 | ブラッドムーン | 11 |
 | ブラッドワールド | 12 |
+| 負荷対策（tick二重・門・イベント） | 13 |
 
 ## 5. カスタムエンチャント（Phase 1）
 
@@ -160,7 +161,7 @@ XP の確認（見た目では分かりにくい。`/kill` では経験値が落
 | チェインバインド | キル後、周囲敵が発光＋スロウ（雪パーティクル） |
 | 絶対領域 | 近接被弾で周囲ノックバック（CD5秒） |
 | アストラルフロー | **保留中**（発動無効。再開は `docs/ENCHANTS.md` A3） |
-| 千里眼 | スニーク中、半径50の敵が発光 |
+| 千里眼 | スニーク中、半径32の敵が発光 |
 
 キル系が一度も動かないときは `/reload` 後もう一度試し、必要なら `/advancement revoke @s only overlimit:enchant/on_kill`。
 
@@ -367,7 +368,7 @@ XP の確認（見た目では分かりにくい。`/kill` では経験値が落
 - バニラの敵自然スポーンは止まらない（`spawn_monsters` は切らない）
 - 100体で本（懐中時計は30%）、朝で本なし、残敵が消える。クリア時は隣に報酬チェスト
 - 全員が出るとイベント終了（報酬なし）。同じ夜に戻っても再発しない
-- ポータル: 枠の中に **約4秒** 立つ（視界が歪む。**転送と同時に吐き気は消える**。途中で出るとキャンセル）。ネザーには行かない。初回到着はワールドスポーン付近±2000 の陸地（葉の上ではない）。セッション中の2人目は同じ門。全員が出るとブラッドワールド側の門が消える（自作門も含む。OW側は残る）。次の入場は前回の門±2000 の別地点。帰りはオーバーワールドの出発ゲート。手前に出る
+- ポータル: 枠の中に **約5秒** 立つ（視界が歪む。**転送と同時に吐き気は消える**。途中で出るとキャンセル）。ネザーには行かない。初回到着はワールドスポーン付近±384 の陸地（葉の上・海・浜ではない）。セッション中の2人目は同じ門。全員が出るとブラッドワールド側の門が消える（自作門も含む。OW側は残る）。次の入場は前回の門±384 の別地点。帰りはオーバーワールドの出発ゲート。手前に出る
 - ベッドを右クリックすると「ブラッドワールドでは眠れない」（爆発しない）。**ディメンション属性なので `/reload` だけでは足りない**
 - 地形はオーバーワールドと同じ座標のコピーではない
 - オーバーワールドで `/function overlimit:blood_moon/force_start` 中にポータルへ入ると拒否される。帰りは可
@@ -378,10 +379,153 @@ XP の確認（見た目では分かりにくい。`/kill` では経験値が落
 
 ポータル点火が反応しないときは、枠の内側が空気で、火打石を **泣く黒曜石** に使っているか。タイトルへ入り直したかも見る。
 
-残課題は [BLOOD_WORLD.md](./BLOOD_WORLD.md) の「改善・確認点」。ゲートが4秒より早く感じる、海の上に建つ、`/weather` が効かない（常時晴れの副作用で検証できない）。
+残課題は [BLOOD_WORLD.md](./BLOOD_WORLD.md) の「改善・確認点」。天気は入場時に `weather clear` する（滞在中の毎tick clear はしない）。
 
 マルチでイベント敵が即消える場合は `overlimit.in_bw` タグ方式を確認（[BLOOD_WORLD.md](./BLOOD_WORLD.md) の「対応済み」）。2人近距離でブラッドムーン中、湧いた敵が4秒以上残ること。
 
+
+## 13. 負荷対策の回帰（tick / 門 / イベント）
+
+2026-08-21 の変更。デプロイ → `/reload` のあと、ログに `Failed to load function overlimit:tick` が無いことを先に見る。
+
+`PrismLauncher/instances/ミッションワールド/minecraft/logs/latest.log`
+
+`time query gametime` がパース失敗だと、強化スキャン・イベント・門が全部止まる。
+
+### 13.1 tick が1ゲームティックに1回だけ
+
+二重実行だとクールダウンと追加スポーンが約2倍速になる。
+
+```mcfunction
+/function overlimit:enchant/give/phase2
+```
+
+サバイバルでインパクト斧を1回当て、**煙が消えるまで約10秒**（5秒で消えたら失敗）。
+
+ブラッドムーン中:
+
+```mcfunction
+/function overlimit:blood_moon/force_start
+```
+
+開始バーストのあと、次の追加湧きまで **約4秒**（2秒ごとなら失敗）。カウンタ:
+
+```mcfunction
+/scoreboard players get #bm_spawn_t overlimit.const
+/scoreboard players get #bm_spawn_int overlimit.const
+```
+
+`#bm_spawn_int` は 80。`#bm_spawn_t` はだいたい 1 秒で 20 増える（40 増えるなら二重）。終わったら `/function overlimit:blood_moon/force_end`。
+
+### 13.2 ブラッドワールド無人時
+
+```mcfunction
+/function overlimit:blood_world/force_enter
+/time set 6000
+```
+
+時刻を覚えてオーバーワールドへ戻る:
+
+```mcfunction
+/execute in minecraft:overworld run tp @s ~ ~ ~
+```
+
+数十秒待って再入場。**入ったときの時刻のまま**（進んでいたら時計が止まっていない）。
+
+```mcfunction
+/scoreboard players get #bw_clock overlimit.const
+```
+
+無人なら 0。
+
+イベント中に全員が出ると終了（報酬なし）:
+
+```mcfunction
+/function overlimit:blood_world/force_enter
+/function overlimit:blood_world/force_start
+```
+
+ボスバーが出ていることを確認してから OW へ tp。ボスバーが消え、`#bw_active` が 0。
+
+```mcfunction
+/scoreboard players get #bw_active overlimit.const
+```
+
+天気: 入場直後は晴れ。滞在中に `/weather rain` すると雨が残ることがある（毎tick clear をやめたため）。出てもう一度入ると晴れに戻る。
+
+### 13.3 エンチャント（装備者だけ動かす変更）
+
+タイトルへ戻って入り直してから付与する。
+
+| 対象 | コマンド | 期待 |
+| --- | --- | --- |
+| スカイウォーク | `/function overlimit:enchant/give/phase3` | 空中ジャンプ／スニークで上昇＋足場。靴を外すと出ない |
+| 猫足＋スカイウォーク | 下の `/give` | 地上は2ブロック跳べる。空中の2回目以降はスカイウォーク単体と同じ高さ |
+| ハイパーディグ | `/function overlimit:enchant/give/phase2` | **サバイバル**で掘り終わり → 3×3×3。クリエイティブは対象外 |
+| 猫足 | `/function overlimit:enchant/give/phase6` | 近くのクリーパーが近づかない・爆発しない。靴を外すと通常に戻る |
+| 千里眼 | `/function overlimit:enchant/give/phase1` | スニーク中、**約32マス**の敵が発光。40マス先は発光しない |
+| チェインバインド | `/function overlimit:enchant/give/phase1` | キル後、周囲敵が約3秒拘束（発光＋スロウ） |
+| ネクロマンシー | `/function overlimit:enchant/give/phase3` | 名前なし敵を倒す → 同種の友好Mob。WARNING 等からは出ない |
+| サモン | `/function overlimit:enchant/give/phase2` | 弓でヒット → 狼（唸り。ハウリング音は出さない）。約10秒で消える |
+
+同時付きブーツ:
+
+```mcfunction
+/give @s minecraft:netherite_boots[minecraft:enchantments={"overlimit:sky_walk":1,"overlimit:cat_foot":1}]
+```
+
+### 13.4 ブラッドムーンのスポナー判定と変換
+
+```mcfunction
+/function overlimit:blood_moon/force_start
+```
+
+| 手順 | 期待 |
+| --- | --- |
+| 地上の開けた場所で `/summon minecraft:zombie ~ ~ ~` を数回 | ほぼ全部 WARNING / DANGER / CRISIS |
+| スポナーの隣（4マス以内）で同じ | 多くは名無し。16% だけ強化（100% なら失敗） |
+| スポナーから **6マス以上** 離して召喚 | 強化される（判定半径を 8→4 にした） |
+| イベント前に名無しゾンビを置いてから `force_start` | 開始時に強化へ変換される |
+| スポナー隣の名無しを開始後 8 秒以上待つ | 4秒パルスでは再ロールしない（名無しのまま） |
+
+開始バースト（自分から 12〜16、高さ±4）と、遠いイベント敵の間引き（25マス）は従来どおり。
+
+```mcfunction
+/function overlimit:blood_moon/force_end
+```
+
+### 13.5 門
+
+泣く黒曜石の 2×3 枠を火打石で点火し、中に約5秒立つ。
+
+旧門の forceload がセーブに残っているとき（ログの `Loading N persistent chunks` が大きい）は、1回:
+
+```mcfunction
+/function overlimit:portal/clear_forceload
+```
+
+自分で置いた forceload も消える。そのあと `/forceload query`。
+
+| 見ること | 期待 |
+| --- | --- |
+| 到着 | ブラッドワールドの陸地。葉の上・水中・浜に立たない |
+| 海 | ±384 で陸地が無いと再抽選。浜や水面に建ったら失敗。長い待ちや海落ちが続くなら失敗 |
+| 2人目 | 同じ門へ合流 |
+| 全員が OW へ戻る | BW 側の門が消える。OW 側は残る |
+| 帰り | 出発した OW ゲートの手前。別の場所に新設しない |
+| ネザー | この門では行かない |
+
+強制入場 `/function overlimit:blood_world/force_enter` は門を使わないので、門の確認には使わない。
+
+### 13.6 終わったら
+
+- `/function overlimit:blood_moon/force_end`
+- ブラッドワールドにいるなら `/function overlimit:blood_world/force_end` のあと OW へ戻る
+- `spawn_monsters` が true に戻っていること
+
+```mcfunction
+/gamerule minecraft:spawn_monsters
+```
 
 ## 注意
 

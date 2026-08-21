@@ -69,7 +69,10 @@
 | 武器・道具 | 剣・斧・槍・ツルハシ・シャベル・クワ      |
 | 防具    | ヘルメット・チェストプレート・レギンス・ブーツ |
 | 本     | エンチャント本                 |
-| その他   | 釣り竿・弓・クロスボウ             |
+| その他   | 釣り竿・弓・クロスボウ・帰還の懐中時計 |
+
+
+**帰還の懐中時計**（種別ウェイト 2。本と同じ）: 時計見た目。64までスタックする消費アイテム。右クリックで1つ減り、リスポーン地点（ベッド／リスポーンアンカー。未設定ならワールドスポーン）へテレポートする。消滅の呪いは付けない。ブラッドムーン報酬では本と別枠で 30%。
 
 
 ### 素材ウェイト
@@ -208,7 +211,8 @@
 ## 実装メモ
 
 - 名前空間: `overlimit`
-- ボーナス本体: `overlimit:bonus_gear`（本は `overlimit:bonus_book`）
+- ボーナス本体: `overlimit:bonus_gear`（本は `overlimit:bonus_book`、懐中時計は `overlimit:recall_watch`）
+- ブラッドムーン報酬: `overlimit:blood_moon_reward`（本は必ず1冊。懐中時計は別枠 30%）
 - 強化Mob: `overlimit:mob/*`（`#minecraft:tick` / `#minecraft:load`）。WARNING / DANGER / CRISIS は出現時の排他ロールで付与
 - 対象チェスト／エルダー再生成: `scripts/gen_loot.py`
 - DnT 取得: 既定で Modrinth の v5.3.0 zip（`DNT_PACK` / `DNT_URL` で上書き可）

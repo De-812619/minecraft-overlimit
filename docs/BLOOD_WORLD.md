@@ -107,6 +107,6 @@ Minecraft Java **26.2** / pack format **107.1**・**データパックのみ**�
 - ネザー構造物: 専用バイオーム（`overlimit:nether_wastes` 等）と `overlimit:nether_complexes`。バニラのネザー要塞／バストリオンタグは触らない（本ネザーに出ない）
 - 既存ワールドで地形をやり直すときは、ワールドを閉じ、`saves/<ワールド>/dimensions/overlimit/blood_world` を消して入り直す
 - 強化スキャン: `overlimit:mob/scan` が `#bw_active` かつ `overlimit:in_blood_world` なら `scan_blood_moon`
-- 報酬: クリア時 `place_reward`。隣の空気マスへ名前付きチェスト＋本。同じマスの2人は1つのチェストに2冊
+- 報酬: クリア時 `place_reward`。隣の空気マスへ名前付きチェスト＋本（懐中時計は別枠30%）。同じマスの2人は1つのチェストに2冊
 - 強制入場: `/function overlimit:blood_world/force_enter`
 - 強制開始: `/function overlimit:blood_world/force_start`

@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "use": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": "minecraft:clock",
+          "predicates": {
+            "minecraft:custom_data": {
+              "overlimit": {
+                "recall_watch": true
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "overlimit:item/recall_watch/on_use"
+  }
+}

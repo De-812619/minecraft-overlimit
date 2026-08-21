@@ -3786,6 +3786,11 @@
           "type": "minecraft:loot_table",
           "value": "overlimit:bonus_book",
           "weight": 200
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:recall_watch",
+          "weight": 200
         }
       ]
     }

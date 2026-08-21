@@ -335,6 +335,8 @@ KIND_SPECS: list[tuple[str, str | None, int]] = [
 
 # 本は独立種別。ウェイト 2（素材合計 100 を掛ける。弓・クロスボウは 5）。
 BOOK_KIND_WEIGHT = 2
+# 帰還の懐中時計。本と同じ種別ウェイト。消費アイテム（64スタック）。消滅の呪いは付けない。
+WATCH_KIND_WEIGHT = 2
 
 # CONTENT.md のカスタム（新規）エンチャント。本はここから等確率でちょうど1つ。
 # バニラ強化（sharpness 6〜10 等）は本に付けない。保留（フェニックス／ドッペル／アストラル）も入れない。
@@ -423,6 +425,86 @@ def build_blood_moon_book() -> dict:
     }
 
 
+def recall_watch_components() -> dict:
+    return {
+        "minecraft:item_name": {"text": "帰還の懐中時計", "color": "gold"},
+        "minecraft:lore": [
+            {
+                "text": "使用すると1つ消費し、リスポーン地点へテレポートする",
+                "color": "gray",
+                "italic": False,
+            }
+        ],
+        "minecraft:rarity": "rare",
+        "minecraft:max_stack_size": 64,
+        "minecraft:enchantment_glint_override": True,
+        "minecraft:custom_data": {"overlimit": {"recall_watch": True}},
+        "minecraft:consumable": {
+            "consume_seconds": 0.0,
+            "animation": "none",
+            "has_consume_particles": False,
+            "sound": "minecraft:item.chorus_fruit.teleport",
+        },
+        "minecraft:use_cooldown": {
+            "seconds": 1.0,
+            "cooldown_group": "overlimit:recall_watch",
+        },
+    }
+
+
+def build_recall_watch() -> dict:
+    """時計見た目。右クリックで1つ消費してリスポーン地点へ。消滅の呪いは付けない。"""
+    return {
+        "type": "minecraft:chest",
+        "pools": [
+            {
+                "rolls": 1,
+                "entries": [
+                    {
+                        "type": "minecraft:item",
+                        "name": "minecraft:clock",
+                        "functions": [
+                            {
+                                "function": "minecraft:set_components",
+                                "components": recall_watch_components(),
+                            }
+                        ],
+                    }
+                ],
+            }
+        ],
+    }
+
+
+def build_blood_moon_reward() -> dict:
+    """本は必ず1冊。帰還の懐中時計は別枠 30%。"""
+    return {
+        "type": "minecraft:chest",
+        "pools": [
+            {
+                "rolls": 1,
+                "entries": [
+                    {
+                        "type": "minecraft:loot_table",
+                        "value": "overlimit:blood_moon_book",
+                    }
+                ],
+            },
+            {
+                "rolls": 1,
+                "entries": [
+                    {"type": "minecraft:empty", "weight": 70},
+                    {
+                        "type": "minecraft:loot_table",
+                        "value": "overlimit:recall_watch",
+                        "weight": 30,
+                    },
+                ],
+            },
+        ],
+    }
+
+
 def item_id(material: str, suffix: str | None, kind: str) -> str:
     if suffix is None:
         return f"minecraft:{kind}"
@@ -460,6 +542,13 @@ def build_bonus_gear() -> dict:
             "type": "minecraft:loot_table",
             "value": "overlimit:bonus_book",
             "weight": BOOK_KIND_WEIGHT * material_weight_sum,
+        }
+    )
+    entries.append(
+        {
+            "type": "minecraft:loot_table",
+            "value": "overlimit:recall_watch",
+            "weight": WATCH_KIND_WEIGHT * material_weight_sum,
         }
     )
     return {
@@ -587,7 +676,9 @@ def main() -> None:
 
     write_json(ROOT / "data/overlimit/loot_table/bonus_gear.json", build_bonus_gear())
     write_json(ROOT / "data/overlimit/loot_table/bonus_book.json", build_bonus_book())
+    write_json(ROOT / "data/overlimit/loot_table/recall_watch.json", build_recall_watch())
     write_json(ROOT / "data/overlimit/loot_table/blood_moon_book.json", build_blood_moon_book())
+    write_json(ROOT / "data/overlimit/loot_table/blood_moon_reward.json", build_blood_moon_reward())
 
     clear_generated_dnt_outputs()
 
@@ -609,7 +700,8 @@ def main() -> None:
     dnt_count = inject_from_archive(dnt_path, "DnT")
 
     print(
-        f"wrote bonus_gear + bonus_book + blood_moon_book + {len(TARGET_CHESTS)} vanilla chests + "
+        f"wrote bonus_gear + bonus_book + recall_watch + blood_moon_book + blood_moon_reward + "
+        f"{len(TARGET_CHESTS)} vanilla chests + "
         f"{len(TARGET_ENTITY_LOOT)} entity loot + "
         f"{dnt_count} DnT chests (no enchantment max_level overrides)"
     )

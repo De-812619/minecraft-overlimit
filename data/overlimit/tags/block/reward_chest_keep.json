@@ -1,0 +1,13 @@
+{
+  "values": [
+    "minecraft:nether_portal",
+    "minecraft:obsidian",
+    "minecraft:crying_obsidian",
+    "minecraft:bedrock",
+    "minecraft:chest",
+    "minecraft:trapped_chest",
+    "minecraft:barrel",
+    "minecraft:ender_chest",
+    "#minecraft:shulker_boxes"
+  ]
+}

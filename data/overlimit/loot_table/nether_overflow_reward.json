@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 5,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_gear_no_book"
+        }
+      ]
+    },
+    {
+      "rolls": 3,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:blood_moon_book"
+        }
+      ]
+    },
+    {
+      "rolls": 3,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:recall_watch"
+        }
+      ]
+    }
+  ]
+}

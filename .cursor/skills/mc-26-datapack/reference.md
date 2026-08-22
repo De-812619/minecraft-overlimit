@@ -83,7 +83,19 @@ Wiki: [Commands/execute](https://minecraft.wiki/w/Commands/execute) `positioned 
 
 半径16の立方体スキャン（33³）× 開始10方向は上限に触る。水平半径16＋Yを狭める、近いマスから `return 1`。
 
+ネザーオーバーフローのネザー化を同じtickで半径32以上塗ると、`end`（ボスバー消去・敵デスポーン）まで届かず発生中のまま残ることがある。終了処理を先に走らせ、塗る処理は数tickに分ける。
+
 **出所:** [Game rule](https://minecraft.wiki/w/Game_rule) `maxCommandChainLength`
+
+---
+
+## ネザー化の巨大キノコは `positioned over` の位置に置く
+
+**起きたこと:** 列はすでに `positioned over motion_blocking_no_leaves`（高さマップの **1マス上＝空気／草**）で塗っている。さらに `~ ~1 ~` すると足元が空気になり、`nether_tree_base` 判定が全部落ちて木が1本も出ない。地面の `fill` は `~ ~-1 ~` が地表なので塗れる。
+
+**正しい書き方:** ナイリウムの上にキノコを置いて `place feature minecraft:crimson_fungus_planted`（骨粉と同じ）。自前の幹＋傘は使わない。
+
+**出所:** [Commands/execute](https://minecraft.wiki/w/Commands/execute) `positioned over` は heightmap の Y の1マス上。本パックのネザー化検証（2026-08-23）。
 
 ---
 
@@ -192,6 +204,16 @@ Unable to play unknown soundEvent: minecraft:entity.wolf.howl
 **正しい書き方:** `minecraft:entity.wolf.growl`（または `entity.wolf.ambient`）。
 
 **出所:** `latest.log`（2026-08-21）。[Sounds.json](https://minecraft.wiki/w/Sounds.json) の狼は growl / ambient / whine 等。`howl` は 26.2 のイベント名に無い。
+
+---
+
+## ピグリンは `AngryAt` を使わない
+
+**起きたこと:** ネザーオーバーフローのピグリン／ブルートがオーバーワールドでその場に立ち、コア所持者へ向かわない。ガストは敵対して動く。`IsImmuneToZombification` は効いており、ログ上も `Piglin` / `PiglinBrute` のまま死ぬ。
+
+**正しい書き方:** Brain の `minecraft:angry_at`（`ttl` とプレイヤー UUID）を書く。スポーン時にコア所持者をソースにした `damage ... player_attack` で Heavy aggravation を付ける。`AngryAt` / `AngerTime` だけはピグリンが読まない。
+
+**出所:** [Piglin](https://minecraft.wiki/w/Piglin)「Unlike other neutral mobs, piglins don't count towards the AngryAt tag」、[MC-256289](https://bugs.mojang.com/browse/MC-256289)。本パックの防衛検証（2026-08-22）`latest.log` の `Named entity Piglin['WARNING'/...]`。
 
 ---
 

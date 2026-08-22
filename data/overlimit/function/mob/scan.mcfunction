@@ -1,4 +1,5 @@
 tag @s add overlimit.scanned
+execute if entity @s[tag=overlimit.no_wave] run return fail
 execute if data entity @s CustomName run return fail
 
 execute if predicate overlimit:in_blood_world if entity @s[type=#overlimit:piglin] run return run function overlimit:mob/scan_blood_world_piglin

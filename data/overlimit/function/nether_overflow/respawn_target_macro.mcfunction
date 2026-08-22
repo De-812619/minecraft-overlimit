@@ -1,0 +1,1 @@
+$execute in minecraft:overworld positioned $(x) $(y) $(z) unless entity @e[type=minecraft:marker,tag=overlimit.no_target,distance=..2] run summon minecraft:marker ~ ~ ~ {Tags:["overlimit.no_gate","overlimit.no_target"]}

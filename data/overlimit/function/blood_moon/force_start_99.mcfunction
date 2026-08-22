@@ -1,5 +1,6 @@
 # テスト用。夜にしてイベントを強制開始し、撃破点を 99 にする。
 execute if score #bm_active overlimit.const matches 1 run return run tellraw @s {"text":"[overlimit] ブラッドムーンはすでに発生中","color":"red"}
+execute if score #no_active overlimit.const matches 1 run return run tellraw @s {"text":"[overlimit] ネザーオーバーフロー発生中はブラッドムーンを開始できない","color":"red"}
 execute store result score #bm_diff overlimit.const run difficulty
 execute if score #bm_diff overlimit.const matches 0 run tellraw @s {"text":"[overlimit] Peacefulでは敵が出ません。Easy以上にしてください","color":"red"}
 execute in minecraft:overworld run time set 13000

@@ -1,4 +1,5 @@
 scoreboard players set #bm_checked overlimit.const 1
+execute if score #no_active overlimit.const matches 1 run return fail
 scoreboard players operation #bm_mod overlimit.const = #bm_daynow overlimit.const
 scoreboard players operation #bm_mod overlimit.const %= #3 overlimit.const
 execute unless score #bm_mod overlimit.const matches 2 run return fail

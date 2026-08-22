@@ -1,0 +1,6 @@
+execute store result score #no_gx overlimit.const run data get entity @s Pos[0]
+execute store result score #no_gy overlimit.const run data get entity @s Pos[1]
+execute store result score #no_gz overlimit.const run data get entity @s Pos[2]
+execute store result storage overlimit:no gate.x int 1 run data get entity @s Pos[0]
+execute store result storage overlimit:no gate.y int 1 run data get entity @s Pos[1]
+execute store result storage overlimit:no gate.z int 1 run data get entity @s Pos[2]

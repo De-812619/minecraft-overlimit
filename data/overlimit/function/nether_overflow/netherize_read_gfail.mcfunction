@@ -1,0 +1,1 @@
+$execute in minecraft:overworld positioned $(x) $(y) $(z) as @n[type=minecraft:marker,tag=overlimit.no_gate,distance=..4] run scoreboard players operation #no_gfail overlimit.const = @s overlimit.no_gfail

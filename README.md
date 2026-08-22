@@ -63,6 +63,7 @@ over_limit_pack/
   docs/CONTENT.md                            … 仕様
   docs/BLOOD_MOON.md                         … ブラッドムーン
   docs/BLOOD_WORLD.md                        … ブラッドワールド
+  docs/NETHER_OVERFLOW.md                    … 拠点防衛（ネザーオーバーフロー）
   docs/enchant_guide.json                    … 図鑑本文（正）
   docs/TESTING.md                            … テスト方法
 ```

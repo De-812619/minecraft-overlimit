@@ -562,6 +562,18 @@ def build_bonus_gear() -> dict:
     }
 
 
+def build_bonus_gear_no_book() -> dict:
+    """ネザーオーバーフロー報酬用。本と懐中時計を除いた武器・道具・防具のみ。"""
+    table = build_bonus_gear()
+    entries = table["pools"][0]["entries"]
+    table["pools"][0]["entries"] = [
+        e
+        for e in entries
+        if e.get("value") not in ("overlimit:bonus_book", "overlimit:recall_watch")
+    ]
+    return table
+
+
 def _entry_refs_bonus(entry: dict) -> bool:
     if entry.get("value") == "overlimit:bonus_gear":
         return True
@@ -675,6 +687,7 @@ def main() -> None:
     clear_enchantment_overrides()
 
     write_json(ROOT / "data/overlimit/loot_table/bonus_gear.json", build_bonus_gear())
+    write_json(ROOT / "data/overlimit/loot_table/bonus_gear_no_book.json", build_bonus_gear_no_book())
     write_json(ROOT / "data/overlimit/loot_table/bonus_book.json", build_bonus_book())
     write_json(ROOT / "data/overlimit/loot_table/recall_watch.json", build_recall_watch())
     write_json(ROOT / "data/overlimit/loot_table/blood_moon_book.json", build_blood_moon_book())

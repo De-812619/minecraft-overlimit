@@ -1,0 +1,17 @@
+execute if block ~ ~-16 ~ minecraft:nether_portal positioned ~ ~-16 ~ run function overlimit:nether_overflow/register_here
+execute if block ~ ~-14 ~ minecraft:nether_portal positioned ~ ~-14 ~ run function overlimit:nether_overflow/register_here
+execute if block ~ ~-12 ~ minecraft:nether_portal positioned ~ ~-12 ~ run function overlimit:nether_overflow/register_here
+execute if block ~ ~-10 ~ minecraft:nether_portal positioned ~ ~-10 ~ run function overlimit:nether_overflow/register_here
+execute if block ~ ~-8 ~ minecraft:nether_portal positioned ~ ~-8 ~ run function overlimit:nether_overflow/register_here
+execute if block ~ ~-6 ~ minecraft:nether_portal positioned ~ ~-6 ~ run function overlimit:nether_overflow/register_here
+execute if block ~ ~-4 ~ minecraft:nether_portal positioned ~ ~-4 ~ run function overlimit:nether_overflow/register_here
+execute if block ~ ~-2 ~ minecraft:nether_portal positioned ~ ~-2 ~ run function overlimit:nether_overflow/register_here
+execute if block ~ ~ ~ minecraft:nether_portal positioned ~ ~ ~ run function overlimit:nether_overflow/register_here
+execute if block ~ ~2 ~ minecraft:nether_portal positioned ~ ~2 ~ run function overlimit:nether_overflow/register_here
+execute if block ~ ~4 ~ minecraft:nether_portal positioned ~ ~4 ~ run function overlimit:nether_overflow/register_here
+execute if block ~ ~6 ~ minecraft:nether_portal positioned ~ ~6 ~ run function overlimit:nether_overflow/register_here
+execute if block ~ ~8 ~ minecraft:nether_portal positioned ~ ~8 ~ run function overlimit:nether_overflow/register_here
+execute if block ~ ~10 ~ minecraft:nether_portal positioned ~ ~10 ~ run function overlimit:nether_overflow/register_here
+execute if block ~ ~12 ~ minecraft:nether_portal positioned ~ ~12 ~ run function overlimit:nether_overflow/register_here
+execute if block ~ ~14 ~ minecraft:nether_portal positioned ~ ~14 ~ run function overlimit:nether_overflow/register_here
+execute if block ~ ~16 ~ minecraft:nether_portal positioned ~ ~16 ~ run function overlimit:nether_overflow/register_here

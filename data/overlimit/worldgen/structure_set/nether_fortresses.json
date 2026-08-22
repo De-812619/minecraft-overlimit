@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 30084233,
+    "separation": 4,
+    "spacing": 43
+  },
+  "structures": [
+    {
+      "structure": "overlimit:fortress",
+      "weight": 1
+    }
+  ]
+}

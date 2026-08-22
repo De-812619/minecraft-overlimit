@@ -5,8 +5,8 @@
 climate/terrain noise samples a different slice of the same world seed.
 
 Also splices nether biomes into Blood World's climate (desert/jungle/swamp/
-badlands slices) so fortress and bastion can generate without touching the
-vanilla Nether.
+badlands slices) and copies beach biomes so bastions can generate on BW
+shores without touching vanilla Overworld / Nether.
 """
 from __future__ import annotations
 
@@ -61,7 +61,12 @@ NETHER_BIOMES = [
     "basalt_deltas",
 ]
 
-NETHER_REMAP = {
+BEACH_BIOMES = [
+    "beach",
+    "snowy_beach",
+]
+
+BIOME_REMAP = {
     "minecraft:desert": "overlimit:nether_wastes",
     "minecraft:jungle": "overlimit:crimson_forest",
     "minecraft:sparse_jungle": "overlimit:warped_forest",
@@ -71,6 +76,8 @@ NETHER_REMAP = {
     "minecraft:wooded_badlands": "overlimit:basalt_deltas",
     "minecraft:swamp": "overlimit:soul_sand_valley",
     "minecraft:mangrove_swamp": "overlimit:soul_sand_valley",
+    "minecraft:beach": "overlimit:beach",
+    "minecraft:snowy_beach": "overlimit:snowy_beach",
 }
 
 NETHER_SURFACE_BLOCKS = {
@@ -133,12 +140,18 @@ def inject_nether_surface(ns: dict) -> None:
     seq.append(nether_floor_rule())
 
 
-def copy_nether_biomes(z: zipfile.ZipFile) -> None:
+def copy_bw_biomes(z: zipfile.ZipFile) -> None:
     dest = ROOT / "data/overlimit/worldgen/biome"
     dest.mkdir(parents=True, exist_ok=True)
-    for name in NETHER_BIOMES:
+    for name in (*NETHER_BIOMES, *BEACH_BIOMES):
         raw = z.read(f"data/minecraft/worldgen/biome/{name}.json")
         (dest / f"{name}.json").write_bytes(raw)
+
+
+def remap_surface_beaches(text: str) -> str:
+    # snowy_beach first so it is not eaten by the beach replace.
+    text = text.replace('"minecraft:snowy_beach"', '"overlimit:snowy_beach"')
+    return text.replace('"minecraft:beach"', '"overlimit:beach"')
 
 
 def write_biome_source() -> int:
@@ -147,7 +160,7 @@ def write_biome_source() -> int:
     remapped = 0
     biomes = []
     for biome, params in entries:
-        target = NETHER_REMAP.get(biome, biome)
+        target = BIOME_REMAP.get(biome, biome)
         if target != biome:
             remapped += 1
         biomes.append({"biome": target, "parameters": params})
@@ -185,17 +198,17 @@ def main() -> None:
             out.write_text(rewrite(z.read(src).decode()) + "\n", encoding="utf-8")
 
         raw = z.read("data/minecraft/worldgen/noise_settings/overworld.json").decode()
-        ns = json.loads(rewrite(raw))
+        ns = json.loads(remap_surface_beaches(rewrite(raw)))
         inject_nether_surface(ns)
         write_json(ROOT / "data/overlimit/worldgen/noise_settings/blood_world.json", ns)
-        copy_nether_biomes(z)
+        copy_bw_biomes(z)
 
     remapped = write_biome_source()
     print(
         "wrote Blood World worldgen (shift",
         SHIFT_X,
         SHIFT_Z,
-        ", nether climate slices",
+        ", remapped climate slices",
         remapped,
         ")",
     )

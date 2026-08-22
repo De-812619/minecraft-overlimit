@@ -113,7 +113,7 @@ data modify entity @s CustomName set value {"text":"WARNING","color":"gold","bol
 
 ## 構造物のバイオームタグはディメンションを見ない
 
-要塞・バストリオンは `has_structure/*` のバイオームに出る。タグにバニラのネザーバイオームを足すと本ネザーにも出る。ブラッドワールドだけ変えるなら専用バイオーム＋専用 structure set。バストリオンの高さは `start_height.absolute`（本パックは 50）。
+要塞・バストリオンは `has_structure/*` のバイオームに出る。タグにバニラのネザー／浜辺バイオームを足すと本ネザーやオーバーワールドにも出る。ブラッドワールドだけ変えるなら専用バイオーム＋専用 structure set。バストリオンの高さは `start_height.absolute`（本パックは 50）。浜辺は `overlimit:beach` / `snowy_beach` に差し替え、地表ルールの biome 参照も合わせる。
 
 **出所:** [Custom dimension](https://minecraft.wiki/w/Custom_dimension)、バニラ `worldgen/structure/bastion_remnant.json`（26.2 jar）
 

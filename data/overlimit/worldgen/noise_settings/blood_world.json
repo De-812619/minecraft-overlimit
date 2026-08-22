@@ -1391,8 +1391,8 @@
                                 "type": "minecraft:biome",
                                 "biome_is": [
                                   "minecraft:warm_ocean",
-                                  "minecraft:beach",
-                                  "minecraft:snowy_beach"
+                                  "overlimit:beach",
+                                  "overlimit:snowy_beach"
                                 ]
                               },
                               "then_run": {
@@ -2210,8 +2210,8 @@
                                 "type": "minecraft:biome",
                                 "biome_is": [
                                   "minecraft:warm_ocean",
-                                  "minecraft:beach",
-                                  "minecraft:snowy_beach"
+                                  "overlimit:beach",
+                                  "overlimit:snowy_beach"
                                 ]
                               },
                               "then_run": {
@@ -2517,8 +2517,8 @@
                       "type": "minecraft:biome",
                       "biome_is": [
                         "minecraft:warm_ocean",
-                        "minecraft:beach",
-                        "minecraft:snowy_beach"
+                        "overlimit:beach",
+                        "overlimit:snowy_beach"
                       ]
                     },
                     "then_run": {

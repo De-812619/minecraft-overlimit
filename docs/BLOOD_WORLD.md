@@ -9,7 +9,7 @@ Minecraft Java **26.2** / pack format **107.1**・**データパックのみ**�
 
 ## 現状サマリ
 
-オーバーワールドと同系統のカスタムディメンション。砂漠・ジャングル・沼・悪地の気候帯はネザーバイオームになり、ネザー要塞とバストリオン（開始高さ Y=50）が生成される。夜になると抽選なしでブラッドムーンが始まる。泣く黒曜石のポータルで往復する。オーバーワールドの抽選イベントとは独立。
+オーバーワールドと同系統のカスタムディメンション。砂漠・ジャングル・沼・悪地の気候帯はネザーバイオームになり、ネザー要塞とバストリオン（開始高さ Y=50）が生成される。バストリオンは浜辺にも出る。夜になると抽選なしでブラッドムーンが始まる。泣く黒曜石のポータルで往復する。オーバーワールドの抽選イベントとは独立。
 
 ---
 
@@ -21,7 +21,7 @@ Minecraft Java **26.2** / pack format **107.1**・**データパックのみ**�
 - ID: `overlimit:blood_world`
 - 地形・バイオームはオーバーワールドと同系統だが、**同じ座標のコピーにはしない**（ノイズをずらす。バニラはディメンション別シードを1.19で廃止したため）
 - 砂漠・ジャングル・沼・悪地の気候はネザーバイオーム（ネザー地形が混ざる）。バニラのネザーは変えない
-- ネザー要塞（`overlimit:fortress`）とバストリオン（`overlimit:bastion_remnant`、開始高さ **Y=50**）を生成する
+- ネザー要塞（`overlimit:fortress`）とバストリオン（`overlimit:bastion_remnant`、開始高さ **Y=50**）を生成する。バストリオンはネザー帯に加え BW 専用浜辺（`overlimit:beach` / `snowy_beach`）にも出る。頻度は本ネザーの約2倍（`spacing` 19）。要塞は従来密度のまま（セット分割に合わせ `spacing` 43）
 - ピグリンはゾンビ化しない。ブラッドワールド内では常に WARNING / DANGER / CRISIS。イベント中に強化した個体だけ撃破点に入る
 - **常時**ブラッドムーンと同じ赤い霧（ディメンション属性）
 - **ベッド不可**（睡眠もスポーン設定も不可。爆発はしない。リスポーンアンカーも不可）
@@ -106,7 +106,7 @@ Minecraft Java **26.2** / pack format **107.1**・**データパックのみ**�
 - 霧: `overlimit:blood_world_fog` タイムライン＋同名 World Clock（ブラッドムーンと同じ色・距離。Clock 0/1 どちらでも ON）。オーバーワールドのイベント霧時計 `overlimit:blood_moon` とは別。ベッドは `dimension_type` の `gameplay/bed_rule`（`can_sleep` / `can_set_spawn` とも `never`、爆発なし）
 - 到着: プレイヤーを `spreadplayers`（原点±384、水・溶岩を避ける）でブラッドワールドの陸地へ送り、着地周囲 160 で `find_land`（8マス刻み）。失敗時は引き直し。長時間失敗なら待ちを解除。セッション合流は `#bw_gate` / `#bw_sess_*`。BW 門の座標は `storage overlimit:portal gates` に積み、無人時に `forceload` して枠ごと消す。帰りは `owx/y/z`。テレポート用 `forceload` の追加は ±48、解除は ±192（旧半径の残り用）。チャージは `#portal_charge_need`（100）
 - 地形: `overlimit:blood_world` noise_settings（`shift_x/z` に定数を足してワールドシードの別地点を使う）。バイオーム源はオーバーワールド気候＋ネザー置換。再生成は `python3 scripts/gen_blood_world_worldgen.py`
-- ネザー構造物: 専用バイオーム（`overlimit:nether_wastes` 等）と `overlimit:nether_complexes`。バニラのネザー要塞／バストリオンタグは触らない（本ネザーに出ない）
+- ネザー構造物: 専用バイオーム（`overlimit:nether_wastes` 等、浜辺は `overlimit:beach`）とセット `overlimit:nether_fortresses` / `overlimit:bastions`。バニラのネザー要塞／バストリオンタグは触らない（本ネザー・本オーバーワールドに出ない）
 - 既存ワールドで地形をやり直すときは、ワールドを閉じ、`saves/<ワールド>/dimensions/overlimit/blood_world` を消して入り直す
 - 強化スキャン: `overlimit:mob/scan` が `#bw_active` かつ `overlimit:in_blood_world` なら `scan_blood_moon`
 - 報酬: クリア時 `place_reward`。隣の空気マスへ名前付きチェスト＋本（懐中時計は別枠30%）。同じマスの2人は1つのチェストに2冊

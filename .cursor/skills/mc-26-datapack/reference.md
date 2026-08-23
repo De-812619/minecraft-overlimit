@@ -209,9 +209,9 @@ Unable to play unknown soundEvent: minecraft:entity.wolf.howl
 
 ## ピグリンは `AngryAt` を使わない
 
-**起きたこと:** ネザーオーバーフローのピグリン／ブルートがオーバーワールドでその場に立ち、コア所持者へ向かわない。ガストは敵対して動く。`IsImmuneToZombification` は効いており、ログ上も `Piglin` / `PiglinBrute` のまま死ぬ。
+**起きたこと:** ネザーオーバーフローのピグリン／ブルートがオーバーワールドでその場に立ち、プレイヤーへ向かわない。ガストは敵対して動く。`IsImmuneToZombification` は効いており、ログ上も `Piglin` / `PiglinBrute` のまま死ぬ。
 
-**正しい書き方:** Brain の `minecraft:angry_at`（`ttl` とプレイヤー UUID）を書く。スポーン時にコア所持者をソースにした `damage ... player_attack` で Heavy aggravation を付ける。`AngryAt` / `AngerTime` だけはピグリンが読まない。
+**正しい書き方:** Brain の `minecraft:angry_at`（`ttl` とプレイヤー UUID）を書く。対象はコア所持者ではなく、その個体から最寄の生存／アドベンチャープレイヤー（金防具でも中立にしないため。コア優先はしない）。スポーン時にそのプレイヤーをソースにした `damage ... player_attack` で Heavy aggravation を付ける。`AngryAt` / `AngerTime` だけはピグリンが読まない。呼び出しは `at @s`（`distance` を tick 原点で測らない）。
 
 **出所:** [Piglin](https://minecraft.wiki/w/Piglin)「Unlike other neutral mobs, piglins don't count towards the AngryAt tag」、[MC-256289](https://bugs.mojang.com/browse/MC-256289)。本パックの防衛検証（2026-08-22）`latest.log` の `Named entity Piglin['WARNING'/...]`。
 

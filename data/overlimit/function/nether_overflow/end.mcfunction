@@ -1,5 +1,6 @@
 scoreboard players set #no_active overlimit.const 0
 scoreboard players set #no_paused overlimit.const 0
+scoreboard players set #no_arrived overlimit.const 0
 scoreboard players set #no_t overlimit.const 0
 scoreboard players set #no_spawn_t overlimit.const 0
 scoreboard players set #no_spawned overlimit.const 0

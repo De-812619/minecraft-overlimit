@@ -24,12 +24,12 @@ scoreboard players add #no_phase_t overlimit.const 1
 scoreboard players add #no_spawn_t overlimit.const 1
 scoreboard players operation #no_amod overlimit.const = #no_t overlimit.const
 scoreboard players operation #no_amod overlimit.const %= #20 overlimit.const
-execute if score #no_amod overlimit.const matches 0 as @e[tag=overlimit.no_wave,tag=!overlimit.no_ghast] run function overlimit:nether_overflow/anger
+execute if score #no_amod overlimit.const matches 0 as @e[tag=overlimit.no_wave,tag=!overlimit.no_ghast] at @s run function overlimit:nether_overflow/anger
 execute if score #no_amod overlimit.const matches 0 as @e[tag=overlimit.no_wave,tag=!overlimit.no_ghast] run function overlimit:nether_overflow/glow
 execute if score #no_amod overlimit.const matches 0 as @e[tag=overlimit.no_ghast] run effect clear @s minecraft:glowing
-execute as @e[type=minecraft:marker,tag=overlimit.no_target,limit=1] at @s run function overlimit:nether_overflow/ensure_ghast
-
-execute if score #no_spawn_t overlimit.const >= #no_int overlimit.const run function overlimit:nether_overflow/spawn_pulse
+execute if score #no_arrived overlimit.const matches 0 run function overlimit:nether_overflow/try_arrive
+execute if score #no_arrived overlimit.const matches 1 as @e[type=minecraft:marker,tag=overlimit.no_target,limit=1] at @s run function overlimit:nether_overflow/ensure_ghast
+execute if score #no_arrived overlimit.const matches 1 if score #no_spawn_t overlimit.const >= #no_int overlimit.const run function overlimit:nether_overflow/spawn_pulse
 function overlimit:nether_overflow/check_clear
 execute if score #no_active overlimit.const matches 1 if score #no_phase_t overlimit.const >= #no_phase_max overlimit.const if score #no_phase overlimit.const matches ..2 run function overlimit:nether_overflow/phase_next
 execute if score #no_active overlimit.const matches 1 if score #no_t overlimit.const >= #no_time_max overlimit.const run function overlimit:nether_overflow/end_timeout

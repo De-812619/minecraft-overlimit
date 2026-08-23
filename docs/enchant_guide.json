@@ -5,16 +5,16 @@
     "反映: python3 scripts/gen_enchant_guide.py → デプロイ → /reload"
   ],
   "item": {
-    "title": "カスタムエンチャント図鑑",
+    "title": "OverLimitエンチャント図鑑",
     "author": "overlimit",
-    "lore": "カスタムエンチャントの効果一覧"
+    "lore": "OverLimitエンチャントの効果一覧"
   },
   "pages": [
     {
       "id": "cover",
       "type": "cover",
       "heading": "オーバーリミット",
-      "subheading": ["カスタム", "エンチャント図鑑"],
+      "subheading": ["OverLimit", "エンチャント図鑑"],
       "body": [
         "装備や本に付いた",
         "効果の説明です。",
@@ -34,12 +34,7 @@
       "type": "text",
       "title": "共通の注意",
       "body": [
-        "・レベルはすべて 1",
-        "・台・司書には出ません",
-        "・チェスト装備か本で入手",
-        "・装備には消滅の呪い必須",
-        "・ブラッドムーン報酬は",
-        "　カスタム2つ＋消滅の呪い"
+        "・エンチャント台/司書には出ません"
       ],
       "links": [
         {

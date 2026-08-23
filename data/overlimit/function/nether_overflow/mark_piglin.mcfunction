@@ -10,4 +10,4 @@ attribute @s minecraft:follow_range modifier add overlimit:no_follow 24 add_valu
 tag @s add overlimit.scanned
 function overlimit:nether_overflow/anger
 function overlimit:nether_overflow/glow
-execute if entity @a[tag=overlimit.no_core,limit=1] run damage @s 1 minecraft:player_attack by @a[tag=overlimit.no_core,limit=1]
+execute at @s if entity @p[predicate=overlimit:in_overworld,gamemode=!spectator,gamemode=!creative,distance=..40] run damage @s 1 minecraft:player_attack by @p[predicate=overlimit:in_overworld,gamemode=!spectator,gamemode=!creative,distance=..40]

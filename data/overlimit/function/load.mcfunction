@@ -88,6 +88,8 @@ scoreboard objectives add overlimit.no_deaths deathCount
 scoreboard objectives add overlimit.no_gfail dummy
 scoreboard players set @a overlimit.no_deaths 0
 execute unless data storage overlimit:no gate run data modify storage overlimit:no gate set value {x:0,y:64,z:0}
+execute unless data storage overlimit:no gates run data modify storage overlimit:no gates set value []
+execute unless score #no_arrived overlimit.const matches 0.. run scoreboard players set #no_arrived overlimit.const 0
 execute unless score #bw_active overlimit.const matches 0.. run scoreboard players set #bw_active overlimit.const 0
 execute unless score #bw_kills overlimit.const matches 0.. run scoreboard players set #bw_kills overlimit.const 0
 execute unless score #bw_spawn_t overlimit.const matches 0.. run scoreboard players set #bw_spawn_t overlimit.const 0

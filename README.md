@@ -40,9 +40,14 @@
 - 防具（ヘルメット・チェスト・レギンス・ブーツ）
 - 釣り竿 / クロスボウ
 - 帰還の懐中時計（右クリックで1つ消費してリスポーン地点へ。64スタック。消滅の呪いは付かない）
+- 対象チェストごとにバニラの不死のトーテムを別枠 10%（消滅の呪いは付けない。護符クラフト用）
 - 素材は **鉄・ダイヤ（同程度）・ネザライト（低）**
 - 装備・本には **消滅の呪い**を必ず付与
 - バニラ上限を超えるエンチャント（チェスト付与のみ。台・司書はバニラのまま。詳細は `docs/CONTENT.md`）
+
+## クラフトアイテム
+
+- 不死鳥の護符（不死のトーテム3つを横一列で2個。効果はトーテムと同じ。16スタック。エンチャント光沢。チェストには出ない）
 
 ## 強化Mob（WARNING / DANGER / CRISIS）
 
@@ -55,6 +60,7 @@ over_limit_pack/
   pack.mcmeta
   data/
     overlimit/loot_table/bonus_gear.json     … ボーナス装備本体
+    overlimit/recipe/phoenix_amulet.json     … 不死鳥の護符
     overlimit/function/…                     … 強化Mob など
     minecraft/loot_table/chests/…            … バニラ＋DnT の minecraft 上書き
     nova_structures/loot_table/chests/…      … DnT チェスト（注入済み）

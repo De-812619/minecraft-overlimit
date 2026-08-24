@@ -37,6 +37,12 @@ DnT 例:
 ```
 
 個数比率（0 / 1 / 2）や素材・エンチャントの出目を見るときは、同じコマンドを繰り返す。  
+バニラの不死のトーテム（別枠 10%）は `overlimit:bonus_gear` には出ない。注入済みルートを繰り返すか:
+
+```mcfunction
+/loot give @s loot overlimit:bonus_totem
+```
+
 エンチャント本だけ見るとき:
 
 ```mcfunction
@@ -52,6 +58,22 @@ DnT 例:
 ```
 
 または `/function overlimit:item/recall_watch/give`。右クリックで1つ消費し、リスポーン地点（ベッド未設定ならワールドスポーン）へ飛ぶ。64までスタックする。オフハンドに持ち替わらないこと。
+
+不死鳥の護符:
+
+```mcfunction
+/loot give @s loot overlimit:phoenix_amulet
+```
+
+または `/function overlimit:item/phoenix_amulet/give`。トーテム見た目＋エンチャント光沢、名前は「不死鳥の護符」、16までスタック。バニラのトーテムとは重ならないこと。
+
+クラフト（横一列にトーテム3つ → 護符2個。上・中・下段どれでも可）:
+
+```mcfunction
+/give @s minecraft:totem_of_undying 9
+```
+
+死亡回避（`/kill` と奈落では発動しない。サバイバルでオフハンドに2以上持たせ、高所落下や `/damage @s 1000` を繰り返す）。1回ごとにスタックが1減り、持ち替えなしで連続発動すること。
 
 ## 2. 目の前のチェストを再生成
 
@@ -120,6 +142,8 @@ XP の確認（見た目では分かりにくい。`/kill` では経験値が落
 | ボーナス装備の中身・エンチャント | 1（`overlimit:bonus_gear`） |
 | エンチャント本（消滅＋カスタム1つ） | 1（`overlimit:bonus_book`） |
 | 帰還の懐中時計 | 1（`overlimit:recall_watch`） |
+| 不死のトーテム（別枠10%） | 1（`overlimit:bonus_totem`）または注入済みルートを繰り返し |
+| 不死鳥の護符 | 1（`overlimit:phoenix_amulet`）またはクラフト |
 | 通常一式（50%）と追加（各30%）の出目 | 1 を繰り返し |
 | 注入込みの全体（通常ドロップ＋ボーナス） | 1 または 2 |
 | チェスト UI 上の並び | 2 |

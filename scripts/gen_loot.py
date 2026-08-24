@@ -93,6 +93,29 @@ INJECT_POOL = {
     ],
 }
 
+# 装備 0/1/2 とは独立。対象チェストごとにバニラの不死のトーテム 10%。
+INJECT_TOTEM_POOL = {
+    "rolls": 1.0,
+    "entries": [
+        {
+            "type": "minecraft:empty",
+            "weight": 90,
+        },
+        {
+            "type": "minecraft:loot_table",
+            "value": "overlimit:bonus_totem",
+            "weight": 10,
+        },
+    ],
+}
+
+INJECT_TABLE_IDS = frozenset(
+    {
+        "overlimit:bonus_gear",
+        "overlimit:bonus_totem",
+    }
+)
+
 CHEST_MEMBER_RE = re.compile(r"^data/([^/]+)/loot_table/(chests/.+)\.json$")
 
 
@@ -452,6 +475,24 @@ def recall_watch_components() -> dict:
     }
 
 
+def build_bonus_totem() -> dict:
+    """バニラの不死のトーテム1個。消滅の呪いは付けない。"""
+    return {
+        "type": "minecraft:chest",
+        "pools": [
+            {
+                "rolls": 1,
+                "entries": [
+                    {
+                        "type": "minecraft:item",
+                        "name": "minecraft:totem_of_undying",
+                    }
+                ],
+            }
+        ],
+    }
+
+
 def build_recall_watch() -> dict:
     """時計見た目。右クリックで1つ消費してリスポーン地点へ。消滅の呪いは付けない。"""
     return {
@@ -574,11 +615,12 @@ def build_bonus_gear_no_book() -> dict:
     return table
 
 
-def _entry_refs_bonus(entry: dict) -> bool:
-    if entry.get("value") == "overlimit:bonus_gear":
+def _entry_refs_inject(entry: dict) -> bool:
+    value = entry.get("value")
+    if isinstance(value, str) and value in INJECT_TABLE_IDS:
         return True
     for child in entry.get("children", []):
-        if isinstance(child, dict) and _entry_refs_bonus(child):
+        if isinstance(child, dict) and _entry_refs_inject(child):
             return True
     return False
 
@@ -592,13 +634,14 @@ def inject_chest(table: dict) -> dict:
         if not (
             isinstance(p, dict)
             and any(
-                _entry_refs_bonus(e)
+                _entry_refs_inject(e)
                 for e in p.get("entries", [])
                 if isinstance(e, dict)
             )
         )
     ]
     pools.append(INJECT_POOL)
+    pools.append(INJECT_TOTEM_POOL)
     out = dict(table)
     out["pools"] = pools
     return out
@@ -689,6 +732,7 @@ def main() -> None:
     write_json(ROOT / "data/overlimit/loot_table/bonus_gear.json", build_bonus_gear())
     write_json(ROOT / "data/overlimit/loot_table/bonus_gear_no_book.json", build_bonus_gear_no_book())
     write_json(ROOT / "data/overlimit/loot_table/bonus_book.json", build_bonus_book())
+    write_json(ROOT / "data/overlimit/loot_table/bonus_totem.json", build_bonus_totem())
     write_json(ROOT / "data/overlimit/loot_table/recall_watch.json", build_recall_watch())
     write_json(ROOT / "data/overlimit/loot_table/blood_moon_book.json", build_blood_moon_book())
     write_json(ROOT / "data/overlimit/loot_table/blood_moon_reward.json", build_blood_moon_reward())
@@ -713,7 +757,7 @@ def main() -> None:
     dnt_count = inject_from_archive(dnt_path, "DnT")
 
     print(
-        f"wrote bonus_gear + bonus_book + recall_watch + blood_moon_book + blood_moon_reward + "
+        f"wrote bonus_gear + bonus_book + bonus_totem + recall_watch + blood_moon_book + blood_moon_reward + "
         f"{len(TARGET_CHESTS)} vanilla chests + "
         f"{len(TARGET_ENTITY_LOOT)} entity loot + "
         f"{dnt_count} DnT chests (no enchantment max_level overrides)"

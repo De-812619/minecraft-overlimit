@@ -152,6 +152,8 @@ team add overlimit_dang
 team modify overlimit_dang color red
 team add overlimit_cris
 team modify overlimit_cris color dark_purple
+team add overlimit_disa
+team modify overlimit_disa color blue
 
 advancement revoke @a only overlimit:enchant/on_kill
 advancement revoke @a only overlimit:enchant/hyper_dig_mine

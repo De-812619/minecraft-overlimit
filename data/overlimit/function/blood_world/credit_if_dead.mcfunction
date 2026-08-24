@@ -8,6 +8,7 @@ execute if score #bm_hp overlimit.const matches 1.. run return fail
 tag @s add overlimit.bm_scored
 scoreboard players set #bm_add overlimit.const 1
 execute if entity @s[tag=overlimit.crisis] run scoreboard players set #bm_add overlimit.const 3
+execute if entity @s[tag=overlimit.disaster] run scoreboard players set #bm_add overlimit.const 5
 scoreboard players operation #bw_kills overlimit.const += #bm_add overlimit.const
 function overlimit:blood_world/bossbar_name
 execute if score #bw_kills overlimit.const matches 100.. run function overlimit:blood_world/end_victory

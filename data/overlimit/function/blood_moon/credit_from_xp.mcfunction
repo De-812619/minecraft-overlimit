@@ -14,6 +14,7 @@ tag @s add overlimit.bm_credited
 execute on vehicle run tag @s add overlimit.bm_scored
 scoreboard players set #bm_add overlimit.const 1
 execute if entity @s[tag=overlimit.xp_crisis] run scoreboard players set #bm_add overlimit.const 3
+execute if entity @s[tag=overlimit.xp_disaster] run scoreboard players set #bm_add overlimit.const 5
 scoreboard players operation #bm_kills overlimit.const += #bm_add overlimit.const
 function overlimit:blood_moon/bossbar_name
 execute if score #bm_kills overlimit.const matches 100.. run function overlimit:blood_moon/end_victory

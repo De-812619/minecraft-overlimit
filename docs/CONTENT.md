@@ -3,7 +3,7 @@
 ## 目的
 
 1. 構造物チェストの戦利品を強化する。既存の中身は残し、**追加プール**でオーバーリミット装備を足す。
-2. 敵Mobの一部を **WARNING / DANGER / CRISIS** として強化する。
+2. 敵Mobの一部を **WARNING / DANGER / CRISIS / DISASTER** として強化する。
 
 ## 対象範囲
 
@@ -161,25 +161,27 @@
 - ルート: `overlimit:phoenix_amulet` / レシピ: `overlimit:phoenix_amulet`
 
 
-## 強化Mob（WARNING / DANGER / CRISIS）
+## 強化Mob（WARNING / DANGER / CRISIS / DISASTER）
 
 対象の敵Mobがワールドに初めて載ったとき（自然スポーン・スポナー・召喚・チャンクロード後の初回認識）、未処理Mobをスキャンし、下のいずれかの段階へ強化する。各Mobにつき判定は1回。同一Mobに複数段階は付かない。
 
 
-| 段階      | 状態   | 備考  |
-| ------- | ---- | --- |
-| WARNING | 実装済み |     |
-| DANGER  | 実装済み |     |
-| CRISIS  | 実装済み |     |
+| 段階       | 状態   | 備考  |
+| -------- | ---- | --- |
+| WARNING  | 実装済み |     |
+| DANGER   | 実装済み |     |
+| CRISIS   | 実装済み |     |
+| DISASTER | 実装済み |     |
 
 
 - 既に `CustomName` があるMobは対象外（名前付きを上書きしない）
 - ドラゴン・ウィザー・ウォーデンは対象外
 - 対象一覧: `#overlimit:can_be_danger`（ピグリンを含む。ブラッドワールドではピグリン／ブルートを常時強化）
-- 段階の出し分け: 各Mobにつき `0..99` を1回だけ振り、排他で当てる（合計16%が強化、84%は通常）
-  - `0` → CRISIS（1%）
-  - `1..5` → DANGER（5%）
-  - `6..15` → WARNING（10%）
+- 段階の出し分け: 各Mobにつき `0..499` を1回だけ振り、排他で当てる（合計16.8%が強化、83.2%は通常）
+  - `0..3` → DISASTER（0.8%）
+  - `4..8` → CRISIS（1%）
+  - `9..33` → DANGER（5%）
+  - `34..83` → WARNING（10%）
 - 装備したヘルメットはドロップしない（`drop_chances.head = 0`。ネザライトの量産防止）
 
 ### WARNING Mob
@@ -224,6 +226,23 @@
 | その他 | ネザライトヘルメット装備 通常のサイズより1.5倍（スポーンできる高さは考慮） |
 
 
+### DISASTER Mob
+
+
+| 項目  | 内容                                      |
+| --- | --------------------------------------- |
+| 確率  | 0.8%                                    |
+| 表示名 | `DISASTER`（常時表示/青）                     |
+| 体力  | 通常の10倍                                  |
+| 攻撃力 | 通常の5倍                                   |
+| 防御力 | 通常の5倍                                   |
+| XP  | 死亡時に出た経験値オーブの Value を 40 倍              |
+| その他 | ネザライトヘルメット装備。通常のサイズより1.8倍（足元から4マスの空間が無いときは拡大しない） |
+
+
+ブラッドムーン／ブラッドワールドでは DISASTER 1% / CRISIS 5% / DANGER 15% / WARNING 79%。撃破点は WARNING / DANGER が1、CRISIS が3、**DISASTER が5**。ネザーオーバーフローではフェーズ固定のうえ DISASTER に上書きしうる（Ph1 0.8% / Ph2 4% / Ph3 8%）。
+
+
 ## 実装メモ
 
 - 名前空間: `overlimit`
@@ -231,7 +250,7 @@
 - 不死のトーテム（別枠 10%）: `overlimit:bonus_totem`（注入プール。装備抽選とは独立）
 - 不死鳥の護符: `overlimit:phoenix_amulet`（クラフトのみ。ボーナスには出ない）
 - ブラッドムーン報酬: `overlimit:blood_moon_reward`（本は必ず1冊。懐中時計は別枠 30%）
-- 強化Mob: `overlimit:mob/*`（`#minecraft:tick` / `#minecraft:load`）。WARNING / DANGER / CRISIS は出現時の排他ロールで付与
+- 強化Mob: `overlimit:mob/*`（`#minecraft:tick` / `#minecraft:load`）。WARNING / DANGER / CRISIS / DISASTER は出現時の排他ロールで付与
 - 対象チェスト／エルダー再生成: `scripts/gen_loot.py`
 - DnT 取得: 既定で Modrinth の v5.3.0 zip（`DNT_PACK` / `DNT_URL` で上書き可）
 - 上限超えエンチャントはルートの `set_enchantments`（`add: false`）でのみ付与する（エンチャント定義の `max_level` は上書きしない → **エンチャント台・司書はバニラのまま**）。例外: `minecraft:efficiency` は `max_level` を変えず、ハイパーディグとの `exclusive_set` だけ足す

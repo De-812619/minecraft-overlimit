@@ -1,7 +1,7 @@
 # カスタムエンチャント実装メモ（進行用）
 
 Minecraft Java **26.2** / pack format **107.1**・**データパックのみ**（Modなし）前提。  
-現状のパックはルート注入＋強化Mob（WARNING / DANGER / CRISIS）。本ドキュメントは新規エンチャント案の可否整理・事前決定・実装進捗用。
+現状のパックはルート注入＋強化Mob（WARNING / DANGER / CRISIS / DISASTER）。本ドキュメントは新規エンチャント案の可否整理・事前決定・実装進捗用。
 
 仕様の正（戦利品・強化Mob）は [CONTENT.md](./CONTENT.md)。反映は [DEPLOY.md](./DEPLOY.md)。
 
@@ -309,7 +309,7 @@ Minecraft Java **26.2** / pack format **107.1**・**データパックのみ**�
 - [x] 対象外Mob一覧（ドラゴン、ウィザー、ウォーデン、村人…）：名前の付いていない敵Mobのみ
 - [x] 装備・名前のコピー有無：なし
 - [x] 味方は敵Mobを攻撃するか：戦闘AIあり
-- [x] DANGER 個体を倒したときの扱い：対象外（WARNING / CRISIS も同様）
+- [x] DANGER 個体を倒したときの扱い：対象外（WARNING / CRISIS / DISASTER も同様）
 
 **メモ:** 同種友好化は面白いが、種類ごとの召喚コマンド分岐か `summon` 動的 type が必要。
 

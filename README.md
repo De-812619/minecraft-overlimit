@@ -49,9 +49,9 @@
 
 - 不死鳥の護符（不死のトーテム3つを横一列で2個。効果はトーテムと同じ。16スタック。エンチャント光沢。チェストには出ない）
 
-## 強化Mob（WARNING / DANGER / CRISIS）
+## 強化Mob（WARNING / DANGER / CRISIS / DISASTER）
 
-敵Mob出現時に排他ロールで強化する（WARNING 10%・DANGER 5%・CRISIS 1%）。詳細は `docs/CONTENT.md`。
+敵Mob出現時に排他ロールで強化する（WARNING 10%・DANGER 5%・CRISIS 1%・DISASTER 0.8%）。詳細は `docs/CONTENT.md`。
 
 ## 構成
 

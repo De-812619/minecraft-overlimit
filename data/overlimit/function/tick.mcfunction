@@ -23,6 +23,9 @@ execute as @a[scores={overlimit.cd.absolute=1..}] run scoreboard players remove 
 execute as @a[scores={overlimit.cd.impact=1..}] at @s run function overlimit:enchant/impact/cd_fx
 execute as @a[scores={overlimit.cd.impact=1}] at @s run playsound minecraft:item.crossbow.loading_end player @s ~ ~ ~ 0.8 1
 execute as @a[scores={overlimit.cd.impact=1..}] run scoreboard players remove @s overlimit.cd.impact 1
+# Hyper gravity CD 表示（本人のみ・6秒）: portal。足元 + メインハンド付近（2tickに1回）
+execute as @a[scores={overlimit.cd.hyper=1..}] at @s run function overlimit:enchant/hyper_gravity/cd_fx
+execute as @a[scores={overlimit.cd.hyper=1}] at @s run playsound minecraft:item.crossbow.loading_end player @s ~ ~ ~ 0.8 1
 execute as @a[scores={overlimit.cd.hyper=1..}] run scoreboard players remove @s overlimit.cd.hyper 1
 execute as @a[scores={overlimit.cd.sky=1..}] run scoreboard players remove @s overlimit.cd.sky 1
 execute as @a[scores={overlimit.sky_air=1}] unless data entity @s equipment.feet.components."minecraft:enchantments"."overlimit:sky_walk" run function overlimit:enchant/sky_walk/disarm

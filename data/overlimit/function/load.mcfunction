@@ -7,6 +7,7 @@ scoreboard objectives add overlimit.cd.sky dummy
 scoreboard objectives add overlimit.bind.timer dummy
 scoreboard objectives add overlimit.summon.life dummy
 scoreboard objectives add overlimit.hg_life dummy
+scoreboard objectives add overlimit.hg_owner dummy
 scoreboard objectives add overlimit.necro_owner dummy
 scoreboard objectives add overlimit.necro_type dummy
 scoreboard objectives add overlimit.necro_pending dummy
@@ -43,6 +44,7 @@ scoreboard players set #bm_chance_base overlimit.const 30
 scoreboard players set #bm_chance_step overlimit.const 20
 scoreboard players set #bm_chance_cap overlimit.const 100
 execute unless score #necro_id_seq overlimit.const matches 1.. run scoreboard players set #necro_id_seq overlimit.const 0
+execute unless score #hg_id_seq overlimit.const matches 1.. run scoreboard players set #hg_id_seq overlimit.const 0
 execute unless score #bm_active overlimit.const matches 0.. run scoreboard players set #bm_active overlimit.const 0
 execute unless score #bm_kills overlimit.const matches 0.. run scoreboard players set #bm_kills overlimit.const 0
 execute unless score #bm_checked overlimit.const matches 0.. run scoreboard players set #bm_checked overlimit.const 0

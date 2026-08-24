@@ -9,25 +9,29 @@
         "affected": "victim",
         "enchanted": "attacker",
         "effect": {
-          "type": "minecraft:all_of",
-          "effects": [
-            {
-              "type": "minecraft:play_sound",
-              "sound": "minecraft:block.respawn_anchor.deplete",
-              "volume": 0.7,
-              "pitch": 0.6
-            },
-            {
-              "type": "minecraft:run_function",
-              "function": "overlimit:enchant/hyper_gravity/on_hit"
-            }
-          ]
+          "type": "minecraft:run_function",
+          "function": "overlimit:enchant/hyper_gravity/on_hit"
         },
         "requirements": {
-          "condition": "minecraft:damage_source_properties",
-          "predicate": {
-            "is_direct": true
-          }
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:damage_source_properties",
+              "predicate": {
+                "is_direct": true
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "minecraft:entity_type": "minecraft:player"
+                }
+              }
+            }
+          ]
         }
       }
     ]

@@ -69,7 +69,7 @@ over_limit_pack/
     assets/overlimit/items|models|textures/  … 護符などの見た目
   scripts/gen_loot.py                        … チェスト注入の再生成
   scripts/gen_enchant_guide.py               … エンチャント図鑑の再生成
-  scripts/pack_release.py                    … 配布用データパック zip
+  scripts/pack_release.py                    … 配布用 DP / RP zip
   docs/CONTENT.md                            … 仕様
   docs/BLOOD_MOON.md                         … ブラッドムーン
   docs/BLOOD_WORLD.md                        … ブラッドワールド
@@ -106,10 +106,13 @@ python3 scripts/gen_blood_world_worldgen.py
 
 ## 配布
 
-`pack.mcmeta` と `data/` が zip 直下になる配布物を作ります。
+`pack.mcmeta` と `data/`（または `assets/`）が zip 直下になる配布物を作ります。
 
 ```bash
-python3 scripts/pack_release.py
+python3 scripts/pack_release.py              # データパック → dist/over_limit_pack.zip
+python3 scripts/pack_release.py --resourcepack  # リソースパック → dist/over_limit_resources.zip
+python3 scripts/pack_release.py --all        # 両方
 ```
 
-出力は `dist/over_limit_pack.zip`。GitHub の Source ZIP は一段ネストするため、そのまま datapacks には置けません。
+GitHub の Source ZIP は一段ネストするため、そのまま datapacks / resourcepacks には置けません。  
+リソースパック zip はクライアントの `resourcepacks/` に置き、ゲーム内で有効化します。

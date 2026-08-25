@@ -30,15 +30,19 @@ rsync -a --delete \
 ```bash
 RP_SRC="/Users/okanoueyuuichi/minecraft/datapacks/over_limit_pack/resourcepack"
 RP_DST="/Users/okanoueyuuichi/Library/Application Support/PrismLauncher/instances/ミッションワールド/minecraft/resourcepacks/over_limit_resources"
-rsync -a --delete "$RP_SRC/" "$RP_DST/"
+mkdir -p "$RP_DST"
+rsync -a --delete \
+  --exclude '.DS_Store' \
+  "$RP_SRC/" "$RP_DST/"
 ```
 
-エージェント向け手順は `.cursor/skills/overlimit-deploy/SKILL.md`（`parent_quest_pack` の `quest-deploy` と同型）。
+エージェント向け手順は `.cursor/skills/overlimit-deploy/SKILL.md`（データパックとリソースパックの両方）。
 
-配布用 zip は検証コピーとは別。`python3 scripts/pack_release.py`（出力 `dist/over_limit_pack.zip`）。手順は `.cursor/skills/overlimit-release/SKILL.md`。フォルダと zip を同じ `datapacks/` に置かない。リソースパックは別 zip／別フォルダとして配布する。
+配布用 zip は検証コピーとは別。`python3 scripts/pack_release.py`（DP: `dist/over_limit_pack.zip`）と `python3 scripts/pack_release.py --resourcepack`（RP: `dist/over_limit_resources.zip`）。手順は `.cursor/skills/overlimit-release/SKILL.md`。フォルダと zip を同じ `datapacks/` / `resourcepacks/` に置かない。
 
 ## 反映後
 
-1. ゲーム内で `/reload`
-2. 確認手順は [TESTING.md](./TESTING.md)
-3. DnT 併用時は本パックを DnT より後に置く
+1. ゲーム内で `/reload`（データパック）
+2. リソースパック `over_limit_resources` を有効化（初回）。テクスチャ差し替え後は再選択や再起動が必要な場合あり
+3. 確認手順は [TESTING.md](./TESTING.md)
+4. DnT 併用時は本パックを DnT より後に置く

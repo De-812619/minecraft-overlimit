@@ -1,1 +1,3 @@
 .cache/
+.cursor/
+dist/

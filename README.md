@@ -47,7 +47,7 @@
 
 ## クラフトアイテム
 
-- 不死鳥の護符（不死のトーテム3つを横一列で2個。効果はトーテムと同じ。16スタック。エンチャント光沢。チェストには出ない）
+- 不死鳥の護符（不死のトーテム3つを横一列で2個。効果はトーテムと同じ。16スタック。エンチャント光沢。チェストには出ない。見た目はセット用リソースパック）
 
 ## 強化Mob（WARNING / DANGER / CRISIS / DISASTER）
 
@@ -57,15 +57,19 @@
 
 ```text
 over_limit_pack/
-  pack.mcmeta
+  pack.mcmeta                                … データパック（format 107.1）
   data/
     overlimit/loot_table/bonus_gear.json     … ボーナス装備本体
     overlimit/recipe/phoenix_amulet.json     … 不死鳥の護符
     overlimit/function/…                     … 強化Mob など
     minecraft/loot_table/chests/…            … バニラ＋DnT の minecraft 上書き
     nova_structures/loot_table/chests/…      … DnT チェスト（注入済み）
+  resourcepack/                              … セット用リソースパック（format 88.0）
+    pack.mcmeta
+    assets/overlimit/items|models|textures/  … 護符などの見た目
   scripts/gen_loot.py                        … チェスト注入の再生成
   scripts/gen_enchant_guide.py               … エンチャント図鑑の再生成
+  scripts/pack_release.py                    … 配布用データパック zip
   docs/CONTENT.md                            … 仕様
   docs/BLOOD_MOON.md                         … ブラッドムーン
   docs/BLOOD_WORLD.md                        … ブラッドワールド
@@ -92,8 +96,20 @@ python3 scripts/gen_blood_world_worldgen.py
 
 ## 入れ方
 
-ワールドの `datapacks/` に本フォルダを置き、`/reload`（またはワールド再入場）します。  
+ワールドの `datapacks/` に、フォルダのまま置くか、下の配布 zip を置きます。`/reload`（またはワールド再入場）してください。  
 **未生成のチェスト**にのみ新しいルートが効きます（既に中身が確定したチェストは変わりません）。
 
+フォルダと zip を同時に置かないでください（二重に効きます）。Dungeons and Taverns を使う場合は、本パックを **DnT より後**に読み込ませてください。
+
 ルート確認の手順は `docs/TESTING.md` を参照。  
-検証ワールドへのコピーは `docs/DEPLOY.md`（Prism「ミッションワールド」→「新規ワールド」）。
+検証ワールドへのコピーは `docs/DEPLOY.md`（Prism「ミッションワールド」→「新規ワールド」）。開発中はフォルダのままコピーし、配布 zip は検証ワールドに置かない。
+
+## 配布
+
+`pack.mcmeta` と `data/` が zip 直下になる配布物を作ります。
+
+```bash
+python3 scripts/pack_release.py
+```
+
+出力は `dist/over_limit_pack.zip`。GitHub の Source ZIP は一段ネストするため、そのまま datapacks には置けません。

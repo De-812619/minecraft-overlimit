@@ -25,6 +25,7 @@
       "minecraft:rarity": "rare",
       "minecraft:max_stack_size": 16,
       "minecraft:enchantment_glint_override": true,
+      "minecraft:item_model": "overlimit:phoenix_amulet",
       "minecraft:custom_data": {
         "overlimit": {
           "phoenix_amulet": true

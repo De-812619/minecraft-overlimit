@@ -65,7 +65,7 @@ DnT 例:
 /loot give @s loot overlimit:phoenix_amulet
 ```
 
-または `/function overlimit:item/phoenix_amulet/give`。トーテム見た目＋エンチャント光沢、名前は「不死鳥の護符」、16までスタック。バニラのトーテムとは重ならないこと。
+または `/function overlimit:item/phoenix_amulet/give`。セット用リソースパック有効時はオリジナル見た目、エンチャント光沢、名前は「不死鳥の護符」、16までスタック。バニラのトーテムとは重ならないこと。
 
 クラフト（横一列にトーテム3つ → 護符2個。上・中・下段どれでも可）:
 

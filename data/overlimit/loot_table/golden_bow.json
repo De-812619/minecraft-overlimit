@@ -1,0 +1,48 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bow",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_name": {
+                  "text": "黄金弓",
+                  "color": "gold"
+                },
+                "minecraft:lore": [
+                  {
+                    "text": "矢の速度とダメージは弓の2倍。命中した相手は光の矢と同じく発光する",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "耐久は弓の2倍。金ブロックで修理できる",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "rare",
+                "minecraft:max_damage": 768,
+                "minecraft:repairable": {
+                  "items": "minecraft:gold_block"
+                },
+                "minecraft:item_model": "overlimit:golden_bow",
+                "minecraft:custom_data": {
+                  "overlimit": {
+                    "golden_bow": true
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

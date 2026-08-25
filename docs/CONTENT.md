@@ -161,6 +161,16 @@
 - ルート: `overlimit:phoenix_amulet` / レシピ: `overlimit:phoenix_amulet`
 - テクスチャ: `resourcepack/assets/overlimit/textures/item/phoenix_amulet.png`（差し替え可）
 
+**黄金弓:** 見た目は弓の引き絞り3段階。ベースはバニラの弓なので、エンチャント台・金床の本は弓と同じ（無限・修繕の排他も含む）。チェストボーナスには出ない。見た目はセット用リソースパック（`item_model=overlimit:golden_bow`）。RP 未適用時は欠落テクスチャになる。
+
+- 耐久 768（弓の2倍）。矢の速度は2倍で、ダメージも速度比例で約2倍
+- 命中した相手は光の矢と同じく発光する（約10秒）。矢の消費はバニラどおり（無限は付けたときだけ。修繕と共存しない）
+- 金床の修理材は金ブロック（1個で耐久の約25%）
+- レシピ: 弓を中心、周囲8マスに金ブロック
+- レシピ解放: 金ブロックまたは弓を手に入れたとき
+- ルート: `overlimit:golden_bow` / レシピ: `overlimit:golden_bow`
+- テクスチャ: `resourcepack/assets/overlimit/textures/item/golden_bow.png` および `golden_bow_pulling_0/1/2.png`（差し替え可）
+
 
 ## 強化Mob（WARNING / DANGER / CRISIS / DISASTER）
 
@@ -250,6 +260,7 @@
 - ボーナス本体: `overlimit:bonus_gear`（本は `overlimit:bonus_book`、懐中時計は `overlimit:recall_watch`）
 - 不死のトーテム（別枠 10%）: `overlimit:bonus_totem`（注入プール。装備抽選とは独立）
 - 不死鳥の護符: `overlimit:phoenix_amulet`（クラフトのみ。ボーナスには出ない）
+- 黄金弓: `overlimit:golden_bow`（クラフトのみ。ボーナスには出ない。耐久768・矢速2倍・命中発光。修理は金ブロック）
 - ブラッドムーン報酬: `overlimit:blood_moon_reward`（本は必ず1冊。懐中時計は別枠 30%）
 - 強化Mob: `overlimit:mob/*`（`#minecraft:tick` / `#minecraft:load`）。WARNING / DANGER / CRISIS / DISASTER は出現時の排他ロールで付与
 - 対象チェスト／エルダー再生成: `scripts/gen_loot.py`

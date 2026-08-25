@@ -48,6 +48,7 @@
 ## クラフトアイテム
 
 - 不死鳥の護符（不死のトーテム3つを横一列で2個。効果はトーテムと同じ。16スタック。エンチャント光沢。チェストには出ない。見た目はセット用リソースパック）
+- 黄金弓（弓＋金ブロック8。耐久・矢速・ダメージは弓の2倍。命中で発光。金ブロックで修理。チェストには出ない）
 
 ## 強化Mob（WARNING / DANGER / CRISIS / DISASTER）
 
@@ -61,6 +62,7 @@ over_limit_pack/
   data/
     overlimit/loot_table/bonus_gear.json     … ボーナス装備本体
     overlimit/recipe/phoenix_amulet.json     … 不死鳥の護符
+    overlimit/recipe/golden_bow.json         … 黄金弓
     overlimit/function/…                     … 強化Mob など
     minecraft/loot_table/chests/…            … バニラ＋DnT の minecraft 上書き
     nova_structures/loot_table/chests/…      … DnT チェスト（注入済み）

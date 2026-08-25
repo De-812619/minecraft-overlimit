@@ -61,6 +61,9 @@ execute as @e[type=minecraft:creeper,tag=overlimit.cat_pacify] at @s run functio
 execute as @a[scores={overlimit.hd_ok=1}] run function overlimit:enchant/hyper_dig/tick_player
 execute as @a[scores={overlimit.hd_ok=0,overlimit.hd_pok=1}] run function overlimit:enchant/hyper_dig/tick_player
 
+# 黄金弓: 撃った矢の速度2倍＋光の矢相当の発光
+execute as @e[type=#minecraft:arrows,tag=!overlimit.gb_done] run function overlimit:item/golden_bow/try_shot
+
 # 金床結果がカーソル→インベントリへ移る1tick遅れ用
 execute as @a[scores={overlimit.anvil_cap=1..}] run function overlimit:enchant/anvil_cap/apply
 execute as @a[scores={overlimit.anvil_cap=1..}] run scoreboard players remove @s overlimit.anvil_cap 1

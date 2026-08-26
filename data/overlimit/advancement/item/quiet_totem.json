@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "use": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": "minecraft:totem_of_undying",
+          "predicates": {
+            "minecraft:custom_data": {
+              "overlimit": {
+                "quiet_totem": true
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "overlimit:item/quiet_totem/on_use"
+  }
+}

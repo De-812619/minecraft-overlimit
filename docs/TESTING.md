@@ -90,6 +90,31 @@ DnT 例:
 /give @s minecraft:gold_block 8
 ```
 
+静寂のトーテム（仕様は [EVENT_SUPPRESS.md](./EVENT_SUPPRESS.md)）:
+
+```mcfunction
+/loot give @s loot overlimit:quiet_totem
+```
+
+または `/function overlimit:item/quiet_totem/give`。セット用リソースパック有効時は水色寄りのトーテム見た目、名前は「静寂のトーテム」、16までスタック。致死回避はしない（バニラの不死のトーテムと別物）。
+
+クラフト（上段中央ダイヤブロック、中段ダイヤ×3、下段中央ダイヤ）:
+
+```mcfunction
+/give @s minecraft:diamond_block
+/give @s minecraft:diamond 4
+```
+
+抑止の確認:
+
+```mcfunction
+/function overlimit:blood_moon/force_start
+```
+
+その後に静寂のトーテムを右クリック → 報酬なしで BM 終了、告知が出ること。イベント未発生時に使うと「抑止するイベントがない」と出て、**同じスロットのまま残る**こと（別スロットに「返ってくる」ではない）。成功時だけ1個減ること。NO は `/function overlimit:nether_overflow/force_start` のあと同様。対価なしのデバッグは `/function overlimit:suppress/force`。
+
+※ 更新前に持っていたトーテムは作り直すか `/function overlimit:item/quiet_totem/give` で取り直す（`use_remainder` 付きが必要）。
+
 ## 2. 目の前のチェストを再生成
 
 チェストの上（または隣接）に立ち、中身を消してルートを付け直す:

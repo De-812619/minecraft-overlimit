@@ -1,0 +1,89 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:totem_of_undying",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_name": {
+                  "text": "静寂のトーテム",
+                  "color": "aqua"
+                },
+                "minecraft:lore": [
+                  {
+                    "text": "使用すると1つ消費し、発生中のブラッドムーンまたは",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "ネザーオーバーフローを報酬なしで抑止する",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "rare",
+                "minecraft:max_stack_size": 16,
+                "minecraft:enchantment_glint_override": true,
+                "minecraft:item_model": "overlimit:quiet_totem",
+                "!minecraft:death_protection": {},
+                "minecraft:custom_data": {
+                  "overlimit": {
+                    "quiet_totem": true
+                  }
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 0.0,
+                  "animation": "none",
+                  "has_consume_particles": false,
+                  "sound": "minecraft:block.beacon.deactivate"
+                },
+                "minecraft:use_cooldown": {
+                  "seconds": 1.0,
+                  "cooldown_group": "overlimit:quiet_totem"
+                },
+                "minecraft:use_remainder": {
+                  "id": "minecraft:totem_of_undying",
+                  "count": 1,
+                  "components": {
+                    "minecraft:item_name": {
+                      "text": "静寂のトーテム",
+                      "color": "aqua"
+                    },
+                    "minecraft:lore": [
+                      {
+                        "text": "使用すると1つ消費し、発生中のブラッドムーンまたは",
+                        "color": "gray",
+                        "italic": false
+                      },
+                      {
+                        "text": "ネザーオーバーフローを報酬なしで抑止する",
+                        "color": "gray",
+                        "italic": false
+                      }
+                    ],
+                    "minecraft:rarity": "rare",
+                    "minecraft:max_stack_size": 16,
+                    "minecraft:enchantment_glint_override": true,
+                    "minecraft:item_model": "overlimit:quiet_totem",
+                    "!minecraft:death_protection": {},
+                    "minecraft:custom_data": {
+                      "overlimit": {
+                        "quiet_totem_spent": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

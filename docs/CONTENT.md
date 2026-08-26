@@ -171,6 +171,15 @@
 - ルート: `overlimit:golden_bow` / レシピ: `overlimit:golden_bow`
 - テクスチャ: `resourcepack/assets/overlimit/textures/item/golden_bow.png` および `golden_bow_pulling_0/1/2.png`（差し替え可）
 
+**静寂のトーテム:** 発生中のブラッドムーン／ネザーオーバーフローを報酬なしで抑止する消費アイテム。チェストには出ない。見た目はセット用リソースパック（`item_model=overlimit:quiet_totem`）。ベースはトーテムだが `death_protection` は無く、致死回避はしない。詳細は [EVENT_SUPPRESS.md](./EVENT_SUPPRESS.md)。
+
+- 最大16スタック。使用で1消費。イベント未発生時は返却（実質消費なし）
+- ネザーオーバーフロー抑止時はネザー化しない
+- レシピ: 上段中央にダイヤブロック、中段にダイヤモンド3、下段中央にダイヤモンド（ダイヤ13個相当）
+- レシピ解放: ダイヤブロックまたはダイヤモンドを手に入れたとき
+- ルート: `overlimit:quiet_totem` / レシピ: `overlimit:quiet_totem`
+- テクスチャ: `resourcepack/assets/overlimit/textures/item/quiet_totem.png`（差し替え可）
+
 
 ## 強化Mob（WARNING / DANGER / CRISIS / DISASTER）
 
@@ -261,6 +270,7 @@
 - 不死のトーテム（別枠 10%）: `overlimit:bonus_totem`（注入プール。装備抽選とは独立）
 - 不死鳥の護符: `overlimit:phoenix_amulet`（クラフトのみ。ボーナスには出ない）
 - 黄金弓: `overlimit:golden_bow`（クラフトのみ。ボーナスには出ない。耐久768・矢速2倍・命中発光。修理は金ブロック）
+- 静寂のトーテム: `overlimit:quiet_totem`（クラフトのみ。発生中 BM／NO を報酬なし抑止。未発生時は返却）
 - ブラッドムーン報酬: `overlimit:blood_moon_reward`（本は必ず1冊。懐中時計は別枠 30%）
 - 強化Mob: `overlimit:mob/*`（`#minecraft:tick` / `#minecraft:load`）。WARNING / DANGER / CRISIS / DISASTER は出現時の排他ロールで付与
 - 対象チェスト／エルダー再生成: `scripts/gen_loot.py`

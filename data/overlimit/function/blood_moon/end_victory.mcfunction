@@ -6,3 +6,4 @@ tellraw @a[predicate=overlimit:in_overworld] {"text":"ブラッドムーンを�
 execute as @a[predicate=overlimit:in_overworld] at @s run function overlimit:blood_moon/place_reward
 function overlimit:blood_moon/end
 function overlimit:heat/add
+function overlimit:pressure/sub_2

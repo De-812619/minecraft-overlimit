@@ -4,3 +4,4 @@ title @a[predicate=overlimit:in_overworld] title {"text":"ブラッドムーン"
 title @a[predicate=overlimit:in_overworld] subtitle {"text":"夜が明けた","color":"gray"}
 tellraw @a[predicate=overlimit:in_overworld] {"text":"ブラッドムーンは朝とともに終わった。","color":"gray"}
 function overlimit:blood_moon/end
+function overlimit:pressure/add_1

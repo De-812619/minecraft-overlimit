@@ -126,6 +126,19 @@ DnT 例:
 
 BM 撃破クリアまたは NO 勝利で +1（上限5）、NO 敗北で -1（下限0）。開始時の tellraw／ボスバーにヒートが出ること。`force_set` 後に BM を開始し、強化内訳や感知が変わること（ヒート0は DISASTER 約0.5%）。
 
+## 1c. 世界圧
+
+仕様は [WORLD_PRESSURE.md](./WORLD_PRESSURE.md)。
+
+```mcfunction
+/function overlimit:pressure/query
+/function overlimit:pressure/force_set {n:12}
+```
+
+`force_set` のあと通常の敵を何度か倒し、平時の WARNING / DANGER / CRISIS / DISASTER が圧0より増えること。判定日の BM 抽選も圧で上振れすること。静寂のトーテムでの抑止成功、BM の朝終了で +1、BM 撃破や NO 勝利で -2 されること。
+
+強化Mob の XP は通常未満（WARNING 0.5 / DANGER 0.35 / CRISIS 0.25 / DISASTER 0.2）なので、修繕付き装備でも戦闘中に耐久が戻りにくいことも確認する。
+
 ## 2. 目の前のチェストを再生成
 
 チェストの上（または隣接）に立ち、中身を消してルートを付け直す:

@@ -3,6 +3,7 @@ function overlimit:blood_moon/read_time
 
 execute unless score #bm_daynow overlimit.const = #bm_day overlimit.const run scoreboard players set #bm_checked overlimit.const 0
 execute unless score #bm_daynow overlimit.const = #bm_day overlimit.const run scoreboard players set #no_dusk_checked overlimit.const 0
+execute unless score #bm_daynow overlimit.const = #bm_day overlimit.const run function overlimit:pressure/on_new_day
 scoreboard players operation #bm_day overlimit.const = #bm_daynow overlimit.const
 
 execute if score #bm_active overlimit.const matches 1 run function overlimit:blood_moon/tick_active

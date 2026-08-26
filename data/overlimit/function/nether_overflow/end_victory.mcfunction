@@ -7,3 +7,4 @@ execute as @e[type=minecraft:marker,tag=overlimit.no_target,limit=1] at @s run f
 execute unless entity @e[type=minecraft:marker,tag=overlimit.no_target] run function overlimit:nether_overflow/place_reward_at with storage overlimit:no gate
 function overlimit:nether_overflow/end
 function overlimit:heat/add
+function overlimit:pressure/sub_2

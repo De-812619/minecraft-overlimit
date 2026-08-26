@@ -1,2 +1,2 @@
-# 世界圧など将来用。抑止成功のたびに呼ぶ。現状は何もしない。
-return fail
+# 世界圧: 抑止成功で +1
+function overlimit:pressure/add_1

@@ -26,6 +26,7 @@ scoreboard objectives add overlimit.cat_mute dummy
 scoreboard objectives add overlimit.cat_boost dummy
 scoreboard objectives add overlimit.creeper_r dummy
 scoreboard objectives add overlimit.const dummy
+execute in minecraft:overworld run function overlimit:blood_moon/read_time
 function overlimit:portal/capture_spawn
 scoreboard players set #10 overlimit.const 10
 scoreboard players set #2 overlimit.const 2
@@ -77,6 +78,10 @@ scoreboard players set #no_scan_r overlimit.const 32
 scoreboard players set #no_scan_y overlimit.const 16
 execute unless score #heat overlimit.const matches 0..5 run scoreboard players set #heat overlimit.const 0
 function overlimit:heat/refresh
+execute unless score #pressure overlimit.const matches 0..20 run scoreboard players set #pressure overlimit.const 0
+scoreboard players operation #pressure_day overlimit.const = #bm_daynow overlimit.const
+execute unless score #pressure_won_day overlimit.const matches 0.. run scoreboard players operation #pressure_won_day overlimit.const = #bm_daynow overlimit.const
+function overlimit:pressure/refresh
 execute unless score #no_active overlimit.const matches 0.. run scoreboard players set #no_active overlimit.const 0
 execute unless score #no_paused overlimit.const matches 0.. run scoreboard players set #no_paused overlimit.const 0
 execute unless score #no_dusk overlimit.const matches 0.. run scoreboard players set #no_dusk overlimit.const 0

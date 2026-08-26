@@ -5,7 +5,7 @@
 - **抑止:** 静寂のトーテム実装済み → [EVENT_SUPPRESS.md](./EVENT_SUPPRESS.md)
 - **ヒート:** 実装済み → [HEAT.md](./HEAT.md)
 - **世界圧:** 実装済み → [WORLD_PRESSURE.md](./WORLD_PRESSURE.md)
-- **次:** 消耗
+- **消耗:** 実装済み → [ATTRITION.md](./ATTRITION.md)
 
 ## ▼カスタムエンチャントの追加
 - 名前：豪欲

@@ -139,6 +139,16 @@ BM 撃破クリアまたは NO 勝利で +1（上限5）、NO 敗北で -1（下
 
 強化Mob の XP は通常未満（WARNING 0.5 / DANGER 0.35 / CRISIS 0.25 / DISASTER 0.2）なので、修繕付き装備でも戦闘中に耐久が戻りにくいことも確認する。
 
+## 1d. 消耗
+
+仕様は [ATTRITION.md](./ATTRITION.md)。
+
+```mcfunction
+/function overlimit:blood_moon/force_start
+```
+
+開始メッセージに「装備の消耗が増している」が出ること。敵に殴られるたびに防具・メインハンドの耐久が通常より早く減ること（落下だけでは減らないこと）。ヒートを上げると削りが増えること。デバッグは `/function overlimit:attrition/force_hit`。
+
 ## 2. 目の前のチェストを再生成
 
 チェストの上（または隣接）に立ち、中身を消してルートを付け直す:

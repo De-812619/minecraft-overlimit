@@ -168,6 +168,7 @@ advancement revoke @a only overlimit:enchant/midas_table_eat
 advancement revoke @a only overlimit:enchant/anvil_cap
 advancement revoke @a only overlimit:blood_moon/on_kill
 advancement revoke @a only overlimit:portal/light
+advancement revoke @a only overlimit:attrition/on_hurt
 
 bossbar add overlimit:blood_moon {"text":"ブラッドムーン","color":"dark_red","bold":true}
 bossbar set overlimit:blood_moon color red

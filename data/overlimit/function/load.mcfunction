@@ -75,6 +75,8 @@ scoreboard players set #no_int3 overlimit.const 40
 scoreboard players set #no_burst overlimit.const 8
 scoreboard players set #no_scan_r overlimit.const 32
 scoreboard players set #no_scan_y overlimit.const 16
+execute unless score #heat overlimit.const matches 0..5 run scoreboard players set #heat overlimit.const 0
+function overlimit:heat/refresh
 execute unless score #no_active overlimit.const matches 0.. run scoreboard players set #no_active overlimit.const 0
 execute unless score #no_paused overlimit.const matches 0.. run scoreboard players set #no_paused overlimit.const 0
 execute unless score #no_dusk overlimit.const matches 0.. run scoreboard players set #no_dusk overlimit.const 0

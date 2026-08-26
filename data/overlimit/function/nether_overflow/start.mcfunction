@@ -31,5 +31,5 @@ title @a[predicate=overlimit:in_overworld] times 10 70 20
 title @a[predicate=overlimit:in_overworld] title {"text":"ネザーオーバーフロー","color":"dark_purple","bold":true}
 title @a[predicate=overlimit:in_overworld] subtitle {"text":"ゲートへ向かい敵を殲滅せよ","color":"gold"}
 execute as @a[predicate=overlimit:in_overworld] at @s run playsound minecraft:block.portal.trigger player @s ~ ~ ~ 0.7 0.6
-tellraw @a[predicate=overlimit:in_overworld] ["",{"text":"ネザーオーバーフローが発生した。ゲート（","color":"light_purple"},{"nbt":"gate.x","storage":"overlimit:no"},{"text":", ","color":"light_purple"},{"nbt":"gate.y","storage":"overlimit:no"},{"text":", ","color":"light_purple"},{"nbt":"gate.z","storage":"overlimit:no"},{"text":"）へ向かい、制限時間内に敵を殲滅せよ。","color":"light_purple"}]
+tellraw @a[predicate=overlimit:in_overworld] ["",{"text":"ネザーオーバーフローが発生した。ゲート（","color":"light_purple"},{"nbt":"gate.x","storage":"overlimit:no"},{"text":", ","color":"light_purple"},{"nbt":"gate.y","storage":"overlimit:no"},{"text":", ","color":"light_purple"},{"nbt":"gate.z","storage":"overlimit:no"},{"text":"）へ向かい、制限時間内に敵を殲滅せよ。","color":"light_purple"},{"text":" （ヒート ","color":"gold"},{"score":{"name":"#heat","objective":"overlimit.const"},"color":"gold"},{"text":"）","color":"gold"}]
 function overlimit:nether_overflow/try_arrive

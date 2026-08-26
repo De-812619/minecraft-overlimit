@@ -115,6 +115,17 @@ DnT 例:
 
 ※ 更新前に持っていたトーテムは作り直すか `/function overlimit:item/quiet_totem/give` で取り直す（`use_remainder` 付きが必要）。
 
+## 1b. ヒート
+
+仕様は [HEAT.md](./HEAT.md)。
+
+```mcfunction
+/function overlimit:heat/query
+/function overlimit:heat/force_set {n:3}
+```
+
+BM 撃破クリアまたは NO 勝利で +1（上限5）、NO 敗北で -1（下限0）。開始時の tellraw／ボスバーにヒートが出ること。`force_set` 後に BM を開始し、強化内訳や感知が変わること（ヒート0は DISASTER 約0.5%）。
+
 ## 2. 目の前のチェストを再生成
 
 チェストの上（または隣接）に立ち、中身を消してルートを付け直す:

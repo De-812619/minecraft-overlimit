@@ -10,8 +10,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 RP_ROOT = ROOT / "resourcepack"
-DEFAULT_DP_OUT = ROOT / "dist" / "over_limit_pack.zip"
-DEFAULT_RP_OUT = ROOT / "dist" / "over_limit_resources.zip"
+DEFAULT_DP_OUT = ROOT / "release" / "over_limit_pack.zip"
+DEFAULT_RP_OUT = ROOT / "release" / "over_limit_resources.zip"
 SKIP_NAMES = {".DS_Store"}
 DP_ROOT_OPTIONAL = ("pack.png", "README.md")
 RP_ROOT_OPTIONAL = ("pack.png",)
@@ -138,7 +138,7 @@ def main(argv: list[str]) -> None:
         "-o",
         "--output",
         type=Path,
-        help="出力先（--all では不可。既定: dist/over_limit_pack.zip または dist/over_limit_resources.zip）",
+        help="出力先（--all では不可。既定: release/over_limit_pack.zip または release/over_limit_resources.zip）",
     )
     parser.add_argument(
         "--no-readme",

@@ -1,0 +1,1 @@
+$bossbar set overlimit:city_clamp name [{"text":"シティクランプ ","color":"blue","bold":true},{"text":"$(phase)","color":"$(color)"},{"text":" ヒート","color":"gray"},{"score":{"name":"#heat","objective":"overlimit.const"},"color":"blue"}]

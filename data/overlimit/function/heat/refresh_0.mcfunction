@@ -11,3 +11,11 @@ scoreboard players set #no_budget3 overlimit.const 30
 scoreboard players set #no_dis1 overlimit.const 1
 scoreboard players set #no_dis2 overlimit.const 9
 scoreboard players set #no_dis3 overlimit.const 19
+scoreboard players set #nr_budget1 overlimit.const 50
+scoreboard players set #nr_budget2 overlimit.const 35
+scoreboard players set #nr_budget3 overlimit.const 15
+scoreboard players set #cc_budget1 overlimit.const 40
+scoreboard players set #cc_budget2 overlimit.const 28
+scoreboard players set #cc_budget3 overlimit.const 12
+scoreboard players set #cc_shul2 overlimit.const 1
+scoreboard players set #cc_shul3 overlimit.const 2

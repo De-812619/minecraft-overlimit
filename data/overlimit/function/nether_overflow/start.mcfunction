@@ -1,5 +1,6 @@
 function overlimit:nether_overflow/pick_gate
 execute unless score #no_picked overlimit.const matches 1 run return fail
+function overlimit:nether_overflow/apply_fail_boost
 
 scoreboard players set #no_active overlimit.const 1
 scoreboard players set #no_paused overlimit.const 0

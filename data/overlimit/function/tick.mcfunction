@@ -12,6 +12,8 @@ function overlimit:portal/tick
 function overlimit:portal/session_tick
 execute in minecraft:overworld run function overlimit:blood_moon/tick
 execute in minecraft:overworld run function overlimit:nether_overflow/tick
+execute in minecraft:the_nether run function overlimit:nether_raise/tick
+execute in minecraft:the_end run function overlimit:city_clamp/tick
 execute if entity @a[tag=overlimit.in_bw] in overlimit:blood_world run function overlimit:blood_world/tick
 execute unless entity @a[tag=overlimit.in_bw] if score #bw_active overlimit.const matches 1 in overlimit:blood_world run function overlimit:blood_world/end_empty
 execute unless entity @a[tag=overlimit.in_bw] if score #bw_clock overlimit.const matches 1 run function overlimit:blood_world/clock_pause

@@ -194,6 +194,77 @@ bossbar set overlimit:nether_overflow style progress
 execute if score #no_active overlimit.const matches 1 run function overlimit:nether_overflow/restore
 execute unless score #no_active overlimit.const matches 1 run bossbar set overlimit:nether_overflow players
 
+scoreboard objectives add overlimit.nr_deaths deathCount
+scoreboard objectives add overlimit.cc_deaths deathCount
+execute unless score #nr_active overlimit.const matches 0.. run scoreboard players set #nr_active overlimit.const 0
+execute unless score #nr_combat overlimit.const matches 0.. run scoreboard players set #nr_combat overlimit.const 0
+execute unless score #nr_paused overlimit.const matches 0.. run scoreboard players set #nr_paused overlimit.const 0
+execute unless score #nr_dwell overlimit.const matches 0.. run scoreboard players set #nr_dwell overlimit.const 0
+execute unless score #nr_arrived overlimit.const matches 0.. run scoreboard players set #nr_arrived overlimit.const 0
+execute unless score #nr_t overlimit.const matches 0.. run scoreboard players set #nr_t overlimit.const 0
+execute unless score #nr_phase overlimit.const matches 1.. run scoreboard players set #nr_phase overlimit.const 1
+execute unless score #nr_phase_t overlimit.const matches 0.. run scoreboard players set #nr_phase_t overlimit.const 0
+execute unless score #nr_spawn_t overlimit.const matches 0.. run scoreboard players set #nr_spawn_t overlimit.const 0
+execute unless score #nr_spawned overlimit.const matches 0.. run scoreboard players set #nr_spawned overlimit.const 0
+execute unless score #nr_ghast_n overlimit.const matches 0.. run scoreboard players set #nr_ghast_n overlimit.const 0
+execute unless score #nr_ghast_cd overlimit.const matches -1.. run scoreboard players set #nr_ghast_cd overlimit.const 0
+execute unless score #nr_fail_boost overlimit.const matches 0.. run scoreboard players set #nr_fail_boost overlimit.const 0
+scoreboard players set #nr_dwell_max overlimit.const 36000
+scoreboard players set #nr_time_max overlimit.const 18000
+scoreboard players set #nr_phase_max overlimit.const 6000
+scoreboard players set #nr_cap overlimit.const 10
+scoreboard players set #nr_ghast_max overlimit.const 1
+scoreboard players set #nr_ghast_budget overlimit.const 3
+scoreboard players set #nr_search overlimit.const 1200
+scoreboard players set #nr_int1 overlimit.const 20
+scoreboard players set #nr_int2 overlimit.const 25
+scoreboard players set #nr_int3 overlimit.const 40
+scoreboard players set #999999 overlimit.const 999999
+execute unless data storage overlimit:nr cleared run data modify storage overlimit:nr cleared set value []
+execute unless score #nr_gather_t overlimit.const matches 0.. run scoreboard players set #nr_gather_t overlimit.const 0
+execute unless data storage overlimit:nr target run data modify storage overlimit:nr target set value {x:0,y:64,z:0,kind:"minecraft:fortress"}
+data modify storage overlimit:nr origins set value [{ox:0,oz:0},{ox:400,oz:0},{ox:-400,oz:0},{ox:0,oz:400},{ox:0,oz:-400},{ox:283,oz:283},{ox:283,oz:-283},{ox:-283,oz:283},{ox:-283,oz:-283},{ox:800,oz:0},{ox:-800,oz:0},{ox:0,oz:800},{ox:0,oz:-800},{ox:566,oz:566},{ox:566,oz:-566},{ox:-566,oz:566},{ox:-566,oz:-566}]
+
+execute unless score #cc_active overlimit.const matches 0.. run scoreboard players set #cc_active overlimit.const 0
+execute unless score #cc_combat overlimit.const matches 0.. run scoreboard players set #cc_combat overlimit.const 0
+execute unless score #cc_paused overlimit.const matches 0.. run scoreboard players set #cc_paused overlimit.const 0
+execute unless score #cc_dwell overlimit.const matches 0.. run scoreboard players set #cc_dwell overlimit.const 0
+execute unless score #cc_arrived overlimit.const matches 0.. run scoreboard players set #cc_arrived overlimit.const 0
+execute unless score #cc_t overlimit.const matches 0.. run scoreboard players set #cc_t overlimit.const 0
+execute unless score #cc_phase overlimit.const matches 1.. run scoreboard players set #cc_phase overlimit.const 1
+execute unless score #cc_phase_t overlimit.const matches 0.. run scoreboard players set #cc_phase_t overlimit.const 0
+execute unless score #cc_spawn_t overlimit.const matches 0.. run scoreboard players set #cc_spawn_t overlimit.const 0
+execute unless score #cc_spawned overlimit.const matches 0.. run scoreboard players set #cc_spawned overlimit.const 0
+execute unless score #cc_shul_n overlimit.const matches 0.. run scoreboard players set #cc_shul_n overlimit.const 0
+execute unless score #cc_boss overlimit.const matches 0.. run scoreboard players set #cc_boss overlimit.const 0
+execute unless score #cc_gather_t overlimit.const matches 0.. run scoreboard players set #cc_gather_t overlimit.const 0
+execute unless score #no_boost_active overlimit.const matches 0.. run scoreboard players set #no_boost_active overlimit.const 0
+scoreboard players set #cc_dwell_max overlimit.const 24000
+scoreboard players set #cc_time_max overlimit.const 14400
+scoreboard players set #cc_phase_max overlimit.const 4800
+scoreboard players set #cc_cap overlimit.const 8
+scoreboard players set #cc_search overlimit.const 1200
+scoreboard players set #cc_int1 overlimit.const 20
+scoreboard players set #cc_int2 overlimit.const 25
+scoreboard players set #cc_int3 overlimit.const 40
+execute unless data storage overlimit:cc cleared run data modify storage overlimit:cc cleared set value []
+execute unless data storage overlimit:cc target run data modify storage overlimit:cc target set value {x:0,y:64,z:0,kind:"minecraft:end_city"}
+data modify storage overlimit:cc origins set value [{ox:0,oz:0},{ox:400,oz:0},{ox:-400,oz:0},{ox:0,oz:400},{ox:0,oz:-400},{ox:283,oz:283},{ox:283,oz:-283},{ox:-283,oz:283},{ox:-283,oz:-283},{ox:800,oz:0},{ox:-800,oz:0},{ox:0,oz:800},{ox:0,oz:-800},{ox:566,oz:566},{ox:566,oz:-566},{ox:-566,oz:566},{ox:-566,oz:-566}]
+
+bossbar add overlimit:nether_raise {"text":"ネザーレイズ","color":"gold","bold":true}
+bossbar set overlimit:nether_raise color yellow
+execute store result bossbar overlimit:nether_raise max run scoreboard players get #nr_time_max overlimit.const
+bossbar set overlimit:nether_raise style progress
+execute if score #nr_active overlimit.const matches 1 run function overlimit:nether_raise/restore
+execute unless score #nr_active overlimit.const matches 1 run bossbar set overlimit:nether_raise players
+
+bossbar add overlimit:city_clamp {"text":"シティクランプ","color":"blue","bold":true}
+bossbar set overlimit:city_clamp color blue
+execute store result bossbar overlimit:city_clamp max run scoreboard players get #cc_time_max overlimit.const
+bossbar set overlimit:city_clamp style progress
+execute if score #cc_active overlimit.const matches 1 run function overlimit:city_clamp/restore
+execute unless score #cc_active overlimit.const matches 1 run bossbar set overlimit:city_clamp players
+
 execute as @a run attribute @s minecraft:jump_strength modifier remove overlimit:enchantment.cat_foot.jump
 execute as @a run attribute @s minecraft:jump_strength modifier remove overlimit:sky_walk_no_cat
 execute as @a run attribute @s minecraft:jump_strength modifier remove overlimit:cat_foot_jump

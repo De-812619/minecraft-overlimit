@@ -1,4 +1,4 @@
 .cache/
 .cursor/
-dist/
+# 仕様・テスト・開発メモはローカルのみ（一度追跡したファイルは git rm --cached が必要）
 docs/

@@ -6,4 +6,5 @@ tellraw @a[predicate=overlimit:in_overworld] {"text":"敵を押し返せなか�
 scoreboard players set #no_nethering overlimit.const 1
 function overlimit:nether_overflow/end
 function overlimit:nether_overflow/netherize
+function overlimit:heat/sub
 

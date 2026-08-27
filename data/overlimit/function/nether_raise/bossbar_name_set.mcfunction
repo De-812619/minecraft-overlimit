@@ -1,0 +1,1 @@
+$bossbar set overlimit:nether_raise name [{"text":"ネザーレイズ ","color":"gold","bold":true},{"text":"$(phase)","color":"$(color)"},{"text":" ヒート","color":"gray"},{"score":{"name":"#heat","objective":"overlimit.const"},"color":"gold"}]

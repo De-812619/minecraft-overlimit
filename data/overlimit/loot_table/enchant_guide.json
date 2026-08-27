@@ -14,14 +14,14 @@
                 "minecraft:enchantment_glint_override": true,
                 "minecraft:lore": [
                   {
-                    "text": "OverLimitエンチャントの効果一覧",
+                    "text": "エンチャント・アイテム・イベント",
                     "color": "gray",
                     "italic": false
                   }
                 ],
                 "minecraft:written_book_content": {
-                  "title": "OverLimitエンチャント図鑑",
-                  "author": "overlimit",
+                  "title": "OverLimit図鑑",
+                  "author": "overlimit / De812619",
                   "generation": 0,
                   "resolved": true,
                   "pages": [
@@ -33,24 +33,35 @@
                           "bold": true
                         },
                         {
-                          "text": "OverLimit\nエンチャント図鑑\n\n",
+                          "text": "OverLimit\n図鑑\n\n",
                           "color": "dark_red",
                           "bold": true
                         },
                         {
-                          "text": "装備や本に付いた\n効果の説明です。\n\n水色の名前を押すと\nそのページへ移動します。\n本と羽ペンで複製できます。\n\n"
-                        },
-                        {
-                          "text": "次のページへ »",
+                          "text": "エンチャント »\n",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
                             "page": 2
-                          },
-                          "hover_event": {
-                            "action": "show_text",
-                            "value": "共通の注意へ"
+                          }
+                        },
+                        {
+                          "text": "アイテム »\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 3
+                          }
+                        },
+                        {
+                          "text": "イベント »",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 4
                           }
                         }
                       ]
@@ -58,7 +69,7 @@
                     {
                       "raw": [
                         {
-                          "text": "注意\n\n",
+                          "text": "エンチャント\n\n",
                           "color": "dark_red",
                           "bold": true
                         },
@@ -66,29 +77,147 @@
                           "text": "・エンチャント台/司書には出ない\n\n"
                         },
                         {
-                          "text": "武器の目次 »\n",
+                          "text": "武器 »\n",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 3
-                          },
-                          "hover_event": {
-                            "action": "show_text",
-                            "value": "武器の目次へ"
+                            "page": 5
                           }
                         },
                         {
-                          "text": "防具・ツールの目次 »",
+                          "text": "防具・ツール »\n",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 4
-                          },
-                          "hover_event": {
-                            "action": "show_text",
-                            "value": "防具・ツールの目次へ"
+                            "page": 6
+                          }
+                        },
+                        {
+                          "text": "« 表紙",
+                          "color": "dark_gray",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 1
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "■ アイテム\n\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "不死鳥の護符\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 24
+                          }
+                        },
+                        {
+                          "text": "黄金弓\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 25
+                          }
+                        },
+                        {
+                          "text": "静寂のトーテム\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 26
+                          }
+                        },
+                        {
+                          "text": "帰還の懐中時計\n\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 27
+                          }
+                        },
+                        {
+                          "text": "« 表紙",
+                          "color": "dark_gray",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 1
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "■ イベント\n\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "ブラッドムーン\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 28
+                          }
+                        },
+                        {
+                          "text": "ネザーオーバーフロー\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 29
+                          }
+                        },
+                        {
+                          "text": "ネザーレイズ\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 30
+                          }
+                        },
+                        {
+                          "text": "シティクランプ\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 31
+                          }
+                        },
+                        {
+                          "text": "ブラッドワールド\n\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 32
+                          }
+                        },
+                        {
+                          "text": "« 表紙",
+                          "color": "dark_gray",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 1
                           }
                         }
                       ]
@@ -106,7 +235,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 5
+                            "page": 7
                           }
                         },
                         {
@@ -115,7 +244,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 6
+                            "page": 8
                           }
                         },
                         {
@@ -124,7 +253,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 7
+                            "page": 9
                           }
                         },
                         {
@@ -133,7 +262,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 8
+                            "page": 10
                           }
                         },
                         {
@@ -142,7 +271,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 9
+                            "page": 11
                           }
                         },
                         {
@@ -151,7 +280,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 10
+                            "page": 12
                           }
                         },
                         {
@@ -160,7 +289,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 11
+                            "page": 13
                           }
                         },
                         {
@@ -169,7 +298,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 12
+                            "page": 14
                           }
                         },
                         {
@@ -178,16 +307,16 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 13
+                            "page": 15
                           }
                         },
                         {
-                          "text": "防具・ツール »",
+                          "text": "« エンチャント",
                           "color": "dark_gray",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 4
+                            "page": 2
                           }
                         }
                       ]
@@ -205,7 +334,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 14
+                            "page": 16
                           }
                         },
                         {
@@ -214,7 +343,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 15
+                            "page": 17
                           }
                         },
                         {
@@ -223,7 +352,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 16
+                            "page": 18
                           }
                         },
                         {
@@ -232,7 +361,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 17
+                            "page": 19
                           }
                         },
                         {
@@ -241,7 +370,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 18
+                            "page": 20
                           }
                         },
                         {
@@ -255,7 +384,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 19
+                            "page": 21
                           }
                         },
                         {
@@ -264,7 +393,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 20
+                            "page": 22
                           }
                         },
                         {
@@ -273,12 +402,21 @@
                           "bold": true
                         },
                         {
-                          "text": "風の加護",
+                          "text": "風の加護\n\n",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 21
+                            "page": 23
+                          }
+                        },
+                        {
+                          "text": "« エンチャント",
+                          "color": "dark_gray",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 2
                           }
                         }
                       ]
@@ -303,7 +441,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 3
+                            "page": 5
                           }
                         }
                       ]
@@ -332,7 +470,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 3
+                            "page": 5
                           }
                         }
                       ]
@@ -357,7 +495,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 3
+                            "page": 5
                           }
                         }
                       ]
@@ -382,7 +520,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 3
+                            "page": 5
                           }
                         }
                       ]
@@ -407,7 +545,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 3
+                            "page": 5
                           }
                         }
                       ]
@@ -436,7 +574,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 3
+                            "page": 5
                           }
                         }
                       ]
@@ -461,7 +599,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 3
+                            "page": 5
                           }
                         }
                       ]
@@ -486,7 +624,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 3
+                            "page": 5
                           }
                         }
                       ]
@@ -511,7 +649,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 3
+                            "page": 5
                           }
                         }
                       ]
@@ -536,7 +674,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 4
+                            "page": 6
                           }
                         }
                       ]
@@ -561,7 +699,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 4
+                            "page": 6
                           }
                         }
                       ]
@@ -586,7 +724,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 4
+                            "page": 6
                           }
                         }
                       ]
@@ -611,7 +749,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 4
+                            "page": 6
                           }
                         }
                       ]
@@ -636,7 +774,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 4
+                            "page": 6
                           }
                         }
                       ]
@@ -665,7 +803,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 4
+                            "page": 6
                           }
                         }
                       ]
@@ -694,7 +832,7 @@
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
-                            "page": 4
+                            "page": 6
                           }
                         }
                       ]
@@ -715,6 +853,235 @@
                         },
                         {
                           "text": "« エリトラの目次",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 6
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "不死鳥の護符\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "入手：クラフト\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "致死ダメージを1回防ぎ、スタックが1減る。\n最大16まで重ねられる。\n\n"
+                        },
+                        {
+                          "text": "« アイテム",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 3
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "黄金弓\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "入手：クラフト\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "矢の速度とダメージは弓の2倍。\n命中した相手は光の矢と同じく発光する。\n耐久は弓の2倍。金ブロックで修理できる。\n\n"
+                        },
+                        {
+                          "text": "« アイテム",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 3
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "静寂のトーテム\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "入手：クラフト\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "使用すると1つ消費し、発生中の\nブラッドムーン、ネザーオーバーフロー、\nネザーレイズ、シティクランプを\n報酬なしで抑止する。\n\n"
+                        },
+                        {
+                          "text": "« アイテム",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 3
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "帰還の懐中時計\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "入手：チェスト\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "使用すると1つ消費し、\nリスポーン地点へテレポートする。\n\n"
+                        },
+                        {
+                          "text": "« アイテム",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 3
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "ブラッドムーン\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "場所：オーバーワールド\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "この夜は強化された敵だけが現れる。\n100体倒すか、朝まで続く。\n\n"
+                        },
+                        {
+                          "text": "« イベント",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 4
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "ネザーオーバーフロー\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "場所：オーバーワールド\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "ゲートから敵が溢れ出す。\n守れないと周囲がネザー化する。\nブラッドムーンとは同時に起きない。\n\n"
+                        },
+                        {
+                          "text": "« イベント",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 4
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "ネザーレイズ\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "場所：ネザー\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "要塞またはバストリオンが蜂起する。\n会場へ向かい鎮圧する。\n\n"
+                        },
+                        {
+                          "text": "« イベント",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 4
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "シティクランプ\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "場所：ジ・エンド\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "エンドシティがカオスに陥り、\n本来いない敵も現れる。\n本島では起きない。\n\n"
+                        },
+                        {
+                          "text": "« イベント",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 4
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "ブラッドワールド\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "場所：別ディメンション\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "夜は抽選なしでブラッドムーン相当。\n泣く黒曜石のポータルで往復する。\n\n"
+                        },
+                        {
+                          "text": "静寂のトーテムでは止められない\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "« イベント",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {

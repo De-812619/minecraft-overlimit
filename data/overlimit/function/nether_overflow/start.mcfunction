@@ -1,5 +1,6 @@
 function overlimit:nether_overflow/pick_gate
 execute unless score #no_picked overlimit.const matches 1 run return fail
+function overlimit:nether_overflow/apply_fail_boost
 
 scoreboard players set #no_active overlimit.const 1
 scoreboard players set #no_paused overlimit.const 0
@@ -29,7 +30,7 @@ bossbar set overlimit:nether_overflow players @a[predicate=overlimit:in_overworl
 
 title @a[predicate=overlimit:in_overworld] times 10 70 20
 title @a[predicate=overlimit:in_overworld] title {"text":"ネザーオーバーフロー","color":"dark_purple","bold":true}
-title @a[predicate=overlimit:in_overworld] subtitle {"text":"ゲートへ向かい敵を殲滅せよ","color":"gold"}
+title @a[predicate=overlimit:in_overworld] subtitle {"text":"ゲートから敵が溢れ出す","color":"gold"}
 execute as @a[predicate=overlimit:in_overworld] at @s run playsound minecraft:block.portal.trigger player @s ~ ~ ~ 0.7 0.6
-tellraw @a[predicate=overlimit:in_overworld] ["",{"text":"ネザーオーバーフローが発生した。ゲート（","color":"light_purple"},{"nbt":"gate.x","storage":"overlimit:no"},{"text":", ","color":"light_purple"},{"nbt":"gate.y","storage":"overlimit:no"},{"text":", ","color":"light_purple"},{"nbt":"gate.z","storage":"overlimit:no"},{"text":"）へ向かい、制限時間内に敵を殲滅せよ。","color":"light_purple"}]
+tellraw @a[predicate=overlimit:in_overworld] ["",{"text":"ネザーオーバーフローが発生した。ゲートから敵が溢れ出し、守れないと周囲がネザー化する。ゲート（","color":"light_purple"},{"nbt":"gate.x","storage":"overlimit:no"},{"text":", ","color":"light_purple"},{"nbt":"gate.y","storage":"overlimit:no"},{"text":", ","color":"light_purple"},{"nbt":"gate.z","storage":"overlimit:no"},{"text":"）へ向かえ。","color":"light_purple"},{"text":" （ヒート ","color":"gold"},{"score":{"name":"#heat","objective":"overlimit.const"},"color":"gold"},{"text":"）","color":"gold"}]
 function overlimit:nether_overflow/try_arrive

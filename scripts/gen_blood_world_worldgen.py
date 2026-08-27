@@ -136,8 +136,11 @@ def nether_floor_rule() -> dict:
 
 
 def inject_nether_surface(ns: dict) -> None:
+    # sequence は先に当たったものが勝つ。末尾に足すと OW の草／土が先に決まり、
+    # ナイリウム置き換えが走らない（真紅・歪みの森が草原に見える）。
+    # bedrock の直後＝OW 地表より前へ入れる。
     seq = ns["surface_rule"]["sequence"]
-    seq.append(nether_floor_rule())
+    seq.insert(1, nether_floor_rule())
 
 
 def copy_bw_biomes(z: zipfile.ZipFile) -> None:

@@ -6,3 +6,5 @@ tellraw @a[predicate=overlimit:in_overworld] {"text":"ネザーの溢れを押�
 execute as @e[type=minecraft:marker,tag=overlimit.no_target,limit=1] at @s run function overlimit:nether_overflow/place_reward
 execute unless entity @e[type=minecraft:marker,tag=overlimit.no_target] run function overlimit:nether_overflow/place_reward_at with storage overlimit:no gate
 function overlimit:nether_overflow/end
+function overlimit:heat/add
+function overlimit:pressure/sub_2

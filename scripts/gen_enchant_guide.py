@@ -52,22 +52,32 @@ def page_name(page: dict) -> str:
 
 
 def build_cover(page: dict, index: dict) -> list[dict]:
-    nxt = page["next"]
     sub = page.get("subheading") or []
     if isinstance(sub, str):
         sub_text = sub
     else:
         sub_text = "\n".join(sub)
-    parts = [
+    parts: list[dict] = [
         {"text": f"{page['heading']}\n\n", "color": "gold", "bold": True},
         {"text": f"{sub_text}\n\n", "color": "dark_red", "bold": True},
-        {"text": f"{join_lines(page.get('body'))}\n\n"},
-        link_component(
-            nxt["label"],
-            index[nxt["id"]],
-            hover=nxt.get("hover"),
-        ),
     ]
+    body = join_lines(page.get("body"))
+    if body:
+        parts.append({"text": f"{body}\n\n"})
+    links = page.get("links") or []
+    if not links and page.get("next"):
+        links = [page["next"]]
+    for i, link in enumerate(links):
+        suffix = "\n" if i < len(links) - 1 else ""
+        parts.append(
+            link_component(
+                link["label"],
+                index[link["id"]],
+                hover=link.get("hover"),
+                color=link.get("color", "dark_aqua"),
+                suffix=suffix,
+            )
+        )
     return parts
 
 
@@ -75,8 +85,10 @@ def build_text(page: dict, index: dict) -> list[dict]:
     color = page.get("title_color", "dark_red")
     parts: list[dict] = [
         {"text": f"{page['title']}\n\n", "color": color, "bold": True},
-        {"text": f"{join_lines(page.get('body'))}\n\n"},
     ]
+    body = join_lines(page.get("body"))
+    if body:
+        parts.append({"text": f"{body}\n\n"})
     links = page.get("links") or []
     for i, link in enumerate(links):
         suffix = "\n" if i < len(links) - 1 else ""

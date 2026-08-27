@@ -1,0 +1,7 @@
+scoreboard players set #nr_dbgn overlimit.const 0
+execute in minecraft:the_nether as @e[type=minecraft:armor_stand,tag=overlimit.nr_waypoint] run scoreboard players add #nr_dbgn overlimit.const 1
+scoreboard players set #nr_dbgr overlimit.const -999
+execute in minecraft:the_nether as @e[type=minecraft:armor_stand,tag=overlimit.nr_waypoint,limit=1] store result score #nr_dbgr overlimit.const run attribute @s minecraft:waypoint_transmit_range get
+tellraw @s [{"text":"[NR-WP] 防具立ての数=","color":"gray"},{"score":{"name":"#nr_dbgn","objective":"overlimit.const"},"color":"yellow"},{"text":" 送信範囲=","color":"gray"},{"score":{"name":"#nr_dbgr","objective":"overlimit.const"},"color":"yellow"},{"text":" active=","color":"gray"},{"score":{"name":"#nr_active","objective":"overlimit.const"},"color":"yellow"}]
+tellraw @s [{"text":"[NR-WP] 会場=","color":"gray"},{"nbt":"target.x","storage":"overlimit:nr","color":"aqua"},{"text":", ","color":"gray"},{"nbt":"target.y","storage":"overlimit:nr","color":"aqua"},{"text":", ","color":"gray"},{"nbt":"target.z","storage":"overlimit:nr","color":"aqua"}]
+execute in minecraft:the_nether as @e[type=minecraft:armor_stand,tag=overlimit.nr_waypoint,limit=1] at @s run tellraw @a [{"text":"[NR-WP] 防具立て実位置=","color":"gray"},{"nbt":"Pos[0]","entity":"@s","color":"green"},{"text":", ","color":"gray"},{"nbt":"Pos[1]","entity":"@s","color":"green"},{"text":", ","color":"gray"},{"nbt":"Pos[2]","entity":"@s","color":"green"}]

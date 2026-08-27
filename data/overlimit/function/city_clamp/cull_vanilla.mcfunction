@@ -1,0 +1,1 @@
+execute as @e[type=minecraft:marker,tag=overlimit.cc_target,limit=1] at @s as @e[type=minecraft:enderman,tag=!overlimit.cc_wave,tag=!overlimit.elite,distance=..16] unless data entity @s CustomName run function overlimit:blood_moon/despawn_one

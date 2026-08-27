@@ -6,7 +6,7 @@ scoreboard players set #bw_spread overlimit.const 0
 tag @s add overlimit.to_bw
 tag @s add overlimit.portal_arrive
 scoreboard players set @s overlimit.portal_wait 0
-function overlimit:portal/store_origin
+function overlimit:portal/roll_dest
 function overlimit:portal/spread_to_land with storage overlimit:portal origin
 function overlimit:portal/nausea_off
 execute if predicate overlimit:in_overworld run function overlimit:portal/stand_front

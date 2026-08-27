@@ -217,6 +217,32 @@ Unable to play unknown soundEvent: minecraft:entity.wolf.howl
 
 ---
 
+## レシピ材料はアイテムIDだけ
+
+**起きたこと:** 不死鳥の護符の材料が `minecraft:totem_of_undying` なので、同じIDの護符・静寂のトーテムもクラフトできた。クラフト後に取り消すと、材料は返るが結果がインベントリに残り無限作成になった。
+
+**正しい書き方:** `Ingredient` は `HolderSet<Item>`（ID / `#tag` / 配列）。`custom_data` では材料を絞れない。作業台の結果スロットもコマンドでは消せない。カスタムアイテムはバニラレシピに出てこないベース（本パックは `poisonous_potato`）にし、見た目は `item_model`、致死回避は `death_protection`。
+
+**出所:** 26.2 `Ingredient.class` の `CODEC`（`HolderSetCodec` of `Registries.ITEM`）。[Recipe](https://minecraft.wiki/w/Recipe_(Java_Edition))。本パックの護符クラフト検証（2026-08-28）。
+
+---
+
+## 進捗の `requirements` は criteria と一致必須
+
+**起きたこと:** `phoenix_amulet_craft_ing` がロード失敗。護符クラフトの材料判定が動かず、カスタムトーテムでも作れた。
+
+**ログ:**
+
+```
+Couldn't parse data file 'overlimit:item/phoenix_amulet_craft_ing' ... Advancement completion requirements did not exactly match specified criteria. Missing: [q1, q2, q3, s1, s2, s3, p1, p2, p3]
+```
+
+**正しい書き方:** `criteria` のキーはすべて `requirements` に出す。未使用の判定用は各キーを単独配列にし、完了させないなら `minecraft:impossible` を AND で足す。
+
+**出所:** `latest.log`（2026-08-27 23:53）。[Advancement definition](https://minecraft.wiki/w/Advancement_definition) の requirements。
+
+---
+
 ## ログの場所
 
 | 用途 | パス |

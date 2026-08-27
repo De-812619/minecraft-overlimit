@@ -277,5 +277,8 @@ scoreboard players set @a overlimit.cat_boost 0
 # Old cat_foot decoys (string farm). Safe to run every reload.
 execute as @e[type=minecraft:cat,tag=overlimit.cat_decoy] run function overlimit:enchant/cat_foot/discard_decoy
 
+# 旧トーテム基盤の護符／静寂トーテムを新しいベースアイテムへ
+execute as @a run function overlimit:item/migrate_legacy_totem
+
 # Fabric: schedule ループ（#minecraft:tick 非依存）
 schedule function overlimit:tick_loop 1t replace

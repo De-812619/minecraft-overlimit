@@ -8,7 +8,7 @@
     "TTT"
   ],
   "result": {
-    "id": "minecraft:totem_of_undying",
+    "id": "minecraft:poisonous_potato",
     "count": 2,
     "components": {
       "minecraft:item_name": {
@@ -30,6 +30,35 @@
         "overlimit": {
           "phoenix_amulet": true
         }
+      },
+      "!minecraft:food": {},
+      "!minecraft:consumable": {},
+      "minecraft:death_protection": {
+        "death_effects": [
+          {
+            "type": "minecraft:clear_all_effects"
+          },
+          {
+            "type": "minecraft:apply_effects",
+            "effects": [
+              {
+                "id": "minecraft:regeneration",
+                "amplifier": 1,
+                "duration": 900
+              },
+              {
+                "id": "minecraft:absorption",
+                "amplifier": 1,
+                "duration": 100
+              },
+              {
+                "id": "minecraft:fire_resistance",
+                "amplifier": 0,
+                "duration": 800
+              }
+            ]
+          }
+        ]
       }
     }
   }

@@ -1,0 +1,65 @@
+{
+  "criteria": {
+    "phoenix": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:totem_of_undying",
+            "predicates": {
+              "minecraft:custom_data": {
+                "overlimit": {
+                  "phoenix_amulet": true
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "quiet": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:totem_of_undying",
+            "predicates": {
+              "minecraft:custom_data": {
+                "overlimit": {
+                  "quiet_totem": true
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "spent": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:totem_of_undying",
+            "predicates": {
+              "minecraft:custom_data": {
+                "overlimit": {
+                  "quiet_totem_spent": true
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "phoenix",
+      "quiet",
+      "spent"
+    ]
+  ],
+  "rewards": {
+    "function": "overlimit:item/migrate_legacy_totem"
+  }
+}

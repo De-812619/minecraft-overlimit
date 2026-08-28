@@ -9,4 +9,4 @@ execute if score #cc_phase overlimit.const matches 3 run scoreboard players oper
 execute if score #cc_phase overlimit.const matches 3 run function overlimit:city_clamp/spawn_boss
 function overlimit:city_clamp/bossbar_value
 function overlimit:city_clamp/bossbar_name
-title @a[predicate=overlimit:in_the_end] actionbar {"text":"シティクランプの脅威が増した","color":"red"}
+title @a[predicate=overlimit:in_the_end] actionbar {"text":"シティクランプの脅威ランクが上がった","color":"red"}

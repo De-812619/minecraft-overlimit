@@ -1,4 +1,4 @@
-# 会場24以内なら残す。さもなくば最寄プレイヤー水平32以内なら残す。
+# 戦場24以内なら残す。さもなくば最寄プレイヤー水平32以内なら残す。
 execute if entity @e[type=minecraft:marker,tag=overlimit.nr_target,distance=..24] run return fail
 scoreboard players set #nr_near_lim overlimit.const 32
 scoreboard players set #nr_near_p overlimit.const 0

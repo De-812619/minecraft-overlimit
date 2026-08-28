@@ -17,7 +17,7 @@ bossbar set overlimit:blood_moon players @a[predicate=overlimit:in_overworld]
 title @a[predicate=overlimit:in_overworld] times 10 70 20
 title @a[predicate=overlimit:in_overworld] title {"text":"ブラッドムーン","color":"dark_red","bold":true}
 execute as @a[predicate=overlimit:in_overworld] at @s run playsound minecraft:entity.wither.spawn player @s ~ ~ ~ 0.45 0.55
-tellraw @a[predicate=overlimit:in_overworld] [{"text":"ブラッドムーンが始まった。この夜は強化された敵だけが現れる。100体倒せ。","color":"red"},{"text":" （ヒート ","color":"gold"},{"score":{"name":"#heat","objective":"overlimit.const"},"color":"gold"},{"text":"）","color":"gold"}]
+tellraw @a[predicate=overlimit:in_overworld] [{"text":"ブラッドムーンが始まった。この夜は強化された敵だけが現れる。100体倒せ。","color":"red"},{"text":" （脅威指数 ","color":"gold"},{"score":{"name":"#heat","objective":"overlimit.const"},"color":"gold"},{"text":"）","color":"gold"}]
 
 scoreboard players set #bm_spawn_t overlimit.const 0
 function overlimit:blood_moon/spawn_burst

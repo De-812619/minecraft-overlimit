@@ -1,5 +1,5 @@
 # ネザーの高さマップは天井岩盤に吸われるので使わない。
-# 会場マーカーYを基準に ±6 で「足元が固体・胴体が空気」の床を探す。
+# 戦場マーカーYを基準に ±6 で「足元が固体・胴体が空気」の床を探す。
 execute if function overlimit:nether_raise/spawn_column run return 1
 execute positioned ~ ~1 ~ if function overlimit:nether_raise/spawn_column run return 1
 execute positioned ~ ~-1 ~ if function overlimit:nether_raise/spawn_column run return 1

@@ -29,6 +29,8 @@ TARGET_CHESTS = [
     "ancient_city_ice_box",
     "desert_pyramid",
     "jungle_temple",
+    # 貯蔵室の空チェストは LootTable 無し。注入は Chest* マーカー由来のランダムルートのみ。
+    "woodland_mansion",
     "shipwreck_map",
     "shipwreck_supply",
     "shipwreck_treasure",

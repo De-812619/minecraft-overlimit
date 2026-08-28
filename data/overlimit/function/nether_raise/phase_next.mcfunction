@@ -12,4 +12,4 @@ execute if score #nr_phase overlimit.const matches 2 run scoreboard players oper
 execute if score #nr_phase overlimit.const matches 3 run scoreboard players operation #nr_int overlimit.const = #nr_int3 overlimit.const
 function overlimit:nether_raise/bossbar_value
 function overlimit:nether_raise/bossbar_name
-title @a[predicate=overlimit:in_nether] actionbar {"text":"ネザーレイズの脅威が増した","color":"red"}
+title @a[predicate=overlimit:in_nether] actionbar {"text":"ネザーレイズの脅威ランクが上がった","color":"red"}

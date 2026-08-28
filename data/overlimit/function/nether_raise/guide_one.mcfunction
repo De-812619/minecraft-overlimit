@@ -24,4 +24,4 @@ scoreboard players operation #nr_gmin overlimit.const /= #8 overlimit.const
 scoreboard players operation #nr_best overlimit.const = #nr_gmax overlimit.const
 scoreboard players operation #nr_best overlimit.const += #nr_gmin overlimit.const
 # 方角の案内はロケーターバーのウェイポイントが担うので、ここでは
-# ボスバーの進捗に使う会場までの距離だけを求める
+# ボスバーの進捗に使う戦場までの距離だけを求める

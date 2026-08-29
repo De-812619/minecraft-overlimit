@@ -10,7 +10,8 @@ execute if score #bw_rand_n overlimit.const matches 8.. run return run function 
 function overlimit:portal/mark_used
 execute if data storage overlimit:portal pend.x run function overlimit:portal/unload_pend with storage overlimit:portal pend
 kill @e[type=minecraft:marker,tag=overlimit.bw_fl]
-execute unless function overlimit:portal/pick_landmark run return run function overlimit:portal/search_give_up
+execute unless function overlimit:portal/pick_landmark run function overlimit:portal/roll_dest
+execute unless data storage overlimit:portal origin.x run return run function overlimit:portal/search_give_up
 scoreboard players set #bw_place_wait overlimit.const 0
 function overlimit:portal/forceload_dest with storage overlimit:portal origin
 execute as @a[tag=overlimit.portal_arrive] if predicate overlimit:in_overworld run function overlimit:portal/forceload_dest with storage overlimit:portal origin

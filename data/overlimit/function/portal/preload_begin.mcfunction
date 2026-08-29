@@ -7,7 +7,8 @@ scoreboard players set #bw_warm_cd overlimit.const 0
 scoreboard players set #bw_place_wait overlimit.const 0
 scoreboard players set #bw_rand_n overlimit.const 0
 scoreboard players set #bw_warm_fail overlimit.const 0
-execute unless function overlimit:portal/pick_landmark run scoreboard players set #bw_preload overlimit.const 0
-execute unless score #bw_found overlimit.const matches 1 run return fail
+function overlimit:portal/pick_or_roll
+execute unless data storage overlimit:portal origin.x run scoreboard players set #bw_preload overlimit.const 0
+execute unless data storage overlimit:portal origin.x run return fail
 function overlimit:portal/forceload_dest with storage overlimit:portal origin
 return 1

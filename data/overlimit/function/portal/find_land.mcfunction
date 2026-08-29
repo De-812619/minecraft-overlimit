@@ -1,4 +1,13 @@
-# 構造物の中心は建物の中が多いので外へ。乾いた列だけ、水平100以内。
+# 構造物の中心は建物の中が多いので外へ。乾いた列だけ。中心と8マスも試す。
+execute if function overlimit:portal/try_land run return 1
+execute positioned ~8 ~ ~ if function overlimit:portal/try_land run return 1
+execute positioned ~-8 ~ ~ if function overlimit:portal/try_land run return 1
+execute positioned ~ ~ ~8 if function overlimit:portal/try_land run return 1
+execute positioned ~ ~ ~-8 if function overlimit:portal/try_land run return 1
+execute positioned ~8 ~ ~8 if function overlimit:portal/try_land run return 1
+execute positioned ~8 ~ ~-8 if function overlimit:portal/try_land run return 1
+execute positioned ~-8 ~ ~8 if function overlimit:portal/try_land run return 1
+execute positioned ~-8 ~ ~-8 if function overlimit:portal/try_land run return 1
 execute positioned ~16 ~ ~ if function overlimit:portal/try_land run return 1
 execute positioned ~-16 ~ ~ if function overlimit:portal/try_land run return 1
 execute positioned ~ ~ ~16 if function overlimit:portal/try_land run return 1
@@ -39,8 +48,16 @@ execute positioned ~96 ~ ~ if function overlimit:portal/try_land run return 1
 execute positioned ~-96 ~ ~ if function overlimit:portal/try_land run return 1
 execute positioned ~ ~ ~96 if function overlimit:portal/try_land run return 1
 execute positioned ~ ~ ~-96 if function overlimit:portal/try_land run return 1
-execute positioned ~100 ~ ~ if function overlimit:portal/try_land run return 1
-execute positioned ~-100 ~ ~ if function overlimit:portal/try_land run return 1
-execute positioned ~ ~ ~100 if function overlimit:portal/try_land run return 1
-execute positioned ~ ~ ~-100 if function overlimit:portal/try_land run return 1
+execute positioned ~112 ~ ~ if function overlimit:portal/try_land run return 1
+execute positioned ~-112 ~ ~ if function overlimit:portal/try_land run return 1
+execute positioned ~ ~ ~112 if function overlimit:portal/try_land run return 1
+execute positioned ~ ~ ~-112 if function overlimit:portal/try_land run return 1
+execute positioned ~128 ~ ~ if function overlimit:portal/try_land run return 1
+execute positioned ~-128 ~ ~ if function overlimit:portal/try_land run return 1
+execute positioned ~ ~ ~128 if function overlimit:portal/try_land run return 1
+execute positioned ~ ~ ~-128 if function overlimit:portal/try_land run return 1
+execute positioned ~160 ~ ~ if function overlimit:portal/try_land run return 1
+execute positioned ~-160 ~ ~ if function overlimit:portal/try_land run return 1
+execute positioned ~ ~ ~160 if function overlimit:portal/try_land run return 1
+execute positioned ~ ~ ~-160 if function overlimit:portal/try_land run return 1
 return fail

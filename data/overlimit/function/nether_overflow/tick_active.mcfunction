@@ -2,6 +2,10 @@ execute store result score #no_diff overlimit.const run difficulty
 execute if score #no_diff overlimit.const matches 0 run return run function overlimit:nether_overflow/end_cancel
 
 execute unless entity @e[type=minecraft:marker,tag=overlimit.no_target] run function overlimit:nether_overflow/respawn_target
+scoreboard players set #no_wpc overlimit.const 0
+execute in minecraft:overworld as @e[type=minecraft:armor_stand,tag=overlimit.no_waypoint] run scoreboard players add #no_wpc overlimit.const 1
+execute if score #no_wpc overlimit.const matches 0 run function overlimit:nether_overflow/spawn_waypoint with storage overlimit:no gate
+execute if score #no_wpc overlimit.const matches 2.. run function overlimit:nether_overflow/spawn_waypoint with storage overlimit:no gate
 
 execute unless entity @a[predicate=overlimit:in_overworld,gamemode=!spectator] run return run function overlimit:nether_overflow/pause
 execute as @a[tag=overlimit.no_core] unless predicate overlimit:in_overworld run function overlimit:nether_overflow/transfer_core
@@ -9,6 +13,10 @@ execute unless entity @a[tag=overlimit.no_core,predicate=overlimit:in_overworld,
 execute unless entity @a[tag=overlimit.no_core,predicate=overlimit:in_overworld,gamemode=!spectator] run return run function overlimit:nether_overflow/pause
 
 execute if score #no_paused overlimit.const matches 1 run function overlimit:nether_overflow/resume
+execute in minecraft:overworld as @e[type=minecraft:armor_stand,tag=overlimit.no_waypoint] run function overlimit:nether_overflow/ensure_waypoint
+execute store result score #no_pc overlimit.const if entity @a[predicate=overlimit:in_overworld,gamemode=!spectator]
+execute if score #no_pc overlimit.const > #no_pc_prev overlimit.const run function overlimit:nether_overflow/refresh_waypoint
+scoreboard players operation #no_pc_prev overlimit.const = #no_pc overlimit.const
 
 execute as @a[tag=overlimit.no_core,scores={overlimit.no_deaths=1..}] run return run function overlimit:nether_overflow/end_fail
 

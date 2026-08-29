@@ -259,6 +259,23 @@ Couldn't parse data file 'overlimit:item/phoenix_amulet_craft_ing' ... Advanceme
 
 ---
 
+## `waypoint modify` の色はチーム色名
+
+**起きたこと:** `waypoint modify @s color purple` で関数がロード失敗。ロケーターバーが出ない。
+
+**ログ:**
+
+```
+Failed to load function overlimit:nether_overflow/refresh_waypoint
+Whilst parsing command on line 5: 「purple」は不明な色です ...lor purple<--[HERE]
+```
+
+**正しい書き方:** チーム色（`dark_purple` / `light_purple` / `gold` / `blue` など）。ボスバーの `color purple` とは別。hex なら `color hex RRGGBB`。
+
+**出所:** 上記 `latest.log`（2026-08-30 00:24）。[Commands/waypoint](https://minecraft.wiki/w/Commands/waypoint)
+
+---
+
 ## ログの場所
 
 | 用途 | パス |

@@ -6,7 +6,8 @@ execute unless score #bw_preload overlimit.const matches 1 run scoreboard player
 tag @s add overlimit.to_bw
 tag @s add overlimit.portal_arrive
 scoreboard players set @s overlimit.portal_wait 0
-execute unless score #bw_preload overlimit.const matches 1 unless function overlimit:portal/pick_landmark run return run function overlimit:portal/search_stuck
+execute unless score #bw_preload overlimit.const matches 1 run function overlimit:portal/pick_or_roll
+execute unless data storage overlimit:portal origin.x run return run function overlimit:portal/search_stuck
 scoreboard players set #bw_preload overlimit.const 0
 scoreboard players set #bw_warm overlimit.const 0
 scoreboard players set #bw_warm_fail overlimit.const 0

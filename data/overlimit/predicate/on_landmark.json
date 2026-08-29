@@ -1,0 +1,6 @@
+{
+  "condition": "minecraft:location_check",
+  "predicate": {
+    "structures": "#overlimit:bw_land_landmark"
+  }
+}

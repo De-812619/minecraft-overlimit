@@ -36,6 +36,8 @@ scoreboard players set #8 overlimit.const 8
 scoreboard players set #17 overlimit.const 17
 scoreboard players set #31 overlimit.const 31
 scoreboard players set #20 overlimit.const 20
+scoreboard players set #40 overlimit.const 40
+scoreboard players set #80 overlimit.const 80
 scoreboard players set #60 overlimit.const 60
 scoreboard players set #100 overlimit.const 100
 scoreboard players set #23460 overlimit.const 23460
@@ -107,7 +109,8 @@ execute unless score #bw_ended_day overlimit.const matches -1.. run scoreboard p
 execute unless score #bw_clock overlimit.const matches 0.. run scoreboard players set #bw_clock overlimit.const 0
 time of overlimit:blood_world pause
 scoreboard players set #bw_clock overlimit.const 0
-scoreboard players set #portal_charge_need overlimit.const 100
+scoreboard players set #portal_charge_min overlimit.const 20
+scoreboard players set #portal_charge_need overlimit.const 80
 scoreboard objectives add overlimit.anvil_cap dummy
 scoreboard objectives add overlimit.portal_cd dummy
 scoreboard objectives add overlimit.portal_wait dummy
@@ -126,12 +129,24 @@ execute unless score #bw_origin_from_gate overlimit.const matches 0.. run scoreb
 execute unless score #bw_scrapping overlimit.const matches 0.. run scoreboard players set #bw_scrapping overlimit.const 0
 execute unless score #bw_occupied overlimit.const matches 0.. run scoreboard players set #bw_occupied overlimit.const 0
 execute unless score #bw_spread overlimit.const matches 0.. run scoreboard players set #bw_spread overlimit.const 0
+execute unless score #bw_preload overlimit.const matches 0.. run scoreboard players set #bw_preload overlimit.const 0
+execute unless score #bw_survey_ok overlimit.const matches 0.. run scoreboard players set #bw_survey_ok overlimit.const 0
+execute unless score #bw_no_tp overlimit.const matches 0.. run scoreboard players set #bw_no_tp overlimit.const 0
+execute unless score #bw_place_wait overlimit.const matches 0.. run scoreboard players set #bw_place_wait overlimit.const 0
+execute unless score #bw_warm overlimit.const matches 0.. run scoreboard players set #bw_warm overlimit.const 0
+execute unless score #bw_warm_fail overlimit.const matches 0.. run scoreboard players set #bw_warm_fail overlimit.const 0
+execute unless score #bw_warm_cd overlimit.const matches 0.. run scoreboard players set #bw_warm_cd overlimit.const 0
 execute unless data storage overlimit:portal gates run data modify storage overlimit:portal gates set value []
+execute unless data storage overlimit:portal used run data modify storage overlimit:portal used set value []
+data modify storage overlimit:portal origins set value [{ox:0,oz:0},{ox:400,oz:0},{ox:-400,oz:0},{ox:0,oz:400},{ox:0,oz:-400},{ox:283,oz:283},{ox:283,oz:-283},{ox:-283,oz:283},{ox:-283,oz:-283},{ox:800,oz:0},{ox:-800,oz:0},{ox:0,oz:800},{ox:0,oz:-800},{ox:566,oz:566},{ox:566,oz:-566},{ox:-566,oz:566},{ox:-566,oz:-566}]
+scoreboard players set #bw_search overlimit.const 8000
 tag @a remove overlimit.portal_arrive
 tag @a remove overlimit.to_bw
 tag @a remove overlimit.to_ow
+execute as @a run function overlimit:portal/release
 scoreboard players set @a overlimit.portal_cd 0
 scoreboard players set @a overlimit.portal_charge 0
+schedule function overlimit:portal/verify_gate 40t replace
 kill @e[type=minecraft:armor_stand,tag=overlimit.bw_search]
 execute unless entity @a[predicate=overlimit:in_blood_world] run scoreboard players set #bw_pending overlimit.const 0
 

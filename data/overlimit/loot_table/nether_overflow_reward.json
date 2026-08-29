@@ -2,11 +2,29 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": 5,
+      "rolls": 2,
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "value": "overlimit:bonus_gear_no_book"
+          "value": "overlimit:bonus_weapon"
+        }
+      ]
+    },
+    {
+      "rolls": 2,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_armor"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_tool"
         }
       ]
     },

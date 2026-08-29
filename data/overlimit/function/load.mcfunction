@@ -33,6 +33,7 @@ scoreboard players set #2 overlimit.const 2
 scoreboard players set #3 overlimit.const 3
 scoreboard players set #5 overlimit.const 5
 scoreboard players set #8 overlimit.const 8
+scoreboard players set #bw_scale overlimit.const 8
 scoreboard players set #17 overlimit.const 17
 scoreboard players set #31 overlimit.const 31
 scoreboard players set #20 overlimit.const 20

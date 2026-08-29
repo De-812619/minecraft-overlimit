@@ -217,13 +217,29 @@ Unable to play unknown soundEvent: minecraft:entity.wolf.howl
 
 ---
 
+## トーテム使用音は `item.totem.use`
+
+**起きたこと:** 聖王のトーテムのレシピ／ルートがロード失敗。クラフトできない。give もルート欠落で関数が落ちた。
+
+**ログ:**
+
+```
+Couldn't parse data file 'overlimit:holy_totem' from 'overlimit:recipe/holy_totem.json': ... ResourceKey[minecraft:sound_event / minecraft:item.totem_use]
+```
+
+**正しい書き方:** `minecraft:item.totem.use`（ドット）。`item.totem_use` は 26.2 に無い。不明な `sound` は `consumable` ごとレシピ／ルートを落とす。
+
+**出所:** `latest.log`（2026-08-29 22:14）。静寂のトーテムは `block.beacon.deactivate` で通っている。
+
+---
+
 ## レシピ材料はアイテムIDだけ
 
 **起きたこと:** 不死鳥の護符の材料が `minecraft:totem_of_undying` なので、同じIDの護符・静寂のトーテムもクラフトできた。クラフト後に取り消すと、材料は返るが結果がインベントリに残り無限作成になった。
 
-**正しい書き方:** `Ingredient` は `HolderSet<Item>`（ID / `#tag` / 配列）。`custom_data` では材料を絞れない。作業台の結果スロットもコマンドでは消せない。カスタムアイテムはバニラレシピに出てこないベース（本パックは `poisonous_potato`）にし、見た目は `item_model`、致死回避は `death_protection`。
+**正しい書き方:** `Ingredient` は `HolderSet<Item>`（ID / `#tag` / 配列）。`custom_data` では材料を絞れない。作業台の結果スロットもコマンドでは消せない。レシピ材料になるカスタムアイテムは、サバイバルで手に入らないベース（本パックの静寂／聖王は `knowledge_book`）にする。見た目は `item_model`。護符はレシピ材料にならないので `poisonous_potato` のまま（致死回避は `death_protection`）。
 
-**出所:** 26.2 `Ingredient.class` の `CODEC`（`HolderSetCodec` of `Registries.ITEM`）。[Recipe](https://minecraft.wiki/w/Recipe_(Java_Edition))。本パックの護符クラフト検証（2026-08-28）。
+**出所:** 26.2 `Ingredient.class` の `CODEC`（`HolderSetCodec` of `Registries.ITEM`）。[Recipe](https://minecraft.wiki/w/Recipe_(Java_Edition))。本パックの護符クラフト検証（2026-08-28）。聖王のトーテムが毒ジャガイモでレシピ本に出た件（2026-08-29）。
 
 ---
 

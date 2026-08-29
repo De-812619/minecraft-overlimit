@@ -1,0 +1,50 @@
+{
+  "criteria": {
+    "craft": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "overlimit:holy_totem",
+        "ingredients": [
+          {
+            "items": "minecraft:knowledge_book",
+            "predicates": {
+              "minecraft:custom_data": {
+                "overlimit": {
+                  "quiet_totem": true
+                }
+              }
+            }
+          },
+          {
+            "items": "minecraft:knowledge_book",
+            "predicates": {
+              "minecraft:custom_data": {
+                "overlimit": {
+                  "quiet_totem": true
+                }
+              }
+            }
+          },
+          {
+            "items": "minecraft:knowledge_book",
+            "predicates": {
+              "minecraft:custom_data": {
+                "overlimit": {
+                  "quiet_totem": true
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "craft"
+    ]
+  ],
+  "rewards": {
+    "function": "overlimit:item/holy_totem/craft_ok"
+  }
+}

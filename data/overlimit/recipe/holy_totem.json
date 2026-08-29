@@ -2,82 +2,72 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "D": "minecraft:diamond_block",
-    "d": "minecraft:diamond"
+    "G": "minecraft:gold_block",
+    "Q": "minecraft:knowledge_book"
   },
   "pattern": [
-    " D ",
-    "ddd",
-    " d "
+    "GGG",
+    "QQQ",
+    " G "
   ],
   "result": {
     "id": "minecraft:knowledge_book",
     "count": 1,
     "components": {
       "minecraft:item_name": {
-        "text": "静寂のトーテム",
-        "color": "aqua"
+        "text": "聖王のトーテム",
+        "color": "gold"
       },
       "minecraft:lore": [
         {
-          "text": "使用すると1つ消費し、発生中のブラッドムーン、ネザーオーバーフロー、",
-          "color": "gray",
-          "italic": false
-        },
-        {
-          "text": "ネザーレイズ、シティクランプを報酬なしで抑止する",
+          "text": "使用すると1つ消費し、世界圧を0にリセットする",
           "color": "gray",
           "italic": false
         }
       ],
-      "minecraft:rarity": "rare",
+      "minecraft:rarity": "epic",
       "minecraft:max_stack_size": 16,
       "minecraft:enchantment_glint_override": true,
-      "minecraft:item_model": "overlimit:quiet_totem",
+      "minecraft:item_model": "overlimit:holy_totem",
       "!minecraft:recipes": {},
       "minecraft:custom_data": {
         "overlimit": {
-          "quiet_totem": true
+          "holy_totem": true
         }
       },
       "minecraft:consumable": {
         "consume_seconds": 0.0,
         "animation": "none",
         "has_consume_particles": false,
-        "sound": "minecraft:block.beacon.deactivate"
+        "sound": "minecraft:block.beacon.activate"
       },
       "minecraft:use_cooldown": {
         "seconds": 1.0,
-        "cooldown_group": "overlimit:quiet_totem"
+        "cooldown_group": "overlimit:holy_totem"
       },
       "minecraft:use_remainder": {
         "id": "minecraft:knowledge_book",
         "count": 1,
         "components": {
           "minecraft:item_name": {
-            "text": "静寂のトーテム",
-            "color": "aqua"
+            "text": "聖王のトーテム",
+            "color": "gold"
           },
           "minecraft:lore": [
             {
-              "text": "使用すると1つ消費し、発生中のブラッドムーン、ネザーオーバーフロー、",
-              "color": "gray",
-              "italic": false
-            },
-            {
-              "text": "ネザーレイズ、シティクランプを報酬なしで抑止する",
+              "text": "使用すると1つ消費し、世界圧を0にリセットする",
               "color": "gray",
               "italic": false
             }
           ],
-          "minecraft:rarity": "rare",
+          "minecraft:rarity": "epic",
           "minecraft:max_stack_size": 16,
           "minecraft:enchantment_glint_override": true,
-          "minecraft:item_model": "overlimit:quiet_totem",
+          "minecraft:item_model": "overlimit:holy_totem",
           "!minecraft:recipes": {},
           "minecraft:custom_data": {
             "overlimit": {
-              "quiet_totem_spent": true
+              "holy_totem_spent": true
             }
           }
         }

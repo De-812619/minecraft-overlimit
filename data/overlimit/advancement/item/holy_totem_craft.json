@@ -1,0 +1,18 @@
+{
+  "criteria": {
+    "craft": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "overlimit:holy_totem"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "craft"
+    ]
+  ],
+  "rewards": {
+    "function": "overlimit:item/holy_totem/craft_any"
+  }
+}

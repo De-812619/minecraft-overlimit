@@ -6,7 +6,7 @@ scoreboard players operation #tick_at overlimit.const = #tick_now overlimit.cons
 tag @a remove overlimit.in_bw
 execute as @a at @s if dimension overlimit:blood_world run tag @s add overlimit.in_bw
 function overlimit:portal/tick
-function overlimit:portal/session_tick
+
 execute as @e[type=#overlimit:can_be_danger,tag=!overlimit.scanned,limit=8] at @s run function overlimit:mob/scan
 execute as @e[type=minecraft:marker,tag=overlimit.elite_xp] at @s run function overlimit:mob/xp_marker_tick
 execute as @e[type=minecraft:marker,tag=overlimit.danger_xp,tag=!overlimit.elite_xp] at @s run function overlimit:mob/xp_marker_tick

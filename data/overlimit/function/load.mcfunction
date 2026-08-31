@@ -220,7 +220,6 @@ scoreboard players set #999999 overlimit.const 999999
 execute unless data storage overlimit:nr cleared run data modify storage overlimit:nr cleared set value []
 execute unless score #nr_gather_t overlimit.const matches 0.. run scoreboard players set #nr_gather_t overlimit.const 0
 execute unless data storage overlimit:nr target run data modify storage overlimit:nr target set value {x:0,y:64,z:0,kind:"minecraft:fortress"}
-data modify storage overlimit:nr origins set value [{ox:0,oz:0},{ox:400,oz:0},{ox:-400,oz:0},{ox:0,oz:400},{ox:0,oz:-400},{ox:283,oz:283},{ox:283,oz:-283},{ox:-283,oz:283},{ox:-283,oz:-283},{ox:800,oz:0},{ox:-800,oz:0},{ox:0,oz:800},{ox:0,oz:-800},{ox:566,oz:566},{ox:566,oz:-566},{ox:-566,oz:566},{ox:-566,oz:-566}]
 
 execute unless score #cc_active overlimit.const matches 0.. run scoreboard players set #cc_active overlimit.const 0
 execute unless score #cc_combat overlimit.const matches 0.. run scoreboard players set #cc_combat overlimit.const 0
@@ -246,7 +245,6 @@ scoreboard players set #cc_int2 overlimit.const 25
 scoreboard players set #cc_int3 overlimit.const 40
 execute unless data storage overlimit:cc cleared run data modify storage overlimit:cc cleared set value []
 execute unless data storage overlimit:cc target run data modify storage overlimit:cc target set value {x:0,y:64,z:0,kind:"minecraft:end_city"}
-data modify storage overlimit:cc origins set value [{ox:0,oz:0},{ox:400,oz:0},{ox:-400,oz:0},{ox:0,oz:400},{ox:0,oz:-400},{ox:283,oz:283},{ox:283,oz:-283},{ox:-283,oz:283},{ox:-283,oz:-283},{ox:800,oz:0},{ox:-800,oz:0},{ox:0,oz:800},{ox:0,oz:-800},{ox:566,oz:566},{ox:566,oz:-566},{ox:-566,oz:566},{ox:-566,oz:-566}]
 
 bossbar add overlimit:nether_raise {"text":"ネザーレイズ","color":"gold","bold":true}
 bossbar set overlimit:nether_raise color yellow

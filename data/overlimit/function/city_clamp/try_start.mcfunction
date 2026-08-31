@@ -3,11 +3,7 @@ execute if score #cc_diff overlimit.const matches 0 run return fail
 execute if score #cc_active overlimit.const matches 1 run return fail
 execute if entity @e[type=minecraft:ender_dragon] run return fail
 execute unless entity @a[predicate=overlimit:in_the_end,gamemode=!spectator] run return fail
-scoreboard players set #cc_best overlimit.const 999999
-tag @a remove overlimit.cc_pick
-execute as @a[predicate=overlimit:in_the_end,gamemode=!spectator] at @s run function overlimit:city_clamp/locate_candidate
-execute if score #cc_best overlimit.const > #cc_search overlimit.const run return fail
-execute unless entity @a[tag=overlimit.cc_pick,limit=1] run return fail
-execute unless function overlimit:city_clamp/refine_target run return fail
-function overlimit:city_clamp/start
-return 1
+execute as @a[tag=overlimit.cc_tried] at @s unless predicate overlimit:in_end_city run tag @s remove overlimit.cc_tried
+execute as @a[predicate=overlimit:in_the_end,gamemode=!spectator,tag=!overlimit.cc_tried] at @s if predicate overlimit:in_end_city run function overlimit:city_clamp/try_enter
+execute if score #cc_active overlimit.const matches 1 run return 1
+return fail

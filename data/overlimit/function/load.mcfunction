@@ -84,7 +84,11 @@ function overlimit:heat/refresh
 execute unless score #pressure overlimit.const matches 0..20 run scoreboard players set #pressure overlimit.const 0
 scoreboard players operation #pressure_day overlimit.const = #bm_daynow overlimit.const
 execute unless score #pressure_won_day overlimit.const matches 0.. run scoreboard players operation #pressure_won_day overlimit.const = #bm_daynow overlimit.const
+scoreboard players set #pressure_idle_need overlimit.const 3
+execute unless score #pressure_idle overlimit.const matches 0.. run scoreboard players set #pressure_idle overlimit.const 0
+execute unless score #pressure_skip_day overlimit.const matches -1.. run scoreboard players set #pressure_skip_day overlimit.const -1
 function overlimit:pressure/refresh
+
 execute unless score #no_active overlimit.const matches 0.. run scoreboard players set #no_active overlimit.const 0
 execute unless score #no_paused overlimit.const matches 0.. run scoreboard players set #no_paused overlimit.const 0
 execute unless score #no_dusk overlimit.const matches 0.. run scoreboard players set #no_dusk overlimit.const 0

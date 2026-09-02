@@ -15,7 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:knowledge_book",
+            "items": "minecraft:poisonous_potato",
             "predicates": {
               "minecraft:custom_data": {
                 "overlimit": {

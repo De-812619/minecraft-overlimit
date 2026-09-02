@@ -276,6 +276,18 @@ Whilst parsing command on line 5: 「purple」は不明な色です ...lor purpl
 
 ---
 
+## 知識の本は `consumable` を使わない
+
+**起きたこと:** 聖王／静寂のトーテムを知識の本ベースにすると、右クリックしてもタイトル・パーティクル・世界圧リセットが走らない。`consume_item` が発火しない。`minecraft.used:minecraft.knowledge_book` も増えない。
+
+26.2 の `KnowledgeBookItem.use` は `ConsumableComponent` を見ない。`recipes` を取った本は空リスト扱いで、先に `ItemStack.consume`（スタックを1減らすだけ。`use_remainder` も付けない）してから `FAIL` を返す。アドバンスメントも効果も飛ばず、アイテムだけ消える。
+
+**正しい書き方:** 使用検知するアイテムは、デフォルトの `Item.use` が `consumable` に落ちるもの（本パックは毒ジャガイモ＋`!minecraft:food`）。知識の本は使わない。
+
+**出所:** 本ワールド `latest.log`（2026-08-31 22:42、関数ロード失敗なし・使用時チャットなし）。統計 `crafted knowledge_book: 8` / `used` なし。`KnowledgeBookItem.class` の `use`（26.2 client jar）。
+
+---
+
 ## ログの場所
 
 | 用途 | パス |

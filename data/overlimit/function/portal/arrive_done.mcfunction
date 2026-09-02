@@ -7,6 +7,5 @@ scoreboard players set @s overlimit.portal_cd 100
 function overlimit:portal/release
 function overlimit:portal/nausea_off
 execute at @s if dimension overlimit:blood_world run tag @s add overlimit.in_bw
-execute at @s run forceload remove ~-192 ~-192 ~192 ~192
-execute as @e[type=minecraft:marker,tag=overlimit.bw_fl] at @s run forceload remove ~-192 ~-192 ~192 ~192
+function overlimit:portal/forceload_release
 kill @e[type=minecraft:marker,tag=overlimit.bw_fl]

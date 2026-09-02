@@ -2,4 +2,4 @@ execute store result storage overlimit:portal tp.x int 1 run scoreboard players 
 execute store result storage overlimit:portal tp.y int 1 run scoreboard players get @s overlimit.bwy
 execute store result storage overlimit:portal tp.z int 1 run scoreboard players get @s overlimit.bwz
 data modify storage overlimit:portal tp.dim set value "overlimit:blood_world"
-function overlimit:portal/forceload_at with storage overlimit:portal tp
+function overlimit:portal/forceload_ensure

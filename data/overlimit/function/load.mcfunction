@@ -128,9 +128,13 @@ scoreboard objectives add overlimit.bwx dummy
 scoreboard objectives add overlimit.bwy dummy
 scoreboard objectives add overlimit.bwz dummy
 scoreboard objectives add overlimit.bw_has dummy
+scoreboard objectives add overlimit.pfl_x dummy
+scoreboard objectives add overlimit.pfl_z dummy
+scoreboard objectives add overlimit.pfl_dim dummy
 tag @a remove overlimit.portal_arrive
 tag @a remove overlimit.to_bw
 tag @a remove overlimit.to_ow
+execute as @a run function overlimit:portal/forceload_release
 execute as @a run function overlimit:portal/release
 scoreboard players set @a overlimit.portal_cd 0
 scoreboard players set @a overlimit.portal_charge 0
@@ -278,6 +282,7 @@ execute as @e[type=minecraft:cat,tag=overlimit.cat_decoy] run function overlimit
 
 # 旧トーテム基盤の護符／静寂トーテムを新しいベースアイテムへ
 execute as @a run function overlimit:item/migrate_legacy_totem
+execute as @a run function overlimit:item/migrate_legacy_knowledge_book
 
 # Fabric: schedule ループ（#minecraft:tick 非依存）
 schedule function overlimit:tick_loop 1t replace

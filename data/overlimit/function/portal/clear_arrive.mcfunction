@@ -1,4 +1,5 @@
 function overlimit:portal/release
+function overlimit:portal/forceload_release
 tag @s remove overlimit.portal_arrive
 tag @s remove overlimit.to_bw
 tag @s remove overlimit.to_ow

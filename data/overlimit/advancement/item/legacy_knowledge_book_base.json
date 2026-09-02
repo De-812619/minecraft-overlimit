@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:poisonous_potato",
+            "items": "minecraft:knowledge_book",
             "predicates": {
               "minecraft:custom_data": {
                 "overlimit": {
@@ -22,7 +22,7 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:poisonous_potato",
+            "items": "minecraft:knowledge_book",
             "predicates": {
               "minecraft:custom_data": {
                 "overlimit": {
@@ -39,7 +39,7 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:poisonous_potato",
+            "items": "minecraft:knowledge_book",
             "predicates": {
               "minecraft:custom_data": {
                 "overlimit": {
@@ -56,7 +56,7 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:poisonous_potato",
+            "items": "minecraft:knowledge_book",
             "predicates": {
               "minecraft:custom_data": {
                 "overlimit": {
@@ -78,6 +78,6 @@
     ]
   ],
   "rewards": {
-    "function": "overlimit:item/migrate_legacy_potato"
+    "function": "overlimit:item/migrate_legacy_knowledge_book"
   }
 }

@@ -2,16 +2,34 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": 5,
+      "rolls": 2,
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "value": "overlimit:bonus_gear_no_book"
+          "value": "overlimit:bonus_weapon"
         }
       ]
     },
     {
       "rolls": 2,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_armor"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_tool"
+        }
+      ]
+    },
+    {
+      "rolls": 3,
       "entries": [
         {
           "type": "minecraft:loot_table",
@@ -20,11 +38,25 @@
       ]
     },
     {
-      "rolls": 2,
+      "rolls": 3,
       "entries": [
         {
           "type": "minecraft:loot_table",
           "value": "overlimit:recall_watch"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_totem",
+          "weight": 10
         }
       ]
     }

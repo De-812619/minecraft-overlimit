@@ -33,6 +33,7 @@ scoreboard players set #2 overlimit.const 2
 scoreboard players set #3 overlimit.const 3
 scoreboard players set #5 overlimit.const 5
 scoreboard players set #8 overlimit.const 8
+scoreboard players set #bw_scale overlimit.const 8
 scoreboard players set #17 overlimit.const 17
 scoreboard players set #31 overlimit.const 31
 scoreboard players set #20 overlimit.const 20
@@ -83,7 +84,11 @@ function overlimit:heat/refresh
 execute unless score #pressure overlimit.const matches 0..20 run scoreboard players set #pressure overlimit.const 0
 scoreboard players operation #pressure_day overlimit.const = #bm_daynow overlimit.const
 execute unless score #pressure_won_day overlimit.const matches 0.. run scoreboard players operation #pressure_won_day overlimit.const = #bm_daynow overlimit.const
+scoreboard players set #pressure_idle_need overlimit.const 3
+execute unless score #pressure_idle overlimit.const matches 0.. run scoreboard players set #pressure_idle overlimit.const 0
+execute unless score #pressure_skip_day overlimit.const matches -1.. run scoreboard players set #pressure_skip_day overlimit.const -1
 function overlimit:pressure/refresh
+
 execute unless score #no_active overlimit.const matches 0.. run scoreboard players set #no_active overlimit.const 0
 execute unless score #no_paused overlimit.const matches 0.. run scoreboard players set #no_paused overlimit.const 0
 execute unless score #no_dusk overlimit.const matches 0.. run scoreboard players set #no_dusk overlimit.const 0
@@ -101,6 +106,7 @@ scoreboard players set @a overlimit.no_deaths 0
 execute unless data storage overlimit:no gate run data modify storage overlimit:no gate set value {x:0,y:64,z:0}
 execute unless data storage overlimit:no gates run data modify storage overlimit:no gates set value []
 execute unless score #no_arrived overlimit.const matches 0.. run scoreboard players set #no_arrived overlimit.const 0
+execute unless score #no_pc_prev overlimit.const matches 0.. run scoreboard players set #no_pc_prev overlimit.const 0
 execute unless score #bw_active overlimit.const matches 0.. run scoreboard players set #bw_active overlimit.const 0
 execute unless score #bw_kills overlimit.const matches 0.. run scoreboard players set #bw_kills overlimit.const 0
 execute unless score #bw_spawn_t overlimit.const matches 0.. run scoreboard players set #bw_spawn_t overlimit.const 0
@@ -109,7 +115,6 @@ execute unless score #bw_ended_day overlimit.const matches -1.. run scoreboard p
 execute unless score #bw_clock overlimit.const matches 0.. run scoreboard players set #bw_clock overlimit.const 0
 time of overlimit:blood_world pause
 scoreboard players set #bw_clock overlimit.const 0
-scoreboard players set #portal_charge_min overlimit.const 20
 scoreboard players set #portal_charge_need overlimit.const 80
 scoreboard objectives add overlimit.anvil_cap dummy
 scoreboard objectives add overlimit.portal_cd dummy
@@ -123,32 +128,17 @@ scoreboard objectives add overlimit.bwx dummy
 scoreboard objectives add overlimit.bwy dummy
 scoreboard objectives add overlimit.bwz dummy
 scoreboard objectives add overlimit.bw_has dummy
-execute unless score #bw_gate overlimit.const matches 0.. run scoreboard players set #bw_gate overlimit.const 0
-execute unless score #bw_pending overlimit.const matches 0.. run scoreboard players set #bw_pending overlimit.const 0
-execute unless score #bw_origin_from_gate overlimit.const matches 0.. run scoreboard players set #bw_origin_from_gate overlimit.const 0
-execute unless score #bw_scrapping overlimit.const matches 0.. run scoreboard players set #bw_scrapping overlimit.const 0
-execute unless score #bw_occupied overlimit.const matches 0.. run scoreboard players set #bw_occupied overlimit.const 0
-execute unless score #bw_spread overlimit.const matches 0.. run scoreboard players set #bw_spread overlimit.const 0
-execute unless score #bw_preload overlimit.const matches 0.. run scoreboard players set #bw_preload overlimit.const 0
-execute unless score #bw_survey_ok overlimit.const matches 0.. run scoreboard players set #bw_survey_ok overlimit.const 0
-execute unless score #bw_no_tp overlimit.const matches 0.. run scoreboard players set #bw_no_tp overlimit.const 0
-execute unless score #bw_place_wait overlimit.const matches 0.. run scoreboard players set #bw_place_wait overlimit.const 0
-execute unless score #bw_warm overlimit.const matches 0.. run scoreboard players set #bw_warm overlimit.const 0
-execute unless score #bw_warm_fail overlimit.const matches 0.. run scoreboard players set #bw_warm_fail overlimit.const 0
-execute unless score #bw_warm_cd overlimit.const matches 0.. run scoreboard players set #bw_warm_cd overlimit.const 0
-execute unless data storage overlimit:portal gates run data modify storage overlimit:portal gates set value []
-execute unless data storage overlimit:portal used run data modify storage overlimit:portal used set value []
-data modify storage overlimit:portal origins set value [{ox:0,oz:0},{ox:400,oz:0},{ox:-400,oz:0},{ox:0,oz:400},{ox:0,oz:-400},{ox:283,oz:283},{ox:283,oz:-283},{ox:-283,oz:283},{ox:-283,oz:-283},{ox:800,oz:0},{ox:-800,oz:0},{ox:0,oz:800},{ox:0,oz:-800},{ox:566,oz:566},{ox:566,oz:-566},{ox:-566,oz:566},{ox:-566,oz:-566}]
-scoreboard players set #bw_search overlimit.const 8000
+scoreboard objectives add overlimit.pfl_x dummy
+scoreboard objectives add overlimit.pfl_z dummy
+scoreboard objectives add overlimit.pfl_dim dummy
 tag @a remove overlimit.portal_arrive
 tag @a remove overlimit.to_bw
 tag @a remove overlimit.to_ow
+execute as @a run function overlimit:portal/forceload_release
 execute as @a run function overlimit:portal/release
 scoreboard players set @a overlimit.portal_cd 0
 scoreboard players set @a overlimit.portal_charge 0
-schedule function overlimit:portal/verify_gate 40t replace
 kill @e[type=minecraft:armor_stand,tag=overlimit.bw_search]
-execute unless entity @a[predicate=overlimit:in_blood_world] run scoreboard players set #bw_pending overlimit.const 0
 
 
 # Hyper dig look buffer (parent_quest_pack AoE と同型)
@@ -238,7 +228,6 @@ scoreboard players set #999999 overlimit.const 999999
 execute unless data storage overlimit:nr cleared run data modify storage overlimit:nr cleared set value []
 execute unless score #nr_gather_t overlimit.const matches 0.. run scoreboard players set #nr_gather_t overlimit.const 0
 execute unless data storage overlimit:nr target run data modify storage overlimit:nr target set value {x:0,y:64,z:0,kind:"minecraft:fortress"}
-data modify storage overlimit:nr origins set value [{ox:0,oz:0},{ox:400,oz:0},{ox:-400,oz:0},{ox:0,oz:400},{ox:0,oz:-400},{ox:283,oz:283},{ox:283,oz:-283},{ox:-283,oz:283},{ox:-283,oz:-283},{ox:800,oz:0},{ox:-800,oz:0},{ox:0,oz:800},{ox:0,oz:-800},{ox:566,oz:566},{ox:566,oz:-566},{ox:-566,oz:566},{ox:-566,oz:-566}]
 
 execute unless score #cc_active overlimit.const matches 0.. run scoreboard players set #cc_active overlimit.const 0
 execute unless score #cc_combat overlimit.const matches 0.. run scoreboard players set #cc_combat overlimit.const 0
@@ -264,7 +253,6 @@ scoreboard players set #cc_int2 overlimit.const 25
 scoreboard players set #cc_int3 overlimit.const 40
 execute unless data storage overlimit:cc cleared run data modify storage overlimit:cc cleared set value []
 execute unless data storage overlimit:cc target run data modify storage overlimit:cc target set value {x:0,y:64,z:0,kind:"minecraft:end_city"}
-data modify storage overlimit:cc origins set value [{ox:0,oz:0},{ox:400,oz:0},{ox:-400,oz:0},{ox:0,oz:400},{ox:0,oz:-400},{ox:283,oz:283},{ox:283,oz:-283},{ox:-283,oz:283},{ox:-283,oz:-283},{ox:800,oz:0},{ox:-800,oz:0},{ox:0,oz:800},{ox:0,oz:-800},{ox:566,oz:566},{ox:566,oz:-566},{ox:-566,oz:566},{ox:-566,oz:-566}]
 
 bossbar add overlimit:nether_raise {"text":"ネザーレイズ","color":"gold","bold":true}
 bossbar set overlimit:nether_raise color yellow
@@ -294,6 +282,7 @@ execute as @e[type=minecraft:cat,tag=overlimit.cat_decoy] run function overlimit
 
 # 旧トーテム基盤の護符／静寂トーテムを新しいベースアイテムへ
 execute as @a run function overlimit:item/migrate_legacy_totem
+execute as @a run function overlimit:item/migrate_legacy_knowledge_book
 
 # Fabric: schedule ループ（#minecraft:tick 非依存）
 schedule function overlimit:tick_loop 1t replace

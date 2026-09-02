@@ -1,2 +1,2 @@
-$execute in $(dim) positioned $(x) 0 $(z) run forceload add ~-32 ~-32 ~32 ~32
+function overlimit:portal/forceload_ensure
 $execute in $(dim) run tp @s $(x) $(y) $(z)

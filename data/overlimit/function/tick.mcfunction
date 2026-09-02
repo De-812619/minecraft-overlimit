@@ -6,7 +6,7 @@ scoreboard players operation #tick_at overlimit.const = #tick_now overlimit.cons
 tag @a remove overlimit.in_bw
 execute as @a at @s if dimension overlimit:blood_world run tag @s add overlimit.in_bw
 function overlimit:portal/tick
-function overlimit:portal/session_tick
+
 execute as @e[type=#overlimit:can_be_danger,tag=!overlimit.scanned,limit=8] at @s run function overlimit:mob/scan
 execute as @e[type=minecraft:marker,tag=overlimit.elite_xp] at @s run function overlimit:mob/xp_marker_tick
 execute as @e[type=minecraft:marker,tag=overlimit.danger_xp,tag=!overlimit.elite_xp] at @s run function overlimit:mob/xp_marker_tick
@@ -59,9 +59,9 @@ execute as @e[type=minecraft:marker,tag=overlimit.sky_plat] at @s run function o
 execute as @e[type=minecraft:cat,tag=overlimit.cat_decoy] run function overlimit:enchant/cat_foot/discard_decoy
 execute as @e[type=minecraft:creeper,tag=overlimit.cat_pacify] at @s run function overlimit:enchant/cat_foot/pacify_tick
 
-# Hyper dig: pending が空気になったら 3×3（耐久力不発の保険）
-execute as @a[scores={overlimit.hd_ok=1}] run function overlimit:enchant/hyper_dig/tick_player
-execute as @a[scores={overlimit.hd_ok=0,overlimit.hd_pok=1}] run function overlimit:enchant/hyper_dig/tick_player
+# Hyper dig: pending が空気になったら 3×3（耐久力不発の保険）。at @s でプレイヤーのディメンションを見る
+execute as @a[scores={overlimit.hd_ok=1}] at @s run function overlimit:enchant/hyper_dig/tick_player
+execute as @a[scores={overlimit.hd_ok=0,overlimit.hd_pok=1}] at @s run function overlimit:enchant/hyper_dig/tick_player
 
 # 黄金弓: 撃った矢の速度2倍＋光の矢相当の発光
 execute as @e[type=#minecraft:arrows,tag=!overlimit.gb_done] run function overlimit:item/golden_bow/try_shot

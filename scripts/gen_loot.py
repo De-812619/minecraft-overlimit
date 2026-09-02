@@ -332,8 +332,19 @@ def enchant_functions(kind: str) -> list[dict]:
         if kind in kinds:
             functions.append(exclusive_pair_function(ench_a, ench_b, chance))
     if kind == "pickaxe":
+        # set_enchantments / enchant_randomly は exclusive_set を見ない。
+        # 26.2 の only_compatible も supported_items のみ（既存エンチャントとは無関係）。
         functions.append(
             resolve_item_exclusive("overlimit:hyper_dig", "minecraft:efficiency")
+        )
+        functions.append(
+            resolve_item_exclusive("minecraft:fortune", "minecraft:silk_touch")
+        )
+        functions.append(
+            resolve_item_exclusive("overlimit:hyper_dig", "minecraft:silk_touch")
+        )
+        functions.append(
+            resolve_item_exclusive("overlimit:smelting", "minecraft:silk_touch")
         )
     if kind == "crossbow":
         functions.append(
@@ -357,6 +368,10 @@ KIND_SPECS: list[tuple[str, str | None, int]] = [
     ("bow", None, 5),
     ("crossbow", None, 5),
 ]
+
+WEAPON_KINDS = frozenset({"sword", "axe", "spear", "bow", "crossbow"})
+ARMOR_KINDS = frozenset({"helmet", "chestplate", "leggings", "boots"})
+TOOL_KINDS = frozenset({"pickaxe", "shovel", "hoe", "fishing_rod"})
 
 # 本は独立種別。ウェイト 2（素材合計 100 を掛ける。弓・クロスボウは 5）。
 BOOK_KIND_WEIGHT = 2
@@ -519,20 +534,26 @@ def build_recall_watch() -> dict:
     }
 
 
+def _loot_table_pool(table: str, rolls: int) -> dict:
+    return {
+        "rolls": rolls,
+        "entries": [
+            {
+                "type": "minecraft:loot_table",
+                "value": table,
+            }
+        ],
+    }
+
+
 def build_blood_moon_reward() -> dict:
-    """本は必ず1冊。帰還の懐中時計は別枠 30%。"""
+    """武器1・防具1・本1。帰還の懐中時計は別枠 30%。"""
     return {
         "type": "minecraft:chest",
         "pools": [
-            {
-                "rolls": 1,
-                "entries": [
-                    {
-                        "type": "minecraft:loot_table",
-                        "value": "overlimit:blood_moon_book",
-                    }
-                ],
-            },
+            _loot_table_pool("overlimit:bonus_weapon", 1),
+            _loot_table_pool("overlimit:bonus_armor", 1),
+            _loot_table_pool("overlimit:blood_moon_book", 1),
             {
                 "rolls": 1,
                 "entries": [
@@ -548,19 +569,59 @@ def build_blood_moon_reward() -> dict:
     }
 
 
+def build_overflow_reward() -> dict:
+    """武器2・防具2・ランダム1・本3・帰還時計3。"""
+    return {
+        "type": "minecraft:chest",
+        "pools": [
+            _loot_table_pool("overlimit:bonus_weapon", 2),
+            _loot_table_pool("overlimit:bonus_armor", 2),
+            _loot_table_pool("overlimit:bonus_tool", 1),
+            _loot_table_pool("overlimit:blood_moon_book", 3),
+            _loot_table_pool("overlimit:recall_watch", 3),
+        ],
+    }
+
+
+def build_destination_reward() -> dict:
+    """オーバーフローと同じ＋不死のトーテム 10%。"""
+    table = build_overflow_reward()
+    table["pools"].append(
+        {
+            "rolls": 1,
+            "entries": [
+                {"type": "minecraft:empty", "weight": 90},
+                {
+                    "type": "minecraft:loot_table",
+                    "value": "overlimit:bonus_totem",
+                    "weight": 10,
+                },
+            ],
+        }
+    )
+    return table
+
+
 def item_id(material: str, suffix: str | None, kind: str) -> str:
     if suffix is None:
         return f"minecraft:{kind}"
     return f"minecraft:{material}_{suffix}"
 
 
-def build_bonus_gear() -> dict:
+def _bonus_gear_entries(
+    kind_filter: frozenset[str] | None = None,
+    *,
+    include_book: bool = False,
+    include_watch: bool = False,
+) -> list[dict]:
     # Flat weighted entries (alternatives は条件フォールバック用で加重抽選ではない)
     # 素材付きは kind × 素材weight。釣り竿・弓・クロスボウは素材が無いので
     # 素材weight合計（100）を掛け、種別weight 7 が剣の 10 と同等の尺度になるようにする。
     material_weight_sum = sum(w for _, w in MATERIAL_WEIGHTS)
     entries: list[dict] = []
     for kind, suffix, kind_weight in KIND_SPECS:
+        if kind_filter is not None and kind not in kind_filter:
+            continue
         if suffix is None:
             entries.append(
                 {
@@ -580,20 +641,26 @@ def build_bonus_gear() -> dict:
                     "functions": enchant_functions(kind),
                 }
             )
-    entries.append(
-        {
-            "type": "minecraft:loot_table",
-            "value": "overlimit:bonus_book",
-            "weight": BOOK_KIND_WEIGHT * material_weight_sum,
-        }
-    )
-    entries.append(
-        {
-            "type": "minecraft:loot_table",
-            "value": "overlimit:recall_watch",
-            "weight": WATCH_KIND_WEIGHT * material_weight_sum,
-        }
-    )
+    if include_book:
+        entries.append(
+            {
+                "type": "minecraft:loot_table",
+                "value": "overlimit:bonus_book",
+                "weight": BOOK_KIND_WEIGHT * material_weight_sum,
+            }
+        )
+    if include_watch:
+        entries.append(
+            {
+                "type": "minecraft:loot_table",
+                "value": "overlimit:recall_watch",
+                "weight": WATCH_KIND_WEIGHT * material_weight_sum,
+            }
+        )
+    return entries
+
+
+def _bonus_gear_table(entries: list[dict]) -> dict:
     return {
         "type": "minecraft:chest",
         "pools": [
@@ -605,16 +672,28 @@ def build_bonus_gear() -> dict:
     }
 
 
+def build_bonus_gear() -> dict:
+    return _bonus_gear_table(_bonus_gear_entries(include_book=True, include_watch=True))
+
+
 def build_bonus_gear_no_book() -> dict:
-    """ネザーオーバーフロー報酬用。本と懐中時計を除いた武器・道具・防具のみ。"""
-    table = build_bonus_gear()
-    entries = table["pools"][0]["entries"]
-    table["pools"][0]["entries"] = [
-        e
-        for e in entries
-        if e.get("value") not in ("overlimit:bonus_book", "overlimit:recall_watch")
-    ]
-    return table
+    """本と懐中時計を除いた武器・道具・防具。"""
+    return _bonus_gear_table(_bonus_gear_entries())
+
+
+def build_bonus_weapon() -> dict:
+    """剣・斧・槍・弓・クロスボウ。"""
+    return _bonus_gear_table(_bonus_gear_entries(WEAPON_KINDS))
+
+
+def build_bonus_armor() -> dict:
+    """頭・胸・脚・靴。"""
+    return _bonus_gear_table(_bonus_gear_entries(ARMOR_KINDS))
+
+
+def build_bonus_tool() -> dict:
+    """ツルハシ・シャベル・クワ・釣竿。"""
+    return _bonus_gear_table(_bonus_gear_entries(TOOL_KINDS))
 
 
 def _entry_refs_inject(entry: dict) -> bool:
@@ -733,11 +812,17 @@ def main() -> None:
 
     write_json(ROOT / "data/overlimit/loot_table/bonus_gear.json", build_bonus_gear())
     write_json(ROOT / "data/overlimit/loot_table/bonus_gear_no_book.json", build_bonus_gear_no_book())
+    write_json(ROOT / "data/overlimit/loot_table/bonus_weapon.json", build_bonus_weapon())
+    write_json(ROOT / "data/overlimit/loot_table/bonus_armor.json", build_bonus_armor())
+    write_json(ROOT / "data/overlimit/loot_table/bonus_tool.json", build_bonus_tool())
     write_json(ROOT / "data/overlimit/loot_table/bonus_book.json", build_bonus_book())
     write_json(ROOT / "data/overlimit/loot_table/bonus_totem.json", build_bonus_totem())
     write_json(ROOT / "data/overlimit/loot_table/recall_watch.json", build_recall_watch())
     write_json(ROOT / "data/overlimit/loot_table/blood_moon_book.json", build_blood_moon_book())
     write_json(ROOT / "data/overlimit/loot_table/blood_moon_reward.json", build_blood_moon_reward())
+    write_json(ROOT / "data/overlimit/loot_table/nether_overflow_reward.json", build_overflow_reward())
+    write_json(ROOT / "data/overlimit/loot_table/nether_raise_reward.json", build_destination_reward())
+    write_json(ROOT / "data/overlimit/loot_table/city_clamp_reward.json", build_destination_reward())
 
     clear_generated_dnt_outputs()
 
@@ -759,7 +844,7 @@ def main() -> None:
     dnt_count = inject_from_archive(dnt_path, "DnT")
 
     print(
-        f"wrote bonus_gear + bonus_book + bonus_totem + recall_watch + blood_moon_book + blood_moon_reward + "
+        f"wrote bonus_gear + bonus_weapon/armor/tool + bonus_book + bonus_totem + recall_watch + event rewards + "
         f"{len(TARGET_CHESTS)} vanilla chests + "
         f"{len(TARGET_ENTITY_LOOT)} entity loot + "
         f"{dnt_count} DnT chests (no enchantment max_level overrides)"

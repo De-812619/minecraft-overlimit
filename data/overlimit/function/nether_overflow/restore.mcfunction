@@ -1,5 +1,6 @@
 function overlimit:nether_overflow/respawn_target
 function overlimit:nether_overflow/forceload_on
+function overlimit:nether_overflow/read_gate_scores
 function overlimit:nether_overflow/bossbar_name
 function overlimit:nether_overflow/bossbar_value
 bossbar set overlimit:nether_overflow color purple
@@ -11,3 +12,5 @@ execute if entity @a[tag=overlimit.no_core] run effect give @a[tag=overlimit.no_
 execute if score #no_phase overlimit.const matches 1 run scoreboard players operation #no_int overlimit.const = #no_int1 overlimit.const
 execute if score #no_phase overlimit.const matches 2 run scoreboard players operation #no_int overlimit.const = #no_int2 overlimit.const
 execute if score #no_phase overlimit.const matches 3 run scoreboard players operation #no_int overlimit.const = #no_int3 overlimit.const
+execute if entity @e[type=minecraft:armor_stand,tag=overlimit.no_waypoint,limit=1] run return 1
+function overlimit:nether_overflow/spawn_waypoint with storage overlimit:no gate

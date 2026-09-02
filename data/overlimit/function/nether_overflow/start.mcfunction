@@ -16,10 +16,14 @@ scoreboard players set #no_arrived overlimit.const 0
 scoreboard players operation #no_budget overlimit.const = #no_budget1 overlimit.const
 scoreboard players operation #no_int overlimit.const = #no_int1 overlimit.const
 
-execute as @e[type=minecraft:marker,tag=overlimit.no_target,limit=1] at @s run function overlimit:nether_overflow/store_gate
+function overlimit:nether_overflow/read_gate_scores
 function overlimit:nether_overflow/forceload_on
 function overlimit:nether_overflow/respawn_target
+execute as @e[type=minecraft:marker,tag=overlimit.no_target,limit=1] at @s run function overlimit:nether_overflow/store_gate
 function overlimit:nether_overflow/assign_core
+execute store result score #no_pc_prev overlimit.const if entity @a[predicate=overlimit:in_overworld,gamemode=!spectator]
+kill @e[type=minecraft:armor_stand,tag=overlimit.no_waypoint]
+function overlimit:nether_overflow/spawn_waypoint with storage overlimit:no gate
 
 bossbar set overlimit:nether_overflow color purple
 execute store result bossbar overlimit:nether_overflow max run scoreboard players get #no_time_max overlimit.const

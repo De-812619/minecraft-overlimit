@@ -6,6 +6,24 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_weapon"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_armor"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
           "value": "overlimit:blood_moon_book"
         }
       ]

@@ -1,4 +1,4 @@
-# このマスが水面・水草なら成功（濡れている）。
+# この列が水面・水草なら成功（濡れている）。
 execute if block ~ ~ ~ minecraft:water run return 1
 execute if block ~ ~ ~ minecraft:lava run return 1
 execute if block ~ ~ ~ minecraft:bubble_column run return 1

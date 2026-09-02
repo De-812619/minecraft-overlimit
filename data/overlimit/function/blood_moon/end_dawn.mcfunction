@@ -5,3 +5,5 @@ title @a[predicate=overlimit:in_overworld] subtitle {"text":"夜が明けた","c
 tellraw @a[predicate=overlimit:in_overworld] {"text":"ブラッドムーンは朝とともに終わった。","color":"gray"}
 function overlimit:blood_moon/end
 function overlimit:pressure/add_1
+scoreboard players operation #pressure_skip_day overlimit.const = #bm_daynow overlimit.const
+

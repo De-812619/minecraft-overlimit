@@ -217,13 +217,29 @@ Unable to play unknown soundEvent: minecraft:entity.wolf.howl
 
 ---
 
+## トーテム使用音は `item.totem.use`
+
+**起きたこと:** 聖王のトーテムのレシピ／ルートがロード失敗。クラフトできない。give もルート欠落で関数が落ちた。
+
+**ログ:**
+
+```
+Couldn't parse data file 'overlimit:holy_totem' from 'overlimit:recipe/holy_totem.json': ... ResourceKey[minecraft:sound_event / minecraft:item.totem_use]
+```
+
+**正しい書き方:** `minecraft:item.totem.use`（ドット）。`item.totem_use` は 26.2 に無い。不明な `sound` は `consumable` ごとレシピ／ルートを落とす。
+
+**出所:** `latest.log`（2026-08-29 22:14）。静寂のトーテムは `block.beacon.deactivate` で通っている。
+
+---
+
 ## レシピ材料はアイテムIDだけ
 
 **起きたこと:** 不死鳥の護符の材料が `minecraft:totem_of_undying` なので、同じIDの護符・静寂のトーテムもクラフトできた。クラフト後に取り消すと、材料は返るが結果がインベントリに残り無限作成になった。
 
-**正しい書き方:** `Ingredient` は `HolderSet<Item>`（ID / `#tag` / 配列）。`custom_data` では材料を絞れない。作業台の結果スロットもコマンドでは消せない。カスタムアイテムはバニラレシピに出てこないベース（本パックは `poisonous_potato`）にし、見た目は `item_model`、致死回避は `death_protection`。
+**正しい書き方:** `Ingredient` は `HolderSet<Item>`（ID / `#tag` / 配列）。`custom_data` では材料を絞れない。作業台の結果スロットもコマンドでは消せない。レシピ材料になるカスタムアイテムは、サバイバルで手に入らないベース（本パックの静寂／聖王は `knowledge_book`）にする。見た目は `item_model`。護符はレシピ材料にならないので `poisonous_potato` のまま（致死回避は `death_protection`）。
 
-**出所:** 26.2 `Ingredient.class` の `CODEC`（`HolderSetCodec` of `Registries.ITEM`）。[Recipe](https://minecraft.wiki/w/Recipe_(Java_Edition))。本パックの護符クラフト検証（2026-08-28）。
+**出所:** 26.2 `Ingredient.class` の `CODEC`（`HolderSetCodec` of `Registries.ITEM`）。[Recipe](https://minecraft.wiki/w/Recipe_(Java_Edition))。本パックの護符クラフト検証（2026-08-28）。聖王のトーテムが毒ジャガイモでレシピ本に出た件（2026-08-29）。
 
 ---
 
@@ -240,6 +256,59 @@ Couldn't parse data file 'overlimit:item/phoenix_amulet_craft_ing' ... Advanceme
 **正しい書き方:** `criteria` のキーはすべて `requirements` に出す。未使用の判定用は各キーを単独配列にし、完了させないなら `minecraft:impossible` を AND で足す。
 
 **出所:** `latest.log`（2026-08-27 23:53）。[Advancement definition](https://minecraft.wiki/w/Advancement_definition) の requirements。
+
+---
+
+## `waypoint modify` の色はチーム色名
+
+**起きたこと:** `waypoint modify @s color purple` で関数がロード失敗。ロケーターバーが出ない。
+
+**ログ:**
+
+```
+Failed to load function overlimit:nether_overflow/refresh_waypoint
+Whilst parsing command on line 5: 「purple」は不明な色です ...lor purple<--[HERE]
+```
+
+**正しい書き方:** チーム色（`dark_purple` / `light_purple` / `gold` / `blue` など）。ボスバーの `color purple` とは別。hex なら `color hex RRGGBB`。
+
+**出所:** 上記 `latest.log`（2026-08-30 00:24）。[Commands/waypoint](https://minecraft.wiki/w/Commands/waypoint)
+
+---
+
+## 知識の本は `consumable` を使わない
+
+**起きたこと:** 聖王／静寂のトーテムを知識の本ベースにすると、右クリックしてもタイトル・パーティクル・世界圧リセットが走らない。`consume_item` が発火しない。`minecraft.used:minecraft.knowledge_book` も増えない。
+
+26.2 の `KnowledgeBookItem.use` は `ConsumableComponent` を見ない。`recipes` を取った本は空リスト扱いで、先に `ItemStack.consume`（スタックを1減らすだけ。`use_remainder` も付けない）してから `FAIL` を返す。アドバンスメントも効果も飛ばず、アイテムだけ消える。
+
+**正しい書き方:** 使用検知するアイテムは、デフォルトの `Item.use` が `consumable` に落ちるもの（本パックは毒ジャガイモ＋`!minecraft:food`）。知識の本は使わない。
+
+**出所:** 本ワールド `latest.log`（2026-08-31 22:42、関数ロード失敗なし・使用時チャットなし）。統計 `crafted knowledge_book: 8` / `used` なし。`KnowledgeBookItem.class` の `use`（26.2 client jar）。
+
+---
+
+## ルートの `enchant_randomly` は排他を見ない
+
+**起きたこと:** 構造物チェストのツルハシに幸運＋シルクタッチ＋精錬＋効率強化が同時に付いた。
+
+26.2 の `enchant_randomly.only_compatible` は `Enchantment.canEnchant`（`supported_items`）だけ見る。既存エンチャントの `exclusive_set` は見ない。適用は `ItemStack.enchant` で上書きするだけ。`set_enchantments` も同様。
+
+**正しい書き方:** 通常一式のあとに追加枠を足すなら、両方付いていたら一方を外す（`filtered` + レベル0）。本パックのツルハシは幸運↔シルクタッチ、精錬／ハイパーディグ↔シルクタッチ、ハイパーディグ↔効率強化。
+
+**出所:** [Item modifier](https://minecraft.wiki/w/Item_modifier) `only_compatible`（item is listed in `supported_items`）。26.2 client jar `EnchantRandomlyFunction` の `lambda$run$1` → `canEnchant`、`enchantItem` → `ItemStack.enchant`。
+
+---
+
+## `hit_block` は破壊開始時だけ。tick は `at @s`
+
+**起きたこと:** ネザライト＋ハイパーディグ＋耐久10で、3×3 が通常採掘に落ちることがある。
+
+`hit_block` は `START_DESTROY_BLOCK` のときだけ（ブロック中心）。破壊完了は `item_durability_changed`。耐久力は Unbreaking N で N/(N+1) が不発なので、耐久10だと約9%しかアドバンスメントが走らない。保険の毎tick判定が `as @a` だけだと、実行ディメンションがオーバーワールドのままになる。
+
+**正しい書き方:** 空気判定は `as @a at @s`。即破壊の押しっぱなしは、上書きされた current より先に prev を 3×3 する。
+
+**出所:** 26.2 client jar `ServerPlayerGameMode.handleBlockBreakAction`（`START_DESTROY_BLOCK` → `Vec3.atCenterOf` → `EnchantmentHelper.onHitBlock`、続けて destroyProgress≥1 なら `destroyAndAck`）。
 
 ---
 

@@ -288,6 +288,30 @@ Whilst parsing command on line 5: 「purple」は不明な色です ...lor purpl
 
 ---
 
+## ルートの `enchant_randomly` は排他を見ない
+
+**起きたこと:** 構造物チェストのツルハシに幸運＋シルクタッチ＋精錬＋効率強化が同時に付いた。
+
+26.2 の `enchant_randomly.only_compatible` は `Enchantment.canEnchant`（`supported_items`）だけ見る。既存エンチャントの `exclusive_set` は見ない。適用は `ItemStack.enchant` で上書きするだけ。`set_enchantments` も同様。
+
+**正しい書き方:** 通常一式のあとに追加枠を足すなら、両方付いていたら一方を外す（`filtered` + レベル0）。本パックのツルハシは幸運↔シルクタッチ、精錬／ハイパーディグ↔シルクタッチ、ハイパーディグ↔効率強化。
+
+**出所:** [Item modifier](https://minecraft.wiki/w/Item_modifier) `only_compatible`（item is listed in `supported_items`）。26.2 client jar `EnchantRandomlyFunction` の `lambda$run$1` → `canEnchant`、`enchantItem` → `ItemStack.enchant`。
+
+---
+
+## `hit_block` は破壊開始時だけ。tick は `at @s`
+
+**起きたこと:** ネザライト＋ハイパーディグ＋耐久10で、3×3 が通常採掘に落ちることがある。
+
+`hit_block` は `START_DESTROY_BLOCK` のときだけ（ブロック中心）。破壊完了は `item_durability_changed`。耐久力は Unbreaking N で N/(N+1) が不発なので、耐久10だと約9%しかアドバンスメントが走らない。保険の毎tick判定が `as @a` だけだと、実行ディメンションがオーバーワールドのままになる。
+
+**正しい書き方:** 空気判定は `as @a at @s`。即破壊の押しっぱなしは、上書きされた current より先に prev を 3×3 する。
+
+**出所:** 26.2 client jar `ServerPlayerGameMode.handleBlockBreakAction`（`START_DESTROY_BLOCK` → `Vec3.atCenterOf` → `EnchantmentHelper.onHitBlock`、続けて destroyProgress≥1 なら `destroyAndAck`）。
+
+---
+
 ## ログの場所
 
 | 用途 | パス |

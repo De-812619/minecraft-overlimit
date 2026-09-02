@@ -332,8 +332,19 @@ def enchant_functions(kind: str) -> list[dict]:
         if kind in kinds:
             functions.append(exclusive_pair_function(ench_a, ench_b, chance))
     if kind == "pickaxe":
+        # set_enchantments / enchant_randomly は exclusive_set を見ない。
+        # 26.2 の only_compatible も supported_items のみ（既存エンチャントとは無関係）。
         functions.append(
             resolve_item_exclusive("overlimit:hyper_dig", "minecraft:efficiency")
+        )
+        functions.append(
+            resolve_item_exclusive("minecraft:fortune", "minecraft:silk_touch")
+        )
+        functions.append(
+            resolve_item_exclusive("overlimit:hyper_dig", "minecraft:silk_touch")
+        )
+        functions.append(
+            resolve_item_exclusive("overlimit:smelting", "minecraft:silk_touch")
         )
     if kind == "crossbow":
         functions.append(

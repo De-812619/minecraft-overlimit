@@ -1425,6 +1425,171 @@
                   }
                 ]
               }
+            },
+            {
+              "function": "minecraft:filtered",
+              "item_filter": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "minecraft:fortune",
+                      "levels": {
+                        "min": 1
+                      }
+                    }
+                  ]
+                }
+              },
+              "on_pass": {
+                "function": "minecraft:sequence",
+                "functions": [
+                  {
+                    "function": "minecraft:set_enchantments",
+                    "enchantments": {
+                      "minecraft:silk_touch": 0
+                    },
+                    "add": false,
+                    "conditions": [
+                      {
+                        "condition": "minecraft:random_chance",
+                        "chance": 0.5
+                      }
+                    ]
+                  },
+                  {
+                    "function": "minecraft:filtered",
+                    "item_filter": {
+                      "predicates": {
+                        "minecraft:enchantments": [
+                          {
+                            "enchantments": "minecraft:silk_touch",
+                            "levels": {
+                              "min": 1
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "on_pass": {
+                      "function": "minecraft:set_enchantments",
+                      "enchantments": {
+                        "minecraft:fortune": 0
+                      },
+                      "add": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "function": "minecraft:filtered",
+              "item_filter": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "overlimit:hyper_dig",
+                      "levels": {
+                        "min": 1
+                      }
+                    }
+                  ]
+                }
+              },
+              "on_pass": {
+                "function": "minecraft:sequence",
+                "functions": [
+                  {
+                    "function": "minecraft:set_enchantments",
+                    "enchantments": {
+                      "minecraft:silk_touch": 0
+                    },
+                    "add": false,
+                    "conditions": [
+                      {
+                        "condition": "minecraft:random_chance",
+                        "chance": 0.5
+                      }
+                    ]
+                  },
+                  {
+                    "function": "minecraft:filtered",
+                    "item_filter": {
+                      "predicates": {
+                        "minecraft:enchantments": [
+                          {
+                            "enchantments": "minecraft:silk_touch",
+                            "levels": {
+                              "min": 1
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "on_pass": {
+                      "function": "minecraft:set_enchantments",
+                      "enchantments": {
+                        "overlimit:hyper_dig": 0
+                      },
+                      "add": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "function": "minecraft:filtered",
+              "item_filter": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "overlimit:smelting",
+                      "levels": {
+                        "min": 1
+                      }
+                    }
+                  ]
+                }
+              },
+              "on_pass": {
+                "function": "minecraft:sequence",
+                "functions": [
+                  {
+                    "function": "minecraft:set_enchantments",
+                    "enchantments": {
+                      "minecraft:silk_touch": 0
+                    },
+                    "add": false,
+                    "conditions": [
+                      {
+                        "condition": "minecraft:random_chance",
+                        "chance": 0.5
+                      }
+                    ]
+                  },
+                  {
+                    "function": "minecraft:filtered",
+                    "item_filter": {
+                      "predicates": {
+                        "minecraft:enchantments": [
+                          {
+                            "enchantments": "minecraft:silk_touch",
+                            "levels": {
+                              "min": 1
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "on_pass": {
+                      "function": "minecraft:set_enchantments",
+                      "enchantments": {
+                        "overlimit:smelting": 0
+                      },
+                      "add": false
+                    }
+                  }
+                ]
+              }
             }
           ]
         },
@@ -1574,6 +1739,171 @@
                   }
                 ]
               }
+            },
+            {
+              "function": "minecraft:filtered",
+              "item_filter": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "minecraft:fortune",
+                      "levels": {
+                        "min": 1
+                      }
+                    }
+                  ]
+                }
+              },
+              "on_pass": {
+                "function": "minecraft:sequence",
+                "functions": [
+                  {
+                    "function": "minecraft:set_enchantments",
+                    "enchantments": {
+                      "minecraft:silk_touch": 0
+                    },
+                    "add": false,
+                    "conditions": [
+                      {
+                        "condition": "minecraft:random_chance",
+                        "chance": 0.5
+                      }
+                    ]
+                  },
+                  {
+                    "function": "minecraft:filtered",
+                    "item_filter": {
+                      "predicates": {
+                        "minecraft:enchantments": [
+                          {
+                            "enchantments": "minecraft:silk_touch",
+                            "levels": {
+                              "min": 1
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "on_pass": {
+                      "function": "minecraft:set_enchantments",
+                      "enchantments": {
+                        "minecraft:fortune": 0
+                      },
+                      "add": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "function": "minecraft:filtered",
+              "item_filter": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "overlimit:hyper_dig",
+                      "levels": {
+                        "min": 1
+                      }
+                    }
+                  ]
+                }
+              },
+              "on_pass": {
+                "function": "minecraft:sequence",
+                "functions": [
+                  {
+                    "function": "minecraft:set_enchantments",
+                    "enchantments": {
+                      "minecraft:silk_touch": 0
+                    },
+                    "add": false,
+                    "conditions": [
+                      {
+                        "condition": "minecraft:random_chance",
+                        "chance": 0.5
+                      }
+                    ]
+                  },
+                  {
+                    "function": "minecraft:filtered",
+                    "item_filter": {
+                      "predicates": {
+                        "minecraft:enchantments": [
+                          {
+                            "enchantments": "minecraft:silk_touch",
+                            "levels": {
+                              "min": 1
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "on_pass": {
+                      "function": "minecraft:set_enchantments",
+                      "enchantments": {
+                        "overlimit:hyper_dig": 0
+                      },
+                      "add": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "function": "minecraft:filtered",
+              "item_filter": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "overlimit:smelting",
+                      "levels": {
+                        "min": 1
+                      }
+                    }
+                  ]
+                }
+              },
+              "on_pass": {
+                "function": "minecraft:sequence",
+                "functions": [
+                  {
+                    "function": "minecraft:set_enchantments",
+                    "enchantments": {
+                      "minecraft:silk_touch": 0
+                    },
+                    "add": false,
+                    "conditions": [
+                      {
+                        "condition": "minecraft:random_chance",
+                        "chance": 0.5
+                      }
+                    ]
+                  },
+                  {
+                    "function": "minecraft:filtered",
+                    "item_filter": {
+                      "predicates": {
+                        "minecraft:enchantments": [
+                          {
+                            "enchantments": "minecraft:silk_touch",
+                            "levels": {
+                              "min": 1
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "on_pass": {
+                      "function": "minecraft:set_enchantments",
+                      "enchantments": {
+                        "overlimit:smelting": 0
+                      },
+                      "add": false
+                    }
+                  }
+                ]
+              }
             }
           ]
         },
@@ -1717,6 +2047,171 @@
                       "function": "minecraft:set_enchantments",
                       "enchantments": {
                         "overlimit:hyper_dig": 0
+                      },
+                      "add": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "function": "minecraft:filtered",
+              "item_filter": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "minecraft:fortune",
+                      "levels": {
+                        "min": 1
+                      }
+                    }
+                  ]
+                }
+              },
+              "on_pass": {
+                "function": "minecraft:sequence",
+                "functions": [
+                  {
+                    "function": "minecraft:set_enchantments",
+                    "enchantments": {
+                      "minecraft:silk_touch": 0
+                    },
+                    "add": false,
+                    "conditions": [
+                      {
+                        "condition": "minecraft:random_chance",
+                        "chance": 0.5
+                      }
+                    ]
+                  },
+                  {
+                    "function": "minecraft:filtered",
+                    "item_filter": {
+                      "predicates": {
+                        "minecraft:enchantments": [
+                          {
+                            "enchantments": "minecraft:silk_touch",
+                            "levels": {
+                              "min": 1
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "on_pass": {
+                      "function": "minecraft:set_enchantments",
+                      "enchantments": {
+                        "minecraft:fortune": 0
+                      },
+                      "add": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "function": "minecraft:filtered",
+              "item_filter": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "overlimit:hyper_dig",
+                      "levels": {
+                        "min": 1
+                      }
+                    }
+                  ]
+                }
+              },
+              "on_pass": {
+                "function": "minecraft:sequence",
+                "functions": [
+                  {
+                    "function": "minecraft:set_enchantments",
+                    "enchantments": {
+                      "minecraft:silk_touch": 0
+                    },
+                    "add": false,
+                    "conditions": [
+                      {
+                        "condition": "minecraft:random_chance",
+                        "chance": 0.5
+                      }
+                    ]
+                  },
+                  {
+                    "function": "minecraft:filtered",
+                    "item_filter": {
+                      "predicates": {
+                        "minecraft:enchantments": [
+                          {
+                            "enchantments": "minecraft:silk_touch",
+                            "levels": {
+                              "min": 1
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "on_pass": {
+                      "function": "minecraft:set_enchantments",
+                      "enchantments": {
+                        "overlimit:hyper_dig": 0
+                      },
+                      "add": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "function": "minecraft:filtered",
+              "item_filter": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "overlimit:smelting",
+                      "levels": {
+                        "min": 1
+                      }
+                    }
+                  ]
+                }
+              },
+              "on_pass": {
+                "function": "minecraft:sequence",
+                "functions": [
+                  {
+                    "function": "minecraft:set_enchantments",
+                    "enchantments": {
+                      "minecraft:silk_touch": 0
+                    },
+                    "add": false,
+                    "conditions": [
+                      {
+                        "condition": "minecraft:random_chance",
+                        "chance": 0.5
+                      }
+                    ]
+                  },
+                  {
+                    "function": "minecraft:filtered",
+                    "item_filter": {
+                      "predicates": {
+                        "minecraft:enchantments": [
+                          {
+                            "enchantments": "minecraft:silk_touch",
+                            "levels": {
+                              "min": 1
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "on_pass": {
+                      "function": "minecraft:set_enchantments",
+                      "enchantments": {
+                        "overlimit:smelting": 0
                       },
                       "add": false
                     }

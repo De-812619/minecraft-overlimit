@@ -1,0 +1,50 @@
+{
+  "criteria": {
+    "craft": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "overlimit:holy_totem",
+        "ingredients": [
+          {
+            "items": "minecraft:poisonous_potato",
+            "predicates": {
+              "minecraft:custom_data": {
+                "overlimit": {
+                  "quiet_totem": true
+                }
+              }
+            }
+          },
+          {
+            "items": "minecraft:poisonous_potato",
+            "predicates": {
+              "minecraft:custom_data": {
+                "overlimit": {
+                  "quiet_totem": true
+                }
+              }
+            }
+          },
+          {
+            "items": "minecraft:poisonous_potato",
+            "predicates": {
+              "minecraft:custom_data": {
+                "overlimit": {
+                  "quiet_totem": true
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "craft"
+    ]
+  ],
+  "rewards": {
+    "function": "overlimit:item/holy_totem/craft_ok"
+  }
+}

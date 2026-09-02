@@ -1,0 +1,77 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "minecraft:gold_block",
+    "Q": "minecraft:poisonous_potato"
+  },
+  "pattern": [
+    "GGG",
+    "QQQ",
+    " G "
+  ],
+  "result": {
+    "id": "minecraft:poisonous_potato",
+    "count": 1,
+    "components": {
+      "minecraft:item_name": {
+        "text": "聖王のトーテム",
+        "color": "gold"
+      },
+      "minecraft:lore": [
+        {
+          "text": "使用すると1つ消費し、世界圧を0にリセットする",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:rarity": "epic",
+      "minecraft:max_stack_size": 16,
+      "minecraft:enchantment_glint_override": true,
+      "minecraft:item_model": "overlimit:holy_totem",
+      "!minecraft:food": {},
+      "minecraft:custom_data": {
+        "overlimit": {
+          "holy_totem": true
+        }
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 0.0,
+        "animation": "none",
+        "has_consume_particles": false,
+        "sound": "minecraft:block.beacon.activate"
+      },
+      "minecraft:use_cooldown": {
+        "seconds": 1.0,
+        "cooldown_group": "overlimit:holy_totem"
+      },
+      "minecraft:use_remainder": {
+        "id": "minecraft:poisonous_potato",
+        "count": 1,
+        "components": {
+          "minecraft:item_name": {
+            "text": "聖王のトーテム",
+            "color": "gold"
+          },
+          "minecraft:lore": [
+            {
+              "text": "使用すると1つ消費し、世界圧を0にリセットする",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "epic",
+          "minecraft:max_stack_size": 16,
+          "minecraft:enchantment_glint_override": true,
+          "minecraft:item_model": "overlimit:holy_totem",
+          "!minecraft:food": {},
+          "minecraft:custom_data": {
+            "overlimit": {
+              "holy_totem_spent": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

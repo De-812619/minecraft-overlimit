@@ -1,8 +1,9 @@
-# @s = overlimit.blood_moon。25マス以内かつ高さ±8のプレイヤーがいれば残す。
-execute unless entity @a[tag=overlimit.in_bw,gamemode=!spectator,distance=..25] run return run function overlimit:blood_moon/cull_despawn
-
-scoreboard players set #bm_keep overlimit.const 0
+# @s = overlimit.blood_moon。
+# プレイヤー探索は predicate / in_bw タグを使わない（マルチで外れる）。
+execute store result score #bm_mx overlimit.const run data get entity @s Pos[0]
 execute store result score #bm_my overlimit.const run data get entity @s Pos[1]
-execute as @a[tag=overlimit.in_bw,gamemode=!spectator,distance=..25] run function overlimit:blood_moon/cull_check_y
+execute store result score #bm_mz overlimit.const run data get entity @s Pos[2]
+scoreboard players set #bm_keep overlimit.const 0
+execute as @a[gamemode=!spectator] at @s if dimension overlimit:blood_world run function overlimit:blood_moon/cull_check_player
 execute if score #bm_keep overlimit.const matches 1 run return fail
 function overlimit:blood_moon/cull_despawn

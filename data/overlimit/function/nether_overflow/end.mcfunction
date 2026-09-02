@@ -15,6 +15,7 @@ execute as @e[tag=overlimit.no_wave] at @s run function overlimit:blood_moon/des
 kill @e[tag=overlimit.no_wave]
 kill @e[type=minecraft:marker,tag=overlimit.no_yh]
 tag @e[type=minecraft:marker,tag=overlimit.no_gate] remove overlimit.no_target
+execute in minecraft:overworld run kill @e[type=minecraft:armor_stand,tag=overlimit.no_waypoint]
 execute if score #no_boost_active overlimit.const matches 1 run function overlimit:heat/refresh
 scoreboard players set #no_boost_active overlimit.const 0
 execute unless score #no_nethering overlimit.const matches 1 run function overlimit:nether_overflow/forceload_off

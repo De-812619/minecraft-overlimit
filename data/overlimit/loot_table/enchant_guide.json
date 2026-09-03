@@ -14,7 +14,7 @@
                 "minecraft:enchantment_glint_override": true,
                 "minecraft:lore": [
                   {
-                    "text": "エンチャント・アイテム・イベント",
+                    "text": "エンチャント・アイテム・イベント・装飾",
                     "color": "gray",
                     "italic": false
                   }
@@ -56,12 +56,21 @@
                           }
                         },
                         {
-                          "text": "イベント »",
+                          "text": "イベント »\n",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
                             "page": 4
+                          }
+                        },
+                        {
+                          "text": "装飾 »",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 33
                           }
                         }
                       ]
@@ -1087,6 +1096,401 @@
                           "click_event": {
                             "action": "change_page",
                             "page": 4
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "■ 装飾\n",
+                          "color": "dark_red",
+                          "bold": true
+                        },
+                        {
+                          "text": "同鉱石3でセット\n"
+                        },
+                        {
+                          "text": "鉄\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 34
+                          }
+                        },
+                        {
+                          "text": "金\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 35
+                          }
+                        },
+                        {
+                          "text": "ダイヤ\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 36
+                          }
+                        },
+                        {
+                          "text": "ネザライト\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 37
+                          }
+                        },
+                        {
+                          "text": "銅\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 38
+                          }
+                        },
+                        {
+                          "text": "レッドストーン\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 39
+                          }
+                        },
+                        {
+                          "text": "ラピス\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 40
+                          }
+                        },
+                        {
+                          "text": "エメラルド\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 41
+                          }
+                        },
+                        {
+                          "text": "アメジスト\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 42
+                          }
+                        },
+                        {
+                          "text": "クォーツ\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 43
+                          }
+                        },
+                        {
+                          "text": "樹脂\n",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 44
+                          }
+                        },
+                        {
+                          "text": "« 表紙",
+                          "color": "dark_gray",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 1
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "鉄\n",
+                          "color": "#C0C0C0",
+                          "bold": true
+                        },
+                        {
+                          "text": "装飾：防具\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "部位：防御+0.5（4で+2）\nセット：消耗の追加削り半減\nノックバック耐性+0.1\n\n"
+                        },
+                        {
+                          "text": "« 装飾",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 33
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "金\n",
+                          "color": "#DEB12D",
+                          "bold": true
+                        },
+                        {
+                          "text": "装飾：防具\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "部位：移動+1%（4で+4%）\nセット：ピグリンが中立\n※ブルート・ゾンビ化は除外\n殴る／箱を開けると敵対\n\n"
+                        },
+                        {
+                          "text": "« 装飾",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 33
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "ダイヤ\n",
+                          "color": "#11A6A6",
+                          "bold": true
+                        },
+                        {
+                          "text": "装飾：防具\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "部位：攻撃+0.5（4で+2）\nセット：HP満タンのとき\n攻撃+10%・防御+2\n\n"
+                        },
+                        {
+                          "text": "« 装飾",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 33
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "ネザライト\n",
+                          "color": "#625859",
+                          "bold": true
+                        },
+                        {
+                          "text": "装飾：防具\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "部位：最大HP+1（4で+4）\nセット：炎上時間-80%\n\n"
+                        },
+                        {
+                          "text": "« 装飾",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 33
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "銅\n",
+                          "color": "#B4684D",
+                          "bold": true
+                        },
+                        {
+                          "text": "装飾：防具\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "部位：攻撃速度+2%（4で+8%）\nセット：8ヒットの次が放電\n雷雨中は毎撃\n※地形非破壊・敵対のみ\n\n"
+                        },
+                        {
+                          "text": "« 装飾",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 33
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "レッドストーン\n",
+                          "color": "#971607",
+                          "bold": true
+                        },
+                        {
+                          "text": "装飾：防具\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "部位：スニーク速度+5%\n（4で+20%）\nセット：ブロックリーチ+3\n\n"
+                        },
+                        {
+                          "text": "« 装飾",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 33
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "ラピス\n",
+                          "color": "#416E97",
+                          "bold": true
+                        },
+                        {
+                          "text": "装飾：防具\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "部位：幸運+0.25（4で+1）\nセット：Lvに応じて攻撃・防御\n（30で各+1.5）\n\n"
+                        },
+                        {
+                          "text": "« 装飾",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 33
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "エメラルド\n",
+                          "color": "#11A036",
+                          "bold": true
+                        },
+                        {
+                          "text": "装飾：防具\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "セット：付近の邪悪な村人の\n攻撃-20%\n\n"
+                        },
+                        {
+                          "text": "« 装飾",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 33
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "アメジスト\n",
+                          "color": "#9A5CC6",
+                          "bold": true
+                        },
+                        {
+                          "text": "装飾：防具\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "部位：落下ダメ-8%（4で-32%）\nセット：暗闇・盲目を無効\n暗所のみ暗視\n3マス以上の着地でノックバック\n\n"
+                        },
+                        {
+                          "text": "« 装飾",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 33
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "クォーツ\n",
+                          "color": "#8B7E6A",
+                          "bold": true
+                        },
+                        {
+                          "text": "装飾：防具\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "部位：攻撃速度+2%（4で+8%）\nセット：クリティカル時に\n攻撃の15%を追加\n※空中の近接クリのみ\n\n"
+                        },
+                        {
+                          "text": "« 装飾",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 33
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "raw": [
+                        {
+                          "text": "樹脂\n",
+                          "color": "#DE731C",
+                          "bold": true
+                        },
+                        {
+                          "text": "装飾：防具\n\n",
+                          "color": "dark_gray"
+                        },
+                        {
+                          "text": "部位：静止時のみ防御+0.5\nセット：被弾した相手に鈍足\n見ている相手の移動を停止\n\n"
+                        },
+                        {
+                          "text": "« 装飾",
+                          "color": "dark_aqua",
+                          "underlined": true,
+                          "click_event": {
+                            "action": "change_page",
+                            "page": 33
                           }
                         }
                       ]

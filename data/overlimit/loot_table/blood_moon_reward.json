@@ -6,6 +6,15 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "value": "overlimit:reward_xp_bottles"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
           "value": "overlimit:bonus_weapon"
         }
       ]

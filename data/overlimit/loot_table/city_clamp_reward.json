@@ -2,6 +2,15 @@
   "type": "minecraft:chest",
   "pools": [
     {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:reward_xp_bottles"
+        }
+      ]
+    },
+    {
       "rolls": 2,
       "entries": [
         {

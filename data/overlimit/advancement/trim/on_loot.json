@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "open_guarded": {
+      "trigger": "minecraft:default_block_use",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": "#minecraft:guarded_by_piglins"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "overlimit:trim/gold/on_loot"
+  }
+}

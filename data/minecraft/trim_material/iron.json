@@ -1,0 +1,16 @@
+{
+  "asset_name": "iron",
+  "description": {
+    "color": "#ECECEC",
+    "translate": "trim_material.minecraft.iron",
+    "extra": [
+      {
+        "text": " — 部位:防御+0.5  セット:消耗半減・KB耐性+0.1",
+        "color": "#ECECEC"
+      }
+    ]
+  },
+  "override_armor_assets": {
+    "minecraft:iron": "iron_darker"
+  }
+}

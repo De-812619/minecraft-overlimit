@@ -1,0 +1,16 @@
+{
+  "asset_name": "netherite",
+  "description": {
+    "color": "#625859",
+    "translate": "trim_material.minecraft.netherite",
+    "extra": [
+      {
+        "text": " — 部位:最大HP+1  セット:炎上時間-80%",
+        "color": "#625859"
+      }
+    ]
+  },
+  "override_armor_assets": {
+    "minecraft:netherite": "netherite_darker"
+  }
+}

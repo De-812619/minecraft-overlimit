@@ -1,0 +1,17 @@
+attribute @s minecraft:armor modifier remove overlimit:trim.iron.armor
+attribute @s minecraft:knockback_resistance modifier remove overlimit:trim.iron.kb
+attribute @s minecraft:movement_speed modifier remove overlimit:trim.gold.speed
+attribute @s minecraft:attack_damage modifier remove overlimit:trim.diamond.atk
+attribute @s minecraft:attack_damage modifier remove overlimit:trim.diamond.set_atk
+attribute @s minecraft:armor modifier remove overlimit:trim.diamond.set_dr
+attribute @s minecraft:max_health modifier remove overlimit:trim.netherite.hp
+attribute @s minecraft:burning_time modifier remove overlimit:trim.netherite.burn
+attribute @s minecraft:attack_speed modifier remove overlimit:trim.copper.aspeed
+attribute @s minecraft:sneaking_speed modifier remove overlimit:trim.redstone.sneak
+attribute @s minecraft:block_interaction_range modifier remove overlimit:trim.redstone.reach
+attribute @s minecraft:luck modifier remove overlimit:trim.lapis.luck
+attribute @s minecraft:attack_damage modifier remove overlimit:trim.lapis.atk
+attribute @s minecraft:armor modifier remove overlimit:trim.lapis.def
+attribute @s minecraft:fall_damage_multiplier modifier remove overlimit:trim.amethyst.fall
+attribute @s minecraft:attack_speed modifier remove overlimit:trim.quartz.aspeed
+attribute @s minecraft:armor modifier remove overlimit:trim.resin.armor

@@ -1,0 +1,1 @@
+item replace entity @s armor.head with minecraft:golden_helmet[minecraft:trim={pattern:"minecraft:sentry",material:"minecraft:gold"},minecraft:item_model="minecraft:netherite_helmet",minecraft:equippable={slot:"head",asset_id:"minecraft:netherite"},minecraft:custom_data={overlimit:{trim_gold_swap:1b,trim_gold_orig:"minecraft:netherite_helmet"}}]

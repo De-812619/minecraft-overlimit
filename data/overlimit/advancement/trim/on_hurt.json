@@ -1,0 +1,18 @@
+{
+  "criteria": {
+    "hurt": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "source_entity": {},
+          "type": {
+            "is_direct": true
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "overlimit:trim/on_hurt"
+  }
+}

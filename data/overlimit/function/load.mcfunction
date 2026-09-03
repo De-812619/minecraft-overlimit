@@ -285,4 +285,5 @@ execute as @a run function overlimit:item/migrate_legacy_totem
 execute as @a run function overlimit:item/migrate_legacy_knowledge_book
 
 # Fabric: schedule ループ（#minecraft:tick 非依存）
+function overlimit:trim/init
 schedule function overlimit:tick_loop 1t replace

@@ -1,0 +1,21 @@
+{
+  "criteria": {
+    "hit": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:entity_type": "minecraft:piglin"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "overlimit:trim/gold/on_hit_piglin"
+  }
+}

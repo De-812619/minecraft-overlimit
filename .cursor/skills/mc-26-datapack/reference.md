@@ -312,6 +312,80 @@ Whilst parsing command on line 5: 「purple」は不明な色です ...lor purpl
 
 ---
 
+## `execute if weather` は無い
+
+**起きたこと:** `overlimit:trim/copper/on_melee` が `/reload` でロード失敗。銅セットの放電が一切動かない。
+
+```
+Failed to load function overlimit:trim/copper/on_melee
+Whilst parsing command on line 5: ...xecute if <--[HERE]
+```
+
+**正しい書き方:** 天候は `execute if predicate` と `minecraft:weather_check`（`thundering: true`）。`execute if weather thunder` は 26.2 の関数パーサが受けない。
+
+**出所:** 上記 `latest.log`（2026-09-02 21:44 / 21:56）。26.2 client jar `LootItemConditions` の `weather_check`。Wiki [Predicate](https://minecraft.wiki/w/Predicate) `minecraft:weather_check`。
+
+---
+
+## `player_generates_container_loot` は `loot_table` 必須
+
+**起きたこと:** `overlimit:trim/on_loot` がパース失敗。金セットの「チェストを開けたら敵対」が付かない。
+
+```
+Couldn't parse data file 'overlimit:trim/on_loot' ... 'No key loot_table in MapLike[{}]'
+```
+
+**正しい書き方:** ルート指定が要るので、空箱や任意チェストには使わない。ピグリンが怒る開扉は `minecraft:default_block_use`（26.2 にあり）＋ `#minecraft:guarded_by_piglins`。
+
+**出所:** 上記 `latest.log`（2026-09-02 21:44）。バニラ `nether/loot_bastion.json` は各基準に `loot_table` を書く。`CriteriaTriggers.DEFAULT_BLOCK_USE`（26.2 client jar）。
+
+---
+
+## ピグリンは金防具以外を毎tick狙い直す
+
+**起きたこと:** 金装飾ネザライトではピグリンが常に敵対した。Brain を消すと停止するか、次tickにまた殴る。`armor.body` の金ヘルメットは `getArmorSlots`（頭胸脚足）に入らず中立にならない。
+
+**正しい書き方:** プレイヤー装備への `data modify ... equipment.head.id` は見た目のNBTだけ変わって ItemStack に乗らない。アーマースタンドへ `item replace` してから `id` を金ヘルメットにし、`item replace` で戻す。ネザライト頭は `item replace ... with minecraft:golden_helmet[...]` が保険。見た目は `item_model` / `equippable.asset_id`。付けた瞬間は付近ピグリンの `angry_at` だけ消す（既に追われているとバニラ金防具でも解けない）。`walk_target` は消さない。`#minecraft:piglin_safe_armor` は金防具IDのみ。チームには入れない。
+
+**出所:** 検証（2026-09-03 16:53 / 17:05 `give_set gold` 後も攻撃）。`item replace` の装備付けは銅セットで確認済み。バニラ `data/minecraft/tags/item/piglin_safe_armor.json`。Wiki [Golden Armor](https://minecraft.wiki/w/Golden_Armor)、[Slot](https://minecraft.wiki/w/Slot) `contents` / `armor.head`。
+
+---
+
+## `flash` パーティクルは `color` 必須
+
+**起きたこと:** `overlimit:trim/copper/blast` が `/reload` でロード失敗。放電の見た目も追加ダメージも出ない（呼び出し先が無い）。
+
+```
+Failed to load function overlimit:trim/copper/blast
+Whilst parsing command on line 1: パーティクルの設定を解析出来ません：No key color in MapLike[{}]
+```
+
+**正しい書き方:** `particle minecraft:flash{color:[1.0,0.95,0.55,1.0]} ~ ~1 ~ 0 0 0 0 1 force`。26.2 の `flash` は色なしを受けない。
+
+**出所:** `latest.log`（2026-09-03 16:40 / 16:41）。Wiki [Particle format](https://minecraft.wiki/w/Particle_format) — 1.21.9 で `flash` に `color` 必須。
+
+---
+
+## 近接直後の `/damage` は無敵時間に吸われる
+
+**起きたこと:** 銅セットの放電が「出ない」ように見えた。`electric_spark` は雨・戦闘でほぼ見えない。同じtickの `damage ... player_attack` は直撃の HurtTime（約10tick）に阻まれ、追加5が入らない。
+
+**正しい書き方:** 見た目は `flash` + `wax_off` + `item.trident.thunder`（`force`）。ダメージはカスタム type を `#minecraft:bypasses_cooldown` に入れる。バニラのこのタグは空。雷雨中は毎撃、晴れは8ヒットの次。ヒット1〜8は手元の小さな火花だけ。
+
+**出所:** 検証ログ（2026-09-02 23:54 copper 付与、`/weather thunder` なし、撃破1体）。Wiki [Damage type tag](https://minecraft.wiki/w/Damage_type_tag_(Java_Edition)) `bypasses_cooldown`。
+
+---
+
+## ブラッドムーン開始は `weather clear`
+
+**起きたこと:** `/weather thunder` の直後に BM を始めると雷雨が消える。銅セットの「雷雨中は毎撃放電」が検証できない。
+
+**正しい書き方:** 雷雨テストでは BM を開始しない。BM は `blood_moon/start` で `weather clear 14000`。
+
+**出所:** `latest.log`（2026-09-02 22:55:47 雷雨 → 22:56:09 BM 強制開始）。`data/overlimit/function/blood_moon/start.mcfunction`。
+
+---
+
 ## ログの場所
 
 | 用途 | パス |

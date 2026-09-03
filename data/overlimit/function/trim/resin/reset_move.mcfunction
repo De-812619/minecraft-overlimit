@@ -1,0 +1,9 @@
+scoreboard players set @s overlimit.trim.walk 0
+scoreboard players set @s overlimit.trim.sprint 0
+scoreboard players set @s overlimit.trim.crouch 0
+scoreboard players set @s overlimit.trim.swim 0
+scoreboard players set @s overlimit.trim.fly 0
+scoreboard players set @s overlimit.trim.climb 0
+scoreboard players set @s overlimit.trim.fall 0
+scoreboard players set @s overlimit.trim.horse 0
+scoreboard players set @s overlimit.trim.boat 0

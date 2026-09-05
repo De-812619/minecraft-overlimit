@@ -1,0 +1,65 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_golem_spawn_egg",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_name": {
+                  "text": "ミニゴーレム",
+                  "color": "white"
+                },
+                "minecraft:lore": [
+                  {
+                    "text": "ブロックに使うとミニゴーレムを召喚する。大きさは0.7倍、体力は2.5倍",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "rare",
+                "minecraft:max_stack_size": 16,
+                "minecraft:enchantment_glint_override": true,
+                "minecraft:item_model": "overlimit:golem_summon",
+                "minecraft:custom_data": {
+                  "overlimit": {
+                    "mini_golem": true
+                  }
+                },
+                "minecraft:entity_data": {
+                  "id": "minecraft:iron_golem",
+                  "PlayerCreated": true,
+                  "PersistenceRequired": true,
+                  "Health": 250.0,
+                  "CustomName": {
+                    "text": "ミニゴーレム"
+                  },
+                  "CustomNameVisible": false,
+                  "DeathLootTable": "minecraft:empty",
+                  "Tags": [
+                    "overlimit.mini_golem"
+                  ],
+                  "attributes": [
+                    {
+                      "id": "minecraft:max_health",
+                      "base": 250.0
+                    },
+                    {
+                      "id": "minecraft:scale",
+                      "base": 0.7
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -43,6 +43,7 @@ execute as @a[scores={overlimit.necro_pending=1..}] run function overlimit:encha
 execute as @a[scores={overlimit.necro_pending=1..}] run scoreboard players operation @s overlimit.mob_prev = @s overlimit.mob_kills
 execute as @e[type=#overlimit:can_be_danger,scores={overlimit.bind.timer=1..}] run function overlimit:enchant/chain_bind/tick_bound
 execute as @e[type=#overlimit:summon,tag=overlimit.summon,scores={overlimit.summon.life=1..}] at @s run function overlimit:enchant/summon_wolf/life_tick
+execute as @e[type=minecraft:iron_golem,tag=overlimit.mini_golem,tag=!overlimit.mini_golem_ready] at @s run function overlimit:item/mini_golem/init
 
 # Hyper gravity field
 execute as @e[type=minecraft:marker,tag=overlimit.hg_field] at @s run function overlimit:enchant/hyper_gravity/field_tick

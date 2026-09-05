@@ -7,7 +7,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_sword",
-          "weight": 350,
+          "weight": 150,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -153,7 +153,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:diamond_sword",
-          "weight": 550,
+          "weight": 750,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -445,7 +445,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_axe",
-          "weight": 350,
+          "weight": 150,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -591,7 +591,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:diamond_axe",
-          "weight": 550,
+          "weight": 750,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -883,7 +883,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_spear",
-          "weight": 350,
+          "weight": 150,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -1016,7 +1016,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:diamond_spear",
-          "weight": 550,
+          "weight": 750,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",

@@ -166,7 +166,7 @@
       "entries": [
         {
           "type": "minecraft:empty",
-          "weight": 15
+          "weight": 5
         },
         {
           "type": "minecraft:loot_table",
@@ -175,7 +175,7 @@
         },
         {
           "type": "minecraft:group",
-          "weight": 15,
+          "weight": 25,
           "children": [
             {
               "type": "minecraft:loot_table",

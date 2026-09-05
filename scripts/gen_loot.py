@@ -57,14 +57,15 @@ TARGET_ENTITY_LOOT = [
     "elder_guardian",
 ]
 
+# 素材の比率: 鉄 / ダイヤ / ネザライト（CONTENT.md）
 MATERIAL_WEIGHTS = (
-    ("iron", 35),
-    ("diamond", 55),
+    ("iron", 15),
+    ("diamond", 75),
     ("netherite", 10),
 )
 
 # 追加個数の比率: 0個 / 1個 / 2個（CONTENT.md）
-INJECT_COUNT_WEIGHTS = (15, 70, 15)
+INJECT_COUNT_WEIGHTS = (5, 70, 25)
 
 INJECT_POOL = {
     "rolls": 1.0,

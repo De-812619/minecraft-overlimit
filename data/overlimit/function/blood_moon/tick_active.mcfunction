@@ -3,6 +3,8 @@ function overlimit:blood_moon/credit_pending
 execute as @e[tag=overlimit.blood_moon,tag=!overlimit.bm_scored] run function overlimit:blood_moon/credit_if_dead
 execute unless score #bm_active overlimit.const matches 1 run return fail
 
+function overlimit:blood_moon/weather_clear
+
 bossbar set overlimit:blood_moon players @a[predicate=overlimit:in_overworld]
 function overlimit:blood_moon/bossbar_value
 function overlimit:blood_moon/bossbar_name

@@ -376,6 +376,21 @@ Whilst parsing command on line 1: パーティクルの設定を解析出来ま�
 
 ---
 
+## チーム `friendlyFire` はプレイヤー同士だけ
+
+**起きたこと:** ミニゴーレムを `overlimit`（`friendlyFire false`）に入れても、プレイヤーの剣が通った。専用エンチャントを胸当てに付ける関数は、`/reload` のたびにロード失敗した。
+
+```
+Failed to load function overlimit:item/mini_golem/guard
+Failed to get element overlimit:mini_golem_guard
+```
+
+**正しい書き方:** 新規エンチャント ID を関数の `minecraft:enchantments` に書かない。`player_hurt_entity` でヒットを取り消し、直前 tick の体力に戻す（最大にはしない）。チーム所属はゴーレムがプレイヤーを殴らないため残す。
+
+**出所:** `latest.log`（2026-09-05 22:09:57 / 22:10:23 / 22:14:08）。Wiki [Commands/team](https://minecraft.wiki/w/Commands/team) `friendlyFire`。本パックの `trim/on_hit`。
+
+---
+
 ## ブラッドムーン開始は `weather clear`
 
 **起きたこと:** `/weather thunder` の直後に BM を始めると雷雨が消える。銅セットの「雷雨中は毎撃放電」が検証できない。

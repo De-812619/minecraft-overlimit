@@ -35,6 +35,7 @@
                   "id": "minecraft:iron_golem",
                   "PlayerCreated": true,
                   "PersistenceRequired": true,
+                  "Team": "overlimit",
                   "Health": 250.0,
                   "CustomName": {
                     "text": "ミニゴーレム"

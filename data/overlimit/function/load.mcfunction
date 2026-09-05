@@ -6,6 +6,7 @@ scoreboard objectives add overlimit.cd.hyper dummy
 scoreboard objectives add overlimit.cd.sky dummy
 scoreboard objectives add overlimit.bind.timer dummy
 scoreboard objectives add overlimit.summon.life dummy
+scoreboard objectives add overlimit.golem_hp dummy
 scoreboard objectives add overlimit.hg_life dummy
 scoreboard objectives add overlimit.hg_owner dummy
 scoreboard objectives add overlimit.necro_owner dummy

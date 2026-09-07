@@ -1,4 +1,7 @@
-# 2tick。属性は 10tick ごと。金ピグリンは 1tick（tick.mcfunction）。樹脂視線はこちら。
+# 2tick。セットタグは毎ループ。属性は 10tick ごと。
+execute as @a run function overlimit:trim/count
+execute as @a run function overlimit:trim/sets
+execute as @a[tag=!overlimit.trim.set.amethyst,tag=overlimit.trim.amy_nv] run function overlimit:trim/amethyst/clear_nv
 execute store result score #trim_t overlimit.const run time query gametime
 scoreboard players operation #trim_t overlimit.const %= #10 overlimit.const
 execute if score #trim_t overlimit.const matches 0 as @a run function overlimit:trim/scan

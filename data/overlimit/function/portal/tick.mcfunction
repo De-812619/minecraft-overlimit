@@ -1,4 +1,5 @@
 execute as @a[scores={overlimit.portal_cd=1..}] run scoreboard players remove @s overlimit.portal_cd 1
+execute as @a[scores={overlimit.pfl_dim=1..}] run function overlimit:portal/forceload_watch
 execute as @e[type=minecraft:marker,tag=overlimit.bw_portal] at @s run function overlimit:portal/idle
 
 tag @a remove overlimit.in_gate

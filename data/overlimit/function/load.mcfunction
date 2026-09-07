@@ -73,6 +73,7 @@ scoreboard players set #no_ghast_budget overlimit.const 5
 scoreboard players set #no_cap overlimit.const 12
 scoreboard players set #no_r0 overlimit.const 8
 scoreboard players set #no_rstep overlimit.const 4
+scoreboard players set #no_rmax overlimit.const 32
 scoreboard players set #no_follow overlimit.const 24
 scoreboard players set #no_int1 overlimit.const 20
 scoreboard players set #no_int2 overlimit.const 25
@@ -96,6 +97,8 @@ execute unless score #no_dusk overlimit.const matches 0.. run scoreboard players
 execute unless score #no_dusk_checked overlimit.const matches 0.. run scoreboard players set #no_dusk_checked overlimit.const 0
 execute unless score #no_fail overlimit.const matches 0.. run scoreboard players set #no_fail overlimit.const 0
 execute unless score #no_nethering overlimit.const matches 0.. run scoreboard players set #no_nethering overlimit.const 0
+execute if score #no_nethering overlimit.const matches 1 run function overlimit:nether_overflow/netherize_area_off with storage overlimit:no neth
+execute if score #no_nethering overlimit.const matches 1 run function overlimit:nether_overflow/netherize_clamp_storage
 execute if score #no_nethering overlimit.const matches 1 run function overlimit:nether_overflow/netherize_area_on with storage overlimit:no neth
 execute unless score #no_t overlimit.const matches 0.. run scoreboard players set #no_t overlimit.const 0
 execute unless score #no_phase overlimit.const matches 1.. run scoreboard players set #no_phase overlimit.const 1
@@ -132,6 +135,8 @@ scoreboard objectives add overlimit.bw_has dummy
 scoreboard objectives add overlimit.pfl_x dummy
 scoreboard objectives add overlimit.pfl_z dummy
 scoreboard objectives add overlimit.pfl_dim dummy
+scoreboard objectives add overlimit.pfl_age dummy
+scoreboard objectives add overlimit.elite_idle dummy
 tag @a remove overlimit.portal_arrive
 tag @a remove overlimit.to_bw
 tag @a remove overlimit.to_ow

@@ -9,10 +9,7 @@ scoreboard players operation #no_rad overlimit.const = #no_r0 overlimit.const
 scoreboard players operation #no_add overlimit.const = #no_gfail overlimit.const
 scoreboard players operation #no_add overlimit.const *= #no_rstep overlimit.const
 scoreboard players operation #no_rad overlimit.const += #no_add overlimit.const
-execute store result storage overlimit:no neth.r int 1 run scoreboard players get #no_rad overlimit.const
-scoreboard players operation #no_nrad overlimit.const = #no_rad overlimit.const
-scoreboard players operation #no_nrad overlimit.const *= #-1 overlimit.const
-execute store result storage overlimit:no neth.nr int 1 run scoreboard players get #no_nrad overlimit.const
+function overlimit:nether_overflow/netherize_clamp_rad
 scoreboard players operation #no_nz overlimit.const = #no_nrad overlimit.const
 scoreboard players set #no_nethering overlimit.const 1
 function overlimit:nether_overflow/netherize_area_on with storage overlimit:no neth

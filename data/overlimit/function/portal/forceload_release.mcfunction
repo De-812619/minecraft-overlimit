@@ -4,5 +4,6 @@ execute store result storage overlimit:portal pfl.z int 1 run scoreboard players
 data modify storage overlimit:portal pfl.dim set value "minecraft:overworld"
 execute if score @s overlimit.pfl_dim matches 2 run data modify storage overlimit:portal pfl.dim set value "overlimit:blood_world"
 scoreboard players set @s overlimit.pfl_dim 0
+scoreboard players set @s overlimit.pfl_age 0
 function overlimit:portal/forceload_remove with storage overlimit:portal pfl
 return 1

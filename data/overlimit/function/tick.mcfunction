@@ -8,7 +8,7 @@ execute as @a at @s if dimension overlimit:blood_world run tag @s add overlimit.
 function overlimit:portal/tick
 
 execute as @e[type=#overlimit:can_be_danger,tag=!overlimit.scanned,limit=8] at @s run function overlimit:mob/scan
-execute as @e[type=#overlimit:can_be_danger,tag=overlimit.elite,tag=!overlimit.blood_moon,tag=!overlimit.no_wave,tag=!overlimit.nr_wave,tag=!overlimit.cc_wave,tag=!overlimit.summon,tag=!overlimit.necro,limit=16] at @s run function overlimit:mob/cull_world_elite
+execute as @e[type=#overlimit:can_be_danger,tag=overlimit.elite,tag=!overlimit.structure,tag=!overlimit.blood_moon,tag=!overlimit.no_wave,tag=!overlimit.nr_wave,tag=!overlimit.cc_wave,tag=!overlimit.summon,tag=!overlimit.necro,limit=16] at @s run function overlimit:mob/cull_world_elite
 execute as @e[type=minecraft:marker,tag=overlimit.elite_xp] at @s run function overlimit:mob/xp_marker_tick
 execute as @e[type=minecraft:marker,tag=overlimit.danger_xp,tag=!overlimit.elite_xp] at @s run function overlimit:mob/xp_marker_tick
 execute in minecraft:overworld run function overlimit:blood_moon/tick

@@ -1,6 +1,8 @@
 tag @s add overlimit.scanned
 execute if entity @s[tag=overlimit.no_wave] run return fail
 execute if data entity @s CustomName run return fail
+# バストリオン等の構造物配置は PersistenceRequired。自然湧きと区別して間引きしない。
+execute if data entity @s {PersistenceRequired:1b} run tag @s add overlimit.structure
 
 execute if predicate overlimit:in_blood_world if entity @s[type=#overlimit:piglin] run return run function overlimit:mob/scan_blood_world_piglin
 execute if score #bw_active overlimit.const matches 1 if predicate overlimit:in_blood_world run return run function overlimit:mob/scan_blood_moon_bw

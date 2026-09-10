@@ -1,0 +1,64 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_spear",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_name": {
+                  "text": "UNLIMITED（槍）",
+                  "color": "light_purple"
+                },
+                "minecraft:lore": [
+                  {
+                    "text": "攻撃した相手を感電させる",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "epic",
+                "minecraft:item_model": "overlimit:unlimited_spear",
+                "minecraft:max_damage": 4064,
+                "minecraft:repairable": {
+                  "items": "minecraft:netherite_ingot"
+                },
+                "minecraft:enchantments": {
+                  "overlimit:ul_spear_shock": 1,
+                  "minecraft:vanishing_curse": 1
+                },
+                "minecraft:enchantment_glint_override": false,
+                "minecraft:custom_data": {
+                  "overlimit": {
+                    "unlimited_spear": true
+                  }
+                },
+                "minecraft:attribute_modifiers": [
+                  {
+                    "type": "minecraft:attack_damage",
+                    "id": "minecraft:base_attack_damage",
+                    "amount": 7.0,
+                    "operation": "add_value",
+                    "slot": "mainhand"
+                  },
+                  {
+                    "type": "minecraft:attack_speed",
+                    "id": "minecraft:base_attack_speed",
+                    "amount": -2.3333,
+                    "operation": "add_value",
+                    "slot": "mainhand"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

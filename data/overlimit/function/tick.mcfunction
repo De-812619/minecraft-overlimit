@@ -7,7 +7,8 @@ tag @a remove overlimit.in_bw
 execute as @a at @s if dimension overlimit:blood_world run tag @s add overlimit.in_bw
 function overlimit:portal/tick
 
-execute as @e[type=#overlimit:can_be_danger,tag=!overlimit.scanned,limit=8] at @s run function overlimit:mob/scan
+# 読み込み範囲全体を強化すると CustomName で自然デスポーンせず、間引きと湧きが回転する。戦闘圏だけスキャンする。
+execute as @a[gamemode=!spectator] at @s as @e[type=#overlimit:can_be_danger,tag=!overlimit.scanned,distance=..25,limit=8] at @s run function overlimit:mob/scan
 execute as @e[type=#overlimit:can_be_danger,tag=overlimit.elite,tag=!overlimit.structure,tag=!overlimit.blood_moon,tag=!overlimit.no_wave,tag=!overlimit.nr_wave,tag=!overlimit.cc_wave,tag=!overlimit.summon,tag=!overlimit.necro,limit=16] at @s run function overlimit:mob/cull_world_elite
 execute as @e[type=minecraft:marker,tag=overlimit.elite_xp] at @s run function overlimit:mob/xp_marker_tick
 execute as @e[type=minecraft:marker,tag=overlimit.danger_xp,tag=!overlimit.elite_xp] at @s run function overlimit:mob/xp_marker_tick
@@ -69,6 +70,21 @@ execute as @a[scores={overlimit.hd_ok=0,overlimit.hd_pok=1}] at @s run function 
 
 # 黄金弓: 撃った矢の速度2倍＋光の矢相当の発光
 execute as @e[type=#minecraft:arrows,tag=!overlimit.gb_done] run function overlimit:item/golden_bow/try_shot
+
+# UNLIMITED 武器: 剣の斬撃 / トライデント識別
+execute as @a[scores={overlimit.ul.sw_cd=1..}] run scoreboard players remove @s overlimit.ul.sw_cd 1
+execute as @a[scores={overlimit.ul.ax_cd=1..}] run scoreboard players remove @s overlimit.ul.ax_cd 1
+execute as @a[scores={overlimit.ul.sp_cd=1..}] run scoreboard players remove @s overlimit.ul.sp_cd 1
+execute as @a[scores={overlimit.ul.used=1..}] at @s run function overlimit:item/unlimited/sword_used
+execute as @a[scores={overlimit.ul.axe_used=1..}] at @s run function overlimit:item/unlimited/axe_used
+execute as @e[type=minecraft:marker,tag=overlimit.ul.slash] at @s run function overlimit:item/unlimited/slash_tick
+execute as @e[type=minecraft:trident,tag=!overlimit.ul.tri_chk] run function overlimit:item/unlimited/trident_mark
+execute as @e[type=minecraft:trident,tag=overlimit.ul.tri,tag=!overlimit.ul.tri_boom] at @s run function overlimit:item/unlimited/trident_try
+execute as @e[type=minecraft:trident,tag=overlimit.ul.tri] at @s run function overlimit:item/unlimited/trident_return
+execute as @e[type=minecraft:trident,tag=overlimit.ul.tri] at @s run function overlimit:item/unlimited/trident_fx
+execute as @e[type=minecraft:item_display,tag=overlimit.ul.tri_vis] run kill @s
+execute as @e[type=minecraft:marker,tag=overlimit.ul.tri_pin] run kill @s
+execute as @e[scores={overlimit.ul.para=1..}] run function overlimit:item/unlimited/spear_para_tick
 
 # 金床結果がカーソル→インベントリへ移る1tick遅れ用
 execute as @a[scores={overlimit.anvil_cap=1..}] run function overlimit:enchant/anvil_cap/apply

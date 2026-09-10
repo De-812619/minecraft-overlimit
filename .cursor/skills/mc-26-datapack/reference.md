@@ -401,6 +401,99 @@ Failed to get element overlimit:mini_golem_guard
 
 ---
 
+## `execute summon` に NBT を付けない
+
+**起きたこと:** `nether_raise/near_ok` と `city_clamp/near_ok` がロード失敗。近傍判定が動かない。
+
+**ログ:**
+
+```
+Failed to load function overlimit:nether_raise/near_ok
+Whilst parsing command on line 3: Incorrect argument for command at position 32: ...ft:marker <--[HERE]
+```
+
+**正しい書き方:** `execute summon minecraft:marker run function ...`（NBTなし）。タグは関数側で付ける。本パックの `hyper_dig/store_hit` と同じ。
+
+**誤:** `execute summon minecraft:marker ~ ~ ~ {Tags:[...]} run function ...`
+
+**出所:** 本番 `latest.log`（2026-09-08 12:05:40）。[Commands/execute](https://minecraft.wiki/w/Commands/execute) `summon`。
+
+---
+
+## 間引きで原点へ `tp` しない
+
+**起きたこと:** 強化Mobを `tp 0 -10000 0` してから `kill`。ブラッドワールド `entities/c.0.0.mcc` が 2.2MB の oversized chunk になった。約37分で名前付き死亡ログ 1万件超、エンティティID 28万。
+
+**正しい書き方:** その場で `DeathLootTable` 空・`CustomName` 削除・`kill`。虚空へ送るなら今いる列の下（`~ -10000 ~`）だけ。原点は使わない。
+
+**出所:** 本番 `latest.log`（2026-09-08 12:16〜12:56、`Saving oversized chunk [0, 0]`）。
+
+---
+
+## `particle flash` は color 必須
+
+**起きたこと:** `overlimit:item/unlimited/spear_shock` がロード失敗。感電が動かない。呼び出し元は黙ってスキップする。
+
+```
+Failed to load function overlimit:item/unlimited/spear_shock
+Whilst parsing command on line 5: パーティクルの設定を解析出来ません：No key color in MapLike[{}]
+```
+
+**正しい書き方:** `particle minecraft:flash{color:[1.0,0.95,0.55,1.0]}`（本パックの `trim/copper/blast` と同じ）。
+
+**出所:** テストワールド `latest.log`（2026-09-09 22:58:38）。[Particle](https://minecraft.wiki/w/Particles)
+
+---
+
+## 落雷の `visualOnly` は `/summon` では付かない
+
+**起きたこと:** `{visualOnly:1b}` 付きで `lightning_bolt` を出しても、炎上・帯電など本体の落雷処理が走る。
+
+26.2 の `LightningBolt` は `setVisualOnly` があるが、`addAdditionalSaveData` に対応キーが無く、召喚 NBT では無視される。
+
+**正しい書き方:** 見た目は `thunder` / `impact` のサウンド＋`electric_spark` の縦筋＋`flash`。追加ダメージは `minecraft:lightning_bolt` にしない（帯電を避ける）。
+
+**出所:** 26.2 client jar `net/minecraft/world/entity/LightningBolt.class`（`visualOnly` / `setVisualOnly`、save フィールド無し）。本パックの UNLIMITED 槍。
+
+---
+
+## `nbt={HurtTime:10s}` だけで今フレームの被弾を取らない
+
+**起きたこと:** UNLIMITED 斧の爆発が通常攻撃で出ない。剣は `minecraft.used` があるので命中は見えていた。
+
+**正しい書き方:** 近接の追加効果は本パックのインパクトと同じ `enchantment` の `minecraft:post_attack`（`affected: victim`）。HurtTime セレクタや `data get HurtTime` に依存しない。
+
+**出所:** 本パックの斧・槍（HurtTime 経路では無反応）。`data/overlimit/enchantment/impact.json` は同じ手段で動作確認済み。
+
+---
+
+## ルート表とエンチャントで同じ ID を使わない
+
+**起きたこと:** `give_axe` / `give_spear` がロード失敗。オートコンプリートから消えた。
+
+```
+Couldn't parse data file 'overlimit:unlimited_axe' from 'overlimit:loot_table/unlimited_axe.json'
+Failed to get element overlimit:unlimited_axe missed input: {"overlimit:unlimited_axe":1}
+```
+
+**正しい書き方:** ルート `overlimit:unlimited_axe` に載せるエンチャントは別名（`overlimit:ul_axe_blast`）。`supported_items` はインパクトと同じく `#minecraft:axes` / `#minecraft:spears`。
+
+**出所:** テストワールド `latest.log`（2026-09-09 23:08:29）。
+
+---
+
+## プレイヤー入力 predicate に `attack` は無い
+
+**起きたこと:** UNLIMITED 剣をメインハンドに持っているだけで斬撃が出た。
+
+`InputPredicate` のフィールドは `forward` / `backward` / `left` / `right` / `jump` / `sneak` / `sprint` のみ。`attack: true` は未知キーとして無視され、入力条件が空＝常に成功する。
+
+**正しい書き方:** 攻撃の検出は `minecraft.used:<item>` や `player_hurt_entity`。斬撃の空振り検出には使えない。
+
+**出所:** 26.2 client jar `net/minecraft/advancements/predicates/InputPredicate.class`（`-forward;backward;left;right;jump;sneak;sprint`）。Wiki [Predicate](https://minecraft.wiki/w/Predicate) player input（24w36a）。本パックの持っているだけの斬撃で確認。
+
+---
+
 ## ログの場所
 
 | 用途 | パス |
@@ -409,3 +502,39 @@ Failed to get element overlimit:mini_golem_guard
 | 編集リポジトリ | `/Users/okanoueyuuichi/minecraft/datapacks/over_limit_pack`（ゲームは読まない） |
 
 `.cursor/` はデプロイ rsync から除外する（ワールドにスキルをコピーしない）。
+
+---
+
+## 投擲トライデントのテクスチャは item_model を見ない
+
+**起きたこと:** UNLIMITED の `item_model` を変えても、持っているとき・投げたときの 3D はバニラの `textures/entity/trident/trident.png` のまま。このパスをリソースパックで上書きすると、通常トライデントも同じ見た目になる。
+
+**正しい書き方:** `minecraft:special` の `type: minecraft:trident` はテクスチャ欄がない。所持・GUI は overlimit 名前空間の JSON 3D。投擲は `item_display` で重ねると `ThrownTridentRenderer` と回転軸が違い、完全一致できない。UNLIMITED の投擲見た目はバニラの `textures/entity/trident/trident.png` のままにする（`minecraft:` パスを上書きしない。すると通常トライデントも変わる）。
+
+**出所:** 26.2 client `ThrownTridentRenderer` の `TRIDENT_LOCATION`（`textures/entity/trident/trident.png`）。`TridentSpecialRenderer$Unbaked` の `MAP_CODEC` が `MapCodec.unit`。
+
+手持ち JSON にバニラ `trident_in_hand` の translation（`[11, 17, -2]` など）は使わない。あれは `minecraft:special` のエンティティ原点用。手持ちは handheld 寄りの display（`[0, 4, 0.5]` / `[1.13, 3.2, 1.13]`）。
+
+---
+
+## JSON 模型の `to` は 32 まで
+
+**起きたこと:** `unlimited_trident_3d.json` の pole `to.y = 35` でモデル全体が落ち、UNLIMITED トライデントの所持がバニラ見た目に戻った。
+
+**ログ:** `Failed to load model overlimit:models/item/unlimited_trident_3d.json` / `'to' specifier exceeds the allowed boundaries: ( 8.500E+0  3.500E+1  8.500E+0)`
+
+**正しい書き方:** 各 element の `from` / `to` は **-16〜32**。長いトライデントは Y オフセットを足さないか、縮小して display.scale で戻す。
+
+**出所:** 上記 `latest.log`（2026-09-10 00:33:22）。`CuboidModelElement$Deserializer.getPosition`。
+
+---
+
+## `scoreboard players operation` の右辺はスコアだけ
+
+**起きたこと:** `trident_return` が `/reload` でロード失敗。帰還加速が動かない。
+
+**ログ:** `Failed to load function overlimit:item/unlimited/trident_return` / `...onst *= 75<--[HERE]`
+
+**正しい書き方:** `scoreboard players operation #x overlimit.const *= #75 overlimit.const`。対象・オブジェクティブ・右辺スコア・右辺オブジェクティブがすべて必要。`*= 75` のようなリテラルは不可。`operation #dyaw *= #1000` もオブジェクティブ欠落でロード失敗する。
+
+**出所:** 上記 `latest.log`（2026-09-10 00:33:28）。`trident_vis_tick` は 2026-09-10 01:32:42 に `...ion #dyaw <--[HERE]` で同様に失敗。

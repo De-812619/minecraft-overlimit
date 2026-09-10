@@ -418,6 +418,20 @@
           "weight": 10
         }
       ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 999
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_any",
+          "weight": 1
+        }
+      ]
     }
   ],
   "random_sequence": "minecraft:chests/bastion_treasure"

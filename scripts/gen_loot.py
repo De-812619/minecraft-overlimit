@@ -112,10 +112,27 @@ INJECT_TOTEM_POOL = {
     ],
 }
 
+# 装備 0/1/2・トーテムとは独立。対象チェストごとに UNLIMITED いずれか 0.1%。
+INJECT_UNLIMITED_POOL = {
+    "rolls": 1.0,
+    "entries": [
+        {
+            "type": "minecraft:empty",
+            "weight": 999,
+        },
+        {
+            "type": "minecraft:loot_table",
+            "value": "overlimit:unlimited_any",
+            "weight": 1,
+        },
+    ],
+}
+
 INJECT_TABLE_IDS = frozenset(
     {
         "overlimit:bonus_gear",
         "overlimit:bonus_totem",
+        "overlimit:unlimited_any",
     }
 )
 
@@ -547,11 +564,26 @@ def _loot_table_pool(table: str, rolls: int) -> dict:
     }
 
 
+def _unlimited_chance_pool(*, empty_weight: int, hit_weight: int = 1) -> dict:
+    return {
+        "rolls": 1,
+        "entries": [
+            {"type": "minecraft:empty", "weight": empty_weight},
+            {
+                "type": "minecraft:loot_table",
+                "value": "overlimit:unlimited_any",
+                "weight": hit_weight,
+            },
+        ],
+    }
+
+
 def build_blood_moon_reward() -> dict:
-    """武器1・防具1・本1。帰還の懐中時計は別枠 30%。"""
+    """経験値瓶・武器1・防具1・本1。帰還の懐中時計は別枠 30%。UNLIMITED 0.5%。"""
     return {
         "type": "minecraft:chest",
         "pools": [
+            _loot_table_pool("overlimit:reward_xp_bottles", 1),
             _loot_table_pool("overlimit:bonus_weapon", 1),
             _loot_table_pool("overlimit:bonus_armor", 1),
             _loot_table_pool("overlimit:blood_moon_book", 1),
@@ -566,28 +598,33 @@ def build_blood_moon_reward() -> dict:
                     },
                 ],
             },
+            _unlimited_chance_pool(empty_weight=199),
         ],
     }
 
 
 def build_overflow_reward() -> dict:
-    """武器2・防具2・ランダム1・本3・帰還時計3。"""
+    """経験値瓶・武器2・防具2・道具1・本3・帰還時計3。UNLIMITED 0.5%。"""
     return {
         "type": "minecraft:chest",
         "pools": [
+            _loot_table_pool("overlimit:reward_xp_bottles", 1),
             _loot_table_pool("overlimit:bonus_weapon", 2),
             _loot_table_pool("overlimit:bonus_armor", 2),
             _loot_table_pool("overlimit:bonus_tool", 1),
             _loot_table_pool("overlimit:blood_moon_book", 3),
             _loot_table_pool("overlimit:recall_watch", 3),
+            _unlimited_chance_pool(empty_weight=199),
         ],
     }
 
 
 def build_destination_reward() -> dict:
-    """オーバーフローと同じ＋不死のトーテム 10%。"""
+    """オーバーフローと同じ＋不死のトーテム 10%。UNLIMITED はオーバーフロー側の 0.5%。"""
     table = build_overflow_reward()
-    table["pools"].append(
+    pools = table["pools"]
+    unlimited = pools.pop()
+    pools.append(
         {
             "rolls": 1,
             "entries": [
@@ -600,6 +637,7 @@ def build_destination_reward() -> dict:
             ],
         }
     )
+    pools.append(unlimited)
     return table
 
 
@@ -724,6 +762,7 @@ def inject_chest(table: dict) -> dict:
     ]
     pools.append(INJECT_POOL)
     pools.append(INJECT_TOTEM_POOL)
+    pools.append(INJECT_UNLIMITED_POOL)
     out = dict(table)
     out["pools"] = pools
     return out

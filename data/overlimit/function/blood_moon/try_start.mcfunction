@@ -1,3 +1,8 @@
+# オーバーワールドに生存者がいない夜は開始しない（BW 滞在中に OW 側が起きると間引きが衝突していた）。
+scoreboard players set #bm_ow_pl overlimit.const 0
+execute as @a[gamemode=!spectator] at @s if dimension minecraft:overworld run scoreboard players set #bm_ow_pl overlimit.const 1
+execute unless score #bm_ow_pl overlimit.const matches 1 run return fail
+
 scoreboard players set #bm_checked overlimit.const 1
 execute if score #no_active overlimit.const matches 1 run return fail
 scoreboard players operation #bm_mod overlimit.const = #bm_daynow overlimit.const

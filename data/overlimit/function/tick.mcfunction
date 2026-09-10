@@ -2,6 +2,7 @@
 execute store result score #tick_now overlimit.const run time query gametime
 execute if score #tick_now overlimit.const = #tick_at overlimit.const run return fail
 scoreboard players operation #tick_at overlimit.const = #tick_now overlimit.const
+scoreboard players set #bm_light_n overlimit.const 0
 
 tag @a remove overlimit.in_bw
 execute as @a at @s if dimension overlimit:blood_world run tag @s add overlimit.in_bw

@@ -1,4 +1,5 @@
 # @s = overlimit.blood_moon 個体。死亡アニメ中（Health 0）なら加点する。
+execute unless entity @s[tag=overlimit.bm_ow] run return fail
 execute if entity @s[tag=overlimit.bm_scored] run return fail
 
 scoreboard players set #bm_hp overlimit.const 0

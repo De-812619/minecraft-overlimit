@@ -81,7 +81,11 @@ Wiki: [Commands/execute](https://minecraft.wiki/w/Commands/execute) `positioned 
 
 `gamerule maxCommandChainLength` デフォルト **65536**。超えたコマンドは **エラーなく切れ**、同じtickの強化スキャンやボスバー更新が飛ぶ。
 
-半径16の立方体スキャン（33³）× 開始10方向は上限に触る。水平半径16＋Yを狭める、近いマスから `return 1`。
+半径16の立方体スキャン（33³）× 開始10方向は上限に触る。光源判定は水平半径8・Y -1..+2、近いマスから `return 1`。1ティックあたりの走査回数にも上限（`#bm_light_max`）。
+
+**起きたこと:** マルチ2人・エリトラ移動・ブラッドムーン中に `Command execution stopped due to limit (executed 65536 commands)` が約4秒おき（湧きパルス）。`moved too quickly` で瞬間移動に見えた。`Can't keep up` は0件。
+
+**ログ:** `/Users/okanoueyuuichi/Downloads/latest.log`（2026-09-10、07:49〜08:14）。`near_light_aligned` 旧約4784コマンド／候補。
 
 ネザーオーバーフローのネザー化を同じtickで半径32以上塗ると、`end`（ボスバー消去・敵デスポーン）まで届かず発生中のまま残ることがある。終了処理を先に走らせ、塗る処理は数tickに分ける。
 
@@ -538,3 +542,13 @@ Failed to get element overlimit:unlimited_axe missed input: {"overlimit:unlimite
 **正しい書き方:** `scoreboard players operation #x overlimit.const *= #75 overlimit.const`。対象・オブジェクティブ・右辺スコア・右辺オブジェクティブがすべて必要。`*= 75` のようなリテラルは不可。`operation #dyaw *= #1000` もオブジェクティブ欠落でロード失敗する。
 
 **出所:** 上記 `latest.log`（2026-09-10 00:33:28）。`trident_vis_tick` は 2026-09-10 01:32:42 に `...ion #dyaw <--[HERE]` で同様に失敗。
+
+---
+
+## `execute in` 後の `at @s if dimension` は他次元のエンティティを弾かない
+
+**起きたこと:** `tick` が `execute in minecraft:overworld run function overlimit:blood_moon/tick` のとき、`as @e[tag=overlimit.blood_moon] at @s if dimension minecraft:overworld` がブラッドワールドの個体にも成功する。OW の 4 秒 `cull_far` が BW の強化Mobを消す。検証手順: BW 移動 → OW BM をコマンド開始 → BW BM をコマンド開始。
+
+**正しい書き方:** 所属はエンティティタグ（`overlimit.bm_ow` / `overlimit.bm_bw`）で分ける。`if dimension` はコマンドの実行次元を見る。`cull_one` 先頭の `unless dimension` も同じ理由で他次元を止められない。
+
+**出所:** 検証ワールドでの再現（2026-09-11）。Wiki [Commands/execute](https://minecraft.wiki/w/Commands/execute) の `in` / `dimension`。

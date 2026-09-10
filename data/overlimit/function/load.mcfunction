@@ -72,6 +72,7 @@ scoreboard players set #bm_spawn_cap overlimit.const 24
 scoreboard players set #bm_spawn_near overlimit.const 16
 scoreboard players set #bm_spawn_min_y overlimit.const 60
 scoreboard players set #bm_spawn_burst overlimit.const 10
+scoreboard players set #bm_light_max overlimit.const 16
 execute unless score #bm_spawn_t overlimit.const matches 0.. run scoreboard players set #bm_spawn_t overlimit.const 0
 scoreboard players set #6 overlimit.const 6
 scoreboard players set #-1 overlimit.const -1

@@ -1,4 +1,5 @@
 # @s = elite XP Marker。ホスト死亡（または旅客が外れた死亡tick）で撃破点。
+execute unless entity @s[tag=overlimit.bm_bw] run return fail
 execute unless score #bw_active overlimit.const matches 1 run return fail
 execute unless entity @s[tag=overlimit.bm_xp] run return fail
 execute if entity @s[tag=overlimit.bm_credited] run return fail

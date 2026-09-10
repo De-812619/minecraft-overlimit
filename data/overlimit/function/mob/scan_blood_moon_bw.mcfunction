@@ -4,5 +4,6 @@ execute if score #roll overlimit.const matches 0 run function overlimit:mob/make
 execute if score #roll overlimit.const matches 1..5 run function overlimit:mob/make_crisis
 execute if score #roll overlimit.const matches 6..20 run function overlimit:mob/make_danger
 execute if score #roll overlimit.const matches 21..99 run function overlimit:mob/make_warning
+tag @s add overlimit.bm_bw
 function overlimit:blood_moon/mark_elite
 tag @s add overlimit.scanned

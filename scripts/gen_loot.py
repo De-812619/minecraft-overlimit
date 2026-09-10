@@ -652,11 +652,15 @@ def _bonus_gear_entries(
     *,
     include_book: bool = False,
     include_watch: bool = False,
+    materials: frozenset[str] | None = None,
 ) -> list[dict]:
     # Flat weighted entries (alternatives は条件フォールバック用で加重抽選ではない)
     # 素材付きは kind × 素材weight。釣り竿・弓・クロスボウは素材が無いので
     # 素材weight合計（100）を掛け、種別weight 7 が剣の 10 と同等の尺度になるようにする。
     material_weight_sum = sum(w for _, w in MATERIAL_WEIGHTS)
+    mat_rows = MATERIAL_WEIGHTS
+    if materials is not None:
+        mat_rows = tuple((m, w) for m, w in MATERIAL_WEIGHTS if m in materials)
     entries: list[dict] = []
     for kind, suffix, kind_weight in KIND_SPECS:
         if kind_filter is not None and kind not in kind_filter:
@@ -671,7 +675,7 @@ def _bonus_gear_entries(
                 }
             )
             continue
-        for material, mat_weight in MATERIAL_WEIGHTS:
+        for material, mat_weight in mat_rows:
             entries.append(
                 {
                     "type": "minecraft:item",
@@ -733,6 +737,13 @@ def build_bonus_armor() -> dict:
 def build_bonus_tool() -> dict:
     """ツルハシ・シャベル・クワ・釣竿。"""
     return _bonus_gear_table(_bonus_gear_entries(TOOL_KINDS))
+
+
+def build_reforge_gear() -> dict:
+    """再鍛出力。本・時計なし。素材付きはダイヤ／ネザライトのみ（鉄なし）。弓などは従来どおり。"""
+    return _bonus_gear_table(
+        _bonus_gear_entries(materials=frozenset({"diamond", "netherite"}))
+    )
 
 
 def _entry_refs_inject(entry: dict) -> bool:
@@ -852,6 +863,7 @@ def main() -> None:
 
     write_json(ROOT / "data/overlimit/loot_table/bonus_gear.json", build_bonus_gear())
     write_json(ROOT / "data/overlimit/loot_table/bonus_gear_no_book.json", build_bonus_gear_no_book())
+    write_json(ROOT / "data/overlimit/loot_table/reforge_gear.json", build_reforge_gear())
     write_json(ROOT / "data/overlimit/loot_table/bonus_weapon.json", build_bonus_weapon())
     write_json(ROOT / "data/overlimit/loot_table/bonus_armor.json", build_bonus_armor())
     write_json(ROOT / "data/overlimit/loot_table/bonus_tool.json", build_bonus_tool())

@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "overlimit:reforge",
+  "key": {
+    "E": "#overlimit:reforge_input",
+    "D": "minecraft:diamond_block"
+  },
+  "pattern": [
+    "EDE"
+  ],
+  "result": {
+    "id": "minecraft:paper",
+    "count": 1,
+    "components": {
+      "minecraft:item_name": {
+        "text": "再鍛の証",
+        "color": "gold"
+      },
+      "minecraft:lore": [
+        {
+          "text": "オーバーリミット装備2つとダイヤブロックで、別の装備に打ち直す",
+          "color": "gray",
+          "italic": false
+        },
+        {
+          "text": "消滅の呪いが付いていない装備で作ると失敗し、その装備は戻らない",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:rarity": "rare",
+      "minecraft:max_stack_size": 1,
+      "minecraft:enchantment_glint_override": true,
+      "minecraft:item_model": "overlimit:reforge_token",
+      "minecraft:custom_data": {
+        "overlimit": {
+          "reforge_token": true
+        }
+      }
+    }
+  }
+}

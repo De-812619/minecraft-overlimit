@@ -1,0 +1,46 @@
+{
+  "criteria": {
+    "craft": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "overlimit:reforge_diamond",
+        "ingredients": [
+          {
+            "items": "#overlimit:reforge_input",
+            "predicates": {
+              "minecraft:enchantments": [
+                {
+                  "enchantments": "minecraft:vanishing_curse",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "items": "#overlimit:reforge_input",
+            "predicates": {
+              "minecraft:enchantments": [
+                {
+                  "enchantments": "minecraft:vanishing_curse",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "craft"
+    ]
+  ],
+  "rewards": {
+    "function": "overlimit:item/reforge/craft_ok"
+  }
+}

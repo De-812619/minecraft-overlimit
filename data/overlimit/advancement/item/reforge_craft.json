@@ -1,0 +1,18 @@
+{
+  "criteria": {
+    "craft": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "overlimit:reforge_diamond"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "craft"
+    ]
+  ],
+  "rewards": {
+    "function": "overlimit:item/reforge/craft_any"
+  }
+}

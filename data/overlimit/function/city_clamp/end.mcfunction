@@ -1,4 +1,5 @@
 scoreboard players set #cc_active overlimit.const 0
+scoreboard players set #cc_omen overlimit.const 0
 scoreboard players set #cc_combat overlimit.const 0
 scoreboard players set #cc_paused overlimit.const 0
 scoreboard players set #cc_arrived overlimit.const 0

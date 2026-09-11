@@ -552,3 +552,23 @@ Failed to get element overlimit:unlimited_axe missed input: {"overlimit:unlimite
 **正しい書き方:** 所属はエンティティタグ（`overlimit.bm_ow` / `overlimit.bm_bw`）で分ける。`if dimension` はコマンドの実行次元を見る。`cull_one` 先頭の `unless dimension` も同じ理由で他次元を止められない。
 
 **出所:** 検証ワールドでの再現（2026-09-11）。Wiki [Commands/execute](https://minecraft.wiki/w/Commands/execute) の `in` / `dimension`。
+
+---
+
+## `execute if function` に `with storage` は付けられない
+
+**起きたこと:** イベント勝利で報酬チェストが出ない。`place_reward` が `/reload` で全部ロード失敗。呼び出し元の `end_victory` は関数を黙ってスキップする。
+
+**ログ:**
+
+```
+Failed to load function overlimit:blood_moon/place_reward
+Whilst parsing command on line 3: ...est_spots <--[HERE]
+```
+
+**正しい書き方:** `return run function overlimit:reward/scan_chest_spots with storage overlimit:reward`  
+**誤:** `execute if function overlimit:reward/scan_chest_spots with storage overlimit:reward run return 1`
+
+`function <name> with storage` は使える。`execute if function` のあとにマクロ引数は置けない。
+
+**出所:** 上記 `latest.log`（2026-09-11 15:12:07）。

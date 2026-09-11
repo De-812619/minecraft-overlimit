@@ -1,9 +1,4 @@
 # @s = クリア時にオーバーワールドにいたプレイヤー
-execute align xyz positioned ~1.5 ~0.5 ~0.5 if function overlimit:nether_overflow/try_chest_spot run return 1
-execute align xyz positioned ~-0.5 ~0.5 ~0.5 if function overlimit:nether_overflow/try_chest_spot run return 1
-execute align xyz positioned ~0.5 ~0.5 ~1.5 if function overlimit:nether_overflow/try_chest_spot run return 1
-execute align xyz positioned ~0.5 ~0.5 ~-0.5 if function overlimit:nether_overflow/try_chest_spot run return 1
-execute align xyz positioned ~1.5 ~1.5 ~0.5 if function overlimit:nether_overflow/try_chest_spot run return 1
-execute align xyz positioned ~0.5 ~1.5 ~0.5 if function overlimit:nether_overflow/try_chest_spot run return 1
-execute align xyz positioned ~0.5 ~0.5 ~0.5 run loot spawn ~ ~0.5 ~ loot overlimit:nether_overflow_reward
-return 1
+data modify storage overlimit:reward fn set value "overlimit:nether_overflow/try_chest_spot"
+data modify storage overlimit:reward give set value "overlimit:nether_overflow/give_fallback"
+return run function overlimit:reward/scan_chest_spots with storage overlimit:reward

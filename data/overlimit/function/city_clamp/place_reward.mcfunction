@@ -1,8 +1,3 @@
-execute align xyz positioned ~1.5 ~0.5 ~0.5 if function overlimit:city_clamp/try_chest_spot run return 1
-execute align xyz positioned ~-0.5 ~0.5 ~-0.5 if function overlimit:city_clamp/try_chest_spot run return 1
-execute align xyz positioned ~0.5 ~0.5 ~1.5 if function overlimit:city_clamp/try_chest_spot run return 1
-execute align xyz positioned ~0.5 ~0.5 ~-0.5 if function overlimit:city_clamp/try_chest_spot run return 1
-execute align xyz positioned ~1.5 ~1.5 ~0.5 if function overlimit:city_clamp/try_chest_spot run return 1
-execute align xyz positioned ~0.5 ~1.5 ~0.5 if function overlimit:city_clamp/try_chest_spot run return 1
-execute align xyz positioned ~0.5 ~0.5 ~0.5 run loot spawn ~ ~0.5 ~ loot overlimit:city_clamp_reward
-return 1
+data modify storage overlimit:reward fn set value "overlimit:city_clamp/try_chest_spot"
+data modify storage overlimit:reward give set value "overlimit:city_clamp/give_fallback"
+return run function overlimit:reward/scan_chest_spots with storage overlimit:reward

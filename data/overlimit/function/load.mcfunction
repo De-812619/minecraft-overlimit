@@ -64,6 +64,7 @@ execute unless score #necro_id_seq overlimit.const matches 1.. run scoreboard pl
 execute unless score #hg_id_seq overlimit.const matches 1.. run scoreboard players set #hg_id_seq overlimit.const 0
 execute unless score #ul_seq overlimit.const matches 1.. run scoreboard players set #ul_seq overlimit.const 0
 execute unless score #bm_active overlimit.const matches 0.. run scoreboard players set #bm_active overlimit.const 0
+execute unless score #bm_omen overlimit.const matches 0.. run scoreboard players set #bm_omen overlimit.const 0
 execute unless score #bm_kills overlimit.const matches 0.. run scoreboard players set #bm_kills overlimit.const 0
 execute unless score #bm_checked overlimit.const matches 0.. run scoreboard players set #bm_checked overlimit.const 0
 execute unless score #bm_chance overlimit.const matches 0.. run scoreboard players operation #bm_chance overlimit.const = #bm_chance_base overlimit.const
@@ -106,6 +107,7 @@ execute unless score #pressure_skip_day overlimit.const matches -1.. run scorebo
 function overlimit:pressure/refresh
 
 execute unless score #no_active overlimit.const matches 0.. run scoreboard players set #no_active overlimit.const 0
+execute unless score #no_omen overlimit.const matches 0.. run scoreboard players set #no_omen overlimit.const 0
 execute unless score #no_paused overlimit.const matches 0.. run scoreboard players set #no_paused overlimit.const 0
 execute unless score #no_dusk overlimit.const matches 0.. run scoreboard players set #no_dusk overlimit.const 0
 execute unless score #no_dusk_checked overlimit.const matches 0.. run scoreboard players set #no_dusk_checked overlimit.const 0
@@ -123,9 +125,12 @@ scoreboard objectives add overlimit.no_gfail dummy
 scoreboard players set @a overlimit.no_deaths 0
 execute unless data storage overlimit:no gate run data modify storage overlimit:no gate set value {x:0,y:64,z:0}
 execute unless data storage overlimit:no gates run data modify storage overlimit:no gates set value []
+execute unless data storage overlimit:reward fn run data modify storage overlimit:reward fn set value "overlimit:blood_moon/try_chest_spot"
+execute unless data storage overlimit:reward give run data modify storage overlimit:reward give set value "overlimit:blood_moon/give_fallback"
 execute unless score #no_arrived overlimit.const matches 0.. run scoreboard players set #no_arrived overlimit.const 0
 execute unless score #no_pc_prev overlimit.const matches 0.. run scoreboard players set #no_pc_prev overlimit.const 0
 execute unless score #bw_active overlimit.const matches 0.. run scoreboard players set #bw_active overlimit.const 0
+execute unless score #bw_omen overlimit.const matches 0.. run scoreboard players set #bw_omen overlimit.const 0
 execute unless score #bw_kills overlimit.const matches 0.. run scoreboard players set #bw_kills overlimit.const 0
 execute unless score #bw_spawn_t overlimit.const matches 0.. run scoreboard players set #bw_spawn_t overlimit.const 0
 execute unless score #tick_at overlimit.const matches -1.. run scoreboard players set #tick_at overlimit.const -1
@@ -223,6 +228,7 @@ execute unless score #no_active overlimit.const matches 1 run bossbar set overli
 scoreboard objectives add overlimit.nr_deaths deathCount
 scoreboard objectives add overlimit.cc_deaths deathCount
 execute unless score #nr_active overlimit.const matches 0.. run scoreboard players set #nr_active overlimit.const 0
+execute unless score #nr_omen overlimit.const matches 0.. run scoreboard players set #nr_omen overlimit.const 0
 execute unless score #nr_combat overlimit.const matches 0.. run scoreboard players set #nr_combat overlimit.const 0
 execute unless score #nr_paused overlimit.const matches 0.. run scoreboard players set #nr_paused overlimit.const 0
 execute unless score #nr_dwell overlimit.const matches 0.. run scoreboard players set #nr_dwell overlimit.const 0
@@ -251,6 +257,7 @@ execute unless score #nr_gather_t overlimit.const matches 0.. run scoreboard pla
 execute unless data storage overlimit:nr target run data modify storage overlimit:nr target set value {x:0,y:64,z:0,kind:"minecraft:fortress"}
 
 execute unless score #cc_active overlimit.const matches 0.. run scoreboard players set #cc_active overlimit.const 0
+execute unless score #cc_omen overlimit.const matches 0.. run scoreboard players set #cc_omen overlimit.const 0
 execute unless score #cc_combat overlimit.const matches 0.. run scoreboard players set #cc_combat overlimit.const 0
 execute unless score #cc_paused overlimit.const matches 0.. run scoreboard players set #cc_paused overlimit.const 0
 execute unless score #cc_dwell overlimit.const matches 0.. run scoreboard players set #cc_dwell overlimit.const 0

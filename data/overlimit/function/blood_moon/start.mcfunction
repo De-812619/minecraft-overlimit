@@ -1,6 +1,8 @@
 scoreboard players set #bm_active overlimit.const 1
 scoreboard players set #bm_kills overlimit.const 0
+scoreboard players set #bm_omen overlimit.const 0
 scoreboard players operation #bm_chance overlimit.const = #bm_chance_base overlimit.const
+function overlimit:omen/bind_bm
 
 function overlimit:blood_moon/fog_on
 function overlimit:blood_moon/weather_clear

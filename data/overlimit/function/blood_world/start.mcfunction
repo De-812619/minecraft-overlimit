@@ -1,5 +1,7 @@
 scoreboard players set #bw_active overlimit.const 1
 scoreboard players set #bw_kills overlimit.const 0
+scoreboard players set #bw_omen overlimit.const 0
+function overlimit:omen/bind_bw
 
 function overlimit:blood_world/fog_on
 function overlimit:blood_world/read_time

@@ -112,6 +112,22 @@ INJECT_TOTEM_POOL = {
     ],
 }
 
+# 装備・不死のトーテムとは独立。対象チェストごとに凶兆のトーテム 10%。
+INJECT_BM_TOTEM_POOL = {
+    "rolls": 1.0,
+    "entries": [
+        {
+            "type": "minecraft:empty",
+            "weight": 90,
+        },
+        {
+            "type": "minecraft:loot_table",
+            "value": "overlimit:bm_totem",
+            "weight": 10,
+        },
+    ],
+}
+
 # 装備 0/1/2・トーテムとは独立。対象チェストごとに UNLIMITED いずれか 0.1%。
 INJECT_UNLIMITED_POOL = {
     "rolls": 1.0,
@@ -132,6 +148,7 @@ INJECT_TABLE_IDS = frozenset(
     {
         "overlimit:bonus_gear",
         "overlimit:bonus_totem",
+        "overlimit:bm_totem",
         "overlimit:unlimited_any",
     }
 )
@@ -579,7 +596,7 @@ def _unlimited_chance_pool(*, empty_weight: int, hit_weight: int = 1) -> dict:
 
 
 def build_blood_moon_reward() -> dict:
-    """経験値瓶・武器1・防具1・本1。帰還の懐中時計は別枠 30%。UNLIMITED 0.5%。"""
+    """経験値瓶・武器1・防具1・本1。帰還の懐中時計は別枠 30%。凶兆のトーテム 10%。UNLIMITED 0.5%。"""
     return {
         "type": "minecraft:chest",
         "pools": [
@@ -598,13 +615,14 @@ def build_blood_moon_reward() -> dict:
                     },
                 ],
             },
+            INJECT_BM_TOTEM_POOL,
             _unlimited_chance_pool(empty_weight=199),
         ],
     }
 
 
 def build_overflow_reward() -> dict:
-    """経験値瓶・武器2・防具2・道具1・本3・帰還時計3。UNLIMITED 0.5%。"""
+    """経験値瓶・武器2・防具2・道具1・本3・帰還時計3。凶兆のトーテム 10%。UNLIMITED 0.5%。"""
     return {
         "type": "minecraft:chest",
         "pools": [
@@ -614,6 +632,7 @@ def build_overflow_reward() -> dict:
             _loot_table_pool("overlimit:bonus_tool", 1),
             _loot_table_pool("overlimit:blood_moon_book", 3),
             _loot_table_pool("overlimit:recall_watch", 3),
+            INJECT_BM_TOTEM_POOL,
             _unlimited_chance_pool(empty_weight=199),
         ],
     }
@@ -773,6 +792,7 @@ def inject_chest(table: dict) -> dict:
     ]
     pools.append(INJECT_POOL)
     pools.append(INJECT_TOTEM_POOL)
+    pools.append(INJECT_BM_TOTEM_POOL)
     pools.append(INJECT_UNLIMITED_POOL)
     out = dict(table)
     out["pools"] = pools

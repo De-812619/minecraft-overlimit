@@ -193,6 +193,20 @@
           "weight": 1
         }
       ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
     }
   ],
   "random_sequence": "minecraft:chests/nether_bridge"

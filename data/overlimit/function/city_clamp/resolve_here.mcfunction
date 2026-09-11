@@ -1,4 +1,4 @@
-# @s = エンドシティ内のプレイヤー。会場は足元、クリア判定は構造物原点（精密 locate 4回）。
+# @s = エンドシティ内のプレイヤー。会場は足元、原点は精密 locate 4回。
 execute store result score #cc_px overlimit.const run data get entity @s Pos[0]
 execute store result score #cc_py overlimit.const run data get entity @s Pos[1]
 execute store result score #cc_pz overlimit.const run data get entity @s Pos[2]
@@ -13,6 +13,5 @@ scoreboard players operation #cc_qx overlimit.const += #cc_ox overlimit.const
 scoreboard players operation #cc_qz overlimit.const = #cc_pz overlimit.const
 scoreboard players operation #cc_qz overlimit.const += #cc_oz overlimit.const
 scoreboard players operation #cc_qk overlimit.const = #cc_kind_id overlimit.const
-execute if function overlimit:city_clamp/is_cleared run return fail
 function overlimit:city_clamp/store_target
 return 1

@@ -1,5 +1,4 @@
 execute unless score #nr_active overlimit.const matches 1 run return fail
-function overlimit:nether_raise/mark_cleared
 title @a[predicate=overlimit:in_nether] times 10 70 20
 title @a[predicate=overlimit:in_nether] title {"text":"ネザーレイズ","color":"gold","bold":true}
 title @a[predicate=overlimit:in_nether] subtitle {"text":"鎮圧成功","color":"yellow"}

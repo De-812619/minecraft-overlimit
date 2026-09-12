@@ -1,0 +1,82 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_helmet",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_name": {
+                  "text": "UNLIMITED（魔王ヘルメット）",
+                  "color": "dark_red"
+                },
+                "minecraft:lore": [
+                  {
+                    "text": "フルセット攻撃力+5。王族より多く装備時、直接攻撃で反撃6と範囲KB（3秒CD）",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "epic",
+                "minecraft:item_model": "overlimit:unlimited_demon_helmet",
+                "minecraft:equippable": {
+                  "slot": "head",
+                  "asset_id": "overlimit:unlimited_demon",
+                  "equip_sound": "minecraft:item.armor.equip_netherite"
+                },
+                "minecraft:max_damage": 814,
+                "minecraft:repairable": {
+                  "items": "minecraft:netherite_ingot"
+                },
+                "minecraft:enchantments": {
+                  "minecraft:vanishing_curse": 1
+                },
+                "minecraft:enchantment_glint_override": false,
+                "minecraft:custom_data": {
+                  "overlimit": {
+                    "unlimited_demon_helmet": true
+                  }
+                },
+                "minecraft:attribute_modifiers": [
+                  {
+                    "type": "minecraft:armor",
+                    "id": "overlimit:ul.demon.armor.head",
+                    "amount": 3,
+                    "operation": "add_value",
+                    "slot": "head"
+                  },
+                  {
+                    "type": "minecraft:armor_toughness",
+                    "id": "overlimit:ul.demon.tough.head",
+                    "amount": 3.0,
+                    "operation": "add_value",
+                    "slot": "head"
+                  },
+                  {
+                    "type": "minecraft:knockback_resistance",
+                    "id": "overlimit:ul.demon.kb.head",
+                    "amount": 0.25,
+                    "operation": "add_value",
+                    "slot": "head"
+                  },
+                  {
+                    "type": "minecraft:attack_damage",
+                    "id": "overlimit:ul.demon.ad.head",
+                    "amount": 1,
+                    "operation": "add_value",
+                    "slot": "head"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

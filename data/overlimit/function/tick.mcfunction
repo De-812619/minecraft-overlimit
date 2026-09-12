@@ -24,6 +24,8 @@ execute unless entity @a[tag=overlimit.in_bw] if score #bw_clock overlimit.const
 team join overlimit @a[team=!overlimit]
 
 execute as @a[scores={overlimit.cd.absolute=1..}] run scoreboard players remove @s overlimit.cd.absolute 1
+execute as @a[scores={overlimit.cd.ul_royal=1..}] run scoreboard players remove @s overlimit.cd.ul_royal 1
+execute as @a[scores={overlimit.cd.ul_demon=1..}] run scoreboard players remove @s overlimit.cd.ul_demon 1
 # Impact CD 表示（本人のみ・10秒）: 残煙。足元 + メインハンド（斧）付近（2tickに1回）
 execute as @a[scores={overlimit.cd.impact=1..}] at @s run function overlimit:enchant/impact/cd_fx
 execute as @a[scores={overlimit.cd.impact=1}] at @s run playsound minecraft:item.crossbow.loading_end player @s ~ ~ ~ 0.8 1

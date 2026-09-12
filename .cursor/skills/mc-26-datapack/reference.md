@@ -572,3 +572,30 @@ Whilst parsing command on line 3: ...est_spots <--[HERE]
 `function <name> with storage` は使える。`execute if function` のあとにマクロ引数は置けない。
 
 **出所:** 上記 `latest.log`（2026-09-11 15:12:07）。
+
+---
+
+## プレイヤーの `Health` は `/data` で書けない
+
+**起きたこと:** 王族防具の被弾回復が `execute store result entity @s Health` で動かない。ノックバックは別関数なので発動する。
+
+**正しい書き方:** 目標HPまで `max_health` を一時修飾し、`effect give instant_health` でその上限まで満たしてから修飾子を外す。読み取りの `data get entity @s Health` は可。
+
+**出所:** Java はプレイヤー NBT の書き込みを制限。[Commands/data](https://minecraft.wiki/w/Commands/data)。26.2 でも「Modify Player Data」mod が `Health` を別途解禁している。
+
+---
+
+## 装備 `equipment` の `layers` は空マップ不可
+
+**起きたこと:** 王族ヘルメットを 3D アイテムモデルで頭に出そうとして `assets/overlimit/equipment/unlimited_royal_helmet.json` を `{"layers": {}}` にした。着装すると何も見えない。
+
+**ログ:**
+
+```
+Couldn't parse data file 'overlimit:unlimited_royal_helmet' from 'overlimit:equipment/unlimited_royal_helmet.json': DataResult.Error['Map must have contents']
+```
+
+**正しい書き方:** 防具は魔王セットと同じく `equippable.asset_id` を、中身のある `layers.humanoid` を持つ `equipment/*.json` に向ける。ネザライトヘルメットから `asset_id` を外すだけでは頭にアイテムモデルは出ない（2026-09-12 実測）。
+
+**出所:** 上記 `latest.log`（2026-09-12 22:45:33 / 22:46:23）。Wiki [Equipment](https://minecraft.wiki/w/Equipment) / [equippable](https://minecraft.wiki/w/Data_component_format/equippable)。
+

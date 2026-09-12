@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "overlimit:unlimited_royal"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "overlimit:unlimited_royal"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "overlimit:unlimited_royal"
+      }
+    ]
+  }
+}

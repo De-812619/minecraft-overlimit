@@ -1,0 +1,82 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_leggings",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_name": {
+                  "text": "UNLIMITED（王族レギンス）",
+                  "color": "gold"
+                },
+                "minecraft:lore": [
+                  {
+                    "text": "フルセット最大HP+10。魔王より多く装備時、直接攻撃でHP+3と範囲KB（3秒CD）",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "epic",
+                "minecraft:item_model": "overlimit:unlimited_royal_leggings",
+                "minecraft:equippable": {
+                  "slot": "legs",
+                  "asset_id": "overlimit:unlimited_royal",
+                  "equip_sound": "minecraft:item.armor.equip_netherite"
+                },
+                "minecraft:max_damage": 1110,
+                "minecraft:repairable": {
+                  "items": "minecraft:netherite_ingot"
+                },
+                "minecraft:enchantments": {
+                  "minecraft:vanishing_curse": 1
+                },
+                "minecraft:enchantment_glint_override": false,
+                "minecraft:custom_data": {
+                  "overlimit": {
+                    "unlimited_royal_leggings": true
+                  }
+                },
+                "minecraft:attribute_modifiers": [
+                  {
+                    "type": "minecraft:armor",
+                    "id": "overlimit:ul.royal.armor.legs",
+                    "amount": 6,
+                    "operation": "add_value",
+                    "slot": "legs"
+                  },
+                  {
+                    "type": "minecraft:armor_toughness",
+                    "id": "overlimit:ul.royal.tough.legs",
+                    "amount": 4.0,
+                    "operation": "add_value",
+                    "slot": "legs"
+                  },
+                  {
+                    "type": "minecraft:knockback_resistance",
+                    "id": "overlimit:ul.royal.kb.legs",
+                    "amount": 0.25,
+                    "operation": "add_value",
+                    "slot": "legs"
+                  },
+                  {
+                    "type": "minecraft:max_health",
+                    "id": "overlimit:ul.royal.hp.legs",
+                    "amount": 2,
+                    "operation": "add_value",
+                    "slot": "legs"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

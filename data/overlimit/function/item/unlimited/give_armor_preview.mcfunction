@@ -1,0 +1,2 @@
+function overlimit:item/unlimited/give_armor_royal
+function overlimit:item/unlimited/give_armor_demon

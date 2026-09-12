@@ -1,6 +1,8 @@
 # Phase 0 — scoreboards / team
 scoreboard objectives add overlimit.xp_wait dummy
 scoreboard objectives add overlimit.cd.absolute dummy
+scoreboard objectives add overlimit.cd.ul_royal dummy
+scoreboard objectives add overlimit.cd.ul_demon dummy
 scoreboard objectives add overlimit.cd.impact dummy
 scoreboard objectives add overlimit.cd.hyper dummy
 scoreboard objectives add overlimit.cd.sky dummy
@@ -296,6 +298,7 @@ bossbar set overlimit:city_clamp style progress
 execute if score #cc_active overlimit.const matches 1 run function overlimit:city_clamp/restore
 execute unless score #cc_active overlimit.const matches 1 run bossbar set overlimit:city_clamp players
 
+execute as @a run attribute @s minecraft:max_health modifier remove overlimit:ul.heal_cap
 execute as @a run attribute @s minecraft:jump_strength modifier remove overlimit:enchantment.cat_foot.jump
 execute as @a run attribute @s minecraft:jump_strength modifier remove overlimit:sky_walk_no_cat
 execute as @a run attribute @s minecraft:jump_strength modifier remove overlimit:cat_foot_jump

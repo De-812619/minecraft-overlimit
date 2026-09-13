@@ -13,7 +13,7 @@
               "components": {
                 "minecraft:item_name": {
                   "text": "UNLIMITED（斧）",
-                  "color": "light_purple"
+                  "color": "dark_red"
                 },
                 "minecraft:lore": [
                   {

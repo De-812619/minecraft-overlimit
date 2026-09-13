@@ -29,8 +29,7 @@
                   "items": "minecraft:prismarine_shard"
                 },
                 "minecraft:enchantments": {
-                  "minecraft:loyalty": 3,
-                  "minecraft:vanishing_curse": 1
+                  "minecraft:loyalty": 3
                 },
                 "minecraft:custom_data": {
                   "overlimit": {

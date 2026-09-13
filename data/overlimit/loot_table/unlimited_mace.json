@@ -29,8 +29,7 @@
                   "items": "minecraft:breeze_rod"
                 },
                 "minecraft:enchantments": {
-                  "overlimit:ul_mace_launch": 1,
-                  "minecraft:vanishing_curse": 1
+                  "overlimit:ul_mace_launch": 1
                 },
                 "minecraft:enchantment_glint_override": false,
                 "minecraft:custom_data": {

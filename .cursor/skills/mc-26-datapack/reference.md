@@ -599,3 +599,13 @@ Couldn't parse data file 'overlimit:unlimited_royal_helmet' from 'overlimit:equi
 
 **出所:** 上記 `latest.log`（2026-09-12 22:45:33 / 22:46:23）。Wiki [Equipment](https://minecraft.wiki/w/Equipment) / [equippable](https://minecraft.wiki/w/Data_component_format/equippable)。
 
+---
+
+## `crafting_dye` は対象をエリトラにできる
+
+**起きたこと:** 26.2 バニラの染色は `leather_*_dyed.json` が `minecraft:crafting_dye`。`#dyeable` タグは 26.1 で削除済み。`target` に `minecraft:elytra` を置けばクラフト台でバニラ染料と混ぜられる。見た目は `equipment` の `wings` に `dyeable` が必要。`color_when_undyed` が無いと未染色レイヤーが消える。未染色を白乗算（見た目そのまま）にする値は `-1`（0xFFFFFFFF）。`16777215` はアルファ 0 になり得る。
+
+**実装:** `overlimit:elytra_dyed`。大釜は `#minecraft:cauldron_can_remove_dye` にエリトラを追加。見た目は `assets/minecraft/equipment/elytra.json` と `items/elytra.json`。
+
+**出所:** 26.2 client.jar の `leather_chestplate_dyed.json` / `equipment/leather.json`。[Recipe](https://minecraft.wiki/w/Recipe_(Java_Edition)) `crafting_dye`、[Equipment](https://minecraft.wiki/w/Equipment) `dyeable`。
+

@@ -1,0 +1,50 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_royal_helmet",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_royal_chestplate",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_royal_leggings",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_royal_boots",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_demon_helmet",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_demon_chestplate",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_demon_leggings",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_demon_boots",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

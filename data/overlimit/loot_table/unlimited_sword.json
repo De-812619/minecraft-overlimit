@@ -12,10 +12,15 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "text": "UNLIMITED（剣）",
+                  "text": "ULTD（剣）",
                   "color": "gold"
                 },
                 "minecraft:lore": [
+                  {
+                    "text": "UNLIMITEDシリーズ",
+                    "color": "gray",
+                    "italic": false
+                  },
                   {
                     "text": "通常攻撃で斬撃を飛ばす",
                     "color": "gray",

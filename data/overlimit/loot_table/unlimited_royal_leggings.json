@@ -12,12 +12,27 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "text": "UNLIMITED（王族レギンス）",
+                  "text": "ULTD（HEROレギンス）",
                   "color": "gold"
                 },
                 "minecraft:lore": [
                   {
-                    "text": "フルセット最大HP+10。魔王より多く装備時、直接攻撃でHP+3と範囲KB（3秒CD）",
+                    "text": "UNLIMITEDシリーズ",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": " - 部位ごとにハートを追加",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "フルセット効果（3部位以上）",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": " - 被弾（直接攻撃のみ）でハート1.5回復とノックバック（CD6秒）",
                     "color": "gray",
                     "italic": false
                   }

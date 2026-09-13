@@ -1,4 +1,4 @@
-# @s = プレイヤー。王族・魔王の装備数。
+# @s = プレイヤー。HERO・DEMON の装備数。
 scoreboard players set #ul_royal overlimit.const 0
 scoreboard players set #ul_demon overlimit.const 0
 execute if items entity @s armor.head *[custom_data~{overlimit:{unlimited_royal_helmet:true}}] run scoreboard players add #ul_royal overlimit.const 1

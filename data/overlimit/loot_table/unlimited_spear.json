@@ -12,10 +12,15 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "text": "UNLIMITED（槍）",
+                  "text": "ULTD（槍）",
                   "color": "light_purple"
                 },
                 "minecraft:lore": [
+                  {
+                    "text": "UNLIMITEDシリーズ",
+                    "color": "gray",
+                    "italic": false
+                  },
                   {
                     "text": "攻撃した相手を感電させる",
                     "color": "gray",

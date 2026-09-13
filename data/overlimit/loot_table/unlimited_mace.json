@@ -12,10 +12,15 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "text": "UNLIMITED（メイス）",
+                  "text": "ULTD（メイス）",
                   "color": "light_purple"
                 },
                 "minecraft:lore": [
+                  {
+                    "text": "UNLIMITEDシリーズ",
+                    "color": "gray",
+                    "italic": false
+                  },
                   {
                     "text": "攻撃レンジ +4。殴った相手を上空へ飛ばす",
                     "color": "gray",

@@ -12,12 +12,27 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "text": "UNLIMITED（魔王レギンス）",
+                  "text": "ULTD（DEMONレギンス）",
                   "color": "dark_red"
                 },
                 "minecraft:lore": [
                   {
-                    "text": "フルセット攻撃力+5。王族より多く装備時、直接攻撃で反撃6と範囲KB（3秒CD）",
+                    "text": "UNLIMITEDシリーズ",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": " - 部位ごとに攻撃力を上昇",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "フルセット効果（3部位以上）",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": " - 被弾（直接攻撃のみ）で反撃とノックバック（CD6秒）",
                     "color": "gray",
                     "italic": false
                   }

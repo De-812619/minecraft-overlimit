@@ -1399,6 +1399,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 999
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_armor_any",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 90
         },
         {

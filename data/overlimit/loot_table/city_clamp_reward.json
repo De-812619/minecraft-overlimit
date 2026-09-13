@@ -56,20 +56,6 @@
       ]
     },
     {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bonus_totem",
-          "weight": 10
-        }
-      ]
-    },
-    {
       "rolls": 1.0,
       "entries": [
         {
@@ -88,11 +74,39 @@
       "entries": [
         {
           "type": "minecraft:empty",
-          "weight": 199
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 99
         },
         {
           "type": "minecraft:loot_table",
           "value": "overlimit:unlimited_any",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 99
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_armor_any",
           "weight": 1
         }
       ]

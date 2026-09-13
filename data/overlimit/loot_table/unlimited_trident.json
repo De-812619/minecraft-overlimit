@@ -12,10 +12,15 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "text": "UNLIMITED（トライデント）",
+                  "text": "ULTD（トライデント）",
                   "color": "light_purple"
                 },
                 "minecraft:lore": [
+                  {
+                    "text": "UNLIMITEDシリーズ",
+                    "color": "gray",
+                    "italic": false
+                  },
                   {
                     "text": "忠誠。着弾地点で爆発する",
                     "color": "gray",

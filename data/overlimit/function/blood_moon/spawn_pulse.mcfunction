@@ -3,6 +3,11 @@ scoreboard players set #bm_spawn_t overlimit.const 0
 execute store result score #bm_diff overlimit.const run difficulty
 execute if score #bm_diff overlimit.const matches 0 run return fail
 
+# 実行次元が overworld のままだと if dimension では BW 個体を弾けない。生存者ゼロなら間引き自体しない。
+scoreboard players set #bm_ow_pl overlimit.const 0
+execute as @a[gamemode=!spectator] at @s if dimension minecraft:overworld run scoreboard players set #bm_ow_pl overlimit.const 1
+execute unless score #bm_ow_pl overlimit.const matches 1 run return fail
+
 function overlimit:blood_moon/cull_far
 execute as @a[gamemode=!spectator] at @s if dimension minecraft:overworld run function overlimit:blood_moon/try_spawn_player
 execute as @a[gamemode=!spectator] at @s if dimension minecraft:overworld run function overlimit:blood_moon/try_spawn_player

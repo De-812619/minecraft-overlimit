@@ -7,7 +7,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_helmet",
-          "weight": 280,
+          "weight": 120,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -143,7 +143,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:diamond_helmet",
-          "weight": 440,
+          "weight": 600,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -415,7 +415,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_chestplate",
-          "weight": 280,
+          "weight": 120,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -508,7 +508,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:diamond_chestplate",
-          "weight": 440,
+          "weight": 600,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -694,7 +694,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_leggings",
-          "weight": 280,
+          "weight": 120,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -774,7 +774,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:diamond_leggings",
-          "weight": 440,
+          "weight": 600,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -934,7 +934,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_boots",
-          "weight": 280,
+          "weight": 120,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -1057,7 +1057,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:diamond_boots",
-          "weight": 440,
+          "weight": 600,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",

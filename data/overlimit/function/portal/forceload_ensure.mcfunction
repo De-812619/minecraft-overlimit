@@ -9,5 +9,6 @@ execute if score @s overlimit.pfl_dim matches 1.. run function overlimit:portal/
 scoreboard players operation @s overlimit.pfl_x = #pfl_x overlimit.const
 scoreboard players operation @s overlimit.pfl_z = #pfl_z overlimit.const
 scoreboard players operation @s overlimit.pfl_dim = #pfl_dim overlimit.const
+scoreboard players set @s overlimit.pfl_age 0
 function overlimit:portal/forceload_at with storage overlimit:portal tp
 return 1

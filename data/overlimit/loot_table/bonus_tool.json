@@ -7,7 +7,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_pickaxe",
-          "weight": 350,
+          "weight": 150,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -321,7 +321,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:diamond_pickaxe",
-          "weight": 550,
+          "weight": 750,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -949,7 +949,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_shovel",
-          "weight": 280,
+          "weight": 120,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -1012,7 +1012,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:diamond_shovel",
-          "weight": 440,
+          "weight": 600,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -1138,7 +1138,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_hoe",
-          "weight": 210,
+          "weight": 90,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -1201,7 +1201,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:diamond_hoe",
-          "weight": 330,
+          "weight": 450,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",

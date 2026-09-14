@@ -1,4 +1,4 @@
-# @s = 構造物内のプレイヤー。会場は足元、クリア判定は構造物原点（精密 locate 4回）。
+# @s = 構造物内のプレイヤー。会場は足元、原点は精密 locate 4回。
 execute store result score #nr_px overlimit.const run data get entity @s Pos[0]
 execute store result score #nr_py overlimit.const run data get entity @s Pos[1]
 execute store result score #nr_pz overlimit.const run data get entity @s Pos[2]
@@ -13,6 +13,5 @@ scoreboard players operation #nr_qx overlimit.const += #nr_ox overlimit.const
 scoreboard players operation #nr_qz overlimit.const = #nr_pz overlimit.const
 scoreboard players operation #nr_qz overlimit.const += #nr_oz overlimit.const
 scoreboard players operation #nr_qk overlimit.const = #nr_kind_id overlimit.const
-execute if function overlimit:nether_raise/is_cleared run return fail
 function overlimit:nether_raise/store_target
 return 1

@@ -1,5 +1,7 @@
 # @s = player. 実行位置 = XZ オフセット（Yは高さマップへ）。プレイヤー高さと差が大きければ出さない。
 scoreboard players set #bm_spawned overlimit.const 0
+scoreboard players set #bm_lit overlimit.const 0
 execute positioned over motion_blocking_no_leaves run function overlimit:blood_moon/burst_surface
 execute if score #bm_spawned overlimit.const matches 1 run return 1
+execute if score #bm_lit overlimit.const matches 1 run return fail
 execute positioned over world_surface run function overlimit:blood_moon/burst_surface

@@ -1,0 +1,13 @@
+{
+  "asset_name": "resin",
+  "description": {
+    "color": "#FC7812",
+    "translate": "trim_material.minecraft.resin",
+    "extra": [
+      {
+        "text": " — 部位:静止時防御+0.5  セット:被弾鈍足・視線で移動停止",
+        "color": "#FC7812"
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "asset_name": "lapis",
+  "description": {
+    "color": "#416E97",
+    "translate": "trim_material.minecraft.lapis",
+    "extra": [
+      {
+        "text": " — 部位:幸運+0.25  セット:Lvに応じて攻撃・防御（30で+1.5）",
+        "color": "#416E97"
+      }
+    ]
+  }
+}

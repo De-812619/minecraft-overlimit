@@ -1,0 +1,13 @@
+{
+  "asset_name": "quartz",
+  "description": {
+    "color": "#E3D4C4",
+    "translate": "trim_material.minecraft.quartz",
+    "extra": [
+      {
+        "text": " — 部位:攻撃速度+2%  セット:クリティカル時に攻撃の15%追加",
+        "color": "#E3D4C4"
+      }
+    ]
+  }
+}

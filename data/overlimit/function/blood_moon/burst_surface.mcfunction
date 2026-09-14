@@ -10,7 +10,7 @@ scoreboard players operation #bm_dy overlimit.const = #bm_py overlimit.const
 scoreboard players operation #bm_dy overlimit.const -= #bm_y overlimit.const
 execute if score #bm_dy overlimit.const matches 5.. run return fail
 execute if score #bm_dy overlimit.const matches ..-5 run return fail
-execute if function overlimit:blood_moon/near_light run return fail
+execute if function overlimit:blood_moon/near_light run return run function overlimit:blood_moon/mark_lit
 
 scoreboard players set #bm_spawned overlimit.const 0
 function overlimit:blood_moon/summon_one

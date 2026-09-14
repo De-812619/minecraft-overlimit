@@ -57,14 +57,15 @@ TARGET_ENTITY_LOOT = [
     "elder_guardian",
 ]
 
+# 素材の比率: 鉄 / ダイヤ / ネザライト（CONTENT.md）
 MATERIAL_WEIGHTS = (
-    ("iron", 35),
-    ("diamond", 55),
+    ("iron", 15),
+    ("diamond", 75),
     ("netherite", 10),
 )
 
 # 追加個数の比率: 0個 / 1個 / 2個（CONTENT.md）
-INJECT_COUNT_WEIGHTS = (15, 70, 15)
+INJECT_COUNT_WEIGHTS = (5, 70, 25)
 
 INJECT_POOL = {
     "rolls": 1.0,
@@ -111,10 +112,61 @@ INJECT_TOTEM_POOL = {
     ],
 }
 
+# 装備・不死のトーテムとは独立。対象チェストごとに凶兆のトーテム 10%。
+INJECT_BM_TOTEM_POOL = {
+    "rolls": 1.0,
+    "entries": [
+        {
+            "type": "minecraft:empty",
+            "weight": 90,
+        },
+        {
+            "type": "minecraft:loot_table",
+            "value": "overlimit:bm_totem",
+            "weight": 10,
+        },
+    ],
+}
+
+# 装備 0/1/2・トーテム・武器とは独立。対象チェストごとに UNLIMITED 武器 0.1%。
+INJECT_UNLIMITED_POOL = {
+    "rolls": 1.0,
+    "entries": [
+        {
+            "type": "minecraft:empty",
+            "weight": 999,
+        },
+        {
+            "type": "minecraft:loot_table",
+            "value": "overlimit:unlimited_any",
+            "weight": 1,
+        },
+    ],
+}
+
+# 武器と同経路・同確率。HERO／DEMON 8部位の均等。
+INJECT_UNLIMITED_ARMOR_POOL = {
+    "rolls": 1.0,
+    "entries": [
+        {
+            "type": "minecraft:empty",
+            "weight": 999,
+        },
+        {
+            "type": "minecraft:loot_table",
+            "value": "overlimit:unlimited_armor_any",
+            "weight": 1,
+        },
+    ],
+}
+
 INJECT_TABLE_IDS = frozenset(
     {
         "overlimit:bonus_gear",
         "overlimit:bonus_totem",
+        "overlimit:bm_totem",
+        "overlimit:unlimited_any",
+        "overlimit:unlimited_armor_any",
     }
 )
 
@@ -546,11 +598,37 @@ def _loot_table_pool(table: str, rolls: int) -> dict:
     }
 
 
+def _unlimited_chance_pool(
+    *, empty_weight: int, hit_weight: int = 1, table: str = "overlimit:unlimited_any"
+) -> dict:
+    return {
+        "rolls": 1,
+        "entries": [
+            {"type": "minecraft:empty", "weight": empty_weight},
+            {
+                "type": "minecraft:loot_table",
+                "value": table,
+                "weight": hit_weight,
+            },
+        ],
+    }
+
+
+def _unlimited_event_pools(empty_weight: int) -> list[dict]:
+    return [
+        _unlimited_chance_pool(empty_weight=empty_weight, table="overlimit:unlimited_any"),
+        _unlimited_chance_pool(
+            empty_weight=empty_weight, table="overlimit:unlimited_armor_any"
+        ),
+    ]
+
+
 def build_blood_moon_reward() -> dict:
-    """武器1・防具1・本1。帰還の懐中時計は別枠 30%。"""
+    """経験値瓶・武器1・防具1・本1。帰還の懐中時計は別枠 30%。凶兆のトーテム 10%。UNLIMITED 武器／防具 各 0.5%。"""
     return {
         "type": "minecraft:chest",
         "pools": [
+            _loot_table_pool("overlimit:reward_xp_bottles", 1),
             _loot_table_pool("overlimit:bonus_weapon", 1),
             _loot_table_pool("overlimit:bonus_armor", 1),
             _loot_table_pool("overlimit:blood_moon_book", 1),
@@ -565,28 +643,36 @@ def build_blood_moon_reward() -> dict:
                     },
                 ],
             },
+            INJECT_BM_TOTEM_POOL,
+            *_unlimited_event_pools(199),
         ],
     }
 
 
 def build_overflow_reward() -> dict:
-    """武器2・防具2・ランダム1・本3・帰還時計3。"""
+    """経験値瓶・武器2・防具2・道具1・本3・帰還時計3。凶兆のトーテム 10%。UNLIMITED 武器／防具 各 1%。"""
     return {
         "type": "minecraft:chest",
         "pools": [
+            _loot_table_pool("overlimit:reward_xp_bottles", 1),
             _loot_table_pool("overlimit:bonus_weapon", 2),
             _loot_table_pool("overlimit:bonus_armor", 2),
             _loot_table_pool("overlimit:bonus_tool", 1),
             _loot_table_pool("overlimit:blood_moon_book", 3),
             _loot_table_pool("overlimit:recall_watch", 3),
+            INJECT_BM_TOTEM_POOL,
+            *_unlimited_event_pools(99),
         ],
     }
 
 
 def build_destination_reward() -> dict:
-    """オーバーフローと同じ＋不死のトーテム 10%。"""
+    """オーバーフローと同じ＋不死のトーテム 10%。UNLIMITED 武器／防具 各 1%。"""
     table = build_overflow_reward()
-    table["pools"].append(
+    pools = table["pools"]
+    ul_armor = pools.pop()
+    ul_weapon = pools.pop()
+    pools.append(
         {
             "rolls": 1,
             "entries": [
@@ -599,6 +685,8 @@ def build_destination_reward() -> dict:
             ],
         }
     )
+    pools.append(ul_weapon)
+    pools.append(ul_armor)
     return table
 
 
@@ -613,11 +701,15 @@ def _bonus_gear_entries(
     *,
     include_book: bool = False,
     include_watch: bool = False,
+    materials: frozenset[str] | None = None,
 ) -> list[dict]:
     # Flat weighted entries (alternatives は条件フォールバック用で加重抽選ではない)
     # 素材付きは kind × 素材weight。釣り竿・弓・クロスボウは素材が無いので
     # 素材weight合計（100）を掛け、種別weight 7 が剣の 10 と同等の尺度になるようにする。
     material_weight_sum = sum(w for _, w in MATERIAL_WEIGHTS)
+    mat_rows = MATERIAL_WEIGHTS
+    if materials is not None:
+        mat_rows = tuple((m, w) for m, w in MATERIAL_WEIGHTS if m in materials)
     entries: list[dict] = []
     for kind, suffix, kind_weight in KIND_SPECS:
         if kind_filter is not None and kind not in kind_filter:
@@ -632,7 +724,7 @@ def _bonus_gear_entries(
                 }
             )
             continue
-        for material, mat_weight in MATERIAL_WEIGHTS:
+        for material, mat_weight in mat_rows:
             entries.append(
                 {
                     "type": "minecraft:item",
@@ -696,6 +788,13 @@ def build_bonus_tool() -> dict:
     return _bonus_gear_table(_bonus_gear_entries(TOOL_KINDS))
 
 
+def build_reforge_gear() -> dict:
+    """再鍛出力。本・時計なし。素材付きはダイヤ／ネザライトのみ（鉄なし）。弓などは従来どおり。"""
+    return _bonus_gear_table(
+        _bonus_gear_entries(materials=frozenset({"diamond", "netherite"}))
+    )
+
+
 def _entry_refs_inject(entry: dict) -> bool:
     value = entry.get("value")
     if isinstance(value, str) and value in INJECT_TABLE_IDS:
@@ -723,6 +822,9 @@ def inject_chest(table: dict) -> dict:
     ]
     pools.append(INJECT_POOL)
     pools.append(INJECT_TOTEM_POOL)
+    pools.append(INJECT_BM_TOTEM_POOL)
+    pools.append(INJECT_UNLIMITED_POOL)
+    pools.append(INJECT_UNLIMITED_ARMOR_POOL)
     out = dict(table)
     out["pools"] = pools
     return out
@@ -812,6 +914,7 @@ def main() -> None:
 
     write_json(ROOT / "data/overlimit/loot_table/bonus_gear.json", build_bonus_gear())
     write_json(ROOT / "data/overlimit/loot_table/bonus_gear_no_book.json", build_bonus_gear_no_book())
+    write_json(ROOT / "data/overlimit/loot_table/reforge_gear.json", build_reforge_gear())
     write_json(ROOT / "data/overlimit/loot_table/bonus_weapon.json", build_bonus_weapon())
     write_json(ROOT / "data/overlimit/loot_table/bonus_armor.json", build_bonus_armor())
     write_json(ROOT / "data/overlimit/loot_table/bonus_tool.json", build_bonus_tool())

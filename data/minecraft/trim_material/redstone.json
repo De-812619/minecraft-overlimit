@@ -1,0 +1,13 @@
+{
+  "asset_name": "redstone",
+  "description": {
+    "color": "#971607",
+    "translate": "trim_material.minecraft.redstone",
+    "extra": [
+      {
+        "text": " — 部位:スニーク速度+5%  セット:ブロックリーチ+3",
+        "color": "#971607"
+      }
+    ]
+  }
+}

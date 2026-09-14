@@ -1,0 +1,8 @@
+data modify entity @s equipment.head.components."minecraft:equippable".slot set value "head"
+execute if data storage overlimit:trim {gold_orig:"minecraft:netherite_helmet"} run data modify entity @s equipment.head.components."minecraft:equippable".asset_id set value "minecraft:netherite"
+execute if data storage overlimit:trim {gold_orig:"minecraft:diamond_helmet"} run data modify entity @s equipment.head.components."minecraft:equippable".asset_id set value "minecraft:diamond"
+execute if data storage overlimit:trim {gold_orig:"minecraft:iron_helmet"} run data modify entity @s equipment.head.components."minecraft:equippable".asset_id set value "minecraft:iron"
+execute if data storage overlimit:trim {gold_orig:"minecraft:chainmail_helmet"} run data modify entity @s equipment.head.components."minecraft:equippable".asset_id set value "minecraft:chainmail"
+execute if data storage overlimit:trim {gold_orig:"minecraft:leather_helmet"} run data modify entity @s equipment.head.components."minecraft:equippable".asset_id set value "minecraft:leather"
+execute if data storage overlimit:trim {gold_orig:"minecraft:copper_helmet"} run data modify entity @s equipment.head.components."minecraft:equippable".asset_id set value "minecraft:copper"
+execute if data storage overlimit:trim {gold_orig:"minecraft:turtle_helmet"} run data modify entity @s equipment.head.components."minecraft:equippable".asset_id set value "minecraft:turtle"

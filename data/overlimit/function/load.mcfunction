@@ -1,11 +1,24 @@
 # Phase 0 — scoreboards / team
 scoreboard objectives add overlimit.xp_wait dummy
 scoreboard objectives add overlimit.cd.absolute dummy
+scoreboard objectives add overlimit.cd.ul_royal dummy
+scoreboard objectives add overlimit.cd.ul_demon dummy
 scoreboard objectives add overlimit.cd.impact dummy
 scoreboard objectives add overlimit.cd.hyper dummy
 scoreboard objectives add overlimit.cd.sky dummy
 scoreboard objectives add overlimit.bind.timer dummy
 scoreboard objectives add overlimit.summon.life dummy
+scoreboard objectives add overlimit.golem_hp dummy
+scoreboard objectives add overlimit.ul.sw_cd dummy
+scoreboard objectives add overlimit.ul.used minecraft.used:minecraft.netherite_sword
+scoreboard objectives add overlimit.ul.axe_used minecraft.used:minecraft.netherite_axe
+scoreboard objectives add overlimit.ul.spear_used minecraft.used:minecraft.netherite_spear
+scoreboard objectives add overlimit.ul.ax_cd dummy
+scoreboard objectives add overlimit.ul.sp_cd dummy
+scoreboard objectives add overlimit.ul.para dummy
+scoreboard objectives add overlimit.ul.life dummy
+scoreboard objectives add overlimit.ul.sid dummy
+scoreboard objectives add overlimit.ul.stay dummy
 scoreboard objectives add overlimit.hg_life dummy
 scoreboard objectives add overlimit.hg_owner dummy
 scoreboard objectives add overlimit.necro_owner dummy
@@ -39,6 +52,8 @@ scoreboard players set #31 overlimit.const 31
 scoreboard players set #20 overlimit.const 20
 scoreboard players set #40 overlimit.const 40
 scoreboard players set #80 overlimit.const 80
+scoreboard players set #75 overlimit.const 75
+scoreboard players set #1000 overlimit.const 1000
 scoreboard players set #60 overlimit.const 60
 scoreboard players set #100 overlimit.const 100
 scoreboard players set #23460 overlimit.const 23460
@@ -49,7 +64,9 @@ scoreboard players set #bm_chance_step overlimit.const 20
 scoreboard players set #bm_chance_cap overlimit.const 100
 execute unless score #necro_id_seq overlimit.const matches 1.. run scoreboard players set #necro_id_seq overlimit.const 0
 execute unless score #hg_id_seq overlimit.const matches 1.. run scoreboard players set #hg_id_seq overlimit.const 0
+execute unless score #ul_seq overlimit.const matches 1.. run scoreboard players set #ul_seq overlimit.const 0
 execute unless score #bm_active overlimit.const matches 0.. run scoreboard players set #bm_active overlimit.const 0
+execute unless score #bm_omen overlimit.const matches 0.. run scoreboard players set #bm_omen overlimit.const 0
 execute unless score #bm_kills overlimit.const matches 0.. run scoreboard players set #bm_kills overlimit.const 0
 execute unless score #bm_checked overlimit.const matches 0.. run scoreboard players set #bm_checked overlimit.const 0
 execute unless score #bm_chance overlimit.const matches 0.. run scoreboard players operation #bm_chance overlimit.const = #bm_chance_base overlimit.const
@@ -58,6 +75,7 @@ scoreboard players set #bm_spawn_cap overlimit.const 24
 scoreboard players set #bm_spawn_near overlimit.const 16
 scoreboard players set #bm_spawn_min_y overlimit.const 60
 scoreboard players set #bm_spawn_burst overlimit.const 10
+scoreboard players set #bm_light_max overlimit.const 16
 execute unless score #bm_spawn_t overlimit.const matches 0.. run scoreboard players set #bm_spawn_t overlimit.const 0
 scoreboard players set #6 overlimit.const 6
 scoreboard players set #-1 overlimit.const -1
@@ -72,6 +90,7 @@ scoreboard players set #no_ghast_budget overlimit.const 5
 scoreboard players set #no_cap overlimit.const 12
 scoreboard players set #no_r0 overlimit.const 8
 scoreboard players set #no_rstep overlimit.const 4
+scoreboard players set #no_rmax overlimit.const 32
 scoreboard players set #no_follow overlimit.const 24
 scoreboard players set #no_int1 overlimit.const 20
 scoreboard players set #no_int2 overlimit.const 25
@@ -90,11 +109,14 @@ execute unless score #pressure_skip_day overlimit.const matches -1.. run scorebo
 function overlimit:pressure/refresh
 
 execute unless score #no_active overlimit.const matches 0.. run scoreboard players set #no_active overlimit.const 0
+execute unless score #no_omen overlimit.const matches 0.. run scoreboard players set #no_omen overlimit.const 0
 execute unless score #no_paused overlimit.const matches 0.. run scoreboard players set #no_paused overlimit.const 0
 execute unless score #no_dusk overlimit.const matches 0.. run scoreboard players set #no_dusk overlimit.const 0
 execute unless score #no_dusk_checked overlimit.const matches 0.. run scoreboard players set #no_dusk_checked overlimit.const 0
 execute unless score #no_fail overlimit.const matches 0.. run scoreboard players set #no_fail overlimit.const 0
 execute unless score #no_nethering overlimit.const matches 0.. run scoreboard players set #no_nethering overlimit.const 0
+execute if score #no_nethering overlimit.const matches 1 run function overlimit:nether_overflow/netherize_area_off with storage overlimit:no neth
+execute if score #no_nethering overlimit.const matches 1 run function overlimit:nether_overflow/netherize_clamp_storage
 execute if score #no_nethering overlimit.const matches 1 run function overlimit:nether_overflow/netherize_area_on with storage overlimit:no neth
 execute unless score #no_t overlimit.const matches 0.. run scoreboard players set #no_t overlimit.const 0
 execute unless score #no_phase overlimit.const matches 1.. run scoreboard players set #no_phase overlimit.const 1
@@ -105,9 +127,12 @@ scoreboard objectives add overlimit.no_gfail dummy
 scoreboard players set @a overlimit.no_deaths 0
 execute unless data storage overlimit:no gate run data modify storage overlimit:no gate set value {x:0,y:64,z:0}
 execute unless data storage overlimit:no gates run data modify storage overlimit:no gates set value []
+execute unless data storage overlimit:reward fn run data modify storage overlimit:reward fn set value "overlimit:blood_moon/try_chest_spot"
+execute unless data storage overlimit:reward give run data modify storage overlimit:reward give set value "overlimit:blood_moon/give_fallback"
 execute unless score #no_arrived overlimit.const matches 0.. run scoreboard players set #no_arrived overlimit.const 0
 execute unless score #no_pc_prev overlimit.const matches 0.. run scoreboard players set #no_pc_prev overlimit.const 0
 execute unless score #bw_active overlimit.const matches 0.. run scoreboard players set #bw_active overlimit.const 0
+execute unless score #bw_omen overlimit.const matches 0.. run scoreboard players set #bw_omen overlimit.const 0
 execute unless score #bw_kills overlimit.const matches 0.. run scoreboard players set #bw_kills overlimit.const 0
 execute unless score #bw_spawn_t overlimit.const matches 0.. run scoreboard players set #bw_spawn_t overlimit.const 0
 execute unless score #tick_at overlimit.const matches -1.. run scoreboard players set #tick_at overlimit.const -1
@@ -131,6 +156,8 @@ scoreboard objectives add overlimit.bw_has dummy
 scoreboard objectives add overlimit.pfl_x dummy
 scoreboard objectives add overlimit.pfl_z dummy
 scoreboard objectives add overlimit.pfl_dim dummy
+scoreboard objectives add overlimit.pfl_age dummy
+scoreboard objectives add overlimit.elite_idle dummy
 tag @a remove overlimit.portal_arrive
 tag @a remove overlimit.to_bw
 tag @a remove overlimit.to_ow
@@ -174,6 +201,7 @@ advancement revoke @a only overlimit:enchant/anvil_cap
 advancement revoke @a only overlimit:blood_moon/on_kill
 advancement revoke @a only overlimit:portal/light
 advancement revoke @a only overlimit:attrition/on_hurt
+advancement revoke @a only overlimit:item/unlimited_hit
 
 bossbar add overlimit:blood_moon {"text":"ブラッドムーン","color":"dark_red","bold":true}
 bossbar set overlimit:blood_moon color red
@@ -202,6 +230,7 @@ execute unless score #no_active overlimit.const matches 1 run bossbar set overli
 scoreboard objectives add overlimit.nr_deaths deathCount
 scoreboard objectives add overlimit.cc_deaths deathCount
 execute unless score #nr_active overlimit.const matches 0.. run scoreboard players set #nr_active overlimit.const 0
+execute unless score #nr_omen overlimit.const matches 0.. run scoreboard players set #nr_omen overlimit.const 0
 execute unless score #nr_combat overlimit.const matches 0.. run scoreboard players set #nr_combat overlimit.const 0
 execute unless score #nr_paused overlimit.const matches 0.. run scoreboard players set #nr_paused overlimit.const 0
 execute unless score #nr_dwell overlimit.const matches 0.. run scoreboard players set #nr_dwell overlimit.const 0
@@ -230,6 +259,7 @@ execute unless score #nr_gather_t overlimit.const matches 0.. run scoreboard pla
 execute unless data storage overlimit:nr target run data modify storage overlimit:nr target set value {x:0,y:64,z:0,kind:"minecraft:fortress"}
 
 execute unless score #cc_active overlimit.const matches 0.. run scoreboard players set #cc_active overlimit.const 0
+execute unless score #cc_omen overlimit.const matches 0.. run scoreboard players set #cc_omen overlimit.const 0
 execute unless score #cc_combat overlimit.const matches 0.. run scoreboard players set #cc_combat overlimit.const 0
 execute unless score #cc_paused overlimit.const matches 0.. run scoreboard players set #cc_paused overlimit.const 0
 execute unless score #cc_dwell overlimit.const matches 0.. run scoreboard players set #cc_dwell overlimit.const 0
@@ -268,6 +298,7 @@ bossbar set overlimit:city_clamp style progress
 execute if score #cc_active overlimit.const matches 1 run function overlimit:city_clamp/restore
 execute unless score #cc_active overlimit.const matches 1 run bossbar set overlimit:city_clamp players
 
+execute as @a run attribute @s minecraft:max_health modifier remove overlimit:ul.heal_cap
 execute as @a run attribute @s minecraft:jump_strength modifier remove overlimit:enchantment.cat_foot.jump
 execute as @a run attribute @s minecraft:jump_strength modifier remove overlimit:sky_walk_no_cat
 execute as @a run attribute @s minecraft:jump_strength modifier remove overlimit:cat_foot_jump
@@ -279,10 +310,13 @@ scoreboard players set @a overlimit.cat_boost 0
 
 # Old cat_foot decoys (string farm). Safe to run every reload.
 execute as @e[type=minecraft:cat,tag=overlimit.cat_decoy] run function overlimit:enchant/cat_foot/discard_decoy
+kill @e[type=minecraft:item_display,tag=overlimit.ul.tri_vis]
+function overlimit:maintenance/clear_void_origin
 
 # 旧トーテム基盤の護符／静寂トーテムを新しいベースアイテムへ
 execute as @a run function overlimit:item/migrate_legacy_totem
 execute as @a run function overlimit:item/migrate_legacy_knowledge_book
 
 # Fabric: schedule ループ（#minecraft:tick 非依存）
+function overlimit:trim/init
 schedule function overlimit:tick_loop 1t replace

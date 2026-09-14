@@ -1,0 +1,13 @@
+{
+  "asset_name": "amethyst",
+  "description": {
+    "color": "#9A5CC6",
+    "translate": "trim_material.minecraft.amethyst",
+    "extra": [
+      {
+        "text": " — 部位:落下ダメ-8%  セット:闇無効・暗所暗視・着地ノックバック",
+        "color": "#9A5CC6"
+      }
+    ]
+  }
+}

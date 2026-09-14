@@ -1,0 +1,16 @@
+{
+  "asset_name": "diamond",
+  "description": {
+    "color": "#6EECD2",
+    "translate": "trim_material.minecraft.diamond",
+    "extra": [
+      {
+        "text": " — 部位:攻撃+0.5  セット:満タン時 攻撃+10%・防御+2",
+        "color": "#6EECD2"
+      }
+    ]
+  },
+  "override_armor_assets": {
+    "minecraft:diamond": "diamond_darker"
+  }
+}

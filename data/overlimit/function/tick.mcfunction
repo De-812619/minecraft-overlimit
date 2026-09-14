@@ -2,12 +2,15 @@
 execute store result score #tick_now overlimit.const run time query gametime
 execute if score #tick_now overlimit.const = #tick_at overlimit.const run return fail
 scoreboard players operation #tick_at overlimit.const = #tick_now overlimit.const
+scoreboard players set #bm_light_n overlimit.const 0
 
 tag @a remove overlimit.in_bw
 execute as @a at @s if dimension overlimit:blood_world run tag @s add overlimit.in_bw
 function overlimit:portal/tick
 
-execute as @e[type=#overlimit:can_be_danger,tag=!overlimit.scanned,limit=8] at @s run function overlimit:mob/scan
+# 読み込み範囲全体を強化すると CustomName で自然デスポーンせず、間引きと湧きが回転する。戦闘圏だけスキャンする。
+execute as @a[gamemode=!spectator] at @s as @e[type=#overlimit:can_be_danger,tag=!overlimit.scanned,distance=..25,limit=8] at @s run function overlimit:mob/scan
+execute as @e[type=#overlimit:can_be_danger,tag=overlimit.elite,tag=!overlimit.structure,tag=!overlimit.blood_moon,tag=!overlimit.no_wave,tag=!overlimit.nr_wave,tag=!overlimit.cc_wave,tag=!overlimit.summon,tag=!overlimit.necro,limit=16] at @s run function overlimit:mob/cull_world_elite
 execute as @e[type=minecraft:marker,tag=overlimit.elite_xp] at @s run function overlimit:mob/xp_marker_tick
 execute as @e[type=minecraft:marker,tag=overlimit.danger_xp,tag=!overlimit.elite_xp] at @s run function overlimit:mob/xp_marker_tick
 execute in minecraft:overworld run function overlimit:blood_moon/tick
@@ -21,6 +24,8 @@ execute unless entity @a[tag=overlimit.in_bw] if score #bw_clock overlimit.const
 team join overlimit @a[team=!overlimit]
 
 execute as @a[scores={overlimit.cd.absolute=1..}] run scoreboard players remove @s overlimit.cd.absolute 1
+execute as @a[scores={overlimit.cd.ul_royal=1..}] run scoreboard players remove @s overlimit.cd.ul_royal 1
+execute as @a[scores={overlimit.cd.ul_demon=1..}] run scoreboard players remove @s overlimit.cd.ul_demon 1
 # Impact CD 表示（本人のみ・10秒）: 残煙。足元 + メインハンド（斧）付近（2tickに1回）
 execute as @a[scores={overlimit.cd.impact=1..}] at @s run function overlimit:enchant/impact/cd_fx
 execute as @a[scores={overlimit.cd.impact=1}] at @s run playsound minecraft:item.crossbow.loading_end player @s ~ ~ ~ 0.8 1
@@ -43,6 +48,9 @@ execute as @a[scores={overlimit.necro_pending=1..}] run function overlimit:encha
 execute as @a[scores={overlimit.necro_pending=1..}] run scoreboard players operation @s overlimit.mob_prev = @s overlimit.mob_kills
 execute as @e[type=#overlimit:can_be_danger,scores={overlimit.bind.timer=1..}] run function overlimit:enchant/chain_bind/tick_bound
 execute as @e[type=#overlimit:summon,tag=overlimit.summon,scores={overlimit.summon.life=1..}] at @s run function overlimit:enchant/summon_wolf/life_tick
+execute as @e[type=minecraft:iron_golem,tag=overlimit.mini_golem,tag=!overlimit.mini_golem_ready] at @s run function overlimit:item/mini_golem/init
+team join overlimit @e[type=minecraft:iron_golem,tag=overlimit.mini_golem,team=!overlimit]
+execute as @e[type=minecraft:iron_golem,tag=overlimit.mini_golem] store result score @s overlimit.golem_hp run data get entity @s Health 10
 
 # Hyper gravity field
 execute as @e[type=minecraft:marker,tag=overlimit.hg_field] at @s run function overlimit:enchant/hyper_gravity/field_tick
@@ -65,6 +73,21 @@ execute as @a[scores={overlimit.hd_ok=0,overlimit.hd_pok=1}] at @s run function 
 
 # 黄金弓: 撃った矢の速度2倍＋光の矢相当の発光
 execute as @e[type=#minecraft:arrows,tag=!overlimit.gb_done] run function overlimit:item/golden_bow/try_shot
+
+# UNLIMITED 武器: 剣の斬撃 / トライデント識別
+execute as @a[scores={overlimit.ul.sw_cd=1..}] run scoreboard players remove @s overlimit.ul.sw_cd 1
+execute as @a[scores={overlimit.ul.ax_cd=1..}] run scoreboard players remove @s overlimit.ul.ax_cd 1
+execute as @a[scores={overlimit.ul.sp_cd=1..}] run scoreboard players remove @s overlimit.ul.sp_cd 1
+execute as @a[scores={overlimit.ul.used=1..}] at @s run function overlimit:item/unlimited/sword_used
+execute as @a[scores={overlimit.ul.axe_used=1..}] at @s run function overlimit:item/unlimited/axe_used
+execute as @e[type=minecraft:marker,tag=overlimit.ul.slash] at @s run function overlimit:item/unlimited/slash_tick
+execute as @e[type=minecraft:trident,tag=!overlimit.ul.tri_chk] run function overlimit:item/unlimited/trident_mark
+execute as @e[type=minecraft:trident,tag=overlimit.ul.tri,tag=!overlimit.ul.tri_boom] at @s run function overlimit:item/unlimited/trident_try
+execute as @e[type=minecraft:trident,tag=overlimit.ul.tri] at @s run function overlimit:item/unlimited/trident_return
+execute as @e[type=minecraft:trident,tag=overlimit.ul.tri] at @s run function overlimit:item/unlimited/trident_fx
+execute as @e[type=minecraft:item_display,tag=overlimit.ul.tri_vis] run kill @s
+execute as @e[type=minecraft:marker,tag=overlimit.ul.tri_pin] run kill @s
+execute as @e[scores={overlimit.ul.para=1..}] run function overlimit:item/unlimited/spear_para_tick
 
 # 金床結果がカーソル→インベントリへ移る1tick遅れ用
 execute as @a[scores={overlimit.anvil_cap=1..}] run function overlimit:enchant/anvil_cap/apply

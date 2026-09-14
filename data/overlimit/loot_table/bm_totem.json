@@ -1,0 +1,89 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:poisonous_potato",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_name": {
+                  "text": "凶兆のトーテム",
+                  "color": "dark_red"
+                },
+                "minecraft:lore": [
+                  {
+                    "text": "オーバーワールドまたはブラッドワールドで使うと1つ消費し、",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "ブラッドムーンを強制開始する",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "rare",
+                "minecraft:max_stack_size": 16,
+                "minecraft:enchantment_glint_override": true,
+                "minecraft:item_model": "overlimit:bm_totem",
+                "!minecraft:food": {},
+                "minecraft:custom_data": {
+                  "overlimit": {
+                    "bm_totem": true
+                  }
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 0.0,
+                  "animation": "none",
+                  "has_consume_particles": false,
+                  "sound": "minecraft:item.ominous_bottle.dispose"
+                },
+                "minecraft:use_cooldown": {
+                  "seconds": 1.0,
+                  "cooldown_group": "overlimit:bm_totem"
+                },
+                "minecraft:use_remainder": {
+                  "id": "minecraft:poisonous_potato",
+                  "count": 1,
+                  "components": {
+                    "minecraft:item_name": {
+                      "text": "凶兆のトーテム",
+                      "color": "dark_red"
+                    },
+                    "minecraft:lore": [
+                      {
+                        "text": "オーバーワールドまたはブラッドワールドで使うと1つ消費し、",
+                        "color": "gray",
+                        "italic": false
+                      },
+                      {
+                        "text": "ブラッドムーンを強制開始する",
+                        "color": "gray",
+                        "italic": false
+                      }
+                    ],
+                    "minecraft:rarity": "rare",
+                    "minecraft:max_stack_size": 16,
+                    "minecraft:enchantment_glint_override": true,
+                    "minecraft:item_model": "overlimit:bm_totem",
+                    "!minecraft:food": {},
+                    "minecraft:custom_data": {
+                      "overlimit": {
+                        "bm_totem_spent": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

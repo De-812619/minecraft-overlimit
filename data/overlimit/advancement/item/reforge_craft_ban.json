@@ -1,0 +1,72 @@
+{
+  "criteria": {
+    "sword": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "overlimit:reforge_diamond",
+        "ingredients": [
+          {
+            "items": "#overlimit:reforge_input",
+            "predicates": {
+              "minecraft:custom_data": {
+                "overlimit": {
+                  "unlimited_sword": true
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "axe": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "overlimit:reforge_diamond",
+        "ingredients": [
+          {
+            "items": "#overlimit:reforge_input",
+            "predicates": {
+              "minecraft:custom_data": {
+                "overlimit": {
+                  "unlimited_axe": true
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "spear": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "overlimit:reforge_diamond",
+        "ingredients": [
+          {
+            "items": "#overlimit:reforge_input",
+            "predicates": {
+              "minecraft:custom_data": {
+                "overlimit": {
+                  "unlimited_spear": true
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "sword"
+    ],
+    [
+      "axe"
+    ],
+    [
+      "spear"
+    ]
+  ],
+  "rewards": {
+    "function": "overlimit:item/reforge/craft_ban"
+  }
+}

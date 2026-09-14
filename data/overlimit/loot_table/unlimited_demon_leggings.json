@@ -1,0 +1,94 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_leggings",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_name": {
+                  "text": "ULTD（DEMONレギンス）",
+                  "color": "dark_red"
+                },
+                "minecraft:lore": [
+                  {
+                    "text": "UNLIMITEDシリーズ",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": " - 部位ごとに攻撃力を上昇",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "フルセット効果（3部位以上）",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": " - 被弾（直接攻撃のみ）で反撃とノックバック（CD6秒）",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "epic",
+                "minecraft:item_model": "overlimit:unlimited_demon_leggings",
+                "minecraft:equippable": {
+                  "slot": "legs",
+                  "asset_id": "overlimit:unlimited_demon",
+                  "equip_sound": "minecraft:item.armor.equip_netherite"
+                },
+                "minecraft:max_damage": 1110,
+                "minecraft:repairable": {
+                  "items": "minecraft:netherite_ingot"
+                },
+                "minecraft:enchantment_glint_override": false,
+                "minecraft:custom_data": {
+                  "overlimit": {
+                    "unlimited_demon_leggings": true
+                  }
+                },
+                "minecraft:attribute_modifiers": [
+                  {
+                    "type": "minecraft:armor",
+                    "id": "overlimit:ul.demon.armor.legs",
+                    "amount": 6,
+                    "operation": "add_value",
+                    "slot": "legs"
+                  },
+                  {
+                    "type": "minecraft:armor_toughness",
+                    "id": "overlimit:ul.demon.tough.legs",
+                    "amount": 3.0,
+                    "operation": "add_value",
+                    "slot": "legs"
+                  },
+                  {
+                    "type": "minecraft:knockback_resistance",
+                    "id": "overlimit:ul.demon.kb.legs",
+                    "amount": 0.25,
+                    "operation": "add_value",
+                    "slot": "legs"
+                  },
+                  {
+                    "type": "minecraft:attack_damage",
+                    "id": "overlimit:ul.demon.ad.legs",
+                    "amount": 1,
+                    "operation": "add_value",
+                    "slot": "legs"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

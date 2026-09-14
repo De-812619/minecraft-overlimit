@@ -81,7 +81,11 @@ Wiki: [Commands/execute](https://minecraft.wiki/w/Commands/execute) `positioned 
 
 `gamerule maxCommandChainLength` デフォルト **65536**。超えたコマンドは **エラーなく切れ**、同じtickの強化スキャンやボスバー更新が飛ぶ。
 
-半径16の立方体スキャン（33³）× 開始10方向は上限に触る。水平半径16＋Yを狭める、近いマスから `return 1`。
+半径16の立方体スキャン（33³）× 開始10方向は上限に触る。光源判定は水平半径8・Y -1..+2、近いマスから `return 1`。1ティックあたりの走査回数にも上限（`#bm_light_max`）。
+
+**起きたこと:** マルチ2人・エリトラ移動・ブラッドムーン中に `Command execution stopped due to limit (executed 65536 commands)` が約4秒おき（湧きパルス）。`moved too quickly` で瞬間移動に見えた。`Can't keep up` は0件。
+
+**ログ:** `/Users/okanoueyuuichi/Downloads/latest.log`（2026-09-10、07:49〜08:14）。`near_light_aligned` 旧約4784コマンド／候補。
 
 ネザーオーバーフローのネザー化を同じtickで半径32以上塗ると、`end`（ボスバー消去・敵デスポーン）まで届かず発生中のまま残ることがある。終了処理を先に走らせ、塗る処理は数tickに分ける。
 
@@ -312,6 +316,188 @@ Whilst parsing command on line 5: 「purple」は不明な色です ...lor purpl
 
 ---
 
+## `execute if weather` は無い
+
+**起きたこと:** `overlimit:trim/copper/on_melee` が `/reload` でロード失敗。銅セットの放電が一切動かない。
+
+```
+Failed to load function overlimit:trim/copper/on_melee
+Whilst parsing command on line 5: ...xecute if <--[HERE]
+```
+
+**正しい書き方:** 天候は `execute if predicate` と `minecraft:weather_check`（`thundering: true`）。`execute if weather thunder` は 26.2 の関数パーサが受けない。
+
+**出所:** 上記 `latest.log`（2026-09-02 21:44 / 21:56）。26.2 client jar `LootItemConditions` の `weather_check`。Wiki [Predicate](https://minecraft.wiki/w/Predicate) `minecraft:weather_check`。
+
+---
+
+## `player_generates_container_loot` は `loot_table` 必須
+
+**起きたこと:** `overlimit:trim/on_loot` がパース失敗。金セットの「チェストを開けたら敵対」が付かない。
+
+```
+Couldn't parse data file 'overlimit:trim/on_loot' ... 'No key loot_table in MapLike[{}]'
+```
+
+**正しい書き方:** ルート指定が要るので、空箱や任意チェストには使わない。ピグリンが怒る開扉は `minecraft:default_block_use`（26.2 にあり）＋ `#minecraft:guarded_by_piglins`。
+
+**出所:** 上記 `latest.log`（2026-09-02 21:44）。バニラ `nether/loot_bastion.json` は各基準に `loot_table` を書く。`CriteriaTriggers.DEFAULT_BLOCK_USE`（26.2 client jar）。
+
+---
+
+## ピグリンは金防具以外を毎tick狙い直す
+
+**起きたこと:** 金装飾ネザライトではピグリンが常に敵対した。Brain を消すと停止するか、次tickにまた殴る。`armor.body` の金ヘルメットは `getArmorSlots`（頭胸脚足）に入らず中立にならない。
+
+**正しい書き方:** プレイヤー装備への `data modify ... equipment.head.id` は見た目のNBTだけ変わって ItemStack に乗らない。アーマースタンドへ `item replace` してから `id` を金ヘルメットにし、`item replace` で戻す。ネザライト頭は `item replace ... with minecraft:golden_helmet[...]` が保険。見た目は `item_model` / `equippable.asset_id`。付けた瞬間は付近ピグリンの `angry_at` だけ消す（既に追われているとバニラ金防具でも解けない）。`walk_target` は消さない。`#minecraft:piglin_safe_armor` は金防具IDのみ。チームには入れない。
+
+**出所:** 検証（2026-09-03 16:53 / 17:05 `give_set gold` 後も攻撃）。`item replace` の装備付けは銅セットで確認済み。バニラ `data/minecraft/tags/item/piglin_safe_armor.json`。Wiki [Golden Armor](https://minecraft.wiki/w/Golden_Armor)、[Slot](https://minecraft.wiki/w/Slot) `contents` / `armor.head`。
+
+---
+
+## `flash` パーティクルは `color` 必須
+
+**起きたこと:** `overlimit:trim/copper/blast` が `/reload` でロード失敗。放電の見た目も追加ダメージも出ない（呼び出し先が無い）。
+
+```
+Failed to load function overlimit:trim/copper/blast
+Whilst parsing command on line 1: パーティクルの設定を解析出来ません：No key color in MapLike[{}]
+```
+
+**正しい書き方:** `particle minecraft:flash{color:[1.0,0.95,0.55,1.0]} ~ ~1 ~ 0 0 0 0 1 force`。26.2 の `flash` は色なしを受けない。
+
+**出所:** `latest.log`（2026-09-03 16:40 / 16:41）。Wiki [Particle format](https://minecraft.wiki/w/Particle_format) — 1.21.9 で `flash` に `color` 必須。
+
+---
+
+## 近接直後の `/damage` は無敵時間に吸われる
+
+**起きたこと:** 銅セットの放電が「出ない」ように見えた。`electric_spark` は雨・戦闘でほぼ見えない。同じtickの `damage ... player_attack` は直撃の HurtTime（約10tick）に阻まれ、追加5が入らない。
+
+**正しい書き方:** 見た目は `flash` + `wax_off` + `item.trident.thunder`（`force`）。ダメージはカスタム type を `#minecraft:bypasses_cooldown` に入れる。バニラのこのタグは空。雷雨中は毎撃、晴れは8ヒットの次。ヒット1〜8は手元の小さな火花だけ。
+
+**出所:** 検証ログ（2026-09-02 23:54 copper 付与、`/weather thunder` なし、撃破1体）。Wiki [Damage type tag](https://minecraft.wiki/w/Damage_type_tag_(Java_Edition)) `bypasses_cooldown`。
+
+---
+
+## チーム `friendlyFire` はプレイヤー同士だけ
+
+**起きたこと:** ミニゴーレムを `overlimit`（`friendlyFire false`）に入れても、プレイヤーの剣が通った。専用エンチャントを胸当てに付ける関数は、`/reload` のたびにロード失敗した。
+
+```
+Failed to load function overlimit:item/mini_golem/guard
+Failed to get element overlimit:mini_golem_guard
+```
+
+**正しい書き方:** 新規エンチャント ID を関数の `minecraft:enchantments` に書かない。`player_hurt_entity` でヒットを取り消し、直前 tick の体力に戻す（最大にはしない）。チーム所属はゴーレムがプレイヤーを殴らないため残す。
+
+**出所:** `latest.log`（2026-09-05 22:09:57 / 22:10:23 / 22:14:08）。Wiki [Commands/team](https://minecraft.wiki/w/Commands/team) `friendlyFire`。本パックの `trim/on_hit`。
+
+---
+
+## ブラッドムーン開始は `weather clear`
+
+**起きたこと:** `/weather thunder` の直後に BM を始めると雷雨が消える。銅セットの「雷雨中は毎撃放電」が検証できない。
+
+**正しい書き方:** 雷雨テストでは BM を開始しない。BM は `blood_moon/start` で `weather clear 14000`。
+
+**出所:** `latest.log`（2026-09-02 22:55:47 雷雨 → 22:56:09 BM 強制開始）。`data/overlimit/function/blood_moon/start.mcfunction`。
+
+---
+
+## `execute summon` に NBT を付けない
+
+**起きたこと:** `nether_raise/near_ok` と `city_clamp/near_ok` がロード失敗。近傍判定が動かない。
+
+**ログ:**
+
+```
+Failed to load function overlimit:nether_raise/near_ok
+Whilst parsing command on line 3: Incorrect argument for command at position 32: ...ft:marker <--[HERE]
+```
+
+**正しい書き方:** `execute summon minecraft:marker run function ...`（NBTなし）。タグは関数側で付ける。本パックの `hyper_dig/store_hit` と同じ。
+
+**誤:** `execute summon minecraft:marker ~ ~ ~ {Tags:[...]} run function ...`
+
+**出所:** 本番 `latest.log`（2026-09-08 12:05:40）。[Commands/execute](https://minecraft.wiki/w/Commands/execute) `summon`。
+
+---
+
+## 間引きで原点へ `tp` しない
+
+**起きたこと:** 強化Mobを `tp 0 -10000 0` してから `kill`。ブラッドワールド `entities/c.0.0.mcc` が 2.2MB の oversized chunk になった。約37分で名前付き死亡ログ 1万件超、エンティティID 28万。
+
+**正しい書き方:** その場で `DeathLootTable` 空・`CustomName` 削除・`kill`。虚空へ送るなら今いる列の下（`~ -10000 ~`）だけ。原点は使わない。
+
+**出所:** 本番 `latest.log`（2026-09-08 12:16〜12:56、`Saving oversized chunk [0, 0]`）。
+
+---
+
+## `particle flash` は color 必須
+
+**起きたこと:** `overlimit:item/unlimited/spear_shock` がロード失敗。感電が動かない。呼び出し元は黙ってスキップする。
+
+```
+Failed to load function overlimit:item/unlimited/spear_shock
+Whilst parsing command on line 5: パーティクルの設定を解析出来ません：No key color in MapLike[{}]
+```
+
+**正しい書き方:** `particle minecraft:flash{color:[1.0,0.95,0.55,1.0]}`（本パックの `trim/copper/blast` と同じ）。
+
+**出所:** テストワールド `latest.log`（2026-09-09 22:58:38）。[Particle](https://minecraft.wiki/w/Particles)
+
+---
+
+## 落雷の `visualOnly` は `/summon` では付かない
+
+**起きたこと:** `{visualOnly:1b}` 付きで `lightning_bolt` を出しても、炎上・帯電など本体の落雷処理が走る。
+
+26.2 の `LightningBolt` は `setVisualOnly` があるが、`addAdditionalSaveData` に対応キーが無く、召喚 NBT では無視される。
+
+**正しい書き方:** 見た目は `thunder` / `impact` のサウンド＋`electric_spark` の縦筋＋`flash`。追加ダメージは `minecraft:lightning_bolt` にしない（帯電を避ける）。
+
+**出所:** 26.2 client jar `net/minecraft/world/entity/LightningBolt.class`（`visualOnly` / `setVisualOnly`、save フィールド無し）。本パックの UNLIMITED 槍。
+
+---
+
+## `nbt={HurtTime:10s}` だけで今フレームの被弾を取らない
+
+**起きたこと:** UNLIMITED 斧の爆発が通常攻撃で出ない。剣は `minecraft.used` があるので命中は見えていた。
+
+**正しい書き方:** 近接の追加効果は本パックのインパクトと同じ `enchantment` の `minecraft:post_attack`（`affected: victim`）。HurtTime セレクタや `data get HurtTime` に依存しない。
+
+**出所:** 本パックの斧・槍（HurtTime 経路では無反応）。`data/overlimit/enchantment/impact.json` は同じ手段で動作確認済み。
+
+---
+
+## ルート表とエンチャントで同じ ID を使わない
+
+**起きたこと:** `give_axe` / `give_spear` がロード失敗。オートコンプリートから消えた。
+
+```
+Couldn't parse data file 'overlimit:unlimited_axe' from 'overlimit:loot_table/unlimited_axe.json'
+Failed to get element overlimit:unlimited_axe missed input: {"overlimit:unlimited_axe":1}
+```
+
+**正しい書き方:** ルート `overlimit:unlimited_axe` に載せるエンチャントは別名（`overlimit:ul_axe_blast`）。`supported_items` はインパクトと同じく `#minecraft:axes` / `#minecraft:spears`。
+
+**出所:** テストワールド `latest.log`（2026-09-09 23:08:29）。
+
+---
+
+## プレイヤー入力 predicate に `attack` は無い
+
+**起きたこと:** UNLIMITED 剣をメインハンドに持っているだけで斬撃が出た。
+
+`InputPredicate` のフィールドは `forward` / `backward` / `left` / `right` / `jump` / `sneak` / `sprint` のみ。`attack: true` は未知キーとして無視され、入力条件が空＝常に成功する。
+
+**正しい書き方:** 攻撃の検出は `minecraft.used:<item>` や `player_hurt_entity`。斬撃の空振り検出には使えない。
+
+**出所:** 26.2 client jar `net/minecraft/advancements/predicates/InputPredicate.class`（`-forward;backward;left;right;jump;sneak;sprint`）。Wiki [Predicate](https://minecraft.wiki/w/Predicate) player input（24w36a）。本パックの持っているだけの斬撃で確認。
+
+---
+
 ## ログの場所
 
 | 用途 | パス |
@@ -320,3 +506,106 @@ Whilst parsing command on line 5: 「purple」は不明な色です ...lor purpl
 | 編集リポジトリ | `/Users/okanoueyuuichi/minecraft/datapacks/over_limit_pack`（ゲームは読まない） |
 
 `.cursor/` はデプロイ rsync から除外する（ワールドにスキルをコピーしない）。
+
+---
+
+## 投擲トライデントのテクスチャは item_model を見ない
+
+**起きたこと:** UNLIMITED の `item_model` を変えても、持っているとき・投げたときの 3D はバニラの `textures/entity/trident/trident.png` のまま。このパスをリソースパックで上書きすると、通常トライデントも同じ見た目になる。
+
+**正しい書き方:** `minecraft:special` の `type: minecraft:trident` はテクスチャ欄がない。所持・GUI は overlimit 名前空間の JSON 3D。投擲は `item_display` で重ねると `ThrownTridentRenderer` と回転軸が違い、完全一致できない。UNLIMITED の投擲見た目はバニラの `textures/entity/trident/trident.png` のままにする（`minecraft:` パスを上書きしない。すると通常トライデントも変わる）。
+
+**出所:** 26.2 client `ThrownTridentRenderer` の `TRIDENT_LOCATION`（`textures/entity/trident/trident.png`）。`TridentSpecialRenderer$Unbaked` の `MAP_CODEC` が `MapCodec.unit`。
+
+手持ち JSON にバニラ `trident_in_hand` の translation（`[11, 17, -2]` など）は使わない。あれは `minecraft:special` のエンティティ原点用。手持ちは handheld 寄りの display（`[0, 4, 0.5]` / `[1.13, 3.2, 1.13]`）。
+
+---
+
+## JSON 模型の `to` は 32 まで
+
+**起きたこと:** `unlimited_trident_3d.json` の pole `to.y = 35` でモデル全体が落ち、UNLIMITED トライデントの所持がバニラ見た目に戻った。
+
+**ログ:** `Failed to load model overlimit:models/item/unlimited_trident_3d.json` / `'to' specifier exceeds the allowed boundaries: ( 8.500E+0  3.500E+1  8.500E+0)`
+
+**正しい書き方:** 各 element の `from` / `to` は **-16〜32**。長いトライデントは Y オフセットを足さないか、縮小して display.scale で戻す。
+
+**出所:** 上記 `latest.log`（2026-09-10 00:33:22）。`CuboidModelElement$Deserializer.getPosition`。
+
+---
+
+## `scoreboard players operation` の右辺はスコアだけ
+
+**起きたこと:** `trident_return` が `/reload` でロード失敗。帰還加速が動かない。
+
+**ログ:** `Failed to load function overlimit:item/unlimited/trident_return` / `...onst *= 75<--[HERE]`
+
+**正しい書き方:** `scoreboard players operation #x overlimit.const *= #75 overlimit.const`。対象・オブジェクティブ・右辺スコア・右辺オブジェクティブがすべて必要。`*= 75` のようなリテラルは不可。`operation #dyaw *= #1000` もオブジェクティブ欠落でロード失敗する。
+
+**出所:** 上記 `latest.log`（2026-09-10 00:33:28）。`trident_vis_tick` は 2026-09-10 01:32:42 に `...ion #dyaw <--[HERE]` で同様に失敗。
+
+---
+
+## `execute in` 後の `at @s if dimension` は他次元のエンティティを弾かない
+
+**起きたこと:** `tick` が `execute in minecraft:overworld run function overlimit:blood_moon/tick` のとき、`as @e[tag=overlimit.blood_moon] at @s if dimension minecraft:overworld` がブラッドワールドの個体にも成功する。OW の 4 秒 `cull_far` が BW の強化Mobを消す。検証手順: BW 移動 → OW BM をコマンド開始 → BW BM をコマンド開始。
+
+**正しい書き方:** 所属はエンティティタグ（`overlimit.bm_ow` / `overlimit.bm_bw`）で分ける。`if dimension` はコマンドの実行次元を見る。`cull_one` 先頭の `unless dimension` も同じ理由で他次元を止められない。
+
+**出所:** 検証ワールドでの再現（2026-09-11）。Wiki [Commands/execute](https://minecraft.wiki/w/Commands/execute) の `in` / `dimension`。
+
+---
+
+## `execute if function` に `with storage` は付けられない
+
+**起きたこと:** イベント勝利で報酬チェストが出ない。`place_reward` が `/reload` で全部ロード失敗。呼び出し元の `end_victory` は関数を黙ってスキップする。
+
+**ログ:**
+
+```
+Failed to load function overlimit:blood_moon/place_reward
+Whilst parsing command on line 3: ...est_spots <--[HERE]
+```
+
+**正しい書き方:** `return run function overlimit:reward/scan_chest_spots with storage overlimit:reward`  
+**誤:** `execute if function overlimit:reward/scan_chest_spots with storage overlimit:reward run return 1`
+
+`function <name> with storage` は使える。`execute if function` のあとにマクロ引数は置けない。
+
+**出所:** 上記 `latest.log`（2026-09-11 15:12:07）。
+
+---
+
+## プレイヤーの `Health` は `/data` で書けない
+
+**起きたこと:** 王族防具の被弾回復が `execute store result entity @s Health` で動かない。ノックバックは別関数なので発動する。
+
+**正しい書き方:** 目標HPまで `max_health` を一時修飾し、`effect give instant_health` でその上限まで満たしてから修飾子を外す。読み取りの `data get entity @s Health` は可。
+
+**出所:** Java はプレイヤー NBT の書き込みを制限。[Commands/data](https://minecraft.wiki/w/Commands/data)。26.2 でも「Modify Player Data」mod が `Health` を別途解禁している。
+
+---
+
+## 装備 `equipment` の `layers` は空マップ不可
+
+**起きたこと:** 王族ヘルメットを 3D アイテムモデルで頭に出そうとして `assets/overlimit/equipment/unlimited_royal_helmet.json` を `{"layers": {}}` にした。着装すると何も見えない。
+
+**ログ:**
+
+```
+Couldn't parse data file 'overlimit:unlimited_royal_helmet' from 'overlimit:equipment/unlimited_royal_helmet.json': DataResult.Error['Map must have contents']
+```
+
+**正しい書き方:** 防具は魔王セットと同じく `equippable.asset_id` を、中身のある `layers.humanoid` を持つ `equipment/*.json` に向ける。ネザライトヘルメットから `asset_id` を外すだけでは頭にアイテムモデルは出ない（2026-09-12 実測）。
+
+**出所:** 上記 `latest.log`（2026-09-12 22:45:33 / 22:46:23）。Wiki [Equipment](https://minecraft.wiki/w/Equipment) / [equippable](https://minecraft.wiki/w/Data_component_format/equippable)。
+
+---
+
+## `crafting_dye` は対象をエリトラにできる
+
+**起きたこと:** 26.2 バニラの染色は `leather_*_dyed.json` が `minecraft:crafting_dye`。`#dyeable` タグは 26.1 で削除済み。`target` に `minecraft:elytra` を置けばクラフト台でバニラ染料と混ぜられる。見た目は `equipment` の `wings` に `dyeable` が必要。`color_when_undyed` が無いと未染色レイヤーが消える。未染色を白乗算（見た目そのまま）にする値は `-1`（0xFFFFFFFF）。`16777215` はアルファ 0 になり得る。
+
+**実装:** `overlimit:elytra_dyed`。大釜は `#minecraft:cauldron_can_remove_dye` にエリトラを追加。見た目は `assets/minecraft/equipment/elytra.json` と `items/elytra.json`。
+
+**出所:** 26.2 client.jar の `leather_chestplate_dyed.json` / `equipment/leather.json`。[Recipe](https://minecraft.wiki/w/Recipe_(Java_Edition)) `crafting_dye`、[Equipment](https://minecraft.wiki/w/Equipment) `dyeable`。
+

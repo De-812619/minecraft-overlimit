@@ -1,2 +1,2 @@
-tellraw @s {"text":"ブラッドムーンはすでに発生中だ。凶兆のトーテムは消費されなかった。","color":"gray"}
+tellraw @s {"translate": "overlimit.msg.omen_totem.fail_active","color":"gray"}
 function overlimit:item/bm_totem/restore_later

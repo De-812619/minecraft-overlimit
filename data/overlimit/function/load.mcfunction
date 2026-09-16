@@ -203,7 +203,7 @@ advancement revoke @a only overlimit:portal/light
 advancement revoke @a only overlimit:attrition/on_hurt
 advancement revoke @a only overlimit:item/unlimited_hit
 
-bossbar add overlimit:blood_moon {"text":"ブラッドムーン","color":"dark_red","bold":true}
+bossbar add overlimit:blood_moon {"translate": "overlimit.event.blood_moon","color":"dark_red","bold":true}
 bossbar set overlimit:blood_moon color red
 execute store result bossbar overlimit:blood_moon max run scoreboard players get #11460 overlimit.const
 bossbar set overlimit:blood_moon style progress
@@ -211,7 +211,7 @@ execute if score #bm_active overlimit.const matches 1 run function overlimit:blo
 execute unless score #bm_active overlimit.const matches 1 run bossbar set overlimit:blood_moon players
 execute unless score #bm_active overlimit.const matches 1 run function overlimit:blood_moon/fog_off
 
-bossbar add overlimit:blood_world {"text":"ブラッドムーン","color":"dark_red","bold":true}
+bossbar add overlimit:blood_world {"translate": "overlimit.event.blood_moon","color":"dark_red","bold":true}
 bossbar set overlimit:blood_world color red
 execute store result bossbar overlimit:blood_world max run scoreboard players get #11460 overlimit.const
 bossbar set overlimit:blood_world style progress
@@ -220,7 +220,7 @@ execute unless score #bw_active overlimit.const matches 1 run bossbar set overli
 execute unless score #bw_active overlimit.const matches 1 run function overlimit:blood_world/fog_off
 execute as @a at @s if dimension overlimit:blood_world run weather clear 1000000
 
-bossbar add overlimit:nether_overflow {"text":"ネザーオーバーフロー","color":"dark_purple","bold":true}
+bossbar add overlimit:nether_overflow {"translate": "overlimit.event.nether_overflow","color":"dark_purple","bold":true}
 bossbar set overlimit:nether_overflow color purple
 execute store result bossbar overlimit:nether_overflow max run scoreboard players get #no_time_max overlimit.const
 bossbar set overlimit:nether_overflow style progress
@@ -284,14 +284,14 @@ scoreboard players set #cc_int3 overlimit.const 40
 execute unless data storage overlimit:cc cleared run data modify storage overlimit:cc cleared set value []
 execute unless data storage overlimit:cc target run data modify storage overlimit:cc target set value {x:0,y:64,z:0,kind:"minecraft:end_city"}
 
-bossbar add overlimit:nether_raise {"text":"ネザーレイズ","color":"gold","bold":true}
+bossbar add overlimit:nether_raise {"translate": "overlimit.event.nether_raise","color":"gold","bold":true}
 bossbar set overlimit:nether_raise color yellow
 execute store result bossbar overlimit:nether_raise max run scoreboard players get #nr_time_max overlimit.const
 bossbar set overlimit:nether_raise style progress
 execute if score #nr_active overlimit.const matches 1 run function overlimit:nether_raise/restore
 execute unless score #nr_active overlimit.const matches 1 run bossbar set overlimit:nether_raise players
 
-bossbar add overlimit:city_clamp {"text":"シティクランプ","color":"blue","bold":true}
+bossbar add overlimit:city_clamp {"translate": "overlimit.event.city_clamp","color":"blue","bold":true}
 bossbar set overlimit:city_clamp color blue
 execute store result bossbar overlimit:city_clamp max run scoreboard players get #cc_time_max overlimit.const
 bossbar set overlimit:city_clamp style progress

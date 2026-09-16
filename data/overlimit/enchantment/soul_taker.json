@@ -1,7 +1,7 @@
 {
   "anvil_cost": 1,
   "description": {
-    "text": "ソウルテイカー"
+    "translate": "enchantment.overlimit.soul_taker"
   },
   "effects": {},
   "exclusive_set": "#overlimit:exclusive_set/soul_gluttony",

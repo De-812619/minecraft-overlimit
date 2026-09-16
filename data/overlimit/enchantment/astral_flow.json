@@ -1,7 +1,7 @@
 {
   "anvil_cost": 1,
   "description": {
-    "text": "アストラルフロー（保留）"
+    "translate": "enchantment.overlimit.astral_flow"
   },
   "effects": {},
   "max_cost": {

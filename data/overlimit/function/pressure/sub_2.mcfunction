@@ -5,4 +5,4 @@ execute if score #pressure overlimit.const matches ..0 run return fail
 scoreboard players remove #pressure overlimit.const 2
 execute if score #pressure overlimit.const matches ..-1 run scoreboard players set #pressure overlimit.const 0
 function overlimit:pressure/refresh
-tellraw @a [{"text":"世界圧が ","color":"aqua"},{"score":{"name":"#pressure","objective":"overlimit.const"},"color":"aqua","bold":true},{"text":" に下がった。","color":"aqua"}]
+tellraw @a {"translate":"overlimit.msg.pressure.dropped","color":"aqua","with":[{"score":{"name":"#pressure","objective":"overlimit.const"},"color":"aqua","bold":true}]}

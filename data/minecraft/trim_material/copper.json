@@ -5,8 +5,8 @@
     "translate": "trim_material.minecraft.copper",
     "extra": [
       {
-        "text": " — 部位:攻撃速度+2%  セット:8ヒットで放電（雷雨は毎撃）",
-        "color": "#B4684D"
+        "color": "#B4684D",
+        "translate": "overlimit.trim.copper.extra"
       }
     ]
   },

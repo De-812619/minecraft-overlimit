@@ -25,8 +25,8 @@
       "can_set_spawn": "never",
       "can_sleep": "never",
       "error_message": {
-        "text": "ブラッドワールドでは眠れない",
-        "color": "red"
+        "color": "red",
+        "translate": "overlimit.msg.bw.sleep"
       }
     },
     "minecraft:gameplay/nether_portal_spawns_piglin": true,

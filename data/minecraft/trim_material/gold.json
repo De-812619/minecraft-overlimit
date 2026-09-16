@@ -5,8 +5,8 @@
     "translate": "trim_material.minecraft.gold",
     "extra": [
       {
-        "text": " — 部位:移動+1%  セット:ピグリン中立",
-        "color": "#DEB12D"
+        "color": "#DEB12D",
+        "translate": "overlimit.trim.gold.extra"
       }
     ]
   },

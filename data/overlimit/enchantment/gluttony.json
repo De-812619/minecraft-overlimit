@@ -1,7 +1,7 @@
 {
   "anvil_cost": 1,
   "description": {
-    "text": "暴食"
+    "translate": "enchantment.overlimit.gluttony"
   },
   "effects": {},
   "exclusive_set": "#overlimit:exclusive_set/soul_gluttony",

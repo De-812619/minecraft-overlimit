@@ -11,7 +11,7 @@
   },
   "anvil_cost": 1,
   "description": {
-    "text": "ハイパーディグ"
+    "translate": "enchantment.overlimit.hyper_dig"
   },
   "exclusive_set": "#overlimit:exclusive_set/hyper_dig",
   "max_cost": {

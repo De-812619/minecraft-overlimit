@@ -1,7 +1,7 @@
 {
   "anvil_cost": 1,
   "description": {
-    "text": "千里眼"
+    "translate": "enchantment.overlimit.clairvoyance"
   },
   "effects": {
     "minecraft:tick": [

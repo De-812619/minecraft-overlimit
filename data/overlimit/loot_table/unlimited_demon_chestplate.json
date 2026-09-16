@@ -12,29 +12,29 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "text": "ULTD（DEMONチェストプレート）",
-                  "color": "dark_red"
+                  "color": "dark_red",
+                  "translate": "overlimit.item.ul.demon.chestplate"
                 },
                 "minecraft:lore": [
                   {
-                    "text": "UNLIMITEDシリーズ",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "translate": "overlimit.item.ul.series"
                   },
                   {
-                    "text": " - 部位ごとに攻撃力を上昇",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "translate": "overlimit.item.ul.piece.attack"
                   },
                   {
-                    "text": "フルセット効果（3部位以上）",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "translate": "overlimit.item.ul.set"
                   },
                   {
-                    "text": " - 被弾（直接攻撃のみ）で反撃とノックバック（CD6秒）",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "translate": "overlimit.item.ul.set.demon"
                   }
                 ],
                 "minecraft:rarity": "epic",

@@ -15,9 +15,9 @@ bossbar set overlimit:blood_world visible true
 bossbar set overlimit:blood_world players @a[tag=overlimit.in_bw]
 
 title @a[tag=overlimit.in_bw] times 10 70 20
-title @a[tag=overlimit.in_bw] title {"text":"ブラッドムーン","color":"dark_red","bold":true}
+title @a[tag=overlimit.in_bw] title {"translate": "overlimit.event.blood_moon","color":"dark_red","bold":true}
 execute as @a[tag=overlimit.in_bw] at @s run playsound minecraft:entity.wither.spawn player @s ~ ~ ~ 0.45 0.55
-tellraw @a[tag=overlimit.in_bw] {"text":"ブラッドムーンが始まった。この夜は強化された敵だけが現れる。100体倒せ。","color":"red"}
+tellraw @a[tag=overlimit.in_bw] {"translate": "overlimit.msg.bm.start","color":"red"}
 
 scoreboard players set #bw_spawn_t overlimit.const 0
 function overlimit:blood_world/spawn_burst

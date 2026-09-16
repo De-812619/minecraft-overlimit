@@ -1,7 +1,7 @@
 {
   "anvil_cost": 1,
   "description": {
-    "text": "超重力"
+    "translate": "enchantment.overlimit.hyper_gravity"
   },
   "effects": {
     "minecraft:post_attack": [

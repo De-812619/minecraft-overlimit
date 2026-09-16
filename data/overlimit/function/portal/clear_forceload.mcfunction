@@ -3,4 +3,4 @@ execute in minecraft:overworld run forceload remove all
 execute in minecraft:the_nether run forceload remove all
 execute in minecraft:the_end run forceload remove all
 execute in overlimit:blood_world run forceload remove all
-tellraw @s {"text":"[overlimit] 全ディメンションの forceload を解除した","color":"yellow"}
+tellraw @s {"translate": "overlimit.cmd.clear_forceload","color":"yellow"}

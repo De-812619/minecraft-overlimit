@@ -12,19 +12,19 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "text": "ULTD（トライデント）",
-                  "color": "light_purple"
+                  "color": "light_purple",
+                  "translate": "overlimit.item.ul.trident"
                 },
                 "minecraft:lore": [
                   {
-                    "text": "UNLIMITEDシリーズ",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "translate": "overlimit.item.ul.series"
                   },
                   {
-                    "text": "忠誠。着弾地点で爆発する",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "translate": "overlimit.item.ul.trident.lore"
                   }
                 ],
                 "minecraft:rarity": "epic",

@@ -1,7 +1,7 @@
 {
   "anvil_cost": 1,
   "description": {
-    "text": "ミダスの食卓"
+    "translate": "enchantment.overlimit.midas_table"
   },
   "effects": {},
   "max_cost": {

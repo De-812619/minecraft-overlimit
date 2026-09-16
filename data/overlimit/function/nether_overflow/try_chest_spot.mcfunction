@@ -3,6 +3,6 @@ execute if entity @e[type=minecraft:marker,tag=overlimit.no_reward_chest,distanc
 execute if block ~ ~ ~ #overlimit:reward_chest_keep run return fail
 execute unless block ~ ~ ~ #overlimit:reward_chest_ok run return fail
 setblock ~ ~ ~ minecraft:chest
-data merge block ~ ~ ~ {CustomName:{"text":"ネザーオーバーフローの報酬","color":"light_purple"}}
+data merge block ~ ~ ~ {CustomName:{"translate": "overlimit.chest.nether_overflow","color":"light_purple"}}
 summon minecraft:marker ~ ~ ~ {Tags:["overlimit.no_reward_chest"]}
 return run function overlimit:nether_overflow/fill_chest

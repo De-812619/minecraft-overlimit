@@ -1,7 +1,7 @@
 {
   "anvil_cost": 1,
   "description": {
-    "text": "サモン（狼）"
+    "translate": "enchantment.overlimit.summon_wolf"
   },
   "effects": {
     "minecraft:post_attack": [

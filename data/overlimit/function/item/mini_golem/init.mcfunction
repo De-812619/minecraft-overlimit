@@ -7,7 +7,7 @@ data modify entity @s Health set value 250.0f
 execute store result score @s overlimit.golem_hp run data get entity @s Health 10
 data modify entity @s PlayerCreated set value 1b
 data modify entity @s PersistenceRequired set value 1b
-data modify entity @s CustomName set value {"text":"ミニゴーレム"}
+data modify entity @s CustomName set value {"translate": "overlimit.item.mini_golem"}
 data modify entity @s CustomNameVisible set value 0b
 data modify entity @s DeathLootTable set value "minecraft:empty"
 playsound minecraft:entity.iron_golem.repair neutral @a ~ ~ ~ 1 1.2

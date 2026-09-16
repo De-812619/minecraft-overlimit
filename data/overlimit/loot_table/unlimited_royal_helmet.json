@@ -12,29 +12,29 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "text": "ULTD（HEROヘルメット）",
-                  "color": "gold"
+                  "color": "gold",
+                  "translate": "overlimit.item.ul.royal.helmet"
                 },
                 "minecraft:lore": [
                   {
-                    "text": "UNLIMITEDシリーズ",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "translate": "overlimit.item.ul.series"
                   },
                   {
-                    "text": " - 部位ごとにハートを追加",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "translate": "overlimit.item.ul.piece.heart"
                   },
                   {
-                    "text": "フルセット効果（3部位以上）",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "translate": "overlimit.item.ul.set"
                   },
                   {
-                    "text": " - 被弾（直接攻撃のみ）でハート1.5回復とノックバック（CD6秒）",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "translate": "overlimit.item.ul.set.royal"
                   }
                 ],
                 "minecraft:rarity": "epic",

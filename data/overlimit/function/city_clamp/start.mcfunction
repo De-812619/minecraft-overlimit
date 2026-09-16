@@ -31,7 +31,7 @@ function overlimit:city_clamp/bossbar_value
 bossbar set overlimit:city_clamp players @a[predicate=overlimit:in_the_end]
 
 title @a[predicate=overlimit:in_the_end] times 10 70 20
-title @a[predicate=overlimit:in_the_end] title {"text":"シティクランプ","color":"blue","bold":true}
+title @a[predicate=overlimit:in_the_end] title {"translate": "overlimit.event.city_clamp","color":"blue","bold":true}
 execute as @a[predicate=overlimit:in_the_end] at @s run playsound minecraft:entity.wither.spawn player @s ~ ~ ~ 0.45 0.55
-tellraw @a[predicate=overlimit:in_the_end] ["",{"text":"シティクランプが始まった。エンドシティがカオスに陥り、本来いない敵も現れる。","color":"blue"},{"text":" （","color":"aqua"},{"nbt":"target.x","storage":"overlimit:cc"},{"text":", ","color":"aqua"},{"nbt":"target.y","storage":"overlimit:cc"},{"text":", ","color":"aqua"},{"nbt":"target.z","storage":"overlimit:cc"},{"text":"）","color":"aqua"},{"text":" （脅威指数 ","color":"gold"},{"score":{"name":"#heat","objective":"overlimit.const"},"color":"gold"},{"text":"）","color":"gold"}]
+tellraw @a[predicate=overlimit:in_the_end] {"translate":"overlimit.msg.cc.start","color":"blue","with":[{"nbt":"target.x","storage":"overlimit:cc","color":"aqua"},{"nbt":"target.y","storage":"overlimit:cc","color":"aqua"},{"nbt":"target.z","storage":"overlimit:cc","color":"aqua"},{"score":{"name":"#heat","objective":"overlimit.const"},"color":"gold"}]}
 function overlimit:city_clamp/begin_combat

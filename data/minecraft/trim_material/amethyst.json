@@ -5,8 +5,8 @@
     "translate": "trim_material.minecraft.amethyst",
     "extra": [
       {
-        "text": " — 部位:落下ダメ-8%  セット:闇無効・暗所暗視・着地ノックバック",
-        "color": "#9A5CC6"
+        "color": "#9A5CC6",
+        "translate": "overlimit.trim.amethyst.extra"
       }
     ]
   }

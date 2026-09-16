@@ -1,7 +1,7 @@
 {
   "anvil_cost": 1,
   "description": {
-    "text": "絶対領域"
+    "translate": "enchantment.overlimit.absolute_field"
   },
   "effects": {
     "minecraft:post_attack": [

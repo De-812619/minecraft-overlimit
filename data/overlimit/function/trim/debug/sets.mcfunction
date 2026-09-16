@@ -1,5 +1,5 @@
 scoreboard players set #setn overlimit.const 0
-tellraw @s {"text":"[trim] セット（3部位以上）:","color":"gold"}
+tellraw @s {"translate": "overlimit.trim.dbg.sets","color":"gold"}
 execute if entity @s[tag=overlimit.trim.set.iron] run scoreboard players add #setn overlimit.const 1
 execute if entity @s[tag=overlimit.trim.set.gold] run scoreboard players add #setn overlimit.const 1
 execute if entity @s[tag=overlimit.trim.set.diamond] run scoreboard players add #setn overlimit.const 1
@@ -22,4 +22,4 @@ execute if entity @s[tag=overlimit.trim.set.emerald] run tellraw @s {"text":"  e
 execute if entity @s[tag=overlimit.trim.set.amethyst] run tellraw @s {"text":"  amethyst","color":"#9A5CC6"}
 execute if entity @s[tag=overlimit.trim.set.quartz] run tellraw @s {"text":"  quartz","color":"#E3D4C4"}
 execute if entity @s[tag=overlimit.trim.set.resin] run tellraw @s {"text":"  resin","color":"#DE731C"}
-execute if score #setn overlimit.const matches 0 run tellraw @s {"text":"  （なし）","color":"dark_gray"}
+execute if score #setn overlimit.const matches 0 run tellraw @s {"translate": "overlimit.trim.dbg.none","color":"dark_gray"}

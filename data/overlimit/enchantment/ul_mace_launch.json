@@ -1,9 +1,9 @@
 {
   "anvil_cost": 1,
   "description": {
-    "text": "打ち上げ",
     "color": "gray",
-    "italic": false
+    "italic": false,
+    "translate": "enchantment.overlimit.ul_mace_launch"
   },
   "effects": {
     "minecraft:post_attack": [

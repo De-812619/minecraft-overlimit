@@ -3,6 +3,6 @@ execute if entity @e[type=minecraft:marker,tag=overlimit.bm_reward_chest,distanc
 execute if block ~ ~ ~ #overlimit:reward_chest_keep run return fail
 execute unless block ~ ~ ~ #overlimit:reward_chest_ok run return fail
 setblock ~ ~ ~ minecraft:chest
-data merge block ~ ~ ~ {CustomName:{"text":"ブラッドムーンの報酬","color":"gold"}}
+data merge block ~ ~ ~ {CustomName:{"translate": "overlimit.chest.blood_moon","color":"gold"}}
 summon minecraft:marker ~ ~ ~ {Tags:["overlimit.bm_reward_chest"]}
 return run function overlimit:blood_moon/fill_chest

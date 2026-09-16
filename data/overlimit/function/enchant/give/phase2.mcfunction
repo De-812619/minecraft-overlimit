@@ -6,4 +6,4 @@ give @s minecraft:netherite_pickaxe[minecraft:enchantments={"overlimit:smelting"
 give @s minecraft:netherite_pickaxe[minecraft:enchantments={"overlimit:hyper_dig":1}]
 give @s minecraft:netherite_pickaxe[minecraft:enchantments={"minecraft:efficiency":10}]
 give @s minecraft:arrow 64
-tellraw @s [{"text":"[overlimit] ","color":"gold"},{"text":"Phase2 テスト装備を付与しました（インパクト／サモン狼／精錬／ハイパーディグ／効率強化は別ツルハシ）","color":"gray"}]
+tellraw @s [{"translate": "overlimit.cmd.prefix","color":"gold"},{"translate": "overlimit.cmd.gave_phase2","color":"gray"}]

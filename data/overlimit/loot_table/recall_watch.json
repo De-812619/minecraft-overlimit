@@ -12,14 +12,14 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "text": "帰還の懐中時計",
-                  "color": "gold"
+                  "color": "gold",
+                  "translate": "overlimit.item.recall_watch"
                 },
                 "minecraft:lore": [
                   {
-                    "text": "使用すると1つ消費し、リスポーン地点へテレポートする",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "translate": "overlimit.item.recall_watch.lore"
                   }
                 ],
                 "minecraft:rarity": "rare",

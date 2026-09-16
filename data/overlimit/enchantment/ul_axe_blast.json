@@ -1,9 +1,9 @@
 {
   "anvil_cost": 1,
   "description": {
-    "text": "爆発",
     "color": "gray",
-    "italic": false
+    "italic": false,
+    "translate": "enchantment.overlimit.ul_axe_blast"
   },
   "effects": {
     "minecraft:post_attack": [

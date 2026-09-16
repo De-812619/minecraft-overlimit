@@ -1,7 +1,7 @@
 {
   "anvil_cost": 1,
   "description": {
-    "text": "アポカリプス"
+    "translate": "enchantment.overlimit.apocalypse"
   },
   "effects": {
     "minecraft:post_attack": [

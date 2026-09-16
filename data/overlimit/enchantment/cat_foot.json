@@ -1,7 +1,7 @@
 {
   "anvil_cost": 1,
   "description": {
-    "text": "猫足"
+    "translate": "enchantment.overlimit.cat_foot"
   },
   "effects": {
     "minecraft:attributes": [

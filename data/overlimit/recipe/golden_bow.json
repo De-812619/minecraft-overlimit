@@ -15,19 +15,19 @@
     "count": 1,
     "components": {
       "minecraft:item_name": {
-        "text": "黄金弓",
-        "color": "gold"
+        "color": "gold",
+        "translate": "overlimit.item.golden_bow"
       },
       "minecraft:lore": [
         {
-          "text": "矢の速度とダメージは弓の2倍。命中した相手は光の矢と同じく発光する",
           "color": "gray",
-          "italic": false
+          "italic": false,
+          "translate": "overlimit.item.golden_bow.lore.1"
         },
         {
-          "text": "耐久は弓の2倍。金ブロックで修理できる",
           "color": "gray",
-          "italic": false
+          "italic": false,
+          "translate": "overlimit.item.golden_bow.lore.2"
         }
       ],
       "minecraft:rarity": "rare",

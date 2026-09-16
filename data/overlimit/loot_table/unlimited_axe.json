@@ -12,19 +12,19 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "text": "ULTD（斧）",
-                  "color": "dark_red"
+                  "color": "dark_red",
+                  "translate": "overlimit.item.ul.axe"
                 },
                 "minecraft:lore": [
                   {
-                    "text": "UNLIMITEDシリーズ",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "translate": "overlimit.item.ul.series"
                   },
                   {
-                    "text": "通常攻撃で爆発を起こす",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "translate": "overlimit.item.ul.axe.lore"
                   }
                 ],
                 "minecraft:rarity": "epic",

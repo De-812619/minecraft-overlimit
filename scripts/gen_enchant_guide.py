@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""docs/enchant_guide.json から図鑑ルートを生成する。"""
+"""docs/enchant_guide.json から図鑑ルートを生成する。本文は lang キー。"""
 
 from __future__ import annotations
 
@@ -7,38 +7,97 @@ import json
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from i18n_catalog import STRINGS
+
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "docs" / "enchant_guide.json"
 OUT = ROOT / "data" / "overlimit" / "loot_table" / "enchant_guide.json"
 MAX_LINES = 14
 TITLE_MAX = 32
 
+SLOT_KEY = {
+    "apocalypse": "overlimit.guide.slot.melee",
+    "soul_taker": "overlimit.guide.slot.melee",
+    "void_break": "overlimit.guide.slot.melee",
+    "hyper_gravity": "overlimit.guide.slot.melee",
+    "gluttony": "overlimit.guide.slot.melee",
+    "summon_wolf": "overlimit.guide.slot.bow",
+    "chain_bind": "overlimit.guide.slot.bow",
+    "necromancy": "overlimit.guide.slot.sword",
+    "impact": "overlimit.guide.slot.axe",
+    "absolute_field": "overlimit.guide.slot.chest",
+    "clairvoyance": "overlimit.guide.slot.helm",
+    "midas_table": "overlimit.guide.slot.helm",
+    "sky_walk": "overlimit.guide.slot.boots",
+    "cat_foot": "overlimit.guide.slot.boots",
+    "hyper_dig": "overlimit.guide.slot.pick",
+    "smelting": "overlimit.guide.slot.pick",
+    "wind_blessing": "overlimit.guide.slot.elytra",
+}
+TOC_HEADING = {
+    "■ 武器": "overlimit.guide.toc.weapons",
+    "■ 防具": "overlimit.guide.toc.armor",
+    "■ ツール": "overlimit.guide.toc.tools",
+    "■ エリトラ": "overlimit.guide.toc.elytra",
+}
+BACK_KEY = {
+    "toc_weapons": "overlimit.guide.link.back_weapons",
+    "toc_gear": "overlimit.guide.link.back_armor",
+}
+NOTE_KEY = {
+    "soul_taker": "overlimit.guide.note.soul_taker",
+    "gluttony": "overlimit.guide.note.gluttony",
+    "hyper_dig": "overlimit.guide.note.hyper_dig",
+    "smelting": "overlimit.guide.note.smelting",
+}
 
-def join_lines(lines: list[str] | None) -> str:
-    return "\n".join(lines or [])
+
+def t(key: str, extra: list[dict] | None = None, **kwargs) -> dict:
+    comp: dict = {"translate": key, **kwargs}
+    if extra:
+        comp["extra"] = extra
+    return comp
 
 
-def link_component(
-    label: str,
+def link_translate(
+    key: str,
     page: int,
     *,
-    hover: str | None = None,
+    hover_key: str | None = None,
     color: str = "dark_aqua",
-    suffix: str = "",
+    extra: list[dict] | None = None,
 ) -> dict:
     comp: dict = {
-        "text": f"{label}{suffix}",
+        "translate": key,
         "color": color,
         "underlined": True,
         "click_event": {"action": "change_page", "page": page},
     }
-    if hover:
-        comp["hover_event"] = {"action": "show_text", "value": hover}
+    if extra:
+        comp["extra"] = extra
+    if hover_key:
+        comp["hover_event"] = {"action": "show_text", "value": {"translate": hover_key}}
     return comp
 
 
 def count_lines(parts: list[dict]) -> int:
-    body = "".join(str(p.get("text", "")) for p in parts)
+    chunks: list[str] = []
+
+    def collect(node: object) -> None:
+        if isinstance(node, dict):
+            if "translate" in node:
+                chunks.append(STRINGS[node["translate"]][0])
+            if "text" in node:
+                chunks.append(str(node["text"]))
+            for extra in node.get("extra") or []:
+                collect(extra)
+        elif isinstance(node, list):
+            for child in node:
+                collect(child)
+
+    collect(parts)
+    body = "".join(chunks)
     if not body:
         return 0
     lines = body.split("\n")
@@ -47,75 +106,61 @@ def count_lines(parts: list[dict]) -> int:
     return len(lines)
 
 
-def page_name(page: dict) -> str:
-    return page.get("name") or page.get("title") or page["id"]
+def nl(suffix: str) -> list[dict] | None:
+    if not suffix:
+        return None
+    return [{"text": suffix}]
 
 
 def build_cover(page: dict, index: dict) -> list[dict]:
-    sub = page.get("subheading") or []
-    if isinstance(sub, str):
-        sub_text = sub
-    else:
-        sub_text = "\n".join(sub)
     parts: list[dict] = [
-        {"text": f"{page['heading']}\n\n", "color": "gold", "bold": True},
-        {"text": f"{sub_text}\n\n", "color": "dark_red", "bold": True},
+        t("overlimit.guide.cover.heading", color="gold", bold=True),
+        t("overlimit.guide.cover.subheading", color="dark_red", bold=True),
+        t("overlimit.guide.cover.body"),
+        link_translate(
+            "overlimit.guide.link.next",
+            index[page["next"]["id"]],
+            hover_key="overlimit.guide.link.next.hover",
+        ),
     ]
-    body = join_lines(page.get("body"))
-    if body:
-        parts.append({"text": f"{body}\n\n"})
-    links = page.get("links") or []
-    if not links and page.get("next"):
-        links = [page["next"]]
-    for i, link in enumerate(links):
-        suffix = "\n" if i < len(links) - 1 else ""
-        parts.append(
-            link_component(
-                link["label"],
-                index[link["id"]],
-                hover=link.get("hover"),
-                color=link.get("color", "dark_aqua"),
-                suffix=suffix,
-            )
-        )
     return parts
 
 
 def build_text(page: dict, index: dict) -> list[dict]:
-    color = page.get("title_color", "dark_red")
     parts: list[dict] = [
-        {"text": f"{page['title']}\n\n", "color": color, "bold": True},
+        t("overlimit.guide.notes.title", color=page.get("title_color", "dark_red"), bold=True),
+        t("overlimit.guide.notes.body"),
+        link_translate(
+            "overlimit.guide.link.toc_weapons",
+            index["toc_weapons"],
+            hover_key="overlimit.guide.link.toc_weapons.hover",
+            extra=nl("\n"),
+        ),
+        link_translate(
+            "overlimit.guide.link.toc_gear",
+            index["toc_gear"],
+            hover_key="overlimit.guide.link.toc_gear.hover",
+        ),
     ]
-    body = join_lines(page.get("body"))
-    if body:
-        parts.append({"text": f"{body}\n\n"})
-    links = page.get("links") or []
-    for i, link in enumerate(links):
-        suffix = "\n" if i < len(links) - 1 else ""
-        parts.append(
-            link_component(
-                link["label"],
-                index[link["id"]],
-                hover=link.get("hover"),
-                color=link.get("color", "dark_aqua"),
-                suffix=suffix,
-            )
-        )
     return parts
+
+
+def enchant_name_link(entry_id: str, page: int, color: str, suffix: str) -> dict:
+    return {
+        "translate": f"enchantment.overlimit.{entry_id}",
+        "color": color,
+        "underlined": True,
+        "click_event": {"action": "change_page", "page": page},
+        "extra": [{"text": suffix}],
+    }
 
 
 def build_toc(page: dict, pages_by_id: dict, index: dict) -> list[dict]:
     parts: list[dict] = []
     sections = page.get("sections") or []
     for s_i, section in enumerate(sections):
-        heading_nl = "\n\n" if s_i == 0 and len(sections) == 1 else "\n"
-        parts.append(
-            {
-                "text": f"{section['heading']}{heading_nl}",
-                "color": "dark_red",
-                "bold": True,
-            }
-        )
+        heading_key = TOC_HEADING[section["heading"]]
+        parts.append(t(heading_key, color="dark_red", bold=True))
         entries = section.get("entries") or []
         last_section = s_i == len(sections) - 1
         for e_i, entry_id in enumerate(entries):
@@ -126,20 +171,19 @@ def build_toc(page: dict, pages_by_id: dict, index: dict) -> list[dict]:
             if last_section and last_entry and not page.get("footer"):
                 suffix = ""
             parts.append(
-                link_component(
-                    page_name(target),
+                enchant_name_link(
+                    entry_id,
                     index[entry_id],
-                    color=target.get("toc_color", "dark_aqua"),
-                    suffix=suffix,
+                    target.get("toc_color", "dark_aqua"),
+                    suffix,
                 )
             )
     footer = page.get("footer")
     if footer:
         parts.append(
-            link_component(
-                footer["label"],
+            link_translate(
+                "overlimit.guide.link.toc_gear_short",
                 index[footer["id"]],
-                hover=footer.get("hover"),
                 color=footer.get("color", "dark_gray"),
             )
         )
@@ -147,26 +191,26 @@ def build_toc(page: dict, pages_by_id: dict, index: dict) -> list[dict]:
 
 
 def build_entry(page: dict, index: dict) -> list[dict]:
-    parts: list[dict] = [
-        {
-            "text": f"{page['name']}\n",
-            "color": page.get("title_color", "dark_red"),
-            "bold": True,
-        },
-        {"text": f"{page['slot']}\n\n", "color": "dark_gray"},
-        {"text": f"{join_lines(page.get('body'))}\n\n"},
-    ]
-    note = page.get("note")
-    if note:
-        parts.append({"text": f"{note}\n\n", "color": "dark_gray"})
+    pid = page["id"]
     back = page["back"]
-    parts.append(
-        link_component(
-            back["label"],
-            index[back["id"]],
-            hover=back.get("hover"),
-        )
-    )
+    back_key = BACK_KEY[back["id"]]
+    if pid in ("hyper_dig", "smelting"):
+        back_key = "overlimit.guide.link.back_tools"
+    if pid == "wind_blessing":
+        back_key = "overlimit.guide.link.back_elytra"
+    parts: list[dict] = [
+        t(
+            f"enchantment.overlimit.{pid}",
+            extra=[{"text": "\n"}],
+            color=page.get("title_color", "dark_red"),
+            bold=True,
+        ),
+        t(SLOT_KEY[pid], color="dark_gray"),
+        t(f"overlimit.guide.entry.{pid}"),
+    ]
+    if pid in NOTE_KEY:
+        parts.append(t(NOTE_KEY[pid], color="dark_gray"))
+    parts.append(link_translate(back_key, index[back["id"]]))
     return parts
 
 
@@ -189,7 +233,7 @@ def main() -> int:
 
     pages_by_id = {p["id"]: p for p in pages}
     index = {p["id"]: n for n, p in enumerate(pages, start=1)}
-    title = src["item"]["title"]
+    title = "OverLimit"
     if len(title) > TITLE_MAX:
         print(f"item.title is {len(title)} chars (max {TITLE_MAX})", file=sys.stderr)
         return 1
@@ -228,9 +272,12 @@ def main() -> int:
                                 "function": "minecraft:set_components",
                                 "components": {
                                     "minecraft:enchantment_glint_override": True,
+                                    "minecraft:item_name": {
+                                        "translate": "overlimit.guide.item.name",
+                                    },
                                     "minecraft:lore": [
                                         {
-                                            "text": src["item"]["lore"],
+                                            "translate": "overlimit.guide.item.lore",
                                             "color": "gray",
                                             "italic": False,
                                         }

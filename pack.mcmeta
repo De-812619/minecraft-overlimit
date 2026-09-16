@@ -1,6 +1,8 @@
 {
   "pack": {
-    "description": "オーバーリミット戦利品 + WARNING / DANGER / CRISIS Mob",
+    "description": {
+      "translate": "overlimit.pack.datapack"
+    },
     "min_format": [107, 1],
     "max_format": [107, 1]
   }

@@ -2,4 +2,4 @@
 execute if score #bm_active overlimit.const matches 1 run return run function overlimit:blood_moon/end_victory
 function overlimit:reward/give_xp
 execute at @s run function overlimit:blood_moon/place_reward
-tellraw @s {"text":"[overlimit] ブラッドムーンは未発生。報酬だけ足元に出した（脅威は変わらない）","color":"gold"}
+tellraw @s {"translate": "overlimit.cmd.bm_force_reward","color":"gold"}

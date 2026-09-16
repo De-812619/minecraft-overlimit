@@ -12,14 +12,14 @@
     "count": 2,
     "components": {
       "minecraft:item_name": {
-        "text": "不死鳥の護符",
-        "color": "gold"
+        "color": "gold",
+        "translate": "overlimit.item.phoenix_amulet"
       },
       "minecraft:lore": [
         {
-          "text": "致死ダメージを1回防ぎ、スタックが1減る。最大16まで重ねられる",
           "color": "gray",
-          "italic": false
+          "italic": false,
+          "translate": "overlimit.item.phoenix_amulet.lore"
         }
       ],
       "minecraft:rarity": "rare",

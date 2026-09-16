@@ -1,7 +1,7 @@
 {
   "anvil_cost": 1,
   "description": {
-    "text": "精錬"
+    "translate": "enchantment.overlimit.smelting"
   },
   "effects": {},
   "exclusive_set": "#overlimit:exclusive_set/smelting_tools",

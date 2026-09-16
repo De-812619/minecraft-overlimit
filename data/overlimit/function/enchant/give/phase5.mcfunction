@@ -4,4 +4,4 @@ give @s minecraft:cooked_beef 16
 give @s minecraft:bread 16
 give @s minecraft:apple 16
 give @s minecraft:golden_apple 4
-tellraw @s [{"text":"[overlimit] ","color":"gold"},{"text":"Phase5 テスト装備を付与しました（ミダスの食卓ヘルメット／食料）","color":"gray"}]
+tellraw @s [{"translate": "overlimit.cmd.prefix","color":"gold"},{"translate": "overlimit.cmd.gave_phase5","color":"gray"}]

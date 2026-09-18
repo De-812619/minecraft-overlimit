@@ -1,15 +1,9 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_transmute",
   "category": "equipment",
-  "key": {
-    "B": "minecraft:bow",
-    "G": "minecraft:gold_block"
-  },
-  "pattern": [
-    "GGG",
-    "GBG",
-    "GGG"
-  ],
+  "input": "minecraft:bow",
+  "material": "minecraft:gold_block",
+  "material_count": 8,
   "result": {
     "id": "minecraft:bow",
     "count": 1,

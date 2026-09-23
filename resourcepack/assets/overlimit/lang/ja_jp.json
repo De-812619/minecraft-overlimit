@@ -126,6 +126,7 @@
   "overlimit.item.phoenix_amulet.lore": "致死ダメージを1回防ぎ、スタックが1減る。最大16まで重ねられる",
   "overlimit.item.mini_golem": "ミニゴーレム",
   "overlimit.item.mini_golem.lore": "ブロックに使うとミニゴーレムを召喚する。大きさは0.7倍、体力は2.5倍",
+  "overlimit.item.mini_golem.lore.2": "近くにプレイヤーがいないか、戦闘が終わると消滅する。プレイヤーは殴らない",
   "overlimit.item.golden_bow": "黄金弓",
   "overlimit.item.golden_bow.lore.1": "矢の速度とダメージは弓の2倍。命中した相手は光の矢と同じく発光する",
   "overlimit.item.golden_bow.lore.2": "耐久は弓の2倍。金ブロックで修理できる",

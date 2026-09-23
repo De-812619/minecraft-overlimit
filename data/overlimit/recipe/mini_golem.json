@@ -22,6 +22,11 @@
           "color": "gray",
           "italic": false,
           "translate": "overlimit.item.mini_golem.lore"
+        },
+        {
+          "color": "gray",
+          "italic": false,
+          "translate": "overlimit.item.mini_golem.lore.2"
         }
       ],
       "minecraft:rarity": "rare",

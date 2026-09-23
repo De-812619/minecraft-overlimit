@@ -9,6 +9,7 @@ scoreboard objectives add overlimit.cd.sky dummy
 scoreboard objectives add overlimit.bind.timer dummy
 scoreboard objectives add overlimit.summon.life dummy
 scoreboard objectives add overlimit.golem_hp dummy
+scoreboard objectives add overlimit.golem_idle dummy
 scoreboard objectives add overlimit.ul.sw_cd dummy
 scoreboard objectives add overlimit.ul.used minecraft.used:minecraft.netherite_sword
 scoreboard objectives add overlimit.ul.axe_used minecraft.used:minecraft.netherite_axe

@@ -126,6 +126,7 @@
   "overlimit.item.phoenix_amulet.lore": "Blocks one lethal hit and loses 1 stack. Stacks up to 16",
   "overlimit.item.mini_golem": "Mini Golem",
   "overlimit.item.mini_golem.lore": "Use on a block to summon a Mini Golem. Size 0.7×, health 2.5×",
+  "overlimit.item.mini_golem.lore.2": "Despawns if no player is nearby or combat ends. Players cannot hurt it",
   "overlimit.item.golden_bow": "Golden Bow",
   "overlimit.item.golden_bow.lore.1": "Arrows have 2× bow speed and damage. Hits glow like Spectral Arrows",
   "overlimit.item.golden_bow.lore.2": "Durability is 2× a bow. Repair with gold blocks",

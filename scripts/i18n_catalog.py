@@ -149,6 +149,7 @@ def _fill() -> None:
     add("overlimit.item.phoenix_amulet.lore", "致死ダメージを1回防ぎ、スタックが1減る。最大16まで重ねられる", "Blocks one lethal hit and loses 1 stack. Stacks up to 16")
     add("overlimit.item.mini_golem", "ミニゴーレム", "Mini Golem")
     add("overlimit.item.mini_golem.lore", "ブロックに使うとミニゴーレムを召喚する。大きさは0.7倍、体力は2.5倍", "Use on a block to summon a Mini Golem. Size 0.7×, health 2.5×")
+    add("overlimit.item.mini_golem.lore.2", "近くにプレイヤーがいないか、戦闘が終わると消滅する。プレイヤーは殴らない", "Despawns if no player is nearby or combat ends. Players cannot hurt it")
     add("overlimit.item.golden_bow", "黄金弓", "Golden Bow")
     add("overlimit.item.golden_bow.lore.1", "矢の速度とダメージは弓の2倍。命中した相手は光の矢と同じく発光する", "Arrows have 2× bow speed and damage. Hits glow like Spectral Arrows")
     add("overlimit.item.golden_bow.lore.2", "耐久は弓の2倍。金ブロックで修理できる", "Durability is 2× a bow. Repair with gold blocks")

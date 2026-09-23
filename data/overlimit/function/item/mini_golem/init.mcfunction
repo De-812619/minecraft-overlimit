@@ -10,5 +10,6 @@ data modify entity @s PersistenceRequired set value 1b
 data modify entity @s CustomName set value {"translate": "overlimit.item.mini_golem"}
 data modify entity @s CustomNameVisible set value 0b
 data modify entity @s DeathLootTable set value "minecraft:empty"
+scoreboard players set @s overlimit.golem_idle 0
 playsound minecraft:entity.iron_golem.repair neutral @a ~ ~ ~ 1 1.2
 particle minecraft:cloud ~ ~1 ~ 0.3 0.4 0.3 0.02 12

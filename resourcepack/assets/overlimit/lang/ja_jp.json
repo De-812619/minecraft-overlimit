@@ -176,6 +176,7 @@
   "overlimit.cmd.gave_golem": "ミニゴーレムを付与しました",
   "overlimit.cmd.gave_bow": "黄金弓を付与しました",
   "overlimit.cmd.gave_watch": "帰還の懐中時計を付与しました",
+  "overlimit.cmd.i18n_convert": "カスタムアイテムの名前を現行形式に揃えた（インベントリ・エンダーチェスト・地上のドロップ）。チェスト内は一度手元に出してから再実行。",
   "overlimit.cmd.gave_ul_sword": "ULTD（剣）を付与しました",
   "overlimit.cmd.gave_ul_axe": "ULTD（斧）を付与しました",
   "overlimit.cmd.gave_ul_spear": "ULTD（槍）を付与しました",

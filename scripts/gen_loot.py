@@ -519,12 +519,15 @@ def build_blood_moon_book() -> dict:
 
 def recall_watch_components() -> dict:
     return {
-        "minecraft:item_name": {"text": "帰還の懐中時計", "color": "gold"},
+        "minecraft:item_name": {
+            "color": "gold",
+            "translate": "overlimit.item.recall_watch",
+        },
         "minecraft:lore": [
             {
-                "text": "使用すると1つ消費し、リスポーン地点へテレポートする",
                 "color": "gray",
                 "italic": False,
+                "translate": "overlimit.item.recall_watch.lore",
             }
         ],
         "minecraft:rarity": "rare",
@@ -788,11 +791,35 @@ def build_bonus_tool() -> dict:
     return _bonus_gear_table(_bonus_gear_entries(TOOL_KINDS))
 
 
-def build_reforge_gear() -> dict:
-    """再鍛出力。本・時計なし。素材付きはダイヤ／ネザライトのみ（鉄なし）。弓などは従来どおり。"""
+def build_reforge_gear_base() -> dict:
+    """再鍛の通常出力。本・時計なし。素材付きはダイヤ／ネザライトのみ（鉄なし）。弓などは従来どおり。"""
     return _bonus_gear_table(
         _bonus_gear_entries(materials=frozenset({"diamond", "netherite"}))
     )
+
+
+def build_reforge_gear() -> dict:
+    """再鍛出力。1999:1 で通常装備、当たると UNLIMITED 武器か防具（各プール均等）＝ 0.05%。"""
+    return {
+        "type": "minecraft:chest",
+        "pools": [
+            {
+                "rolls": 1.0,
+                "entries": [
+                    {
+                        "type": "minecraft:loot_table",
+                        "value": "overlimit:reforge_gear_base",
+                        "weight": 1999,
+                    },
+                    {
+                        "type": "minecraft:loot_table",
+                        "value": "overlimit:unlimited_series_any",
+                        "weight": 1,
+                    },
+                ],
+            }
+        ],
+    }
 
 
 def _entry_refs_inject(entry: dict) -> bool:
@@ -914,6 +941,7 @@ def main() -> None:
 
     write_json(ROOT / "data/overlimit/loot_table/bonus_gear.json", build_bonus_gear())
     write_json(ROOT / "data/overlimit/loot_table/bonus_gear_no_book.json", build_bonus_gear_no_book())
+    write_json(ROOT / "data/overlimit/loot_table/reforge_gear_base.json", build_reforge_gear_base())
     write_json(ROOT / "data/overlimit/loot_table/reforge_gear.json", build_reforge_gear())
     write_json(ROOT / "data/overlimit/loot_table/bonus_weapon.json", build_bonus_weapon())
     write_json(ROOT / "data/overlimit/loot_table/bonus_armor.json", build_bonus_armor())

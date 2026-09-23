@@ -176,6 +176,7 @@
   "overlimit.cmd.gave_golem": "Gave a Mini Golem",
   "overlimit.cmd.gave_bow": "Gave a Golden Bow",
   "overlimit.cmd.gave_watch": "Gave a Recall Watch",
+  "overlimit.cmd.i18n_convert": "Updated custom item names to the current format (inventory, ender chest, dropped items). Move chest contents into your inventory and run again.",
   "overlimit.cmd.gave_ul_sword": "Gave ULTD (Sword)",
   "overlimit.cmd.gave_ul_axe": "Gave ULTD (Axe)",
   "overlimit.cmd.gave_ul_spear": "Gave ULTD (Spear)",

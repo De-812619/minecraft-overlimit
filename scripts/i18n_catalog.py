@@ -201,6 +201,7 @@ def _fill() -> None:
     add("overlimit.cmd.gave_golem", "ミニゴーレムを付与しました", "Gave a Mini Golem")
     add("overlimit.cmd.gave_bow", "黄金弓を付与しました", "Gave a Golden Bow")
     add("overlimit.cmd.gave_watch", "帰還の懐中時計を付与しました", "Gave a Recall Watch")
+    add("overlimit.cmd.i18n_convert", "カスタムアイテムの名前を現行形式に揃えた（インベントリ・エンダーチェスト・地上のドロップ）。チェスト内は一度手元に出してから再実行。", "Updated custom item names to the current format (inventory, ender chest, dropped items). Move chest contents into your inventory and run again.")
     add("overlimit.cmd.gave_ul_sword", "ULTD（剣）を付与しました", "Gave ULTD (Sword)")
     add("overlimit.cmd.gave_ul_axe", "ULTD（斧）を付与しました", "Gave ULTD (Axe)")
     add("overlimit.cmd.gave_ul_spear", "ULTD（槍）を付与しました", "Gave ULTD (Spear)")

@@ -1,2 +1,2 @@
-tellraw @s {"text":"ネザーオーバーフロー発生中はブラッドムーンを開始できない。凶兆のトーテムは消費されなかった。","color":"gray"}
+tellraw @s {"translate": "overlimit.msg.omen_totem.fail_overflow","color":"gray"}
 function overlimit:item/bm_totem/restore_later

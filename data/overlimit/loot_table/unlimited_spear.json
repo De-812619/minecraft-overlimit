@@ -12,19 +12,19 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "text": "ULTD（槍）",
-                  "color": "light_purple"
+                  "color": "light_purple",
+                  "translate": "overlimit.item.ul.spear"
                 },
                 "minecraft:lore": [
                   {
-                    "text": "UNLIMITEDシリーズ",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "translate": "overlimit.item.ul.series"
                   },
                   {
-                    "text": "攻撃した相手を感電させる",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "translate": "overlimit.item.ul.spear.lore"
                   }
                 ],
                 "minecraft:rarity": "epic",

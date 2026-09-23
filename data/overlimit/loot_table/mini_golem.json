@@ -12,14 +12,19 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "text": "ミニゴーレム",
-                  "color": "white"
+                  "color": "white",
+                  "translate": "overlimit.item.mini_golem"
                 },
                 "minecraft:lore": [
                   {
-                    "text": "ブロックに使うとミニゴーレムを召喚する。大きさは0.7倍、体力は2.5倍",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "translate": "overlimit.item.mini_golem.lore"
+                  },
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "translate": "overlimit.item.mini_golem.lore.2"
                   }
                 ],
                 "minecraft:rarity": "rare",
@@ -38,7 +43,7 @@
                   "Team": "overlimit",
                   "Health": 250.0,
                   "CustomName": {
-                    "text": "ミニゴーレム"
+                    "translate": "overlimit.item.mini_golem"
                   },
                   "CustomNameVisible": false,
                   "DeathLootTable": "minecraft:empty",

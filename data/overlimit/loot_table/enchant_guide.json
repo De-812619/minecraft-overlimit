@@ -12,15 +12,18 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:enchantment_glint_override": true,
+                "minecraft:item_name": {
+                  "translate": "overlimit.guide.item.name"
+                },
                 "minecraft:lore": [
                   {
-                    "text": "OverLimitエンチャントの効果一覧",
+                    "translate": "overlimit.guide.item.lore",
                     "color": "gray",
                     "italic": false
                   }
                 ],
                 "minecraft:written_book_content": {
-                  "title": "OverLimitエンチャント図鑑",
+                  "title": "OverLimit",
                   "author": "overlimit",
                   "generation": 0,
                   "resolved": true,
@@ -28,20 +31,20 @@
                     {
                       "raw": [
                         {
-                          "text": "オーバーリミット\n\n",
+                          "translate": "overlimit.guide.cover.heading",
                           "color": "gold",
                           "bold": true
                         },
                         {
-                          "text": "OverLimit\nエンチャント図鑑\n\n",
+                          "translate": "overlimit.guide.cover.subheading",
                           "color": "dark_red",
                           "bold": true
                         },
                         {
-                          "text": "装備や本に付いた\n効果の説明です。\n\n水色の名前を押すと\nそのページへ移動します。\n本と羽ペンで複製できます。\n\n"
+                          "translate": "overlimit.guide.cover.body"
                         },
                         {
-                          "text": "次のページへ »",
+                          "translate": "overlimit.guide.link.next",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
@@ -50,7 +53,9 @@
                           },
                           "hover_event": {
                             "action": "show_text",
-                            "value": "共通の注意へ"
+                            "value": {
+                              "translate": "overlimit.guide.link.next.hover"
+                            }
                           }
                         }
                       ]
@@ -58,28 +63,35 @@
                     {
                       "raw": [
                         {
-                          "text": "注意\n\n",
+                          "translate": "overlimit.guide.notes.title",
                           "color": "dark_red",
                           "bold": true
                         },
                         {
-                          "text": "・エンチャント台/司書には出ない\n\n"
+                          "translate": "overlimit.guide.notes.body"
                         },
                         {
-                          "text": "武器の目次 »\n",
+                          "translate": "overlimit.guide.link.toc_weapons",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
                             "page": 3
                           },
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ],
                           "hover_event": {
                             "action": "show_text",
-                            "value": "武器の目次へ"
+                            "value": {
+                              "translate": "overlimit.guide.link.toc_weapons.hover"
+                            }
                           }
                         },
                         {
-                          "text": "防具・ツールの目次 »",
+                          "translate": "overlimit.guide.link.toc_gear",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
@@ -88,7 +100,9 @@
                           },
                           "hover_event": {
                             "action": "show_text",
-                            "value": "防具・ツールの目次へ"
+                            "value": {
+                              "translate": "overlimit.guide.link.toc_gear.hover"
+                            }
                           }
                         }
                       ]
@@ -96,93 +110,138 @@
                     {
                       "raw": [
                         {
-                          "text": "■ 武器\n\n",
+                          "translate": "overlimit.guide.toc.weapons",
                           "color": "dark_red",
                           "bold": true
                         },
                         {
-                          "text": "アポカリプス\n",
+                          "translate": "enchantment.overlimit.apocalypse",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
                             "page": 5
-                          }
+                          },
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "ソウルテイカー\n",
+                          "translate": "enchantment.overlimit.soul_taker",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
                             "page": 6
-                          }
+                          },
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "ヴォイドブレイク\n",
+                          "translate": "enchantment.overlimit.void_break",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
                             "page": 7
-                          }
+                          },
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "超重力\n",
+                          "translate": "enchantment.overlimit.hyper_gravity",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
                             "page": 8
-                          }
+                          },
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "サモン（狼）\n",
+                          "translate": "enchantment.overlimit.summon_wolf",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
                             "page": 9
-                          }
+                          },
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "暴食\n",
+                          "translate": "enchantment.overlimit.gluttony",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
                             "page": 10
-                          }
+                          },
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "ネクロマンシー\n",
+                          "translate": "enchantment.overlimit.necromancy",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
                             "page": 11
-                          }
+                          },
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "インパクト\n",
+                          "translate": "enchantment.overlimit.impact",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
                             "page": 12
-                          }
+                          },
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "チェインバインド\n\n",
+                          "translate": "enchantment.overlimit.chain_bind",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
                             "page": 13
-                          }
+                          },
+                          "extra": [
+                            {
+                              "text": "\n\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "防具・ツール »",
+                          "translate": "overlimit.guide.link.toc_gear_short",
                           "color": "dark_gray",
                           "underlined": true,
                           "click_event": {
@@ -195,110 +254,155 @@
                     {
                       "raw": [
                         {
-                          "text": "■ 防具\n",
+                          "translate": "overlimit.guide.toc.armor",
                           "color": "dark_red",
                           "bold": true
                         },
                         {
-                          "text": "絶対領域\n",
+                          "translate": "enchantment.overlimit.absolute_field",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
                             "page": 14
-                          }
+                          },
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "千里眼\n",
+                          "translate": "enchantment.overlimit.clairvoyance",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
                             "page": 15
-                          }
+                          },
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "スカイウォーク\n",
+                          "translate": "enchantment.overlimit.sky_walk",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
                             "page": 16
-                          }
+                          },
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "猫足\n",
+                          "translate": "enchantment.overlimit.cat_foot",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
                             "page": 17
-                          }
+                          },
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "ミダスの食卓\n",
+                          "translate": "enchantment.overlimit.midas_table",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
                             "page": 18
-                          }
+                          },
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "■ ツール\n",
+                          "translate": "overlimit.guide.toc.tools",
                           "color": "dark_red",
                           "bold": true
                         },
                         {
-                          "text": "ハイパーディグ\n",
+                          "translate": "enchantment.overlimit.hyper_dig",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
                             "page": 19
-                          }
+                          },
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "精錬\n",
+                          "translate": "enchantment.overlimit.smelting",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
                             "page": 20
-                          }
+                          },
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "■ エリトラ\n",
+                          "translate": "overlimit.guide.toc.elytra",
                           "color": "dark_red",
                           "bold": true
                         },
                         {
-                          "text": "風の加護",
+                          "translate": "enchantment.overlimit.wind_blessing",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
                             "action": "change_page",
                             "page": 21
-                          }
+                          },
+                          "extra": [
+                            {
+                              "text": ""
+                            }
+                          ]
                         }
                       ]
                     },
                     {
                       "raw": [
                         {
-                          "text": "アポカリプス\n",
+                          "translate": "enchantment.overlimit.apocalypse",
                           "color": "dark_red",
-                          "bold": true
+                          "bold": true,
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "付与：剣・斧・槍\n\n",
+                          "translate": "overlimit.guide.slot.melee",
                           "color": "dark_gray"
                         },
                         {
-                          "text": "攻撃すると周囲の敵が\n炎上しノックバック\n\n"
+                          "translate": "overlimit.guide.entry.apocalypse"
                         },
                         {
-                          "text": "« 武器の目次",
+                          "translate": "overlimit.guide.link.back_weapons",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
@@ -311,23 +415,28 @@
                     {
                       "raw": [
                         {
-                          "text": "ソウルテイカー\n",
+                          "translate": "enchantment.overlimit.soul_taker",
                           "color": "dark_red",
-                          "bold": true
+                          "bold": true,
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "付与：剣・斧・槍\n\n",
+                          "translate": "overlimit.guide.slot.melee",
                           "color": "dark_gray"
                         },
                         {
-                          "text": "倒すとハート3個回復する\n\n"
+                          "translate": "overlimit.guide.entry.soul_taker"
                         },
                         {
-                          "text": "重複不可: 暴食\n\n",
+                          "translate": "overlimit.guide.note.soul_taker",
                           "color": "dark_gray"
                         },
                         {
-                          "text": "« 武器の目次",
+                          "translate": "overlimit.guide.link.back_weapons",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
@@ -340,19 +449,24 @@
                     {
                       "raw": [
                         {
-                          "text": "ヴォイドブレイク\n",
+                          "translate": "enchantment.overlimit.void_break",
                           "color": "dark_red",
-                          "bold": true
+                          "bold": true,
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "付与：剣・斧・槍\n\n",
+                          "translate": "overlimit.guide.slot.melee",
                           "color": "dark_gray"
                         },
                         {
-                          "text": "防具によるダメージ軽減を無視して攻撃する\n\n"
+                          "translate": "overlimit.guide.entry.void_break"
                         },
                         {
-                          "text": "« 武器の目次",
+                          "translate": "overlimit.guide.link.back_weapons",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
@@ -365,19 +479,24 @@
                     {
                       "raw": [
                         {
-                          "text": "超重力\n",
+                          "translate": "enchantment.overlimit.hyper_gravity",
                           "color": "dark_red",
-                          "bold": true
+                          "bold": true,
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "付与：剣・斧・槍\n\n",
+                          "translate": "overlimit.guide.slot.melee",
                           "color": "dark_gray"
                         },
                         {
-                          "text": "攻撃対象を中心に半径3の敵をその場で3秒拘束\n※ダメージなし\nCD：6秒\n\n"
+                          "translate": "overlimit.guide.entry.hyper_gravity"
                         },
                         {
-                          "text": "« 武器の目次",
+                          "translate": "overlimit.guide.link.back_weapons",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
@@ -390,19 +509,24 @@
                     {
                       "raw": [
                         {
-                          "text": "サモン（狼）\n",
+                          "translate": "enchantment.overlimit.summon_wolf",
                           "color": "dark_red",
-                          "bold": true
+                          "bold": true,
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "付与：弓・クロスボウ\n\n",
+                          "translate": "overlimit.guide.slot.bow",
                           "color": "dark_gray"
                         },
                         {
-                          "text": "矢が当たると狼を召喚する。\n10秒で消滅し、同時3体まで召喚できる。\n\n"
+                          "translate": "overlimit.guide.entry.summon_wolf"
                         },
                         {
-                          "text": "« 武器の目次",
+                          "translate": "overlimit.guide.link.back_weapons",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
@@ -415,23 +539,28 @@
                     {
                       "raw": [
                         {
-                          "text": "暴食\n",
+                          "translate": "enchantment.overlimit.gluttony",
                           "color": "dark_red",
-                          "bold": true
+                          "bold": true,
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "付与：剣・斧・槍\n\n",
+                          "translate": "overlimit.guide.slot.melee",
                           "color": "dark_gray"
                         },
                         {
-                          "text": "敵を倒すと満腹度を4回復\n（動物や中立でも発動）\n\n"
+                          "translate": "overlimit.guide.entry.gluttony"
                         },
                         {
-                          "text": "重複不可: ソウルテイカー\n\n",
+                          "translate": "overlimit.guide.note.gluttony",
                           "color": "dark_gray"
                         },
                         {
-                          "text": "« 武器の目次",
+                          "translate": "overlimit.guide.link.back_weapons",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
@@ -444,19 +573,24 @@
                     {
                       "raw": [
                         {
-                          "text": "ネクロマンシー\n",
+                          "translate": "enchantment.overlimit.necromancy",
                           "color": "dark_red",
-                          "bold": true
+                          "bold": true,
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "付与：剣\n\n",
+                          "translate": "overlimit.guide.slot.sword",
                           "color": "dark_gray"
                         },
                         {
-                          "text": "名前なしの敵を倒すと同種の魂を召喚する。\n10秒で消滅\n\n"
+                          "translate": "overlimit.guide.entry.necromancy"
                         },
                         {
-                          "text": "« 武器の目次",
+                          "translate": "overlimit.guide.link.back_weapons",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
@@ -469,19 +603,24 @@
                     {
                       "raw": [
                         {
-                          "text": "インパクト\n",
+                          "translate": "enchantment.overlimit.impact",
                           "color": "dark_red",
-                          "bold": true
+                          "bold": true,
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "付与：斧\n\n",
+                          "translate": "overlimit.guide.slot.axe",
                           "color": "dark_gray"
                         },
                         {
-                          "text": "殴るとクリーパー相当の爆発\n※地形は壊れない\n※自分は無傷\nCD：10秒\n\n"
+                          "translate": "overlimit.guide.entry.impact"
                         },
                         {
-                          "text": "« 武器の目次",
+                          "translate": "overlimit.guide.link.back_weapons",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
@@ -494,19 +633,24 @@
                     {
                       "raw": [
                         {
-                          "text": "チェインバインド\n",
+                          "translate": "enchantment.overlimit.chain_bind",
                           "color": "dark_red",
-                          "bold": true
+                          "bold": true,
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "付与：弓・クロスボウ\n\n",
+                          "translate": "overlimit.guide.slot.bow",
                           "color": "dark_gray"
                         },
                         {
-                          "text": "敵を倒すと周囲8の敵を3秒間停止する。\n\n"
+                          "translate": "overlimit.guide.entry.chain_bind"
                         },
                         {
-                          "text": "« 武器の目次",
+                          "translate": "overlimit.guide.link.back_weapons",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
@@ -519,19 +663,24 @@
                     {
                       "raw": [
                         {
-                          "text": "絶対領域\n",
+                          "translate": "enchantment.overlimit.absolute_field",
                           "color": "dark_red",
-                          "bold": true
+                          "bold": true,
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "付与：チェストプレート\n\n",
+                          "translate": "overlimit.guide.slot.chest",
                           "color": "dark_gray"
                         },
                         {
-                          "text": "近接被弾時、周囲3の敵を\n強くノックバックする\nCD：5秒\n\n"
+                          "translate": "overlimit.guide.entry.absolute_field"
                         },
                         {
-                          "text": "« 防具の目次",
+                          "translate": "overlimit.guide.link.back_armor",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
@@ -544,19 +693,24 @@
                     {
                       "raw": [
                         {
-                          "text": "千里眼\n",
+                          "translate": "enchantment.overlimit.clairvoyance",
                           "color": "dark_red",
-                          "bold": true
+                          "bold": true,
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "付与：ヘルメット\n\n",
+                          "translate": "overlimit.guide.slot.helm",
                           "color": "dark_gray"
                         },
                         {
-                          "text": "スニーク中半径32の敵対Mobが発光する。\n\n"
+                          "translate": "overlimit.guide.entry.clairvoyance"
                         },
                         {
-                          "text": "« 防具の目次",
+                          "translate": "overlimit.guide.link.back_armor",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
@@ -569,19 +723,24 @@
                     {
                       "raw": [
                         {
-                          "text": "スカイウォーク\n",
+                          "translate": "enchantment.overlimit.sky_walk",
                           "color": "dark_red",
-                          "bold": true
+                          "bold": true,
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "付与：ブーツ\n\n",
+                          "translate": "overlimit.guide.slot.boots",
                           "color": "dark_gray"
                         },
                         {
-                          "text": "空中でもう一度ジャンプできる\n※着地まで落下ダメ無効\n※水中・エリトラ中は不可\nCD：0.5秒\n\n"
+                          "translate": "overlimit.guide.entry.sky_walk"
                         },
                         {
-                          "text": "« 防具の目次",
+                          "translate": "overlimit.guide.link.back_armor",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
@@ -594,19 +753,24 @@
                     {
                       "raw": [
                         {
-                          "text": "猫足\n",
+                          "translate": "enchantment.overlimit.cat_foot",
                           "color": "dark_red",
-                          "bold": true
+                          "bold": true,
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "付与：ブーツ\n\n",
+                          "translate": "overlimit.guide.slot.boots",
                           "color": "dark_gray"
                         },
                         {
-                          "text": "移動速度が1.2倍\n2ブロック跳べる\n近くのクリーパーは非敵対\n\n"
+                          "translate": "overlimit.guide.entry.cat_foot"
                         },
                         {
-                          "text": "« 防具の目次",
+                          "translate": "overlimit.guide.link.back_armor",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
@@ -619,19 +783,24 @@
                     {
                       "raw": [
                         {
-                          "text": "ミダスの食卓\n",
+                          "translate": "enchantment.overlimit.midas_table",
                           "color": "dark_red",
-                          "bold": true
+                          "bold": true,
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "付与：ヘルメット\n\n",
+                          "translate": "overlimit.guide.slot.helm",
                           "color": "dark_gray"
                         },
                         {
-                          "text": "食べると金リンゴと同じ効果を得る\n※満腹は食べたもののまま\n\n"
+                          "translate": "overlimit.guide.entry.midas_table"
                         },
                         {
-                          "text": "« 防具の目次",
+                          "translate": "overlimit.guide.link.back_armor",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
@@ -644,23 +813,28 @@
                     {
                       "raw": [
                         {
-                          "text": "ハイパーディグ\n",
+                          "translate": "enchantment.overlimit.hyper_dig",
                           "color": "dark_red",
-                          "bold": true
+                          "bold": true,
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "付与：ツルハシ\n\n",
+                          "translate": "overlimit.guide.slot.pick",
                           "color": "dark_gray"
                         },
                         {
-                          "text": "掘ったブロック中心に3×3×3も壊れてドロップする\n※岩盤やチェストなどは除外\n\n"
+                          "translate": "overlimit.guide.entry.hyper_dig"
                         },
                         {
-                          "text": "重複不可: 精錬・シルクタッチ・効率強化\n\n",
+                          "translate": "overlimit.guide.note.hyper_dig",
                           "color": "dark_gray"
                         },
                         {
-                          "text": "« ツールの目次",
+                          "translate": "overlimit.guide.link.back_tools",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
@@ -673,23 +847,28 @@
                     {
                       "raw": [
                         {
-                          "text": "精錬\n",
+                          "translate": "enchantment.overlimit.smelting",
                           "color": "dark_red",
-                          "bold": true
+                          "bold": true,
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "付与：ツルハシ\n\n",
+                          "translate": "overlimit.guide.slot.pick",
                           "color": "dark_gray"
                         },
                         {
-                          "text": "鉱石がかまど焼き状態でドロップする\n\n"
+                          "translate": "overlimit.guide.entry.smelting"
                         },
                         {
-                          "text": "重複不可: ハイパーディグ・シルクタッチ\n\n",
+                          "translate": "overlimit.guide.note.smelting",
                           "color": "dark_gray"
                         },
                         {
-                          "text": "« ツールの目次",
+                          "translate": "overlimit.guide.link.back_tools",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {
@@ -702,19 +881,24 @@
                     {
                       "raw": [
                         {
-                          "text": "風の加護\n",
+                          "translate": "enchantment.overlimit.wind_blessing",
                           "color": "dark_red",
-                          "bold": true
+                          "bold": true,
+                          "extra": [
+                            {
+                              "text": "\n"
+                            }
+                          ]
                         },
                         {
-                          "text": "付与：エリトラ\n\n",
+                          "translate": "overlimit.guide.slot.elytra",
                           "color": "dark_gray"
                         },
                         {
-                          "text": "滑空中はほぼ全てのダメージを無効にする\n\n"
+                          "translate": "overlimit.guide.entry.wind_blessing"
                         },
                         {
-                          "text": "« エリトラの目次",
+                          "translate": "overlimit.guide.link.back_elytra",
                           "color": "dark_aqua",
                           "underlined": true,
                           "click_event": {

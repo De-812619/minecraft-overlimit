@@ -12,19 +12,19 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "text": "凶兆のトーテム",
-                  "color": "dark_red"
+                  "color": "dark_red",
+                  "translate": "overlimit.item.bm_totem"
                 },
                 "minecraft:lore": [
                   {
-                    "text": "オーバーワールドまたはブラッドワールドで使うと1つ消費し、",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "translate": "overlimit.item.bm_totem.lore.1"
                   },
                   {
-                    "text": "ブラッドムーンを強制開始する",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "translate": "overlimit.item.bm_totem.lore.2"
                   }
                 ],
                 "minecraft:rarity": "rare",
@@ -52,19 +52,19 @@
                   "count": 1,
                   "components": {
                     "minecraft:item_name": {
-                      "text": "凶兆のトーテム",
-                      "color": "dark_red"
+                      "color": "dark_red",
+                      "translate": "overlimit.item.bm_totem"
                     },
                     "minecraft:lore": [
                       {
-                        "text": "オーバーワールドまたはブラッドワールドで使うと1つ消費し、",
                         "color": "gray",
-                        "italic": false
+                        "italic": false,
+                        "translate": "overlimit.item.bm_totem.lore.1"
                       },
                       {
-                        "text": "ブラッドムーンを強制開始する",
                         "color": "gray",
-                        "italic": false
+                        "italic": false,
+                        "translate": "overlimit.item.bm_totem.lore.2"
                       }
                     ],
                     "minecraft:rarity": "rare",

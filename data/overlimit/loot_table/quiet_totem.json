@@ -12,19 +12,19 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "text": "静寂のトーテム",
-                  "color": "aqua"
+                  "color": "aqua",
+                  "translate": "overlimit.item.quiet_totem"
                 },
                 "minecraft:lore": [
                   {
-                    "text": "使用すると1つ消費し、発生中のブラッドムーン、ネザーオーバーフロー、",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "translate": "overlimit.item.quiet_totem.lore.1"
                   },
                   {
-                    "text": "ネザーレイズ、シティクランプを報酬なしで抑止する",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "translate": "overlimit.item.quiet_totem.lore.2"
                   }
                 ],
                 "minecraft:rarity": "rare",
@@ -52,19 +52,19 @@
                   "count": 1,
                   "components": {
                     "minecraft:item_name": {
-                      "text": "静寂のトーテム",
-                      "color": "aqua"
+                      "color": "aqua",
+                      "translate": "overlimit.item.quiet_totem"
                     },
                     "minecraft:lore": [
                       {
-                        "text": "使用すると1つ消費し、発生中のブラッドムーン、ネザーオーバーフロー、",
                         "color": "gray",
-                        "italic": false
+                        "italic": false,
+                        "translate": "overlimit.item.quiet_totem.lore.1"
                       },
                       {
-                        "text": "ネザーレイズ、シティクランプを報酬なしで抑止する",
                         "color": "gray",
-                        "italic": false
+                        "italic": false,
+                        "translate": "overlimit.item.quiet_totem.lore.2"
                       }
                     ],
                     "minecraft:rarity": "rare",

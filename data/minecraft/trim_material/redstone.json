@@ -5,8 +5,8 @@
     "translate": "trim_material.minecraft.redstone",
     "extra": [
       {
-        "text": " — 部位:スニーク速度+5%  セット:ブロックリーチ+3",
-        "color": "#971607"
+        "color": "#971607",
+        "translate": "overlimit.trim.redstone.extra"
       }
     ]
   }

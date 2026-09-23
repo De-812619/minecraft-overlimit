@@ -14,19 +14,19 @@
     "count": 1,
     "components": {
       "minecraft:item_name": {
-        "text": "再鍛の証",
-        "color": "gold"
+        "color": "gold",
+        "translate": "overlimit.item.reforge_token"
       },
       "minecraft:lore": [
         {
-          "text": "オーバーリミット装備2つとダイヤブロックで、別の装備に打ち直す",
           "color": "gray",
-          "italic": false
+          "italic": false,
+          "translate": "overlimit.item.reforge_token.lore.1"
         },
         {
-          "text": "消滅の呪いが付いていない装備で作ると失敗し、その装備は戻らない",
           "color": "gray",
-          "italic": false
+          "italic": false,
+          "translate": "overlimit.item.reforge_token.lore.2"
         }
       ],
       "minecraft:rarity": "rare",

@@ -1,9 +1,9 @@
 {
   "anvil_cost": 1,
   "description": {
-    "text": "感電",
     "color": "gray",
-    "italic": false
+    "italic": false,
+    "translate": "enchantment.overlimit.ul_spear_shock"
   },
   "effects": {
     "minecraft:post_attack": [

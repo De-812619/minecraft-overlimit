@@ -12,19 +12,19 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
-                  "text": "ULTD（メイス）",
-                  "color": "light_purple"
+                  "color": "light_purple",
+                  "translate": "overlimit.item.ul.mace"
                 },
                 "minecraft:lore": [
                   {
-                    "text": "UNLIMITEDシリーズ",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "translate": "overlimit.item.ul.series"
                   },
                   {
-                    "text": "攻撃レンジ +4。殴った相手を上空へ飛ばす",
                     "color": "gray",
-                    "italic": false
+                    "italic": false,
+                    "translate": "overlimit.item.ul.mace.lore"
                   }
                 ],
                 "minecraft:rarity": "epic",

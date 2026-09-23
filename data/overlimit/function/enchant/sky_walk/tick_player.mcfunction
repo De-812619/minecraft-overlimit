@@ -1,12 +1,12 @@
-# @s = player. Re-jump input → instant hop + optional footing (no land-wait).
-execute store result score #sw overlimit.const run data get entity @s equipment.feet.components."minecraft:enchantments"."overlimit:sky_walk"
-execute unless score #sw overlimit.const matches 1.. run return fail
-
-execute if data entity @s {OnGround:1b} run return run function overlimit:enchant/sky_walk/disarm
+# @s = player（ブーツの minecraft:tick から呼ばれるので装備確認の data get はしない）
+execute if predicate overlimit:on_ground run return run function overlimit:enchant/sky_walk/disarm
 execute if predicate overlimit:in_water run return run function overlimit:enchant/sky_walk/disarm
 execute if predicate overlimit:wearing_elytra run return run function overlimit:enchant/sky_walk/disarm
 
 execute unless score @s overlimit.sky_air matches 1 run return run function overlimit:enchant/sky_walk/arm_air
+
+# datapack tick が止まっても CD が固まらないよう、空中の装備 tick で減らす
+execute if score @s overlimit.cd.sky matches 1.. run scoreboard players remove @s overlimit.cd.sky 1
 
 scoreboard players set #jmp overlimit.const 0
 execute if predicate overlimit:enchant/jump_input run scoreboard players set #jmp overlimit.const 1

@@ -609,3 +609,13 @@ Couldn't parse data file 'overlimit:unlimited_royal_helmet' from 'overlimit:equi
 
 **出所:** 26.2 client.jar の `leather_chestplate_dyed.json` / `equipment/leather.json`。[Recipe](https://minecraft.wiki/w/Recipe_(Java_Edition)) `crafting_dye`、[Equipment](https://minecraft.wiki/w/Equipment) `dyeable`。
 
+---
+
+## アイテム修飾 `reference` と `modify_contents` の component ID
+
+**起きたこと:** `overlimit:i18n_names_deep` が `minecraft:reference` と `component: "minecraft:container"` を使っていた。変換コマンドは tellraw だけ成功し、旧 `text` 個体は新品と重ならなかった。
+
+**正しい書き方:** 対象スロットを `execute if items … custom_data` で絞り、同じルート表で `loot replace` してから個数を戻す。`modify_contents` の component は Wiki どおり `container` / `bundle_contents`（名前空間なし）。`reference` は 26.3 で削除予定。
+
+**出所:** 変換後も新旧がスタックしない報告（2026-09-20）。[Item modifier](https://minecraft.wiki/w/Item_modifier) `modify_contents` / 26.3 の `reference` 削除。
+

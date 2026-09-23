@@ -1,6 +1,8 @@
 {
   "pack": {
-    "description": "オーバーリミット リソースパック（不死鳥の護符・黄金弓・聖王のトーテム・ミニゴーレムなど）",
+    "description": {
+      "translate": "overlimit.pack.resource"
+    },
     "min_format": [88, 0],
     "max_format": [88, 0]
   }

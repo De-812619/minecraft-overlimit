@@ -1,7 +1,7 @@
 {
   "anvil_cost": 1,
   "description": {
-    "text": "ヴォイドブレイク"
+    "translate": "enchantment.overlimit.void_break"
   },
   "effects": {
     "minecraft:armor_effectiveness": [

@@ -1,2 +1,2 @@
 tp @s ~ ~ ~
-tellraw @s {"text":"ブラッドムーンの間は眠れない","color":"red"}
+tellraw @s {"translate": "overlimit.msg.bm.wake","color":"red"}

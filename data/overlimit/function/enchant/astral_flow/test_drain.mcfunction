@@ -4,4 +4,4 @@
 scoreboard players set @s overlimit.astral.on 3
 scoreboard players set @s overlimit.astral.draincd 0
 function overlimit:enchant/astral_flow/do_drain
-tellraw @s {"text":"[astral] test_drain を実行しました（音・満腹を確認）","color":"light_purple"}
+tellraw @s {"translate": "overlimit.cmd.astral_drain","color":"light_purple"}

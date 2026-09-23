@@ -21,8 +21,8 @@
             "can_sleep": "never",
             "can_set_spawn": "always",
             "error_message": {
-              "text": "ブラッドムーンの間は眠れない",
-              "color": "red"
+              "color": "red",
+              "translate": "overlimit.msg.bm.wake"
             }
           }
         }

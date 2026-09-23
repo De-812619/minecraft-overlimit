@@ -1,7 +1,7 @@
 {
   "anvil_cost": 1,
   "description": {
-    "text": "風の加護"
+    "translate": "enchantment.overlimit.wind_blessing"
   },
   "effects": {
     "minecraft:damage_immunity": [

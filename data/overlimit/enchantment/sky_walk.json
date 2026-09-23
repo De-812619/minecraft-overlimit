@@ -1,7 +1,7 @@
 {
   "anvil_cost": 1,
   "description": {
-    "text": "スカイウォーク"
+    "translate": "enchantment.overlimit.sky_walk"
   },
   "effects": {
     "minecraft:tick": [

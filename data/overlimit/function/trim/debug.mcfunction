@@ -7,11 +7,11 @@ function overlimit:trim/debug/counts
 function overlimit:trim/debug/sets
 function overlimit:trim/debug/state
 function overlimit:trim/debug/expect
-tellraw @s {"text":"— 属性合計 —","color":"yellow"}
+tellraw @s {"translate": "overlimit.trim.dbg.attrs","color":"yellow"}
 function overlimit:trim/debug/attrs
-tellraw @s {"text":"— 装飾補正（100倍。未装備は非表示） —","color":"yellow"}
+tellraw @s {"translate": "overlimit.trim.dbg.mods","color":"yellow"}
 function overlimit:trim/debug/mods
 function overlimit:trim/debug/emerald
-tellraw @s {"text":"未実装: ネザライト部位の炎ダメ減 / エメラルド部位のイレイジャー被ダメ減","color":"dark_gray"}
+tellraw @s {"translate": "overlimit.trim.dbg.todo","color":"dark_gray"}
 function overlimit:trim/debug/menu
 tag @s remove overlimit.trim.dbg

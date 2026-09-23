@@ -3,4 +3,4 @@ loot give @s loot overlimit:unlimited_demon_helmet
 loot give @s loot overlimit:unlimited_demon_chestplate
 loot give @s loot overlimit:unlimited_demon_leggings
 loot give @s loot overlimit:unlimited_demon_boots
-tellraw @s [{"text":"[overlimit] ","color":"gold"},{"text":"ULTD（DEMON）防具を付与しました","color":"gray"}]
+tellraw @s [{"translate": "overlimit.cmd.prefix","color":"gold"},{"translate": "overlimit.cmd.gave_ul_demon","color":"gray"}]

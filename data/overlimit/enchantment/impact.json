@@ -1,7 +1,7 @@
 {
   "anvil_cost": 1,
   "description": {
-    "text": "インパクト"
+    "translate": "enchantment.overlimit.impact"
   },
   "effects": {
     "minecraft:post_attack": [

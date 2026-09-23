@@ -15,14 +15,14 @@
     "count": 1,
     "components": {
       "minecraft:item_name": {
-        "text": "聖王のトーテム",
-        "color": "gold"
+        "color": "gold",
+        "translate": "overlimit.item.holy_totem"
       },
       "minecraft:lore": [
         {
-          "text": "使用すると1つ消費し、世界圧を0にリセットする",
           "color": "gray",
-          "italic": false
+          "italic": false,
+          "translate": "overlimit.item.holy_totem.lore"
         }
       ],
       "minecraft:rarity": "epic",
@@ -50,14 +50,14 @@
         "count": 1,
         "components": {
           "minecraft:item_name": {
-            "text": "聖王のトーテム",
-            "color": "gold"
+            "color": "gold",
+            "translate": "overlimit.item.holy_totem"
           },
           "minecraft:lore": [
             {
-              "text": "使用すると1つ消費し、世界圧を0にリセットする",
               "color": "gray",
-              "italic": false
+              "italic": false,
+              "translate": "overlimit.item.holy_totem.lore"
             }
           ],
           "minecraft:rarity": "epic",

@@ -44,6 +44,7 @@ function overlimit:portal/capture_spawn
 scoreboard players set #10 overlimit.const 10
 scoreboard players set #2 overlimit.const 2
 scoreboard players set #3 overlimit.const 3
+scoreboard players set #4 overlimit.const 4
 scoreboard players set #5 overlimit.const 5
 scoreboard players set #8 overlimit.const 8
 scoreboard players set #bw_scale overlimit.const 8
@@ -317,6 +318,7 @@ function overlimit:maintenance/clear_void_origin
 execute as @a run function overlimit:item/migrate_legacy_totem
 execute as @a run function overlimit:item/migrate_legacy_knowledge_book
 
-# Fabric: schedule ループ（#minecraft:tick 非依存）
+# Fabric: #minecraft:tick と schedule の両方。同じ gametime は tick 側で一度だけ通す
 function overlimit:trim/init
+tag @e[scores={overlimit.ul.para=1..}] add overlimit.ul.para
 schedule function overlimit:tick_loop 1t replace

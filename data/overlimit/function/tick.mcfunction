@@ -2,6 +2,8 @@
 execute store result score #tick_now overlimit.const run time query gametime
 execute if score #tick_now overlimit.const = #tick_at overlimit.const run return fail
 scoreboard players operation #tick_at overlimit.const = #tick_now overlimit.const
+# 本体より先に次ティックを予約（連鎖切れで schedule が届かないのを防ぐ）
+schedule function overlimit:tick_loop 1t replace
 scoreboard players set #bm_light_n overlimit.const 0
 
 tag @a remove overlimit.in_bw
@@ -34,9 +36,9 @@ execute as @a[scores={overlimit.cd.impact=1..}] run scoreboard players remove @s
 execute as @a[scores={overlimit.cd.hyper=1..}] at @s run function overlimit:enchant/hyper_gravity/cd_fx
 execute as @a[scores={overlimit.cd.hyper=1}] at @s run playsound minecraft:item.crossbow.loading_end player @s ~ ~ ~ 0.8 1
 execute as @a[scores={overlimit.cd.hyper=1..}] run scoreboard players remove @s overlimit.cd.hyper 1
-execute as @a[scores={overlimit.cd.sky=1..}] run scoreboard players remove @s overlimit.cd.sky 1
-execute as @a[scores={overlimit.sky_air=1}] unless data entity @s equipment.feet.components."minecraft:enchantments"."overlimit:sky_walk" run function overlimit:enchant/sky_walk/disarm
-execute as @a[scores={overlimit.cat_boost=1}] unless data entity @s equipment.feet.components."minecraft:enchantments"."overlimit:cat_foot" run function overlimit:enchant/cat_foot/clear_jump
+# cd.sky は sky_walk/tick_player で減らす（#minecraft:tick 停止時に CD が固まらない）
+execute as @a[scores={overlimit.sky_air=1}] unless predicate overlimit:enchant/wearing_sky_walk run function overlimit:enchant/sky_walk/disarm
+execute as @a[scores={overlimit.cat_boost=1}] unless predicate overlimit:enchant/wearing_cat_foot run function overlimit:enchant/cat_foot/clear_jump
 execute as @a[scores={overlimit.sky_lev=1..}] run function overlimit:enchant/sky_walk/lev_tick
 execute as @a[scores={overlimit.sky_safe=1}] run function overlimit:enchant/sky_walk/safe_tick
 execute as @a[scores={overlimit.sky_foot_delay=1}] at @s unless predicate overlimit:enchant/jump_input unless predicate overlimit:is_sneaking run function overlimit:enchant/sky_walk/place_footing
@@ -51,6 +53,7 @@ execute as @e[type=#overlimit:summon,tag=overlimit.summon,scores={overlimit.summ
 execute as @e[type=minecraft:iron_golem,tag=overlimit.mini_golem,tag=!overlimit.mini_golem_ready] at @s run function overlimit:item/mini_golem/init
 team join overlimit @e[type=minecraft:iron_golem,tag=overlimit.mini_golem,team=!overlimit]
 execute as @e[type=minecraft:iron_golem,tag=overlimit.mini_golem] store result score @s overlimit.golem_hp run data get entity @s Health 10
+
 
 # Hyper gravity field
 execute as @e[type=minecraft:marker,tag=overlimit.hg_field] at @s run function overlimit:enchant/hyper_gravity/field_tick
@@ -87,11 +90,8 @@ execute as @e[type=minecraft:trident,tag=overlimit.ul.tri] at @s run function ov
 execute as @e[type=minecraft:trident,tag=overlimit.ul.tri] at @s run function overlimit:item/unlimited/trident_fx
 execute as @e[type=minecraft:item_display,tag=overlimit.ul.tri_vis] run kill @s
 execute as @e[type=minecraft:marker,tag=overlimit.ul.tri_pin] run kill @s
-execute as @e[scores={overlimit.ul.para=1..}] run function overlimit:item/unlimited/spear_para_tick
+execute as @e[tag=overlimit.ul.para] run function overlimit:item/unlimited/spear_para_tick
 
 # 金床結果がカーソル→インベントリへ移る1tick遅れ用
 execute as @a[scores={overlimit.anvil_cap=1..}] run function overlimit:enchant/anvil_cap/apply
 execute as @a[scores={overlimit.anvil_cap=1..}] run scoreboard players remove @s overlimit.anvil_cap 1
-
-# Fabric: schedule が死んでいたら毎tick張り直す
-schedule function overlimit:tick_loop 1t replace

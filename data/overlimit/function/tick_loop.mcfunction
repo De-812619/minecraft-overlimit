@@ -1,3 +1,3 @@
-# overlimit:tick_loop — Fabric では #minecraft:tick が動かないことがあるため schedule で回す
-function overlimit:tick
+# 先に次ティックを予約する。tick 本体が maxCommandChainLength で切れてもループが死なない。
 schedule function overlimit:tick_loop 1t replace
+function overlimit:tick

@@ -1,0 +1,25 @@
+{
+	"schemaVersion": 1,
+	"id": "overlimit",
+	"version": "${version}",
+	"name": "Over Limit",
+	"description": "Server-side bundle of the over_limit_pack datapack. No new registries.",
+	"authors": [
+		"De-812619"
+	],
+	"contact": {
+		"sources": "https://github.com/De-812619/minecraft-overlimit"
+	},
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dev.de812619.overlimit.OverlimitMod"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

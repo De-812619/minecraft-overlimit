@@ -1,8 +1,4 @@
-# スニーク発動中だけ満腹消費。回復で実害を打ち消す。
-
-# スニーク中フラグ（tick が維持）。非スニーク被弾では何もしない。
-execute unless score @s overlimit.astral.on matches 1.. run return fail
-
+# Java（AstralFlow.java）がスニーク・エンチャントを検証済みで呼び出す。
 execute if score @s overlimit.astral.draincd matches 1.. run return fail
 scoreboard players set @s overlimit.astral.draincd 8
 

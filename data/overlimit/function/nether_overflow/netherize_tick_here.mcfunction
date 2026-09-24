@@ -1,4 +1,2 @@
-function overlimit:nether_overflow/netherize_row
-function overlimit:nether_overflow/netherize_row
-function overlimit:nether_overflow/netherize_row
-function overlimit:nether_overflow/netherize_row
+# 4行の進行は tick 末の Java。ここから列関数を呼ぶと、スコアを進めたあとに同じマスへまとまる。
+return 1

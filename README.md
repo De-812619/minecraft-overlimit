@@ -1,25 +1,26 @@
 # over_limit_pack
 
-Minecraft Java **26.2** 向けデータパックです（Mod不要）。構造物チェストにオーバーリミット装備を足し、強化Mobとワールドイベントを追加します。見た目用のリソースパックがセットです。
+Minecraft Java **26.2** 向け Fabric Mod です。既存データパックを JAR に同梱し、一部の tick とカスタムエンチャントを Java で動かします。見た目用のリソースパックがセットです。
 
 ## 必要環境
 
 - Minecraft Java Edition **26.2**
-- データパックのみで動作します（Fabric / Forge などの Mod は不要）
+- Fabric Loader **0.19.3** と Fabric API（`0.156.0+26.2`）
+- Java **25**
 - 任意: [Dungeons and Taverns](https://modrinth.com/datapack/dungeons-and-taverns) と併用できます
 
 ## 入れ方
 
-1. **データパック** `over_limit_pack.zip` を、ワールドの `datapacks/` に置く
-2. **リソースパック** `over_limit_resources.zip` を、クライアントの `resourcepacks/` に置き、ゲーム内で有効化する
-3. ワールドに入る（または `/reload`）
+1. **Mod** `overlimit-*.jar` を、インスタンスの `mods/` に置く（同じ Mod ID の古い JAR は外す）
+2. **リソースパック** `over_limit_resources.zip`（またはフォルダ）を、クライアントの `resourcepacks/` に置き、ゲーム内で有効化する
+3. ワールドに入る（JAR を入れ直したら再起動）
 
 注意:
 
+- ワールドの `datapacks/` に同じ内容を置かないでください（二重に効きます）
 - **まだ生成されていないチェスト**にだけ新しいルートが効きます。すでに中身が確定したチェストは変わりません
-- フォルダと zip を同時に置かないでください（二重に効きます）
 - Dungeons and Taverns を使う場合は、本パックを **DnT より後**に読み込ませてください
-- GitHub の Source ZIP は一段ネストするため、そのまま `datapacks/` や `resourcepacks/` には置けません。配布 zip を使ってください
+- GitHub の Source ZIP はそのまま `mods/` には置けません。ビルドした JAR を使ってください
 - リソースパックを入れないと、クラフトアイテムの見た目が欠落テクスチャになります
 
 ## 戦利品

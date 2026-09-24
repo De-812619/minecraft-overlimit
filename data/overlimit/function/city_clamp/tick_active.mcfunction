@@ -27,8 +27,8 @@ function overlimit:city_clamp/bossbar_name
 
 scoreboard players operation #cc_amod overlimit.const = #cc_t overlimit.const
 scoreboard players operation #cc_amod overlimit.const %= #20 overlimit.const
-execute if score #cc_amod overlimit.const matches 0 if score #cc_combat overlimit.const matches 1 as @e[tag=overlimit.cc_wave] at @s run function overlimit:city_clamp/anger
-execute if score #cc_amod overlimit.const matches 0 if score #cc_combat overlimit.const matches 1 as @e[tag=overlimit.cc_wave] at @s run function overlimit:city_clamp/glow
+execute if score #cc_amod overlimit.const matches 0 if score #cc_combat overlimit.const matches 1 run overlimit event_mobs cc_anger
+execute if score #cc_amod overlimit.const matches 0 if score #cc_combat overlimit.const matches 1 run overlimit event_mobs cc_glow
 
 execute if score #cc_arrived overlimit.const matches 0 run function overlimit:city_clamp/try_arrive
 execute if score #cc_arrived overlimit.const matches 0 run scoreboard players add #cc_gather_t overlimit.const 1

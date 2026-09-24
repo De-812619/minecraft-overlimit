@@ -1,4 +1,5 @@
 # 水平半径8（ユークリッド）・Y -1..+2。近いマスから。光源があれば return 1。
+# 実行経路は overlimit near_light。この並びを変えたら Java の読み取りとずれる。
 # 旧: 半径16・Y -2..+3 の約4784コマンド。野外ミスが数回で maxCommandChainLength 65536 を超えた。
 execute if block ~0 ~0 ~0 #overlimit:spawn_lights run return 1
 execute if block ~0 ~-1 ~0 #overlimit:spawn_lights run return 1

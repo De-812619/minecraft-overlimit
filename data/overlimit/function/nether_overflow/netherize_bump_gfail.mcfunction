@@ -1,1 +1,1 @@
-$execute in minecraft:overworld positioned $(x) $(y) $(z) as @n[type=minecraft:marker,tag=overlimit.no_gate,distance=..4] run scoreboard players add @s overlimit.no_gfail 1
+$execute in minecraft:overworld positioned $(x) $(y) $(z) as @n[type=minecraft:marker,tag=overlimit.no_gate,distance=..4] store result storage overlimit:no gate.gfail int 1 run scoreboard players add @s overlimit.no_gfail 1

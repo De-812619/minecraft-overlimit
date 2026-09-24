@@ -1,8 +1,5 @@
 {
   "values": [
-    "overlimit:hyper_dig",
-    "overlimit:smelting",
-    "minecraft:silk_touch",
-    "minecraft:efficiency"
+    "overlimit:hyper_dig"
   ]
 }

@@ -34,4 +34,4 @@ execute if score @s overlimit.trim.quartz matches 1.. store result storage overl
 execute if score @s overlimit.trim.quartz matches 1.. run data merge storage overlimit:trim {tmp:{id:"overlimit:trim.quartz.aspeed",attr:"minecraft:attack_speed",op:"add_multiplied_base"}}
 execute if score @s overlimit.trim.quartz matches 1.. run function overlimit:trim/mod_add with storage overlimit:trim tmp
 
-execute if score @s overlimit.trim.resin matches 1.. run function overlimit:trim/resin/still_armor
+# 樹脂静止防御は Java TrimResin（水平速度ベース）

@@ -29,6 +29,5 @@
     "mainhand"
   ],
   "supported_items": "#minecraft:enchantable/mining",
-  "weight": 10,
-  "exclusive_set": "#overlimit:exclusive_set/efficiency_hyper_dig"
+  "weight": 10
 }

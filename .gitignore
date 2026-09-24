@@ -1,4 +1,12 @@
 .cache/
 .cursor/
+
+# Fabric / Gradle
+.gradle/
+build/
+run/
+out/
+*.iml
+.idea/
 # 仕様・テスト・開発メモはローカルのみ（一度追跡したファイルは git rm --cached が必要）
 docs/

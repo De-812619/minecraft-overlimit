@@ -505,7 +505,7 @@ Failed to get element overlimit:unlimited_axe missed input: {"overlimit:unlimite
 | テストワールド | `.../PrismLauncher/instances/ミッションワールド/minecraft/logs/latest.log` |
 | 編集リポジトリ | `/Users/okanoueyuuichi/minecraft/datapacks/over_limit_pack`（ゲームは読まない） |
 
-`.cursor/` はデプロイ rsync から除外する（ワールドにスキルをコピーしない）。
+検証は JAR（overlimit-deploy）。ワールドの `datapacks/` へはコピーしない。`.cursor/` を JAR に入れない。
 
 ---
 

@@ -43,11 +43,35 @@ final class Scores {
 	}
 
 	static void setPlayer(ServerPlayer player, String objectiveName, int value) {
-		MinecraftServer server = player.level().getServer();
+		setHolder(player.level().getServer(), player, objectiveName, value);
+	}
+
+	static void addPlayer(ServerPlayer player, String objectiveName, int delta) {
+		setPlayer(player, objectiveName, getPlayer(player, objectiveName) + delta);
+	}
+
+	static int getHolder(MinecraftServer server, ScoreHolder holder, String objectiveName) {
+		if (server == null) return 0;
+		Scoreboard board = server.getScoreboard();
+		Objective objective = board.getObjective(objectiveName);
+		if (objective == null) return 0;
+		ReadOnlyScoreInfo info = board.getPlayerScoreInfo(holder, objective);
+		return info == null ? 0 : info.value();
+	}
+
+	static void setHolder(MinecraftServer server, ScoreHolder holder, String objectiveName, int value) {
 		if (server == null) return;
 		Scoreboard board = server.getScoreboard();
 		Objective objective = board.getObjective(objectiveName);
 		if (objective == null) return;
-		board.getOrCreatePlayerScore(player, objective).set(value);
+		board.getOrCreatePlayerScore(holder, objective).set(value);
+	}
+
+	static void resetHolder(MinecraftServer server, ScoreHolder holder, String objectiveName) {
+		if (server == null) return;
+		Scoreboard board = server.getScoreboard();
+		Objective objective = board.getObjective(objectiveName);
+		if (objective == null) return;
+		board.resetSinglePlayerScore(holder, objective);
 	}
 }

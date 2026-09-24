@@ -1,3 +1,4 @@
+# 呼び出し元は無い。距離判定は EventMobs。
 # @s = プレイヤー。#bm_mx/#bm_my/#bm_mz は対象Mob。
 execute store result score #bm_px overlimit.const run data get entity @s Pos[0]
 execute store result score #bm_py2 overlimit.const run data get entity @s Pos[1]

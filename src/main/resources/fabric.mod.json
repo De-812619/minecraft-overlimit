@@ -3,7 +3,7 @@
 	"id": "overlimit",
 	"version": "${version}",
 	"name": "Over Limit",
-	"description": "Server-side bundle of the over_limit_pack datapack. No new registries.",
+	"description": "over_limit_pack datapack plus client assets. No new registries.",
 	"authors": [
 		"De-812619"
 	],
@@ -16,6 +16,9 @@
 			"dev.de812619.overlimit.OverlimitMod"
 		]
 	},
+	"mixins": [
+		"overlimit.mixins.json"
+	],
 	"depends": {
 		"fabricloader": ">=0.19.3",
 		"minecraft": "~26.2",

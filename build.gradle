@@ -17,11 +17,15 @@ tasks.withType(JavaCompile).configureEach {
 	it.options.release = 25
 }
 
-// データパックの正はリポジトリ直下。src へコピーしない。
+// データパックと見た目の正はリポジトリ直下。src へコピーしない。
+// resourcepack/pack.mcmeta は入れない。ルートの pack.mcmeta はデータパック用。
 processResources {
 	from('pack.mcmeta')
 	from('data') {
 		into 'data'
+	}
+	from('resourcepack/assets') {
+		into 'assets'
 	}
 
 	def version = project.version

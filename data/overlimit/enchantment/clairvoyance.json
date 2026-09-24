@@ -3,25 +3,7 @@
   "description": {
     "translate": "enchantment.overlimit.clairvoyance"
   },
-  "effects": {
-    "minecraft:tick": [
-      {
-        "effect": {
-          "type": "minecraft:run_function",
-          "function": "overlimit:enchant/clairvoyance/tick"
-        },
-        "requirements": {
-          "condition": "minecraft:entity_properties",
-          "entity": "this",
-          "predicate": {
-            "minecraft:flags": {
-              "is_sneaking": true
-            }
-          }
-        }
-      }
-    ]
-  },
+  "effects": {},
   "max_cost": {
     "base": 100,
     "per_level_above_first": 0

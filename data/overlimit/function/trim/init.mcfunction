@@ -29,4 +29,3 @@ advancement revoke @a only overlimit:trim/on_hit_piglin
 advancement revoke @a only overlimit:trim/on_hurt
 advancement revoke @a only overlimit:trim/on_land
 advancement revoke @a only overlimit:trim/on_loot
-schedule function overlimit:trim/loop 2t replace

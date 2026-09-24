@@ -26,7 +26,12 @@ public final class OverlimitMod implements ModInitializer {
 		TrimQuartz.register();
 		TrimResin.register();
 		TrimGold.register();
+		TrimArmor.register();
+		Clairvoyance.register();
+		PlayerPulse.register();
+		BloodWorldWeather.register();
+		PortalGate.register();
 		OverlimitCommands.register();
-		LOGGER.info("Overlimit phase 7: trim/heal improvements in Java");
+		LOGGER.info("Overlimit phase 10: crying obsidian portals travel like nether portals");
 	}
 }

@@ -7,9 +7,15 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.TagKey;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityTypes;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.scores.Objective;
 import net.minecraft.world.scores.PlayerTeam;
 import net.minecraft.world.scores.ReadOnlyScoreInfo;
@@ -33,6 +39,13 @@ final class HotTick {
 		Registries.ENTITY_TYPE,
 		Identifier.fromNamespaceAndPath("minecraft", "arrows")
 	);
+	private static final TagKey<EntityType<?>> HOSTILE = TagKey.create(
+		Registries.ENTITY_TYPE,
+		Identifier.fromNamespaceAndPath("overlimit", "hostile")
+	);
+	private static final String BIND_SCORE = "overlimit.bind.timer";
+	private static final String FIELD_SCORE = "overlimit.hg_life";
+	private static final double FIELD_RANGE_SQ = 9.0;
 
 	private static final Set<Entity> WATCHED = Collections.newSetFromMap(new IdentityHashMap<>());
 	private static final Set<String> MISSING = new HashSet<>();
@@ -119,16 +132,13 @@ final class HotTick {
 			tags = entity.entityTags();
 		}
 		if (score(server, entity, "overlimit.bind.timer") >= 1) {
-			run(server, entity, "enchant/chain_bind/tick_bound");
+			holdStill(server, entity);
 		}
 		if (tags.contains("overlimit.summon") && score(server, entity, "overlimit.summon.life") >= 1) {
 			run(server, entity, "enchant/summon_wolf/life_tick");
 		}
 		if (tags.contains("overlimit.necro")) {
 			run(server, entity, "enchant/necromancy/aggro_tick");
-		}
-		if (entity.getType() == EntityTypes.CREEPER && tags.contains("overlimit.cat_pacify")) {
-			run(server, entity, "enchant/cat_foot/pacify_tick");
 		}
 		if (tags.contains("overlimit.ul.para")) {
 			run(server, entity, "item/unlimited/spear_para_tick");
@@ -155,7 +165,7 @@ final class HotTick {
 		}
 		tags = entity.entityTags();
 		if (tags.contains("overlimit.hg_field")) {
-			run(server, entity, "enchant/hyper_gravity/field_tick");
+			tickGravityField(server, entity);
 		}
 		if (tags.contains("overlimit.ul.slash")) {
 			run(server, entity, "item/unlimited/slash_tick");
@@ -209,6 +219,50 @@ final class HotTick {
 		if (board.getPlayersTeam(name) != team) {
 			board.addPlayerToTeam(name, team);
 		}
+	}
+
+	private static void holdStill(MinecraftServer server, Entity entity) {
+		entity.setDeltaMovement(Vec3.ZERO);
+		entity.hurtMarked = true;
+		int next = score(server, entity, BIND_SCORE) - 1;
+		if (next >= 1) {
+			Scores.setHolder(server, entity, BIND_SCORE, next);
+			return;
+		}
+		entity.removeTag("overlimit.bound");
+		Scores.resetHolder(server, entity, BIND_SCORE);
+	}
+
+	private static void tickGravityField(MinecraftServer server, Entity field) {
+		if (!(field.level() instanceof ServerLevel level)) {
+			return;
+		}
+		int life = score(server, field, FIELD_SCORE) - 1;
+		Scores.setHolder(server, field, FIELD_SCORE, life);
+		if (life <= 0) {
+			level.sendParticles(ParticleTypes.PORTAL, field.getX(), field.getY() + 0.5, field.getZ(), 20, 0.4, 0.4, 0.4, 0.2);
+			field.kill(level);
+			WATCHED.remove(field);
+			return;
+		}
+		level.sendParticles(ParticleTypes.REVERSE_PORTAL, field.getX(), field.getY() + 0.5, field.getZ(), 8, 1.2, 0.4, 1.2, 0.4);
+		level.sendParticles(ParticleTypes.WITCH, field.getX(), field.getY() + 0.2, field.getZ(), 3, 1.0, 0.1, 1.0, 0.0);
+		AABB box = field.getBoundingBox().inflate(3.0);
+		for (Entity nearby : level.getEntities(field, box, HotTick::isFieldTarget)) {
+			if (field.distanceToSqr(nearby) > FIELD_RANGE_SQ) {
+				continue;
+			}
+			if (nearby instanceof LivingEntity living) {
+				living.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 20, 255, false, false));
+			}
+			nearby.setDeltaMovement(Vec3.ZERO);
+			nearby.hurtMarked = true;
+		}
+	}
+
+	private static boolean isFieldTarget(Entity entity) {
+		return !entity.entityTags().contains("overlimit.summon")
+			&& entity.getType().builtInRegistryHolder().is(HOSTILE);
 	}
 
 	private static int score(MinecraftServer server, Entity entity, String objective) {

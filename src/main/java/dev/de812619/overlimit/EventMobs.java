@@ -4,11 +4,15 @@ import com.mojang.brigadier.context.CommandContext;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.GameType;
 import net.minecraft.world.phys.Vec3;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -41,11 +45,11 @@ final class EventMobs {
 	}
 
 	static int owCull(CommandContext<CommandSourceStack> ctx) {
-		return cull(ctx, OW, "blood_moon/cull_one");
+		return cullNear(ctx, OW, BW);
 	}
 
 	static int bwCull(CommandContext<CommandSourceStack> ctx) {
-		return cull(ctx, BW, "blood_world/cull_one");
+		return cullNear(ctx, BW, OW);
 	}
 
 	static int noAnger(CommandContext<CommandSourceStack> ctx) {
@@ -209,15 +213,44 @@ final class EventMobs {
 		return 1;
 	}
 
-	private static int cull(CommandContext<CommandSourceStack> ctx, String side, String function) {
+	/**
+	 * 同じディメンションの非スペクテイターとの整数座標差。
+	 * 水平 16 以内は高さ不問。水平 25 以内かつ高さ ±8 も残す。両方の陣営タグがある個体は消さない。
+	 */
+	private static int cullNear(CommandContext<CommandSourceStack> ctx, String side, String other) {
 		MinecraftServer server = ctx.getSource().getServer();
+		List<ServerPlayer> players = server.getPlayerList().getPlayers();
 		for (Entity entity : HotTick.snapshot()) {
-			if (entity.isRemoved() || !tagged(entity, BLOOD) || !tagged(entity, side)) {
+			if (entity.isRemoved() || !tagged(entity, BLOOD) || !tagged(entity, side) || tagged(entity, other)) {
 				continue;
 			}
-			HotTick.run(server, entity, function);
+			if (!(entity.level() instanceof ServerLevel level) || keptByPlayer(entity, level, players)) {
+				continue;
+			}
+			HotTick.run(server, entity, "blood_moon/cull_despawn");
 		}
 		return 1;
+	}
+
+	private static boolean keptByPlayer(Entity mob, ServerLevel level, List<ServerPlayer> players) {
+		int mx = Mth.floor(mob.getX());
+		int my = Mth.floor(mob.getY());
+		int mz = Mth.floor(mob.getZ());
+		for (ServerPlayer player : players) {
+			if (player.level() != level || player.gameMode.getGameModeForPlayer() == GameType.SPECTATOR) {
+				continue;
+			}
+			int dx = Math.abs(Mth.floor(player.getX()) - mx);
+			int dz = Math.abs(Mth.floor(player.getZ()) - mz);
+			if (dx <= 16 && dz <= 16) {
+				return true;
+			}
+			int dy = Math.abs(Mth.floor(player.getY()) - my);
+			if (dx <= 25 && dz <= 25 && dy <= 8) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	private static int runTagged(CommandContext<CommandSourceStack> ctx, String tag, String exclude, String function) {

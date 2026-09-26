@@ -1,8 +1,7 @@
 """26.3 OverworldBiomeBuilder → multi_noise biome entries.
 
-Port of net.minecraft.world.level.biome.OverworldBiomeBuilder.
+Port of net.minecraft.world.level.biome.OverworldBiomeBuilder (client 26.3).
 Noise JSON is read from the 26.3 client jar by gen_blood_world_worldgen.py.
-26.3 added minecraft:dappled_forest; this climate table does not place it yet.
 Used so Blood World can keep overworld climate and splice nether biomes in.
 """
 from __future__ import annotations
@@ -63,6 +62,7 @@ B = {
     "bamboo_jungle": "minecraft:bamboo_jungle",
     "meadow": "minecraft:meadow",
     "pale_garden": "minecraft:pale_garden",
+    "dappled_forest": "minecraft:dappled_forest",
     "savanna_plateau": "minecraft:savanna_plateau",
     "badlands": "minecraft:badlands",
     "wooded_badlands": "minecraft:wooded_badlands",
@@ -140,7 +140,7 @@ class OverworldBiomeBuilder:
         ]
         self.MIDDLE_V = [
             [B["ice_spikes"], None, B["snowy_taiga"], None, None],
-            [None, None, None, None, B["old_growth_pine_taiga"]],
+            [B["dappled_forest"], None, None, None, B["old_growth_pine_taiga"]],
             [B["sunflower_plains"], None, None, B["old_growth_birch_forest"], None],
             [None, None, B["plains"], B["sparse_jungle"], B["bamboo_jungle"]],
             [None, None, None, None, None],

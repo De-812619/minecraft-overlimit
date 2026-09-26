@@ -28,9 +28,9 @@ function overlimit:nether_raise/bossbar_name
 
 scoreboard players operation #nr_amod overlimit.const = #nr_t overlimit.const
 scoreboard players operation #nr_amod overlimit.const %= #20 overlimit.const
-execute if score #nr_amod overlimit.const matches 0 if score #nr_combat overlimit.const matches 1 as @e[tag=overlimit.nr_wave,tag=!overlimit.nr_ghast] at @s run function overlimit:nether_raise/anger
-execute if score #nr_amod overlimit.const matches 0 if score #nr_combat overlimit.const matches 1 as @e[tag=overlimit.nr_wave,tag=!overlimit.nr_ghast] at @s run function overlimit:nether_raise/glow
-execute if score #nr_amod overlimit.const matches 0 if score #nr_combat overlimit.const matches 1 as @e[tag=overlimit.nr_ghast] run effect clear @s minecraft:glowing
+execute if score #nr_amod overlimit.const matches 0 if score #nr_combat overlimit.const matches 1 run overlimit event_mobs nr_anger
+execute if score #nr_amod overlimit.const matches 0 if score #nr_combat overlimit.const matches 1 run overlimit event_mobs nr_glow
+execute if score #nr_amod overlimit.const matches 0 if score #nr_combat overlimit.const matches 1 run overlimit event_mobs nr_unglow
 
 execute if score #nr_arrived overlimit.const matches 0 run function overlimit:nether_raise/try_arrive
 execute if score #nr_arrived overlimit.const matches 0 run scoreboard players add #nr_gather_t overlimit.const 1

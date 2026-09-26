@@ -1,7 +1,7 @@
-# 見た目だけネザーポータル。実ブロックではないのでバニラのネザー転送は起きない。
-summon minecraft:block_display ~ ~ ~ {Tags:["overlimit.bw_vis"],block_state:{Name:"minecraft:nether_portal",Properties:{axis:"x"}},brightness:{sky:15,block:15}}
-summon minecraft:block_display ~1 ~ ~ {Tags:["overlimit.bw_vis"],block_state:{Name:"minecraft:nether_portal",Properties:{axis:"x"}},brightness:{sky:15,block:15}}
-summon minecraft:block_display ~ ~1 ~ {Tags:["overlimit.bw_vis"],block_state:{Name:"minecraft:nether_portal",Properties:{axis:"x"}},brightness:{sky:15,block:15}}
-summon minecraft:block_display ~1 ~1 ~ {Tags:["overlimit.bw_vis"],block_state:{Name:"minecraft:nether_portal",Properties:{axis:"x"}},brightness:{sky:15,block:15}}
-summon minecraft:block_display ~ ~2 ~ {Tags:["overlimit.bw_vis"],block_state:{Name:"minecraft:nether_portal",Properties:{axis:"x"}},brightness:{sky:15,block:15}}
-summon minecraft:block_display ~1 ~2 ~ {Tags:["overlimit.bw_vis"],block_state:{Name:"minecraft:nether_portal",Properties:{axis:"x"}},brightness:{sky:15,block:15}}
+# 内側は本物のネザーポータル。行き先は泣く黒曜石の枠のときだけブラッドワールド。
+setblock ~ ~ ~ minecraft:nether_portal[axis=x]
+setblock ~1 ~ ~ minecraft:nether_portal[axis=x]
+setblock ~ ~1 ~ minecraft:nether_portal[axis=x]
+setblock ~1 ~1 ~ minecraft:nether_portal[axis=x]
+setblock ~ ~2 ~ minecraft:nether_portal[axis=x]
+setblock ~1 ~2 ~ minecraft:nether_portal[axis=x]

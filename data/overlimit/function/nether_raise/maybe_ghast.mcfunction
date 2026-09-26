@@ -1,7 +1,6 @@
-execute store result score #nr_ghast_alive overlimit.const if entity @e[tag=overlimit.nr_ghast]
+overlimit event_mobs nr_alive
 execute if score #nr_ghast_alive overlimit.const >= #nr_ghast_max overlimit.const run return fail
 execute if score #nr_ghast_n overlimit.const >= #nr_ghast_budget overlimit.const run return fail
-execute store result score #nr_alive overlimit.const if entity @e[tag=overlimit.nr_wave]
 execute if score #nr_alive overlimit.const >= #nr_cap overlimit.const run return fail
 execute unless loaded ~ ~ ~ run return fail
 execute unless block ~ ~ ~ #minecraft:replaceable run return fail

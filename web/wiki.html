@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Over Limit（Minecraft Java 26.2）の wiki。導入、イベント、カスタムアイテム、カスタムエンチャント。">
+  <title>Over Limit Wiki</title>
+  <link rel="stylesheet" href="css/wiki.css">
+</head>
+<body>
+  <a class="skip" href="#content">本文へ</a>
+  <div class="app">
+    <header class="top">
+      <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">
+        <span class="menu-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">目次</span>
+      </button>
+      <a class="brand" href="#/">
+        <img class="px" src="img/item/phoenix_amulet.png" alt="">
+        <span class="brand-text">
+          <span class="brand-name">Over Limit</span>
+          <span class="brand-sub">Wiki</span>
+        </span>
+      </a>
+      <form class="search" id="search-form" role="search">
+        <label class="visually-hidden" for="search-input">ページ内を検索</label>
+        <input id="search-input" type="search" placeholder="検索" autocomplete="off" enterkeyhint="search">
+        <div class="search-panel" id="search-panel" hidden></div>
+      </form>
+    </header>
+    <div class="backdrop" id="backdrop" hidden></div>
+    <nav class="nav" id="nav" aria-label="目次"></nav>
+    <main class="main" id="content" tabindex="-1"></main>
+  </div>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

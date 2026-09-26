@@ -10,11 +10,8 @@ tag @a remove overlimit.in_bw
 execute as @a at @s if dimension overlimit:blood_world run tag @s add overlimit.in_bw
 function overlimit:portal/tick
 
-# 読み込み範囲全体を強化すると CustomName で自然デスポーンせず、間引きと湧きが回転する。戦闘圏だけスキャンする。
-execute as @a[gamemode=!spectator] at @s as @e[type=#overlimit:can_be_danger,tag=!overlimit.scanned,distance=..25,limit=8] at @s run function overlimit:mob/scan
-execute as @e[type=#overlimit:can_be_danger,tag=overlimit.elite,tag=!overlimit.structure,tag=!overlimit.blood_moon,tag=!overlimit.no_wave,tag=!overlimit.nr_wave,tag=!overlimit.cc_wave,tag=!overlimit.summon,tag=!overlimit.necro,limit=16] at @s run function overlimit:mob/cull_world_elite
-execute as @e[type=minecraft:marker,tag=overlimit.elite_xp] at @s run function overlimit:mob/xp_marker_tick
-execute as @e[type=minecraft:marker,tag=overlimit.danger_xp,tag=!overlimit.elite_xp] at @s run function overlimit:mob/xp_marker_tick
+# 戦闘圏 25 マス・プレイヤーあたり 8 体の強化スキャンは PlayerPulse
+# 強化の間引き、経験値マーカー、召喚、ゴーレム、矢、トライデント、麻痺は HotTick。束縛と重力場の速度は Java
 execute in minecraft:overworld run function overlimit:blood_moon/tick
 execute in minecraft:overworld run function overlimit:nether_overflow/tick
 execute in minecraft:the_nether run function overlimit:nether_raise/tick
@@ -25,73 +22,6 @@ execute unless entity @a[tag=overlimit.in_bw] if score #bw_clock overlimit.const
 
 team join overlimit @a[team=!overlimit]
 
-execute as @a[scores={overlimit.cd.absolute=1..}] run scoreboard players remove @s overlimit.cd.absolute 1
-execute as @a[scores={overlimit.cd.ul_royal=1..}] run scoreboard players remove @s overlimit.cd.ul_royal 1
-execute as @a[scores={overlimit.cd.ul_demon=1..}] run scoreboard players remove @s overlimit.cd.ul_demon 1
-# Impact CD 表示（本人のみ・10秒）: 残煙。足元 + メインハンド（斧）付近（2tickに1回）
-execute as @a[scores={overlimit.cd.impact=1..}] at @s run function overlimit:enchant/impact/cd_fx
-execute as @a[scores={overlimit.cd.impact=1}] at @s run playsound minecraft:item.crossbow.loading_end player @s ~ ~ ~ 0.8 1
-execute as @a[scores={overlimit.cd.impact=1..}] run scoreboard players remove @s overlimit.cd.impact 1
-# Hyper gravity CD 表示（本人のみ・6秒）: portal。足元 + メインハンド付近（2tickに1回）
-execute as @a[scores={overlimit.cd.hyper=1..}] at @s run function overlimit:enchant/hyper_gravity/cd_fx
-execute as @a[scores={overlimit.cd.hyper=1}] at @s run playsound minecraft:item.crossbow.loading_end player @s ~ ~ ~ 0.8 1
-execute as @a[scores={overlimit.cd.hyper=1..}] run scoreboard players remove @s overlimit.cd.hyper 1
-# cd.sky は sky_walk/tick_player で減らす（#minecraft:tick 停止時に CD が固まらない）
-execute as @a[scores={overlimit.sky_air=1}] unless predicate overlimit:enchant/wearing_sky_walk run function overlimit:enchant/sky_walk/disarm
-execute as @a[scores={overlimit.cat_boost=1}] unless predicate overlimit:enchant/wearing_cat_foot run function overlimit:enchant/cat_foot/clear_jump
-execute as @a[scores={overlimit.sky_lev=1..}] run function overlimit:enchant/sky_walk/lev_tick
-execute as @a[scores={overlimit.sky_safe=1}] run function overlimit:enchant/sky_walk/safe_tick
-execute as @a[scores={overlimit.sky_foot_delay=1}] at @s unless predicate overlimit:enchant/jump_input unless predicate overlimit:is_sneaking run function overlimit:enchant/sky_walk/place_footing
-execute as @a[scores={overlimit.sky_foot_delay=1}] at @s unless predicate overlimit:enchant/jump_input unless predicate overlimit:is_sneaking run scoreboard players set @s overlimit.sky_foot_delay 0
-execute as @a[scores={overlimit.sky_foot_delay=2..}] run scoreboard players remove @s overlimit.sky_foot_delay 1
-execute as @a[scores={overlimit.necro_pending=1..}] run scoreboard players remove @s overlimit.necro_pending 1
-execute as @a[scores={overlimit.necro_cd=1..}] run scoreboard players remove @s overlimit.necro_cd 1
-execute as @a[scores={overlimit.necro_pending=1..}] run function overlimit:enchant/necromancy/check_kill_score
-execute as @a[scores={overlimit.necro_pending=1..}] run scoreboard players operation @s overlimit.mob_prev = @s overlimit.mob_kills
-execute as @e[type=#overlimit:can_be_danger,scores={overlimit.bind.timer=1..}] run function overlimit:enchant/chain_bind/tick_bound
-execute as @e[type=#overlimit:summon,tag=overlimit.summon,scores={overlimit.summon.life=1..}] at @s run function overlimit:enchant/summon_wolf/life_tick
-execute as @e[type=minecraft:iron_golem,tag=overlimit.mini_golem,tag=!overlimit.mini_golem_ready] at @s run function overlimit:item/mini_golem/init
-team join overlimit @e[type=minecraft:iron_golem,tag=overlimit.mini_golem,team=!overlimit]
-execute as @e[type=minecraft:iron_golem,tag=overlimit.mini_golem,tag=!overlimit.mini_golem_gone] at @s run function overlimit:item/mini_golem/tick
-
-
-# Hyper gravity field
-execute as @e[type=minecraft:marker,tag=overlimit.hg_field] at @s run function overlimit:enchant/hyper_gravity/field_tick
-
-# Necromancy combat nudge
-execute as @e[type=#overlimit:can_be_danger,tag=overlimit.necro] at @s run function overlimit:enchant/necromancy/aggro_tick
-
-# Sky walk footing platforms
-execute as @e[type=minecraft:marker,tag=overlimit.sky_plat] at @s run function overlimit:enchant/sky_walk/plat_tick
-
-# Sky walk: air footing は boots の minecraft:tick（装備者だけ）
-
-# Cat foot: leftover decoy cats (old impl) + restore creeper blast when the wearer is gone
-execute as @e[type=minecraft:cat,tag=overlimit.cat_decoy] run function overlimit:enchant/cat_foot/discard_decoy
-execute as @e[type=minecraft:creeper,tag=overlimit.cat_pacify] at @s run function overlimit:enchant/cat_foot/pacify_tick
-
-# Hyper dig: pending が空気になったら 3×3（耐久力不発の保険）。at @s でプレイヤーのディメンションを見る
-execute as @a[scores={overlimit.hd_ok=1}] at @s run function overlimit:enchant/hyper_dig/tick_player
-execute as @a[scores={overlimit.hd_ok=0,overlimit.hd_pok=1}] at @s run function overlimit:enchant/hyper_dig/tick_player
-
-# 黄金弓: 撃った矢の速度2倍＋光の矢相当の発光
-execute as @e[type=#minecraft:arrows,tag=!overlimit.gb_done] run function overlimit:item/golden_bow/try_shot
-
-# UNLIMITED 武器: 剣の斬撃 / トライデント識別
-execute as @a[scores={overlimit.ul.sw_cd=1..}] run scoreboard players remove @s overlimit.ul.sw_cd 1
-execute as @a[scores={overlimit.ul.ax_cd=1..}] run scoreboard players remove @s overlimit.ul.ax_cd 1
-execute as @a[scores={overlimit.ul.sp_cd=1..}] run scoreboard players remove @s overlimit.ul.sp_cd 1
-execute as @a[scores={overlimit.ul.used=1..}] at @s run function overlimit:item/unlimited/sword_used
-execute as @a[scores={overlimit.ul.axe_used=1..}] at @s run function overlimit:item/unlimited/axe_used
-execute as @e[type=minecraft:marker,tag=overlimit.ul.slash] at @s run function overlimit:item/unlimited/slash_tick
-execute as @e[type=minecraft:trident,tag=!overlimit.ul.tri_chk] run function overlimit:item/unlimited/trident_mark
-execute as @e[type=minecraft:trident,tag=overlimit.ul.tri,tag=!overlimit.ul.tri_boom] at @s run function overlimit:item/unlimited/trident_try
-execute as @e[type=minecraft:trident,tag=overlimit.ul.tri] at @s run function overlimit:item/unlimited/trident_return
-execute as @e[type=minecraft:trident,tag=overlimit.ul.tri] at @s run function overlimit:item/unlimited/trident_fx
-execute as @e[type=minecraft:item_display,tag=overlimit.ul.tri_vis] run kill @s
-execute as @e[type=minecraft:marker,tag=overlimit.ul.tri_pin] run kill @s
-execute as @e[tag=overlimit.ul.para] run function overlimit:item/unlimited/spear_para_tick
-
-# 金床結果がカーソル→インベントリへ移る1tick遅れ用
-execute as @a[scores={overlimit.anvil_cap=1..}] run function overlimit:enchant/anvil_cap/apply
-execute as @a[scores={overlimit.anvil_cap=1..}] run scoreboard players remove @s overlimit.anvil_cap 1
+# クールダウン・ネクロマンシー待ち・UNLIMITED 使用・金床上限は PlayerPulse
+# スカイウォーク・猫足・千里眼は Java（SkyWalk / CatFoot / Clairvoyance）
+# ハイパーディグは PlayerBlockBreakEvents.AFTER（HyperDig.java）

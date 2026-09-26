@@ -202,7 +202,6 @@ advancement revoke @a only overlimit:enchant/midas_table_eat
 advancement revoke @a only overlimit:enchant/anvil_cap
 advancement revoke @a only overlimit:blood_moon/on_kill
 advancement revoke @a only overlimit:portal/light
-advancement revoke @a only overlimit:attrition/on_hurt
 advancement revoke @a only overlimit:item/unlimited_hit
 
 bossbar add overlimit:blood_moon {"translate": "overlimit.event.blood_moon","color":"dark_red","bold":true}

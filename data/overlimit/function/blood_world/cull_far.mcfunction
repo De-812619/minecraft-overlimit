@@ -1,1 +1,2 @@
-execute as @e[tag=overlimit.blood_moon,tag=overlimit.bm_bw] at @s run function overlimit:blood_world/cull_one
+# 残すかどうかは EventMobs（同じディメンションの非スペクテイター）。
+overlimit event_mobs bw_cull

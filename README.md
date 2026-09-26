@@ -31,7 +31,7 @@ JAR 内の `assets/` がモデル・テクスチャ・翻訳を出します。
 - ワールドの `datapacks/` に同じ内容を置かないでください（二重に効きます）
 - Mod と別リソースパックを同時に有効にすると、同じ見た目が二重に載ります。シングルで JAR の見た目を使うときは、別パックを外してください
 - **まだ生成されていないチェスト**にだけ新しいルートが効きます。すでに中身が確定したチェストは変わりません
-- Dungeons and Taverns を使う場合は、本パックを **DnT より後**に読み込ませてください
+- Dungeons and Taverns（Mod `mr_dungeons_andtaverns`）が入っているときだけ、DnT 用の追加プールが有効になります。入っていない環境では、そのルートは読み込みません
 - GitHub の Source ZIP はそのまま `mods/` には置けません。ビルドした JAR を使ってください
 
 ## 戦利品
@@ -70,7 +70,7 @@ JAR 内の `assets/` がモデル・テクスチャ・翻訳を出します。
 | バストリオン | 4種 |
 | エンドシティ | |
 
-[Dungeons and Taverns](https://modrinth.com/datapack/dungeons-and-taverns) を入れている場合、そのチェスト系ルートにも同じボーナスが入ります。
+[Dungeons and Taverns](https://modrinth.com/datapack/dungeons-and-taverns) の Mod が入っている場合、そのチェスト系ルートにも同じボーナスが入ります。Mod が無いときはバニラの対象チェストだけです。
 
 ## クラフト
 

@@ -27,6 +27,8 @@ DEFAULT_DNT_URL = (
     "dungeons-and-taverns-6.0.1.jar"
 )
 CACHE_DIR = ROOT / ".cache"
+# DnT が無い環境では読まない。JAR 内 resourcepacks/dnt へ入れ、Mod が DnT を検出したときだけ有効にする。
+DNT_PACK_ROOT = ROOT / "dnt_pack"
 
 TARGET_CHESTS = [
     "ancient_city",
@@ -893,6 +895,7 @@ def resolve_dnt_archive() -> Path:
 
 
 def clear_generated_dnt_outputs() -> None:
+    """DnT 由来のルートを常時データパックから外し、条件付きパック側を空にする。"""
     nova = ROOT / "data/nova_structures"
     if nova.exists():
         shutil.rmtree(nova)
@@ -901,6 +904,9 @@ def clear_generated_dnt_outputs() -> None:
         path = chests_root / sub
         if path.exists():
             shutil.rmtree(path)
+    dnt_data = DNT_PACK_ROOT / "data"
+    if dnt_data.exists():
+        shutil.rmtree(dnt_data)
 
 
 def inject_from_archive(archive: Path, label: str) -> int:
@@ -923,7 +929,7 @@ def inject_from_archive(archive: Path, label: str) -> int:
                 continue
             raw = json.loads(zf.read(name).decode("utf-8"))
             injected = inject_chest(raw)
-            out = ROOT / "data" / ns / "loot_table" / f"{chest_path}.json"
+            out = DNT_PACK_ROOT / "data" / ns / "loot_table" / f"{chest_path}.json"
             write_json(out, injected)
             print(f"injected [{label}] {ns}:{chest_path}")
             count += 1
@@ -986,6 +992,16 @@ def main() -> None:
             write_json(ROOT / "data/minecraft/loot_table/entities" / f"{entity}.json", injected)
             print(f"injected [vanilla] minecraft:entities/{entity}")
 
+    write_json(
+        DNT_PACK_ROOT / "pack.mcmeta",
+        {
+            "pack": {
+                "description": "Over Limit bonus loot for Dungeons and Taverns",
+                "min_format": [121, 0],
+                "max_format": [121, 0],
+            }
+        },
+    )
     dnt_count = inject_from_archive(dnt_path, "DnT")
 
     print(

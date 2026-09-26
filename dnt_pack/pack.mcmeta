@@ -1,0 +1,13 @@
+{
+  "pack": {
+    "description": "Over Limit bonus loot for Dungeons and Taverns",
+    "min_format": [
+      121,
+      0
+    ],
+    "max_format": [
+      121,
+      0
+    ]
+  }
+}

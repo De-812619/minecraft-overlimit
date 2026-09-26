@@ -45,8 +45,7 @@ export const install = {
     </ol>
     ${note("<strong>リソースパックが無いとき</strong>クラフトアイテム（護符、黄金弓、トーテム、ミニゴーレム、UNLIMITED など）の見た目が欠落テクスチャになります。効果そのものはサーバー側で動きます。", true)}
     <h2 id="dnt">Dungeons and Taverns</h2>
-    <p>併用は任意です。入れている場合、DnT のチェスト系ルート（主に名前空間 <code>nova_structures</code>。一部は <code>minecraft</code> の上書き）にも、バニラと同じ追加プールが入ります。地図（charts）と考古学ルートは対象外です。</p>
-    <p>本 Mod は DnT のルートを上書きします。ワールドの datapacks の並びでは、<strong>本パックを DnT より後</strong>に読んでください。Mod として入れる場合は、データパックの読み込み順が DnT のあとに本 Mod になるようにします。</p>
+    <p>併用は任意です。DnT の Mod が入っているときだけ、DnT のチェスト系ルート（主に名前空間 <code>nova_structures</code>。一部は <code>minecraft</code> の上書き）にも、バニラと同じ追加プールが入ります。地図（charts）と考古学ルートは対象外です。Mod が無いときは、そのルートは読み込みません。</p>
     <h2 id="after">入れたあとに知っておくこと</h2>
     <ul>
       <li><strong>既存チェストは変わらない。</strong>中身が確定したチェストには追加が入りません。新しく生成されるチェストだけです。すでに探索済みの構造物を取り直したい場合は、未生成のチャンクへ行くか、新しいワールドを使います。</li>

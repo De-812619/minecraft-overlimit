@@ -2,238 +2,208 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "bonus_rolls": 0.0,
-      "rolls": 8.0,
+      "bonus_rolls": 0,
+      "rolls": 8,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:blue_orchid"
+          "name": "minecraft:blue_orchid",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 2,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:red_mushroom"
+          "name": "minecraft:red_mushroom",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 2,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:brown_mushroom"
+          "name": "minecraft:brown_mushroom",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 2,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:fern"
+          "name": "minecraft:fern",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 2,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:large_fern"
+          "name": "minecraft:large_fern",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 2,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:rose_bush"
+          "name": "minecraft:rose_bush",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 2,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:peony"
+          "name": "minecraft:peony",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 2,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:lilac"
+          "name": "minecraft:lilac",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 2,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:lily_pad"
+          "name": "minecraft:lily_pad",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 2,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 4.0,
-                "min": 2.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:vine"
+          "name": "minecraft:vine",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 4,
+              "min": 2
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 4.0,
-                "min": 2.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:bone_meal"
+          "name": "minecraft:bone_meal",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 4,
+              "min": 2
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 6.0,
-                "min": 4.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:pumpkin_seeds"
+          "name": "minecraft:pumpkin_seeds",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 6,
+              "min": 4
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 4.0,
-                "min": 2.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:pumpkin"
+          "name": "minecraft:pumpkin",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 4,
+              "min": 2
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 8.0,
-                "min": 5.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:beetroot_seeds"
+          "name": "minecraft:beetroot_seeds",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 8,
+              "min": 5
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 6.0,
-                "min": 4.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:beetroot"
+          "name": "minecraft:beetroot",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 6,
+              "min": 4
+            },
+            "type": "minecraft:set_count"
+          }
         }
       ]
     },
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:empty",
@@ -248,10 +218,10 @@
           "name": "minecraft:iron_shovel"
         }
       ],
-      "rolls": 2.0
+      "rolls": 2
     },
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:empty",
@@ -267,7 +237,7 @@
           "weight": 3
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     },
     {
       "rolls": 1.0,
@@ -316,6 +286,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -338,26 +322,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

@@ -7,48 +7,42 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2,
-                "max": 4
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:stick"
+          "name": "minecraft:stick",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 4
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2,
-                "max": 3
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:feather"
+          "name": "minecraft:feather",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 3
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2,
-                "max": 4
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:arrow"
+          "name": "minecraft:arrow",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 4
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         }
       ]
     },
@@ -58,47 +52,41 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1,
-                "type": "uniform"
-              }
-            }
-          ],
-          "name": "minecraft:pale_hanging_moss"
+          "name": "minecraft:pale_hanging_moss",
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2,
-                "max": 4
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:stick"
+          "name": "minecraft:stick",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 4
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 3
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:string"
+          "name": "minecraft:string",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 3
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -106,48 +94,42 @@
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2,
-                "max": 3
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:feather"
+          "name": "minecraft:feather",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 3
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 3
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:flint"
+          "name": "minecraft:flint",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 3
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2,
-                "max": 4
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:arrow"
+          "name": "minecraft:arrow",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 4
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -162,16 +144,14 @@
         {
           "type": "item",
           "name": "crossbow",
-          "functions": [
-            {
-              "function": "set_damage",
-              "damage": {
-                "max": 0.9,
-                "min": 0.1,
-                "type": "uniform"
-              }
-            }
-          ]
+          "modifier": {
+            "damage": {
+              "max": 0.9,
+              "min": 0.1,
+              "type": "uniform"
+            },
+            "type": "set_damage"
+          }
         }
       ]
     },
@@ -247,6 +227,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -269,26 +263,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

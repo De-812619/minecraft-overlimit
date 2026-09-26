@@ -4,7 +4,8 @@
     {
       "rolls": {
         "max": 3,
-        "min": 1
+        "min": 1,
+        "type": "minecraft:uniform"
       },
       "entries": [
         {
@@ -20,97 +21,92 @@
         {
           "type": "item",
           "name": "arrow",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 2
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "tipped_arrow",
-          "functions": [
+          "modifier": [
             {
-              "function": "set_count",
               "count": {
                 "max": 3,
-                "min": 2
-              }
+                "min": 2,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_count"
             },
             {
-              "function": "set_potion",
-              "id": "slowness"
+              "id": "slowness",
+              "type": "set_potion"
             }
           ]
         },
         {
           "type": "item",
           "name": "bone",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "bone_meal",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "iron_ingot",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "iron_nugget",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 2
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "emerald",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         }
       ]
     },
@@ -120,56 +116,54 @@
         {
           "type": "item",
           "name": "bow",
-          "functions": [
+          "modifier": [
             {
-              "function": "enchant_with_levels",
               "levels": {
+                "type": "minecraft:uniform",
                 "max": 25,
                 "min": 15
               },
               "options": "#nova_structures:structure/snowy",
-              "conditions": [
-                {
-                  "condition": "random_chance",
-                  "chance": 0.8
-                }
-              ]
+              "condition": {
+                "type": "random_chance",
+                "chance": 0.8
+              },
+              "type": "enchant_with_levels"
             },
             {
-              "function": "set_damage",
               "damage": {
                 "min": 0.5,
                 "max": 0.7,
                 "type": "uniform"
-              }
+              },
+              "type": "set_damage"
             }
           ]
         },
         {
           "type": "item",
           "name": "crossbow",
-          "functions": [
+          "modifier": [
             {
-              "function": "enchant_with_levels",
               "levels": {
+                "type": "minecraft:uniform",
                 "max": 25,
                 "min": 15
               },
               "options": "#nova_structures:structure/snowy",
-              "conditions": [
-                {
-                  "condition": "random_chance",
-                  "chance": 0.8
-                }
-              ]
+              "condition": {
+                "type": "random_chance",
+                "chance": 0.8
+              },
+              "type": "enchant_with_levels"
             },
             {
-              "function": "set_damage",
               "damage": {
                 "min": 0.5,
                 "max": 0.7,
                 "type": "uniform"
-              }
+              },
+              "type": "set_damage"
             }
           ]
         }
@@ -222,6 +216,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -244,26 +252,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

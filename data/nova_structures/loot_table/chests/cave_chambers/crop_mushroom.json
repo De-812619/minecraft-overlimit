@@ -6,28 +6,26 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:red_mushroom",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 2,
-                "max": 5
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 2,
+              "max": 5,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:brown_mushroom",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 2,
-                "max": 5
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 2,
+              "max": 5,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         }
       ]
     },
@@ -49,12 +47,10 @@
           "name": "minecraft:rabbit_stew"
         }
       ],
-      "conditions": [
-        {
-          "condition": "minecraft:random_chance",
-          "chance": 0.8
-        }
-      ]
+      "condition": {
+        "type": "minecraft:random_chance",
+        "chance": 0.8
+      }
     },
     {
       "rolls": 1.0,
@@ -103,6 +99,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -125,26 +135,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

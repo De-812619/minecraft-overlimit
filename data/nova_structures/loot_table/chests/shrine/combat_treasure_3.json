@@ -3,268 +3,226 @@
   "pools": [
     {
       "rolls": 1,
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 10,
-              "options": "#nova_structures:structure/shrine"
-            }
-          ],
           "name": "minecraft:copper_pickaxe",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "levels": 10,
+            "options": "#nova_structures:structure/shrine",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 10,
-              "options": "#nova_structures:structure/shrine"
-            }
-          ],
           "name": "minecraft:copper_sword",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "levels": 10,
+            "options": "#nova_structures:structure/shrine",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 10,
-              "options": "#nova_structures:structure/shrine"
-            }
-          ],
           "name": "minecraft:copper_spear",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "levels": 10,
+            "options": "#nova_structures:structure/shrine",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 10,
-              "options": "#nova_structures:structure/shrine"
-            }
-          ],
           "name": "minecraft:copper_axe",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": 10,
+            "options": "#nova_structures:structure/shrine",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 10,
-              "options": "#nova_structures:structure/shrine"
-            }
-          ],
           "name": "minecraft:copper_helmet",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": 10,
+            "options": "#nova_structures:structure/shrine",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 10,
-              "options": "#nova_structures:structure/shrine"
-            }
-          ],
           "name": "minecraft:copper_chestplate",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": 10,
+            "options": "#nova_structures:structure/shrine",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 10,
-              "options": "#nova_structures:structure/shrine"
-            }
-          ],
           "name": "minecraft:copper_leggings",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": 10,
+            "options": "#nova_structures:structure/shrine",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 10,
-              "options": "#nova_structures:structure/shrine"
-            }
-          ],
           "name": "minecraft:copper_boots",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "levels": 10,
+            "options": "#nova_structures:structure/shrine",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 20,
-              "options": "#nova_structures:structure/shrine"
-            }
-          ],
           "name": "minecraft:iron_pickaxe",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "levels": 20,
+            "options": "#nova_structures:structure/shrine",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 20,
-              "options": "#nova_structures:structure/shrine"
-            }
-          ],
           "name": "minecraft:iron_sword",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "levels": 20,
+            "options": "#nova_structures:structure/shrine",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 20,
-              "options": "#nova_structures:structure/shrine"
-            }
-          ],
           "name": "minecraft:iron_spear",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "levels": 20,
+            "options": "#nova_structures:structure/shrine",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 20,
-              "options": "#nova_structures:structure/shrine"
-            }
-          ],
           "name": "minecraft:iron_axe",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": 20,
+            "options": "#nova_structures:structure/shrine",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 20,
-              "options": "#nova_structures:structure/shrine"
-            }
-          ],
           "name": "minecraft:iron_helmet",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": 20,
+            "options": "#nova_structures:structure/shrine",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 20,
-              "options": "#nova_structures:structure/shrine"
-            }
-          ],
           "name": "minecraft:iron_chestplate",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": 20,
+            "options": "#nova_structures:structure/shrine",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 20,
-              "options": "#nova_structures:structure/shrine"
-            }
-          ],
           "name": "minecraft:iron_leggings",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": 20,
+            "options": "#nova_structures:structure/shrine",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 20,
-              "options": "#nova_structures:structure/shrine"
-            }
-          ],
           "name": "minecraft:iron_boots",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "levels": 20,
+            "options": "#nova_structures:structure/shrine",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 20,
-              "options": "#nova_structures:structure/shrine"
-            }
-          ],
           "name": "minecraft:book",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "levels": 20,
+            "options": "#nova_structures:structure/shrine",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "options": "#nova_structures:traveler",
-              "function": "minecraft:enchant_randomly"
-            }
-          ],
           "name": "minecraft:book",
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "options": "#nova_structures:traveler",
+            "type": "minecraft:enchant_randomly"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "options": "#nova_structures:structure/overworld",
-              "function": "minecraft:enchant_randomly"
-            }
-          ],
-          "name": "minecraft:book"
+          "name": "minecraft:book",
+          "modifier": {
+            "options": "#nova_structures:structure/overworld",
+            "type": "minecraft:enchant_randomly"
+          }
         }
       ]
     },
     {
       "rolls": 1,
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 5.0,
-                "max": 7.0
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:golden_carrot"
+          "name": "minecraft:golden_carrot",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 5,
+              "max": 7
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 8,
-                "max": 11
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:pumpkin_pie"
+          "name": "minecraft:pumpkin_pie",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 8,
+              "max": 11
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -272,33 +230,33 @@
         },
         {
           "type": "minecraft:item",
-          "functions": [
+          "name": "minecraft:potion",
+          "modifier": [
             {
               "add": false,
-              "count": 1.0,
-              "function": "minecraft:set_count"
+              "count": 1,
+              "type": "minecraft:set_count"
             },
             {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:strength"
+              "id": "minecraft:strength",
+              "type": "minecraft:set_potion"
             }
-          ],
-          "name": "minecraft:potion"
+          ]
         },
         {
           "type": "minecraft:item",
-          "functions": [
+          "name": "minecraft:potion",
+          "modifier": [
             {
               "add": false,
-              "count": 1.0,
-              "function": "minecraft:set_count"
+              "count": 1,
+              "type": "minecraft:set_count"
             },
             {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:regeneration"
+              "id": "minecraft:regeneration",
+              "type": "minecraft:set_potion"
             }
-          ],
-          "name": "minecraft:potion"
+          ]
         },
         {
           "type": "minecraft:item",
@@ -306,31 +264,27 @@
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 2,
-              "add": false
-            }
-          ],
-          "name": "minecraft:turtle_scute"
+          "name": "minecraft:turtle_scute",
+          "modifier": {
+            "count": 2,
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 2,
-              "add": false
-            }
-          ],
-          "name": "minecraft:lapis_lazuli"
+          "name": "minecraft:lapis_lazuli",
+          "modifier": {
+            "count": 2,
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         }
       ]
     },
     {
       "rolls": 1,
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
@@ -338,48 +292,42 @@
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 5,
-                "max": 7
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:iron_ingot"
+          "name": "minecraft:iron_ingot",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 5,
+              "max": 7
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 4,
-                "max": 6
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:gold_ingot"
+          "name": "minecraft:gold_ingot",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 4,
+              "max": 6
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 6,
-                "max": 10
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:emerald"
+          "name": "minecraft:emerald",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 6,
+              "max": 10
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -390,7 +338,7 @@
     },
     {
       "rolls": 1,
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "item",
@@ -445,6 +393,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -467,26 +429,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

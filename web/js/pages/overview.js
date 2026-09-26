@@ -13,7 +13,7 @@ export const overview = {
   html: `
     <p class="kicker">Over Limit</p>
     <h1>Modの概要</h1>
-    <p class="lead">Minecraft Java 26.2 向けの Fabric Mod です。構造物のチェストに上限を超えた装備を足し、敵の一部を段階強化します。夜や拠点、ネザー、エンドでは、勝つほど次が厳しくなるイベントが回ります。</p>
+    <p class="lead">Minecraft Java 26.3 向けの Fabric Mod です。構造物のチェストに上限を超えた装備を足し、敵の一部を段階強化します。夜や拠点、ネザー、エンドでは、勝つほど次が厳しくなるイベントが回ります。</p>
     ${toc([
       ["purpose", "何をする Mod か"],
       ["layers", "難易度の層"],
@@ -30,7 +30,7 @@ export const overview = {
       <li><strong>敵Mobの一部を段階強化する。</strong>出現時に ${W} / ${D} / ${C} / ${X} のいずれかになります。名前付き、ドラゴン、ウィザー、ウォーデンは対象外です。</li>
     </ol>
     ${cards([
-      ["#/install", "導入", "Fabric 26.2。シングルは JAR、マルチはサーバー JAR とクライアント用リソースパック。"],
+      ["#/install", "導入", "Fabric 26.3。シングルは JAR、マルチはサーバー JAR とクライアント用リソースパック。"],
       ["#/events", "イベント", "ブラッドムーン、防衛、ネザー、エンド、別ディメンション。"],
       ["#/items", "アイテム", "チェスト装備、クラフト、UNLIMITED、鍛冶装飾。"],
       ["#/enchants", "エンチャント", "上限超えと、装備に付く固有効果。台と司書には出ません。"],
@@ -98,6 +98,6 @@ export const overview = {
       <li>すでに中身が確定したチェストには、新しいルートは入りません。まだ生成されていないチェストだけが対象です。</li>
       <li>フェニックスの加護、ドッペルゲンガー、アストラルフローは保留で、ボーナス枠には入りません。</li>
     </ul>
-    <p class="footer-note">対象バージョンは Minecraft Java 26.2、Fabric Loader 0.19.3、Java 25 です。</p>
+    <p class="footer-note">対象バージョンは Minecraft Java 26.3、Fabric Loader 0.19.5、Java 25 です。</p>
   `,
 };

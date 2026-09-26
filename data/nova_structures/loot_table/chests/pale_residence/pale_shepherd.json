@@ -7,32 +7,28 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 4,
-                "min": 2,
-                "type": "uniform"
-              }
-            }
-          ],
-          "name": "minecraft:pale_hanging_moss"
+          "name": "minecraft:pale_hanging_moss",
+          "modifier": {
+            "count": {
+              "max": 4,
+              "min": 2,
+              "type": "uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 4
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:wheat"
+          "name": "minecraft:wheat",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 4
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -41,16 +37,14 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:shears",
-          "functions": [
-            {
-              "function": "set_damage",
-              "damage": {
-                "max": 0.7,
-                "min": 0.2,
-                "type": "minecraft:uniform"
-              }
-            }
-          ]
+          "modifier": {
+            "damage": {
+              "max": 0.7,
+              "min": 0.2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_damage"
+          }
         }
       ]
     },
@@ -60,62 +54,54 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 1,
-                "type": "uniform"
-              }
-            }
-          ],
-          "name": "minecraft:gray_wool"
+          "name": "minecraft:gray_wool",
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 3
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:light_gray_wool"
+          "name": "minecraft:light_gray_wool",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 3
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 3
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:white_wool"
+          "name": "minecraft:white_wool",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 3
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 3
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:orange_wool"
+          "name": "minecraft:orange_wool",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 3
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         }
       ]
     },
@@ -191,6 +177,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -213,26 +213,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

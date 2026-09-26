@@ -3,54 +3,48 @@
   "pools": [
     {
       "rolls": 3,
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
           "weight": 8,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 3.0,
-                "max": 7.0
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:baked_potato"
+          "name": "minecraft:baked_potato",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 3,
+              "max": 7
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2.0,
-                "max": 5.0
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:apple"
+          "name": "minecraft:apple",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 5
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1.0,
-                "max": 3.0
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:potato"
+          "name": "minecraft:potato",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 3
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -64,110 +58,102 @@
         {
           "type": "minecraft:item",
           "weight": 1,
-          "functions": [
-            {
-              "effects": [
-                {
-                  "type": "minecraft:night_vision",
-                  "duration": {
-                    "type": "minecraft:uniform",
-                    "max": 10.0,
-                    "min": 7.0
-                  }
-                },
-                {
-                  "type": "minecraft:jump_boost",
-                  "duration": {
-                    "type": "minecraft:uniform",
-                    "max": 10.0,
-                    "min": 7.0
-                  }
-                },
-                {
-                  "type": "minecraft:weakness",
-                  "duration": {
-                    "type": "minecraft:uniform",
-                    "max": 8.0,
-                    "min": 6.0
-                  }
-                },
-                {
-                  "type": "minecraft:blindness",
-                  "duration": {
-                    "type": "minecraft:uniform",
-                    "max": 7.0,
-                    "min": 5.0
-                  }
-                },
-                {
-                  "type": "minecraft:poison",
-                  "duration": {
-                    "type": "minecraft:uniform",
-                    "max": 20.0,
-                    "min": 10.0
-                  }
-                },
-                {
-                  "type": "minecraft:saturation",
-                  "duration": {
-                    "type": "minecraft:uniform",
-                    "max": 10.0,
-                    "min": 7.0
-                  }
+          "name": "minecraft:suspicious_stew",
+          "modifier": {
+            "effects": [
+              {
+                "type": "minecraft:night_vision",
+                "duration": {
+                  "type": "minecraft:uniform",
+                  "max": 10,
+                  "min": 7
                 }
-              ],
-              "function": "minecraft:set_stew_effect"
-            }
-          ],
-          "name": "minecraft:suspicious_stew"
+              },
+              {
+                "type": "minecraft:jump_boost",
+                "duration": {
+                  "type": "minecraft:uniform",
+                  "max": 10,
+                  "min": 7
+                }
+              },
+              {
+                "type": "minecraft:weakness",
+                "duration": {
+                  "type": "minecraft:uniform",
+                  "max": 8,
+                  "min": 6
+                }
+              },
+              {
+                "type": "minecraft:blindness",
+                "duration": {
+                  "type": "minecraft:uniform",
+                  "max": 7,
+                  "min": 5
+                }
+              },
+              {
+                "type": "minecraft:poison",
+                "duration": {
+                  "type": "minecraft:uniform",
+                  "max": 20,
+                  "min": 10
+                }
+              },
+              {
+                "type": "minecraft:saturation",
+                "duration": {
+                  "type": "minecraft:uniform",
+                  "max": 10,
+                  "min": 7
+                }
+              }
+            ],
+            "type": "minecraft:set_stew_effect"
+          }
         },
         {
           "type": "minecraft:item",
           "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 3.0,
-                "max": 7.0
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:cooked_cod"
+          "name": "minecraft:cooked_cod",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 3,
+              "max": 7
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1.0,
-                "max": 3.0
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:cod"
+          "name": "minecraft:cod",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 3
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1.0,
-                "max": 2.0
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:honey_bottle"
+          "name": "minecraft:honey_bottle",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 2
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         }
       ]
     },
@@ -218,6 +204,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -240,26 +240,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

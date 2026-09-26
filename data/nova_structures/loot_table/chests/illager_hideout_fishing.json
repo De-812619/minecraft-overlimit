@@ -3,36 +3,36 @@
   "pools": [
     {
       "rolls": 1,
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
+          "name": "minecraft:fishing_rod",
+          "modifier": [
             {
-              "function": "minecraft:enchant_with_levels",
               "levels": {
                 "type": "minecraft:uniform",
-                "max": 5.0,
-                "min": 0.0
+                "max": 15,
+                "min": 1
               },
-              "options": "#nova_structures:structure/illager"
+              "options": "#nova_structures:structure/illager",
+              "type": "minecraft:enchant_with_levels"
             },
             {
-              "function": "set_damage",
               "damage": {
                 "type": "minecraft:uniform",
                 "min": 0.5,
                 "max": 1.1
-              }
+              },
+              "type": "set_damage"
             }
-          ],
-          "name": "minecraft:fishing_rod"
+          ]
         }
       ]
     },
     {
       "rolls": 1,
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
@@ -40,86 +40,76 @@
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 3,
-              "add": false
-            }
-          ],
-          "name": "minecraft:turtle_scute"
+          "name": "minecraft:turtle_scute",
+          "modifier": {
+            "count": 3,
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         }
       ]
     },
     {
       "rolls": 2,
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2,
-                "max": 3
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:cod"
+          "name": "minecraft:cod",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 3
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2,
-                "max": 3
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:salmon"
+          "name": "minecraft:salmon",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 3
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         }
       ]
     },
     {
       "rolls": 2,
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2,
-                "max": 5
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:cooked_cod"
+          "name": "minecraft:cooked_cod",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 5
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2,
-                "max": 5
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:cooked_salmon"
+          "name": "minecraft:cooked_salmon",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 5
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         }
       ]
     },
@@ -170,6 +160,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -192,26 +196,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

@@ -2,23 +2,21 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:redstone",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 3,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -27,177 +25,154 @@
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:iron_ingot",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 3,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 4.0,
-                "min": 2.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:experience_bottle",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 4,
+              "min": 2
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "options": "minecraft:frost_walker",
-              "function": "minecraft:enchant_randomly"
-            }
-          ],
-          "name": "minecraft:book"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "options": "minecraft:silk_touch",
-              "function": "minecraft:enchant_randomly"
-            }
-          ],
-          "name": "minecraft:book"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "options": "minecraft:aqua_affinity",
-              "function": "minecraft:enchant_randomly"
-            }
-          ],
-          "name": "minecraft:book"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "options": "minecraft:looting",
-              "function": "minecraft:enchant_randomly"
-            }
-          ],
-          "name": "minecraft:book"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "options": "#nova_structures:structure/lone_citadel",
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "max": 30,
-                "min": 25
-              }
-            }
-          ],
           "name": "minecraft:book",
-          "weight": 3
+          "modifier": {
+            "options": "minecraft:frost_walker",
+            "type": "minecraft:enchant_randomly"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "modifier": {
+            "options": "minecraft:silk_touch",
+            "type": "minecraft:enchant_randomly"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "modifier": {
+            "options": "minecraft:aqua_affinity",
+            "type": "minecraft:enchant_randomly"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "modifier": {
+            "options": "minecraft:looting",
+            "type": "minecraft:enchant_randomly"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "weight": 3,
+          "modifier": {
+            "options": "#nova_structures:structure/lone_citadel",
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 30,
+              "min": 25
+            },
+            "type": "minecraft:enchant_with_levels"
+          }
         }
       ],
-      "rolls": 2.0
+      "rolls": 2
     },
     {
       "rolls": 2,
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1.0,
-                "max": 5.0
-              },
-              "add": false
-            }
-          ],
           "weight": 10,
-          "name": "minecraft:book"
+          "name": "minecraft:book",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 5
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1.0,
-                "max": 5.0
-              },
-              "add": false
-            }
-          ],
           "weight": 5,
-          "name": "minecraft:paper"
+          "name": "minecraft:paper",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 5
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1.0,
-                "max": 2.0
-              },
-              "add": false
-            }
-          ],
           "weight": 5,
-          "name": "minecraft:candle"
+          "name": "minecraft:candle",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 2
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2.0,
-                "max": 3.0
-              },
-              "add": false
-            }
-          ],
           "weight": 10,
-          "name": "minecraft:paper"
+          "name": "minecraft:paper",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 3
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1.0,
-                "max": 3.0
-              },
-              "add": false
-            }
-          ],
           "weight": 5,
-          "name": "minecraft:ink_sac"
+          "name": "minecraft:ink_sac",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 3
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -212,15 +187,14 @@
         {
           "type": "item",
           "name": "minecraft:emerald",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 5,
-                "min": 3
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 5,
+              "min": 3,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         }
       ]
     },
@@ -271,6 +245,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -293,26 +281,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

@@ -20,15 +20,53 @@
         "sound": "minecraft:music.nether.basalt_deltas"
       }
     },
-    "minecraft:visual/ambient_particles": [
-      {
-        "particle": {
-          "type": "minecraft:white_ash"
+    "minecraft:visual/ambient_particles": {
+      "argument": [
+        {
+          "particle": {
+            "type": "minecraft:white_ash"
+          },
+          "probability": 0.118093334
+        }
+      ],
+      "modifier": "append"
+    },
+    "minecraft:visual/fog_color": "#685f70",
+    "minecraft:gameplay/natural_mob_spawns": {
+      "argument": {
+        "spawns_by_category": {
+          "creature": [
+            {
+              "type": "minecraft:strider",
+              "weight": 60,
+              "count": {
+                "type": "minecraft:uniform",
+                "min_inclusive": 1,
+                "max_inclusive": 2
+              }
+            }
+          ],
+          "monster": [
+            {
+              "type": "minecraft:ghast",
+              "weight": 40,
+              "count": 1
+            },
+            {
+              "type": "minecraft:magma_cube",
+              "weight": 100,
+              "count": {
+                "type": "minecraft:uniform",
+                "min_inclusive": 2,
+                "max_inclusive": 5
+              }
+            }
+          ]
         },
-        "probability": 0.118093334
-      }
-    ],
-    "minecraft:visual/fog_color": "#685f70"
+        "spawn_costs": {}
+      },
+      "modifier": "overlay"
+    }
   },
   "carvers": "minecraft:nether_cave",
   "downfall": 0.0,
@@ -66,36 +104,5 @@
     ]
   ],
   "has_precipitation": false,
-  "spawn_costs": {},
-  "spawners": {
-    "ambient": [],
-    "axolotls": [],
-    "creature": [
-      {
-        "type": "minecraft:strider",
-        "maxCount": 2,
-        "minCount": 1,
-        "weight": 60
-      }
-    ],
-    "misc": [],
-    "monster": [
-      {
-        "type": "minecraft:ghast",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 40
-      },
-      {
-        "type": "minecraft:magma_cube",
-        "maxCount": 5,
-        "minCount": 2,
-        "weight": 100
-      }
-    ],
-    "underground_water_creature": [],
-    "water_ambient": [],
-    "water_creature": []
-  },
   "temperature": 2.0
 }

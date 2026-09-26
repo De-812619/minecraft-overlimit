@@ -8,57 +8,53 @@
           "type": "minecraft:item",
           "name": "minecraft:gold_ingot",
           "weight": 5,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 3,
-                "max": 7
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 3,
+              "max": 7,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_ingot",
           "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 3,
-                "max": 7
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 3,
+              "max": 7,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:quartz",
           "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 3,
-                "max": 7
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 3,
+              "max": 7,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:glowstone_dust",
           "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 3,
-                "max": 5
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 3,
+              "max": 5,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         }
       ]
     },
@@ -69,57 +65,53 @@
           "type": "minecraft:item",
           "name": "stick",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 2,
-                "max": 4
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 2,
+              "max": 4,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:string",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 2,
-                "max": 4
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 2,
+              "max": 4,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:coal",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 3
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 1,
+              "max": 3,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:porkchop",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 2
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 1,
+              "max": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -130,96 +122,88 @@
           "type": "minecraft:item",
           "name": "minecraft:arrow",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 5,
-                "max": 10
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 5,
+              "max": 10,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:splash_potion",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:water"
-            }
-          ]
+          "modifier": {
+            "id": "minecraft:water",
+            "type": "minecraft:set_potion"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:torch",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 4,
-                "max": 16
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 4,
+              "max": 16,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:leather",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 2,
-                "max": 5
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 2,
+              "max": 5,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:crimson_stem",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 2,
-                "max": 4
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 2,
+              "max": 4,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:crimson_planks",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 4,
-                "max": 16
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 4,
+              "max": 16,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:blackstone",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 4,
-                "max": 12
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 4,
+              "max": 12,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         }
       ]
     },
@@ -230,46 +214,43 @@
           "type": "minecraft:item",
           "name": "minecraft:golden_pickaxe",
           "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "min": 15,
-                "max": 20
-              },
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "min": 15,
+              "max": 20
+            },
+            "options": "#minecraft:on_random_loot",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:golden_shovel",
           "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "min": 15,
-                "max": 20
-              },
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "min": 15,
+              "max": 20
+            },
+            "options": "#minecraft:on_random_loot",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:golden_helmet",
           "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "min": 15,
-                "max": 20
-              },
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "min": 15,
+              "max": 20
+            },
+            "options": "#minecraft:on_random_loot",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
@@ -280,21 +261,23 @@
           "type": "minecraft:item",
           "name": "minecraft:crossbow",
           "weight": 2,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_damage",
               "damage": {
                 "min": 0.3,
-                "max": 0.7
-              }
+                "max": 0.7,
+                "type": "minecraft:uniform"
+              },
+              "type": "minecraft:set_damage"
             },
             {
-              "function": "minecraft:enchant_with_levels",
               "levels": {
+                "type": "minecraft:uniform",
                 "min": 10,
                 "max": 15
               },
-              "options": "#minecraft:on_random_loot"
+              "options": "#minecraft:on_random_loot",
+              "type": "minecraft:enchant_with_levels"
             }
           ]
         }
@@ -307,6 +290,25 @@
           "type": "minecraft:loot_table",
           "value": "nova_structures:charts/piglin_hamlet",
           "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": [
+            "nova_structures:charts/nether_skeleton_encampment_crimson",
+            "nova_structures:charts/nether_skeleton_encampment_fort",
+            "nova_structures:charts/nether_skeleton_encampment_soul",
+            "nova_structures:charts/nether_skeleton_encampment_warped"
+          ],
+          "expand": true,
+          "condition": {
+            "type": "minecraft:random_chance",
+            "chance": 0.2
+          }
         }
       ]
     },
@@ -357,6 +359,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -379,26 +395,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

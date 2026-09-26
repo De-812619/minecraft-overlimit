@@ -1,11 +1,11 @@
 # over_limit_pack
 
-Minecraft Java **26.2** 向け Fabric Mod です。既存データパックを JAR に同梱し、一部の tick とカスタムエンチャントを Java で動かします。見た目（`assets/`）も同じ JAR に入っています。マルチでサーバーだけに置くときは、別のリソースパックをクライアントへ配ります。
+Minecraft Java **26.3** 向け Fabric Mod です。既存データパックを JAR に同梱し、一部の tick とカスタムエンチャントを Java で動かします。見た目（`assets/`）も同じ JAR に入っています。マルチでサーバーだけに置くときは、別のリソースパックをクライアントへ配ります。
 
 ## 必要環境
 
-- Minecraft Java Edition **26.2**
-- Fabric Loader **0.19.3** と Fabric API（`0.156.0+26.2`）
+- Minecraft Java Edition **26.3**
+- Fabric Loader **0.19.5**（0.19.3 以上）と Fabric API（`0.161.0+26.3`）
 - Java **25**
 - 任意: [Dungeons and Taverns](https://modrinth.com/datapack/dungeons-and-taverns) と併用できます
 
@@ -64,6 +64,7 @@ JAR 内の `assets/` がモデル・テクスチャ・翻訳を出します。
 | 海底遺跡 | |
 | 廃坑 | |
 | 埋もれた宝 | |
+| 放棄されたキャンプ | 通常チェストと隠しチェスト。樽は対象外 |
 | 試練の間 | チェストと宝物庫（不吉な宝物庫含む） |
 | ネザー要塞 | |
 | バストリオン | 4種 |

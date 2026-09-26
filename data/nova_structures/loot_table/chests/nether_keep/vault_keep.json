@@ -16,37 +16,31 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 15,
-              "options": "#nova_structures:wither_coated"
-            }
-          ],
           "name": "minecraft:book",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": 15,
+            "options": "#nova_structures:wither_coated",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 15,
-              "options": "#nova_structures:swift_soar"
-            }
-          ],
-          "name": "minecraft:book"
+          "name": "minecraft:book",
+          "modifier": {
+            "levels": 15,
+            "options": "#nova_structures:swift_soar",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 15,
-              "options": "#nova_structures:hydro_veil"
-            }
-          ],
-          "name": "minecraft:book"
+          "name": "minecraft:book",
+          "modifier": {
+            "levels": 15,
+            "options": "#nova_structures:hydro_veil",
+            "type": "minecraft:enchant_with_levels"
+          }
         }
       ]
     },
@@ -97,6 +91,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -119,26 +127,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

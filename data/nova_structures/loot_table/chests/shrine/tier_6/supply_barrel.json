@@ -4,90 +4,85 @@
     {
       "rolls": {
         "max": 3,
-        "min": 2
+        "min": 2,
+        "type": "minecraft:uniform"
       },
       "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 15,
-                "min": 4
-              }
-            }
-          ],
-          "name": "minecraft:cobbled_deepslate"
+          "name": "minecraft:cobbled_deepslate",
+          "modifier": {
+            "count": {
+              "max": 15,
+              "min": 4,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 5,
-                "min": 1
-              }
-            }
-          ],
           "name": "minecraft:scaffolding",
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 5,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 5,
-                "min": 1
-              }
-            }
-          ],
-          "name": "minecraft:coal"
+          "name": "minecraft:coal",
+          "modifier": {
+            "count": {
+              "max": 5,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 5,
-                "min": 3
-              }
-            }
-          ],
           "name": "minecraft:oak_planks",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "count": {
+              "max": 5,
+              "min": 3,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 5,
-                "min": 3
-              }
-            }
-          ],
           "name": "minecraft:apple",
-          "weight": 4
+          "weight": 4,
+          "modifier": {
+            "count": {
+              "max": 5,
+              "min": 3,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 6,
-                "min": 2
-              }
-            }
-          ],
-          "name": "minecraft:wind_charge"
+          "name": "minecraft:wind_charge",
+          "modifier": {
+            "count": {
+              "max": 6,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         }
       ]
     },
@@ -97,45 +92,42 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 2
-              }
-            }
-          ],
           "name": "minecraft:iron_ingot",
-          "weight": 6
+          "weight": 6,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 8,
-                "min": 5
-              }
-            }
-          ],
           "name": "minecraft:pumpkin_pie",
-          "weight": 6
+          "weight": 6,
+          "modifier": {
+            "count": {
+              "max": 8,
+              "min": 5,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 2
-              }
-            }
-          ],
           "name": "minecraft:honey_bottle",
-          "weight": 4
+          "weight": 4,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -147,12 +139,10 @@
           "name": "minecraft:water_bucket"
         }
       ],
-      "conditions": [
-        {
-          "condition": "random_chance",
-          "chance": 0.3
-        }
-      ]
+      "condition": {
+        "type": "random_chance",
+        "chance": 0.3
+      }
     },
     {
       "rolls": 1,
@@ -160,53 +150,48 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 1
-              }
-            }
-          ],
           "name": "minecraft:gunpowder",
-          "weight": 1
+          "weight": 1,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 1
-              }
-            }
-          ],
           "name": "minecraft:glowstone_dust",
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 1
-              }
-            }
-          ],
           "name": "minecraft:redstone",
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         }
       ],
-      "conditions": [
-        {
-          "condition": "random_chance",
-          "chance": 0.3
-        }
-      ]
+      "condition": {
+        "type": "random_chance",
+        "chance": 0.3
+      }
     },
     {
       "rolls": 1,
@@ -214,29 +199,26 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 1
-              }
-            }
-          ],
           "name": "minecraft:honeycomb",
-          "weight": 1
+          "weight": 1,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "empty",
           "weight": 20
         }
       ],
-      "conditions": [
-        {
-          "condition": "random_chance",
-          "chance": 0.2
-        }
-      ]
+      "condition": {
+        "type": "random_chance",
+        "chance": 0.2
+      }
     },
     {
       "rolls": 1.0,
@@ -285,6 +267,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -307,26 +303,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

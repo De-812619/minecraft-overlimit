@@ -6,48 +6,42 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1.0,
-                "max": 4.0
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:paper"
+          "name": "minecraft:paper",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 4
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1.0,
-                "max": 2.0
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:feather"
+          "name": "minecraft:feather",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 2
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "type": "minecraft:uniform",
-                "max": 4.0,
-                "min": 2.0
-              },
-              "options": "#nova_structures:structure/illager"
-            }
-          ],
-          "name": "minecraft:book"
+          "name": "minecraft:book",
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 4,
+              "min": 2
+            },
+            "options": "#nova_structures:structure/illager",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
@@ -60,28 +54,24 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "type": "minecraft:uniform",
-                "max": 5.0,
-                "min": 5.0
-              },
-              "options": "#nova_structures:structure/illager"
-            }
-          ],
-          "name": "minecraft:book"
+          "name": "minecraft:book",
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 5,
+              "min": 5
+            },
+            "options": "#nova_structures:structure/illager",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "options": "#nova_structures:illagers_bane",
-              "function": "minecraft:enchant_randomly"
-            }
-          ],
-          "name": "minecraft:book"
+          "name": "minecraft:book",
+          "modifier": {
+            "options": "#nova_structures:illagers_bane",
+            "type": "minecraft:enchant_randomly"
+          }
         }
       ]
     },
@@ -90,18 +80,16 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "type": "minecraft:uniform",
-                "max": 22.0,
-                "min": 18.0
-              },
-              "options": "#nova_structures:structure/illager"
-            }
-          ],
-          "name": "minecraft:book"
+          "name": "minecraft:book",
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 22,
+              "min": 18
+            },
+            "options": "#nova_structures:structure/illager",
+            "type": "minecraft:enchant_with_levels"
+          }
         }
       ]
     },
@@ -152,6 +140,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -174,26 +176,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

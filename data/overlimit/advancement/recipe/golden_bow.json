@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "overlimit:golden_bow"
+        "recipes": "overlimit:golden_bow"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

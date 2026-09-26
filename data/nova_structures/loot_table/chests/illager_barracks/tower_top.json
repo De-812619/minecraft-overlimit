@@ -8,15 +8,14 @@
           "type": "minecraft:item",
           "name": "minecraft:emerald",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 5
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 1,
+              "max": 5,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         }
       ]
     },
@@ -41,15 +40,14 @@
           "type": "minecraft:item",
           "name": "minecraft:arrow",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 3,
-                "max": 8
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 3,
+              "max": 8,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         }
       ]
     },
@@ -65,20 +63,19 @@
           "type": "minecraft:item",
           "name": "minecraft:crossbow",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 25,
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "modifier": {
+            "levels": 25,
+            "options": "#minecraft:on_random_loot",
+            "type": "minecraft:enchant_with_levels"
+          }
         }
       ]
     },
     {
       "rolls": {
         "min": 1,
-        "max": 2
+        "max": 2,
+        "type": "minecraft:uniform"
       },
       "entries": [
         {
@@ -90,79 +87,75 @@
           "type": "minecraft:item",
           "name": "minecraft:copper_ingot",
           "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 3,
-                "max": 8
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 3,
+              "max": 8,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:copper_nugget",
           "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 3,
-                "max": 18
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 3,
+              "max": 18,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_ingot",
           "weight": 4,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 3,
-                "max": 5
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 3,
+              "max": 5,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_nugget",
           "weight": 5,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 5,
-                "max": 27
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 5,
+              "max": 27,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         }
       ]
     },
     {
       "rolls": {
         "min": 2,
-        "max": 3
+        "max": 3,
+        "type": "minecraft:uniform"
       },
       "entries": [
         {
           "type": "minecraft:item",
           "name": "minecraft:beetroot",
           "weight": 8,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 2,
-                "max": 4
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 2,
+              "max": 4,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -173,29 +166,27 @@
           "type": "minecraft:item",
           "name": "minecraft:apple",
           "weight": 6,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 3
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 1,
+              "max": 3,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:bread",
           "weight": 6,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 2,
-                "max": 4
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 2,
+              "max": 4,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -216,27 +207,24 @@
           "type": "minecraft:item",
           "name": "minecraft:book",
           "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 25,
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "modifier": {
+            "levels": 25,
+            "options": "#minecraft:on_random_loot",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:ominous_bottle",
           "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:set_ominous_bottle_amplifier",
-              "amplifier": {
-                "min": 0,
-                "max": 4
-              }
-            }
-          ]
+          "modifier": {
+            "amplifier": {
+              "type": "minecraft:uniform",
+              "min": 0,
+              "max": 4
+            },
+            "type": "minecraft:set_ominous_bottle_amplifier"
+          }
         }
       ]
     },
@@ -287,6 +275,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -309,26 +311,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

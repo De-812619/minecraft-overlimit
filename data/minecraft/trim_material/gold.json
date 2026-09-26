@@ -1,5 +1,5 @@
 {
-  "asset_name": "gold",
+  "palette_id": "minecraft:trim/gold",
   "description": {
     "color": "#DEB12D",
     "translate": "trim_material.minecraft.gold",
@@ -9,8 +9,5 @@
         "translate": "overlimit.trim.gold.extra"
       }
     ]
-  },
-  "override_armor_assets": {
-    "minecraft:gold": "gold_darker"
   }
 }

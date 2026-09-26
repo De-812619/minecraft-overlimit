@@ -1,0 +1,277 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "modifier": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 5,
+                "min": 1
+              },
+              "type": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:iron_nugget"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:red_mushroom",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 7,
+                "min": 1
+              },
+              "type": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:potato",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 7,
+                "min": 1
+              },
+              "type": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:wheat",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 4,
+                "min": 1
+              },
+              "type": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:bread",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 4,
+                "min": 1
+              },
+              "type": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:pumpkin_pie",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 5,
+                "min": 1
+              },
+              "type": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:brown_mushroom",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:shelf_mushroom"
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 4,
+                "min": 1
+              },
+              "type": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:emerald",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 5,
+                "min": 1
+              },
+              "type": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:poplar_sapling",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:mushroom_stew"
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 5,
+                "min": 1
+              },
+              "type": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:poplar_log",
+          "weight": 10
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 8,
+        "min": 3
+      }
+    },
+    {
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "modifier": [
+            {
+              "add": false,
+              "count": 1,
+              "type": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:bundle"
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 2
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_gear",
+          "weight": 70
+        },
+        {
+          "type": "minecraft:group",
+          "weight": 25,
+          "children": [
+            {
+              "type": "minecraft:loot_table",
+              "value": "overlimit:bonus_gear"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "overlimit:bonus_gear"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 999
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_any",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 999
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_armor_any",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "modifier": "nova_structures:loot_modifier"
+}

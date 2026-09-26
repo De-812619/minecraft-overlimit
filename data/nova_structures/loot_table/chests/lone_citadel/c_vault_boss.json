@@ -2,39 +2,35 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 6.0,
-                "min": 3.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:iron_block",
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 6,
+              "min": 3
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 2.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:emerald_block",
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 3,
+              "min": 2
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -47,70 +43,62 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:gold_block",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 2.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ]
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 3,
+              "min": 2
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:lapis_block",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 8.0,
-                "min": 5.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ]
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 8,
+              "min": 5
+            },
+            "type": "minecraft:set_count"
+          }
         }
       ],
-      "rolls": 2.0
+      "rolls": 2
     },
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 16.0,
-                "min": 8.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:golden_carrot",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 16,
+              "min": 8
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 8.0,
-                "min": 4.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:golden_apple",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 8,
+              "min": 4
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -126,190 +114,166 @@
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_instrument",
-              "options": "#minecraft:regular_goat_horns"
-            }
-          ],
-          "name": "minecraft:goat_horn"
+          "name": "minecraft:goat_horn",
+          "modifier": {
+            "options": "#minecraft:regular_goat_horns",
+            "type": "minecraft:set_instrument"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "options": "minecraft:frost_walker",
-              "function": "minecraft:enchant_randomly"
-            }
-          ],
-          "name": "minecraft:book"
+          "name": "minecraft:book",
+          "modifier": {
+            "options": "minecraft:frost_walker",
+            "type": "minecraft:enchant_randomly"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:wind_charge",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 45.0,
-                "min": 15.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 45,
+              "min": 15
+            },
+            "type": "minecraft:set_count"
+          }
         }
       ],
-      "rolls": 2.0
+      "rolls": 2
     },
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 4.0,
-                "min": 2.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:experience_bottle",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 4,
+              "min": 2
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "type": "minecraft:uniform",
-                "max": 40.0,
-                "min": 10.0
-              },
-              "options": "#nova_structures:structure/lone_citadel"
-            }
-          ],
           "name": "minecraft:diamond_helmet",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 40,
+              "min": 10
+            },
+            "options": "#nova_structures:structure/lone_citadel",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "type": "minecraft:uniform",
-                "max": 40.0,
-                "min": 10.0
-              },
-              "options": "#nova_structures:structure/lone_citadel"
-            }
-          ],
           "name": "minecraft:diamond_chestplate",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 40,
+              "min": 10
+            },
+            "options": "#nova_structures:structure/lone_citadel",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "type": "minecraft:uniform",
-                "max": 40.0,
-                "min": 10.0
-              },
-              "options": "#nova_structures:structure/lone_citadel"
-            }
-          ],
           "name": "minecraft:diamond_leggings",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 40,
+              "min": 10
+            },
+            "options": "#nova_structures:structure/lone_citadel",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "type": "minecraft:uniform",
-                "max": 40.0,
-                "min": 10.0
-              },
-              "options": "#nova_structures:structure/lone_citadel"
-            }
-          ],
           "name": "minecraft:diamond_boots",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 40,
+              "min": 10
+            },
+            "options": "#nova_structures:structure/lone_citadel",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "type": "minecraft:uniform",
-                "max": 40.0,
-                "min": 10.0
-              },
-              "options": "#nova_structures:structure/lone_citadel"
-            }
-          ],
           "name": "minecraft:diamond_pickaxe",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 40,
+              "min": 10
+            },
+            "options": "#nova_structures:structure/lone_citadel",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "type": "minecraft:uniform",
-                "max": 40.0,
-                "min": 10.0
-              },
-              "options": "#nova_structures:structure/lone_citadel"
-            }
-          ],
           "name": "minecraft:diamond_axe",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 40,
+              "min": 10
+            },
+            "options": "#nova_structures:structure/lone_citadel",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "type": "minecraft:uniform",
-                "max": 40.0,
-                "min": 10.0
-              },
-              "options": "#nova_structures:structure/lone_citadel"
-            }
-          ],
           "name": "minecraft:diamond_spear",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 40,
+              "min": 10
+            },
+            "options": "#nova_structures:structure/lone_citadel",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "options": "#nova_structures:aerials_bane",
-              "function": "minecraft:enchant_randomly"
-            }
-          ],
           "name": "minecraft:book",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "options": "#nova_structures:aerials_bane",
+            "type": "minecraft:enchant_randomly"
+          }
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     },
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
@@ -317,18 +281,16 @@
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": 45,
-              "options": "#nova_structures:structure/lone_citadel"
-            }
-          ],
           "name": "minecraft:crossbow",
-          "weight": 100
+          "weight": 100,
+          "modifier": {
+            "levels": 45,
+            "options": "#nova_structures:structure/lone_citadel",
+            "type": "enchant_with_levels"
+          }
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     },
     {
       "rolls": 1.0,
@@ -377,6 +339,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -399,26 +375,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

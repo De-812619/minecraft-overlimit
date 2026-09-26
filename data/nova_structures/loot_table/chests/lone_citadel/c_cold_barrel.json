@@ -2,23 +2,21 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:pumpkin",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 2,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -27,94 +25,82 @@
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:blue_ice",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 2,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:packed_ice",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 3,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 5.0,
-                "min": 2.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:snowball",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 5,
+              "min": 2
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 2.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:salmon",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 3,
+              "min": 2
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 4.0,
-                "min": 2.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:snow_block",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 4,
+              "min": 2
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:slowness"
-            }
-          ],
           "name": "minecraft:tipped_arrow",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "id": "minecraft:slowness",
+            "type": "minecraft:set_potion"
+          }
         },
         {
           "type": "minecraft:item",
@@ -122,8 +108,9 @@
         }
       ],
       "rolls": {
-        "max": 3.0,
-        "min": 2.0
+        "max": 3,
+        "min": 2,
+        "type": "minecraft:uniform"
       }
     },
     {
@@ -132,15 +119,14 @@
         {
           "type": "item",
           "name": "minecraft:emerald",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 5,
-                "min": 3
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 5,
+              "min": 3,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         }
       ]
     },
@@ -191,6 +177,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -213,26 +213,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

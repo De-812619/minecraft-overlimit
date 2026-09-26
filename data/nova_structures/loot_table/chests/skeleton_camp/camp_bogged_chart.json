@@ -16,7 +16,22 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "value": "nova_structures:charts/parched_camp",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:charts/witch_villa",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
           "value": "nova_structures:charts/village_swamp",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:charts/toxic_lair",
           "weight": 1
         }
       ]
@@ -28,15 +43,14 @@
           "type": "minecraft:item",
           "name": "minecraft:arrow",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 2,
-                "max": 6
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 2,
+              "max": 6,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         }
       ]
     },
@@ -87,6 +101,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -109,26 +137,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

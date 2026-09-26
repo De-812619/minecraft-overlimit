@@ -4,7 +4,8 @@
     {
       "rolls": {
         "max": 3,
-        "min": 1
+        "min": 1,
+        "type": "minecraft:uniform"
       },
       "entries": [
         {
@@ -17,99 +18,93 @@
     {
       "rolls": {
         "max": 3,
-        "min": 2
+        "min": 2,
+        "type": "minecraft:uniform"
       },
       "entries": [
         {
           "type": "item",
           "name": "dried_kelp_block",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "cooked_salmon",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 2
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "salmon",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "cooked_cod",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 2
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "cod",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "dried_kelp",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 5,
-                "min": 3
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 5,
+              "min": 3,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "kelp",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         }
       ]
     },
@@ -181,6 +176,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -203,26 +212,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

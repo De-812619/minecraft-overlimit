@@ -8,9 +8,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -25,9 +25,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -42,9 +42,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -59,9 +59,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -76,9 +76,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -93,9 +93,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -110,9 +110,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -127,9 +127,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -144,9 +144,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -161,9 +161,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -178,9 +178,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -195,9 +195,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -212,9 +212,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -229,9 +229,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -246,9 +246,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -263,9 +263,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -280,9 +280,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -297,9 +297,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -314,9 +314,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -331,9 +331,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -348,9 +348,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -365,9 +365,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -382,9 +382,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -399,9 +399,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -416,9 +416,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -433,9 +433,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -450,9 +450,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -467,9 +467,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -484,9 +484,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -501,9 +501,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -518,9 +518,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -535,9 +535,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -552,9 +552,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -569,9 +569,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -586,9 +586,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -603,9 +603,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -620,9 +620,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -637,9 +637,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -654,9 +654,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -671,9 +671,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -688,9 +688,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -705,9 +705,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -722,9 +722,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -739,9 +739,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -756,9 +756,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -773,9 +773,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -790,9 +790,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -807,9 +807,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -824,9 +824,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -841,9 +841,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -858,9 +858,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -875,9 +875,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -892,9 +892,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -909,9 +909,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -926,9 +926,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -943,9 +943,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -960,9 +960,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -977,9 +977,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -994,9 +994,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1011,9 +1011,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1028,9 +1028,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1045,9 +1045,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1062,9 +1062,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1079,9 +1079,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1096,9 +1096,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1113,9 +1113,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1130,9 +1130,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1147,9 +1147,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1164,9 +1164,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1181,9 +1181,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1198,9 +1198,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1215,9 +1215,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1232,9 +1232,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1249,9 +1249,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1266,9 +1266,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1283,9 +1283,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1300,9 +1300,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1317,9 +1317,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1334,9 +1334,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1351,9 +1351,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1368,9 +1368,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1385,9 +1385,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1402,9 +1402,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1419,9 +1419,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1436,9 +1436,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1453,9 +1453,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1470,9 +1470,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1487,9 +1487,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1504,9 +1504,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1521,9 +1521,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1538,9 +1538,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1555,9 +1555,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1572,9 +1572,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1589,9 +1589,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1606,9 +1606,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1623,9 +1623,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1640,9 +1640,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1657,9 +1657,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1674,9 +1674,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1691,9 +1691,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1708,9 +1708,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1725,9 +1725,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1742,9 +1742,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1759,9 +1759,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1776,9 +1776,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1793,9 +1793,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1810,9 +1810,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1827,9 +1827,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1844,9 +1844,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1861,9 +1861,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1878,9 +1878,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1895,9 +1895,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1912,9 +1912,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1929,9 +1929,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1946,9 +1946,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1963,9 +1963,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1980,9 +1980,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -1997,9 +1997,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -2014,9 +2014,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -2031,9 +2031,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -2048,9 +2048,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -2065,9 +2065,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -2082,9 +2082,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -2099,9 +2099,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -2116,9 +2116,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -2133,9 +2133,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -2150,9 +2150,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -2167,9 +2167,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -2184,9 +2184,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -2201,9 +2201,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -2218,9 +2218,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -2235,9 +2235,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -2252,9 +2252,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
@@ -2269,9 +2269,9 @@
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,

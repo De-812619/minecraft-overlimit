@@ -1,312 +1,315 @@
-[
-  {
-    "function": "minecraft:filtered",
-    "item_filter": {
-      "predicates": {
-        "minecraft:custom_data": {
-          "overlimit": {
-            "recall_watch": true
+{
+  "type": "minecraft:sequence",
+  "functions": [
+    {
+      "item_filter": {
+        "predicates": {
+          "minecraft:custom_data": {
+            "overlimit": {
+              "recall_watch": true
+            }
           }
         }
-      }
-    },
-    "on_pass": {
-      "function": "minecraft:set_components",
-      "components": {
-        "minecraft:item_name": {
-          "color": "gold",
-          "translate": "overlimit.item.recall_watch"
-        },
-        "minecraft:lore": [
-          {
-            "color": "gray",
-            "italic": false,
-            "translate": "overlimit.item.recall_watch.lore"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "function": "minecraft:filtered",
-    "item_filter": {
-      "predicates": {
-        "minecraft:custom_data": {
-          "overlimit": {
-            "bm_totem": true
-          }
-        }
-      }
-    },
-    "on_pass": {
-      "function": "minecraft:set_components",
-      "components": {
-        "minecraft:item_name": {
-          "color": "dark_red",
-          "translate": "overlimit.item.bm_totem"
-        },
-        "minecraft:lore": [
-          {
-            "color": "gray",
-            "italic": false,
-            "translate": "overlimit.item.bm_totem.lore.1"
+      },
+      "on_pass": {
+        "components": {
+          "minecraft:item_name": {
+            "color": "gold",
+            "translate": "overlimit.item.recall_watch"
           },
-          {
-            "color": "gray",
-            "italic": false,
-            "translate": "overlimit.item.bm_totem.lore.2"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "function": "minecraft:filtered",
-    "item_filter": {
-      "predicates": {
-        "minecraft:custom_data": {
-          "overlimit": {
-            "bm_totem_spent": true
+          "minecraft:lore": [
+            {
+              "color": "gray",
+              "italic": false,
+              "translate": "overlimit.item.recall_watch.lore"
+            }
+          ]
+        },
+        "type": "minecraft:set_components"
+      },
+      "type": "minecraft:filtered"
+    },
+    {
+      "item_filter": {
+        "predicates": {
+          "minecraft:custom_data": {
+            "overlimit": {
+              "bm_totem": true
+            }
           }
         }
-      }
-    },
-    "on_pass": {
-      "function": "minecraft:set_components",
-      "components": {
-        "minecraft:item_name": {
-          "color": "dark_red",
-          "translate": "overlimit.item.bm_totem"
-        },
-        "minecraft:lore": [
-          {
-            "color": "gray",
-            "italic": false,
-            "translate": "overlimit.item.bm_totem.lore.1"
+      },
+      "on_pass": {
+        "components": {
+          "minecraft:item_name": {
+            "color": "dark_red",
+            "translate": "overlimit.item.bm_totem"
           },
-          {
-            "color": "gray",
-            "italic": false,
-            "translate": "overlimit.item.bm_totem.lore.2"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "function": "minecraft:filtered",
-    "item_filter": {
-      "predicates": {
-        "minecraft:custom_data": {
-          "overlimit": {
-            "phoenix_amulet": true
+          "minecraft:lore": [
+            {
+              "color": "gray",
+              "italic": false,
+              "translate": "overlimit.item.bm_totem.lore.1"
+            },
+            {
+              "color": "gray",
+              "italic": false,
+              "translate": "overlimit.item.bm_totem.lore.2"
+            }
+          ]
+        },
+        "type": "minecraft:set_components"
+      },
+      "type": "minecraft:filtered"
+    },
+    {
+      "item_filter": {
+        "predicates": {
+          "minecraft:custom_data": {
+            "overlimit": {
+              "bm_totem_spent": true
+            }
           }
         }
-      }
-    },
-    "on_pass": {
-      "function": "minecraft:set_components",
-      "components": {
-        "minecraft:item_name": {
-          "color": "gold",
-          "translate": "overlimit.item.phoenix_amulet"
-        },
-        "minecraft:lore": [
-          {
-            "color": "gray",
-            "italic": false,
-            "translate": "overlimit.item.phoenix_amulet.lore"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "function": "minecraft:filtered",
-    "item_filter": {
-      "predicates": {
-        "minecraft:custom_data": {
-          "overlimit": {
-            "quiet_totem": true
-          }
-        }
-      }
-    },
-    "on_pass": {
-      "function": "minecraft:set_components",
-      "components": {
-        "minecraft:item_name": {
-          "color": "aqua",
-          "translate": "overlimit.item.quiet_totem"
-        },
-        "minecraft:lore": [
-          {
-            "color": "gray",
-            "italic": false,
-            "translate": "overlimit.item.quiet_totem.lore.1"
+      },
+      "on_pass": {
+        "components": {
+          "minecraft:item_name": {
+            "color": "dark_red",
+            "translate": "overlimit.item.bm_totem"
           },
-          {
-            "color": "gray",
-            "italic": false,
-            "translate": "overlimit.item.quiet_totem.lore.2"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "function": "minecraft:filtered",
-    "item_filter": {
-      "predicates": {
-        "minecraft:custom_data": {
-          "overlimit": {
-            "quiet_totem_spent": true
+          "minecraft:lore": [
+            {
+              "color": "gray",
+              "italic": false,
+              "translate": "overlimit.item.bm_totem.lore.1"
+            },
+            {
+              "color": "gray",
+              "italic": false,
+              "translate": "overlimit.item.bm_totem.lore.2"
+            }
+          ]
+        },
+        "type": "minecraft:set_components"
+      },
+      "type": "minecraft:filtered"
+    },
+    {
+      "item_filter": {
+        "predicates": {
+          "minecraft:custom_data": {
+            "overlimit": {
+              "phoenix_amulet": true
+            }
           }
         }
-      }
-    },
-    "on_pass": {
-      "function": "minecraft:set_components",
-      "components": {
-        "minecraft:item_name": {
-          "color": "aqua",
-          "translate": "overlimit.item.quiet_totem"
-        },
-        "minecraft:lore": [
-          {
-            "color": "gray",
-            "italic": false,
-            "translate": "overlimit.item.quiet_totem.lore.1"
+      },
+      "on_pass": {
+        "components": {
+          "minecraft:item_name": {
+            "color": "gold",
+            "translate": "overlimit.item.phoenix_amulet"
           },
-          {
-            "color": "gray",
-            "italic": false,
-            "translate": "overlimit.item.quiet_totem.lore.2"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "function": "minecraft:filtered",
-    "item_filter": {
-      "predicates": {
-        "minecraft:custom_data": {
-          "overlimit": {
-            "holy_totem": true
+          "minecraft:lore": [
+            {
+              "color": "gray",
+              "italic": false,
+              "translate": "overlimit.item.phoenix_amulet.lore"
+            }
+          ]
+        },
+        "type": "minecraft:set_components"
+      },
+      "type": "minecraft:filtered"
+    },
+    {
+      "item_filter": {
+        "predicates": {
+          "minecraft:custom_data": {
+            "overlimit": {
+              "quiet_totem": true
+            }
           }
         }
-      }
-    },
-    "on_pass": {
-      "function": "minecraft:set_components",
-      "components": {
-        "minecraft:item_name": {
-          "color": "gold",
-          "translate": "overlimit.item.holy_totem"
-        },
-        "minecraft:lore": [
-          {
-            "color": "gray",
-            "italic": false,
-            "translate": "overlimit.item.holy_totem.lore"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "function": "minecraft:filtered",
-    "item_filter": {
-      "predicates": {
-        "minecraft:custom_data": {
-          "overlimit": {
-            "holy_totem_spent": true
-          }
-        }
-      }
-    },
-    "on_pass": {
-      "function": "minecraft:set_components",
-      "components": {
-        "minecraft:item_name": {
-          "color": "gold",
-          "translate": "overlimit.item.holy_totem"
-        },
-        "minecraft:lore": [
-          {
-            "color": "gray",
-            "italic": false,
-            "translate": "overlimit.item.holy_totem.lore"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "function": "minecraft:filtered",
-    "item_filter": {
-      "predicates": {
-        "minecraft:custom_data": {
-          "overlimit": {
-            "mini_golem": true
-          }
-        }
-      }
-    },
-    "on_pass": {
-      "function": "minecraft:set_components",
-      "components": {
-        "minecraft:item_name": {
-          "color": "white",
-          "translate": "overlimit.item.mini_golem"
-        },
-        "minecraft:lore": [
-          {
-            "color": "gray",
-            "italic": false,
-            "translate": "overlimit.item.mini_golem.lore"
+      },
+      "on_pass": {
+        "components": {
+          "minecraft:item_name": {
+            "color": "aqua",
+            "translate": "overlimit.item.quiet_totem"
           },
-          {
-            "color": "gray",
-            "italic": false,
-            "translate": "overlimit.item.mini_golem.lore.2"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "function": "minecraft:filtered",
-    "item_filter": {
-      "predicates": {
-        "minecraft:custom_data": {
-          "overlimit": {
-            "golden_bow": true
+          "minecraft:lore": [
+            {
+              "color": "gray",
+              "italic": false,
+              "translate": "overlimit.item.quiet_totem.lore.1"
+            },
+            {
+              "color": "gray",
+              "italic": false,
+              "translate": "overlimit.item.quiet_totem.lore.2"
+            }
+          ]
+        },
+        "type": "minecraft:set_components"
+      },
+      "type": "minecraft:filtered"
+    },
+    {
+      "item_filter": {
+        "predicates": {
+          "minecraft:custom_data": {
+            "overlimit": {
+              "quiet_totem_spent": true
+            }
           }
         }
-      }
-    },
-    "on_pass": {
-      "function": "minecraft:set_components",
-      "components": {
-        "minecraft:item_name": {
-          "color": "gold",
-          "translate": "overlimit.item.golden_bow"
-        },
-        "minecraft:lore": [
-          {
-            "color": "gray",
-            "italic": false,
-            "translate": "overlimit.item.golden_bow.lore.1"
+      },
+      "on_pass": {
+        "components": {
+          "minecraft:item_name": {
+            "color": "aqua",
+            "translate": "overlimit.item.quiet_totem"
           },
-          {
-            "color": "gray",
-            "italic": false,
-            "translate": "overlimit.item.golden_bow.lore.2"
+          "minecraft:lore": [
+            {
+              "color": "gray",
+              "italic": false,
+              "translate": "overlimit.item.quiet_totem.lore.1"
+            },
+            {
+              "color": "gray",
+              "italic": false,
+              "translate": "overlimit.item.quiet_totem.lore.2"
+            }
+          ]
+        },
+        "type": "minecraft:set_components"
+      },
+      "type": "minecraft:filtered"
+    },
+    {
+      "item_filter": {
+        "predicates": {
+          "minecraft:custom_data": {
+            "overlimit": {
+              "holy_totem": true
+            }
           }
-        ]
-      }
+        }
+      },
+      "on_pass": {
+        "components": {
+          "minecraft:item_name": {
+            "color": "gold",
+            "translate": "overlimit.item.holy_totem"
+          },
+          "minecraft:lore": [
+            {
+              "color": "gray",
+              "italic": false,
+              "translate": "overlimit.item.holy_totem.lore"
+            }
+          ]
+        },
+        "type": "minecraft:set_components"
+      },
+      "type": "minecraft:filtered"
+    },
+    {
+      "item_filter": {
+        "predicates": {
+          "minecraft:custom_data": {
+            "overlimit": {
+              "holy_totem_spent": true
+            }
+          }
+        }
+      },
+      "on_pass": {
+        "components": {
+          "minecraft:item_name": {
+            "color": "gold",
+            "translate": "overlimit.item.holy_totem"
+          },
+          "minecraft:lore": [
+            {
+              "color": "gray",
+              "italic": false,
+              "translate": "overlimit.item.holy_totem.lore"
+            }
+          ]
+        },
+        "type": "minecraft:set_components"
+      },
+      "type": "minecraft:filtered"
+    },
+    {
+      "item_filter": {
+        "predicates": {
+          "minecraft:custom_data": {
+            "overlimit": {
+              "mini_golem": true
+            }
+          }
+        }
+      },
+      "on_pass": {
+        "components": {
+          "minecraft:item_name": {
+            "color": "white",
+            "translate": "overlimit.item.mini_golem"
+          },
+          "minecraft:lore": [
+            {
+              "color": "gray",
+              "italic": false,
+              "translate": "overlimit.item.mini_golem.lore"
+            },
+            {
+              "color": "gray",
+              "italic": false,
+              "translate": "overlimit.item.mini_golem.lore.2"
+            }
+          ]
+        },
+        "type": "minecraft:set_components"
+      },
+      "type": "minecraft:filtered"
+    },
+    {
+      "item_filter": {
+        "predicates": {
+          "minecraft:custom_data": {
+            "overlimit": {
+              "golden_bow": true
+            }
+          }
+        }
+      },
+      "on_pass": {
+        "components": {
+          "minecraft:item_name": {
+            "color": "gold",
+            "translate": "overlimit.item.golden_bow"
+          },
+          "minecraft:lore": [
+            {
+              "color": "gray",
+              "italic": false,
+              "translate": "overlimit.item.golden_bow.lore.1"
+            },
+            {
+              "color": "gray",
+              "italic": false,
+              "translate": "overlimit.item.golden_bow.lore.2"
+            }
+          ]
+        },
+        "type": "minecraft:set_components"
+      },
+      "type": "minecraft:filtered"
     }
-  }
-]
+  ]
+}

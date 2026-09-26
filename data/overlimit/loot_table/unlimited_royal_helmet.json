@@ -7,86 +7,84 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:netherite_helmet",
-          "functions": [
-            {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:item_name": {
-                  "color": "gold",
-                  "translate": "overlimit.item.ul.royal.helmet"
+          "modifier": {
+            "components": {
+              "minecraft:item_name": {
+                "color": "gold",
+                "translate": "overlimit.item.ul.royal.helmet"
+              },
+              "minecraft:lore": [
+                {
+                  "color": "gray",
+                  "italic": false,
+                  "translate": "overlimit.item.ul.series"
                 },
-                "minecraft:lore": [
-                  {
-                    "color": "gray",
-                    "italic": false,
-                    "translate": "overlimit.item.ul.series"
-                  },
-                  {
-                    "color": "gray",
-                    "italic": false,
-                    "translate": "overlimit.item.ul.piece.heart"
-                  },
-                  {
-                    "color": "gray",
-                    "italic": false,
-                    "translate": "overlimit.item.ul.set"
-                  },
-                  {
-                    "color": "gray",
-                    "italic": false,
-                    "translate": "overlimit.item.ul.set.royal"
-                  }
-                ],
-                "minecraft:rarity": "epic",
-                "minecraft:item_model": "overlimit:unlimited_royal_helmet",
-                "minecraft:equippable": {
-                  "slot": "head",
-                  "asset_id": "overlimit:unlimited_royal",
-                  "equip_sound": "minecraft:item.armor.equip_netherite"
+                {
+                  "color": "gray",
+                  "italic": false,
+                  "translate": "overlimit.item.ul.piece.heart"
                 },
-                "minecraft:max_damage": 814,
-                "minecraft:repairable": {
-                  "items": "minecraft:netherite_ingot"
+                {
+                  "color": "gray",
+                  "italic": false,
+                  "translate": "overlimit.item.ul.set"
                 },
-                "minecraft:enchantment_glint_override": false,
-                "minecraft:custom_data": {
-                  "overlimit": {
-                    "unlimited_royal_helmet": true
-                  }
+                {
+                  "color": "gray",
+                  "italic": false,
+                  "translate": "overlimit.item.ul.set.royal"
+                }
+              ],
+              "minecraft:rarity": "epic",
+              "minecraft:item_model": "overlimit:unlimited_royal_helmet",
+              "minecraft:equippable": {
+                "slot": "head",
+                "asset_id": "overlimit:unlimited_royal",
+                "equip_sound": "minecraft:item.armor.equip_netherite"
+              },
+              "minecraft:max_damage": 814,
+              "minecraft:repairable": {
+                "items": "minecraft:netherite_ingot"
+              },
+              "minecraft:enchantment_glint_override": false,
+              "minecraft:custom_data": {
+                "overlimit": {
+                  "unlimited_royal_helmet": true
+                }
+              },
+              "minecraft:attribute_modifiers": [
+                {
+                  "type": "minecraft:armor",
+                  "id": "overlimit:ul.royal.armor.head",
+                  "amount": 3,
+                  "operation": "add_value",
+                  "slot": "head"
                 },
-                "minecraft:attribute_modifiers": [
-                  {
-                    "type": "minecraft:armor",
-                    "id": "overlimit:ul.royal.armor.head",
-                    "amount": 3,
-                    "operation": "add_value",
-                    "slot": "head"
-                  },
-                  {
-                    "type": "minecraft:armor_toughness",
-                    "id": "overlimit:ul.royal.tough.head",
-                    "amount": 4.0,
-                    "operation": "add_value",
-                    "slot": "head"
-                  },
-                  {
-                    "type": "minecraft:knockback_resistance",
-                    "id": "overlimit:ul.royal.kb.head",
-                    "amount": 0.25,
-                    "operation": "add_value",
-                    "slot": "head"
-                  },
-                  {
-                    "type": "minecraft:max_health",
-                    "id": "overlimit:ul.royal.hp.head",
-                    "amount": 2,
-                    "operation": "add_value",
-                    "slot": "head"
-                  }
-                ]
-              }
-            }
-          ]
+                {
+                  "type": "minecraft:armor_toughness",
+                  "id": "overlimit:ul.royal.tough.head",
+                  "amount": 4,
+                  "operation": "add_value",
+                  "slot": "head"
+                },
+                {
+                  "type": "minecraft:knockback_resistance",
+                  "id": "overlimit:ul.royal.kb.head",
+                  "amount": 0.25,
+                  "operation": "add_value",
+                  "slot": "head"
+                },
+                {
+                  "type": "minecraft:max_health",
+                  "id": "overlimit:ul.royal.hp.head",
+                  "amount": 2,
+                  "operation": "add_value",
+                  "slot": "head"
+                }
+              ]
+            },
+            "type": "minecraft:set_components"
+          }
         }
       ]
     }

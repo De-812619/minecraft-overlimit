@@ -7,47 +7,41 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 4,
-                "min": 2,
-                "type": "uniform"
-              }
-            }
-          ],
-          "name": "minecraft:pale_hanging_moss"
+          "name": "minecraft:pale_hanging_moss",
+          "modifier": {
+            "count": {
+              "max": 4,
+              "min": 2,
+              "type": "uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2,
-                "max": 3
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:pale_oak_sapling"
+          "name": "minecraft:pale_oak_sapling",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 3
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2,
-                "max": 4
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:cobweb"
+          "name": "minecraft:cobweb",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 4
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         }
       ]
     },
@@ -57,18 +51,16 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 2
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:gold_ingot"
+          "name": "minecraft:gold_ingot",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 2
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -76,18 +68,16 @@
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 2
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:iron_ingot"
+          "name": "minecraft:iron_ingot",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 2
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -99,33 +89,29 @@
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2,
-                "max": 4
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:charcoal"
+          "name": "minecraft:charcoal",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 4
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 3
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:beetroot"
+          "name": "minecraft:beetroot",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 3
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         }
       ]
     },
@@ -216,15 +202,13 @@
           "name": "minecraft:copper_shovel"
         }
       ],
-      "conditions": [
+      "condition": {
+        "type": "minecraft:random_chance",
+        "chance": 0.75
+      },
+      "modifier": [
         {
-          "condition": "minecraft:random_chance",
-          "chance": 0.75
-        }
-      ],
-      "functions": [
-        {
-          "function": "minecraft:set_damage",
+          "type": "minecraft:set_damage",
           "damage": {
             "max": 0.7,
             "min": 0.3,
@@ -305,6 +289,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -327,26 +325,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

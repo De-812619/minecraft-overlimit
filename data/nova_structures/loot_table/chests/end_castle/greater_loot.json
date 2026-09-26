@@ -2,134 +2,118 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:ender_pearl"
+          "name": "minecraft:ender_pearl",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 2,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:end_crystal",
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 3,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:ghast_tear",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 2,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 6.0,
-                "min": 3.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:diamond",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 6,
+              "min": 3
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 8.0,
-                "min": 5.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:iron_ingot",
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 8,
+              "min": 5
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:gold_block",
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 2,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 8.0,
-                "min": 2.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:gold_ingot",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 8,
+              "min": 2
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 8.0,
-                "min": 2.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:emerald",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 8,
+              "min": 2
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -143,51 +127,45 @@
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:lapis_lazuli",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 3,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 8.0,
-                "min": 3.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:blaze_powder",
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 8,
+              "min": 3
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 2.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "minecraft:blaze_rod",
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 3,
+              "min": 2
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -197,53 +175,47 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:potion",
-          "functions": [
-            {
-              "function": "set_potion",
-              "id": "slow_falling"
-            }
-          ]
+          "modifier": {
+            "id": "slow_falling",
+            "type": "set_potion"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "splash_potion",
-          "functions": [
-            {
-              "function": "set_potion",
-              "id": "slow_falling"
-            }
-          ],
-          "weight": 1
+          "weight": 1,
+          "modifier": {
+            "id": "slow_falling",
+            "type": "set_potion"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "lingering_potion",
-          "functions": [
-            {
-              "function": "set_potion",
-              "id": "slow_falling"
-            }
-          ],
-          "weight": 1
+          "weight": 1,
+          "modifier": {
+            "id": "slow_falling",
+            "type": "set_potion"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:tipped_arrow",
-          "functions": [
+          "weight": 10,
+          "modifier": [
             {
-              "function": "set_potion",
-              "id": "slow_falling"
+              "id": "slow_falling",
+              "type": "set_potion"
             },
             {
-              "function": "set_count",
               "count": {
                 "max": 16,
                 "min": 10,
                 "type": "uniform"
-              }
+              },
+              "type": "set_count"
             }
-          ],
-          "weight": 10
+          ]
         },
         {
           "type": "minecraft:loot_table",
@@ -266,107 +238,89 @@
       "rolls": 3
     },
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": 30,
-              "options": "#nova_structures:structure/end"
-            }
-          ],
-          "name": "minecraft:iron_helmet"
+          "name": "minecraft:iron_helmet",
+          "modifier": {
+            "levels": 30,
+            "options": "#nova_structures:structure/end",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": 30,
-              "options": "#nova_structures:structure/end"
-            }
-          ],
-          "name": "minecraft:iron_chestplate"
+          "name": "minecraft:iron_chestplate",
+          "modifier": {
+            "levels": 30,
+            "options": "#nova_structures:structure/end",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": 30,
-              "options": "#nova_structures:structure/end"
-            }
-          ],
-          "name": "minecraft:iron_leggings"
+          "name": "minecraft:iron_leggings",
+          "modifier": {
+            "levels": 30,
+            "options": "#nova_structures:structure/end",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": 30,
-              "options": "#nova_structures:structure/end"
-            }
-          ],
-          "name": "minecraft:iron_boots"
+          "name": "minecraft:iron_boots",
+          "modifier": {
+            "levels": 30,
+            "options": "#nova_structures:structure/end",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": 30,
-              "options": "#nova_structures:structure/end"
-            }
-          ],
-          "name": "minecraft:iron_sword"
+          "name": "minecraft:iron_sword",
+          "modifier": {
+            "levels": 30,
+            "options": "#nova_structures:structure/end",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": 25,
-              "options": "#nova_structures:structure/end"
-            }
-          ],
-          "name": "minecraft:iron_spear"
+          "name": "minecraft:iron_spear",
+          "modifier": {
+            "levels": 25,
+            "options": "#nova_structures:structure/end",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": 30,
-              "options": "#nova_structures:structure/end"
-            }
-          ],
-          "name": "minecraft:iron_axe"
+          "name": "minecraft:iron_axe",
+          "modifier": {
+            "levels": 30,
+            "options": "#nova_structures:structure/end",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:book",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": 20,
-              "options": "#nova_structures:structure/end"
-            }
-          ]
+          "modifier": {
+            "levels": 20,
+            "options": "#nova_structures:structure/end",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": 20,
-              "options": "#nova_structures:structure/end"
-            }
-          ],
           "name": "minecraft:crossbow",
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "levels": 20,
+            "options": "#nova_structures:structure/end",
+            "type": "enchant_with_levels"
+          }
         }
       ],
       "rolls": {
@@ -376,102 +330,86 @@
       }
     },
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": 20,
-              "options": "#nova_structures:structure/end"
-            }
-          ],
-          "name": "minecraft:diamond_helmet"
+          "name": "minecraft:diamond_helmet",
+          "modifier": {
+            "levels": 20,
+            "options": "#nova_structures:structure/end",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": 20,
-              "options": "#nova_structures:structure/end"
-            }
-          ],
-          "name": "minecraft:diamond_chestplate"
+          "name": "minecraft:diamond_chestplate",
+          "modifier": {
+            "levels": 20,
+            "options": "#nova_structures:structure/end",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": 20,
-              "options": "#nova_structures:structure/end"
-            }
-          ],
-          "name": "minecraft:diamond_leggings"
+          "name": "minecraft:diamond_leggings",
+          "modifier": {
+            "levels": 20,
+            "options": "#nova_structures:structure/end",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": 20,
-              "options": "#nova_structures:structure/end"
-            }
-          ],
-          "name": "minecraft:diamond_boots"
+          "name": "minecraft:diamond_boots",
+          "modifier": {
+            "levels": 20,
+            "options": "#nova_structures:structure/end",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": 30,
-              "options": "#nova_structures:structure/end"
-            }
-          ],
-          "name": "minecraft:diamond_sword"
+          "name": "minecraft:diamond_sword",
+          "modifier": {
+            "levels": 30,
+            "options": "#nova_structures:structure/end",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": 25,
-              "options": "#nova_structures:structure/end"
-            }
-          ],
-          "name": "minecraft:diamond_spear"
+          "name": "minecraft:diamond_spear",
+          "modifier": {
+            "levels": 25,
+            "options": "#nova_structures:structure/end",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": 30,
-              "options": "#nova_structures:structure/end"
-            }
-          ],
-          "name": "minecraft:diamond_axe"
+          "name": "minecraft:diamond_axe",
+          "modifier": {
+            "levels": 30,
+            "options": "#nova_structures:structure/end",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:book",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": 30,
-              "options": "#nova_structures:structure/end"
-            }
-          ]
+          "modifier": {
+            "levels": 30,
+            "options": "#nova_structures:structure/end",
+            "type": "enchant_with_levels"
+          }
         }
       ],
       "rolls": 1
     },
     {
       "rolls": 1,
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:empty",
@@ -491,7 +429,7 @@
     },
     {
       "rolls": 1,
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "empty",
@@ -499,25 +437,21 @@
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "options": "#nova_structures:gravity"
-            }
-          ],
           "name": "minecraft:book",
-          "weight": 4
+          "weight": 4,
+          "modifier": {
+            "options": "#nova_structures:gravity",
+            "type": "minecraft:enchant_randomly"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "options": "#nova_structures:aerials_bane"
-            }
-          ],
           "name": "minecraft:book",
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "options": "#nova_structures:aerials_bane",
+            "type": "minecraft:enchant_randomly"
+          }
         }
       ]
     },
@@ -568,6 +502,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -590,26 +538,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

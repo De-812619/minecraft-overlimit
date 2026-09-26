@@ -1,7 +1,17 @@
-# 26.2 メモと出所
+# 26.3 メモと出所
 
-パック本体: Java **26.2**、`pack.mcmeta` は `min_format` / `max_format` `[107, 1]`。  
-検証ログ: `.../PrismLauncher/instances/ミッションワールド/minecraft/logs/latest.log`
+パック本体: Java **26.3**。データパック `pack.mcmeta` は `min_format` / `max_format` `[121, 0]`。リソースパックは `[97, 1]`。
+
+現行の書き方は 26.3。各節の「出所」が 26.2 クライアントと書いてあるものは、その版で取った実測で、規則は 26.3 でも同じ。26.3 で名前が変わった点だけ節内に差がある（例: `bed_rule` は `destroy_on_use`）。
+
+26.3 の書式（クライアント `26.3` のバニラ JSON と [26.3 リリース記事](https://www.minecraft.net/en-us/article/minecraft-java-edition-26-3)）:
+
+- ルート関数は `function` ではなく `type`。エントリの `functions` は `modifier`、`conditions` の配列は `condition`（複数なら `minecraft:all_of`）
+- 述語ファイルの種類は `type`
+- トリム材料は `palette_id`（`asset_name` と `override_armor_assets` は無い。暗いパレットは装備アセット側）
+- ノイズ設定は `material_rule`。ブロック状態は `id` / `properties`。密度関数は `left`/`right`/`input`。`shifted_noise` は `noise`、`y_clamped_gradient` は `gradient`
+- バイオームの湧きは `minecraft:gameplay/natural_mob_spawns`  
+検証ログ: `.../PrismLauncher/instances/26.3/minecraft/logs/latest.log`
 
 新しい知見は「何が起きたか / 正しい書き方 / 出所」の3行で足す。推測だけの項目は入れない。
 
@@ -502,7 +512,7 @@ Failed to get element overlimit:unlimited_axe missed input: {"overlimit:unlimite
 
 | 用途 | パス |
 | --- | --- |
-| テストワールド | `.../PrismLauncher/instances/ミッションワールド/minecraft/logs/latest.log` |
+| テストワールド | `.../PrismLauncher/instances/26.3/minecraft/logs/latest.log` |
 | 編集リポジトリ | `/Users/okanoueyuuichi/minecraft/datapacks/over_limit_pack`（ゲームは読まない） |
 
 検証は JAR（overlimit-deploy）。ワールドの `datapacks/` へはコピーしない。`.cursor/` を JAR に入れない。

@@ -24,7 +24,7 @@ const home = {
   path: "/",
   title: "Over Limit Wiki",
   html: `
-    <p class="kicker">Minecraft Java 26.2</p>
+    <p class="kicker">Minecraft Java 26.3</p>
     <h1>Over Limit Wiki</h1>
     <p class="lead">構造物のチェストに上限を超えた装備が入り、敵の一部が段階強化されます。夜、門、ネザー、エンドでは、勝つほど次が厳しくなるイベントが回ります。はじめての方は <a href="index.html">紹介ページ</a> からどうぞ。</p>
     <div class="cards">

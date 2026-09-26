@@ -7,86 +7,84 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:netherite_chestplate",
-          "functions": [
-            {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:item_name": {
-                  "color": "gold",
-                  "translate": "overlimit.item.ul.royal.chestplate"
+          "modifier": {
+            "components": {
+              "minecraft:item_name": {
+                "color": "gold",
+                "translate": "overlimit.item.ul.royal.chestplate"
+              },
+              "minecraft:lore": [
+                {
+                  "color": "gray",
+                  "italic": false,
+                  "translate": "overlimit.item.ul.series"
                 },
-                "minecraft:lore": [
-                  {
-                    "color": "gray",
-                    "italic": false,
-                    "translate": "overlimit.item.ul.series"
-                  },
-                  {
-                    "color": "gray",
-                    "italic": false,
-                    "translate": "overlimit.item.ul.piece.heart"
-                  },
-                  {
-                    "color": "gray",
-                    "italic": false,
-                    "translate": "overlimit.item.ul.set"
-                  },
-                  {
-                    "color": "gray",
-                    "italic": false,
-                    "translate": "overlimit.item.ul.set.royal"
-                  }
-                ],
-                "minecraft:rarity": "epic",
-                "minecraft:item_model": "overlimit:unlimited_royal_chestplate",
-                "minecraft:equippable": {
-                  "slot": "chest",
-                  "asset_id": "overlimit:unlimited_royal",
-                  "equip_sound": "minecraft:item.armor.equip_netherite"
+                {
+                  "color": "gray",
+                  "italic": false,
+                  "translate": "overlimit.item.ul.piece.heart"
                 },
-                "minecraft:max_damage": 1184,
-                "minecraft:repairable": {
-                  "items": "minecraft:netherite_ingot"
+                {
+                  "color": "gray",
+                  "italic": false,
+                  "translate": "overlimit.item.ul.set"
                 },
-                "minecraft:enchantment_glint_override": false,
-                "minecraft:custom_data": {
-                  "overlimit": {
-                    "unlimited_royal_chestplate": true
-                  }
+                {
+                  "color": "gray",
+                  "italic": false,
+                  "translate": "overlimit.item.ul.set.royal"
+                }
+              ],
+              "minecraft:rarity": "epic",
+              "minecraft:item_model": "overlimit:unlimited_royal_chestplate",
+              "minecraft:equippable": {
+                "slot": "chest",
+                "asset_id": "overlimit:unlimited_royal",
+                "equip_sound": "minecraft:item.armor.equip_netherite"
+              },
+              "minecraft:max_damage": 1184,
+              "minecraft:repairable": {
+                "items": "minecraft:netherite_ingot"
+              },
+              "minecraft:enchantment_glint_override": false,
+              "minecraft:custom_data": {
+                "overlimit": {
+                  "unlimited_royal_chestplate": true
+                }
+              },
+              "minecraft:attribute_modifiers": [
+                {
+                  "type": "minecraft:armor",
+                  "id": "overlimit:ul.royal.armor.chest",
+                  "amount": 8,
+                  "operation": "add_value",
+                  "slot": "chest"
                 },
-                "minecraft:attribute_modifiers": [
-                  {
-                    "type": "minecraft:armor",
-                    "id": "overlimit:ul.royal.armor.chest",
-                    "amount": 8,
-                    "operation": "add_value",
-                    "slot": "chest"
-                  },
-                  {
-                    "type": "minecraft:armor_toughness",
-                    "id": "overlimit:ul.royal.tough.chest",
-                    "amount": 4.0,
-                    "operation": "add_value",
-                    "slot": "chest"
-                  },
-                  {
-                    "type": "minecraft:knockback_resistance",
-                    "id": "overlimit:ul.royal.kb.chest",
-                    "amount": 0.25,
-                    "operation": "add_value",
-                    "slot": "chest"
-                  },
-                  {
-                    "type": "minecraft:max_health",
-                    "id": "overlimit:ul.royal.hp.chest",
-                    "amount": 4,
-                    "operation": "add_value",
-                    "slot": "chest"
-                  }
-                ]
-              }
-            }
-          ]
+                {
+                  "type": "minecraft:armor_toughness",
+                  "id": "overlimit:ul.royal.tough.chest",
+                  "amount": 4,
+                  "operation": "add_value",
+                  "slot": "chest"
+                },
+                {
+                  "type": "minecraft:knockback_resistance",
+                  "id": "overlimit:ul.royal.kb.chest",
+                  "amount": 0.25,
+                  "operation": "add_value",
+                  "slot": "chest"
+                },
+                {
+                  "type": "minecraft:max_health",
+                  "id": "overlimit:ul.royal.hp.chest",
+                  "amount": 4,
+                  "operation": "add_value",
+                  "slot": "chest"
+                }
+              ]
+            },
+            "type": "minecraft:set_components"
+          }
         }
       ]
     }

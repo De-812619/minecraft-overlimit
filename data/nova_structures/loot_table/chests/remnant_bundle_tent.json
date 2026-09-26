@@ -80,15 +80,14 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:salmon",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 5,
-                "min": 3
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 5,
+              "min": 3,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         }
       ]
     },
@@ -96,24 +95,17 @@
       "rolls": 2,
       "entries": [
         {
-          "type": "minecraft:tag",
-          "expand": true,
-          "name": "minecraft:creeper_drop_music_discs",
-          "weight": 2
-        },
-        {
           "type": "minecraft:item",
           "name": "minecraft:iron_axe",
-          "functions": [
-            {
-              "function": "set_damage",
-              "damage": {
-                "max": 1.0,
-                "min": 0.6
-              }
-            }
-          ],
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "damage": {
+              "max": 1.0,
+              "min": 0.6,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_damage"
+          }
         }
       ]
     },
@@ -164,6 +156,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -186,26 +192,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

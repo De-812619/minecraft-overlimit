@@ -2,7 +2,7 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:loot_table",
@@ -10,92 +10,88 @@
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1.0,
-                "max": 2.0
-              },
-              "add": false
-            }
-          ],
           "name": "minecraft:phantom_membrane",
-          "weight": 4
+          "weight": 4,
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 2
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": 10,
-              "options": "#nova_structures:structure/end"
-            }
-          ],
-          "name": "minecraft:crossbow"
+          "name": "minecraft:crossbow",
+          "modifier": {
+            "levels": 10,
+            "options": "#nova_structures:structure/end",
+            "type": "enchant_with_levels"
+          }
         }
       ],
       "rolls": 2
     },
     {
       "rolls": 3,
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "item",
           "name": "minecraft:firework_rocket",
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "min": 3.0,
-                "max": 5.0
+                "min": 3,
+                "max": 5
               },
-              "add": false
+              "add": false,
+              "type": "minecraft:set_count"
             },
             {
-              "function": "minecraft:set_fireworks",
-              "flight_duration": 3
+              "flight_duration": 3,
+              "type": "minecraft:set_fireworks"
             }
           ]
         },
         {
           "type": "item",
           "name": "minecraft:firework_rocket",
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "min": 5.0,
-                "max": 8.0
+                "min": 5,
+                "max": 8
               },
-              "add": false
+              "add": false,
+              "type": "minecraft:set_count"
             },
             {
-              "function": "minecraft:set_fireworks",
-              "flight_duration": 2
+              "flight_duration": 2,
+              "type": "minecraft:set_fireworks"
             }
           ]
         },
         {
           "type": "item",
           "name": "minecraft:firework_rocket",
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "min": 6.0,
-                "max": 10.0
+                "min": 6,
+                "max": 10
               },
-              "add": false
+              "add": false,
+              "type": "minecraft:set_count"
             },
             {
-              "function": "minecraft:set_fireworks",
-              "flight_duration": 1
+              "flight_duration": 1,
+              "type": "minecraft:set_fireworks"
             }
           ]
         }
@@ -148,6 +144,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -170,26 +180,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

@@ -7,116 +7,107 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "max": 30,
-                "min": 25
-              },
-              "options": "#nova_structures:structure/shrine_ominous"
-            }
-          ],
           "name": "minecraft:diamond_axe",
-          "weight": 4
+          "weight": 4,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 30,
+              "min": 25
+            },
+            "options": "#nova_structures:structure/shrine_ominous",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "max": 25,
-                "min": 15
-              },
-              "options": "#nova_structures:structure/shrine_ominous"
-            }
-          ],
           "name": "minecraft:diamond_sword",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 25,
+              "min": 15
+            },
+            "options": "#nova_structures:structure/shrine_ominous",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "max": 25,
-                "min": 15
-              },
-              "options": "#nova_structures:structure/shrine_ominous"
-            }
-          ],
           "name": "minecraft:diamond_spear",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 25,
+              "min": 15
+            },
+            "options": "#nova_structures:structure/shrine_ominous",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "max": 20,
-                "min": 10
-              },
-              "options": "#nova_structures:structure/shrine"
-            }
-          ],
           "name": "minecraft:diamond_helmet",
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 20,
+              "min": 10
+            },
+            "options": "#nova_structures:structure/shrine",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "max": 20,
-                "min": 10
-              },
-              "options": "#nova_structures:structure/shrine"
-            }
-          ],
           "name": "minecraft:diamond_chestplate",
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 20,
+              "min": 10
+            },
+            "options": "#nova_structures:structure/shrine",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "max": 20,
-                "min": 10
-              },
-              "options": "#nova_structures:structure/shrine"
-            }
-          ],
           "name": "minecraft:diamond_leggings",
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 20,
+              "min": 10
+            },
+            "options": "#nova_structures:structure/shrine",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "max": 35,
-                "min": 20
-              },
-              "options": "#nova_structures:structure/shrine"
-            }
-          ],
           "name": "minecraft:diamond_boots",
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 35,
+              "min": 20
+            },
+            "options": "#nova_structures:structure/shrine",
+            "type": "minecraft:enchant_with_levels"
+          }
         }
       ],
-      "conditions": [
-        {
-          "condition": "random_chance",
-          "chance": 0.5
-        }
-      ]
+      "condition": {
+        "type": "random_chance",
+        "chance": 0.5
+      }
     },
     {
       "rolls": 1,
@@ -124,85 +115,80 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "max": 20,
-                "min": 10
-              },
-              "options": "#nova_structures:structure/overworld"
-            }
-          ],
           "name": "minecraft:crossbow",
-          "weight": 1
+          "weight": 1,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 20,
+              "min": 10
+            },
+            "options": "#nova_structures:structure/overworld",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "max": 15,
-                "min": 10
-              },
-              "options": "#nova_structures:structure/overworld"
-            }
-          ],
           "name": "minecraft:bow",
-          "weight": 1
+          "weight": 1,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 15,
+              "min": 10
+            },
+            "options": "#nova_structures:structure/overworld",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "max": 20,
-                "min": 10
-              },
-              "options": "#nova_structures:structure/shrine"
-            }
-          ],
           "name": "minecraft:book",
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 20,
+              "min": 10
+            },
+            "options": "#nova_structures:structure/shrine",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
+          "name": "minecraft:book",
+          "weight": 5,
+          "modifier": [
             {
-              "function": "minecraft:enchant_with_levels",
               "levels": {
+                "type": "minecraft:uniform",
                 "max": 30,
                 "min": 10
               },
-              "options": "#nova_structures:structure/shrine_ominous"
+              "options": "#nova_structures:structure/shrine_ominous",
+              "type": "minecraft:enchant_with_levels"
             },
             {
-              "function": "minecraft:enchant_with_levels",
               "levels": {
+                "type": "minecraft:uniform",
                 "max": 15,
                 "min": 5
               },
               "options": "#nova_structures:spiteful",
-              "conditions": [
-                {
-                  "condition": "random_chance",
-                  "chance": 0.75
-                }
-              ]
+              "condition": {
+                "type": "random_chance",
+                "chance": 0.75
+              },
+              "type": "minecraft:enchant_with_levels"
             }
-          ],
-          "name": "minecraft:book",
-          "weight": 5
+          ]
         }
       ],
-      "conditions": [
-        {
-          "condition": "random_chance",
-          "chance": 0.75
-        }
-      ]
+      "condition": {
+        "type": "random_chance",
+        "chance": 0.75
+      }
     },
     {
       "rolls": 2,
@@ -210,123 +196,111 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2,
-                "max": 3
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:iron_block"
+          "name": "minecraft:iron_block",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 3
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 3
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:gold_block"
+          "name": "minecraft:gold_block",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 3
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2,
-                "max": 5
-              },
-              "add": false
-            }
-          ],
           "name": "minecraft:iron_ingot",
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 5
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 2
-              },
-              "add": false
-            }
-          ],
           "name": "minecraft:gold_ingot",
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 2
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 2
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:emerald_block"
+          "name": "minecraft:emerald_block",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 2
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 4,
-                "max": 8
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:wind_charge"
+          "name": "minecraft:wind_charge",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 4,
+              "max": 8
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
+          "name": "minecraft:book",
+          "modifier": [
             {
-              "function": "minecraft:enchant_with_levels",
               "levels": {
+                "type": "minecraft:uniform",
                 "max": 30,
                 "min": 10
               },
-              "options": "#nova_structures:structure/shrine_ominous"
+              "options": "#nova_structures:structure/shrine_ominous",
+              "type": "minecraft:enchant_with_levels"
             },
             {
-              "function": "minecraft:enchant_with_levels",
               "levels": {
+                "type": "minecraft:uniform",
                 "max": 10,
                 "min": 5
               },
               "options": "#nova_structures:spiteful",
-              "conditions": [
-                {
-                  "condition": "random_chance",
-                  "chance": 0.75
-                }
-              ]
+              "condition": {
+                "type": "random_chance",
+                "chance": 0.75
+              },
+              "type": "minecraft:enchant_with_levels"
             }
-          ],
-          "name": "minecraft:book"
+          ]
         }
       ]
     },
@@ -336,19 +310,17 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 2
-              },
-              "add": false
-            }
-          ],
           "name": "minecraft:diamond",
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 2
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -361,18 +333,16 @@
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 8,
-                "max": 12
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:wind_charge"
+          "name": "minecraft:wind_charge",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 8,
+              "max": 12
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         }
       ]
     },
@@ -409,12 +379,10 @@
           "name": "minecraft:enchanted_golden_apple"
         }
       ],
-      "conditions": [
-        {
-          "condition": "random_chance",
-          "chance": 0.6
-        }
-      ]
+      "condition": {
+        "type": "random_chance",
+        "chance": 0.6
+      }
     },
     {
       "rolls": 1.0,
@@ -463,6 +431,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -485,26 +467,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

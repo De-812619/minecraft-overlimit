@@ -7,18 +7,16 @@
         {
           "type": "minecraft:loot_table",
           "value": "minecraft:chests/jungle_temple",
-          "functions": [
-            {
-              "function": "minecraft:filtered",
-              "item_filter": {
-                "items": "#nova_structures:jungle_ruins_filter"
-              },
-              "modifier": {
-                "function": "minecraft:set_count",
-                "count": 0
-              }
-            }
-          ]
+          "modifier": {
+            "item_filter": {
+              "items": "#nova_structures:jungle_ruins_filter"
+            },
+            "on_pass": {
+              "type": "minecraft:set_count",
+              "count": 0
+            },
+            "type": "minecraft:filtered"
+          }
         }
       ]
     },
@@ -32,120 +30,108 @@
       ]
     },
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:jungle_sapling"
+          "name": "minecraft:jungle_sapling",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 2,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:fern"
+          "name": "minecraft:fern",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 3,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:bamboo"
+          "name": "minecraft:bamboo",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 2,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:vine"
+          "name": "minecraft:vine",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 2,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:cocoa_beans"
+          "name": "minecraft:cocoa_beans",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 3,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:jungle_log"
+          "name": "minecraft:jungle_log",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 2,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:copper_helmet",
           "weight": 2,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:enchant_with_levels",
               "levels": {
                 "type": "minecraft:uniform",
                 "min": 10,
                 "max": 15
               },
-              "options": "#minecraft:on_random_loot"
+              "options": "#minecraft:on_random_loot",
+              "type": "minecraft:enchant_with_levels"
             },
             {
-              "function": "minecraft:set_damage",
               "damage": {
                 "type": "minecraft:uniform",
                 "min": 0.5,
                 "max": 0.65
-              }
+              },
+              "type": "minecraft:set_damage"
             }
           ]
         },
@@ -153,23 +139,23 @@
           "type": "minecraft:item",
           "name": "minecraft:copper_chestplate",
           "weight": 2,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:enchant_with_levels",
               "levels": {
                 "type": "minecraft:uniform",
                 "min": 10,
                 "max": 15
               },
-              "options": "#minecraft:on_random_loot"
+              "options": "#minecraft:on_random_loot",
+              "type": "minecraft:enchant_with_levels"
             },
             {
-              "function": "minecraft:set_damage",
               "damage": {
                 "type": "minecraft:uniform",
                 "min": 0.5,
                 "max": 0.65
-              }
+              },
+              "type": "minecraft:set_damage"
             }
           ]
         },
@@ -177,23 +163,23 @@
           "type": "minecraft:item",
           "name": "minecraft:copper_leggings",
           "weight": 2,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:enchant_with_levels",
               "levels": {
                 "type": "minecraft:uniform",
                 "min": 10,
                 "max": 15
               },
-              "options": "#minecraft:on_random_loot"
+              "options": "#minecraft:on_random_loot",
+              "type": "minecraft:enchant_with_levels"
             },
             {
-              "function": "minecraft:set_damage",
               "damage": {
                 "type": "minecraft:uniform",
                 "min": 0.5,
                 "max": 0.65
-              }
+              },
+              "type": "minecraft:set_damage"
             }
           ]
         },
@@ -201,23 +187,23 @@
           "type": "minecraft:item",
           "name": "minecraft:copper_boots",
           "weight": 2,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:enchant_with_levels",
               "levels": {
                 "type": "minecraft:uniform",
                 "min": 10,
                 "max": 15
               },
-              "options": "#minecraft:on_random_loot"
+              "options": "#minecraft:on_random_loot",
+              "type": "minecraft:enchant_with_levels"
             },
             {
-              "function": "minecraft:set_damage",
               "damage": {
                 "type": "minecraft:uniform",
                 "min": 0.5,
                 "max": 0.65
-              }
+              },
+              "type": "minecraft:set_damage"
             }
           ]
         },
@@ -225,23 +211,23 @@
           "type": "minecraft:item",
           "name": "minecraft:copper_sword",
           "weight": 2,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:enchant_with_levels",
               "levels": {
                 "type": "minecraft:uniform",
                 "min": 10,
                 "max": 15
               },
-              "options": "#minecraft:on_random_loot"
+              "options": "#minecraft:on_random_loot",
+              "type": "minecraft:enchant_with_levels"
             },
             {
-              "function": "minecraft:set_damage",
               "damage": {
                 "type": "minecraft:uniform",
                 "min": 0.5,
                 "max": 0.65
-              }
+              },
+              "type": "minecraft:set_damage"
             }
           ]
         },
@@ -249,23 +235,23 @@
           "type": "minecraft:item",
           "name": "minecraft:copper_axe",
           "weight": 2,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:enchant_with_levels",
               "levels": {
                 "type": "minecraft:uniform",
                 "min": 10,
                 "max": 15
               },
-              "options": "#minecraft:on_random_loot"
+              "options": "#minecraft:on_random_loot",
+              "type": "minecraft:enchant_with_levels"
             },
             {
-              "function": "minecraft:set_damage",
               "damage": {
                 "type": "minecraft:uniform",
                 "min": 0.5,
                 "max": 0.65
-              }
+              },
+              "type": "minecraft:set_damage"
             }
           ]
         },
@@ -321,6 +307,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -343,26 +343,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

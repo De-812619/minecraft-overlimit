@@ -17,174 +17,186 @@
         {
           "type": "item",
           "name": "ominous_bottle",
-          "functions": [
-            {
-              "function": "set_ominous_bottle_amplifier",
-              "amplifier": {
-                "max": 3,
-                "min": 0
-              }
-            }
-          ],
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "amplifier": {
+              "type": "minecraft:uniform",
+              "max": 3,
+              "min": 0
+            },
+            "type": "set_ominous_bottle_amplifier"
+          }
         },
         {
           "type": "item",
           "name": "diamond",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "iron_helmet",
-          "functions": [
+          "modifier": [
             {
-              "function": "enchant_with_levels",
               "levels": {
+                "type": "minecraft:uniform",
                 "max": 25,
                 "min": 15
               },
-              "options": "#nova_structures:structure/snowy"
+              "options": "#nova_structures:structure/snowy",
+              "type": "enchant_with_levels"
             },
             {
-              "function": "set_damage",
               "damage": {
                 "max": 0.5,
-                "min": 1
-              }
+                "min": 1,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_damage"
             }
           ]
         },
         {
           "type": "item",
           "name": "iron_chestplate",
-          "functions": [
+          "modifier": [
             {
-              "function": "enchant_with_levels",
               "levels": {
+                "type": "minecraft:uniform",
                 "max": 25,
                 "min": 15
               },
-              "options": "#nova_structures:structure/snowy"
+              "options": "#nova_structures:structure/snowy",
+              "type": "enchant_with_levels"
             },
             {
-              "function": "set_damage",
               "damage": {
                 "max": 0.5,
-                "min": 1
-              }
+                "min": 1,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_damage"
             }
           ]
         },
         {
           "type": "item",
           "name": "iron_leggings",
-          "functions": [
+          "modifier": [
             {
-              "function": "enchant_with_levels",
               "levels": {
+                "type": "minecraft:uniform",
                 "max": 25,
                 "min": 15
               },
-              "options": "#nova_structures:structure/snowy"
+              "options": "#nova_structures:structure/snowy",
+              "type": "enchant_with_levels"
             },
             {
-              "function": "set_damage",
               "damage": {
                 "max": 0.5,
-                "min": 1
-              }
+                "min": 1,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_damage"
             }
           ]
         },
         {
           "type": "item",
           "name": "iron_boots",
-          "functions": [
+          "modifier": [
             {
-              "function": "enchant_with_levels",
               "levels": {
+                "type": "minecraft:uniform",
                 "max": 25,
                 "min": 15
               },
-              "options": "#nova_structures:structure/snowy"
+              "options": "#nova_structures:structure/snowy",
+              "type": "enchant_with_levels"
             },
             {
-              "function": "set_damage",
               "damage": {
                 "max": 0.5,
-                "min": 1
-              }
+                "min": 1,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_damage"
             }
           ]
         },
         {
           "type": "item",
           "name": "iron_sword",
-          "functions": [
+          "modifier": [
             {
-              "function": "enchant_with_levels",
               "levels": {
+                "type": "minecraft:uniform",
                 "max": 25,
                 "min": 15
               },
-              "options": "#nova_structures:structure/snowy"
+              "options": "#nova_structures:structure/snowy",
+              "type": "enchant_with_levels"
             },
             {
-              "function": "set_damage",
               "damage": {
                 "max": 0.5,
-                "min": 1
-              }
+                "min": 1,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_damage"
             }
           ]
         },
         {
           "type": "item",
           "name": "iron_spear",
-          "functions": [
+          "modifier": [
             {
-              "function": "enchant_with_levels",
               "levels": {
+                "type": "minecraft:uniform",
                 "max": 25,
                 "min": 15
               },
-              "options": "#nova_structures:structure/snowy"
+              "options": "#nova_structures:structure/snowy",
+              "type": "enchant_with_levels"
             },
             {
-              "function": "set_damage",
               "damage": {
                 "max": 0.5,
-                "min": 1
-              }
+                "min": 1,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_damage"
             }
           ]
         },
         {
           "type": "item",
           "name": "bow",
-          "functions": [
+          "modifier": [
             {
-              "function": "enchant_with_levels",
               "levels": {
+                "type": "minecraft:uniform",
                 "max": 25,
                 "min": 15
               },
-              "options": "#nova_structures:structure/snowy"
+              "options": "#nova_structures:structure/snowy",
+              "type": "enchant_with_levels"
             },
             {
-              "function": "set_damage",
               "damage": {
                 "max": 0.5,
-                "min": 1
-              }
+                "min": 1,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_damage"
             }
           ]
         }
@@ -193,82 +205,80 @@
     {
       "rolls": {
         "max": 2,
-        "min": 1
+        "min": 1,
+        "type": "minecraft:uniform"
       },
       "entries": [
         {
           "type": "item",
           "name": "rotten_flesh",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 2
-              }
-            }
-          ],
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "bone",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 4,
-                "min": 2
-              }
-            }
-          ],
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 4,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "bone_meal",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 4,
-                "min": 2
-              }
-            }
-          ],
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 4,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "string",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 4,
-                "min": 2
-              }
-            }
-          ],
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 4,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "tipped_arrow",
-          "functions": [
+          "weight": 2,
+          "modifier": [
             {
-              "function": "set_count",
               "count": {
                 "max": 5,
-                "min": 3
-              }
+                "min": 3,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_count"
             },
             {
-              "function": "set_potion",
-              "id": "slowness"
+              "id": "slowness",
+              "type": "set_potion"
             }
-          ],
-          "weight": 2
+          ]
         },
         {
           "type": "loot_table",
@@ -279,7 +289,8 @@
     {
       "rolls": {
         "max": 3,
-        "min": 2
+        "min": 2,
+        "type": "minecraft:uniform"
       },
       "entries": [
         {
@@ -291,105 +302,93 @@
     {
       "rolls": {
         "max": 2,
-        "min": 1
+        "min": 1,
+        "type": "minecraft:uniform"
       },
       "entries": [
         {
           "type": "item",
           "name": "copper_ingot",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 5,
-                "min": 2
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 5,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "iron_ingot",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 2
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "iron_nugget",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 5,
-                "min": 2
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 5,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "coal",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 5,
-                "min": 2
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 5,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "emerald",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 2
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "amethyst_shard",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "lapis_lazuli",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 1
-              }
-            }
-          ]
-        }
-      ],
-      "functions": [
-        {
-          "function": "limit_count",
-          "limit": 6
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         }
       ]
     },
@@ -440,6 +439,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -462,26 +475,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

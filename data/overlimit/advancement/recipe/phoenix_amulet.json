@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "overlimit:phoenix_amulet"
+        "recipes": "overlimit:phoenix_amulet"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

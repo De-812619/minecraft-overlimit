@@ -3,7 +3,7 @@
     "craft": {
       "trigger": "minecraft:recipe_crafted",
       "conditions": {
-        "recipe_id": "overlimit:holy_totem"
+        "recipes": "overlimit:holy_totem"
       }
     }
   },

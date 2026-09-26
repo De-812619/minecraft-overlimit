@@ -8,156 +8,145 @@
           "type": "minecraft:item",
           "name": "minecraft:diamond",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 3
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 1,
+              "max": 3,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:book",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "min": 10,
-                "max": 20
-              },
-              "options": "#nova_structures:structure/nether_port"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "min": 10,
+              "max": 20
+            },
+            "options": "#nova_structures:structure/nether_port",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:crying_obsidian",
           "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 3
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 1,
+              "max": 3,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:obsidian",
           "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 2
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 1,
+              "max": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:sugar",
           "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 3
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 1,
+              "max": 3,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:redstone",
           "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 3,
-                "max": 7
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 3,
+              "max": 7,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:gunpowder",
           "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 3
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 1,
+              "max": 3,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:glowstone_dust",
           "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 4,
-                "max": 16
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 4,
+              "max": 16,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:magma_cream",
           "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 4
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 1,
+              "max": 4,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:glass_bottle",
           "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 3
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 1,
+              "max": 3,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:lapis_lazuli",
           "weight": 4,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 3
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 1,
+              "max": 3,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -183,279 +172,251 @@
           "type": "minecraft:item",
           "name": "minecraft:blaze_powder",
           "weight": 6,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 4
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 1,
+              "max": 4,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:blaze_rod",
           "weight": 6,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 2
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 1,
+              "max": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:copper_nugget",
           "weight": 7,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 7,
-                "max": 18
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 7,
+              "max": 18,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:copper_ingot",
           "weight": 7,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 2,
-                "max": 8
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 2,
+              "max": 8,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:coal",
           "weight": 8,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 5
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 1,
+              "max": 5,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:quartz",
           "weight": 8,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 3,
-                "max": 17
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 3,
+              "max": 17,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:gold_nugget",
           "weight": 9,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 7,
-                "max": 18
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 7,
+              "max": 18,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:gold_ingot",
           "weight": 9,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 2,
-                "max": 5
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 2,
+              "max": 5,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_nugget",
           "weight": 10,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 7,
-                "max": 18
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 7,
+              "max": 18,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_ingot",
           "weight": 10,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 3,
-                "max": 5
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 3,
+              "max": 5,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:nether_wart",
           "weight": 10,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 3,
-                "max": 5
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 3,
+              "max": 5,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "nether_brick",
           "weight": 10,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 4,
-                "max": 12
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 4,
+              "max": 12,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         }
       ]
     },
     {
       "rolls": {
         "min": 1,
-        "max": 3
+        "max": 3,
+        "type": "minecraft:uniform"
       },
       "entries": [
         {
           "type": "minecraft:item",
           "name": "minecraft:ominous_bottle",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:set_ominous_bottle_amplifier",
-              "amplifier": {
-                "min": 0,
-                "max": 2
-              }
-            }
-          ]
+          "modifier": {
+            "amplifier": {
+              "type": "minecraft:uniform",
+              "min": 0,
+              "max": 2
+            },
+            "type": "minecraft:set_ominous_bottle_amplifier"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:splash_potion",
           "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:water"
-            }
-          ]
+          "modifier": {
+            "id": "minecraft:water",
+            "type": "minecraft:set_potion"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:splash_potion",
           "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:fire_resistance"
-            }
-          ]
+          "modifier": {
+            "id": "minecraft:fire_resistance",
+            "type": "minecraft:set_potion"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:splash_potion",
           "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:swiftness"
-            }
-          ]
+          "modifier": {
+            "id": "minecraft:swiftness",
+            "type": "minecraft:set_potion"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:splash_potion",
           "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:strength"
-            }
-          ]
+          "modifier": {
+            "id": "minecraft:strength",
+            "type": "minecraft:set_potion"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:splash_potion",
           "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:slowness"
-            }
-          ]
+          "modifier": {
+            "id": "minecraft:slowness",
+            "type": "minecraft:set_potion"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:splash_potion",
           "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:weakness"
-            }
-          ]
+          "modifier": {
+            "id": "minecraft:weakness",
+            "type": "minecraft:set_potion"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:splash_potion",
           "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:healing"
-            }
-          ]
+          "modifier": {
+            "id": "minecraft:healing",
+            "type": "minecraft:set_potion"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:splash_potion",
           "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:harming"
-            }
-          ]
+          "modifier": {
+            "id": "minecraft:harming",
+            "type": "minecraft:set_potion"
+          }
         },
         {
           "type": "minecraft:loot_table",
@@ -471,232 +432,213 @@
           "type": "minecraft:item",
           "name": "minecraft:bow",
           "weight": 4,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "min": 10,
-                "max": 25
-              },
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "min": 10,
+              "max": 25
+            },
+            "options": "#minecraft:on_random_loot",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:golden_sword",
           "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 20,
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "modifier": {
+            "levels": 20,
+            "options": "#minecraft:on_random_loot",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:golden_helmet",
           "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "min": 10,
-                "max": 25
-              },
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "min": 10,
+              "max": 25
+            },
+            "options": "#minecraft:on_random_loot",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:golden_chestplate",
           "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "min": 10,
-                "max": 25
-              },
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "min": 10,
+              "max": 25
+            },
+            "options": "#minecraft:on_random_loot",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:golden_leggings",
           "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "min": 10,
-                "max": 25
-              },
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "min": 10,
+              "max": 25
+            },
+            "options": "#minecraft:on_random_loot",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:golden_boots",
           "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "min": 10,
-                "max": 25
-              },
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "min": 10,
+              "max": 25
+            },
+            "options": "#minecraft:on_random_loot",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:copper_sword",
           "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 20,
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "modifier": {
+            "levels": 20,
+            "options": "#minecraft:on_random_loot",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:copper_helmet",
           "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "min": 10,
-                "max": 25
-              },
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "min": 10,
+              "max": 25
+            },
+            "options": "#minecraft:on_random_loot",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:copper_chestplate",
           "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "min": 10,
-                "max": 25
-              },
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "min": 10,
+              "max": 25
+            },
+            "options": "#minecraft:on_random_loot",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:copper_leggings",
           "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "min": 10,
-                "max": 25
-              },
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "min": 10,
+              "max": 25
+            },
+            "options": "#minecraft:on_random_loot",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:copper_boots",
           "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "min": 10,
-                "max": 25
-              },
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "min": 10,
+              "max": 25
+            },
+            "options": "#minecraft:on_random_loot",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_sword",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 20,
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "modifier": {
+            "levels": 20,
+            "options": "#minecraft:on_random_loot",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_helmet",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "min": 10,
-                "max": 25
-              },
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "min": 10,
+              "max": 25
+            },
+            "options": "#minecraft:on_random_loot",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_chestplate",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "min": 10,
-                "max": 25
-              },
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "min": 10,
+              "max": 25
+            },
+            "options": "#minecraft:on_random_loot",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_leggings",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "min": 10,
-                "max": 25
-              },
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "min": 10,
+              "max": 25
+            },
+            "options": "#minecraft:on_random_loot",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_boots",
           "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "min": 10,
-                "max": 25
-              },
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "min": 10,
+              "max": 25
+            },
+            "options": "#minecraft:on_random_loot",
+            "type": "minecraft:enchant_with_levels"
+          }
         }
       ]
     },
@@ -707,52 +649,46 @@
           "type": "minecraft:item",
           "name": "minecraft:experience_bottle",
           "weight": 60,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 6
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "min": 1,
+              "max": 6,
+              "type": "minecraft:uniform"
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:book",
           "weight": 20,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "min": 20,
-                "max": 30
-              },
-              "options": "#nova_structures:structure/nether_port"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "min": 20,
+              "max": 30
+            },
+            "options": "#nova_structures:structure/nether_port",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:book",
           "weight": 5,
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "options": "#nova_structures:swift_soar"
-            }
-          ]
+          "modifier": {
+            "options": "#nova_structures:swift_soar",
+            "type": "minecraft:enchant_randomly"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:white_harness",
           "weight": 5,
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "options": "#nova_structures:swift_soar"
-            }
-          ]
+          "modifier": {
+            "options": "#nova_structures:swift_soar",
+            "type": "minecraft:enchant_randomly"
+          }
         },
         {
           "type": "minecraft:item",
@@ -813,6 +749,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -835,26 +785,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

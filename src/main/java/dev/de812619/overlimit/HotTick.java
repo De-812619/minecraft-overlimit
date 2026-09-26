@@ -223,7 +223,7 @@ final class HotTick {
 
 	private static void holdStill(MinecraftServer server, Entity entity) {
 		entity.setDeltaMovement(Vec3.ZERO);
-		entity.hurtMarked = true;
+		entity.syncVelocity = true;
 		int next = score(server, entity, BIND_SCORE) - 1;
 		if (next >= 1) {
 			Scores.setHolder(server, entity, BIND_SCORE, next);
@@ -256,7 +256,7 @@ final class HotTick {
 				living.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 20, 255, false, false));
 			}
 			nearby.setDeltaMovement(Vec3.ZERO);
-			nearby.hurtMarked = true;
+			nearby.syncVelocity = true;
 		}
 	}
 

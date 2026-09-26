@@ -7,15 +7,13 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:enchanted_book",
-          "functions": [
-            {
-              "function": "minecraft:set_enchantments",
-              "enchantments": {
-                "minecraft:mending": 1
-              },
-              "add": false
-            }
-          ]
+          "modifier": {
+            "enchantments": {
+              "minecraft:mending": 1
+            },
+            "add": false,
+            "type": "minecraft:set_enchantments"
+          }
         }
       ]
     }

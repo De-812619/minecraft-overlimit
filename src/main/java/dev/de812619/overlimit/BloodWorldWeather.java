@@ -10,7 +10,7 @@ import net.minecraft.server.players.PlayerList;
 import net.minecraft.world.level.Level;
 
 /**
- * 26.2 の天候データはサーバー全体で一つ。ブラッドワールドの雨レベルだけを 0 に戻す。
+ * 26.3 の天候データはサーバー全体で一つ。ブラッドワールドの雨レベルだけを 0 に戻す。
  * オーバーワールドの雨はそのまま。誰もいないあいだも、このディメンションの雨は溜めない。
  */
 final class BloodWorldWeather {

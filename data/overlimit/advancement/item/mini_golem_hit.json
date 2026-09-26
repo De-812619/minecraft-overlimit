@@ -3,20 +3,18 @@
     "hit": {
       "trigger": "minecraft:player_hurt_entity",
       "conditions": {
-        "entity": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "minecraft:entity_type": "minecraft:iron_golem",
-              "minecraft:entity_tags": {
-                "all_of": [
-                  "overlimit.mini_golem"
-                ]
-              }
+        "entity": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:iron_golem",
+            "minecraft:entity_tags": {
+              "all_of": [
+                "overlimit.mini_golem"
+              ]
             }
           }
-        ]
+        }
       }
     }
   },

@@ -4,78 +4,74 @@
     {
       "rolls": {
         "max": 3,
-        "min": 2
+        "min": 2,
+        "type": "minecraft:uniform"
       },
       "entries": [
         {
           "type": "item",
           "name": "minecraft:gunpowder",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 1
-              }
-            }
-          ],
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "redstone",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 1
-              }
-            }
-          ],
-          "weight": 1
+          "weight": 1,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "string",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 1
-              }
-            }
-          ],
-          "weight": 1
+          "weight": 1,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "lapis_lazuli",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ],
-          "weight": 1
+          "weight": 1,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "lead",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ],
-          "weight": 1
+          "weight": 1,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
@@ -90,16 +86,15 @@
         {
           "type": "item",
           "name": "leather",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ],
-          "weight": 1
+          "weight": 1,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
@@ -109,16 +104,15 @@
         {
           "type": "item",
           "name": "leather_horse_armor",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ],
-          "weight": 1
+          "weight": 1,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
@@ -133,38 +127,37 @@
         {
           "type": "item",
           "name": "bucket",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ],
-          "weight": 1
+          "weight": 1,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "book",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": {
-                "max": 10,
-                "min": 5
-              },
-              "options": "#nova_structures:structure/snowy"
-            }
-          ],
-          "weight": 1
+          "weight": 1,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 10,
+              "min": 5
+            },
+            "options": "#nova_structures:structure/snowy",
+            "type": "enchant_with_levels"
+          }
         }
       ]
     },
     {
       "rolls": {
         "max": 2,
-        "min": 1
+        "min": 1,
+        "type": "minecraft:uniform"
       },
       "entries": [
         {
@@ -180,210 +173,211 @@
         {
           "type": "item",
           "name": "lapis_lazuli",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 1
-              }
-            }
-          ],
-          "weight": 1
+          "weight": 1,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "iron_shovel",
-          "functions": [
+          "weight": 1,
+          "modifier": [
             {
-              "function": "enchant_with_levels",
               "levels": {
+                "type": "minecraft:uniform",
                 "max": 25,
                 "min": 5
               },
-              "options": "#nova_structures:structure/snowy"
+              "options": "#nova_structures:structure/snowy",
+              "type": "enchant_with_levels"
             },
             {
-              "function": "set_damage",
               "damage": {
                 "max": 1,
-                "min": 0.5
-              }
+                "min": 0.5,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_damage"
             }
-          ],
-          "weight": 1
+          ]
         },
         {
           "type": "item",
           "name": "diamond_shovel",
-          "functions": [
+          "weight": 1,
+          "modifier": [
             {
-              "function": "enchant_with_levels",
               "levels": {
+                "type": "minecraft:uniform",
                 "max": 25,
                 "min": 5
               },
-              "options": "#nova_structures:structure/snowy"
+              "options": "#nova_structures:structure/snowy",
+              "type": "enchant_with_levels"
             },
             {
-              "function": "set_damage",
               "damage": {
                 "max": 1,
-                "min": 0.5
-              }
+                "min": 0.5,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_damage"
             }
-          ],
-          "weight": 1
+          ]
         },
         {
           "type": "item",
           "name": "iron_boots",
-          "functions": [
+          "weight": 1,
+          "modifier": [
             {
-              "function": "enchant_with_levels",
               "levels": {
+                "type": "minecraft:uniform",
                 "max": 25,
                 "min": 5
               },
-              "options": "#nova_structures:structure/snowy"
+              "options": "#nova_structures:structure/snowy",
+              "type": "enchant_with_levels"
             },
             {
-              "function": "set_damage",
               "damage": {
                 "max": 1,
-                "min": 0.5
-              }
+                "min": 0.5,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_damage"
             }
-          ],
-          "weight": 1
+          ]
         },
         {
           "type": "item",
           "name": "diamond_boots",
-          "functions": [
+          "weight": 1,
+          "modifier": [
             {
-              "function": "enchant_with_levels",
               "levels": {
+                "type": "minecraft:uniform",
                 "max": 25,
                 "min": 5
               },
-              "options": "#nova_structures:structure/snowy"
+              "options": "#nova_structures:structure/snowy",
+              "type": "enchant_with_levels"
             },
             {
-              "function": "set_damage",
               "damage": {
                 "max": 1,
-                "min": 0.5
-              }
+                "min": 0.5,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_damage"
             }
-          ],
-          "weight": 1
+          ]
         }
       ]
     },
     {
       "rolls": {
         "max": 2,
-        "min": 1
+        "min": 1,
+        "type": "minecraft:uniform"
       },
       "entries": [
         {
           "type": "item",
           "name": "apple",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 2
-              }
-            }
-          ],
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "golden_apple",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ],
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "coal",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 1
-              }
-            }
-          ],
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "amethyst_shard",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ],
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "iron_nugget",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 2
-              }
-            }
-          ],
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "iron_ingot",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ],
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "emerald",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ],
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         }
       ]
     },
@@ -397,67 +391,62 @@
         {
           "type": "item",
           "name": "pumpkin",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 2
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "carved_pumpkin",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 2
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "pumpkin_seeds",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 2
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "beetroot",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 2
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "sweet_berries",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 2
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         }
       ]
     },
@@ -508,6 +497,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -530,26 +533,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

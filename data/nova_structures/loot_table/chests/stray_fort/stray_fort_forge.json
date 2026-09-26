@@ -4,7 +4,8 @@
     {
       "rolls": {
         "max": 2,
-        "min": 1
+        "min": 1,
+        "type": "minecraft:uniform"
       },
       "entries": [
         {
@@ -80,23 +81,22 @@
           "name": "diamond_shovel"
         }
       ],
-      "functions": [
+      "modifier": [
         {
-          "function": "enchant_with_levels",
+          "type": "enchant_with_levels",
           "levels": {
+            "type": "minecraft:uniform",
             "max": 25,
             "min": 15
           },
           "options": "#nova_structures:structure/snowy",
-          "conditions": [
-            {
-              "condition": "random_chance",
-              "chance": 0.6
-            }
-          ]
+          "condition": {
+            "type": "random_chance",
+            "chance": 0.6
+          }
         },
         {
-          "function": "set_damage",
+          "type": "set_damage",
           "damage": {
             "min": 0.5,
             "max": 0.7,
@@ -108,68 +108,67 @@
     {
       "rolls": {
         "max": 3,
-        "min": 2
+        "min": 2,
+        "type": "minecraft:uniform"
       },
       "entries": [
         {
           "type": "item",
           "name": "arrow",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 6,
-                "min": 3
-              }
-            }
-          ],
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 6,
+              "min": 3,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "tipped_arrow",
-          "functions": [
+          "weight": 2,
+          "modifier": [
             {
-              "function": "set_count",
               "count": {
                 "max": 5,
-                "min": 3
-              }
+                "min": 3,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_count"
             },
             {
-              "function": "set_potion",
-              "id": "slowness"
+              "id": "slowness",
+              "type": "set_potion"
             }
-          ],
-          "weight": 2
+          ]
         },
         {
           "type": "item",
           "name": "iron_ingot",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 1
-              }
-            }
-          ],
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "stick",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ],
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
@@ -234,6 +233,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -256,26 +269,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

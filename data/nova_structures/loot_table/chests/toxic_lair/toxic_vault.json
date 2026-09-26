@@ -7,71 +7,66 @@
         {
           "type": "minecraft:item",
           "name": "diamond",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "emerald",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ],
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "iron_ingot",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ],
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "gold_ingot",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 2
-              }
-            }
-          ],
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "golden_carrot",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 6,
-                "min": 4
-              }
-            }
-          ],
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 6,
+              "min": 4,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         }
       ]
     },
@@ -85,61 +80,59 @@
         {
           "type": "minecraft:item",
           "name": "tipped_arrow",
-          "functions": [
+          "modifier": [
             {
-              "function": "set_potion",
-              "id": "poison"
+              "id": "poison",
+              "type": "set_potion"
             },
             {
-              "function": "set_count",
               "count": {
                 "max": 16,
-                "min": 8
-              }
+                "min": 8,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_count"
             }
           ]
         },
         {
           "type": "minecraft:item",
           "name": "verdant_froglight",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 6,
-                "min": 3
-              }
-            }
-          ],
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "count": {
+              "max": 6,
+              "min": 3,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "ochre_froglight",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 6,
-                "min": 3
-              }
-            }
-          ],
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "count": {
+              "max": 6,
+              "min": 3,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "pearlescent_froglight",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 6,
-                "min": 3
-              }
-            }
-          ],
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "count": {
+              "max": 6,
+              "min": 3,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         }
       ]
     },
@@ -149,164 +142,150 @@
         {
           "type": "minecraft:item",
           "name": "potion",
-          "functions": [
-            {
-              "function": "set_potion",
-              "id": "oozing"
-            }
-          ]
+          "modifier": {
+            "id": "oozing",
+            "type": "set_potion"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "potion",
-          "functions": [
-            {
-              "function": "set_potion",
-              "id": "infested"
-            }
-          ]
+          "modifier": {
+            "id": "infested",
+            "type": "set_potion"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "iron_helmet",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": {
-                "max": 20,
-                "min": 10
-              },
-              "options": "#nova_structures:structure/toxic_lair"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 20,
+              "min": 10
+            },
+            "options": "#nova_structures:structure/toxic_lair",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "iron_chestplate",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": {
-                "max": 25,
-                "min": 15
-              },
-              "options": "#nova_structures:structure/toxic_lair"
-            }
-          ],
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 25,
+              "min": 15
+            },
+            "options": "#nova_structures:structure/toxic_lair",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "iron_leggings",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": {
-                "max": 20,
-                "min": 10
-              },
-              "options": "#nova_structures:structure/toxic_lair"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 20,
+              "min": 10
+            },
+            "options": "#nova_structures:structure/toxic_lair",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "iron_boots",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": {
-                "max": 20,
-                "min": 10
-              },
-              "options": "#nova_structures:structure/toxic_lair"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 20,
+              "min": 10
+            },
+            "options": "#nova_structures:structure/toxic_lair",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "copper_helmet",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": {
-                "max": 20,
-                "min": 10
-              },
-              "options": "#nova_structures:structure/toxic_lair"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 20,
+              "min": 10
+            },
+            "options": "#nova_structures:structure/toxic_lair",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "copper_chestplate",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": {
-                "max": 25,
-                "min": 15
-              },
-              "options": "#nova_structures:structure/toxic_lair"
-            }
-          ],
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 25,
+              "min": 15
+            },
+            "options": "#nova_structures:structure/toxic_lair",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "copper_leggings",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": {
-                "max": 20,
-                "min": 10
-              },
-              "options": "#nova_structures:structure/toxic_lair"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 20,
+              "min": 10
+            },
+            "options": "#nova_structures:structure/toxic_lair",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "copper_boots",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": {
-                "max": 20,
-                "min": 10
-              },
-              "options": "#nova_structures:structure/toxic_lair"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 20,
+              "min": 10
+            },
+            "options": "#nova_structures:structure/toxic_lair",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "book",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": {
-                "max": 25,
-                "min": 15
-              },
-              "options": "#nova_structures:structure/toxic_lair"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 25,
+              "min": 15
+            },
+            "options": "#nova_structures:structure/toxic_lair",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "bow",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": {
-                "max": 15,
-                "min": 5
-              },
-              "options": "#nova_structures:structure/toxic_lair"
-            }
-          ]
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 15,
+              "min": 5
+            },
+            "options": "#nova_structures:structure/toxic_lair",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
@@ -361,6 +340,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -383,26 +376,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

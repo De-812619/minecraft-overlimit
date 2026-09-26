@@ -2,186 +2,310 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": 4,
-      "bonus_rolls": 0.0,
+      "rolls": 3,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:emerald",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 2.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "weight": 3
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 3
-              },
-              "add": false
-            }
-          ],
-          "name": "minecraft:resin_clump",
+          "name": "minecraft:emerald_block",
           "weight": 1
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:iron_ingot",
-          "functions": [
+          "name": "diamond",
+          "weight": 1,
+          "modifier": [
             {
-              "add": false,
+              "type": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "max": 4.0,
-                "min": 3.0
-              },
-              "function": "minecraft:set_count"
+                "min": 1,
+                "max": 2
+              }
             }
-          ],
-          "weight": 3
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:lapis_lazuli",
+          "weight": 5,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 3,
+                "max": 7
+              }
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:gold_ingot",
-          "functions": [
+          "weight": 5,
+          "modifier": [
             {
-              "add": false,
+              "type": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "max": 4.0,
-                "min": 3.0
-              },
-              "function": "minecraft:set_count"
+                "min": 1,
+                "max": 3
+              }
             }
-          ],
-          "weight": 3
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "iron_ingot",
+          "weight": 5,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald",
+          "weight": 7,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:amethyst_shard",
-          "functions": [
+          "weight": 7,
+          "modifier": [
             {
-              "add": false,
+              "type": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
+                "min": 5,
+                "max": 7
+              }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "functions": [
+          "name": "minecraft:resin_clump",
+          "weight": 50,
+          "modifier": [
             {
-              "effects": [
-                {
-                  "type": "minecraft:night_vision",
-                  "duration": {
-                    "type": "minecraft:uniform",
-                    "max": 10.0,
-                    "min": 7.0
-                  }
-                },
-                {
-                  "type": "minecraft:jump_boost",
-                  "duration": {
-                    "type": "minecraft:uniform",
-                    "max": 10.0,
-                    "min": 7.0
-                  }
-                },
-                {
-                  "type": "minecraft:weakness",
-                  "duration": {
-                    "type": "minecraft:uniform",
-                    "max": 8.0,
-                    "min": 6.0
-                  }
-                },
-                {
-                  "type": "minecraft:blindness",
-                  "duration": {
-                    "type": "minecraft:uniform",
-                    "max": 7.0,
-                    "min": 5.0
-                  }
-                },
-                {
-                  "type": "minecraft:poison",
-                  "duration": {
-                    "type": "minecraft:uniform",
-                    "max": 20.0,
-                    "min": 10.0
-                  }
-                },
-                {
-                  "type": "minecraft:saturation",
-                  "duration": {
-                    "type": "minecraft:uniform",
-                    "max": 10.0,
-                    "min": 7.0
-                  }
-                }
-              ],
-              "function": "minecraft:set_stew_effect"
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
             }
-          ],
-          "name": "minecraft:suspicious_stew"
+          ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:golden_apple"
+          "name": "minecraft:brown_mushroom",
+          "weight": 10,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:beetroot"
+          "name": "minecraft:red_mushroom",
+          "weight": 10,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:oak_log",
+          "weight": 15,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 3,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:dark_oak_log",
+          "weight": 15,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 3,
+                "max": 6
+              }
+            }
+          ]
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:dark_oak_sapling",
-          "functions": [
+          "weight": 15,
+          "modifier": [
             {
-              "add": false,
+              "type": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
+                "min": 2,
+                "max": 4
+              }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:name_tag"
+          "name": "minecraft:string",
+          "weight": 25,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 8
+              }
+            }
+          ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:red_candle",
-          "functions": [
+          "name": "minecraft:bowl",
+          "weight": 20,
+          "modifier": [
             {
-              "add": false,
+              "type": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
+                "min": 1,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:glass_bottle",
+          "weight": 25,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:coal",
+          "weight": 25,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:redstone",
+          "weight": 25,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gunpowder",
+          "weight": 20,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_nugget",
+          "weight": 20,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_nugget",
+          "weight": 20,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 8
+              }
             }
           ]
         }
@@ -189,15 +313,674 @@
     },
     {
       "rolls": 1,
-      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald_block",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "diamond",
+          "weight": 3,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:lapis_lazuli",
+          "weight": 5,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 3,
+                "max": 7
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_ingot",
+          "weight": 5,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "iron_ingot",
+          "weight": 5,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald",
+          "weight": 7,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_helmet",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.4,
+                "max": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_chestplate",
+          "weight": 4,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.4,
+                "max": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_leggings",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.4,
+                "max": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_boots",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.4,
+                "max": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_sword",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.4,
+                "max": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_axe",
+          "weight": 4,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.4,
+                "max": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_pickaxe",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.4,
+                "max": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_hoe",
+          "weight": 2,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.4,
+                "max": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_shovel",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.4,
+                "max": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_helmet",
+          "weight": 3,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.4,
+                "max": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_chestplate",
+          "weight": 6,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.4,
+                "max": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_leggings",
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.4,
+                "max": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_boots",
+          "weight": 3,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.4,
+                "max": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_sword",
+          "weight": 3,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.4,
+                "max": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_axe",
+          "weight": 6,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.4,
+                "max": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_pickaxe",
+          "weight": 3,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.4,
+                "max": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_shovel",
+          "weight": 3,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.4,
+                "max": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_hoe",
+          "weight": 3,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.4,
+                "max": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:ominous_bottle",
+          "weight": 7,
+          "modifier": [
+            {
+              "type": "minecraft:set_ominous_bottle_amplifier",
+              "amplifier": {
+                "type": "minecraft:uniform",
+                "min": 0,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:crossbow",
+          "weight": 7,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.4,
+                "max": 0.9
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 0,
+        "max": 2
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_golden_apple",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_apple",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cake",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:pumpkin_pie",
+          "weight": 7,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:beetroot_soup",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:mushroom_stew",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:apple",
+          "weight": 10,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "bread",
+          "weight": 10,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:rotten_flesh",
+          "weight": 10,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 8
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:totem_of_undying",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:goat_horn",
+          "weight": 3,
+          "modifier": [
+            {
+              "type": "minecraft:set_instrument",
+              "options": "#nova_structures:illager_horn"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:music_disc_mellohi",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:music_disc_ward",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:music_disc_cat",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:music_disc_13",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "bundle",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "diamond",
+          "weight": 3,
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
       "entries": [
         {
           "type": "minecraft:empty",
-          "weight": 200
+          "weight": 59
         },
         {
-          "type": "item",
-          "name": "minecraft:sentry_armor_trim_smithing_template"
+          "type": "minecraft:item",
+          "name": "minecraft:vex_armor_trim_smithing_template",
+          "weight": 1
         }
       ]
     },
@@ -248,6 +1031,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -270,26 +1067,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

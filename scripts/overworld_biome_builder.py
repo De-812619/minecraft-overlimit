@@ -1,6 +1,8 @@
-"""26.2 OverworldBiomeBuilder → multi_noise biome entries.
+"""26.3 OverworldBiomeBuilder → multi_noise biome entries.
 
-Port of net.minecraft.world.level.biome.OverworldBiomeBuilder (client 26.2).
+Port of net.minecraft.world.level.biome.OverworldBiomeBuilder.
+Noise JSON is read from the 26.3 client jar by gen_blood_world_worldgen.py.
+26.3 added minecraft:dappled_forest; this climate table does not place it yet.
 Used so Blood World can keep overworld climate and splice nether biomes in.
 """
 from __future__ import annotations

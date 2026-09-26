@@ -7,912 +7,910 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:written_book",
-          "functions": [
-            {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:enchantment_glint_override": true,
-                "minecraft:item_name": {
-                  "translate": "overlimit.guide.item.name"
-                },
-                "minecraft:lore": [
-                  {
-                    "translate": "overlimit.guide.item.lore",
-                    "color": "gray",
-                    "italic": false
-                  }
-                ],
-                "minecraft:written_book_content": {
-                  "title": "OverLimit",
-                  "author": "overlimit",
-                  "generation": 0,
-                  "resolved": true,
-                  "pages": [
-                    {
-                      "raw": [
-                        {
-                          "translate": "overlimit.guide.cover.heading",
-                          "color": "gold",
-                          "bold": true
-                        },
-                        {
-                          "translate": "overlimit.guide.cover.subheading",
-                          "color": "dark_red",
-                          "bold": true
-                        },
-                        {
-                          "translate": "overlimit.guide.cover.body"
-                        },
-                        {
-                          "translate": "overlimit.guide.link.next",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 2
-                          },
-                          "hover_event": {
-                            "action": "show_text",
-                            "value": {
-                              "translate": "overlimit.guide.link.next.hover"
-                            }
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "raw": [
-                        {
-                          "translate": "overlimit.guide.notes.title",
-                          "color": "dark_red",
-                          "bold": true
-                        },
-                        {
-                          "translate": "overlimit.guide.notes.body"
-                        },
-                        {
-                          "translate": "overlimit.guide.link.toc_weapons",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 3
-                          },
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ],
-                          "hover_event": {
-                            "action": "show_text",
-                            "value": {
-                              "translate": "overlimit.guide.link.toc_weapons.hover"
-                            }
-                          }
-                        },
-                        {
-                          "translate": "overlimit.guide.link.toc_gear",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 4
-                          },
-                          "hover_event": {
-                            "action": "show_text",
-                            "value": {
-                              "translate": "overlimit.guide.link.toc_gear.hover"
-                            }
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "raw": [
-                        {
-                          "translate": "overlimit.guide.toc.weapons",
-                          "color": "dark_red",
-                          "bold": true
-                        },
-                        {
-                          "translate": "enchantment.overlimit.apocalypse",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 5
-                          },
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "enchantment.overlimit.soul_taker",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 6
-                          },
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "enchantment.overlimit.void_break",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 7
-                          },
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "enchantment.overlimit.hyper_gravity",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 8
-                          },
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "enchantment.overlimit.summon_wolf",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 9
-                          },
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "enchantment.overlimit.gluttony",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 10
-                          },
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "enchantment.overlimit.necromancy",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 11
-                          },
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "enchantment.overlimit.impact",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 12
-                          },
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "enchantment.overlimit.chain_bind",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 13
-                          },
-                          "extra": [
-                            {
-                              "text": "\n\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "overlimit.guide.link.toc_gear_short",
-                          "color": "dark_gray",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 4
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "raw": [
-                        {
-                          "translate": "overlimit.guide.toc.armor",
-                          "color": "dark_red",
-                          "bold": true
-                        },
-                        {
-                          "translate": "enchantment.overlimit.absolute_field",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 14
-                          },
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "enchantment.overlimit.clairvoyance",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 15
-                          },
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "enchantment.overlimit.sky_walk",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 16
-                          },
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "enchantment.overlimit.cat_foot",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 17
-                          },
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "enchantment.overlimit.midas_table",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 18
-                          },
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "overlimit.guide.toc.tools",
-                          "color": "dark_red",
-                          "bold": true
-                        },
-                        {
-                          "translate": "enchantment.overlimit.hyper_dig",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 19
-                          },
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "enchantment.overlimit.smelting",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 20
-                          },
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "overlimit.guide.toc.elytra",
-                          "color": "dark_red",
-                          "bold": true
-                        },
-                        {
-                          "translate": "enchantment.overlimit.wind_blessing",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 21
-                          },
-                          "extra": [
-                            {
-                              "text": ""
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "raw": [
-                        {
-                          "translate": "enchantment.overlimit.apocalypse",
-                          "color": "dark_red",
-                          "bold": true,
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "overlimit.guide.slot.melee",
-                          "color": "dark_gray"
-                        },
-                        {
-                          "translate": "overlimit.guide.entry.apocalypse"
-                        },
-                        {
-                          "translate": "overlimit.guide.link.back_weapons",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 3
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "raw": [
-                        {
-                          "translate": "enchantment.overlimit.soul_taker",
-                          "color": "dark_red",
-                          "bold": true,
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "overlimit.guide.slot.melee",
-                          "color": "dark_gray"
-                        },
-                        {
-                          "translate": "overlimit.guide.entry.soul_taker"
-                        },
-                        {
-                          "translate": "overlimit.guide.note.soul_taker",
-                          "color": "dark_gray"
-                        },
-                        {
-                          "translate": "overlimit.guide.link.back_weapons",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 3
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "raw": [
-                        {
-                          "translate": "enchantment.overlimit.void_break",
-                          "color": "dark_red",
-                          "bold": true,
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "overlimit.guide.slot.melee",
-                          "color": "dark_gray"
-                        },
-                        {
-                          "translate": "overlimit.guide.entry.void_break"
-                        },
-                        {
-                          "translate": "overlimit.guide.link.back_weapons",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 3
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "raw": [
-                        {
-                          "translate": "enchantment.overlimit.hyper_gravity",
-                          "color": "dark_red",
-                          "bold": true,
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "overlimit.guide.slot.melee",
-                          "color": "dark_gray"
-                        },
-                        {
-                          "translate": "overlimit.guide.entry.hyper_gravity"
-                        },
-                        {
-                          "translate": "overlimit.guide.link.back_weapons",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 3
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "raw": [
-                        {
-                          "translate": "enchantment.overlimit.summon_wolf",
-                          "color": "dark_red",
-                          "bold": true,
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "overlimit.guide.slot.bow",
-                          "color": "dark_gray"
-                        },
-                        {
-                          "translate": "overlimit.guide.entry.summon_wolf"
-                        },
-                        {
-                          "translate": "overlimit.guide.link.back_weapons",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 3
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "raw": [
-                        {
-                          "translate": "enchantment.overlimit.gluttony",
-                          "color": "dark_red",
-                          "bold": true,
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "overlimit.guide.slot.melee",
-                          "color": "dark_gray"
-                        },
-                        {
-                          "translate": "overlimit.guide.entry.gluttony"
-                        },
-                        {
-                          "translate": "overlimit.guide.note.gluttony",
-                          "color": "dark_gray"
-                        },
-                        {
-                          "translate": "overlimit.guide.link.back_weapons",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 3
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "raw": [
-                        {
-                          "translate": "enchantment.overlimit.necromancy",
-                          "color": "dark_red",
-                          "bold": true,
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "overlimit.guide.slot.sword",
-                          "color": "dark_gray"
-                        },
-                        {
-                          "translate": "overlimit.guide.entry.necromancy"
-                        },
-                        {
-                          "translate": "overlimit.guide.link.back_weapons",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 3
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "raw": [
-                        {
-                          "translate": "enchantment.overlimit.impact",
-                          "color": "dark_red",
-                          "bold": true,
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "overlimit.guide.slot.axe",
-                          "color": "dark_gray"
-                        },
-                        {
-                          "translate": "overlimit.guide.entry.impact"
-                        },
-                        {
-                          "translate": "overlimit.guide.link.back_weapons",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 3
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "raw": [
-                        {
-                          "translate": "enchantment.overlimit.chain_bind",
-                          "color": "dark_red",
-                          "bold": true,
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "overlimit.guide.slot.bow",
-                          "color": "dark_gray"
-                        },
-                        {
-                          "translate": "overlimit.guide.entry.chain_bind"
-                        },
-                        {
-                          "translate": "overlimit.guide.link.back_weapons",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 3
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "raw": [
-                        {
-                          "translate": "enchantment.overlimit.absolute_field",
-                          "color": "dark_red",
-                          "bold": true,
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "overlimit.guide.slot.chest",
-                          "color": "dark_gray"
-                        },
-                        {
-                          "translate": "overlimit.guide.entry.absolute_field"
-                        },
-                        {
-                          "translate": "overlimit.guide.link.back_armor",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 4
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "raw": [
-                        {
-                          "translate": "enchantment.overlimit.clairvoyance",
-                          "color": "dark_red",
-                          "bold": true,
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "overlimit.guide.slot.helm",
-                          "color": "dark_gray"
-                        },
-                        {
-                          "translate": "overlimit.guide.entry.clairvoyance"
-                        },
-                        {
-                          "translate": "overlimit.guide.link.back_armor",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 4
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "raw": [
-                        {
-                          "translate": "enchantment.overlimit.sky_walk",
-                          "color": "dark_red",
-                          "bold": true,
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "overlimit.guide.slot.boots",
-                          "color": "dark_gray"
-                        },
-                        {
-                          "translate": "overlimit.guide.entry.sky_walk"
-                        },
-                        {
-                          "translate": "overlimit.guide.link.back_armor",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 4
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "raw": [
-                        {
-                          "translate": "enchantment.overlimit.cat_foot",
-                          "color": "dark_red",
-                          "bold": true,
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "overlimit.guide.slot.boots",
-                          "color": "dark_gray"
-                        },
-                        {
-                          "translate": "overlimit.guide.entry.cat_foot"
-                        },
-                        {
-                          "translate": "overlimit.guide.link.back_armor",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 4
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "raw": [
-                        {
-                          "translate": "enchantment.overlimit.midas_table",
-                          "color": "dark_red",
-                          "bold": true,
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "overlimit.guide.slot.helm",
-                          "color": "dark_gray"
-                        },
-                        {
-                          "translate": "overlimit.guide.entry.midas_table"
-                        },
-                        {
-                          "translate": "overlimit.guide.link.back_armor",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 4
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "raw": [
-                        {
-                          "translate": "enchantment.overlimit.hyper_dig",
-                          "color": "dark_red",
-                          "bold": true,
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "overlimit.guide.slot.pick",
-                          "color": "dark_gray"
-                        },
-                        {
-                          "translate": "overlimit.guide.entry.hyper_dig"
-                        },
-                        {
-                          "translate": "overlimit.guide.note.hyper_dig",
-                          "color": "dark_gray"
-                        },
-                        {
-                          "translate": "overlimit.guide.link.back_tools",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 4
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "raw": [
-                        {
-                          "translate": "enchantment.overlimit.smelting",
-                          "color": "dark_red",
-                          "bold": true,
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "overlimit.guide.slot.pick",
-                          "color": "dark_gray"
-                        },
-                        {
-                          "translate": "overlimit.guide.entry.smelting"
-                        },
-                        {
-                          "translate": "overlimit.guide.note.smelting",
-                          "color": "dark_gray"
-                        },
-                        {
-                          "translate": "overlimit.guide.link.back_tools",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 4
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "raw": [
-                        {
-                          "translate": "enchantment.overlimit.wind_blessing",
-                          "color": "dark_red",
-                          "bold": true,
-                          "extra": [
-                            {
-                              "text": "\n"
-                            }
-                          ]
-                        },
-                        {
-                          "translate": "overlimit.guide.slot.elytra",
-                          "color": "dark_gray"
-                        },
-                        {
-                          "translate": "overlimit.guide.entry.wind_blessing"
-                        },
-                        {
-                          "translate": "overlimit.guide.link.back_elytra",
-                          "color": "dark_aqua",
-                          "underlined": true,
-                          "click_event": {
-                            "action": "change_page",
-                            "page": 4
-                          }
-                        }
-                      ]
-                    }
-                  ]
+          "modifier": {
+            "components": {
+              "minecraft:enchantment_glint_override": true,
+              "minecraft:item_name": {
+                "translate": "overlimit.guide.item.name"
+              },
+              "minecraft:lore": [
+                {
+                  "translate": "overlimit.guide.item.lore",
+                  "color": "gray",
+                  "italic": false
                 }
+              ],
+              "minecraft:written_book_content": {
+                "title": "OverLimit",
+                "author": "overlimit",
+                "generation": 0,
+                "resolved": true,
+                "pages": [
+                  {
+                    "raw": [
+                      {
+                        "translate": "overlimit.guide.cover.heading",
+                        "color": "gold",
+                        "bold": true
+                      },
+                      {
+                        "translate": "overlimit.guide.cover.subheading",
+                        "color": "dark_red",
+                        "bold": true
+                      },
+                      {
+                        "translate": "overlimit.guide.cover.body"
+                      },
+                      {
+                        "translate": "overlimit.guide.link.next",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 2
+                        },
+                        "hover_event": {
+                          "action": "show_text",
+                          "value": {
+                            "translate": "overlimit.guide.link.next.hover"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "raw": [
+                      {
+                        "translate": "overlimit.guide.notes.title",
+                        "color": "dark_red",
+                        "bold": true
+                      },
+                      {
+                        "translate": "overlimit.guide.notes.body"
+                      },
+                      {
+                        "translate": "overlimit.guide.link.toc_weapons",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 3
+                        },
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ],
+                        "hover_event": {
+                          "action": "show_text",
+                          "value": {
+                            "translate": "overlimit.guide.link.toc_weapons.hover"
+                          }
+                        }
+                      },
+                      {
+                        "translate": "overlimit.guide.link.toc_gear",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 4
+                        },
+                        "hover_event": {
+                          "action": "show_text",
+                          "value": {
+                            "translate": "overlimit.guide.link.toc_gear.hover"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "raw": [
+                      {
+                        "translate": "overlimit.guide.toc.weapons",
+                        "color": "dark_red",
+                        "bold": true
+                      },
+                      {
+                        "translate": "enchantment.overlimit.apocalypse",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 5
+                        },
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "enchantment.overlimit.soul_taker",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 6
+                        },
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "enchantment.overlimit.void_break",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 7
+                        },
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "enchantment.overlimit.hyper_gravity",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 8
+                        },
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "enchantment.overlimit.summon_wolf",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 9
+                        },
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "enchantment.overlimit.gluttony",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 10
+                        },
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "enchantment.overlimit.necromancy",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 11
+                        },
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "enchantment.overlimit.impact",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 12
+                        },
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "enchantment.overlimit.chain_bind",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 13
+                        },
+                        "extra": [
+                          {
+                            "text": "\n\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "overlimit.guide.link.toc_gear_short",
+                        "color": "dark_gray",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 4
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "raw": [
+                      {
+                        "translate": "overlimit.guide.toc.armor",
+                        "color": "dark_red",
+                        "bold": true
+                      },
+                      {
+                        "translate": "enchantment.overlimit.absolute_field",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 14
+                        },
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "enchantment.overlimit.clairvoyance",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 15
+                        },
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "enchantment.overlimit.sky_walk",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 16
+                        },
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "enchantment.overlimit.cat_foot",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 17
+                        },
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "enchantment.overlimit.midas_table",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 18
+                        },
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "overlimit.guide.toc.tools",
+                        "color": "dark_red",
+                        "bold": true
+                      },
+                      {
+                        "translate": "enchantment.overlimit.hyper_dig",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 19
+                        },
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "enchantment.overlimit.smelting",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 20
+                        },
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "overlimit.guide.toc.elytra",
+                        "color": "dark_red",
+                        "bold": true
+                      },
+                      {
+                        "translate": "enchantment.overlimit.wind_blessing",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 21
+                        },
+                        "extra": [
+                          {
+                            "text": ""
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "raw": [
+                      {
+                        "translate": "enchantment.overlimit.apocalypse",
+                        "color": "dark_red",
+                        "bold": true,
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "overlimit.guide.slot.melee",
+                        "color": "dark_gray"
+                      },
+                      {
+                        "translate": "overlimit.guide.entry.apocalypse"
+                      },
+                      {
+                        "translate": "overlimit.guide.link.back_weapons",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 3
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "raw": [
+                      {
+                        "translate": "enchantment.overlimit.soul_taker",
+                        "color": "dark_red",
+                        "bold": true,
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "overlimit.guide.slot.melee",
+                        "color": "dark_gray"
+                      },
+                      {
+                        "translate": "overlimit.guide.entry.soul_taker"
+                      },
+                      {
+                        "translate": "overlimit.guide.note.soul_taker",
+                        "color": "dark_gray"
+                      },
+                      {
+                        "translate": "overlimit.guide.link.back_weapons",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 3
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "raw": [
+                      {
+                        "translate": "enchantment.overlimit.void_break",
+                        "color": "dark_red",
+                        "bold": true,
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "overlimit.guide.slot.melee",
+                        "color": "dark_gray"
+                      },
+                      {
+                        "translate": "overlimit.guide.entry.void_break"
+                      },
+                      {
+                        "translate": "overlimit.guide.link.back_weapons",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 3
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "raw": [
+                      {
+                        "translate": "enchantment.overlimit.hyper_gravity",
+                        "color": "dark_red",
+                        "bold": true,
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "overlimit.guide.slot.melee",
+                        "color": "dark_gray"
+                      },
+                      {
+                        "translate": "overlimit.guide.entry.hyper_gravity"
+                      },
+                      {
+                        "translate": "overlimit.guide.link.back_weapons",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 3
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "raw": [
+                      {
+                        "translate": "enchantment.overlimit.summon_wolf",
+                        "color": "dark_red",
+                        "bold": true,
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "overlimit.guide.slot.bow",
+                        "color": "dark_gray"
+                      },
+                      {
+                        "translate": "overlimit.guide.entry.summon_wolf"
+                      },
+                      {
+                        "translate": "overlimit.guide.link.back_weapons",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 3
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "raw": [
+                      {
+                        "translate": "enchantment.overlimit.gluttony",
+                        "color": "dark_red",
+                        "bold": true,
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "overlimit.guide.slot.melee",
+                        "color": "dark_gray"
+                      },
+                      {
+                        "translate": "overlimit.guide.entry.gluttony"
+                      },
+                      {
+                        "translate": "overlimit.guide.note.gluttony",
+                        "color": "dark_gray"
+                      },
+                      {
+                        "translate": "overlimit.guide.link.back_weapons",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 3
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "raw": [
+                      {
+                        "translate": "enchantment.overlimit.necromancy",
+                        "color": "dark_red",
+                        "bold": true,
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "overlimit.guide.slot.sword",
+                        "color": "dark_gray"
+                      },
+                      {
+                        "translate": "overlimit.guide.entry.necromancy"
+                      },
+                      {
+                        "translate": "overlimit.guide.link.back_weapons",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 3
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "raw": [
+                      {
+                        "translate": "enchantment.overlimit.impact",
+                        "color": "dark_red",
+                        "bold": true,
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "overlimit.guide.slot.axe",
+                        "color": "dark_gray"
+                      },
+                      {
+                        "translate": "overlimit.guide.entry.impact"
+                      },
+                      {
+                        "translate": "overlimit.guide.link.back_weapons",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 3
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "raw": [
+                      {
+                        "translate": "enchantment.overlimit.chain_bind",
+                        "color": "dark_red",
+                        "bold": true,
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "overlimit.guide.slot.bow",
+                        "color": "dark_gray"
+                      },
+                      {
+                        "translate": "overlimit.guide.entry.chain_bind"
+                      },
+                      {
+                        "translate": "overlimit.guide.link.back_weapons",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 3
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "raw": [
+                      {
+                        "translate": "enchantment.overlimit.absolute_field",
+                        "color": "dark_red",
+                        "bold": true,
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "overlimit.guide.slot.chest",
+                        "color": "dark_gray"
+                      },
+                      {
+                        "translate": "overlimit.guide.entry.absolute_field"
+                      },
+                      {
+                        "translate": "overlimit.guide.link.back_armor",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 4
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "raw": [
+                      {
+                        "translate": "enchantment.overlimit.clairvoyance",
+                        "color": "dark_red",
+                        "bold": true,
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "overlimit.guide.slot.helm",
+                        "color": "dark_gray"
+                      },
+                      {
+                        "translate": "overlimit.guide.entry.clairvoyance"
+                      },
+                      {
+                        "translate": "overlimit.guide.link.back_armor",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 4
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "raw": [
+                      {
+                        "translate": "enchantment.overlimit.sky_walk",
+                        "color": "dark_red",
+                        "bold": true,
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "overlimit.guide.slot.boots",
+                        "color": "dark_gray"
+                      },
+                      {
+                        "translate": "overlimit.guide.entry.sky_walk"
+                      },
+                      {
+                        "translate": "overlimit.guide.link.back_armor",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 4
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "raw": [
+                      {
+                        "translate": "enchantment.overlimit.cat_foot",
+                        "color": "dark_red",
+                        "bold": true,
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "overlimit.guide.slot.boots",
+                        "color": "dark_gray"
+                      },
+                      {
+                        "translate": "overlimit.guide.entry.cat_foot"
+                      },
+                      {
+                        "translate": "overlimit.guide.link.back_armor",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 4
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "raw": [
+                      {
+                        "translate": "enchantment.overlimit.midas_table",
+                        "color": "dark_red",
+                        "bold": true,
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "overlimit.guide.slot.helm",
+                        "color": "dark_gray"
+                      },
+                      {
+                        "translate": "overlimit.guide.entry.midas_table"
+                      },
+                      {
+                        "translate": "overlimit.guide.link.back_armor",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 4
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "raw": [
+                      {
+                        "translate": "enchantment.overlimit.hyper_dig",
+                        "color": "dark_red",
+                        "bold": true,
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "overlimit.guide.slot.pick",
+                        "color": "dark_gray"
+                      },
+                      {
+                        "translate": "overlimit.guide.entry.hyper_dig"
+                      },
+                      {
+                        "translate": "overlimit.guide.note.hyper_dig",
+                        "color": "dark_gray"
+                      },
+                      {
+                        "translate": "overlimit.guide.link.back_tools",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 4
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "raw": [
+                      {
+                        "translate": "enchantment.overlimit.smelting",
+                        "color": "dark_red",
+                        "bold": true,
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "overlimit.guide.slot.pick",
+                        "color": "dark_gray"
+                      },
+                      {
+                        "translate": "overlimit.guide.entry.smelting"
+                      },
+                      {
+                        "translate": "overlimit.guide.note.smelting",
+                        "color": "dark_gray"
+                      },
+                      {
+                        "translate": "overlimit.guide.link.back_tools",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 4
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "raw": [
+                      {
+                        "translate": "enchantment.overlimit.wind_blessing",
+                        "color": "dark_red",
+                        "bold": true,
+                        "extra": [
+                          {
+                            "text": "\n"
+                          }
+                        ]
+                      },
+                      {
+                        "translate": "overlimit.guide.slot.elytra",
+                        "color": "dark_gray"
+                      },
+                      {
+                        "translate": "overlimit.guide.entry.wind_blessing"
+                      },
+                      {
+                        "translate": "overlimit.guide.link.back_elytra",
+                        "color": "dark_aqua",
+                        "underlined": true,
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 4
+                        }
+                      }
+                    ]
+                  }
+                ]
               }
-            }
-          ]
+            },
+            "type": "minecraft:set_components"
+          }
         }
       ]
     }

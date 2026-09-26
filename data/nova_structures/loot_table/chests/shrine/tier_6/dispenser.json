@@ -7,35 +7,35 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 12,
-                "min": 4
-              }
-            }
-          ],
           "name": "minecraft:arrow",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "count": {
+              "max": 12,
+              "min": 4,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
+          "name": "minecraft:tipped_arrow",
+          "weight": 3,
+          "modifier": [
             {
-              "function": "set_count",
               "count": {
                 "max": 8,
-                "min": 4
-              }
+                "min": 4,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_count"
             },
             {
-              "function": "set_potion",
-              "id": "weakness"
+              "id": "weakness",
+              "type": "set_potion"
             }
-          ],
-          "name": "minecraft:tipped_arrow",
-          "weight": 3
+          ]
         },
         {
           "type": "loot_table",
@@ -44,116 +44,117 @@
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 8,
-                "min": 4
-              }
-            }
-          ],
           "name": "minecraft:spectral_arrow",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "count": {
+              "max": 8,
+              "min": 4,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
+          "name": "minecraft:lingering_potion",
+          "weight": 3,
+          "modifier": [
             {
-              "function": "set_count",
               "count": {
                 "max": 3,
-                "min": 2
-              }
+                "min": 2,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_count"
             },
             {
-              "function": "set_potion",
-              "id": "slowness"
+              "id": "slowness",
+              "type": "set_potion"
             }
-          ],
-          "name": "minecraft:lingering_potion",
-          "weight": 3
+          ]
         },
         {
           "type": "minecraft:item",
-          "functions": [
+          "name": "minecraft:lingering_potion",
+          "weight": 3,
+          "modifier": [
             {
-              "function": "set_count",
               "count": {
                 "max": 3,
-                "min": 2
-              }
+                "min": 2,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_count"
             },
             {
-              "function": "set_potion",
-              "id": "poison"
+              "id": "poison",
+              "type": "set_potion"
             }
-          ],
-          "name": "minecraft:lingering_potion",
-          "weight": 3
+          ]
         },
         {
           "type": "minecraft:item",
-          "functions": [
+          "name": "minecraft:lingering_potion",
+          "weight": 3,
+          "modifier": [
             {
-              "function": "set_count",
               "count": {
                 "max": 3,
-                "min": 2
-              }
+                "min": 2,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_count"
             },
             {
-              "function": "set_potion",
-              "id": "swiftness"
+              "id": "swiftness",
+              "type": "set_potion"
             }
-          ],
-          "name": "minecraft:lingering_potion",
-          "weight": 3
+          ]
         },
         {
           "type": "minecraft:item",
-          "functions": [
+          "name": "minecraft:lingering_potion",
+          "weight": 3,
+          "modifier": [
             {
-              "function": "set_count",
               "count": {
                 "max": 3,
-                "min": 2
-              }
+                "min": 2,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_count"
             },
             {
-              "function": "set_potion",
-              "id": "strength"
+              "id": "strength",
+              "type": "set_potion"
             }
-          ],
-          "name": "minecraft:lingering_potion",
-          "weight": 3
+          ]
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 16,
-                "min": 10
-              }
-            }
-          ],
           "name": "minecraft:fire_charge",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "count": {
+              "max": 16,
+              "min": 10,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 10,
-                "min": 6
-              }
-            }
-          ],
-          "name": "minecraft:wind_charge"
+          "name": "minecraft:wind_charge",
+          "modifier": {
+            "count": {
+              "max": 10,
+              "min": 6,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "loot_table",
@@ -164,9 +165,9 @@
                   {
                     "type": "item",
                     "name": "minecraft:firework_rocket",
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "minecraft:set_fireworks",
+                        "type": "minecraft:set_fireworks",
                         "explosions": {
                           "values": [
                             {
@@ -185,9 +186,9 @@
                   {
                     "type": "item",
                     "name": "minecraft:firework_rocket",
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "minecraft:set_fireworks",
+                        "type": "minecraft:set_fireworks",
                         "explosions": {
                           "values": [
                             {
@@ -206,9 +207,9 @@
                   {
                     "type": "item",
                     "name": "minecraft:firework_rocket",
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "minecraft:set_fireworks",
+                        "type": "minecraft:set_fireworks",
                         "explosions": {
                           "values": [
                             {
@@ -226,6 +227,7 @@
                   }
                 ],
                 "rolls": {
+                  "type": "minecraft:uniform",
                   "max": 8,
                   "min": 3
                 }
@@ -291,6 +293,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -313,26 +329,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

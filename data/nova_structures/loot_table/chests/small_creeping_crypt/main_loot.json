@@ -1,0 +1,287 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:charts/creeping_crypt",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/simple_dungeon",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:copper_sword",
+          "weight": 50,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:copper_axe",
+          "weight": 50,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:copper_spear",
+          "weight": 50,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_sword",
+          "weight": 30,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_axe",
+          "weight": 30,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_spear",
+          "weight": 30,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_sword",
+          "weight": 3,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_axe",
+          "weight": 3,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_spear",
+          "weight": 3,
+          "modifier": [
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_gear",
+          "weight": 70
+        },
+        {
+          "type": "minecraft:group",
+          "weight": 25,
+          "children": [
+            {
+              "type": "minecraft:loot_table",
+              "value": "overlimit:bonus_gear"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "overlimit:bonus_gear"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 999
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_any",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 999
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_armor_any",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "modifier": "nova_structures:loot_modifier"
+}

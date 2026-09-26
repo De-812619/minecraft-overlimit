@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "overlimit:elytra_dyed"
+        "recipes": "overlimit:elytra_dyed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

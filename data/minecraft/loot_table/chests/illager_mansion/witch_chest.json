@@ -2,188 +2,17 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": 2,
-      "bonus_rolls": 0.0,
+      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:strong_harming"
-            }
-          ],
-          "name": "minecraft:splash_potion"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:water"
-            }
-          ],
-          "name": "minecraft:potion"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:awkward"
-            }
-          ],
-          "name": "minecraft:potion"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:slowness"
-            }
-          ],
-          "name": "minecraft:splash_potion"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:strong_slowness"
-            }
-          ],
-          "name": "minecraft:splash_potion"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:harming"
-            }
-          ],
-          "name": "minecraft:splash_potion"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:poison"
-            }
-          ],
-          "name": "minecraft:splash_potion"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:strong_poison"
-            }
-          ],
-          "name": "minecraft:splash_potion"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:weakness"
-            }
-          ],
-          "name": "minecraft:splash_potion",
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/illager_mansion/generic",
           "weight": 2
         },
         {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:healing"
-            }
-          ],
-          "name": "minecraft:potion"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:strong_healing"
-            }
-          ],
-          "name": "minecraft:potion"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:swiftness"
-            }
-          ],
-          "name": "minecraft:potion"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:strong_swiftness"
-            }
-          ],
-          "name": "minecraft:potion"
-        }
-      ]
-    },
-    {
-      "rolls": 4,
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:glass_bottle"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:redstone"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:fermented_spider_eye"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:glowstone_dust"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:gunpowder"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:magma_cream"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:spider_eye"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:pufferfish"
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/illager_mansion/witch_chest_base",
+          "weight": 3
         }
       ]
     },
@@ -234,6 +63,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -256,26 +99,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

@@ -1,0 +1,1074 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 1,
+          "modifier": {
+            "type": "minecraft:set_potion",
+            "id": "minecraft:swiftness"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 1,
+          "modifier": {
+            "type": "minecraft:set_potion",
+            "id": "minecraft:invisibility"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 1,
+          "modifier": {
+            "type": "minecraft:set_potion",
+            "id": "minecraft:fire_resistance"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 1,
+          "modifier": {
+            "type": "minecraft:set_potion",
+            "id": "minecraft:strength"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 1,
+          "modifier": {
+            "type": "minecraft:set_potion",
+            "id": "minecraft:regeneration"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 1,
+          "modifier": {
+            "type": "minecraft:set_potion",
+            "id": "minecraft:water_breathing"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 1,
+          "modifier": {
+            "type": "minecraft:set_potion",
+            "id": "minecraft:night_vision"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 1,
+          "modifier": {
+            "type": "minecraft:set_potion",
+            "id": "minecraft:leaping"
+          }
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 3
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:copper_nugget",
+          "weight": 10,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 5,
+              "max": 16
+            }
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_nugget",
+          "weight": 10,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 5,
+              "max": 16
+            }
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_nugget",
+          "weight": 6,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 3,
+              "max": 12
+            }
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:copper_ingot",
+          "weight": 7,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 4,
+              "max": 16
+            }
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_ingot",
+          "weight": 7,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 4
+            }
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_ingot",
+          "weight": 3,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 3
+            }
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "diamond",
+          "weight": 1,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald",
+          "weight": 1,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 3,
+              "max": 10
+            }
+          }
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 0,
+        "max": 2
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:fermented_spider_eye",
+          "weight": 1,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 3
+            }
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:sugar",
+          "weight": 1,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 4,
+              "max": 10
+            }
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:spider_eye",
+          "weight": 1,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 3,
+              "max": 8
+            }
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_carrot",
+          "weight": 1,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 3
+            }
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:glistering_melon_slice",
+          "weight": 1,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 4
+            }
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:rabbit_foot",
+          "weight": 1,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 3
+            }
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:glowstone_dust",
+          "weight": 1,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 8
+            }
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gunpowder",
+          "weight": 1,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 8
+            }
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:redstone",
+          "weight": 1,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 8
+            }
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cobweb",
+          "weight": 1,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 8
+            }
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "copper_sword",
+          "weight": 50,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "copper_spear",
+          "weight": 50,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "copper_axe",
+          "weight": 50,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "copper_pickaxe",
+          "weight": 50,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "copper_shovel",
+          "weight": 50,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "copper_hoe",
+          "weight": 50,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "copper_helmet",
+          "weight": 50,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "copper_chestplate",
+          "weight": 50,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "copper_leggings",
+          "weight": 50,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "copper_boots",
+          "weight": 50,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "bow",
+          "weight": 40,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "crossbow",
+          "weight": 40,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "iron_sword",
+          "weight": 30,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "iron_spear",
+          "weight": 30,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "iron_axe",
+          "weight": 30,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "iron_pickaxe",
+          "weight": 30,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "iron_shovel",
+          "weight": 30,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "iron_hoe",
+          "weight": 30,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "iron_helmet",
+          "weight": 30,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "iron_chestplate",
+          "weight": 30,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "iron_leggings",
+          "weight": 30,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "iron_boots",
+          "weight": 30,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "diamond_sword",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "diamond_spear",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "diamond_axe",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "diamond_pickaxe",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "diamond_shovel",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "diamond_hoe",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "diamond_helmet",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "diamond_chestplate",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "diamond_leggings",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "diamond_boots",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.5,
+                "max": 0.8
+              }
+            },
+            {
+              "type": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot",
+              "only_compatible": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_gear",
+          "weight": 70
+        },
+        {
+          "type": "minecraft:group",
+          "weight": 25,
+          "children": [
+            {
+              "type": "minecraft:loot_table",
+              "value": "overlimit:bonus_gear"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "overlimit:bonus_gear"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 999
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_any",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 999
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_armor_any",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "modifier": "nova_structures:loot_modifier"
+}

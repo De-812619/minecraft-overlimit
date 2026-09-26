@@ -2,23 +2,21 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "bonus_rolls": 0.0,
-      "rolls": 3.0,
+      "bonus_rolls": 0,
+      "rolls": 3,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:lapis_lazuli"
+          "name": "minecraft:lapis_lazuli",
+          "modifier": {
+            "add": false,
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 2,
+              "min": 1
+            },
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -26,63 +24,55 @@
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "damage": {
-                "type": "minecraft:uniform",
-                "max": 0.9,
-                "min": 0.1
-              },
-              "function": "minecraft:set_damage"
-            }
-          ],
-          "name": "minecraft:leather_helmet"
+          "name": "minecraft:leather_helmet",
+          "modifier": {
+            "add": false,
+            "damage": {
+              "type": "minecraft:uniform",
+              "max": 0.9,
+              "min": 0.1
+            },
+            "type": "minecraft:set_damage"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "damage": {
-                "type": "minecraft:uniform",
-                "max": 0.9,
-                "min": 0.1
-              },
-              "function": "minecraft:set_damage"
-            }
-          ],
-          "name": "minecraft:leather_chestplate"
+          "name": "minecraft:leather_chestplate",
+          "modifier": {
+            "add": false,
+            "damage": {
+              "type": "minecraft:uniform",
+              "max": 0.9,
+              "min": 0.1
+            },
+            "type": "minecraft:set_damage"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "damage": {
-                "type": "minecraft:uniform",
-                "max": 0.9,
-                "min": 0.1
-              },
-              "function": "minecraft:set_damage"
-            }
-          ],
-          "name": "minecraft:leather_leggings"
+          "name": "minecraft:leather_leggings",
+          "modifier": {
+            "add": false,
+            "damage": {
+              "type": "minecraft:uniform",
+              "max": 0.9,
+              "min": 0.1
+            },
+            "type": "minecraft:set_damage"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "damage": {
-                "type": "minecraft:uniform",
-                "max": 0.9,
-                "min": 0.1
-              },
-              "function": "minecraft:set_damage"
-            }
-          ],
-          "name": "minecraft:leather_boots"
+          "name": "minecraft:leather_boots",
+          "modifier": {
+            "add": false,
+            "damage": {
+              "type": "minecraft:uniform",
+              "max": 0.9,
+              "min": 0.1
+            },
+            "type": "minecraft:set_damage"
+          }
         },
         {
           "type": "minecraft:item",
@@ -95,7 +85,7 @@
       ]
     },
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:empty",
@@ -111,7 +101,7 @@
           "weight": 3
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     },
     {
       "rolls": 1.0,
@@ -160,6 +150,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -182,26 +186,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

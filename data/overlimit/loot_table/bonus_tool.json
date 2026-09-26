@@ -8,96 +8,139 @@
           "type": "minecraft:item",
           "name": "minecraft:iron_pickaxe",
           "weight": 150,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:enchant_with_levels",
+              "type": "minecraft:enchant_with_levels",
               "levels": {
                 "type": "minecraft:uniform",
-                "min": 20.0,
-                "max": 39.0
+                "min": 20,
+                "max": 39
               },
               "options": "#minecraft:on_random_loot",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.5
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:vanishing_curse": 1
               },
               "add": false
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:unbreaking": {
                   "type": "minecraft:uniform",
-                  "min": 4.0,
-                  "max": 10.0
+                  "min": 4,
+                  "max": 10
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:efficiency": {
                   "type": "minecraft:uniform",
-                  "min": 6.0,
-                  "max": 10.0
+                  "min": 6,
+                  "max": 10
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:fortune": {
                   "type": "minecraft:uniform",
-                  "min": 4.0,
-                  "max": 5.0
+                  "min": 4,
+                  "max": 5
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             },
             {
-              "function": "minecraft:enchant_randomly",
+              "type": "minecraft:enchant_randomly",
               "options": [
                 "overlimit:hyper_dig",
                 "overlimit:smelting"
               ],
               "only_compatible": true,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.51
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.51
+              }
             },
             {
-              "function": "minecraft:filtered",
+              "type": "minecraft:filtered",
+              "item_filter": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "overlimit:hyper_dig",
+                      "levels": {
+                        "min": 1
+                      }
+                    }
+                  ]
+                }
+              },
+              "on_pass": {
+                "type": "minecraft:sequence",
+                "functions": [
+                  {
+                    "type": "minecraft:set_enchantments",
+                    "enchantments": {
+                      "minecraft:efficiency": 0
+                    },
+                    "add": false,
+                    "condition": {
+                      "type": "minecraft:random_chance",
+                      "chance": 0.5
+                    }
+                  },
+                  {
+                    "type": "minecraft:filtered",
+                    "item_filter": {
+                      "predicates": {
+                        "minecraft:enchantments": [
+                          {
+                            "enchantments": "minecraft:efficiency",
+                            "levels": {
+                              "min": 1
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "on_pass": {
+                      "type": "minecraft:set_enchantments",
+                      "enchantments": {
+                        "overlimit:hyper_dig": 0
+                      },
+                      "add": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "minecraft:filtered",
               "item_filter": {
                 "predicates": {
                   "minecraft:enchantments": [
@@ -111,23 +154,21 @@
                 }
               },
               "on_pass": {
-                "function": "minecraft:sequence",
+                "type": "minecraft:sequence",
                 "functions": [
                   {
-                    "function": "minecraft:set_enchantments",
+                    "type": "minecraft:set_enchantments",
                     "enchantments": {
                       "minecraft:silk_touch": 0
                     },
                     "add": false,
-                    "conditions": [
-                      {
-                        "condition": "minecraft:random_chance",
-                        "chance": 0.5
-                      }
-                    ]
+                    "condition": {
+                      "type": "minecraft:random_chance",
+                      "chance": 0.5
+                    }
                   },
                   {
-                    "function": "minecraft:filtered",
+                    "type": "minecraft:filtered",
                     "item_filter": {
                       "predicates": {
                         "minecraft:enchantments": [
@@ -141,7 +182,7 @@
                       }
                     },
                     "on_pass": {
-                      "function": "minecraft:set_enchantments",
+                      "type": "minecraft:set_enchantments",
                       "enchantments": {
                         "minecraft:fortune": 0
                       },
@@ -152,7 +193,60 @@
               }
             },
             {
-              "function": "minecraft:filtered",
+              "type": "minecraft:filtered",
+              "item_filter": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "overlimit:hyper_dig",
+                      "levels": {
+                        "min": 1
+                      }
+                    }
+                  ]
+                }
+              },
+              "on_pass": {
+                "type": "minecraft:sequence",
+                "functions": [
+                  {
+                    "type": "minecraft:set_enchantments",
+                    "enchantments": {
+                      "minecraft:silk_touch": 0
+                    },
+                    "add": false,
+                    "condition": {
+                      "type": "minecraft:random_chance",
+                      "chance": 0.5
+                    }
+                  },
+                  {
+                    "type": "minecraft:filtered",
+                    "item_filter": {
+                      "predicates": {
+                        "minecraft:enchantments": [
+                          {
+                            "enchantments": "minecraft:silk_touch",
+                            "levels": {
+                              "min": 1
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "on_pass": {
+                      "type": "minecraft:set_enchantments",
+                      "enchantments": {
+                        "overlimit:hyper_dig": 0
+                      },
+                      "add": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "minecraft:filtered",
               "item_filter": {
                 "predicates": {
                   "minecraft:enchantments": [
@@ -166,23 +260,21 @@
                 }
               },
               "on_pass": {
-                "function": "minecraft:sequence",
+                "type": "minecraft:sequence",
                 "functions": [
                   {
-                    "function": "minecraft:set_enchantments",
+                    "type": "minecraft:set_enchantments",
                     "enchantments": {
                       "minecraft:silk_touch": 0
                     },
                     "add": false,
-                    "conditions": [
-                      {
-                        "condition": "minecraft:random_chance",
-                        "chance": 0.5
-                      }
-                    ]
+                    "condition": {
+                      "type": "minecraft:random_chance",
+                      "chance": 0.5
+                    }
                   },
                   {
-                    "function": "minecraft:filtered",
+                    "type": "minecraft:filtered",
                     "item_filter": {
                       "predicates": {
                         "minecraft:enchantments": [
@@ -196,7 +288,7 @@
                       }
                     },
                     "on_pass": {
-                      "function": "minecraft:set_enchantments",
+                      "type": "minecraft:set_enchantments",
                       "enchantments": {
                         "overlimit:smelting": 0
                       },
@@ -212,96 +304,139 @@
           "type": "minecraft:item",
           "name": "minecraft:diamond_pickaxe",
           "weight": 750,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:enchant_with_levels",
+              "type": "minecraft:enchant_with_levels",
               "levels": {
                 "type": "minecraft:uniform",
-                "min": 20.0,
-                "max": 39.0
+                "min": 20,
+                "max": 39
               },
               "options": "#minecraft:on_random_loot",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.5
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:vanishing_curse": 1
               },
               "add": false
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:unbreaking": {
                   "type": "minecraft:uniform",
-                  "min": 4.0,
-                  "max": 10.0
+                  "min": 4,
+                  "max": 10
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:efficiency": {
                   "type": "minecraft:uniform",
-                  "min": 6.0,
-                  "max": 10.0
+                  "min": 6,
+                  "max": 10
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:fortune": {
                   "type": "minecraft:uniform",
-                  "min": 4.0,
-                  "max": 5.0
+                  "min": 4,
+                  "max": 5
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             },
             {
-              "function": "minecraft:enchant_randomly",
+              "type": "minecraft:enchant_randomly",
               "options": [
                 "overlimit:hyper_dig",
                 "overlimit:smelting"
               ],
               "only_compatible": true,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.51
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.51
+              }
             },
             {
-              "function": "minecraft:filtered",
+              "type": "minecraft:filtered",
+              "item_filter": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "overlimit:hyper_dig",
+                      "levels": {
+                        "min": 1
+                      }
+                    }
+                  ]
+                }
+              },
+              "on_pass": {
+                "type": "minecraft:sequence",
+                "functions": [
+                  {
+                    "type": "minecraft:set_enchantments",
+                    "enchantments": {
+                      "minecraft:efficiency": 0
+                    },
+                    "add": false,
+                    "condition": {
+                      "type": "minecraft:random_chance",
+                      "chance": 0.5
+                    }
+                  },
+                  {
+                    "type": "minecraft:filtered",
+                    "item_filter": {
+                      "predicates": {
+                        "minecraft:enchantments": [
+                          {
+                            "enchantments": "minecraft:efficiency",
+                            "levels": {
+                              "min": 1
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "on_pass": {
+                      "type": "minecraft:set_enchantments",
+                      "enchantments": {
+                        "overlimit:hyper_dig": 0
+                      },
+                      "add": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "minecraft:filtered",
               "item_filter": {
                 "predicates": {
                   "minecraft:enchantments": [
@@ -315,23 +450,21 @@
                 }
               },
               "on_pass": {
-                "function": "minecraft:sequence",
+                "type": "minecraft:sequence",
                 "functions": [
                   {
-                    "function": "minecraft:set_enchantments",
+                    "type": "minecraft:set_enchantments",
                     "enchantments": {
                       "minecraft:silk_touch": 0
                     },
                     "add": false,
-                    "conditions": [
-                      {
-                        "condition": "minecraft:random_chance",
-                        "chance": 0.5
-                      }
-                    ]
+                    "condition": {
+                      "type": "minecraft:random_chance",
+                      "chance": 0.5
+                    }
                   },
                   {
-                    "function": "minecraft:filtered",
+                    "type": "minecraft:filtered",
                     "item_filter": {
                       "predicates": {
                         "minecraft:enchantments": [
@@ -345,7 +478,7 @@
                       }
                     },
                     "on_pass": {
-                      "function": "minecraft:set_enchantments",
+                      "type": "minecraft:set_enchantments",
                       "enchantments": {
                         "minecraft:fortune": 0
                       },
@@ -356,7 +489,60 @@
               }
             },
             {
-              "function": "minecraft:filtered",
+              "type": "minecraft:filtered",
+              "item_filter": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "overlimit:hyper_dig",
+                      "levels": {
+                        "min": 1
+                      }
+                    }
+                  ]
+                }
+              },
+              "on_pass": {
+                "type": "minecraft:sequence",
+                "functions": [
+                  {
+                    "type": "minecraft:set_enchantments",
+                    "enchantments": {
+                      "minecraft:silk_touch": 0
+                    },
+                    "add": false,
+                    "condition": {
+                      "type": "minecraft:random_chance",
+                      "chance": 0.5
+                    }
+                  },
+                  {
+                    "type": "minecraft:filtered",
+                    "item_filter": {
+                      "predicates": {
+                        "minecraft:enchantments": [
+                          {
+                            "enchantments": "minecraft:silk_touch",
+                            "levels": {
+                              "min": 1
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "on_pass": {
+                      "type": "minecraft:set_enchantments",
+                      "enchantments": {
+                        "overlimit:hyper_dig": 0
+                      },
+                      "add": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "minecraft:filtered",
               "item_filter": {
                 "predicates": {
                   "minecraft:enchantments": [
@@ -370,23 +556,21 @@
                 }
               },
               "on_pass": {
-                "function": "minecraft:sequence",
+                "type": "minecraft:sequence",
                 "functions": [
                   {
-                    "function": "minecraft:set_enchantments",
+                    "type": "minecraft:set_enchantments",
                     "enchantments": {
                       "minecraft:silk_touch": 0
                     },
                     "add": false,
-                    "conditions": [
-                      {
-                        "condition": "minecraft:random_chance",
-                        "chance": 0.5
-                      }
-                    ]
+                    "condition": {
+                      "type": "minecraft:random_chance",
+                      "chance": 0.5
+                    }
                   },
                   {
-                    "function": "minecraft:filtered",
+                    "type": "minecraft:filtered",
                     "item_filter": {
                       "predicates": {
                         "minecraft:enchantments": [
@@ -400,7 +584,7 @@
                       }
                     },
                     "on_pass": {
-                      "function": "minecraft:set_enchantments",
+                      "type": "minecraft:set_enchantments",
                       "enchantments": {
                         "overlimit:smelting": 0
                       },
@@ -416,96 +600,139 @@
           "type": "minecraft:item",
           "name": "minecraft:netherite_pickaxe",
           "weight": 100,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:enchant_with_levels",
+              "type": "minecraft:enchant_with_levels",
               "levels": {
                 "type": "minecraft:uniform",
-                "min": 20.0,
-                "max": 39.0
+                "min": 20,
+                "max": 39
               },
               "options": "#minecraft:on_random_loot",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.5
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:vanishing_curse": 1
               },
               "add": false
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:unbreaking": {
                   "type": "minecraft:uniform",
-                  "min": 4.0,
-                  "max": 10.0
+                  "min": 4,
+                  "max": 10
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:efficiency": {
                   "type": "minecraft:uniform",
-                  "min": 6.0,
-                  "max": 10.0
+                  "min": 6,
+                  "max": 10
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:fortune": {
                   "type": "minecraft:uniform",
-                  "min": 4.0,
-                  "max": 5.0
+                  "min": 4,
+                  "max": 5
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             },
             {
-              "function": "minecraft:enchant_randomly",
+              "type": "minecraft:enchant_randomly",
               "options": [
                 "overlimit:hyper_dig",
                 "overlimit:smelting"
               ],
               "only_compatible": true,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.51
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.51
+              }
             },
             {
-              "function": "minecraft:filtered",
+              "type": "minecraft:filtered",
+              "item_filter": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "overlimit:hyper_dig",
+                      "levels": {
+                        "min": 1
+                      }
+                    }
+                  ]
+                }
+              },
+              "on_pass": {
+                "type": "minecraft:sequence",
+                "functions": [
+                  {
+                    "type": "minecraft:set_enchantments",
+                    "enchantments": {
+                      "minecraft:efficiency": 0
+                    },
+                    "add": false,
+                    "condition": {
+                      "type": "minecraft:random_chance",
+                      "chance": 0.5
+                    }
+                  },
+                  {
+                    "type": "minecraft:filtered",
+                    "item_filter": {
+                      "predicates": {
+                        "minecraft:enchantments": [
+                          {
+                            "enchantments": "minecraft:efficiency",
+                            "levels": {
+                              "min": 1
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "on_pass": {
+                      "type": "minecraft:set_enchantments",
+                      "enchantments": {
+                        "overlimit:hyper_dig": 0
+                      },
+                      "add": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "minecraft:filtered",
               "item_filter": {
                 "predicates": {
                   "minecraft:enchantments": [
@@ -519,23 +746,21 @@
                 }
               },
               "on_pass": {
-                "function": "minecraft:sequence",
+                "type": "minecraft:sequence",
                 "functions": [
                   {
-                    "function": "minecraft:set_enchantments",
+                    "type": "minecraft:set_enchantments",
                     "enchantments": {
                       "minecraft:silk_touch": 0
                     },
                     "add": false,
-                    "conditions": [
-                      {
-                        "condition": "minecraft:random_chance",
-                        "chance": 0.5
-                      }
-                    ]
+                    "condition": {
+                      "type": "minecraft:random_chance",
+                      "chance": 0.5
+                    }
                   },
                   {
-                    "function": "minecraft:filtered",
+                    "type": "minecraft:filtered",
                     "item_filter": {
                       "predicates": {
                         "minecraft:enchantments": [
@@ -549,7 +774,7 @@
                       }
                     },
                     "on_pass": {
-                      "function": "minecraft:set_enchantments",
+                      "type": "minecraft:set_enchantments",
                       "enchantments": {
                         "minecraft:fortune": 0
                       },
@@ -560,7 +785,60 @@
               }
             },
             {
-              "function": "minecraft:filtered",
+              "type": "minecraft:filtered",
+              "item_filter": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "overlimit:hyper_dig",
+                      "levels": {
+                        "min": 1
+                      }
+                    }
+                  ]
+                }
+              },
+              "on_pass": {
+                "type": "minecraft:sequence",
+                "functions": [
+                  {
+                    "type": "minecraft:set_enchantments",
+                    "enchantments": {
+                      "minecraft:silk_touch": 0
+                    },
+                    "add": false,
+                    "condition": {
+                      "type": "minecraft:random_chance",
+                      "chance": 0.5
+                    }
+                  },
+                  {
+                    "type": "minecraft:filtered",
+                    "item_filter": {
+                      "predicates": {
+                        "minecraft:enchantments": [
+                          {
+                            "enchantments": "minecraft:silk_touch",
+                            "levels": {
+                              "min": 1
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "on_pass": {
+                      "type": "minecraft:set_enchantments",
+                      "enchantments": {
+                        "overlimit:hyper_dig": 0
+                      },
+                      "add": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "minecraft:filtered",
               "item_filter": {
                 "predicates": {
                   "minecraft:enchantments": [
@@ -574,23 +852,21 @@
                 }
               },
               "on_pass": {
-                "function": "minecraft:sequence",
+                "type": "minecraft:sequence",
                 "functions": [
                   {
-                    "function": "minecraft:set_enchantments",
+                    "type": "minecraft:set_enchantments",
                     "enchantments": {
                       "minecraft:silk_touch": 0
                     },
                     "add": false,
-                    "conditions": [
-                      {
-                        "condition": "minecraft:random_chance",
-                        "chance": 0.5
-                      }
-                    ]
+                    "condition": {
+                      "type": "minecraft:random_chance",
+                      "chance": 0.5
+                    }
                   },
                   {
-                    "function": "minecraft:filtered",
+                    "type": "minecraft:filtered",
                     "item_filter": {
                       "predicates": {
                         "minecraft:enchantments": [
@@ -604,7 +880,7 @@
                       }
                     },
                     "on_pass": {
-                      "function": "minecraft:set_enchantments",
+                      "type": "minecraft:set_enchantments",
                       "enchantments": {
                         "overlimit:smelting": 0
                       },
@@ -620,62 +896,56 @@
           "type": "minecraft:item",
           "name": "minecraft:iron_shovel",
           "weight": 120,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:enchant_with_levels",
+              "type": "minecraft:enchant_with_levels",
               "levels": {
                 "type": "minecraft:uniform",
-                "min": 20.0,
-                "max": 39.0
+                "min": 20,
+                "max": 39
               },
               "options": "#minecraft:on_random_loot",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.5
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:vanishing_curse": 1
               },
               "add": false
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:unbreaking": {
                   "type": "minecraft:uniform",
-                  "min": 4.0,
-                  "max": 10.0
+                  "min": 4,
+                  "max": 10
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:efficiency": {
                   "type": "minecraft:uniform",
-                  "min": 6.0,
-                  "max": 10.0
+                  "min": 6,
+                  "max": 10
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             }
           ]
         },
@@ -683,62 +953,56 @@
           "type": "minecraft:item",
           "name": "minecraft:diamond_shovel",
           "weight": 600,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:enchant_with_levels",
+              "type": "minecraft:enchant_with_levels",
               "levels": {
                 "type": "minecraft:uniform",
-                "min": 20.0,
-                "max": 39.0
+                "min": 20,
+                "max": 39
               },
               "options": "#minecraft:on_random_loot",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.5
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:vanishing_curse": 1
               },
               "add": false
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:unbreaking": {
                   "type": "minecraft:uniform",
-                  "min": 4.0,
-                  "max": 10.0
+                  "min": 4,
+                  "max": 10
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:efficiency": {
                   "type": "minecraft:uniform",
-                  "min": 6.0,
-                  "max": 10.0
+                  "min": 6,
+                  "max": 10
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             }
           ]
         },
@@ -746,62 +1010,56 @@
           "type": "minecraft:item",
           "name": "minecraft:netherite_shovel",
           "weight": 80,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:enchant_with_levels",
+              "type": "minecraft:enchant_with_levels",
               "levels": {
                 "type": "minecraft:uniform",
-                "min": 20.0,
-                "max": 39.0
+                "min": 20,
+                "max": 39
               },
               "options": "#minecraft:on_random_loot",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.5
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:vanishing_curse": 1
               },
               "add": false
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:unbreaking": {
                   "type": "minecraft:uniform",
-                  "min": 4.0,
-                  "max": 10.0
+                  "min": 4,
+                  "max": 10
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:efficiency": {
                   "type": "minecraft:uniform",
-                  "min": 6.0,
-                  "max": 10.0
+                  "min": 6,
+                  "max": 10
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             }
           ]
         },
@@ -809,62 +1067,56 @@
           "type": "minecraft:item",
           "name": "minecraft:iron_hoe",
           "weight": 90,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:enchant_with_levels",
+              "type": "minecraft:enchant_with_levels",
               "levels": {
                 "type": "minecraft:uniform",
-                "min": 20.0,
-                "max": 39.0
+                "min": 20,
+                "max": 39
               },
               "options": "#minecraft:on_random_loot",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.5
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:vanishing_curse": 1
               },
               "add": false
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:unbreaking": {
                   "type": "minecraft:uniform",
-                  "min": 4.0,
-                  "max": 10.0
+                  "min": 4,
+                  "max": 10
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:efficiency": {
                   "type": "minecraft:uniform",
-                  "min": 6.0,
-                  "max": 10.0
+                  "min": 6,
+                  "max": 10
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             }
           ]
         },
@@ -872,62 +1124,56 @@
           "type": "minecraft:item",
           "name": "minecraft:diamond_hoe",
           "weight": 450,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:enchant_with_levels",
+              "type": "minecraft:enchant_with_levels",
               "levels": {
                 "type": "minecraft:uniform",
-                "min": 20.0,
-                "max": 39.0
+                "min": 20,
+                "max": 39
               },
               "options": "#minecraft:on_random_loot",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.5
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:vanishing_curse": 1
               },
               "add": false
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:unbreaking": {
                   "type": "minecraft:uniform",
-                  "min": 4.0,
-                  "max": 10.0
+                  "min": 4,
+                  "max": 10
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:efficiency": {
                   "type": "minecraft:uniform",
-                  "min": 6.0,
-                  "max": 10.0
+                  "min": 6,
+                  "max": 10
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             }
           ]
         },
@@ -935,62 +1181,56 @@
           "type": "minecraft:item",
           "name": "minecraft:netherite_hoe",
           "weight": 60,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:enchant_with_levels",
+              "type": "minecraft:enchant_with_levels",
               "levels": {
                 "type": "minecraft:uniform",
-                "min": 20.0,
-                "max": 39.0
+                "min": 20,
+                "max": 39
               },
               "options": "#minecraft:on_random_loot",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.5
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:vanishing_curse": 1
               },
               "add": false
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:unbreaking": {
                   "type": "minecraft:uniform",
-                  "min": 4.0,
-                  "max": 10.0
+                  "min": 4,
+                  "max": 10
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:efficiency": {
                   "type": "minecraft:uniform",
-                  "min": 6.0,
-                  "max": 10.0
+                  "min": 6,
+                  "max": 10
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             }
           ]
         },
@@ -998,75 +1238,67 @@
           "type": "minecraft:item",
           "name": "minecraft:fishing_rod",
           "weight": 500,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:enchant_with_levels",
+              "type": "minecraft:enchant_with_levels",
               "levels": {
                 "type": "minecraft:uniform",
-                "min": 20.0,
-                "max": 39.0
+                "min": 20,
+                "max": 39
               },
               "options": "#minecraft:on_random_loot",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.5
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:vanishing_curse": 1
               },
               "add": false
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:unbreaking": {
                   "type": "minecraft:uniform",
-                  "min": 4.0,
-                  "max": 10.0
+                  "min": 4,
+                  "max": 10
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:luck_of_the_sea": {
                   "type": "minecraft:uniform",
-                  "min": 4.0,
-                  "max": 10.0
+                  "min": 4,
+                  "max": 10
                 }
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             },
             {
-              "function": "minecraft:set_enchantments",
+              "type": "minecraft:set_enchantments",
               "enchantments": {
                 "minecraft:lure": 4
               },
               "add": false,
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.3
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             }
           ]
         }

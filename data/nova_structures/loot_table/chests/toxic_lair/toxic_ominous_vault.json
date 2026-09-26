@@ -11,16 +11,15 @@
         {
           "type": "minecraft:item",
           "name": "iron_block",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ],
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -44,58 +43,54 @@
         {
           "type": "minecraft:item",
           "name": "verdant_froglight",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 6,
-                "min": 4
-              }
-            }
-          ],
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "count": {
+              "max": 6,
+              "min": 4,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "ochre_froglight",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 6,
-                "min": 4
-              }
-            }
-          ],
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "count": {
+              "max": 6,
+              "min": 4,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "pearlescent_froglight",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 6,
-                "min": 4
-              }
-            }
-          ],
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "count": {
+              "max": 6,
+              "min": 4,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "golden_apple",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ],
-          "weight": 20
+          "weight": 20,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         }
       ]
     },
@@ -105,86 +100,78 @@
         {
           "type": "minecraft:item",
           "name": "diamond_helmet",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": {
-                "max": 15,
-                "min": 10
-              },
-              "options": "#nova_structures:structure/toxic_lair"
-            }
-          ],
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 15,
+              "min": 10
+            },
+            "options": "#nova_structures:structure/toxic_lair",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "diamond_chestplate",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": {
-                "max": 25,
-                "min": 15
-              },
-              "options": "#nova_structures:structure/toxic_lair"
-            }
-          ],
-          "weight": 10
+          "weight": 10,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 25,
+              "min": 15
+            },
+            "options": "#nova_structures:structure/toxic_lair",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "diamond_leggings",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": {
-                "max": 25,
-                "min": 10
-              },
-              "options": "#nova_structures:structure/toxic_lair"
-            }
-          ],
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 25,
+              "min": 10
+            },
+            "options": "#nova_structures:structure/toxic_lair",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "diamond_boots",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": {
-                "max": 15,
-                "min": 10
-              },
-              "options": "#nova_structures:structure/toxic_lair"
-            }
-          ],
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 15,
+              "min": 10
+            },
+            "options": "#nova_structures:structure/toxic_lair",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "book",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": 25,
-              "options": "#nova_structures:structure/toxic_lair"
-            }
-          ],
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": 25,
+            "options": "#nova_structures:structure/toxic_lair",
+            "type": "enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
           "name": "bow",
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "levels": 15,
-              "options": "#nova_structures:structure/toxic_lair"
-            }
-          ],
-          "weight": 5
+          "weight": 5,
+          "modifier": {
+            "levels": 15,
+            "options": "#nova_structures:structure/toxic_lair",
+            "type": "enchant_with_levels"
+          }
         }
       ]
     },
@@ -235,6 +222,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -257,26 +258,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

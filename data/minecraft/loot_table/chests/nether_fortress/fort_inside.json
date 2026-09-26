@@ -3,18 +3,18 @@
   "pools": [
     {
       "rolls": 1,
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
           "weight": 5,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_count",
+              "type": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "min": 1.0,
-                "max": 2.0
+                "min": 1,
+                "max": 2
               },
               "add": false
             }
@@ -24,13 +24,13 @@
         {
           "type": "minecraft:item",
           "weight": 10,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_count",
+              "type": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "min": 1.0,
-                "max": 2.0
+                "min": 1,
+                "max": 2
               },
               "add": false
             }
@@ -60,32 +60,33 @@
     },
     {
       "rolls": 2,
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
           "name": "minecraft:stone_sword",
-          "functions": [
+          "modifier": [
             {
               "add": false,
               "damage": {
                 "type": "minecraft:uniform",
                 "max": 0.9,
-                "min": 0.0
+                "min": 0.1
               },
-              "function": "minecraft:set_damage"
+              "type": "minecraft:set_damage"
             }
           ]
         },
         {
           "type": "minecraft:item",
           "weight": 5,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_count",
+              "type": "minecraft:set_count",
               "count": {
-                "min": 2.0,
-                "max": 6.0
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 6
               },
               "add": false
             }
@@ -95,12 +96,13 @@
         {
           "type": "minecraft:item",
           "weight": 2,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_count",
+              "type": "minecraft:set_count",
               "count": {
-                "min": 2.0,
-                "max": 3.0
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 3
               },
               "add": false
             }
@@ -110,12 +112,13 @@
         {
           "type": "minecraft:item",
           "weight": 2,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_count",
+              "type": "minecraft:set_count",
               "count": {
-                "min": 1.0,
-                "max": 2.0
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
               },
               "add": false
             }
@@ -125,12 +128,13 @@
         {
           "type": "minecraft:item",
           "weight": 5,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_count",
+              "type": "minecraft:set_count",
               "count": {
-                "min": 1.0,
-                "max": 3.0
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
               },
               "add": false
             }
@@ -146,16 +150,17 @@
     },
     {
       "rolls": 2,
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_count",
+              "type": "minecraft:set_count",
               "count": {
-                "min": 1.0,
-                "max": 3.0
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
               },
               "add": false
             }
@@ -165,12 +170,13 @@
         {
           "type": "minecraft:item",
           "weight": 2,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_count",
+              "type": "minecraft:set_count",
               "count": {
-                "min": 1.0,
-                "max": 3.0
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
               },
               "add": false
             }
@@ -180,12 +186,13 @@
         {
           "type": "minecraft:item",
           "weight": 2,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_count",
+              "type": "minecraft:set_count",
               "count": {
-                "min": 1.0,
-                "max": 6.0
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 6
               },
               "add": false
             }
@@ -204,12 +211,13 @@
         {
           "type": "minecraft:item",
           "weight": 2,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_count",
+              "type": "minecraft:set_count",
               "count": {
-                "min": 1.0,
-                "max": 3.0
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
               },
               "add": false
             }
@@ -220,7 +228,7 @@
     },
     {
       "rolls": 1,
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:empty",
@@ -234,7 +242,7 @@
     },
     {
       "rolls": 1,
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:empty"
@@ -292,6 +300,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -314,26 +336,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

@@ -21,16 +21,16 @@ export const install = {
     ${table(
       ["項目", "バージョン"],
       [
-        ["Minecraft", "Java Edition 26.2"],
-        ["Mod ローダー", "Fabric Loader 0.19.3"],
-        ["ライブラリ", "Fabric API 0.156.0+26.2"],
+        ["Minecraft", "Java Edition 26.3"],
+        ["Mod ローダー", "Fabric Loader 0.19.5（0.19.3 以上）"],
+        ["ライブラリ", "Fabric API 0.161.0+26.3"],
         ["Java", "25"],
         ["任意", "Dungeons and Taverns（Modrinth の datapack。チェストボーナスの対象が増える）"],
       ]
     )}
     <h2 id="single">シングルプレイ</h2>
     <ol>
-      <li>Prism などのインスタンスで、Minecraft 26.2 と Fabric、Fabric API を用意します。</li>
+      <li>Prism などのインスタンスで、Minecraft 26.3 と Fabric、Fabric API を用意します。</li>
       <li><code>overlimit-*.jar</code> を、そのインスタンスの <code>mods/</code> に置きます。同じ Mod ID の古い JAR は外します。</li>
       <li>別の Over Limit リソースパックは有効にしません。JAR 内の <code>assets/</code> がモデル、テクスチャ、翻訳を出します。別パックを同時に有効にすると、同じ見た目が二重に載ります。</li>
       <li>ゲームを起動し、ワールドに入ります。JAR を入れ直したあとは再起動が必要です。</li>

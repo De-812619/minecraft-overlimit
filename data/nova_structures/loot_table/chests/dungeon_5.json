@@ -2,7 +2,7 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:loot_table",
@@ -14,9 +14,9 @@
                 "entries": [
                   {
                     "type": "minecraft:item",
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "minecraft:set_count",
+                        "type": "minecraft:set_count",
                         "count": {
                           "type": "minecraft:uniform",
                           "min": 1,
@@ -29,9 +29,9 @@
                   },
                   {
                     "type": "minecraft:item",
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "minecraft:set_count",
+                        "type": "minecraft:set_count",
                         "count": {
                           "type": "minecraft:uniform",
                           "min": 1,
@@ -44,9 +44,9 @@
                   },
                   {
                     "type": "minecraft:item",
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "minecraft:set_count",
+                        "type": "minecraft:set_count",
                         "count": 4,
                         "add": false
                       }
@@ -55,9 +55,9 @@
                   },
                   {
                     "type": "minecraft:item",
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "minecraft:set_count",
+                        "type": "minecraft:set_count",
                         "count": {
                           "type": "minecraft:uniform",
                           "min": 1,
@@ -79,7 +79,7 @@
           "value": "minecraft:chests/simple_dungeon"
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     },
     {
       "rolls": 1.0,
@@ -128,6 +128,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -150,26 +164,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

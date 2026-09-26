@@ -7,17 +7,15 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1,
-                "type": "uniform"
-              }
-            }
-          ],
-          "name": "minecraft:pale_hanging_moss"
+          "name": "minecraft:pale_hanging_moss",
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
@@ -31,114 +29,102 @@
         {
           "type": "item",
           "name": "minecraft:amethyst_shard",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": 2
-            }
-          ]
+          "modifier": {
+            "count": 2,
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "minecraft:diamond",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 2,
-                "min": 1
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         },
         {
           "type": "item",
           "name": "minecraft:emerald",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "max": 3,
-                "min": 1
-              }
-            }
-          ]
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
         }
       ]
     },
     {
       "rolls": {
         "max": 2,
-        "min": 1
+        "min": 1,
+        "type": "minecraft:uniform"
       },
       "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "max": 15,
-                "min": 5,
-                "type": "uniform"
-              },
-              "options": "#nova_structures:illagers_bane"
-            }
-          ],
           "name": "minecraft:book",
-          "weight": 6
+          "weight": 6,
+          "modifier": {
+            "levels": {
+              "max": 15,
+              "min": 5,
+              "type": "uniform"
+            },
+            "options": "#nova_structures:illagers_bane",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": {
-                "max": 20,
-                "min": 10,
-                "type": "uniform"
-              },
-              "options": "#nova_structures:structure/pale_residence"
-            }
-          ],
           "name": "minecraft:book",
-          "weight": 3
+          "weight": 3,
+          "modifier": {
+            "levels": {
+              "max": 20,
+              "min": 10,
+              "type": "uniform"
+            },
+            "options": "#nova_structures:structure/pale_residence",
+            "type": "minecraft:enchant_with_levels"
+          }
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "options": "minecraft:silk_touch"
-            }
-          ],
           "name": "minecraft:book",
-          "weight": 1
+          "weight": 1,
+          "modifier": {
+            "options": "minecraft:silk_touch",
+            "type": "minecraft:enchant_randomly"
+          }
         },
         {
           "type": "item",
           "name": "minecraft:ominous_bottle",
-          "functions": [
-            {
-              "function": "set_ominous_bottle_amplifier",
-              "amplifier": {
-                "max": 5,
-                "min": 4
-              }
-            }
-          ],
-          "weight": 2
+          "weight": 2,
+          "modifier": {
+            "amplifier": {
+              "type": "minecraft:uniform",
+              "max": 5,
+              "min": 4
+            },
+            "type": "set_ominous_bottle_amplifier"
+          }
         },
         {
           "type": "item",
           "name": "minecraft:golden_apple",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": 2
-            }
-          ]
+          "modifier": {
+            "count": 2,
+            "type": "set_count"
+          }
         }
       ]
     },
@@ -153,19 +139,17 @@
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2,
-                "max": 1
-              },
-              "add": false
-            }
-          ],
           "name": "minecraft:black_bundle",
-          "weight": 1
+          "weight": 1,
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 1
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
         },
         {
           "type": "minecraft:item",
@@ -251,6 +235,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -273,26 +271,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

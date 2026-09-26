@@ -30,7 +30,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "overlimit:holy_totem"
+        "recipes": "overlimit:holy_totem"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

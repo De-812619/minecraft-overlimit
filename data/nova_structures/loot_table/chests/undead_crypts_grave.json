@@ -2,7 +2,7 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:loot_table",
@@ -10,18 +10,18 @@
             "pools": [
               {
                 "rolls": 1,
-                "bonus_rolls": 0.0,
+                "bonus_rolls": 0,
                 "entries": [
                   {
                     "type": "minecraft:item",
                     "weight": 1,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "minecraft:set_count",
+                        "type": "minecraft:set_count",
                         "count": {
                           "type": "minecraft:uniform",
-                          "min": 1.0,
-                          "max": 2.0
+                          "min": 1,
+                          "max": 2
                         },
                         "add": false
                       }
@@ -31,13 +31,13 @@
                   {
                     "type": "minecraft:item",
                     "weight": 2,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "minecraft:set_count",
+                        "type": "minecraft:set_count",
                         "count": {
                           "type": "minecraft:uniform",
-                          "min": 1.0,
-                          "max": 3.0
+                          "min": 1,
+                          "max": 3
                         },
                         "add": false
                       }
@@ -47,13 +47,13 @@
                   {
                     "type": "minecraft:item",
                     "weight": 3,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "minecraft:set_count",
+                        "type": "minecraft:set_count",
                         "count": {
                           "type": "minecraft:uniform",
-                          "min": 1.0,
-                          "max": 7.0
+                          "min": 1,
+                          "max": 7
                         },
                         "add": false
                       }
@@ -63,13 +63,13 @@
                   {
                     "type": "minecraft:item",
                     "weight": 2,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "minecraft:set_count",
+                        "type": "minecraft:set_count",
                         "count": {
                           "type": "minecraft:uniform",
-                          "min": 1.0,
-                          "max": 4.0
+                          "min": 1,
+                          "max": 4
                         },
                         "add": false
                       }
@@ -79,13 +79,13 @@
                   {
                     "type": "minecraft:item",
                     "weight": 3,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "minecraft:set_count",
+                        "type": "minecraft:set_count",
                         "count": {
                           "type": "minecraft:uniform",
-                          "min": 1.0,
-                          "max": 3.0
+                          "min": 1,
+                          "max": 3
                         },
                         "add": false
                       }
@@ -95,13 +95,13 @@
                   {
                     "type": "minecraft:item",
                     "weight": 3,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "minecraft:set_count",
+                        "type": "minecraft:set_count",
                         "count": {
                           "type": "minecraft:uniform",
-                          "min": 1.0,
-                          "max": 3.0
+                          "min": 1,
+                          "max": 3
                         },
                         "add": false
                       }
@@ -111,13 +111,13 @@
                   {
                     "type": "minecraft:item",
                     "weight": 3,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "minecraft:set_count",
+                        "type": "minecraft:set_count",
                         "count": {
                           "type": "minecraft:uniform",
-                          "min": 1.0,
-                          "max": 4.0
+                          "min": 1,
+                          "max": 4
                         },
                         "add": false
                       }
@@ -127,13 +127,13 @@
                   {
                     "type": "minecraft:item",
                     "weight": 4,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "minecraft:set_count",
+                        "type": "minecraft:set_count",
                         "count": {
                           "type": "minecraft:uniform",
-                          "min": 1.0,
-                          "max": 5.0
+                          "min": 1,
+                          "max": 5
                         },
                         "add": false
                       }
@@ -143,13 +143,13 @@
                   {
                     "type": "minecraft:item",
                     "weight": 4,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "minecraft:set_count",
+                        "type": "minecraft:set_count",
                         "count": {
                           "type": "minecraft:uniform",
-                          "min": 1.0,
-                          "max": 5.0
+                          "min": 1,
+                          "max": 5
                         },
                         "add": false
                       }
@@ -159,13 +159,13 @@
                   {
                     "type": "minecraft:item",
                     "weight": 5,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "minecraft:set_count",
+                        "type": "minecraft:set_count",
                         "count": {
                           "type": "minecraft:uniform",
-                          "min": 3.0,
-                          "max": 7.0
+                          "min": 3,
+                          "max": 7
                         },
                         "add": false
                       }
@@ -175,13 +175,13 @@
                   {
                     "type": "minecraft:item",
                     "weight": 5,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "minecraft:set_count",
+                        "type": "minecraft:set_count",
                         "count": {
                           "type": "minecraft:uniform",
-                          "min": 3.0,
-                          "max": 7.0
+                          "min": 3,
+                          "max": 7
                         },
                         "add": false
                       }
@@ -192,18 +192,18 @@
               },
               {
                 "rolls": 2,
-                "bonus_rolls": 0.0,
+                "bonus_rolls": 0,
                 "entries": [
                   {
                     "type": "minecraft:item",
                     "weight": 5,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "minecraft:set_count",
+                        "type": "minecraft:set_count",
                         "count": {
                           "type": "minecraft:uniform",
-                          "min": 1.0,
-                          "max": 6.0
+                          "min": 1,
+                          "max": 6
                         },
                         "add": false
                       }
@@ -213,13 +213,13 @@
                   {
                     "type": "minecraft:item",
                     "weight": 5,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "minecraft:set_count",
+                        "type": "minecraft:set_count",
                         "count": {
                           "type": "minecraft:uniform",
-                          "min": 1.0,
-                          "max": 6.0
+                          "min": 1,
+                          "max": 6
                         },
                         "add": false
                       }
@@ -229,13 +229,13 @@
                   {
                     "type": "minecraft:item",
                     "weight": 3,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "minecraft:set_count",
+                        "type": "minecraft:set_count",
                         "count": {
                           "type": "minecraft:uniform",
-                          "min": 1.0,
-                          "max": 5.0
+                          "min": 1,
+                          "max": 5
                         },
                         "add": false
                       }
@@ -246,7 +246,7 @@
               },
               {
                 "rolls": 1,
-                "bonus_rolls": 0.0,
+                "bonus_rolls": 0,
                 "entries": [
                   {
                     "type": "minecraft:item",
@@ -260,20 +260,21 @@
                   {
                     "type": "minecraft:item",
                     "weight": 1,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "set_damage",
+                        "type": "set_damage",
                         "damage": {
+                          "type": "minecraft:uniform",
                           "min": 0.15,
                           "max": 0.5
                         }
                       },
                       {
-                        "function": "minecraft:enchant_with_levels",
+                        "type": "minecraft:enchant_with_levels",
                         "levels": {
                           "type": "minecraft:uniform",
-                          "min": -2.0,
-                          "max": 5.0
+                          "min": 10,
+                          "max": 15
                         },
                         "options": "#nova_structures:structure/overworld"
                       }
@@ -283,20 +284,21 @@
                   {
                     "type": "minecraft:item",
                     "weight": 1,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "set_damage",
+                        "type": "set_damage",
                         "damage": {
+                          "type": "minecraft:uniform",
                           "min": 0.15,
                           "max": 0.5
                         }
                       },
                       {
-                        "function": "minecraft:enchant_with_levels",
+                        "type": "minecraft:enchant_with_levels",
                         "levels": {
                           "type": "minecraft:uniform",
-                          "min": -2.0,
-                          "max": 5.0
+                          "min": 10,
+                          "max": 15
                         },
                         "options": "#nova_structures:structure/overworld"
                       }
@@ -306,20 +308,21 @@
                   {
                     "type": "minecraft:item",
                     "weight": 1,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "set_damage",
+                        "type": "set_damage",
                         "damage": {
+                          "type": "minecraft:uniform",
                           "min": 0.15,
                           "max": 0.5
                         }
                       },
                       {
-                        "function": "minecraft:enchant_with_levels",
+                        "type": "minecraft:enchant_with_levels",
                         "levels": {
                           "type": "minecraft:uniform",
-                          "min": -2.0,
-                          "max": 5.0
+                          "min": 10,
+                          "max": 15
                         },
                         "options": "#nova_structures:structure/overworld"
                       }
@@ -329,20 +332,21 @@
                   {
                     "type": "minecraft:item",
                     "weight": 1,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "set_damage",
+                        "type": "set_damage",
                         "damage": {
+                          "type": "minecraft:uniform",
                           "min": 0.15,
                           "max": 0.5
                         }
                       },
                       {
-                        "function": "minecraft:enchant_with_levels",
+                        "type": "minecraft:enchant_with_levels",
                         "levels": {
                           "type": "minecraft:uniform",
-                          "min": -2.0,
-                          "max": 5.0
+                          "min": 10,
+                          "max": 15
                         },
                         "options": "#nova_structures:structure/overworld"
                       }
@@ -352,20 +356,21 @@
                   {
                     "type": "minecraft:item",
                     "weight": 1,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "set_damage",
+                        "type": "set_damage",
                         "damage": {
+                          "type": "minecraft:uniform",
                           "min": 0.15,
                           "max": 0.5
                         }
                       },
                       {
-                        "function": "minecraft:enchant_with_levels",
+                        "type": "minecraft:enchant_with_levels",
                         "levels": {
                           "type": "minecraft:uniform",
-                          "min": -2.0,
-                          "max": 5.0
+                          "min": 10,
+                          "max": 15
                         },
                         "options": "#nova_structures:structure/overworld"
                       }
@@ -375,20 +380,21 @@
                   {
                     "type": "minecraft:item",
                     "weight": 1,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "set_damage",
+                        "type": "set_damage",
                         "damage": {
+                          "type": "minecraft:uniform",
                           "min": 0.15,
                           "max": 0.5
                         }
                       },
                       {
-                        "function": "minecraft:enchant_with_levels",
+                        "type": "minecraft:enchant_with_levels",
                         "levels": {
                           "type": "minecraft:uniform",
-                          "min": -2.0,
-                          "max": 5.0
+                          "min": 10,
+                          "max": 15
                         },
                         "options": "#nova_structures:structure/overworld"
                       }
@@ -398,20 +404,21 @@
                   {
                     "type": "minecraft:item",
                     "weight": 1,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "set_damage",
+                        "type": "set_damage",
                         "damage": {
+                          "type": "minecraft:uniform",
                           "min": 0.15,
                           "max": 0.5
                         }
                       },
                       {
-                        "function": "minecraft:enchant_with_levels",
+                        "type": "minecraft:enchant_with_levels",
                         "levels": {
                           "type": "minecraft:uniform",
-                          "min": -2.0,
-                          "max": 5.0
+                          "min": 10,
+                          "max": 15
                         },
                         "options": "#nova_structures:structure/overworld"
                       }
@@ -421,20 +428,21 @@
                   {
                     "type": "minecraft:item",
                     "weight": 1,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "set_damage",
+                        "type": "set_damage",
                         "damage": {
+                          "type": "minecraft:uniform",
                           "min": 0.15,
                           "max": 0.5
                         }
                       },
                       {
-                        "function": "minecraft:enchant_with_levels",
+                        "type": "minecraft:enchant_with_levels",
                         "levels": {
                           "type": "minecraft:uniform",
-                          "min": -2.0,
-                          "max": 5.0
+                          "min": 10,
+                          "max": 15
                         },
                         "options": "#nova_structures:structure/overworld"
                       }
@@ -444,20 +452,21 @@
                   {
                     "type": "minecraft:item",
                     "weight": 1,
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "set_damage",
+                        "type": "set_damage",
                         "damage": {
+                          "type": "minecraft:uniform",
                           "min": 0.15,
                           "max": 0.5
                         }
                       },
                       {
-                        "function": "minecraft:enchant_with_levels",
+                        "type": "minecraft:enchant_with_levels",
                         "levels": {
                           "type": "minecraft:uniform",
-                          "min": -2.0,
-                          "max": 5.0
+                          "min": 10,
+                          "max": 15
                         },
                         "options": "#nova_structures:structure/overworld"
                       }
@@ -468,7 +477,7 @@
               },
               {
                 "rolls": 1,
-                "bonus_rolls": 0.0,
+                "bonus_rolls": 0,
                 "entries": [
                   {
                     "type": "minecraft:empty",
@@ -480,9 +489,9 @@
                   },
                   {
                     "type": "minecraft:item",
-                    "functions": [
+                    "modifier": [
                       {
-                        "function": "minecraft:enchant_with_levels",
+                        "type": "minecraft:enchant_with_levels",
                         "levels": 5,
                         "options": "#nova_structures:structure/overworld"
                       }
@@ -501,7 +510,7 @@
           "value": "minecraft:chests/simple_dungeon"
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     },
     {
       "rolls": 1.0,
@@ -550,6 +559,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
           "weight": 999
         },
         {
@@ -572,26 +595,7 @@
           "weight": 1
         }
       ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 90
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "overlimit:bm_totem",
-          "weight": 10
-        }
-      ]
     }
   ],
-  "functions": [
-    {
-      "function": "minecraft:reference",
-      "name": "nova_structures:loot_modifier"
-    }
-  ]
+  "modifier": "nova_structures:loot_modifier"
 }

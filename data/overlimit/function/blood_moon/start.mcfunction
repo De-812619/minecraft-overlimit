@@ -23,5 +23,4 @@ tellraw @a[predicate=overlimit:in_overworld] {"translate":"overlimit.msg.bm.star
 
 scoreboard players set #bm_spawn_t overlimit.const 0
 function overlimit:blood_moon/spawn_burst
-function overlimit:blood_moon/spawn_monsters_off
 function overlimit:blood_moon/convert_unnamed

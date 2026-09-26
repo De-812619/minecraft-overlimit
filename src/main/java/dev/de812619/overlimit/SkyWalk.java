@@ -135,6 +135,8 @@ final class SkyWalk {
 				player.needsSync = true;
 				player.hurtMarked = true;
 				player.connection.send(new ClientboundSetEntityMotionPacket(player));
+				// 押しっぱなしだと落下に入らず、約4秒で「飛行が無効」と切断される
+				player.connection.resetFlyingTicks();
 
 				airUsed.put(id, true);
 				cooldown.put(id, CD_TICKS);

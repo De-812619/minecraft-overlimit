@@ -232,6 +232,18 @@ final class EventMobs {
 		return 1;
 	}
 
+	/** 間引きが残す距離に、同じディメンションの非スペクテイターがいる。 */
+	static boolean withinKeep(Entity mob) {
+		if (!(mob.level() instanceof ServerLevel level)) {
+			return false;
+		}
+		MinecraftServer server = level.getServer();
+		if (server == null) {
+			return false;
+		}
+		return keptByPlayer(mob, level, server.getPlayerList().getPlayers());
+	}
+
 	private static boolean keptByPlayer(Entity mob, ServerLevel level, List<ServerPlayer> players) {
 		int mx = Mth.floor(mob.getX());
 		int my = Mth.floor(mob.getY());

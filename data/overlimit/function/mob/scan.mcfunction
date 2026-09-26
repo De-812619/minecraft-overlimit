@@ -1,3 +1,5 @@
+# ロード時の Java と召喚側の呼び出しが重なっても、振り直さない
+execute if entity @s[tag=overlimit.scanned] run return fail
 tag @s add overlimit.scanned
 execute if entity @s[tag=overlimit.no_wave] run return fail
 execute if data entity @s CustomName run return fail

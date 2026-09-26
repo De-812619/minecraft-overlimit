@@ -1,0 +1,339 @@
+:root {
+  --bg: #f3efe6;
+  --paper: #fffcf7;
+  --ink: #1c1915;
+  --muted: #5c564c;
+  --line: #e4dccf;
+  --accent: #9a3412;
+  --gold: #e7c98a;
+  --night: #14110e;
+  --night-ink: #f6f1e7;
+  --night-muted: #c4b8a4;
+  --top-h: 3.5rem;
+  --sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { overflow-x: hidden; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+a { color: var(--accent); }
+a:hover { color: #7c2d12; }
+
+.skip {
+  position: absolute;
+  left: 0.75rem;
+  top: -3rem;
+  background: var(--ink);
+  color: #fff;
+  padding: 0.4rem 0.7rem;
+  z-index: 60;
+}
+.skip:focus { top: calc(var(--top-h) + 0.35rem); }
+
+.top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: var(--top-h);
+  padding: 0 1.1rem;
+  background: rgba(20, 17, 14, 0.94);
+  color: var(--night-ink);
+  backdrop-filter: blur(10px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  min-width: 0;
+}
+.brand:hover { color: var(--gold); }
+.brand .px { width: 1.7rem; height: 1.7rem; }
+
+.px {
+  width: 1.35rem;
+  height: 1.35rem;
+  flex: none;
+  object-fit: contain;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  vertical-align: middle;
+}
+
+.top nav {
+  margin-left: auto;
+  display: flex;
+  gap: 0.9rem;
+  font-size: 0.92rem;
+}
+.top nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  color: var(--night-muted);
+  text-decoration: none;
+}
+.top nav a:hover { color: #fff; }
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding: calc(var(--top-h) + 3rem) 1.25rem 4rem;
+  background:
+    linear-gradient(180deg, rgba(20, 17, 14, 0.25) 0%, rgba(20, 17, 14, 0.82) 70%),
+    url("../img/bg/blood-moon.jpg") center / cover no-repeat,
+    radial-gradient(ellipse at 70% 20%, rgba(154, 52, 18, 0.45), transparent 55%),
+    var(--night);
+  color: var(--night-ink);
+}
+
+.wrap {
+  width: min(46rem, 100%);
+  margin: 0 auto;
+}
+
+.kicker {
+  margin: 0 0 0.8rem;
+  color: var(--gold);
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.4rem, 8vw, 4.4rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 750;
+}
+
+.hero p {
+  margin: 0;
+  max-width: 36rem;
+  color: var(--night-muted);
+  font-size: 1.08rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.8rem;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.7rem 1.15rem;
+  font-weight: 700;
+}
+.btn.solid {
+  background: var(--gold);
+  color: var(--night);
+}
+.btn.solid:hover { background: #f3ddb0; color: var(--night); }
+.btn.ghost {
+  color: var(--night-ink);
+  border: 1px solid rgba(246, 241, 231, 0.35);
+}
+.btn.ghost:hover { color: #fff; border-color: #fff; }
+.btn.line {
+  color: var(--ink);
+  border: 1px solid var(--line);
+  background: #fff;
+}
+.btn.line:hover { color: var(--accent); border-color: var(--accent); }
+
+.section { padding: 4.2rem 1.25rem; }
+.section h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 0.8rem;
+  font-size: clamp(1.6rem, 4vw, 2.15rem);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+.section h2 .px { width: 2rem; height: 2rem; }
+.section h2 { overflow-wrap: anywhere; }
+.section p { margin: 0.7rem 0; }
+.lede { font-size: 1.08rem; }
+.shot { margin: 1rem 0 0; }
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.9rem;
+}
+
+.band { background: var(--paper); }
+#fronts {
+  background:
+    linear-gradient(180deg, rgba(255, 252, 247, 0.9), rgba(255, 252, 247, 0.94)),
+    url("../img/bg/portal.jpg") center / cover no-repeat,
+    var(--paper);
+}
+#world {
+  background:
+    linear-gradient(180deg, rgba(20, 17, 14, 0.78), rgba(20, 17, 14, 0.9)),
+    url("../img/bg/blood-world.jpg") center / cover no-repeat,
+    var(--night);
+}
+#night {
+  background:
+    linear-gradient(180deg, rgba(20, 17, 14, 0.74), rgba(20, 17, 14, 0.9)),
+    url("../img/bg/blood-moon.jpg") center 30% / cover no-repeat,
+    var(--night);
+}
+.band-dark {
+  background: var(--night);
+  color: var(--night-ink);
+}
+.band-dark .muted,
+.band-dark .notes { color: var(--night-muted); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: 0.8rem;
+  margin-top: 1.4rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: 1rem 1rem 1.05rem;
+  min-width: 0;
+}
+.band-dark .card {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(246, 241, 231, 0.12);
+}
+.card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+}
+.card h3 .px { width: 2.4rem; height: 2.4rem; }
+.card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.band-dark .card p { color: var(--night-muted); }
+
+.rank {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 0.08rem 0.4rem;
+  border-radius: 0.3rem;
+  line-height: 1.5;
+}
+.rank.w { background: #ffedd5; color: #9a3412; }
+.rank.d { background: #fee2e2; color: #991b1b; }
+.rank.c { background: #f3e8ff; color: #6b21a8; }
+.rank.x { background: #dbeafe; color: #1d4ed8; }
+
+.notes {
+  list-style: none;
+  margin: 1.2rem 0 0;
+  padding: 0.85rem 1rem;
+  border-radius: 0.85rem;
+  background: rgba(28, 25, 21, 0.04);
+  border: 1px solid var(--line);
+}
+.band-dark .notes {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(246, 241, 231, 0.12);
+}
+.notes li {
+  margin: 0.45rem 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.notes li .px {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.35rem;
+  vertical-align: -0.4rem;
+}
+.notes li:first-child { margin-top: 0; }
+.notes li:last-child { margin-bottom: 0; }
+.notes strong {
+  display: inline-block;
+  margin-right: 0.45rem;
+  color: var(--accent);
+}
+.band-dark .notes strong { color: var(--gold); }
+.band-dark .notes li { color: var(--night-muted); }
+
+.steps {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+.steps li {
+  position: relative;
+  padding: 0.15rem 0 0.85rem 2.3rem;
+}
+.steps li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.end {
+  text-align: center;
+  padding-bottom: 5rem;
+}
+.end .wrap { width: min(36rem, 100%); }
+.end h2 { margin-bottom: 0.6rem; justify-content: center; }
+.end .hero-actions { justify-content: center; }
+
+.foot {
+  margin: 2rem 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 520px) {
+  .top nav a.quiet { display: none; }
+  h1 { font-size: 2.35rem; }
+}

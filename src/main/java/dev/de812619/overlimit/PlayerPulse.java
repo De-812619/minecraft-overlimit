@@ -2,35 +2,21 @@ package dev.de812619.overlimit;
 
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.network.protocol.game.ClientboundSoundPacket;
-import net.minecraft.resources.Identifier;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.TagKey;
 import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.level.GameType;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
 /**
- * プレイヤーごとのクールダウン減算と、戦闘圏の未強化モブスキャン。
- * スコア名はデータパックのまま。表示パーティクルは本人にだけ送る。
+ * プレイヤーごとのクールダウン減算。
+ * 強化の抽選は {@link MobRank}。スコア名はデータパックのまま。表示パーティクルは本人にだけ送る。
  */
 final class PlayerPulse {
-	private static final TagKey<EntityType<?>> CAN_BE_DANGER = TagKey.create(
-		Registries.ENTITY_TYPE,
-		Identifier.fromNamespaceAndPath("overlimit", "can_be_danger")
-	);
-	private static final double SCAN_RANGE_SQ = 25.0 * 25.0;
-	private static final int SCAN_LIMIT = 8;
-
 	private PlayerPulse() {
 	}
 
@@ -41,9 +27,6 @@ final class PlayerPulse {
 	private static void onTick(MinecraftServer server) {
 		for (ServerPlayer player : server.getPlayerList().getPlayers()) {
 			tickCooldowns(server, player);
-			if (player.gameMode.getGameModeForPlayer() != GameType.SPECTATOR) {
-				scanDanger(server, player);
-			}
 		}
 	}
 
@@ -130,28 +113,5 @@ final class PlayerPulse {
 			up = up.normalize();
 		}
 		return player.getEyePosition().add(left.scale(-0.35)).add(up.scale(-0.3)).add(look.scale(0.5));
-	}
-
-	private static void scanDanger(MinecraftServer server, ServerPlayer player) {
-		if (!(player.level() instanceof ServerLevel level)) {
-			return;
-		}
-		AABB box = player.getBoundingBox().inflate(25.0);
-		int found = 0;
-		for (Entity entity : level.getEntities(player, box, PlayerPulse::isUnscannedDanger)) {
-			if (found >= SCAN_LIMIT) {
-				break;
-			}
-			if (player.distanceToSqr(entity) > SCAN_RANGE_SQ) {
-				continue;
-			}
-			HotTick.run(server, entity, "mob/scan");
-			found++;
-		}
-	}
-
-	private static boolean isUnscannedDanger(Entity entity) {
-		return !entity.entityTags().contains("overlimit.scanned")
-			&& entity.getType().builtInRegistryHolder().is(CAN_BE_DANGER);
 	}
 }

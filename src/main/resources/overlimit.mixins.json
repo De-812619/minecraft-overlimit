@@ -3,6 +3,7 @@
 	"package": "dev.de812619.overlimit.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
+		"NaturalSpawnerMixin",
 		"NetherPortalBlockMixin",
 		"PortalForcerMixin"
 	],

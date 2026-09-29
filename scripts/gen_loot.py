@@ -948,6 +948,11 @@ def write_efficiency_exclusive_override(jar: zipfile.ZipFile) -> None:
     data = json.loads(jar.read("data/minecraft/enchantment/efficiency.json").decode())
     data["exclusive_set"] = "#overlimit:exclusive_set/efficiency_hyper_dig"
     write_json(ROOT / "data/minecraft/enchantment/efficiency.json", data)
+    # タグが無いと enchantment レジストリ凍結時に Unbound tags で起動不能になる。
+    write_json(
+        ROOT / "data/overlimit/tags/enchantment/exclusive_set/efficiency_hyper_dig.json",
+        {"values": ["overlimit:hyper_dig"]},
+    )
 
 
 def main() -> None:

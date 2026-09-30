@@ -1,0 +1,7 @@
+tellraw @s {"translate":"overlimit.cmd.stats.header","color":"gold"}
+tellraw @s {"translate":"overlimit.cmd.stats.bm","color":"red","with":[{"score":{"name":"#stat_bm_wins","objective":"overlimit.const"}},{"score":{"name":"#stat_bm_loss","objective":"overlimit.const"}}]}
+tellraw @s {"translate":"overlimit.cmd.stats.bw","color":"dark_red","with":[{"score":{"name":"#stat_bw_wins","objective":"overlimit.const"}},{"score":{"name":"#stat_bw_loss","objective":"overlimit.const"}}]}
+tellraw @s {"translate":"overlimit.cmd.stats.no","color":"dark_purple","with":[{"score":{"name":"#stat_no_wins","objective":"overlimit.const"}},{"score":{"name":"#stat_no_loss","objective":"overlimit.const"}}]}
+tellraw @s {"translate":"overlimit.cmd.stats.nr","color":"gold","with":[{"score":{"name":"#stat_nr_wins","objective":"overlimit.const"}},{"score":{"name":"#stat_nr_loss","objective":"overlimit.const"}}]}
+tellraw @s {"translate":"overlimit.cmd.stats.cc","color":"blue","with":[{"score":{"name":"#stat_cc_wins","objective":"overlimit.const"}},{"score":{"name":"#stat_cc_loss","objective":"overlimit.const"}}]}
+tellraw @s {"translate":"overlimit.cmd.stats.kills","color":"yellow","with":[{"score":{"name":"#stat_kill_elite","objective":"overlimit.const"}},{"score":{"name":"#stat_kill_warn","objective":"overlimit.const"}},{"score":{"name":"#stat_kill_dang","objective":"overlimit.const"}},{"score":{"name":"#stat_kill_cris","objective":"overlimit.const"}},{"score":{"name":"#stat_kill_disa","objective":"overlimit.const"}}]}

@@ -20,6 +20,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.phys.Vec3;
 
+import java.util.Set;
+
 /**
  * プレイヤー回復の共通ヘルパと、ソウルテイカー／UL 王族の正確な +HP。
  */
@@ -52,6 +54,7 @@ final class PlayerHeal {
 	}
 
 	private static void onDeath(LivingEntity entity, DamageSource source) {
+		countEliteKill(entity, source);
 		Entity killer = source.getEntity();
 		if (!(killer instanceof ServerPlayer player)) return;
 		if (!(player.level() instanceof ServerLevel level)) return;
@@ -83,6 +86,31 @@ final class PlayerHeal {
 		level.sendParticles(ParticleTypes.HEART, pos.x, pos.y + 1.2, pos.z, 3, 0.28, 0.35, 0.28, 0.0);
 		level.playSound(null, player.blockPosition(), SoundEvents.PLAYER_LEVELUP, SoundSource.PLAYERS, 0.35f, 1.8f);
 		runBurstRoyal(level, player);
+	}
+
+	private static void countEliteKill(LivingEntity entity, DamageSource source) {
+		Entity killer = source.getEntity();
+		if (!(killer instanceof ServerPlayer)) return;
+		Set<String> tags = entity.entityTags();
+		if (!tags.contains("overlimit.elite")) return;
+		MinecraftServer server = entity.level().getServer();
+		if (server == null) return;
+		Scores.add(server, "#stat_kill_elite", 1);
+		if (tags.contains("overlimit.disaster")) {
+			Scores.add(server, "#stat_kill_disa", 1);
+			return;
+		}
+		if (tags.contains("overlimit.crisis")) {
+			Scores.add(server, "#stat_kill_cris", 1);
+			return;
+		}
+		if (tags.contains("overlimit.danger")) {
+			Scores.add(server, "#stat_kill_dang", 1);
+			return;
+		}
+		if (tags.contains("overlimit.warning")) {
+			Scores.add(server, "#stat_kill_warn", 1);
+		}
 	}
 
 	private static int countRoyalPieces(ServerPlayer player) {

@@ -3,7 +3,7 @@
 	"id": "overlimit",
 	"version": "${version}",
 	"name": "Over Limit",
-	"description": "over_limit_pack datapack plus client assets. No new registries.",
+	"description": "Fabric mod for Minecraft 26.3. Bundled game data and client assets. No new registries.",
 	"authors": [
 		"De-812619"
 	],

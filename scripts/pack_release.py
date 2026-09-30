@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""配布用 zip を作る。データパックは pack.mcmeta + data/、リソースパックは pack.mcmeta + assets/ を直下に置く。"""
+"""配布用はリソースパック zip（pack.mcmeta + assets/ を直下）。データパック zip は配布しない。"""
 
 from __future__ import annotations
 
@@ -122,33 +122,31 @@ def main(argv: list[str]) -> None:
     target.add_argument(
         "--datapack",
         action="store_true",
-        help="データパック zip のみ（省略時もこれ）",
+        help="データパック zip（配布しない。内部確認用）",
     )
     target.add_argument(
         "--resourcepack",
         action="store_true",
-        help="リソースパック zip のみ",
+        help="リソースパック zip のみ（省略時もこれ）",
     )
     target.add_argument(
         "--all",
         action="store_true",
-        help="データパックとリソースパックの両方",
+        help="データパックとリソースパックの両方（データパック側は配布しない）",
     )
     parser.add_argument(
         "-o",
         "--output",
         type=Path,
-        help="出力先（--all では不可。既定: release/over_limit_pack.zip または release/over_limit_resources.zip）",
+        help="出力先（--all では不可。既定: release/over_limit_resources.zip）",
     )
     parser.add_argument(
         "--no-readme",
         action="store_true",
-        help="データパック zip に README.md を入れない",
+        help="--datapack 時、zip に README.md を入れない",
     )
     args = parser.parse_args(argv)
 
-    do_dp = args.datapack or args.all or not (args.resourcepack or args.all)
-    do_rp = args.resourcepack or args.all
     if args.datapack:
         do_dp, do_rp = True, False
     elif args.resourcepack:
@@ -156,7 +154,7 @@ def main(argv: list[str]) -> None:
     elif args.all:
         do_dp, do_rp = True, True
     else:
-        do_dp, do_rp = True, False
+        do_dp, do_rp = False, True
 
     if args.output is not None and do_dp and do_rp:
         raise SystemExit("--all と -o は同時に使えない（片方ずつ指定する）")

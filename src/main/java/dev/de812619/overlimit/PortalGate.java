@@ -104,4 +104,20 @@ final class PortalGate {
 	private static boolean isVis(Entity entity) {
 		return entity.getType() == EntityTypes.BLOCK_DISPLAY && entity.entityTags().contains(VIS);
 	}
+
+	static boolean near(ServerLevel level, BlockPos pos) {
+		double rangeSq = 6.0 * 6.0;
+		double x = pos.getX() + 0.5;
+		double y = pos.getY() + 0.5;
+		double z = pos.getZ() + 0.5;
+		for (Entity portal : PORTALS) {
+			if (portal.isRemoved() || portal.level() != level) {
+				continue;
+			}
+			if (portal.distanceToSqr(x, y, z) <= rangeSq) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

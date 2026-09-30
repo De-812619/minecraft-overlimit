@@ -283,6 +283,39 @@
         "predicates": {
           "minecraft:custom_data": {
             "overlimit": {
+              "golden_golem": true
+            }
+          }
+        }
+      },
+      "on_pass": {
+        "components": {
+          "minecraft:item_name": {
+            "color": "gold",
+            "translate": "overlimit.item.golden_golem"
+          },
+          "minecraft:lore": [
+            {
+              "color": "gray",
+              "italic": false,
+              "translate": "overlimit.item.golden_golem.lore"
+            },
+            {
+              "color": "gray",
+              "italic": false,
+              "translate": "overlimit.item.golden_golem.lore.2"
+            }
+          ]
+        },
+        "type": "minecraft:set_components"
+      },
+      "type": "minecraft:filtered"
+    },
+    {
+      "item_filter": {
+        "predicates": {
+          "minecraft:custom_data": {
+            "overlimit": {
               "golden_bow": true
             }
           }

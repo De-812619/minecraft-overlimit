@@ -8,7 +8,7 @@ export const install = {
   html: `
     <p class="kicker">Setup</p>
     <h1>導入方法</h1>
-    <p class="lead">配布物はビルド済みの Fabric JAR です。GitHub の Source ZIP を <code>mods/</code> に置いても動きません。</p>
+    <p class="lead">配布物はビルド済みの Fabric JAR です。データパック単体では配りません。GitHub の Source ZIP を <code>mods/</code> や <code>datapacks/</code> に置いても動きません。</p>
     ${toc([
       ["need", "必要環境"],
       ["single", "シングルプレイ"],
@@ -25,7 +25,7 @@ export const install = {
         ["Mod ローダー", "Fabric Loader 0.19.5（0.19.3 以上）"],
         ["ライブラリ", "Fabric API 0.161.0+26.3"],
         ["Java", "25"],
-        ["任意", "Dungeons and Taverns（Modrinth の datapack。チェストボーナスの対象が増える）"],
+        ["任意", "Dungeons and Taverns（Fabric Mod。チェストボーナスの対象が増える）"],
       ]
     )}
     <h2 id="single">シングルプレイ</h2>
@@ -35,7 +35,7 @@ export const install = {
       <li>別の Over Limit リソースパックは有効にしません。JAR 内の <code>assets/</code> がモデル、テクスチャ、翻訳を出します。別パックを同時に有効にすると、同じ見た目が二重に載ります。</li>
       <li>ゲームを起動し、ワールドに入ります。JAR を入れ直したあとは再起動が必要です。</li>
     </ol>
-    ${note("ワールドの <code>datapacks/</code> に同じ内容を置かないでください。Mod とデータパックが二重に効きます。")}
+    ${note("データパック zip やリポジトリをワールドの <code>datapacks/</code> に置かないでください。この Mod はデータパックとしては配布しません。置くと Mod と二重に効きます。")}
     <h2 id="multi">マルチプレイ</h2>
     <p>サーバーだけに Mod を入れる構成です。サーバーは JAR 内の <code>data/</code> を使います。見た目は、Mod の入っていないクライアントには届きません。</p>
     <ol>
@@ -43,7 +43,7 @@ export const install = {
       <li>参加者のクライアントへ、リソースパック <code>over_limit_resources.zip</code> を配ります。<code>resourcepacks/</code> で有効化するか、<code>server.properties</code> の <code>resource-pack</code> で配ります。</li>
       <li>参加者側でパックを適用してから接続します。</li>
     </ol>
-    ${note("<strong>リソースパックが無いとき</strong>クラフトアイテム（護符、黄金弓、トーテム、ミニゴーレム、UNLIMITED など）の見た目が欠落テクスチャになります。効果そのものはサーバー側で動きます。", true)}
+    ${note("<strong>リソースパックが無いとき</strong>クラフトアイテム（護符、黄金弓、トーテム、ミニゴーレム、ゴールデンゴーレム、UNLIMITED など）の見た目が欠落テクスチャになります。効果そのものはサーバー側で動きます。ゴールデンゴーレムの本体を金色にする処理は Mod 側なので、クライアントがリソースパックだけのときは鉄の小型ゴーレムに見えます。", true)}
     <h2 id="dnt">Dungeons and Taverns</h2>
     <p>併用は任意です。DnT の Mod が入っているときだけ、DnT のチェスト系ルート（主に名前空間 <code>nova_structures</code>。一部は <code>minecraft</code> の上書き）にも、バニラと同じ追加プールが入ります。地図（charts）と考古学ルートは対象外です。Mod が無いときは、そのルートは読み込みません。</p>
     <h2 id="after">入れたあとに知っておくこと</h2>
@@ -58,8 +58,8 @@ export const install = {
     ${table(
       ["ファイル", "置く場所", "中身"],
       [
-        ["<code>overlimit-*.jar</code>", "クライアントまたはサーバーの <code>mods/</code>", "データパック、Java、クライアント資産"],
-        ["<code>over_limit_resources.zip</code>", "クライアントの <code>resourcepacks/</code>", "サーバーだけに Mod があるときの見た目"],
+        ["<code>overlimit-*.jar</code>", "クライアントまたはサーバーの <code>mods/</code>", "ゲームデータ、Java、クライアント資産"],
+        ["<code>over_limit_resources.zip</code>", "クライアントの <code>resourcepacks/</code>", "サーバーだけに Mod があるときの見た目（データパックではない）"],
       ]
     )}
     <p>シングルで JAR の見た目を使うときは、リソースパック側は外したままにします。</p>

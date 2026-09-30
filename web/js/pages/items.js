@@ -115,6 +115,7 @@ export const craft = {
       <figure><img src="img/item/quiet_totem.png" alt=""><figcaption>静寂のトーテム</figcaption></figure>
       <figure><img src="img/item/crown_amulet.png" alt=""><figcaption>聖王のトーテム</figcaption></figure>
       <figure><img src="img/item/golem_summon.png" alt=""><figcaption>ミニゴーレム</figcaption></figure>
+      <figure><img src="img/item/golden_golem_summon.png" alt=""><figcaption>ゴールデンゴーレム</figcaption></figure>
       <figure><img src="img/item/reforge_token.png" alt=""><figcaption>再鍛の証</figcaption></figure>
     </div>
     ${toc([
@@ -123,6 +124,7 @@ export const craft = {
       ["quiet", "静寂のトーテム"],
       ["holy", "聖王のトーテム"],
       ["golem", "ミニゴーレム"],
+      ["golden-golem", "ゴールデンゴーレム"],
       ["reforge", "再鍛"],
       ["elytra", "エリトラの染色"],
     ])}
@@ -174,6 +176,16 @@ export const craft = {
       <li>最大16スタック。死亡時の鉄とポピーは出ません。鉄インゴットでの回復はバニラどおりです。</li>
       <li>レシピ: 上段中央に鉄ブロック、中段に鉄ブロック3、下段中央に鉄ブロック（鉄ブロック5、鉄45個相当）。鉄ブロックを手に入れると解放されます。</li>
       <li>ID は <code>overlimit:mini_golem</code>。</li>
+    </ul>
+    <h2 id="golden-golem">ゴールデンゴーレム</h2>
+    <p>ミニゴーレムと同じく、ゴーレムのスポーンエッグをブロックに使って召喚します。空中の右クリックでは出ません。本体は金色で、大きさは通常の0.7倍です。</p>
+    <ul>
+      <li>体力は通常の3倍（100→300）。攻撃力は通常の1.3倍です。</li>
+      <li>プレイヤーが作ったゴーレムなので、プレイヤーは攻撃しません。近くにプレイヤーがいない、または戦闘がアイドルになって約20秒で消滅します。</li>
+      <li>最大16スタック。死亡時の鉄とポピーは出ません。回復は金インゴットで、1個につき体力が25戻ります。鉄インゴットでは回復しません。</li>
+      <li>レシピ: 上段中央に金ブロック、中段に金ブロック3、下段中央に金ブロック（金ブロック5）。金ブロックを手に入れると解放されます。</li>
+      <li>金色の本体は、この Mod を入れたクライアントで表示されます。召喚アイテムの絵はリソースパック側です。</li>
+      <li>ID は <code>overlimit:golden_golem</code>。</li>
     </ul>
     <h2 id="reforge">再鍛</h2>
     <p>横一列に、オーバーリミット装備、ダイヤブロック、オーバーリミット装備を並べます。2つを消費し、ダイヤかネザライトのオーバーリミット装備1つに打ち直します。</p>

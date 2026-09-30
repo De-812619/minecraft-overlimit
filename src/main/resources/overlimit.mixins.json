@@ -5,7 +5,13 @@
 	"mixins": [
 		"NaturalSpawnerMixin",
 		"NetherPortalBlockMixin",
-		"PortalForcerMixin"
+		"PortalForcerMixin",
+		"IronGolemFlagsAccessor",
+		"IronGolemMixin"
+	],
+	"client": [
+		"IronGolemRenderStateMixin",
+		"IronGolemRendererMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

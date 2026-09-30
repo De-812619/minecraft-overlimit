@@ -4,6 +4,7 @@ $execute if items entity @s $(slot) *[custom_data~{overlimit:{bm_totem:true}}] r
 $execute if items entity @s $(slot) *[custom_data~{overlimit:{quiet_totem:true}}] run return run function overlimit:item/i18n_convert/from_loot {slot:"$(slot)",nbt:"$(nbt)",table:"overlimit:quiet_totem"}
 $execute if items entity @s $(slot) *[custom_data~{overlimit:{holy_totem:true}}] run return run function overlimit:item/i18n_convert/from_loot {slot:"$(slot)",nbt:"$(nbt)",table:"overlimit:holy_totem"}
 $execute if items entity @s $(slot) *[custom_data~{overlimit:{mini_golem:true}}] run return run function overlimit:item/i18n_convert/from_loot {slot:"$(slot)",nbt:"$(nbt)",table:"overlimit:mini_golem"}
+$execute if items entity @s $(slot) *[custom_data~{overlimit:{golden_golem:true}}] run return run function overlimit:item/i18n_convert/from_loot {slot:"$(slot)",nbt:"$(nbt)",table:"overlimit:golden_golem"}
 $execute if items entity @s $(slot) *[custom_data~{overlimit:{golden_bow:true}}] run return run item modify entity @s $(slot) overlimit:i18n_names
 $execute if items entity @s $(slot) *[custom_data~{overlimit:{bm_totem_spent:true}}] run return run item modify entity @s $(slot) overlimit:i18n_names
 $execute if items entity @s $(slot) *[custom_data~{overlimit:{quiet_totem_spent:true}}] run return run item modify entity @s $(slot) overlimit:i18n_names

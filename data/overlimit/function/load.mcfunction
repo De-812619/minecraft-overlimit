@@ -301,6 +301,7 @@ bossbar set overlimit:city_clamp style progress
 execute if score #cc_active overlimit.const matches 1 run function overlimit:city_clamp/restore
 execute unless score #cc_active overlimit.const matches 1 run bossbar set overlimit:city_clamp players
 
+execute as @a run attribute @s minecraft:attack_damage modifier remove overlimit:berserker.atk
 execute as @a run attribute @s minecraft:max_health modifier remove overlimit:ul.heal_cap
 execute as @a run attribute @s minecraft:jump_strength modifier remove overlimit:enchantment.cat_foot.jump
 execute as @a run attribute @s minecraft:jump_strength modifier remove overlimit:sky_walk_no_cat

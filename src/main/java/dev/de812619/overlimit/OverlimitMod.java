@@ -57,6 +57,8 @@ public final class OverlimitMod implements ModInitializer {
 			MobRank.clear();
 		});
 		SkyWalk.register();
+		Berserker.register();
+		LightGravity.register();
 		HyperDig.register();
 		AstralFlow.register();
 		CatFoot.register();

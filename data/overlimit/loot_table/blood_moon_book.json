@@ -134,6 +134,23 @@
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
                   "overlimit:apocalypse": 1,
+                  "overlimit:combo": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:apocalypse": 1,
                   "overlimit:chain_bind": 1
                 }
               }
@@ -152,6 +169,23 @@
                   "minecraft:vanishing_curse": 1,
                   "overlimit:apocalypse": 1,
                   "overlimit:absolute_field": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:apocalypse": 1,
+                  "overlimit:berserker": 1
                 }
               }
             }
@@ -220,6 +254,23 @@
                   "minecraft:vanishing_curse": 1,
                   "overlimit:apocalypse": 1,
                   "overlimit:cat_foot": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:apocalypse": 1,
+                  "overlimit:light_gravity": 1
                 }
               }
             }
@@ -372,6 +423,23 @@
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
                   "overlimit:soul_taker": 1,
+                  "overlimit:combo": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:soul_taker": 1,
                   "overlimit:chain_bind": 1
                 }
               }
@@ -390,6 +458,23 @@
                   "minecraft:vanishing_curse": 1,
                   "overlimit:soul_taker": 1,
                   "overlimit:absolute_field": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:soul_taker": 1,
+                  "overlimit:berserker": 1
                 }
               }
             }
@@ -458,6 +543,23 @@
                   "minecraft:vanishing_curse": 1,
                   "overlimit:soul_taker": 1,
                   "overlimit:cat_foot": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:soul_taker": 1,
+                  "overlimit:light_gravity": 1
                 }
               }
             }
@@ -610,6 +712,23 @@
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
                   "overlimit:void_break": 1,
+                  "overlimit:combo": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:void_break": 1,
                   "overlimit:chain_bind": 1
                 }
               }
@@ -628,6 +747,23 @@
                   "minecraft:vanishing_curse": 1,
                   "overlimit:void_break": 1,
                   "overlimit:absolute_field": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:void_break": 1,
+                  "overlimit:berserker": 1
                 }
               }
             }
@@ -696,6 +832,23 @@
                   "minecraft:vanishing_curse": 1,
                   "overlimit:void_break": 1,
                   "overlimit:cat_foot": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:void_break": 1,
+                  "overlimit:light_gravity": 1
                 }
               }
             }
@@ -831,6 +984,23 @@
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
                   "overlimit:hyper_gravity": 1,
+                  "overlimit:combo": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:hyper_gravity": 1,
                   "overlimit:chain_bind": 1
                 }
               }
@@ -849,6 +1019,23 @@
                   "minecraft:vanishing_curse": 1,
                   "overlimit:hyper_gravity": 1,
                   "overlimit:absolute_field": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:hyper_gravity": 1,
+                  "overlimit:berserker": 1
                 }
               }
             }
@@ -917,6 +1104,23 @@
                   "minecraft:vanishing_curse": 1,
                   "overlimit:hyper_gravity": 1,
                   "overlimit:cat_foot": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:hyper_gravity": 1,
+                  "overlimit:light_gravity": 1
                 }
               }
             }
@@ -1035,6 +1239,23 @@
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
                   "overlimit:summon_wolf": 1,
+                  "overlimit:combo": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:summon_wolf": 1,
                   "overlimit:chain_bind": 1
                 }
               }
@@ -1053,6 +1274,23 @@
                   "minecraft:vanishing_curse": 1,
                   "overlimit:summon_wolf": 1,
                   "overlimit:absolute_field": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:summon_wolf": 1,
+                  "overlimit:berserker": 1
                 }
               }
             }
@@ -1121,6 +1359,23 @@
                   "minecraft:vanishing_curse": 1,
                   "overlimit:summon_wolf": 1,
                   "overlimit:cat_foot": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:summon_wolf": 1,
+                  "overlimit:light_gravity": 1
                 }
               }
             }
@@ -1222,6 +1477,23 @@
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
                   "overlimit:gluttony": 1,
+                  "overlimit:combo": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:gluttony": 1,
                   "overlimit:chain_bind": 1
                 }
               }
@@ -1240,6 +1512,23 @@
                   "minecraft:vanishing_curse": 1,
                   "overlimit:gluttony": 1,
                   "overlimit:absolute_field": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:gluttony": 1,
+                  "overlimit:berserker": 1
                 }
               }
             }
@@ -1308,6 +1597,23 @@
                   "minecraft:vanishing_curse": 1,
                   "overlimit:gluttony": 1,
                   "overlimit:cat_foot": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:gluttony": 1,
+                  "overlimit:light_gravity": 1
                 }
               }
             }
@@ -1392,6 +1698,23 @@
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
                   "overlimit:necromancy": 1,
+                  "overlimit:combo": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:necromancy": 1,
                   "overlimit:chain_bind": 1
                 }
               }
@@ -1426,6 +1749,23 @@
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
                   "overlimit:necromancy": 1,
+                  "overlimit:berserker": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:necromancy": 1,
                   "overlimit:clairvoyance": 1
                 }
               }
@@ -1494,6 +1834,23 @@
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
                   "overlimit:necromancy": 1,
+                  "overlimit:light_gravity": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:necromancy": 1,
                   "overlimit:hyper_dig": 1
                 }
               }
@@ -1529,6 +1886,23 @@
                   "minecraft:vanishing_curse": 1,
                   "overlimit:necromancy": 1,
                   "overlimit:wind_blessing": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:impact": 1,
+                  "overlimit:combo": 1
                 }
               }
             }
@@ -1579,6 +1953,23 @@
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
                   "overlimit:impact": 1,
+                  "overlimit:berserker": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:impact": 1,
                   "overlimit:clairvoyance": 1
                 }
               }
@@ -1647,6 +2038,23 @@
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
                   "overlimit:impact": 1,
+                  "overlimit:light_gravity": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:impact": 1,
                   "overlimit:hyper_dig": 1
                 }
               }
@@ -1681,6 +2089,193 @@
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
                   "overlimit:impact": 1,
+                  "overlimit:wind_blessing": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:combo": 1,
+                  "overlimit:chain_bind": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:combo": 1,
+                  "overlimit:absolute_field": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:combo": 1,
+                  "overlimit:berserker": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:combo": 1,
+                  "overlimit:clairvoyance": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:combo": 1,
+                  "overlimit:midas_table": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:combo": 1,
+                  "overlimit:sky_walk": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:combo": 1,
+                  "overlimit:cat_foot": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:combo": 1,
+                  "overlimit:light_gravity": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:combo": 1,
+                  "overlimit:hyper_dig": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:combo": 1,
+                  "overlimit:smelting": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:combo": 1,
                   "overlimit:wind_blessing": 1
                 }
               }
@@ -1715,6 +2310,23 @@
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
                   "overlimit:chain_bind": 1,
+                  "overlimit:berserker": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:chain_bind": 1,
                   "overlimit:clairvoyance": 1
                 }
               }
@@ -1783,6 +2395,23 @@
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
                   "overlimit:chain_bind": 1,
+                  "overlimit:light_gravity": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:chain_bind": 1,
                   "overlimit:hyper_dig": 1
                 }
               }
@@ -1818,6 +2447,23 @@
                   "minecraft:vanishing_curse": 1,
                   "overlimit:chain_bind": 1,
                   "overlimit:wind_blessing": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:absolute_field": 1,
+                  "overlimit:berserker": 1
                 }
               }
             }
@@ -1902,6 +2548,23 @@
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
                   "overlimit:absolute_field": 1,
+                  "overlimit:light_gravity": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:absolute_field": 1,
                   "overlimit:hyper_dig": 1
                 }
               }
@@ -1936,6 +2599,142 @@
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
                   "overlimit:absolute_field": 1,
+                  "overlimit:wind_blessing": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:berserker": 1,
+                  "overlimit:clairvoyance": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:berserker": 1,
+                  "overlimit:midas_table": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:berserker": 1,
+                  "overlimit:sky_walk": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:berserker": 1,
+                  "overlimit:cat_foot": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:berserker": 1,
+                  "overlimit:light_gravity": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:berserker": 1,
+                  "overlimit:hyper_dig": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:berserker": 1,
+                  "overlimit:smelting": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:berserker": 1,
                   "overlimit:wind_blessing": 1
                 }
               }
@@ -2004,6 +2803,23 @@
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
                   "overlimit:clairvoyance": 1,
+                  "overlimit:light_gravity": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:clairvoyance": 1,
                   "overlimit:hyper_dig": 1
                 }
               }
@@ -2089,6 +2905,23 @@
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
                   "overlimit:midas_table": 1,
+                  "overlimit:light_gravity": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:midas_table": 1,
                   "overlimit:hyper_dig": 1
                 }
               }
@@ -2157,6 +2990,23 @@
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
                   "overlimit:sky_walk": 1,
+                  "overlimit:light_gravity": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:sky_walk": 1,
                   "overlimit:hyper_dig": 1
                 }
               }
@@ -2208,6 +3058,23 @@
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
                   "overlimit:cat_foot": 1,
+                  "overlimit:light_gravity": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:cat_foot": 1,
                   "overlimit:hyper_dig": 1
                 }
               }
@@ -2242,6 +3109,57 @@
                 "minecraft:stored_enchantments": {
                   "minecraft:vanishing_curse": 1,
                   "overlimit:cat_foot": 1,
+                  "overlimit:wind_blessing": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:light_gravity": 1,
+                  "overlimit:hyper_dig": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:light_gravity": 1,
+                  "overlimit:smelting": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:stored_enchantments": {
+                  "minecraft:vanishing_curse": 1,
+                  "overlimit:light_gravity": 1,
                   "overlimit:wind_blessing": 1
                 }
               }

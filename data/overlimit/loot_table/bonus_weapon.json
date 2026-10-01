@@ -119,6 +119,17 @@
               }
             },
             {
+              "type": "minecraft:set_enchantments",
+              "enchantments": {
+                "overlimit:combo": 1
+              },
+              "add": false,
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
+            },
+            {
               "type": "minecraft:enchant_randomly",
               "options": [
                 "overlimit:soul_taker",
@@ -239,6 +250,17 @@
               "type": "minecraft:set_enchantments",
               "enchantments": {
                 "overlimit:necromancy": 1
+              },
+              "add": false,
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
+            },
+            {
+              "type": "minecraft:set_enchantments",
+              "enchantments": {
+                "overlimit:combo": 1
               },
               "add": false,
               "condition": {
@@ -375,6 +397,17 @@
               }
             },
             {
+              "type": "minecraft:set_enchantments",
+              "enchantments": {
+                "overlimit:combo": 1
+              },
+              "add": false,
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
+            },
+            {
               "type": "minecraft:enchant_randomly",
               "options": [
                 "overlimit:soul_taker",
@@ -495,6 +528,17 @@
               "type": "minecraft:set_enchantments",
               "enchantments": {
                 "overlimit:impact": 1
+              },
+              "add": false,
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
+            },
+            {
+              "type": "minecraft:set_enchantments",
+              "enchantments": {
+                "overlimit:combo": 1
               },
               "add": false,
               "condition": {
@@ -631,6 +675,17 @@
               }
             },
             {
+              "type": "minecraft:set_enchantments",
+              "enchantments": {
+                "overlimit:combo": 1
+              },
+              "add": false,
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
+            },
+            {
               "type": "minecraft:enchant_randomly",
               "options": [
                 "overlimit:soul_taker",
@@ -751,6 +806,17 @@
               "type": "minecraft:set_enchantments",
               "enchantments": {
                 "overlimit:impact": 1
+              },
+              "add": false,
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
+            },
+            {
+              "type": "minecraft:set_enchantments",
+              "enchantments": {
+                "overlimit:combo": 1
               },
               "add": false,
               "condition": {

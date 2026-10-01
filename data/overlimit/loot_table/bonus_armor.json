@@ -444,6 +444,17 @@
                 "type": "minecraft:random_chance",
                 "chance": 0.3
               }
+            },
+            {
+              "type": "minecraft:set_enchantments",
+              "enchantments": {
+                "overlimit:berserker": 1
+              },
+              "add": false,
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             }
           ]
         },
@@ -521,6 +532,17 @@
               "type": "minecraft:set_enchantments",
               "enchantments": {
                 "overlimit:absolute_field": 1
+              },
+              "add": false,
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
+            },
+            {
+              "type": "minecraft:set_enchantments",
+              "enchantments": {
+                "overlimit:berserker": 1
               },
               "add": false,
               "condition": {
@@ -610,6 +632,17 @@
                 "type": "minecraft:random_chance",
                 "chance": 0.3
               }
+            },
+            {
+              "type": "minecraft:set_enchantments",
+              "enchantments": {
+                "overlimit:berserker": 1
+              },
+              "add": false,
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             }
           ]
         },
@@ -676,6 +709,17 @@
                   "min": 4,
                   "max": 10
                 }
+              },
+              "add": false,
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
+            },
+            {
+              "type": "minecraft:set_enchantments",
+              "enchantments": {
+                "overlimit:light_gravity": 1
               },
               "add": false,
               "condition": {
@@ -754,6 +798,17 @@
                 "type": "minecraft:random_chance",
                 "chance": 0.3
               }
+            },
+            {
+              "type": "minecraft:set_enchantments",
+              "enchantments": {
+                "overlimit:light_gravity": 1
+              },
+              "add": false,
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
             }
           ]
         },
@@ -820,6 +875,17 @@
                   "min": 4,
                   "max": 10
                 }
+              },
+              "add": false,
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+              }
+            },
+            {
+              "type": "minecraft:set_enchantments",
+              "enchantments": {
+                "overlimit:light_gravity": 1
               },
               "add": false,
               "condition": {

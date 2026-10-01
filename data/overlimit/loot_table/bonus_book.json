@@ -187,6 +187,27 @@
             {
               "type": "minecraft:set_enchantments",
               "enchantments": {
+                "overlimit:combo": 1
+              },
+              "add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_enchantments",
+              "enchantments": {
+                "minecraft:vanishing_curse": 1
+              },
+              "add": false
+            },
+            {
+              "type": "minecraft:set_enchantments",
+              "enchantments": {
                 "overlimit:chain_bind": 1
               },
               "add": false
@@ -209,6 +230,27 @@
               "type": "minecraft:set_enchantments",
               "enchantments": {
                 "overlimit:absolute_field": 1
+              },
+              "add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_enchantments",
+              "enchantments": {
+                "minecraft:vanishing_curse": 1
+              },
+              "add": false
+            },
+            {
+              "type": "minecraft:set_enchantments",
+              "enchantments": {
+                "overlimit:berserker": 1
               },
               "add": false
             }
@@ -293,6 +335,27 @@
               "type": "minecraft:set_enchantments",
               "enchantments": {
                 "overlimit:cat_foot": 1
+              },
+              "add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "modifier": [
+            {
+              "type": "minecraft:set_enchantments",
+              "enchantments": {
+                "minecraft:vanishing_curse": 1
+              },
+              "add": false
+            },
+            {
+              "type": "minecraft:set_enchantments",
+              "enchantments": {
+                "overlimit:light_gravity": 1
               },
               "add": false
             }

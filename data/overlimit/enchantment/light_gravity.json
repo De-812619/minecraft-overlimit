@@ -1,0 +1,46 @@
+{
+  "anvil_cost": 1,
+  "description": {
+    "translate": "enchantment.overlimit.light_gravity"
+  },
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "amount": -0.3,
+        "attribute": "minecraft:gravity",
+        "id": "overlimit:enchantment.light_gravity",
+        "operation": "add_multiplied_base"
+      }
+    ],
+    "minecraft:damage_immunity": [
+      {
+        "effect": {},
+        "requirements": {
+          "type": "minecraft:damage_source_properties",
+          "predicate": {
+            "tags": [
+              {
+                "expected": true,
+                "id": "#minecraft:is_fall"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "max_cost": {
+    "base": 100,
+    "per_level_above_first": 0
+  },
+  "max_level": 1,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 0
+  },
+  "slots": [
+    "legs"
+  ],
+  "supported_items": "#minecraft:enchantable/leg_armor",
+  "weight": 1
+}

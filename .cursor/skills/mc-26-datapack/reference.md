@@ -17,6 +17,16 @@
 
 ---
 
+## 藁ベッドは `straw_bed_rule`（`bed_rule` とは別）
+
+**起きたこと:** ブラッドムーン中、通常ベッドは眠れないが藁ベッド（`minecraft:straw_bed`）では眠れて朝スキップし、BMが終了した。タイムラインは `minecraft:gameplay/bed_rule` だけだった。
+
+**正しい書き方:** 同じ `can_sleep` を `minecraft:gameplay/straw_bed_rule` にも書く。書式は `bed_rule` と同じ。26.3 で `explodes` は `destroy_on_use` に改名。
+
+**出所:** [Minecraft Java Edition 26.3](https://www.minecraft.net/en-us/article/minecraft-java-edition-26-3) / [26.3 Snapshot 3](https://www.minecraft.net/en-us/article/minecraft-26-3-snapshot-3)。プレイ報告（藁ベッドでBM終了、2026-10-05）。
+
+---
+
 ## `return` に値が必須
 
 **起きたこと:** `tick_active` と `cull_one` が `/reload` でロード失敗。イベント中の毎tick（補充・朝終了・ボスバー）が動かない。

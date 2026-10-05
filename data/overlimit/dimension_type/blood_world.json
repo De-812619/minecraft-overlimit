@@ -29,6 +29,14 @@
         "translate": "overlimit.msg.bw.sleep"
       }
     },
+    "minecraft:gameplay/straw_bed_rule": {
+      "can_set_spawn": "never",
+      "can_sleep": "never",
+      "error_message": {
+        "color": "red",
+        "translate": "overlimit.msg.bw.sleep"
+      }
+    },
     "minecraft:gameplay/nether_portal_spawns_piglin": true,
     "minecraft:gameplay/piglins_zombify": false,
     "minecraft:gameplay/respawn_anchor_works": false,

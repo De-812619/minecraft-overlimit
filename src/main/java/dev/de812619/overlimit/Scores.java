@@ -32,6 +32,10 @@ final class Scores {
 		board.getOrCreatePlayerScore(ScoreHolder.forNameOnly(holder), objective).set(value);
 	}
 
+	static void add(MinecraftServer server, String holder, int delta) {
+		set(server, holder, get(server, holder) + delta);
+	}
+
 	static int getPlayer(ServerPlayer player, String objectiveName) {
 		MinecraftServer server = player.level().getServer();
 		if (server == null) return 0;

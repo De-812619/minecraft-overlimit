@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Copy vanilla overworld noise, shift X/Z so Blood World is not a 1:1 clone.
 
-26.2 has no per-dimension seed (removed in 1.19). Adding a large shift to
+26.3 has no per-dimension seed (removed in 1.19). Adding a large shift to
 climate/terrain noise samples a different slice of the same world seed.
 
 Also splices nether biomes into Blood World's climate (desert/jungle/swamp/
@@ -20,7 +20,7 @@ from overworld_biome_builder import OverworldBiomeBuilder
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_JAR = Path.home() / (
     "Library/Application Support/PrismLauncher/libraries/"
-    "com/mojang/minecraft/26.2/minecraft-26.2-client.jar"
+    "com/mojang/minecraft/26.3/minecraft-26.3-client.jar"
 )
 JAR = Path(os.environ.get("MC_JAR", DEFAULT_JAR))
 
@@ -107,10 +107,10 @@ def nether_floor_rule() -> dict:
             {
                 "type": "minecraft:condition",
                 "if_true": {"type": "minecraft:biome", "biome_is": [biome]},
-                "then_run": {"type": "minecraft:block", "result_state": {"Name": block}},
+                "then_run": {"type": "minecraft:block", "result_state": {"id": block}},
             }
         )
-    sequence.append({"type": "minecraft:block", "result_state": {"Name": "minecraft:netherrack"}})
+    sequence.append({"type": "minecraft:block", "result_state": {"id": "minecraft:netherrack"}})
     return {
         "type": "minecraft:condition",
         "if_true": {"type": "minecraft:above_preliminary_surface"},

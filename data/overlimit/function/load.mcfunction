@@ -57,6 +57,7 @@ scoreboard players set #80 overlimit.const 80
 scoreboard players set #75 overlimit.const 75
 scoreboard players set #1000 overlimit.const 1000
 scoreboard players set #60 overlimit.const 60
+scoreboard players set #50 overlimit.const 50
 scoreboard players set #100 overlimit.const 100
 scoreboard players set #23460 overlimit.const 23460
 scoreboard players set #11460 overlimit.const 11460
@@ -109,6 +110,7 @@ scoreboard players set #pressure_idle_need overlimit.const 3
 execute unless score #pressure_idle overlimit.const matches 0.. run scoreboard players set #pressure_idle overlimit.const 0
 execute unless score #pressure_skip_day overlimit.const matches -1.. run scoreboard players set #pressure_skip_day overlimit.const -1
 function overlimit:pressure/refresh
+function overlimit:stats/init
 
 execute unless score #no_active overlimit.const matches 0.. run scoreboard players set #no_active overlimit.const 0
 execute unless score #no_omen overlimit.const matches 0.. run scoreboard players set #no_omen overlimit.const 0
@@ -299,6 +301,7 @@ bossbar set overlimit:city_clamp style progress
 execute if score #cc_active overlimit.const matches 1 run function overlimit:city_clamp/restore
 execute unless score #cc_active overlimit.const matches 1 run bossbar set overlimit:city_clamp players
 
+execute as @a run attribute @s minecraft:attack_damage modifier remove overlimit:berserker.atk
 execute as @a run attribute @s minecraft:max_health modifier remove overlimit:ul.heal_cap
 execute as @a run attribute @s minecraft:jump_strength modifier remove overlimit:enchantment.cat_foot.jump
 execute as @a run attribute @s minecraft:jump_strength modifier remove overlimit:sky_walk_no_cat

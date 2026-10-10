@@ -27,6 +27,10 @@ processResources {
 	from('resourcepack/assets') {
 		into 'assets'
 	}
+	// DnT 導入時だけ OverlimitMod が有効にする。data/ には入れない。
+	from('dnt_pack') {
+		into 'resourcepacks/dnt'
+	}
 
 	def version = project.version
 	inputs.property 'version', version

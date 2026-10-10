@@ -7,59 +7,57 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:trident",
-          "functions": [
-            {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:item_name": {
-                  "color": "light_purple",
-                  "translate": "overlimit.item.ul.trident"
+          "modifier": {
+            "components": {
+              "minecraft:item_name": {
+                "color": "light_purple",
+                "translate": "overlimit.item.ul.trident"
+              },
+              "minecraft:lore": [
+                {
+                  "color": "gray",
+                  "italic": false,
+                  "translate": "overlimit.item.ul.series"
                 },
-                "minecraft:lore": [
-                  {
-                    "color": "gray",
-                    "italic": false,
-                    "translate": "overlimit.item.ul.series"
-                  },
-                  {
-                    "color": "gray",
-                    "italic": false,
-                    "translate": "overlimit.item.ul.trident.lore"
-                  }
-                ],
-                "minecraft:rarity": "epic",
-                "minecraft:item_model": "overlimit:unlimited_trident",
-                "minecraft:max_damage": 4064,
-                "minecraft:repairable": {
-                  "items": "minecraft:prismarine_shard"
+                {
+                  "color": "gray",
+                  "italic": false,
+                  "translate": "overlimit.item.ul.trident.lore"
+                }
+              ],
+              "minecraft:rarity": "epic",
+              "minecraft:item_model": "overlimit:unlimited_trident",
+              "minecraft:max_damage": 4064,
+              "minecraft:repairable": {
+                "items": "minecraft:prismarine_shard"
+              },
+              "minecraft:enchantments": {
+                "minecraft:loyalty": 3
+              },
+              "minecraft:custom_data": {
+                "overlimit": {
+                  "unlimited_trident": true
+                }
+              },
+              "minecraft:attribute_modifiers": [
+                {
+                  "type": "minecraft:attack_damage",
+                  "id": "minecraft:base_attack_damage",
+                  "amount": 10,
+                  "operation": "add_value",
+                  "slot": "mainhand"
                 },
-                "minecraft:enchantments": {
-                  "minecraft:loyalty": 3
-                },
-                "minecraft:custom_data": {
-                  "overlimit": {
-                    "unlimited_trident": true
-                  }
-                },
-                "minecraft:attribute_modifiers": [
-                  {
-                    "type": "minecraft:attack_damage",
-                    "id": "minecraft:base_attack_damage",
-                    "amount": 10.0,
-                    "operation": "add_value",
-                    "slot": "mainhand"
-                  },
-                  {
-                    "type": "minecraft:attack_speed",
-                    "id": "minecraft:base_attack_speed",
-                    "amount": -2.3333,
-                    "operation": "add_value",
-                    "slot": "mainhand"
-                  }
-                ]
-              }
-            }
-          ]
+                {
+                  "type": "minecraft:attack_speed",
+                  "id": "minecraft:base_attack_speed",
+                  "amount": -2.3333,
+                  "operation": "add_value",
+                  "slot": "mainhand"
+                }
+              ]
+            },
+            "type": "minecraft:set_components"
+          }
         }
       ]
     }

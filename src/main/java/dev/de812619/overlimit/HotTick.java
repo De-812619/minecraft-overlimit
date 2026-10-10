@@ -14,6 +14,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.animal.golem.IronGolem;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.scores.Objective;
@@ -179,13 +180,20 @@ final class HotTick {
 	}
 
 	private static void tickGolem(MinecraftServer server, Entity entity, Set<String> tags) {
-		if (!tags.contains("overlimit.mini_golem_ready")) {
-			run(server, entity, "item/mini_golem/init");
+		boolean golden = tags.contains(GoldenGolem.TAG);
+		String ready = golden ? "overlimit.golden_golem_ready" : "overlimit.mini_golem_ready";
+		String gone = golden ? "overlimit.golden_golem_gone" : "overlimit.mini_golem_gone";
+		String path = golden ? "item/golden_golem" : "item/mini_golem";
+		if (!tags.contains(ready)) {
+			run(server, entity, path + "/init");
 			tags = entity.entityTags();
 		}
+		if (golden && entity instanceof IronGolem golem) {
+			GoldenGolem.mark(golem);
+		}
 		joinOverlimit(server, entity);
-		if (!tags.contains("overlimit.mini_golem_gone")) {
-			run(server, entity, "item/mini_golem/tick");
+		if (!tags.contains(gone)) {
+			run(server, entity, path + "/tick");
 		}
 		if (entity.isRemoved()) {
 			WATCHED.remove(entity);
@@ -223,7 +231,7 @@ final class HotTick {
 
 	private static void holdStill(MinecraftServer server, Entity entity) {
 		entity.setDeltaMovement(Vec3.ZERO);
-		entity.hurtMarked = true;
+		entity.syncVelocity = true;
 		int next = score(server, entity, BIND_SCORE) - 1;
 		if (next >= 1) {
 			Scores.setHolder(server, entity, BIND_SCORE, next);
@@ -256,7 +264,7 @@ final class HotTick {
 				living.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 20, 255, false, false));
 			}
 			nearby.setDeltaMovement(Vec3.ZERO);
-			nearby.hurtMarked = true;
+			nearby.syncVelocity = true;
 		}
 	}
 
@@ -317,7 +325,7 @@ final class HotTick {
 			return tags.contains("overlimit.summon");
 		}
 		if (type == EntityTypes.IRON_GOLEM) {
-			return tags.contains("overlimit.mini_golem");
+			return tags.contains("overlimit.mini_golem") || tags.contains(GoldenGolem.TAG);
 		}
 		if (type == EntityTypes.CAT) {
 			return tags.contains("overlimit.cat_decoy");

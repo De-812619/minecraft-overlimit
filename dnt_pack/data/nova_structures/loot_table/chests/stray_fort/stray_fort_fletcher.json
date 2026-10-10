@@ -1,0 +1,258 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "max": 3,
+        "min": 1,
+        "type": "minecraft:uniform"
+      },
+      "entries": [
+        {
+          "type": "loot_table",
+          "value": "nova_structures:chests/stray_fort/pools/cold",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 2,
+      "entries": [
+        {
+          "type": "item",
+          "name": "arrow",
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "tipped_arrow",
+          "modifier": [
+            {
+              "count": {
+                "max": 3,
+                "min": 2,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_count"
+            },
+            {
+              "id": "slowness",
+              "type": "set_potion"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "bone",
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "bone_meal",
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "iron_ingot",
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "iron_nugget",
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "emerald",
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "bow",
+          "modifier": [
+            {
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 25,
+                "min": 15
+              },
+              "options": "#nova_structures:structure/snowy",
+              "condition": {
+                "type": "random_chance",
+                "chance": 0.8
+              },
+              "type": "enchant_with_levels"
+            },
+            {
+              "damage": {
+                "min": 0.5,
+                "max": 0.7,
+                "type": "uniform"
+              },
+              "type": "set_damage"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "crossbow",
+          "modifier": [
+            {
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 25,
+                "min": 15
+              },
+              "options": "#nova_structures:structure/snowy",
+              "condition": {
+                "type": "random_chance",
+                "chance": 0.8
+              },
+              "type": "enchant_with_levels"
+            },
+            {
+              "damage": {
+                "min": 0.5,
+                "max": 0.7,
+                "type": "uniform"
+              },
+              "type": "set_damage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_gear",
+          "weight": 70
+        },
+        {
+          "type": "minecraft:group",
+          "weight": 25,
+          "children": [
+            {
+              "type": "minecraft:loot_table",
+              "value": "overlimit:bonus_gear"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "overlimit:bonus_gear"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 999
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_any",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 999
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_armor_any",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "modifier": "nova_structures:loot_modifier"
+}

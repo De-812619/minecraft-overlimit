@@ -1,0 +1,399 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:beetroot_soup",
+          "weight": 6,
+          "modifier": {
+            "count": 2,
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:pumpkin",
+          "weight": 3,
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 3
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:carved_pumpkin",
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 3
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:jack_o_lantern",
+          "modifier": {
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 2
+            },
+            "add": false,
+            "type": "minecraft:set_count"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:milk_bucket",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:ominous_bottle",
+          "weight": 6,
+          "modifier": {
+            "amplifier": {
+              "type": "minecraft:uniform",
+              "max": 4,
+              "min": 1
+            },
+            "type": "set_ominous_bottle_amplifier"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:suspicious_stew",
+          "weight": 6,
+          "modifier": {
+            "effects": [
+              {
+                "type": "minecraft:night_vision",
+                "duration": 5
+              },
+              {
+                "type": "minecraft:jump_boost",
+                "duration": 5
+              },
+              {
+                "type": "minecraft:weakness",
+                "duration": 7
+              },
+              {
+                "type": "minecraft:blindness",
+                "duration": 11
+              },
+              {
+                "type": "minecraft:poison",
+                "duration": 11
+              },
+              {
+                "type": "minecraft:saturation",
+                "duration": 7
+              }
+            ],
+            "type": "minecraft:set_stew_effect"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_golden_apple"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cake"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_apple",
+          "weight": 6,
+          "modifier": {
+            "count": 2,
+            "type": "set_count"
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "loot_table",
+          "value": {
+            "pools": [
+              {
+                "rolls": 2,
+                "bonus_rolls": 0,
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "modifier": [
+                      {
+                        "type": "set_count",
+                        "count": {
+                          "max": 2,
+                          "min": 1,
+                          "type": "uniform"
+                        }
+                      }
+                    ],
+                    "name": "minecraft:packed_ice"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "modifier": [
+                      {
+                        "type": "set_count",
+                        "count": {
+                          "max": 2,
+                          "min": 1,
+                          "type": "uniform"
+                        }
+                      }
+                    ],
+                    "name": "minecraft:blue_ice"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "modifier": [
+                      {
+                        "type": "minecraft:set_count",
+                        "count": {
+                          "type": "minecraft:uniform",
+                          "min": 2,
+                          "max": 4
+                        },
+                        "add": false
+                      }
+                    ],
+                    "name": "minecraft:snowball"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "modifier": [
+                      {
+                        "type": "minecraft:set_count",
+                        "count": {
+                          "type": "minecraft:uniform",
+                          "min": 1,
+                          "max": 2
+                        },
+                        "add": false
+                      }
+                    ],
+                    "name": "minecraft:snow_block"
+                  }
+                ]
+              },
+              {
+                "rolls": 2,
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:bone",
+                    "modifier": [
+                      {
+                        "type": "set_count",
+                        "count": {
+                          "type": "minecraft:uniform",
+                          "max": 2,
+                          "min": 1
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:spider_eye"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:rotten_flesh",
+                    "modifier": [
+                      {
+                        "type": "set_count",
+                        "count": {
+                          "type": "minecraft:uniform",
+                          "max": 3,
+                          "min": 2
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:apple",
+          "weight": 3,
+          "modifier": {
+            "count": {
+              "max": 5,
+              "min": 3,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "minecraft:bread",
+          "weight": 3,
+          "modifier": {
+            "count": {
+              "max": 6,
+              "min": 4,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "minecraft:pumpkin_pie",
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 4,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 160
+        },
+        {
+          "type": "item",
+          "name": "minecraft:sentry_armor_trim_smithing_template",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "minecraft:vex_armor_trim_smithing_template",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "minecraft:creaking_heart",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_gear",
+          "weight": 70
+        },
+        {
+          "type": "minecraft:group",
+          "weight": 25,
+          "children": [
+            {
+              "type": "minecraft:loot_table",
+              "value": "overlimit:bonus_gear"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "overlimit:bonus_gear"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 999
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_any",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 999
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_armor_any",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "modifier": "nova_structures:loot_modifier"
+}

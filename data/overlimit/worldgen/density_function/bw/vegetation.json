@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:noise",
+  "noise": "minecraft:vegetation",
+  "shift_x": "overlimit:shift_x",
+  "shift_y": 0.0,
+  "shift_z": "overlimit:shift_z",
+  "xz_scale": 0.25,
+  "y_scale": 0.0
+}

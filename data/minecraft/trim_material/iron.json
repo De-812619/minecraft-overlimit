@@ -1,5 +1,5 @@
 {
-  "asset_name": "iron",
+  "palette_id": "minecraft:trim/iron",
   "description": {
     "color": "#ECECEC",
     "translate": "trim_material.minecraft.iron",
@@ -9,8 +9,5 @@
         "translate": "overlimit.trim.iron.extra"
       }
     ]
-  },
-  "override_armor_assets": {
-    "minecraft:iron": "iron_darker"
   }
 }

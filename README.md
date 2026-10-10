@@ -1,11 +1,11 @@
 # over_limit_pack
 
-Minecraft Java **26.2** 向け Fabric Mod です。既存データパックを JAR に同梱し、一部の tick とカスタムエンチャントを Java で動かします。見た目（`assets/`）も同じ JAR に入っています。マルチでサーバーだけに置くときは、別のリソースパックをクライアントへ配ります。
+Minecraft Java **26.3** 向け Fabric Mod です。データパック単体では配布しません。ゲームデータと見た目（`assets/`）は JAR に入っており、一部の tick とカスタムエンチャントは Java で動きます。マルチでサーバーだけに Mod を置くときは、別のリソースパックをクライアントへ配ります。
 
 ## 必要環境
 
-- Minecraft Java Edition **26.2**
-- Fabric Loader **0.19.3** と Fabric API（`0.156.0+26.2`）
+- Minecraft Java Edition **26.3**
+- Fabric Loader **0.19.5**（0.19.3 以上）と Fabric API（`0.161.0+26.3`）
 - Java **25**
 - 任意: [Dungeons and Taverns](https://modrinth.com/datapack/dungeons-and-taverns) と併用できます
 
@@ -28,11 +28,11 @@ JAR 内の `assets/` がモデル・テクスチャ・翻訳を出します。
 
 注意:
 
-- ワールドの `datapacks/` に同じ内容を置かないでください（二重に効きます）
+- データパック zip やリポジトリをワールドの `datapacks/` に置かないでください。配布物ではなく、Mod と二重に効きます
 - Mod と別リソースパックを同時に有効にすると、同じ見た目が二重に載ります。シングルで JAR の見た目を使うときは、別パックを外してください
 - **まだ生成されていないチェスト**にだけ新しいルートが効きます。すでに中身が確定したチェストは変わりません
-- Dungeons and Taverns を使う場合は、本パックを **DnT より後**に読み込ませてください
-- GitHub の Source ZIP はそのまま `mods/` には置けません。ビルドした JAR を使ってください
+- Dungeons and Taverns（Mod `mr_dungeons_andtaverns`）が入っているときだけ、DnT 用の追加プールが有効になります。入っていない環境では、そのルートは読み込みません
+- GitHub の Source ZIP はそのまま `mods/` にも `datapacks/` にも置けません。ビルドした JAR を使ってください
 
 ## 戦利品
 
@@ -64,12 +64,13 @@ JAR 内の `assets/` がモデル・テクスチャ・翻訳を出します。
 | 海底遺跡 | |
 | 廃坑 | |
 | 埋もれた宝 | |
+| 放棄されたキャンプ | 通常チェストと隠しチェスト。樽は対象外 |
 | 試練の間 | チェストと宝物庫（不吉な宝物庫含む） |
 | ネザー要塞 | |
 | バストリオン | 4種 |
 | エンドシティ | |
 
-[Dungeons and Taverns](https://modrinth.com/datapack/dungeons-and-taverns) を入れている場合、そのチェスト系ルートにも同じボーナスが入ります。
+[Dungeons and Taverns](https://modrinth.com/datapack/dungeons-and-taverns) の Mod が入っている場合、そのチェスト系ルートにも同じボーナスが入ります。Mod が無いときはバニラの対象チェストだけです。
 
 ## クラフト
 

@@ -1,0 +1,601 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": {
+            "pools": [
+              {
+                "rolls": 1,
+                "bonus_rolls": 0,
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "weight": 1,
+                    "modifier": [
+                      {
+                        "type": "minecraft:set_count",
+                        "count": {
+                          "type": "minecraft:uniform",
+                          "min": 1,
+                          "max": 2
+                        },
+                        "add": false
+                      }
+                    ],
+                    "name": "minecraft:diamond"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "weight": 2,
+                    "modifier": [
+                      {
+                        "type": "minecraft:set_count",
+                        "count": {
+                          "type": "minecraft:uniform",
+                          "min": 1,
+                          "max": 3
+                        },
+                        "add": false
+                      }
+                    ],
+                    "name": "minecraft:emerald"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "weight": 3,
+                    "modifier": [
+                      {
+                        "type": "minecraft:set_count",
+                        "count": {
+                          "type": "minecraft:uniform",
+                          "min": 1,
+                          "max": 7
+                        },
+                        "add": false
+                      }
+                    ],
+                    "name": "minecraft:copper_ingot"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "weight": 2,
+                    "modifier": [
+                      {
+                        "type": "minecraft:set_count",
+                        "count": {
+                          "type": "minecraft:uniform",
+                          "min": 1,
+                          "max": 4
+                        },
+                        "add": false
+                      }
+                    ],
+                    "name": "minecraft:lapis_lazuli"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "weight": 3,
+                    "modifier": [
+                      {
+                        "type": "minecraft:set_count",
+                        "count": {
+                          "type": "minecraft:uniform",
+                          "min": 1,
+                          "max": 3
+                        },
+                        "add": false
+                      }
+                    ],
+                    "name": "minecraft:gold_ingot"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "weight": 3,
+                    "modifier": [
+                      {
+                        "type": "minecraft:set_count",
+                        "count": {
+                          "type": "minecraft:uniform",
+                          "min": 1,
+                          "max": 3
+                        },
+                        "add": false
+                      }
+                    ],
+                    "name": "minecraft:iron_ingot"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "weight": 3,
+                    "modifier": [
+                      {
+                        "type": "minecraft:set_count",
+                        "count": {
+                          "type": "minecraft:uniform",
+                          "min": 1,
+                          "max": 4
+                        },
+                        "add": false
+                      }
+                    ],
+                    "name": "minecraft:redstone"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "weight": 4,
+                    "modifier": [
+                      {
+                        "type": "minecraft:set_count",
+                        "count": {
+                          "type": "minecraft:uniform",
+                          "min": 1,
+                          "max": 5
+                        },
+                        "add": false
+                      }
+                    ],
+                    "name": "minecraft:gold_nugget"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "weight": 4,
+                    "modifier": [
+                      {
+                        "type": "minecraft:set_count",
+                        "count": {
+                          "type": "minecraft:uniform",
+                          "min": 1,
+                          "max": 5
+                        },
+                        "add": false
+                      }
+                    ],
+                    "name": "minecraft:iron_nugget"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "weight": 5,
+                    "modifier": [
+                      {
+                        "type": "minecraft:set_count",
+                        "count": {
+                          "type": "minecraft:uniform",
+                          "min": 3,
+                          "max": 7
+                        },
+                        "add": false
+                      }
+                    ],
+                    "name": "minecraft:coal"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "weight": 5,
+                    "modifier": [
+                      {
+                        "type": "minecraft:set_count",
+                        "count": {
+                          "type": "minecraft:uniform",
+                          "min": 3,
+                          "max": 7
+                        },
+                        "add": false
+                      }
+                    ],
+                    "name": "minecraft:stick"
+                  }
+                ]
+              },
+              {
+                "rolls": 2,
+                "bonus_rolls": 0,
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "weight": 5,
+                    "modifier": [
+                      {
+                        "type": "minecraft:set_count",
+                        "count": {
+                          "type": "minecraft:uniform",
+                          "min": 1,
+                          "max": 6
+                        },
+                        "add": false
+                      }
+                    ],
+                    "name": "minecraft:bone"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "weight": 5,
+                    "modifier": [
+                      {
+                        "type": "minecraft:set_count",
+                        "count": {
+                          "type": "minecraft:uniform",
+                          "min": 1,
+                          "max": 6
+                        },
+                        "add": false
+                      }
+                    ],
+                    "name": "minecraft:rotten_flesh"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "weight": 3,
+                    "modifier": [
+                      {
+                        "type": "minecraft:set_count",
+                        "count": {
+                          "type": "minecraft:uniform",
+                          "min": 1,
+                          "max": 5
+                        },
+                        "add": false
+                      }
+                    ],
+                    "name": "minecraft:string"
+                  }
+                ]
+              },
+              {
+                "rolls": 1,
+                "bonus_rolls": 0,
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "weight": 2,
+                    "name": "minecraft:lapis_lazuli"
+                  },
+                  {
+                    "type": "minecraft:empty",
+                    "weight": 3
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "weight": 1,
+                    "modifier": [
+                      {
+                        "type": "set_damage",
+                        "damage": {
+                          "type": "minecraft:uniform",
+                          "min": 0.15,
+                          "max": 0.5
+                        }
+                      },
+                      {
+                        "type": "minecraft:enchant_with_levels",
+                        "levels": {
+                          "type": "minecraft:uniform",
+                          "min": 10,
+                          "max": 15
+                        },
+                        "options": "#nova_structures:structure/overworld"
+                      }
+                    ],
+                    "name": "minecraft:iron_sword"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "weight": 1,
+                    "modifier": [
+                      {
+                        "type": "set_damage",
+                        "damage": {
+                          "type": "minecraft:uniform",
+                          "min": 0.15,
+                          "max": 0.5
+                        }
+                      },
+                      {
+                        "type": "minecraft:enchant_with_levels",
+                        "levels": {
+                          "type": "minecraft:uniform",
+                          "min": 10,
+                          "max": 15
+                        },
+                        "options": "#nova_structures:structure/overworld"
+                      }
+                    ],
+                    "name": "minecraft:iron_spear"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "weight": 1,
+                    "modifier": [
+                      {
+                        "type": "set_damage",
+                        "damage": {
+                          "type": "minecraft:uniform",
+                          "min": 0.15,
+                          "max": 0.5
+                        }
+                      },
+                      {
+                        "type": "minecraft:enchant_with_levels",
+                        "levels": {
+                          "type": "minecraft:uniform",
+                          "min": 10,
+                          "max": 15
+                        },
+                        "options": "#nova_structures:structure/overworld"
+                      }
+                    ],
+                    "name": "minecraft:iron_pickaxe"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "weight": 1,
+                    "modifier": [
+                      {
+                        "type": "set_damage",
+                        "damage": {
+                          "type": "minecraft:uniform",
+                          "min": 0.15,
+                          "max": 0.5
+                        }
+                      },
+                      {
+                        "type": "minecraft:enchant_with_levels",
+                        "levels": {
+                          "type": "minecraft:uniform",
+                          "min": 10,
+                          "max": 15
+                        },
+                        "options": "#nova_structures:structure/overworld"
+                      }
+                    ],
+                    "name": "minecraft:iron_axe"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "weight": 1,
+                    "modifier": [
+                      {
+                        "type": "set_damage",
+                        "damage": {
+                          "type": "minecraft:uniform",
+                          "min": 0.15,
+                          "max": 0.5
+                        }
+                      },
+                      {
+                        "type": "minecraft:enchant_with_levels",
+                        "levels": {
+                          "type": "minecraft:uniform",
+                          "min": 10,
+                          "max": 15
+                        },
+                        "options": "#nova_structures:structure/overworld"
+                      }
+                    ],
+                    "name": "minecraft:copper_sword"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "weight": 1,
+                    "modifier": [
+                      {
+                        "type": "set_damage",
+                        "damage": {
+                          "type": "minecraft:uniform",
+                          "min": 0.15,
+                          "max": 0.5
+                        }
+                      },
+                      {
+                        "type": "minecraft:enchant_with_levels",
+                        "levels": {
+                          "type": "minecraft:uniform",
+                          "min": 10,
+                          "max": 15
+                        },
+                        "options": "#nova_structures:structure/overworld"
+                      }
+                    ],
+                    "name": "minecraft:copper_spear"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "weight": 1,
+                    "modifier": [
+                      {
+                        "type": "set_damage",
+                        "damage": {
+                          "type": "minecraft:uniform",
+                          "min": 0.15,
+                          "max": 0.5
+                        }
+                      },
+                      {
+                        "type": "minecraft:enchant_with_levels",
+                        "levels": {
+                          "type": "minecraft:uniform",
+                          "min": 10,
+                          "max": 15
+                        },
+                        "options": "#nova_structures:structure/overworld"
+                      }
+                    ],
+                    "name": "minecraft:copper_pickaxe"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "weight": 1,
+                    "modifier": [
+                      {
+                        "type": "set_damage",
+                        "damage": {
+                          "type": "minecraft:uniform",
+                          "min": 0.15,
+                          "max": 0.5
+                        }
+                      },
+                      {
+                        "type": "minecraft:enchant_with_levels",
+                        "levels": {
+                          "type": "minecraft:uniform",
+                          "min": 10,
+                          "max": 15
+                        },
+                        "options": "#nova_structures:structure/overworld"
+                      }
+                    ],
+                    "name": "minecraft:copper_axe"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "weight": 1,
+                    "modifier": [
+                      {
+                        "type": "set_damage",
+                        "damage": {
+                          "type": "minecraft:uniform",
+                          "min": 0.15,
+                          "max": 0.5
+                        }
+                      },
+                      {
+                        "type": "minecraft:enchant_with_levels",
+                        "levels": {
+                          "type": "minecraft:uniform",
+                          "min": 10,
+                          "max": 15
+                        },
+                        "options": "#nova_structures:structure/overworld"
+                      }
+                    ],
+                    "name": "minecraft:chainmail_chestplate"
+                  }
+                ]
+              },
+              {
+                "rolls": 1,
+                "bonus_rolls": 0,
+                "entries": [
+                  {
+                    "type": "minecraft:empty",
+                    "weight": 15
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:skeleton_skull"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "modifier": [
+                      {
+                        "type": "minecraft:enchant_with_levels",
+                        "levels": 5,
+                        "options": "#nova_structures:structure/overworld"
+                      }
+                    ],
+                    "name": "minecraft:book",
+                    "weight": 5
+                  }
+                ]
+              }
+            ]
+          },
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/simple_dungeon"
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_gear",
+          "weight": 70
+        },
+        {
+          "type": "minecraft:group",
+          "weight": 25,
+          "children": [
+            {
+              "type": "minecraft:loot_table",
+              "value": "overlimit:bonus_gear"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "overlimit:bonus_gear"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 999
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_any",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 999
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_armor_any",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "modifier": "nova_structures:loot_modifier"
+}

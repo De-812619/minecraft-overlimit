@@ -15,9 +15,9 @@
           "function": "overlimit:item/unlimited/spear_on_victim"
         },
         "requirements": {
-          "condition": "minecraft:inverted",
+          "type": "minecraft:inverted",
           "term": {
-            "condition": "minecraft:entity_properties",
+            "type": "minecraft:entity_properties",
             "entity": "this",
             "predicate": {
               "minecraft:entity_type": "minecraft:player"

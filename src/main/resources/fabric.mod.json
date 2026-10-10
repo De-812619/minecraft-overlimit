@@ -3,10 +3,11 @@
 	"id": "overlimit",
 	"version": "${version}",
 	"name": "Over Limit",
-	"description": "over_limit_pack datapack plus client assets. No new registries.",
+	"description": "Fabric mod for Minecraft 26.3. Bundled game data and client assets. No new registries.",
 	"authors": [
 		"De-812619"
 	],
+	"license": "All Rights Reserved",
 	"contact": {
 		"sources": "https://github.com/De-812619/minecraft-overlimit"
 	},
@@ -21,7 +22,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.19.3",
-		"minecraft": "~26.2",
+		"minecraft": "~26.3",
 		"java": ">=25",
 		"fabric-api": "*"
 	}

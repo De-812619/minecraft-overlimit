@@ -20,15 +20,49 @@
         "sound": "minecraft:music.nether.warped_forest"
       }
     },
-    "minecraft:visual/ambient_particles": [
-      {
-        "particle": {
-          "type": "minecraft:warped_spore"
+    "minecraft:visual/ambient_particles": {
+      "argument": [
+        {
+          "particle": {
+            "type": "minecraft:warped_spore"
+          },
+          "probability": 0.01428
+        }
+      ],
+      "modifier": "append"
+    },
+    "minecraft:visual/fog_color": "#1a051a",
+    "minecraft:gameplay/natural_mob_spawns": {
+      "argument": {
+        "spawns_by_category": {
+          "creature": [
+            {
+              "type": "minecraft:strider",
+              "weight": 60,
+              "count": {
+                "type": "minecraft:uniform",
+                "min_inclusive": 1,
+                "max_inclusive": 2
+              }
+            }
+          ],
+          "monster": [
+            {
+              "type": "minecraft:enderman",
+              "weight": 1,
+              "count": 4
+            }
+          ]
         },
-        "probability": 0.01428
-      }
-    ],
-    "minecraft:visual/fog_color": "#1a051a"
+        "spawn_costs": {
+          "minecraft:enderman": {
+            "charge": 1.0,
+            "energy_budget": 0.12
+          }
+        }
+      },
+      "modifier": "overlay"
+    }
   },
   "carvers": "minecraft:nether_cave",
   "downfall": 0.0,
@@ -70,35 +104,5 @@
     ]
   ],
   "has_precipitation": false,
-  "spawn_costs": {
-    "minecraft:enderman": {
-      "charge": 1.0,
-      "energy_budget": 0.12
-    }
-  },
-  "spawners": {
-    "ambient": [],
-    "axolotls": [],
-    "creature": [
-      {
-        "type": "minecraft:strider",
-        "maxCount": 2,
-        "minCount": 1,
-        "weight": 60
-      }
-    ],
-    "misc": [],
-    "monster": [
-      {
-        "type": "minecraft:enderman",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 1
-      }
-    ],
-    "underground_water_creature": [],
-    "water_ambient": [],
-    "water_creature": []
-  },
   "temperature": 2.0
 }

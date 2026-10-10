@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate over_limit_pack loot tables from the 26.2 client jar (+ DnT)."""
+"""Generate over_limit_pack loot tables from the 26.3 client jar (+ DnT)."""
 
 from __future__ import annotations
 
@@ -15,14 +15,20 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_JAR = Path(
     "/Users/okanoueyuuichi/Library/Application Support/PrismLauncher/"
-    "libraries/com/mojang/minecraft/26.2/minecraft-26.2-client.jar"
+    "libraries/com/mojang/minecraft/26.3/minecraft-26.3-client.jar"
 )
-# Dungeons and Taverns v5.3.0 (datapack zip for 26.2)
+# Dungeons and Taverns 6.0.1 (Fabric jar for 26.3). Local instance jar wins over download.
+DEFAULT_DNT_LOCAL = Path(
+    "/Users/okanoueyuuichi/Library/Application Support/PrismLauncher/"
+    "instances/26.3/minecraft/mods/dungeons-and-taverns-6.0.1.jar"
+)
 DEFAULT_DNT_URL = (
-    "https://cdn.modrinth.com/data/tpehi7ww/versions/QcyHA7j1/"
-    "Dungeons%20and%20Taverns%20v5.3.0.zip"
+    "https://cdn.modrinth.com/data/tpehi7ww/versions/A6LcZGsV/"
+    "dungeons-and-taverns-6.0.1.jar"
 )
 CACHE_DIR = ROOT / ".cache"
+# DnT が無い環境では読まない。JAR 内 resourcepacks/dnt へ入れ、Mod が DnT を検出したときだけ有効にする。
+DNT_PACK_ROOT = ROOT / "dnt_pack"
 
 TARGET_CHESTS = [
     "ancient_city",
@@ -38,6 +44,9 @@ TARGET_CHESTS = [
     "underwater_ruin_small",
     "abandoned_mineshaft",
     "buried_treasure",
+    # 26.3 放棄キャンプ。樽（barrels/abandoned_camp_barrel）は試練の間の樽と同じく対象外。
+    "abandoned_camp_common_chest",
+    "abandoned_camp_secret_chest",
     # 試練の間: チェスト3種＋宝物庫親テーブルのみ（樽・壺・入れ子 reward_* は対象外）
     "trial_chambers/entrance",
     "trial_chambers/supply",
@@ -174,11 +183,11 @@ CHEST_MEMBER_RE = re.compile(r"^data/([^/]+)/loot_table/(chests/.+)\.json$")
 
 
 def uniform(lo: int, hi: int) -> dict:
-    return {"type": "minecraft:uniform", "min": float(lo), "max": float(hi)}
+    return {"type": "minecraft:uniform", "min": lo, "max": hi}
 
 
 def random_chance(chance: float) -> dict:
-    return {"condition": "minecraft:random_chance", "chance": chance}
+    return {"type": "minecraft:random_chance", "chance": chance}
 
 
 def set_enchantments(
@@ -188,12 +197,12 @@ def set_enchantments(
     chance: float | None = None,
 ) -> dict:
     fn: dict = {
-        "function": "minecraft:set_enchantments",
+        "type": "minecraft:set_enchantments",
         "enchantments": enchants,
         "add": add,
     }
     if chance is not None:
-        fn["conditions"] = [random_chance(chance)]
+        fn["condition"] = random_chance(chance)
     return fn
 
 
@@ -217,6 +226,7 @@ BONUS_ENCHANTS: dict[str, list[tuple[str, int | dict, float]]] = {
         ("overlimit:void_break", 1, 0.30),
         ("overlimit:hyper_gravity", 1, 0.30),
         ("overlimit:necromancy", 1, 0.30),
+        ("overlimit:combo", 1, 0.30),
     ],
     "axe": [
         *COMMON_BONUS,
@@ -226,6 +236,7 @@ BONUS_ENCHANTS: dict[str, list[tuple[str, int | dict, float]]] = {
         ("overlimit:void_break", 1, 0.30),
         ("overlimit:hyper_gravity", 1, 0.30),
         ("overlimit:impact", 1, 0.30),
+        ("overlimit:combo", 1, 0.30),
     ],
     "spear": [
         *COMMON_BONUS,
@@ -262,11 +273,13 @@ BONUS_ENCHANTS: dict[str, list[tuple[str, int | dict, float]]] = {
         ("minecraft:protection", uniform(5, 10), 0.30),
         ("minecraft:thorns", uniform(4, 10), 0.30),
         ("overlimit:absolute_field", 1, 0.30),
+        ("overlimit:berserker", 1, 0.30),
     ],
     "leggings": [
         *COMMON_BONUS,
         ("minecraft:protection", uniform(5, 10), 0.30),
         ("minecraft:thorns", uniform(4, 10), 0.30),
+        ("overlimit:light_gravity", 1, 0.30),
     ],
     "boots": [
         *COMMON_BONUS,
@@ -320,10 +333,10 @@ def exclusive_pair_function(ench_a: str, ench_b: str, chance: float) -> dict:
     """
     p_any = 1.0 - (1.0 - chance) ** 2
     return {
-        "function": "minecraft:enchant_randomly",
+        "type": "minecraft:enchant_randomly",
         "options": [ench_a, ench_b],
         "only_compatible": True,
-        "conditions": [random_chance(p_any)],
+        "condition": random_chance(p_any),
     }
 
 
@@ -340,19 +353,19 @@ def _has_enchantment_filter(enchant_id: str) -> dict:
 def resolve_item_exclusive(ench_a: str, ench_b: str) -> dict:
     """set_enchantments は exclusive_set を見ない。両方付いていたら一方だけ残す（等確率）。"""
     return {
-        "function": "minecraft:filtered",
+        "type": "minecraft:filtered",
         "item_filter": _has_enchantment_filter(ench_a),
         "on_pass": {
-            "function": "minecraft:sequence",
+            "type": "minecraft:sequence",
             "functions": [
                 {
-                    "function": "minecraft:set_enchantments",
+                    "type": "minecraft:set_enchantments",
                     "enchantments": {ench_b: 0},
                     "add": False,
-                    "conditions": [random_chance(0.5)],
+                    "condition": random_chance(0.5),
                 },
                 {
-                    "function": "minecraft:filtered",
+                    "type": "minecraft:filtered",
                     "item_filter": _has_enchantment_filter(ench_b),
                     "on_pass": set_enchantments({ench_a: 0}, add=False),
                 },
@@ -369,10 +382,10 @@ def enchant_functions(kind: str) -> list[dict]:
     """
     functions: list[dict] = [
         {
-            "function": "minecraft:enchant_with_levels",
+            "type": "minecraft:enchant_with_levels",
             "levels": NORMAL_ENCHANT_LEVELS,
             "options": "#minecraft:on_random_loot",
-            "conditions": [random_chance(NORMAL_ENCHANT_CHANCE)],
+            "condition": random_chance(NORMAL_ENCHANT_CHANCE),
         },
         set_enchantments({"minecraft:vanishing_curse": 1}, add=False),
     ]
@@ -385,7 +398,7 @@ def enchant_functions(kind: str) -> list[dict]:
             functions.append(exclusive_pair_function(ench_a, ench_b, chance))
     if kind == "pickaxe":
         # set_enchantments / enchant_randomly は exclusive_set を見ない。
-        # 26.2 の only_compatible も supported_items のみ（既存エンチャントとは無関係）。
+        # 26.3 の only_compatible も supported_items のみ（既存エンチャントとは無関係）。
         functions.append(
             resolve_item_exclusive("overlimit:hyper_dig", "minecraft:efficiency")
         )
@@ -441,12 +454,15 @@ BOOK_BONUS_ENCHANTS: list[tuple[str, int]] = [
     ("overlimit:gluttony", 1),
     ("overlimit:necromancy", 1),
     ("overlimit:impact", 1),
+    ("overlimit:combo", 1),
     ("overlimit:chain_bind", 1),
     ("overlimit:absolute_field", 1),
+    ("overlimit:berserker", 1),
     ("overlimit:clairvoyance", 1),
     ("overlimit:midas_table", 1),
     ("overlimit:sky_walk", 1),
     ("overlimit:cat_foot", 1),
+    ("overlimit:light_gravity", 1),
     ("overlimit:hyper_dig", 1),
     ("overlimit:smelting", 1),
     ("overlimit:wind_blessing", 1),
@@ -462,7 +478,7 @@ def build_bonus_book() -> dict:
                 "type": "minecraft:item",
                 "name": "minecraft:enchanted_book",
                 "weight": 1,
-                "functions": [
+                "modifier": [
                     set_enchantments({"minecraft:vanishing_curse": 1}, add=False),
                     set_enchantments({ench_id: level}, add=False),
                 ],
@@ -492,9 +508,9 @@ def build_blood_moon_book() -> dict:
                 "type": "minecraft:item",
                 "name": "minecraft:enchanted_book",
                 "weight": 1,
-                "functions": [
+                "modifier": [
                     {
-                        "function": "minecraft:set_components",
+                        "type": "minecraft:set_components",
                         "components": {
                             "minecraft:stored_enchantments": {
                                 "minecraft:vanishing_curse": 1,
@@ -576,9 +592,9 @@ def build_recall_watch() -> dict:
                     {
                         "type": "minecraft:item",
                         "name": "minecraft:clock",
-                        "functions": [
+                        "modifier": [
                             {
-                                "function": "minecraft:set_components",
+                                "type": "minecraft:set_components",
                                 "components": recall_watch_components(),
                             }
                         ],
@@ -617,17 +633,29 @@ def _unlimited_chance_pool(
     }
 
 
-def _unlimited_event_pools(empty_weight: int) -> list[dict]:
+def _unlimited_event_pools(empty_weight: int, hit_weight: int = 1) -> list[dict]:
     return [
-        _unlimited_chance_pool(empty_weight=empty_weight, table="overlimit:unlimited_any"),
         _unlimited_chance_pool(
-            empty_weight=empty_weight, table="overlimit:unlimited_armor_any"
+            empty_weight=empty_weight, hit_weight=hit_weight, table="overlimit:unlimited_any"
+        ),
+        _unlimited_chance_pool(
+            empty_weight=empty_weight,
+            hit_weight=hit_weight,
+            table="overlimit:unlimited_armor_any",
         ),
     ]
 
 
+def build_unlimited_chance(empty_weight: int, hit_weight: int = 1) -> dict:
+    """UNLIMITED 武器／防具を独立ロール。fill_chest が累計勝利に応じて差し込む。"""
+    return {
+        "type": "minecraft:chest",
+        "pools": _unlimited_event_pools(empty_weight, hit_weight),
+    }
+
+
 def build_blood_moon_reward() -> dict:
-    """経験値瓶・武器1・防具1・本1。帰還の懐中時計は別枠 30%。凶兆のトーテム 10%。UNLIMITED 武器／防具 各 0.5%。"""
+    """経験値瓶・武器1・防具1・本1。帰還の懐中時計は別枠 30%。凶兆のトーテム 10%。UNLIMITED は fill_chest。"""
     return {
         "type": "minecraft:chest",
         "pools": [
@@ -647,13 +675,12 @@ def build_blood_moon_reward() -> dict:
                 ],
             },
             INJECT_BM_TOTEM_POOL,
-            *_unlimited_event_pools(199),
         ],
     }
 
 
 def build_overflow_reward() -> dict:
-    """経験値瓶・武器2・防具2・道具1・本3・帰還時計3。凶兆のトーテム 10%。UNLIMITED 武器／防具 各 1%。"""
+    """経験値瓶・武器2・防具2・道具1・本3・帰還時計3。凶兆のトーテム 10%。UNLIMITED は fill_chest。"""
     return {
         "type": "minecraft:chest",
         "pools": [
@@ -664,18 +691,14 @@ def build_overflow_reward() -> dict:
             _loot_table_pool("overlimit:blood_moon_book", 3),
             _loot_table_pool("overlimit:recall_watch", 3),
             INJECT_BM_TOTEM_POOL,
-            *_unlimited_event_pools(99),
         ],
     }
 
 
 def build_destination_reward() -> dict:
-    """オーバーフローと同じ＋不死のトーテム 10%。UNLIMITED 武器／防具 各 1%。"""
+    """オーバーフローと同じ＋不死のトーテム 10%。UNLIMITED は fill_chest。"""
     table = build_overflow_reward()
-    pools = table["pools"]
-    ul_armor = pools.pop()
-    ul_weapon = pools.pop()
-    pools.append(
+    table["pools"].append(
         {
             "rolls": 1,
             "entries": [
@@ -688,8 +711,6 @@ def build_destination_reward() -> dict:
             ],
         }
     )
-    pools.append(ul_weapon)
-    pools.append(ul_armor)
     return table
 
 
@@ -723,7 +744,7 @@ def _bonus_gear_entries(
                     "type": "minecraft:item",
                     "name": item_id("iron", None, kind),
                     "weight": kind_weight * material_weight_sum,
-                    "functions": enchant_functions(kind),
+                    "modifier": enchant_functions(kind),
                 }
             )
             continue
@@ -733,7 +754,7 @@ def _bonus_gear_entries(
                     "type": "minecraft:item",
                     "name": item_id(material, suffix, kind),
                     "weight": kind_weight * mat_weight,
-                    "functions": enchant_functions(kind),
+                    "modifier": enchant_functions(kind),
                 }
             )
     if include_book:
@@ -863,7 +884,7 @@ def write_json(path: Path, data: dict) -> None:
 
 
 def resolve_dnt_archive() -> Path:
-    """Return path to DnT zip/jar. Uses DNT_PACK, else downloads DEFAULT_DNT_URL."""
+    """Return path to DnT zip/jar. Uses DNT_PACK, else the 26.3 instance jar, else download."""
     env = os.environ.get("DNT_PACK")
     if env:
         path = Path(env)
@@ -871,8 +892,11 @@ def resolve_dnt_archive() -> Path:
             raise SystemExit(f"DNT_PACK not found: {path}")
         return path
 
+    if DEFAULT_DNT_LOCAL.is_file():
+        return DEFAULT_DNT_LOCAL
+
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    cached = CACHE_DIR / "dungeons-and-taverns-5.3.0.zip"
+    cached = CACHE_DIR / "dungeons-and-taverns-6.0.1.jar"
     if cached.is_file():
         return cached
 
@@ -883,6 +907,7 @@ def resolve_dnt_archive() -> Path:
 
 
 def clear_generated_dnt_outputs() -> None:
+    """DnT 由来のルートを常時データパックから外し、条件付きパック側を空にする。"""
     nova = ROOT / "data/nova_structures"
     if nova.exists():
         shutil.rmtree(nova)
@@ -891,6 +916,9 @@ def clear_generated_dnt_outputs() -> None:
         path = chests_root / sub
         if path.exists():
             shutil.rmtree(path)
+    dnt_data = DNT_PACK_ROOT / "data"
+    if dnt_data.exists():
+        shutil.rmtree(dnt_data)
 
 
 def inject_from_archive(archive: Path, label: str) -> int:
@@ -907,9 +935,13 @@ def inject_from_archive(archive: Path, label: str) -> int:
             if not m:
                 continue
             ns, chest_path = m.group(1), m.group(2)
+            # 洋館の *_base は親テーブルが参照する中身。ここへ注入するとボーナスが二重になる。
+            if chest_path.startswith("chests/illager_mansion/") and chest_path.endswith("_base"):
+                print(f"skip [{label}] {ns}:{chest_path} (included by parent)")
+                continue
             raw = json.loads(zf.read(name).decode("utf-8"))
             injected = inject_chest(raw)
-            out = ROOT / "data" / ns / "loot_table" / f"{chest_path}.json"
+            out = DNT_PACK_ROOT / "data" / ns / "loot_table" / f"{chest_path}.json"
             write_json(out, injected)
             print(f"injected [{label}] {ns}:{chest_path}")
             count += 1
@@ -928,6 +960,11 @@ def write_efficiency_exclusive_override(jar: zipfile.ZipFile) -> None:
     data = json.loads(jar.read("data/minecraft/enchantment/efficiency.json").decode())
     data["exclusive_set"] = "#overlimit:exclusive_set/efficiency_hyper_dig"
     write_json(ROOT / "data/minecraft/enchantment/efficiency.json", data)
+    # タグが無いと enchantment レジストリ凍結時に Unbound tags で起動不能になる。
+    write_json(
+        ROOT / "data/overlimit/tags/enchantment/exclusive_set/efficiency_hyper_dig.json",
+        {"values": ["overlimit:hyper_dig"]},
+    )
 
 
 def main() -> None:
@@ -954,6 +991,9 @@ def main() -> None:
     write_json(ROOT / "data/overlimit/loot_table/nether_overflow_reward.json", build_overflow_reward())
     write_json(ROOT / "data/overlimit/loot_table/nether_raise_reward.json", build_destination_reward())
     write_json(ROOT / "data/overlimit/loot_table/city_clamp_reward.json", build_destination_reward())
+    write_json(ROOT / "data/overlimit/loot_table/reward_unlimited.json", build_unlimited_chance(199))
+    write_json(ROOT / "data/overlimit/loot_table/reward_unlimited_event.json", build_unlimited_chance(99))
+    write_json(ROOT / "data/overlimit/loot_table/reward_unlimited_milestone.json", build_unlimited_chance(75, 25))
 
     clear_generated_dnt_outputs()
 
@@ -972,6 +1012,16 @@ def main() -> None:
             write_json(ROOT / "data/minecraft/loot_table/entities" / f"{entity}.json", injected)
             print(f"injected [vanilla] minecraft:entities/{entity}")
 
+    write_json(
+        DNT_PACK_ROOT / "pack.mcmeta",
+        {
+            "pack": {
+                "description": "Over Limit bonus loot for Dungeons and Taverns",
+                "min_format": [121, 0],
+                "max_format": [121, 0],
+            }
+        },
+    )
     dnt_count = inject_from_archive(dnt_path, "DnT")
 
     print(

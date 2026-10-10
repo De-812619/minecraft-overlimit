@@ -28,6 +28,32 @@
         }
       ]
     },
+    "minecraft:gameplay/straw_bed_rule": {
+      "ease": "constant",
+      "keyframes": [
+        {
+          "ticks": 0,
+          "value": {
+            "can_sleep": "when_dark",
+            "can_set_spawn": "never",
+            "error_message": {
+              "translate": "block.minecraft.bed.no_sleep"
+            }
+          }
+        },
+        {
+          "ticks": 1,
+          "value": {
+            "can_sleep": "never",
+            "can_set_spawn": "never",
+            "error_message": {
+              "color": "red",
+              "translate": "overlimit.msg.bm.wake"
+            }
+          }
+        }
+      ]
+    },
     "minecraft:visual/fog_color": {
       "ease": "constant",
       "modifier": "alpha_blend",

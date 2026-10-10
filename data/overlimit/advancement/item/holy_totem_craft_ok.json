@@ -3,7 +3,6 @@
     "craft": {
       "trigger": "minecraft:recipe_crafted",
       "conditions": {
-        "recipe_id": "overlimit:holy_totem",
         "ingredients": [
           {
             "items": "minecraft:poisonous_potato",
@@ -35,7 +34,8 @@
               }
             }
           }
-        ]
+        ],
+        "recipes": "overlimit:holy_totem"
       }
     }
   },

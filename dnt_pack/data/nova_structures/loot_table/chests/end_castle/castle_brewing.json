@@ -1,0 +1,451 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:special_items/levitation_potion"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:special_items/levitation_splash_potion"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:special_items/levitation_lingering_potion"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "potion",
+          "weight": 1,
+          "modifier": {
+            "id": "strong_strength",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "splash_potion",
+          "weight": 1,
+          "modifier": {
+            "id": "strong_strength",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "lingering_potion",
+          "weight": 1,
+          "modifier": {
+            "id": "strong_strength",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "potion",
+          "weight": 1,
+          "modifier": {
+            "id": "strong_leaping",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "splash_potion",
+          "weight": 1,
+          "modifier": {
+            "id": "strong_leaping",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "lingering_potion",
+          "weight": 1,
+          "modifier": {
+            "id": "strong_leaping",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "potion",
+          "weight": 1,
+          "modifier": {
+            "id": "healing",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "splash_potion",
+          "weight": 1,
+          "modifier": {
+            "id": "healing",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "lingering_potion",
+          "weight": 1,
+          "modifier": {
+            "id": "healing",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "potion",
+          "weight": 1,
+          "modifier": {
+            "id": "regeneration",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "splash_potion",
+          "weight": 1,
+          "modifier": {
+            "id": "regeneration",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "lingering_potion",
+          "weight": 1,
+          "modifier": {
+            "id": "regeneration",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "potion",
+          "weight": 1,
+          "modifier": {
+            "id": "long_regeneration",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "splash_potion",
+          "weight": 1,
+          "modifier": {
+            "id": "long_regeneration",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "lingering_potion",
+          "weight": 1,
+          "modifier": {
+            "id": "long_regeneration",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "potion",
+          "weight": 1,
+          "modifier": {
+            "id": "strong_healing",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "splash_potion",
+          "weight": 1,
+          "modifier": {
+            "id": "strong_healing",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "lingering_potion",
+          "weight": 1,
+          "modifier": {
+            "id": "strong_healing",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "potion",
+          "weight": 1,
+          "modifier": {
+            "id": "strong_harming",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "splash_potion",
+          "weight": 1,
+          "modifier": {
+            "id": "strong_harming",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "lingering_potion",
+          "weight": 1,
+          "modifier": {
+            "id": "strong_harming",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "potion",
+          "weight": 1,
+          "modifier": {
+            "id": "slow_falling",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "splash_potion",
+          "weight": 1,
+          "modifier": {
+            "id": "slow_falling",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "lingering_potion",
+          "weight": 1,
+          "modifier": {
+            "id": "slow_falling",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "potion",
+          "weight": 5,
+          "modifier": {
+            "id": "water",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "dragon_breath",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:blaze_powder",
+          "weight": 10,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:blaze_rod",
+          "weight": 10,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:nether_wart",
+          "weight": 10,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:glowstone",
+          "weight": 5,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:glowstone_dust",
+          "weight": 5,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:redstone",
+          "weight": 10,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gunpowder",
+          "weight": 10,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:fermented_spider_eye",
+          "weight": 10,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "weight": 5,
+          "modifier": {
+            "options": "#nova_structures:gravity",
+            "type": "minecraft:enchant_randomly"
+          }
+        }
+      ],
+      "rolls": 4
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_gear",
+          "weight": 70
+        },
+        {
+          "type": "minecraft:group",
+          "weight": 25,
+          "children": [
+            {
+              "type": "minecraft:loot_table",
+              "value": "overlimit:bonus_gear"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "overlimit:bonus_gear"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 999
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_any",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 999
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_armor_any",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "modifier": "nova_structures:loot_modifier"
+}

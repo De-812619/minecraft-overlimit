@@ -3,5 +3,6 @@ title @a[predicate=overlimit:in_the_end] times 10 70 20
 title @a[predicate=overlimit:in_the_end] title {"translate": "overlimit.event.city_clamp","color":"dark_red","bold":true}
 title @a[predicate=overlimit:in_the_end] subtitle {"translate": "overlimit.subtitle.clamp_fail","color":"red"}
 tellraw @a[predicate=overlimit:in_the_end] {"translate": "overlimit.msg.cc.fail","color":"red"}
+function overlimit:stats/lose {holder:"#stat_cc_loss"}
 function overlimit:city_clamp/end
 function overlimit:pressure/add_1

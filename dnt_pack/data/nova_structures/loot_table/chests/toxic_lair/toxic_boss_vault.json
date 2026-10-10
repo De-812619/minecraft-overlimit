@@ -1,0 +1,290 @@
+{
+  "type": "chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "wild_armor_trim_smithing_template",
+          "modifier": {
+            "count": 2,
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "skull_banner_pattern"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "verdant_froglight",
+          "weight": 8,
+          "modifier": {
+            "count": {
+              "max": 12,
+              "min": 8,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "ochre_froglight",
+          "weight": 8,
+          "modifier": {
+            "count": {
+              "max": 12,
+              "min": 8,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "pearlescent_froglight",
+          "weight": 8,
+          "modifier": {
+            "count": {
+              "max": 12,
+              "min": 8,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "skeleton_skull"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tipped_arrow",
+          "modifier": [
+            {
+              "id": "poison",
+              "type": "set_potion"
+            },
+            {
+              "count": {
+                "max": 20,
+                "min": 10,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_count"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 3,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "gold_block",
+          "weight": 5,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "emerald_block",
+          "weight": 5,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "diamond_block",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "iron_block",
+          "weight": 5,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "golden_apple",
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:ominous_bottle",
+          "modifier": {
+            "amplifier": {
+              "type": "minecraft:uniform",
+              "max": 4,
+              "min": 0
+            },
+            "type": "minecraft:set_ominous_bottle_amplifier"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "modifier": {
+            "options": "#nova_structures:antidote",
+            "type": "minecraft:enchant_randomly"
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bow",
+          "modifier": [
+            {
+              "options": "#nova_structures:piercing",
+              "type": "minecraft:enchant_randomly"
+            },
+            {
+              "levels": 30,
+              "options": "#nova_structures:structure/toxic_lair_no_dnt_enchant",
+              "type": "enchant_with_levels"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bow",
+          "modifier": [
+            {
+              "options": "#nova_structures:multishot",
+              "type": "minecraft:enchant_randomly"
+            },
+            {
+              "levels": 30,
+              "options": "#nova_structures:structure/toxic_lair_no_dnt_enchant",
+              "type": "enchant_with_levels"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_gear",
+          "weight": 70
+        },
+        {
+          "type": "minecraft:group",
+          "weight": 25,
+          "children": [
+            {
+              "type": "minecraft:loot_table",
+              "value": "overlimit:bonus_gear"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "overlimit:bonus_gear"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 999
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_any",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 999
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_armor_any",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "modifier": "nova_structures:loot_modifier"
+}

@@ -3,7 +3,6 @@
     "craft": {
       "trigger": "minecraft:recipe_crafted",
       "conditions": {
-        "recipe_id": "overlimit:reforge_diamond",
         "ingredients": [
           {
             "items": "#overlimit:reforge_input",
@@ -31,7 +30,8 @@
               ]
             }
           }
-        ]
+        ],
+        "recipes": "overlimit:reforge_diamond"
       }
     }
   },

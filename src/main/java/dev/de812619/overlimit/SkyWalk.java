@@ -133,7 +133,7 @@ final class SkyWalk {
 				}
 				player.setDeltaMovement(x, Math.max(vel.y, JUMP_Y), z);
 				player.needsSync = true;
-				player.hurtMarked = true;
+				player.syncVelocity = true;
 				player.connection.send(new ClientboundSetEntityMotionPacket(player));
 				// 押しっぱなしだと落下に入らず、約4秒で「飛行が無効」と切断される
 				player.connection.resetFlyingTicks();

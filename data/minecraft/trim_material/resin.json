@@ -1,5 +1,5 @@
 {
-  "asset_name": "resin",
+  "palette_id": "minecraft:trim/resin",
   "description": {
     "color": "#FC7812",
     "translate": "trim_material.minecraft.resin",

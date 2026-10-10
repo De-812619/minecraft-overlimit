@@ -1,0 +1,539 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "max": 3,
+        "min": 2,
+        "type": "minecraft:uniform"
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:gunpowder",
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "redstone",
+          "weight": 1,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "string",
+          "weight": 1,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "lapis_lazuli",
+          "weight": 1,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "lead",
+          "weight": 1,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "white_bundle",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "light_blue_bundle",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "leather",
+          "weight": 1,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "diamond_horse_armor",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "leather_horse_armor",
+          "weight": 1,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "music_disc_strad",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "music_disc_wait",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "bucket",
+          "weight": 1,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "book",
+          "weight": 1,
+          "modifier": {
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 10,
+              "min": 5
+            },
+            "options": "#nova_structures:structure/snowy",
+            "type": "enchant_with_levels"
+          }
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "max": 2,
+        "min": 1,
+        "type": "minecraft:uniform"
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:diamond",
+          "weight": 3
+        },
+        {
+          "type": "item",
+          "name": "enchanted_golden_apple",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "lapis_lazuli",
+          "weight": 1,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "iron_shovel",
+          "weight": 1,
+          "modifier": [
+            {
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 25,
+                "min": 5
+              },
+              "options": "#nova_structures:structure/snowy",
+              "type": "enchant_with_levels"
+            },
+            {
+              "damage": {
+                "max": 1,
+                "min": 0.5,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_damage"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "diamond_shovel",
+          "weight": 1,
+          "modifier": [
+            {
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 25,
+                "min": 5
+              },
+              "options": "#nova_structures:structure/snowy",
+              "type": "enchant_with_levels"
+            },
+            {
+              "damage": {
+                "max": 1,
+                "min": 0.5,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_damage"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "iron_boots",
+          "weight": 1,
+          "modifier": [
+            {
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 25,
+                "min": 5
+              },
+              "options": "#nova_structures:structure/snowy",
+              "type": "enchant_with_levels"
+            },
+            {
+              "damage": {
+                "max": 1,
+                "min": 0.5,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_damage"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "diamond_boots",
+          "weight": 1,
+          "modifier": [
+            {
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 25,
+                "min": 5
+              },
+              "options": "#nova_structures:structure/snowy",
+              "type": "enchant_with_levels"
+            },
+            {
+              "damage": {
+                "max": 1,
+                "min": 0.5,
+                "type": "minecraft:uniform"
+              },
+              "type": "set_damage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "max": 2,
+        "min": 1,
+        "type": "minecraft:uniform"
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "apple",
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "golden_apple",
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "coal",
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "amethyst_shard",
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "iron_nugget",
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "iron_ingot",
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "emerald",
+          "weight": 2,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "loot_table",
+          "value": "nova_structures:chests/stray_fort/pools/cold"
+        },
+        {
+          "type": "item",
+          "name": "pumpkin",
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "carved_pumpkin",
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "pumpkin_seeds",
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "beetroot",
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "sweet_berries",
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "minecraft:uniform"
+            },
+            "type": "set_count"
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_gear",
+          "weight": 70
+        },
+        {
+          "type": "minecraft:group",
+          "weight": 25,
+          "children": [
+            {
+              "type": "minecraft:loot_table",
+              "value": "overlimit:bonus_gear"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "overlimit:bonus_gear"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 999
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_any",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 999
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_armor_any",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "modifier": "nova_structures:loot_modifier"
+}

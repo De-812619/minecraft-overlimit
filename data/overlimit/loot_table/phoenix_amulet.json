@@ -7,62 +7,60 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:poisonous_potato",
-          "functions": [
-            {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:item_name": {
-                  "color": "gold",
-                  "translate": "overlimit.item.phoenix_amulet"
-                },
-                "minecraft:lore": [
-                  {
-                    "color": "gray",
-                    "italic": false,
-                    "translate": "overlimit.item.phoenix_amulet.lore"
-                  }
-                ],
-                "minecraft:rarity": "rare",
-                "minecraft:max_stack_size": 16,
-                "minecraft:enchantment_glint_override": true,
-                "minecraft:item_model": "overlimit:phoenix_amulet",
-                "minecraft:custom_data": {
-                  "overlimit": {
-                    "phoenix_amulet": true
-                  }
-                },
-                "!minecraft:food": {},
-                "!minecraft:consumable": {},
-                "minecraft:death_protection": {
-                  "death_effects": [
-                    {
-                      "type": "minecraft:clear_all_effects"
-                    },
-                    {
-                      "type": "minecraft:apply_effects",
-                      "effects": [
-                        {
-                          "id": "minecraft:regeneration",
-                          "amplifier": 1,
-                          "duration": 900
-                        },
-                        {
-                          "id": "minecraft:absorption",
-                          "amplifier": 1,
-                          "duration": 100
-                        },
-                        {
-                          "id": "minecraft:fire_resistance",
-                          "amplifier": 0,
-                          "duration": 800
-                        }
-                      ]
-                    }
-                  ]
+          "modifier": {
+            "components": {
+              "minecraft:item_name": {
+                "color": "gold",
+                "translate": "overlimit.item.phoenix_amulet"
+              },
+              "minecraft:lore": [
+                {
+                  "color": "gray",
+                  "italic": false,
+                  "translate": "overlimit.item.phoenix_amulet.lore"
                 }
+              ],
+              "minecraft:rarity": "rare",
+              "minecraft:max_stack_size": 16,
+              "minecraft:enchantment_glint_override": true,
+              "minecraft:item_model": "overlimit:phoenix_amulet",
+              "minecraft:custom_data": {
+                "overlimit": {
+                  "phoenix_amulet": true
+                }
+              },
+              "!minecraft:food": {},
+              "!minecraft:consumable": {},
+              "minecraft:death_protection": {
+                "death_effects": [
+                  {
+                    "type": "minecraft:clear_all_effects"
+                  },
+                  {
+                    "type": "minecraft:apply_effects",
+                    "effects": [
+                      {
+                        "id": "minecraft:regeneration",
+                        "amplifier": 1,
+                        "duration": 900
+                      },
+                      {
+                        "id": "minecraft:absorption",
+                        "amplifier": 1,
+                        "duration": 100
+                      },
+                      {
+                        "id": "minecraft:fire_resistance",
+                        "amplifier": 0,
+                        "duration": 800
+                      }
+                    ]
+                  }
+                ]
               }
-            }
-          ]
+            },
+            "type": "minecraft:set_components"
+          }
         }
       ]
     }

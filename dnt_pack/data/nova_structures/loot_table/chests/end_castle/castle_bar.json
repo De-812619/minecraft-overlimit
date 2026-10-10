@@ -1,0 +1,212 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:beetroot",
+          "weight": 3,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "minecraft:chorus_fruit",
+          "weight": 3,
+          "modifier": {
+            "count": {
+              "max": 3,
+              "min": 2,
+              "type": "uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "minecraft:apple",
+          "weight": 3,
+          "modifier": {
+            "count": {
+              "max": 2,
+              "min": 1,
+              "type": "uniform"
+            },
+            "type": "set_count"
+          }
+        },
+        {
+          "type": "item",
+          "name": "minecraft:golden_apple",
+          "weight": 3
+        },
+        {
+          "type": "item",
+          "name": "minecraft:beetroot_soup",
+          "weight": 3
+        },
+        {
+          "type": "item",
+          "name": "minecraft:potion",
+          "modifier": {
+            "id": "strong_harming",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "item",
+          "name": "minecraft:splash_potion",
+          "modifier": {
+            "id": "strong_harming",
+            "type": "set_potion"
+          }
+        },
+        {
+          "type": "item",
+          "name": "minecraft:lingering_potion",
+          "modifier": {
+            "id": "strong_harming",
+            "type": "set_potion"
+          }
+        }
+      ],
+      "rolls": 3
+    },
+    {
+      "bonus_rolls": 0,
+      "rolls": 3,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:suspicious_stew",
+          "modifier": {
+            "effects": [
+              {
+                "type": "minecraft:night_vision",
+                "duration": 5
+              },
+              {
+                "type": "minecraft:jump_boost",
+                "duration": 5
+              },
+              {
+                "type": "minecraft:weakness",
+                "duration": 7
+              },
+              {
+                "type": "minecraft:blindness",
+                "duration": 11
+              },
+              {
+                "type": "minecraft:poison",
+                "duration": 11
+              },
+              {
+                "type": "minecraft:saturation",
+                "duration": 7
+              },
+              {
+                "type": "minecraft:levitation",
+                "duration": 10
+              }
+            ],
+            "type": "minecraft:set_stew_effect"
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_gear",
+          "weight": 70
+        },
+        {
+          "type": "minecraft:group",
+          "weight": 25,
+          "children": [
+            {
+              "type": "minecraft:loot_table",
+              "value": "overlimit:bonus_gear"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "overlimit:bonus_gear"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bonus_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 90
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:bm_totem",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 999
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_any",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 999
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "overlimit:unlimited_armor_any",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "modifier": "nova_structures:loot_modifier"
+}

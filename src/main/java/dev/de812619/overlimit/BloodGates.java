@@ -51,6 +51,25 @@ public final class BloodGates {
 		return cryingFrame(level, corner, axis) && interiorIsPortal(level, corner, axis);
 	}
 
+	/** バニラのネザー往復とオーバーフロー登録から外す。 */
+	public static boolean blocksNetherTravel(BlockGetter level, BlockPos pos) {
+		if (!level.getBlockState(pos).is(Blocks.NETHER_PORTAL)) {
+			return false;
+		}
+		if (is(level, pos)) {
+			return true;
+		}
+		if (level instanceof ServerLevel server && PortalGate.near(server, pos)) {
+			return true;
+		}
+		for (Direction direction : Direction.values()) {
+			if (level.getBlockState(pos.relative(direction)).is(Blocks.CRYING_OBSIDIAN)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	public static boolean cryingFrame(BlockGetter level, BlockPos origin, Direction.Axis axis) {
 		return allCrying(level, origin, axis == Direction.Axis.X ? X_FRAME : Z_FRAME);
 	}

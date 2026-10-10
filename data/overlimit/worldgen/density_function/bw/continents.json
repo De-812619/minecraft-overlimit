@@ -1,7 +1,7 @@
 {
-  "type": "minecraft:flat_cache",
-  "argument": {
-    "type": "minecraft:shifted_noise",
+  "type": "minecraft:cache",
+  "input": {
+    "type": "minecraft:noise",
     "noise": "minecraft:continentalness",
     "shift_x": "overlimit:shift_x",
     "shift_y": 0.0,

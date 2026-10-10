@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "overlimit:quiet_totem"
+        "recipes": "overlimit:quiet_totem"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -1,5 +1,5 @@
 {
   "type": "minecraft:add",
-  "argument1": "minecraft:shift_z",
-  "argument2": 70000.0
+  "left": "minecraft:shift_z",
+  "right": 70000.0
 }
